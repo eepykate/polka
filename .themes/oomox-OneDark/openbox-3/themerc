@@ -1,0 +1,137 @@
+# Arc Openbox theme
+# Copyright (C) 2015 Dino Duratović <dinomol at mail dot com>
+#
+# #d8bfd8
+#
+# Inspired by and made for horst3180's Arc GTK theme
+# https://github.com/horst3180/Arc-theme
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+### WINDOW
+border.width: 1
+
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+padding.width: 3
+padding.height: 3
+
+window.active.border.color: #61afef
+window.inactive.border.color: #8592ad
+window.active.title.separator.color: #1e2127
+window.inactive.title.separator.color: #1e2127
+window.active.client.color: #1e2127
+window.inactive.client.color: #1e2127
+
+window.active.label.text.color: #ffffff
+window.inactive.label.text.color: #c1c1c1
+
+window.active.button.unpressed.image.color: #ffffff
+window.active.button.pressed.image.color: #61afef
+window.active.button.disabled.image.color: #9e9e9e
+window.active.button.hover.image.color: #61afef
+window.active.button.toggled.unpressed.image.color: #ffffff
+window.active.button.toggled.pressed.image.color: `#61afef
+window.active.button.toggled.hover.image.color: #61afef
+
+window.inactive.button.unpressed.image.color: #888888
+window.inactive.button.pressed.image.color: #61afef
+window.inactive.button.disabled.image.color: #aaaaaa
+window.inactive.button.hover.image.color: #61afef
+window.inactive.button.toggled.unpressed.image.color: #cccccc
+window.inactive.button.toggled.pressed.image.color: #61afef
+window.inactive.button.toggled.hover.image.color: #61afef
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #1e2127
+window.active.label.bg: flat solid
+window.active.label.bg.color: #1e2127
+#window.active.handle.bg: texture
+#window.active.grip.bg: texture
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #1e2127
+window.inactive.label.bg: flat solid
+window.inactive.label.bg.color: #1e2127
+#window.inactive.handle.bg: texture
+#window.inactive.grip.bg: texture
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.pressed.bg: parentrelative
+window.active.button.hover.bg: parentrelative
+window.active.button.disabled.bg: parentrelative
+window.active.button.toggled.unpressed.bg: parentrelative
+window.active.button.toggled.pressed.bg: parentrelative
+window.active.button.toggled.hover.bg: parentrelative
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.pressed.bg: parentrelative
+window.inactive.button.hover.bg: parentrelative
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.toggled.unpressed.bg: parentrelative
+window.inactive.button.toggled.pressed.bg: parentrelative
+window.inactive.button.toggled.hover.bg: parentrelative
+
+window.label.text.justify: center
+
+#window.active.label.text.font: text shadow
+#window.inactive.label.text.font: text shadow
+
+### MENU
+menu.border.width: 2
+menu.separator.width: 2
+menu.separator.padding.width: 10
+menu.separator.padding.height: 2
+
+menu.overlap.x: 0
+menu.overlap.y: 0
+
+menu.border.color: #1e2127
+menu.separator.color: #1e2127
+
+menu.title.text.color: #ffffff
+menu.items.text.color: #ffffff
+menu.items.disabled.text.color: #aaaaaa
+menu.items.active.text.color: #000000
+menu.items.active.disabled.text.color: #bfbfbf
+
+menu.items.bg: flat solid
+menu.items.bg.color: #1e2127
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #61afef
+menu.title.bg: flat solid
+menu.title.bg.color: #1e2127
+
+menu.title.text.justify: center
+
+#menu.items.font: text shadow
+#menu.title.text.font: text shadow
+
+### OSD
+osd.border.width: 1
+
+osd.border.color: #61afef
+
+osd.label.text.color: #ffffff
+
+osd.bg: flat solid
+osd.bg.color: #1e2127
+osd.label.bg: flat solid
+osd.label.bg.color: #1e2127
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #61afef
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #1e2127
+
+#osd.label.text.font: text shadow

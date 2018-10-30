@@ -1,0 +1,354 @@
+<openbox_pipe_menu>
+<menu id="xdg-menu-Accessories" label="Accessories">
+<item label="Albert">
+<action name="Execute"><execute>albert</execute></action>
+</item>
+<item label="Ark">
+<action name="Execute"><execute>ark   </execute></action>
+</item>
+<item label="Code">
+<action name="Execute"><execute>code-oss --unity-launch   </execute></action>
+</item>
+<item label="Filelight">
+<action name="Execute"><execute>filelight   </execute></action>
+</item>
+<item label="KCalc">
+<action name="Execute"><execute>kcalc</execute></action>
+</item>
+<item label="Kate">
+<action name="Execute"><execute>kate -b   </execute></action>
+</item>
+<item label="Klipper">
+<action name="Execute"><execute>klipper</execute></action>
+</item>
+<item label="Kvantum Manager">
+<action name="Execute"><execute>kvantummanager</execute></action>
+</item>
+<item label="Latte">
+<action name="Execute"><execute>latte-dock   </execute></action>
+</item>
+<item label="Leonflix">
+<action name="Execute"><execute>"/home/gauge/bin/Leonflix.AppImage"   </execute></action>
+</item>
+<item label="Marker">
+<action name="Execute"><execute>/usr/bin/marker</execute></action>
+</item>
+<item label="Nemo">
+<action name="Execute"><execute>nemo   </execute></action>
+</item>
+<item label="PCManFM-Qt File Manager">
+<action name="Execute"><execute>pcmanfm-qt   </execute></action>
+</item>
+<item label="Spectacle">
+<action name="Execute"><execute>spectacle</execute></action>
+</item>
+<item label="Vim">
+<action name="Execute"><execute>vim   </execute></action>
+</item>
+<item label="Winetricks">
+<action name="Execute"><execute>winetricks --gui</execute></action>
+</item>
+<item label="compton">
+<action name="Execute"><execute>compton</execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-CrossOver" label="CrossOver">
+<item label="CrossOver">
+<action name="Execute"><execute>/home/gauge/cxoffice/bin/crossover   </execute></action>
+</item>
+<item label="Uninstall CrossOver Linux">
+<action name="Execute"><execute>/home/gauge/cxoffice/bin/cxuninstall   </execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Games" label="Games">
+<item label="Borderlands 2">
+<action name="Execute"><execute>steam steam://rungameid/49520</execute></action>
+</item>
+<item label="Borderlands: The Pre-Sequel">
+<action name="Execute"><execute>steam steam://rungameid/261640</execute></action>
+</item>
+<item label="Counter-Strike: Global Offensive">
+<action name="Execute"><execute>steam steam://rungameid/730</execute></action>
+</item>
+<item label="Minecraft Launcher">
+<action name="Execute"><execute>/opt/minecraft-launcher/minecraft-launcher.sh</execute></action>
+</item>
+<item label="Portal">
+<action name="Execute"><execute>steam steam://rungameid/400</execute></action>
+</item>
+<item label="Powder Toy">
+<action name="Execute"><execute>'/home/gauge/Stuff/powder-93.3-lin64/powder64'</execute></action>
+</item>
+<item label="Skyrim Script Extender (SKSE)">
+<action name="Execute"><execute>steam steam://rungameid/365720</execute></action>
+</item>
+<item label="Steam (Native)">
+<action name="Execute"><execute>/usr/bin/steam-native   </execute></action>
+</item>
+<item label="Steam (Runtime)">
+<action name="Execute"><execute>/usr/bin/steam-runtime   </execute></action>
+</item>
+<item label="Terraria">
+<action name="Execute"><execute>steam steam://rungameid/105600</execute></action>
+</item>
+<item label="The Elder Scrolls V: Skyrim">
+<action name="Execute"><execute>steam steam://rungameid/72850</execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Graphics" label="Graphics">
+<item label="GNU Image Manipulation Program">
+<action name="Execute"><execute>gimp-2.10   </execute></action>
+</item>
+<item label="Gwenview">
+<action name="Execute"><execute>gwenview   </execute></action>
+</item>
+<item label="Inkscape">
+<action name="Execute"><execute>inkscape   </execute></action>
+</item>
+<item label="KColorChooser">
+<action name="Execute"><execute>kcolorchooser</execute></action>
+</item>
+<item label="LXImage">
+<action name="Execute"><execute>lximage-qt   </execute></action>
+</item>
+<item label="Screenshot">
+<action name="Execute"><execute>lximage-qt --screenshot</execute></action>
+</item>
+<item label="qView">
+<action name="Execute"><execute>qview   </execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Internet" label="Internet">
+<item label="Avahi SSH Server Browser">
+<action name="Execute"><execute>/usr/bin/bssh</execute></action>
+</item>
+<item label="Avahi VNC Server Browser">
+<action name="Execute"><execute>/usr/bin/bvnc</execute></action>
+</item>
+<item label="Chromium">
+<action name="Execute"><execute>/usr/bin/chromium   </execute></action>
+</item>
+<item label="Discord">
+<action name="Execute"><execute>/home/gauge/bin/Discord/Discord</execute></action>
+</item>
+<item label="Falkon">
+<action name="Execute"><execute>falkon   </execute></action>
+</item>
+<item label="Firefox">
+<action name="Execute"><execute>/usr/lib/firefox/firefox   </execute></action>
+</item>
+<item label="Opera">
+<action name="Execute"><execute>opera   </execute></action>
+</item>
+<item label="Steam (Native)">
+<action name="Execute"><execute>/usr/bin/steam-native   </execute></action>
+</item>
+<item label="Steam (Runtime)">
+<action name="Execute"><execute>/usr/bin/steam-runtime   </execute></action>
+</item>
+<item label="qBittorrent">
+<action name="Execute"><execute>qbittorrent   </execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Other" label="Other">
+<item label="Call of Duty(R) 4 - Modern Warfare(TM) Multiplayer">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Activision/Call\ of\ Duty\(R\)\ 4\ -\ Modern\ Warfare\(TM\)/Call\ of\ Duty\(R\)\ 4\ -\ Modern\ Warfare\(TM\)\ Multiplayer.lnk</execute></action>
+</item>
+<item label="Customer Support">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Activision/Call\ of\ Duty\(R\)\ 4\ -\ Modern\ Warfare\(TM\)/Documentation/Customer\ Support.lnk</execute></action>
+</item>
+<item label="Doom">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Doom/Doom.lnk</execute></action>
+</item>
+<item label="Doom">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Desktop/Doom.lnk</execute></action>
+</item>
+<item label="NVIDIA X Server Settings">
+<action name="Execute"><execute>/usr/bin/nvidia-settings</execute></action>
+</item>
+<item label="Nexus Mod Manager">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Nexus\ Mod\ Manager/Nexus\ Mod\ Manager.lnk</execute></action>
+</item>
+<item label="Nexus Mod Manager (Trace Mode)">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Nexus\ Mod\ Manager/Nexus\ Mod\ Manager\ \(Trace\ Mode\).lnk</execute></action>
+</item>
+<item label="Readme">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Activision/Call\ of\ Duty\(R\)\ 4\ -\ Modern\ Warfare\(TM\)/Documentation/Readme.lnk</execute></action>
+</item>
+<item label="SKSE">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine "/home/gauge/.wine/drive_c/Program Files (x86)/Steam/steamapps/common/Skyrim/skse_loader.exe"</execute></action>
+</item>
+<item label="Skyrim Script Extender (SKSE)">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe steam://rungameid/365720</execute></action>
+</item>
+<item label="Steam (Wine)">
+<action name="Execute"><execute>wine "/home/gauge/.wine/drive_c/Program Files (x86)/Steam/Steam.exe" -no-cef-sandbox</execute></action>
+</item>
+<item label="Technical Help">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Activision/Call\ of\ Duty\(R\)\ 4\ -\ Modern\ Warfare\(TM\)/Documentation/Technical\ Help.lnk</execute></action>
+</item>
+<item label="Uninstall Doom">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Doom/Uninstall\ Doom.lnk</execute></action>
+</item>
+<item label="Uninstall Nexus Mod Manager">
+<action name="Execute"><execute>env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Microsoft/Windows/Start\ Menu/Programs/Nexus\ Mod\ Manager/Uninstall\ Nexus\ Mod\ Manager.lnk</execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Programming" label="Programming">
+<item label="CMake">
+<action name="Execute"><execute>cmake-gui   </execute></action>
+</item>
+<item label="Code">
+<action name="Execute"><execute>code-oss --unity-launch   </execute></action>
+</item>
+<item label="Cuttlefish">
+<action name="Execute"><execute>cuttlefish</execute></action>
+</item>
+<item label="Electron">
+<action name="Execute"><execute>electron   </execute></action>
+</item>
+<item label="GitKraken">
+<action name="Execute"><execute>gitkraken</execute></action>
+</item>
+<item label="Plasma Engine Explorer">
+<action name="Execute"><execute>plasmaengineexplorer</execute></action>
+</item>
+<item label="Plasma Look And Feel Explorer">
+<action name="Execute"><execute>lookandfeelexplorer</execute></action>
+</item>
+<item label="Plasma Theme Explorer">
+<action name="Execute"><execute>plasmathemeexplorer</execute></action>
+</item>
+<item label="Qt Assistant">
+<action name="Execute"><execute>assistant</execute></action>
+</item>
+<item label="Qt Designer">
+<action name="Execute"><execute>designer</execute></action>
+</item>
+<item label="Qt Linguist">
+<action name="Execute"><execute>linguist</execute></action>
+</item>
+<item label="Qt QDbusViewer ">
+<action name="Execute"><execute>qdbusviewer</execute></action>
+</item>
+<item label="Qt4 Assistant ">
+<action name="Execute"><execute>assistant-qt4</execute></action>
+</item>
+<item label="Qt4 Designer">
+<action name="Execute"><execute>designer-qt4</execute></action>
+</item>
+<item label="Qt4 Linguist ">
+<action name="Execute"><execute>linguist-qt4</execute></action>
+</item>
+<item label="Qt4 QDbusViewer ">
+<action name="Execute"><execute>qdbusviewer-qt4</execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Sound &amp; Video" label="Sound &amp; Video">
+<item label="Clementine">
+<action name="Execute"><execute>clementine   </execute></action>
+</item>
+<item label="Kdenlive">
+<action name="Execute"><execute>flatpak run org.kde.kdenlive</execute></action>
+</item>
+<item label="OBS">
+<action name="Execute"><execute>obs</execute></action>
+</item>
+<item label="PulseAudio Volume Control">
+<action name="Execute"><execute>pavucontrol-qt</execute></action>
+</item>
+<item label="Qt V4L2 test Utility">
+<action name="Execute"><execute>qv4l2</execute></action>
+</item>
+<item label="Qt V4L2 video capture utility">
+<action name="Execute"><execute>qvidcap</execute></action>
+</item>
+<item label="VLC media player">
+<action name="Execute"><execute>/usr/bin/vlc --started-from-file   </execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-System Tools" label="System Tools">
+<item label="Android File Transfer (MTP)">
+<action name="Execute"><execute>android-file-transfer</execute></action>
+</item>
+<item label="Avahi Zeroconf Browser">
+<action name="Execute"><execute>/usr/bin/avahi-discover</execute></action>
+</item>
+<item label="Discover">
+<action name="Execute"><execute>plasma-discover   </execute></action>
+</item>
+<item label="Dolphin">
+<action name="Execute"><execute>dolphin   </execute></action>
+</item>
+<item label="Htop">
+<action name="Execute"><execute>htop</execute></action>
+</item>
+<item label="KDE Partition Manager">
+<action name="Execute"><execute>partitionmanager</execute></action>
+</item>
+<item label="KSysGuard">
+<action name="Execute"><execute>ksysguard   </execute></action>
+</item>
+<item label="Konsole">
+<action name="Execute"><execute>konsole</execute></action>
+</item>
+<item label="Oracle VM VirtualBox">
+<action name="Execute"><execute>VirtualBox   </execute></action>
+</item>
+<item label="QTerminal">
+<action name="Execute"><execute>qterminal</execute></action>
+</item>
+<item label="QTerminal drop down">
+<action name="Execute"><execute>qterminal --drop</execute></action>
+</item>
+<item label="Tint2">
+<action name="Execute"><execute>tint2</execute></action>
+</item>
+<item label="Vala Panel">
+<action name="Execute"><execute>vala-panel</execute></action>
+</item>
+<item label="Yakuake">
+<action name="Execute"><execute>yakuake</execute></action>
+</item>
+<item label="jgmenu">
+<action name="Execute"><execute>jgmenu_run</execute></action>
+</item>
+<item label="multibootusb">
+<action name="Execute"><execute>multibootusb-pkexec</execute></action>
+</item>
+</menu>
+<menu id="xdg-menu-Windows Applications" label="Windows Applications">
+<item label="Borderlands 2 Save Editor">
+<action name="Execute"><execute>"/home/gauge/.cxoffice/Gibbed/desktopdata/cxmenu/StartMenu.C^5E3A_users_crossover_Start^2BMenu/Borderlands+2+Save+Editor.lnk"   </execute></action>
+</item>
+</menu>
+<separator /> 
+<menu id="xdg-menu-Preferences" label="Preferences">
+<menu id="xdg-menu-LXQt settings" label="LXQt settings">
+<item label="Desktop">
+<action name="Execute"><execute>pcmanfm-qt --desktop-pref=general</execute></action>
+</item>
+<item label="Kvantum Manager">
+<action name="Execute"><execute>kvantummanager</execute></action>
+</item>
+<item label="Openbox Settings">
+<action name="Execute"><execute>obconf-qt</execute></action>
+</item>
+<item label="Window Effects">
+<action name="Execute"><execute>compton-conf</execute></action>
+</item>
+</menu>
+<item label="Grub Customizer">
+<action name="Execute"><execute>grub-customizer</execute></action>
+</item>
+<item label="KDE System Settings">
+<action name="Execute"><execute>systemsettings5</execute></action>
+</item>
+<item label="Openbox Configuration Manager">
+<action name="Execute"><execute>obconf   </execute></action>
+</item>
+<item label="Tint2 Settings">
+<action name="Execute"><execute>tint2conf</execute></action>
+</item>
+</menu>
+</openbox_pipe_menu>

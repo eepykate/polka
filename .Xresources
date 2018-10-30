@@ -1,0 +1,41 @@
+URxvt.font: xft:"SauceCodePro Nerd Font":style=Regular:size=11
+
+
+! special
+*.foreground:   #9ba2b2
+*.background:   #1e2127
+*.cursorColor:  #9ba2b2
+
+! black
+*.color0:       #1e2127
+*.color8:       #1e2127
+
+! red
+*.color1:       #d95360
+*.color9:       #d95360
+
+! green
+*.color2:       #86bb62
+*.color10:      #86bb62
+
+! yellow
+*.color3:       #c7894f
+*.color11:      #c7894f
+
+! blue
+*.color4:       #4d9cee
+*.color12:      #4d9cee
+
+! magenta
+*.color5:       #b959d8
+*.color13:      #b959d8
+
+! cyan
+*.color6:       #44a8b6
+*.color14:      #44a8b6
+
+! white
+*.color7:       #9ba2b2
+*.color15:      #9ba2b2
+
+
