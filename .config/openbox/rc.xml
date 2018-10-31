@@ -177,6 +177,11 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>/usr/bin/lock</command>
+      </action>
+    </keybind>
     <keybind key="W-Return">
       <action name="Execute">
         <command>konsole</command>

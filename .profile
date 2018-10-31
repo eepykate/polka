@@ -1,5 +1,4 @@
- 
-if [[ $DESKTOP_SESSION=~"openbox" ]]; then
+if [[ $DESKTOP_SESSION="openbox" ]]; then
 export DESKTOP_SESSION="kde"
 export XDG_CURRENT_DESKTOP="KDE" 
 fi
