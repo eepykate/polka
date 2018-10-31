@@ -1,5 +1,5 @@
-URxvt.font: xft:"SauceCodePro Nerd Font":style=Regular:size=11
-
+URxvt.font: xft:SauceCodePro\ Nerd\ Font:style=Regular:size=11
+-uc|+uc
 
 ! special
 *.foreground:   #9ba2b2

@@ -27,4 +27,4 @@ tint2 &
 export XDG_CURRENT_DESKTOP=KDE &
 lxqt-notificationd &
 volumeicon &
-xautolock -time 5 -locker /usr/bin/lock &
+xautolock -time 10 -locker /usr/bin/lock &
