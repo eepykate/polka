@@ -21,10 +21,9 @@ nm-applet &
 yakuake &
 #xfce4-panel &
 #latte-dock &
-feh --bg-fill "/home/gauge/Stuff/Hexagons/Hexagon outline OneSided.png" &
+feh --bg-fill "/home/$USER/Wallpapers/Hexagon outline OneSided.png" &
 #lxqt-panel &
 tint2 &
-export XDG_CURRENT_DESKTOP=KDE &
 lxqt-notificationd &
 volumeicon &
 xautolock -time 10 -locker /usr/bin/lock &
