@@ -32,7 +32,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,curl,
 ,wget,
 ,code,
-,breeze-hacked-cursor-theme,
 ,papirus-icon-theme, Icon Theme
 ,rofi, application launcher
 ,dolphin, KDE file manager
@@ -76,6 +75,8 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,mediainfo,shows audio and video information and is used by ranger as well
 ,atool,manages and gives information about archives
 ,highlight,can highlight code output
+,vlc,
+A,breeze-hacked-cursor-theme-bin,
 A,task-spooler,queues commands or files for download
 A,ls_extended, 
 A,urlview,parses URLs in the terminal allowing keyboard-based selection
@@ -88,4 +89,3 @@ A,qview, image viewer
 A,compton-tryone-git,for transparency and removing screen-tearing
 A,oh-my-zsh-git, stuff for the best shell
 A,nerd-fonts-source-code-pro, 
-,vlc,
