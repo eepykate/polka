@@ -75,10 +75,10 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,mediainfo,shows audio and video information and is used by ranger as well
 ,atool,manages and gives information about archives
 ,highlight,can highlight code output
-,vlc,
+,vlc, is a media player
 A,breeze-hacked-cursor-theme-bin,
 A,task-spooler,queues commands or files for download
-A,ls_extended, 
+G,https://github.com/Electrux/ls_extended, is ls with image support
 A,urlview,parses URLs in the terminal allowing keyboard-based selection
 A,vim-pathogen,manages vim plugins
 A,sc-im,is an Excel-like terminal spreadsheet manager
