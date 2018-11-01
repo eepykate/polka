@@ -1,7 +1,12 @@
 #!/bin/bash
 
-# Luke's Auto Rice Boostrapping Script (LARBS)
-# by Luke Smith <luke@lukesmith.xyz>
+
+# Based off Luke Smith's LARBS - https://github.com/LukeSmithxyz/LARBS
+# Gauge's Auto Rice Boostrapping Script (GARBS)
+# by Gauge Krahe
+
+## Luke's Auto Rice Boostrapping Script (LARBS)
+## by Luke Smith <luke@lukesmith.xyz>
 # License: GNU GPLv3
 
 # You can provide a custom repository with -r or a custom programs csv with -p.
@@ -37,7 +42,8 @@ ins_ls_extended() { # Installs ls_extended manually if not installed.
 	dialog --infobox "Installing ls_extended, \(ls with icons and colours...\)" 8 50
 	cd /tmp
 	rm -rf /tmp/ls_extended*
-	git clone https://aur.archlinux.org/ls_extended.git &&
+	git clone https://aur.archlinux.org/ls_extended.git &>/dev/null &&
+	chmod a+rw /tmp/ls_extended
 	cd "ls_extended" &&
 	sed -i '16,$d' .SRCINFO &&
 	sudo -u $name makepkg --noconfirm -si &>/dev/null
@@ -48,7 +54,7 @@ preinstallmsg() { \
 	}
 
 welcomemsg() { \
-	dialog --title "Welcome!" --msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured i3wm Arch Linux desktop, which I use as my main machine.\\n\\n-Luke" 10 60
+	dialog --title "Welcome!" --msgbox "Welcome to Gauge's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured openbox Arch Linux desktop, which I use as my main machine.\\n\\n-Gauge" 10 60
 	}
 
 refreshkeys() { \
@@ -74,7 +80,7 @@ getuserandpass() { \
 
 usercheck() { \
 	! (id -u $name &>/dev/null) ||
-	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. LARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nLARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that LARBS will change $name's password to the one you just gave." 14 70
+	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. GARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nGARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that GARBS will change $name's password to the one you just gave." 14 70
 	}
 
 adduserandpass() { \
@@ -87,7 +93,7 @@ adduserandpass() { \
 
 gitmakeinstall() {
 	dir=$(mktemp -d)
-	dialog --title "LARBS Installation" --infobox "Installing \`$(basename $1)\` ($n of $total) via \`git\` and \`make\`. $(basename $1) $2." 5 70
+	dialog --title "GARBS Installation" --infobox "Installing \`$(basename $1)\` ($n of $total) via \`git\` and \`make\`. $(basename $1) $2." 5 70
 	git clone --depth 1 "$1" "$dir" &>/dev/null
 	cd "$dir" || exit
 	make &>/dev/null
@@ -95,12 +101,12 @@ gitmakeinstall() {
 	cd /tmp ;}
 
 maininstall() { # Installs all needed programs from main repo.
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2." 5 70
+	dialog --title "GARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2." 5 70
 	pacman --noconfirm --needed -S "$1" &>/dev/null
 	}
 
 aurinstall() { \
-	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2." 5 70
+	dialog --title "GARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2." 5 70
 	grep "^$1$" <<< "$aurinstalled" && return
 	sudo -u $name $aurhelper -S --noconfirm "$1" &>/dev/null
 	}
@@ -125,8 +131,8 @@ serviceinit() { for service in "$@"; do
 	done ;}
 
 newperms() { # Set special sudoers settings for install (or after).
-	sed -i "/#LARBS/d" /etc/sudoers
-	echo -e "$@ #LARBS" >> /etc/sudoers ;}
+	sed -i "/#GARBS/d" /etc/sudoers
+	echo -e "$@ #GARBS" >> /etc/sudoers ;}
 
 systembeepoff() { dialog --infobox "Getting rid of that retarded error beep sound..." 10 50
 	rmmod pcspkr
@@ -159,7 +165,7 @@ manualinstall() { # Installs $1 manually if not installed. Used only for AUR hel
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
 	echo "exec_always --no-startup-id notify-send -i ~/.scripts/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000"  >> /home/$name/.config/i3/config
-	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment.\\n\\n-Luke" 12 80
+	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment.\\n\\n-Gauge" 12 80
 	}
 
 ###
@@ -172,7 +178,7 @@ finalize(){ \
 initialcheck
 
 # Welcome user.
-#welcomemsg || { clear; exit; }
+welcomemsg || { clear; exit; }
 
 # Get and verify username and password.
 getuserandpass
