@@ -193,8 +193,18 @@ installationloop
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
-curl -Ls "$progsfile" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf > /usr/share/fonts/
-curl -Ls "$progsfile" https://gitlab.com/GaugeK/dots/raw/master/bin/lock > /usr/bin/lock
+
+curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf -o "/usr/share/fonts/Sauce Code Pro Nerd Font Complete.ttf"
+
+curl https://gitlab.com/GaugeK/dots/raw/master/bin/lock -o /usr/bin/lock
+
+echo "#\!/usr/bin/bash
+
+systemctl hibernate" >> /usr/bin/hibernate
+
+echo "#\!/usr/bin/bash
+
+systemctl hibernate && lock" >> /usr/bin/hib
 
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/

@@ -22,6 +22,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,clementine,
 ,volumeicon,
 ,tint2,
+,noto-fonts,
 ,xorg-server,is the graphical server
 ,xorg-xdpyinfo,retrieves screen information for some scripts
 ,xorg-xwininfo,allows querying information about windows
