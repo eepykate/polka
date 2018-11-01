@@ -32,6 +32,17 @@ esac done
 
 initialcheck() { pacman -S --noconfirm --needed dialog || { echo "Are you sure you're running this as the root user? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection?"; exit; } ;}
 
+ins_ls_extended() { # Installs ls_extended manually if not installed. 
+	[[ -f /usr/bin/ls_extended ]] || (
+	dialog --infobox "Installing ls_extended, \(ls with icons and colours...\)" 8 50
+	cd /tmp
+	rm -rf /tmp/ls_extended*
+	git clone https://aur.archlinux.org/ls_extended.git &&
+	cd "ls_extended" &&
+	sed -i '16,$d' .SRCINFO &&
+	sudo -u $name makepkg --noconfirm -si &>/dev/null
+	cd /tmp) ;}
+
 preinstallmsg() { \
 	dialog --title "Let's get this party started!" --yes-label "Let's go!" --no-label "No, nevermind!" --yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || { clear; exit; }
 	}
@@ -161,7 +172,7 @@ finalize(){ \
 initialcheck
 
 # Welcome user.
-welcomemsg || { clear; exit; }
+#welcomemsg || { clear; exit; }
 
 # Get and verify username and password.
 getuserandpass
@@ -190,6 +201,8 @@ manualinstall $aurhelper
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
 installationloop
+
+ins_ls_extended
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
