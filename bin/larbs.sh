@@ -199,7 +199,7 @@ mkdir /home/$name/.local/share/fonts
 mkdir /usr/share/fonts/truetype
 mkdir /usr/share/fonts/truetype/customttf
 
-curl "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf" -o "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
+curl -L "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf" > "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 chmod a+r "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/lock -o /usr/bin/lock
