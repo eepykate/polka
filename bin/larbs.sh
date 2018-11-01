@@ -263,8 +263,6 @@ newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/u
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
-rm -rf /home/$name/.git
-
 # Last message! Install complete!
 finalize
 clear
