@@ -33,6 +33,8 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xorg-xrandr,
 G,https://github.com/Electrux/ls_extended,
 ,wget,
+,zsh,
+A,oh-my-zsh-git,
 ,ttf-inconsolata,is the monospace font of LARBS
 ,ttf-linux-libertine,provides the sans and serif fonts for LARBS
 ,arandr,is a UI for screen adjustment
