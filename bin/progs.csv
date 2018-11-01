@@ -7,20 +7,19 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,nvidia, NVIDIA drivers
 ,nvidia-utils,  NVIDIA drivers
 ,lib32-nvidia-utils, NVIDIA drivers
-,xdotool, for killing windows with W-F4 in openbox
-,xclip, xclip
-,sddm, display manager
-,kvantum-qt5, Qt theme engine
-,qbittorrent, Torrent client
-,nvidia-settings, nvidia driver settings
-,neofetch, system information tool
-,kdenlive, Video editor
-,frei0r-plugins, For KDEnlive
-,cmatrix, matrix-like terminal program
-,clementine, graphical music player
-,volumeicon, volume status indicator in system tray
-,tint2, openbox panel
-,noto-fonts, Noto fonts
+,xclip,
+,sddm,
+,kvantum-qt5,
+,qbittorrent,
+,nvidia-settings,
+,neofetch,
+,kdenlive,
+,frei0r-plugins,
+,cmatrix,
+,clementine,
+,volumeicon,
+,tint2,
+,noto-fonts,
 ,xorg-server,is the graphical server
 ,xorg-xdpyinfo,retrieves screen information for some scripts
 ,xorg-xwininfo,allows querying information about windows
@@ -32,12 +31,12 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,curl,
 ,wget,
 ,code,
-,papirus-icon-theme, Icon Theme
-,rofi, application launcher
-,dolphin, KDE file manager
-,konsole, KDE terminal
-,yakuake, KDE drop-down terminal
-,zsh, the best shell
+,papirus-icon-theme,
+,rofi,
+,dolphin,
+,konsole,
+,yakuake,
+,zsh,
 ,ttf-inconsolata,is the monospace font of LARBS
 ,ttf-linux-libertine,provides the sans and serif fonts for LARBS
 ,arandr,is a UI for screen adjustment
@@ -78,12 +77,12 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,syntax-highlighting,
 ,vlc,
 A,breeze-hacked-cursor-theme,
-A,vim-pathogen,manages vim plugins
-A,ttf-emojione,is a package that gives the system unicode symbols and emojis used in the status bar and elsewhere.
-A,i3lock-color-git,is the screen lock
-A,qview, image viewer
-A,compton-tryone-git,for transparency and removing screen-tearing
-A,oh-my-zsh-git, stuff for the best shell
+A,vim-pathogen,
+A,ttf-emojione,
+A,i3lock-color-git,
+A,qview,
+A,compton-tryone-git,
+A,oh-my-zsh-git,
 A,nerd-fonts-source-code-pro,
 A,ttf-nerd-fonts-symbols,
 A,ccp4m,

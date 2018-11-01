@@ -39,7 +39,7 @@ initialcheck() { pacman -S --noconfirm --needed dialog || { echo "Are you sure y
 
 ins_ls_extended() { # Installs ls_extended manually if not installed. 
 	[[ -f /usr/bin/ls_extended ]] || (
-	dialog --infobox "Installing ls_extended, \(ls with icons and colours...\)" 8 50
+	dialog --infobox "Installing ls_extended, (ls with icons and colours...)" 8 50
 	cd /tmp
 	rm -rf /tmp/ls_extended*
 	git clone https://aur.archlinux.org/ls_extended.git &>/dev/null &&
