@@ -1,5 +1,5 @@
 #ZSH stuff
-export ZSH="/home/gauge/.oh-my-zsh"
+export ZSH="/usr/share/oh-my-zsh"
 ZSH_THEME="agnoster"
 source $ZSH/oh-my-zsh.sh
 

@@ -194,7 +194,9 @@ installationloop
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
 
-curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf -o "/usr/share/fonts/Sauce Code Pro Nerd Font Complete.ttf"
+mkdir /home/$name/.local/share/fonts
+
+curl https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete.ttf -o "/home/$name/.local/share/fonts/Sauce Code Pro Nerd Font Complete.ttf"
 
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/lock -o /usr/bin/lock
 
@@ -217,8 +219,6 @@ systemctl hibernate && lock" >> /usr/bin/hib
 serviceinit NetworkManager cronie 
 systemctl enable sddm
 
-#Nerd font
-
 # Most important command! Get rid of the beep!
 systembeepoff
 
@@ -230,7 +230,10 @@ newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/u
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
+rm -rf /home/$name/.git
 
 # Last message! Install complete!
 finalize
 clear
+
+systemctl start sddm

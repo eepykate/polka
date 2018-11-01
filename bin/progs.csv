@@ -10,7 +10,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xdotool, for killing windows with W-F4 in openbox
 ,xclip, xclip
 ,sddm, display manager
-,kvantum, Qt theme engine
+,kvantum-qt5, Qt theme engine
 ,qbittorrent, Torrent client
 ,nvidia-settings, nvidia driver settings
 ,neofetch, system information tool
@@ -32,12 +32,19 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 A,ls_extended,
 ,curl,
 ,wget,
+,code,
+,breeze-hacked-cursor-theme,
+,papirus-icon-theme, Icon Theme
+,rofi, application launcher
+,dolphin, KDE file manager
+,konsole, KDE terminal
+,yakuake, KDE drop-down terminal
 ,zsh, the best shell
 A,oh-my-zsh-git, stuff for the best shell
 ,ttf-inconsolata,is the monospace font of LARBS
 ,ttf-linux-libertine,provides the sans and serif fonts for LARBS
 ,arandr,is a UI for screen adjustment
-A,compton-tyrone-git,for transparency and removing screen-tearing
+A,compton-tryone-git,for transparency and removing screen-tearing
 ,dosfstools,allows your computer to access dos-like filesystems
 ,exfat-utils,allows management of FAT drives
 ,feh,is a minimal image viewer

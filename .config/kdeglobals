@@ -1,0 +1,168 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar
+
+[ColorEffects:Disabled]
+ChangeSelectionColor=
+Color=56,56,56
+ColorAmount=0
+ColorEffect=0
+ContrastAmount=0.65000000000000002
+ContrastEffect=1
+Enable=
+IntensityAmount=0.10000000000000001
+IntensityEffect=2
+
+[ColorEffects:Inactive]
+ChangeSelectionColor=true
+Color=112,111,110
+ColorAmount=0.025000000000000001
+ColorEffect=2
+ContrastAmount=0.10000000000000001
+ContrastEffect=2
+Enable=false
+IntensityAmount=0
+IntensityEffect=0
+
+[Colors:Button]
+BackgroundAlternate=65,76,91
+BackgroundNormal=38,46,55
+DecorationFocus=82,148,226
+DecorationHover=82,148,226
+ForegroundActive=61,174,233
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=82,148,226
+
+[Colors:Complementary]
+BackgroundAlternate=59,64,69
+BackgroundNormal=49,54,59
+DecorationFocus=61,174,233
+DecorationHover=147,206,233
+ForegroundActive=147,206,233
+ForegroundInactive=175,176,179
+ForegroundLink=61,174,230
+ForegroundNegative=231,76,60
+ForegroundNeutral=253,188,75
+ForegroundNormal=239,240,241
+ForegroundPositive=46,174,230
+ForegroundVisited=61,174,230
+
+[Colors:Selection]
+BackgroundAlternate=29,153,243
+BackgroundNormal=97,175,239
+DecorationFocus=82,148,226
+DecorationHover=82,148,226
+ForegroundActive=252,252,252
+ForegroundInactive=211,218,227
+ForegroundLink=253,188,75
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=189,195,199
+
+[Colors:Tooltip]
+BackgroundAlternate=47,52,63
+BackgroundNormal=36,40,48
+DecorationFocus=82,148,226
+DecorationHover=82,148,226
+ForegroundActive=61,174,233
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=82,148,226
+
+[Colors:View]
+BackgroundAlternate=47,53,63
+BackgroundNormal=33,37,45
+DecorationFocus=82,148,226
+DecorationHover=82,148,226
+ForegroundActive=61,174,233
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,219,227
+ForegroundPositive=39,174,96
+ForegroundVisited=82,148,226
+
+[Colors:Window]
+BackgroundAlternate=47,52,63
+BackgroundNormal=30,33,39
+DecorationFocus=82,148,226
+DecorationHover=82,148,226
+ForegroundActive=61,174,233
+ForegroundInactive=102,106,115
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=211,218,227
+ForegroundPositive=39,174,96
+ForegroundVisited=82,148,226
+
+[DirSelect Dialog]
+DirSelectDialog Size=640,480
+History Items[$e]=file:$HOME/Stuff/Linux Distros
+
+[General]
+BrowserApplication[$e]=firefox.desktop
+ColorScheme=OneDark
+Name=OneDark
+XftHintStyle=hintnone
+XftSubPixel=
+fixed=Source Code Pro for Powerline,11,-1,5,50,0,0,0,0,0,Regular
+font=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
+menuFont=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
+shadeSortColumn=true
+smallestReadableFont=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
+toolBarFont=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
+
+[Icons]
+Theme=Papirus-Dark
+
+[KDE]
+LookAndFeelPackage=OneDark
+ShowIconsInMenuItems=true
+ShowIconsOnPushButtons=true
+SingleClick=false
+contrast=4
+widgetStyle=kvantum-dark
+
+[KFileDialog Settings]
+Automatically select filename extension=true
+Breadcrumb Navigation=false
+Decoration position=0
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=false
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort reversed=false
+Speedbar Width=105
+View Style=Simple
+listViewIconSize=10
+
+[Toolbar style]
+ToolButtonStyle=TextBesideIcon
+ToolButtonStyleOtherToolbars=TextBesideIcon
+
+[WM]
+activeBackground=30,33,39
+activeBlend=30,33,39
+activeFont=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
+activeForeground=211,218,227
+inactiveBackground=30,33,39
+inactiveBlend=30,33,39
+inactiveForeground=102,106,115

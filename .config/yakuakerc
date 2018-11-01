@@ -1,0 +1,44 @@
+[Animation]
+Frames=0
+
+[Desktop Entry]
+DefaultProfile=New Profile.profile
+
+[Dialogs]
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=
+
+[FileDialogSize]
+Height 1080=480
+Width 1920=640
+
+[Shortcuts]
+close-active-terminal=Ctrl+Shift+R
+decrease-window-height=Alt+Shift+Up
+decrease-window-width=Alt+Shift+Left
+file_quit=Ctrl+Shift+Q
+grow-terminal-bottom=Ctrl+Alt+Down
+grow-terminal-left=Ctrl+Alt+Left
+grow-terminal-right=Ctrl+Alt+Right
+grow-terminal-top=Ctrl+Alt+Up
+increase-window-height=Alt+Shift+Down
+increase-window-width=Alt+Shift+Right
+move-session-left=Ctrl+Shift+Left
+move-session-right=Ctrl+Shift+Right
+new-session=Ctrl+Shift+T
+next-session=Ctrl+Tab
+next-terminal=Ctrl+Shift+Down
+previous-session=Ctrl+Shift+Tab
+previous-terminal=Ctrl+Shift+Up
+rename-session=Ctrl+Alt+S
+split-left-right=Ctrl+(
+split-top-bottom=Ctrl+)
+toggle-session-monitor-activity=Ctrl+Shift+A
+toggle-session-monitor-silence=Ctrl+Shift+I
+view-full-screen=Ctrl+Shift+F11
+
+[Window]
+DynamicTabTitles=true
+Height=90

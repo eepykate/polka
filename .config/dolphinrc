@@ -1,0 +1,81 @@
+Height 1080=548
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAACSAAAEIvwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAAAAAAiQAAAAEA////+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAAEIgAAAFsA////AAAAAQAAALQAAAQi/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAQAAAAAAAAQiAAABBQD///8AAAADAAADOQAAAPb8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAApAAADOQAAAAEA////AAAFxgAABCIAAAAEAAAABAAAAAgAAAAI/AAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgMAAAAA/////wAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAA==
+Width 1920=866
+Window-Maximized 1080x1920=true
+
+[CompactMode]
+FontWeight=50
+PreviewSize=32
+
+[Desktop Entry]
+DefaultProfile=New Profile.profile
+
+[DetailsMode]
+FontWeight=50
+PreviewSize=32
+
+[DownloadDialog Settings]
+Height 1080=432
+Width 1920=700
+
+[Favorite Profiles]
+Favorites=
+
+[FileDialogSize]
+Height 1080=480
+Width 1920=640
+
+[General]
+ConfirmClosingMultipleTabs=false
+GlobalViewProps=true
+UseTabForSwitchingSplitView=true
+Version=200
+ViewPropsTimestamp=2018,6,28,18,27,35
+
+[IconsMode]
+FontWeight=50
+PreviewSize=112
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/.local/share/applications//discord.svg,file:///usr/share/icons/discord.svg
+Recent URLs[$e]=file:///usr/share/icons/,file:$HOME/.local/share/applications/
+
+[KPropertiesDialog]
+Height 1080=434
+Height 900=444
+Width 1440=402
+Width 1920=401
+
+[MainWindow]
+Height 1080=628
+Height 600=509
+Height 900=628
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAwAAAAAAAABjAAACdPwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAGMAawAAAAAAAAAAiQAAAAEA////+wAAABQAcABsAGEAYwBlAHMARABvAGMAawEAAAAAAAACdAAAAFMA////AAAAAQAAAKQAAAJK/AIAAAAB+wAAABAAaQBuAGYAbwBEAG8AYwBrAAAAAAAAAAJKAAAAAQD///8AAAADAAAD4wAAASL8AQAAAAH7AAAAGAB0AGUAcgBtAGkAbgBhAGwARABvAGMAawAAAAA4AAAD4wAAAAoA////AAADewAAAnQAAAAEAAAABAAAAAgAAAAI/AAAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgMAAAAA/////wAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAA==
+ToolBarsMovable=Disabled
+Width 1440=1051
+Width 1600=808
+Width 1920=1051
+Width 800=796
+Window-Maximized 900x1440=true
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Notification Messages]
+New TabNew TabCtrl+T=false
+
+[Open-with settings]
+CompletionMode=1
+History=code,kate,inkscape,konsole
+
+[PreviewSettings]
+Plugins=audiothumbnail,comicbookthumbnail,djvuthumbnail,marble_thumbnail_shp,exrthumbnail,directorythumbnail,fontthumbnail,marble_thumbnail_gpx,marble_thumbnail_geojson,pothumbnail,htmlthumbnail,imagethumbnail,jpegthumbnail,marble_thumbnail_kmz,marble_thumbnail_kml,kraorathumbnail,mltpreview,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,marble_thumbnail_osm,designerthumbnail,svgthumbnail,ffmpegthumbs,webarchivethumbnail
+
+[SettingsDialog]
+Height 1080=429
+Width 1920=572
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
