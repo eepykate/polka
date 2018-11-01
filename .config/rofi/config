@@ -1,1 +1,1 @@
-rofi.theme: /home/gauge/.config/rofi/onedark.rasi
+rofi.theme: /home/$USER/.config/rofi/onedark.rasi
