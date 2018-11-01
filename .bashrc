@@ -37,6 +37,6 @@ export PS1="\[$(tput sgr0)\]\[\033[\033[38;5;49m\][\W] \\$ \[$(tput sgr0)\]"
 #fi
 
 EDITOR=/usr/bin/nano
-eval $(dircolors -b $HOME/.dircolors)
+#eval $(dircolors -b $HOME/.dircolors)
 
 export XDG_CURRENT_DESKTOP=KDE
