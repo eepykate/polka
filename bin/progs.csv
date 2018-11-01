@@ -2,39 +2,38 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,base-devel,is a group package with sudo and compilation software
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
-,lxqt,
-,plasma,
-,nvidia,
-,nvidia-utils,
-,lib32-nvidia-utils,
-,xdotool,
-,xdg-desktop-portal,
-,xdg-desktop-portal-kde,
-,xclip,
-,sddm,
-,kvantum,
-,qbittorrent,
-,nvidia-settings,
-,neofetch,
-,kdenlive,
-,frei0r-plugins,
-,cmatrix,
-,clementine,
-,volumeicon,
-,tint2,
-,noto-fonts,
+,lxqt, The LXQt desktop environment
+,plasma, The KDE plasma desktop environment
+,nvidia, NVIDIA drivers
+,nvidia-utils,  NVIDIA drivers
+,lib32-nvidia-utils, NVIDIA drivers
+,xdotool, for killing windows with W-F4 in openbox
+,xclip, xclip
+,sddm, display manager
+,kvantum, Qt theme engine
+,qbittorrent, Torrent client
+,nvidia-settings, nvidia driver settings
+,neofetch, system information tool
+,kdenlive, Video editor
+,frei0r-plugins, For KDEnlive
+,cmatrix, matrix-like terminal program
+,clementine, graphical music player
+,volumeicon, volume status indicator in system tray
+,tint2, openbox panel
+,noto-fonts, Noto fonts
 ,xorg-server,is the graphical server
 ,xorg-xdpyinfo,retrieves screen information for some scripts
 ,xorg-xwininfo,allows querying information about windows
 ,xorg-xinit,starts the graphical server
-,xorg-xkill,
+,xorg-xkill, 
 ,xorg-xset,
 ,xorg-xprop,
 ,xorg-xrandr,
-G,https://github.com/Electrux/ls_extended,
+A,ls_extended,
+,curl,
 ,wget,
-,zsh,
-A,oh-my-zsh-git,
+,zsh, the best shell
+A,oh-my-zsh-git, stuff for the best shell
 ,ttf-inconsolata,is the monospace font of LARBS
 ,ttf-linux-libertine,provides the sans and serif fonts for LARBS
 ,arandr,is a UI for screen adjustment
@@ -42,7 +41,7 @@ A,compton-tyrone-git,for transparency and removing screen-tearing
 ,dosfstools,allows your computer to access dos-like filesystems
 ,exfat-utils,allows management of FAT drives
 ,feh,is a minimal image viewer
-A,qview,
+A,qview, image viewer
 ,ffmpeg,can record and splice video and audio on the command line
 ,firefox,is the only program on LARBS your girlfriend has ever heard of
 ,gnome-keyring,serves as the system keyring
