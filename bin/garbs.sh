@@ -37,17 +37,17 @@ esac done
 
 initialcheck() { pacman -S --noconfirm --needed dialog || { echo "Are you sure you're running this as the root user? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection?"; exit; } ;}
 
-ins_ls_extended() { # Installs ls_extended manually if not installed. 
-	[[ -f /usr/bin/ls_extended ]] || (
-	dialog --infobox "Installing ls_extended, (ls with icons and colours...)" 8 50
-	cd /tmp
-	rm -rf /tmp/ls_extended*
-	git clone https://aur.archlinux.org/ls_extended.git &>/dev/null &&
-	chmod a+rw /tmp/ls_extended
-	cd "ls_extended" &&
-	sed -i '16,$d' .SRCINFO &&
-	sudo -u $name makepkg --noconfirm -si &>/dev/null
-	cd /tmp) ;}
+#ins_ls_extended() { # Installs ls_extended manually if not installed. 
+#	[[ -f /usr/bin/ls_extended ]] || (
+#	dialog --infobox "Installing ls_extended, (ls with icons and colours...)" 8 50
+#	cd /tmp
+#	rm -rf /tmp/ls_extended*
+#	git clone https://aur.archlinux.org/ls_extended.git &>/dev/null &&
+#	chmod a+rw /tmp/ls_extended
+#	cd "ls_extended" &&
+#	sed -i '16,$d' .SRCINFO &&
+#	sudo -u $name makepkg --noconfirm -si &>/dev/null
+#	cd /tmp) ;}
 
 preinstallmsg() { \
 	dialog --title "Let's get this party started!" --yes-label "Let's go!" --no-label "No, nevermind!" --yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || { clear; exit; }
@@ -208,20 +208,23 @@ manualinstall $aurhelper
 # and all build dependencies are installed.
 installationloop
 
-ins_ls_extended
+#ins_ls_extended
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
 
-mkdir /home/$name/.local/share/fonts
+#mkdir /home/$name/.local/share/fonts
 
-mkdir /usr/share/fonts/truetype
-mkdir /usr/share/fonts/truetype/customttf
+#mkdir /usr/share/fonts/truetype
+#mkdir /usr/share/fonts/truetype/customttf
 
-curl -L "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf" > "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
-chmod a+r "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
+#curl -L "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf" > "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
+#chmod a+r "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 
-curl https://gitlab.com/GaugeK/dots/raw/master/bin/lock -o /usr/bin/lock
+curl -L "https://gitlab.com/GaugeK/dots/raw/master/bin/ls_extended?inline=false" -o "/usr/bin/ls_extended"
+chmod a+x "/usr/bin/ls_extended"
+
+curl "https://gitlab.com/GaugeK/dots/raw/master/bin/lock" -o "/usr/bin/lock"
 
 echo "#\!/usr/bin/bash
 
