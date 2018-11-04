@@ -16,6 +16,7 @@ export TERMINAL="konsole"
 #Default browser
 export BROWSER="firefox"
 export TRUEBROWSER="firefox"
+#10 mins until monitors turn off
 
 
 
