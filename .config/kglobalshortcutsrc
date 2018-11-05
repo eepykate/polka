@@ -1,3 +1,21 @@
+[ActivityManager]
+_k_friendly_name=Activity Manager
+switch-to-activity-b63ed33a-22aa-4192-9600-40c05eb1af15=none,none,Switch to activity "Default"
+
+[Kill current window.desktop]
+_k_friendly_name=Kill current window
+_launch=,none,Kill current window
+
+[Rofi.desktop]
+_k_friendly_name=Rofi
+_launch=,none,Rofi
+
+[org.kde.konsole.desktop]
+NewTab=,none,Open a New Tab
+NewWindow=,none,Open a New Window
+_k_friendly_name=Konsole
+_launch=,none,Konsole
+
 [yakuake]
 _k_friendly_name=Yakuake
 toggle-window-state=Alt+`,F12,Open/Retract Yakuake
