@@ -221,19 +221,29 @@ putgitrepo "$dotfilesrepo" "/home/$name"
 #curl -L "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf" > "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 #chmod a+r "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 
+
+if [ ! -f /usr/bin/ls_extended ]; then
 curl -L "https://gitlab.com/GaugeK/dots/raw/master/bin/ls_extended?inline=false" -o "/usr/bin/ls_extended"
 chmod a+x "/usr/bin/ls_extended"
+fi
 
+if [ ! -f /usr/bin/lock ]; then
 curl "https://gitlab.com/GaugeK/dots/raw/master/bin/lock" -o "/usr/bin/lock"
+fi
 
+if [ ! -f /usr/bin/hibernate ]; then
 echo "#\!/usr/bin/bash
 
 systemctl hibernate" >> /usr/bin/hibernate
+fi
 
+if [ ! -f /usr/bin/hib ]; then
 echo "#\!/usr/bin/bash
 
 systemctl hibernate && lock" >> /usr/bin/hib
+fi
 
+if [ ! -f /etc/X11/xorg.conf.d/50-mouse-acceleration.conf ]; then
 echo 'Section "InputClass"
     Identifier "My Mouse"
     MatchIsPointer "yes"
@@ -241,7 +251,10 @@ echo 'Section "InputClass"
     Option "AccelerationScheme" "none"
     Option "AccelSpeed" "-0.75"
 EndSection' >> /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+fi
 
+
+if [ ! -f /etc/X11/xorg.conf.d/70-synaptics.conf ]; then
 echo 'Section "InputClass"
     Identifier "touchpad"
     Driver "synaptics"
@@ -262,6 +275,7 @@ echo 'Section "InputClass"
         Option "FingerHigh" "50"
         Option "MaxTapTime" "125"
 EndSection' >> /etc/X11/xorg.conf.d/70-synaptics.conf
+fi
 
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/
