@@ -2,6 +2,7 @@
 if [[ $DESKTOP_SESSION="openbox" ]]; then
 export DESKTOP_SESSION="kde"
 export XDG_CURRENT_DESKTOP="KDE" 
+export KDE_SESSION_VERSION="5"
 fi
 
 #Faster keyboard repeat rate
@@ -16,8 +17,6 @@ export TERMINAL="konsole"
 #Default browser
 export BROWSER="firefox"
 export TRUEBROWSER="firefox"
-#10 mins until monitors turn off
-
 
 
 #GTK Global menu
