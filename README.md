@@ -1,4 +1,4 @@
-![Current scrot](https://i.imgur.com/WWHVyqX.png)
+![Current scrot](https://i.imgur.com/PSwb0dw.png)
 
 ---
 

@@ -1,6 +1,6 @@
 [Alsa]
-card=USB Audio Device
-channel=PCM
+card=default
+channel=Master
 
 [Notification]
 show_notification=true

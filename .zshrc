@@ -38,8 +38,8 @@ export SUDO_PROMPT="$(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\
 alias gl="git diff --no-commit-id --name-only"
 #git - Add all unstaged files to staging area
 alias gaa="git add -A"
-#git - Commit all files, add -m "message" after, or --amend
-alias gc="git commit -a"
+#git - Commit, add -m "message" after, or --amend
+alias gc="git commit"
 #git - Push commits to remote repository
 alias gp="git push -f"
 #git - view status
@@ -63,7 +63,7 @@ alias l="ls_extended"
 #Normal ls
 alias LS="/usr/bin/ls"
 #Kill window (Name of window needed after, like firefox, or vlc)
-alias fuck="killall -9 $1"
+alias fuck="killall -9"
 #Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
 alias song="instantmusic -s "
 alias songs="instantmusic -l "
