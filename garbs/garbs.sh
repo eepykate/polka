@@ -223,9 +223,9 @@ putgitrepo "$dotfilesrepo" "/home/$name"
 
 rm /tmp/SauceCodePro.zip
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip > /tmp/SauceCodePro.zip
-unzip /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF &>/dev/null
+unzip /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF -f &>/dev/null
 
-fc-cache -f -v
+fc-cache -f
 
 if [ ! -f /usr/bin/ls_extended ]; then
 curl -L "https://gitlab.com/GaugeK/dots/raw/master/bin/ls_extended?inline=false" -o "/usr/bin/ls_extended"
