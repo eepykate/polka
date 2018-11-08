@@ -221,6 +221,11 @@ putgitrepo "$dotfilesrepo" "/home/$name"
 #curl -L "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf" > "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 #chmod a+r "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
 
+rm /tmp/SauceCodePro.zip
+curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip > /tmp/SauceCodePro.zip
+unzip /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF &>/dev/null
+
+fc-cache -f -v
 
 if [ ! -f /usr/bin/ls_extended ]; then
 curl -L "https://gitlab.com/GaugeK/dots/raw/master/bin/ls_extended?inline=false" -o "/usr/bin/ls_extended"
