@@ -6,7 +6,7 @@ export KDE_SESSION_VERSION="5"
 fi
 
 #Faster keyboard repeat rate
-xset r rate 250 30 &
+xset r rate 250 30 
 
 #Allow binaries/scripts from ~/bin to be used in shells without absolute path
 export PATH="$PATH:$HOME/bin"
@@ -32,3 +32,6 @@ fi
 
 export GTK_MODULES
 export UBUNTU_MENUPROXY
+
+#Default user
+export DEFAULT_USER="gauge"

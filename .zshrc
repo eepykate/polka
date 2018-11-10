@@ -3,21 +3,11 @@ export ZSH="/usr/share/oh-my-zsh"
 ZSH_THEME="agnoster"
 source $ZSH/oh-my-zsh.sh
 
-#Allow binaries from /home/gauge/bin to be used as commands
-path+=('/home/gauge/bin')
-
-##More GTK support for global menus
-export GTK_MODULES="appmenu-gtk-module"
-export UBUNTU_MENUPROXY
-
-#Default GUI text editor
-export VISUAL='code'
-
 #Default terminal text editor
 export EDITOR='vim'
 
-#KDE as current Xorg desktop session (For Window Managers)
-#export XDG_CURRENT_DESKTOP=KDE
+#Execute commands from ~/.zprofile when zsh is opened
+source ~/.zprofile
 
 #mkdir and cd
 function mc {
@@ -31,7 +21,10 @@ function mc {
 }
 
 #Powerline sudo prompt
-export SUDO_PROMPT="$(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\uE0B0")$(tput setab 4)$(tput setaf 0) password for %p $(tput sgr0)$(tput setaf 4)$(echo "\uE0B0")$(tput sgr0) "
+export SUDO_PROMPT="$(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\uE0B0")$(tput setab 4)$(tput setaf 0) password for %p $(tput sgr0)$(tput setaf 4)$(echo "\uE0B0")$(tput sgr0) " 
+
+#Default GUI text editor
+export VISUAL='code'
 
 #Aliases
 #git - List changed files since last commit

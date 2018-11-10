@@ -27,3 +27,4 @@ tint2 &
 lxqt-notificationd &
 volumeicon &
 xautolock -time 10 -locker /usr/bin/lock &
+albert &

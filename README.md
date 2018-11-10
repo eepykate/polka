@@ -1,4 +1,4 @@
-![Current scrot](https://i.imgur.com/PSwb0dw.png)
+![Current scrot](https://i.imgur.com/BMPbllC.png)
 
 ---
 
@@ -8,11 +8,11 @@
 
 **Window Manager:** Openbox
 
-**Qt Colour Scheme:** [OneDark](https://gitlab.com/GaugeK/dotfiles-and-themes/blob/master/.local/share/color-schemes/OneDark.colors)
+**Qt Colour Scheme:** [OneDark](https://gitlab.com/GaugeK/dots/blob/master/.local/share/color-schemes/OneDark.colors)
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** [KvOneDark-NoTrans](https://gitlab.com/GaugeK/dotfiles-and-themes/tree/master/.config/Kvantum/KvOneDark-NoTrans)
+**Kvantum Theme:** [KvOneDark-NoTrans](https://gitlab.com/GaugeK/dots/tree/master/.config/Kvantum/KvOneDark-NoTrans)
 
 **GTK Theme:** OneDark \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
