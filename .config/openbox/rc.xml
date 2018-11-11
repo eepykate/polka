@@ -735,6 +735,11 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
+   <application class="*">
+     <decor>yes</decor>
+   </application>
+  </applications>
+  <applications>
     <application class="plasmashell">
       <layer>above</layer>
     </application>

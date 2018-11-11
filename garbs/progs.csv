@@ -2,24 +2,24 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,base-devel,is a group package with sudo and compilation software
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
-,lxqt, The LXQt desktop environment
-,plasma, The KDE plasma desktop environment
-,nvidia, NVIDIA drivers
-,nvidia-utils,  NVIDIA drivers
-,lib32-nvidia-utils, NVIDIA drivers
+,lxqt,is a modular desktop environment
+,plasma,is a desktop environment
+,nvidia,are the NVIDIA drivers
+,nvidia-utils,are the NVIDIA drivers
+,lib32-nvidia-utils,are the NVIDIA drivers
 ,xclip,
-,sddm,
-,kvantum-qt5,
-,qbittorrent,
-,nvidia-settings,
-,neofetch,
-,kdenlive,
-,frei0r-plugins,
-,cmatrix,
-,clementine,
-,volumeicon,
-,tint2,
-,noto-fonts,
+,sddm,is a display manager (login screen)
+,kvantum-qt5,is a Qt theming engine
+,qbittorrent,is a torrent client
+,nvidia-settings,is a configuration tool for the NVIDIA drivers
+,neofetch,is a system information tool, used normally for showing off in r/unixporn
+,kdenlive,is an advanced video editor
+,frei0r-plugins,is plugins for kdenlive
+,cmatrix,is a useless but fun matrix-like thing for terminal
+,clementine,is a graphical music player
+,volumeicon,is a volume icon that hangs in the systray
+,tint2,is a panel designed for openbox
+,noto-fonts,is the google noto fonts
 ,xorg-server,is the graphical server
 ,xorg-xdpyinfo,retrieves screen information for some scripts
 ,xorg-xwininfo,allows querying information about windows
@@ -28,15 +28,15 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xorg-xset,
 ,xorg-xprop,
 ,xorg-xrandr,
-,curl,
-,wget,
-,code,
+,curl,is used for downloading stuff from the web through a CLI
+,wget,is used for downloading stuff from the web through a CLI
+,code,is a graphical IDE
 ,papirus-icon-theme,
-,rofi,
-,dolphin,
-,konsole,
-,yakuake,
-,zsh,
+,rofi,is an application launcher that uses binaries/scripts instead of .desktop files
+,dolphin,is a Qt/KDE file manager
+,konsole,is a Qt/KDE terminal emulator
+,yakuake,is a Qt/KDE drop-down terminal
+,zsh,is my shell of choice
 ,ttf-inconsolata,is the monospace font of LARBS
 ,ttf-linux-libertine,provides the sans and serif fonts for LARBS
 ,arandr,is a UI for screen adjustment
@@ -75,15 +75,16 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,atool,manages and gives information about archives
 ,source-highlight,
 ,syntax-highlighting,
-,vlc,
-A,breeze-hacked-cursor-theme,
-A,vim-pathogen,
-A,ttf-emojione,
-A,i3lock-color-git,
-A,qview,
+,vlc,is an application for watching movies
+,gimp,is an advanced image editor
+,inkscape,is an advanced SVG editor
+A,breeze-hacked-cursor-theme,is my choice of cursor theme
+A,i3lock-color-git, is the lock screen
+A,qview,is an image viewer
 A,compton-tryone-git,
-A,oh-my-zsh-git,
-A,ttf-nerd-fonts-symbols,
-A,ccp4m,
-A,python-instant-music-git,
-A,albert,
+A,oh-my-zsh-git,allows for more themes on ZSH
+A,ccp4m,is a dependency for ls_extended
+A,python-instant-music-git,is used for downloading music through the terminal from youtube
+A,albert,is an application launcher
+A,gtk3-mushrooms,is gtk3 without CSD, and a few other improvements.
+
