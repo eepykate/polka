@@ -177,6 +177,11 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+    <keybind key="A-d">
+      <action name="Execute">
+        <command>/usr/bin/skippy-xd</command>
+      </action>
+    </keybind>
     <keybind key="W-l">
       <action name="Execute">
         <command>/usr/bin/lock</command>
@@ -735,9 +740,9 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-   <application class="*">
-     <decor>yes</decor>
-   </application>
+    <application class="*">
+      <decor>yes</decor>
+    </application>
   </applications>
   <applications>
     <application class="plasmashell">

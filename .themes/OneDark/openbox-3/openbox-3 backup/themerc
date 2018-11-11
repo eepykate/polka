@@ -43,7 +43,7 @@ window.inactive.label.text.color: #c1c1c1
 window.active.button.shade.unpressed.image.color:   #4db6ac
 window.active.button.shade.hover.image.color:       #009688
 window.active.button.shade.pressed.image.color:     #00796b
-window.active.button.shade.disabled.image.color:    #696969
+window.active.button.shade.disabled.image.color:    #e0e0e0
 window.active.button.shade.toggled.unpressed.image.color:   #4db6ac
 window.active.button.shade.toggled.hover.image.color:       #009688
 window.active.button.shade.toggled.pressed.image.color:     #00796b
@@ -52,7 +52,7 @@ window.active.button.shade.toggled.pressed.image.color:     #00796b
 window.active.button.desk.unpressed.image.color:    #ffb74d
 window.active.button.desk.hover.image.color:        #ff9800
 window.active.button.desk.pressed.image.color:      #f57c00
-window.active.button.desk.disabled.image.color:     #696969
+window.active.button.desk.disabled.image.color:     #e0e0e0
 window.active.button.desk.toggled.unpressed.image.color:    #ffb74d
 window.active.button.desk.toggled.hover.image.color:        #ff9800
 window.active.button.desk.toggled.pressed.image.color:      #f57c00
@@ -77,21 +77,20 @@ window.active.button.max.disabled.image.color:      #696969
 window.active.button.max.toggled.unpressed.image.color:     #61afef
 window.active.button.max.toggled.hover.image.color:         #2196f3
 window.active.button.max.toggled.pressed.image.color:       #1976d2
-window.active.button.max.toggled.disabled.image.color:       #696969
 
 window.active.button.unpressed.image.color: #ffffff
 window.active.button.pressed.image.color: #61afef
-window.active.button.disabled.image.color: #696969
+window.active.button.disabled.image.color: #9e9e9e
 window.active.button.hover.image.color: #61afef
-window.active.button.toggled.unpressed.image.color: #61afef
+window.active.button.toggled.unpressed.image.color: #ffffff
 window.active.button.toggled.pressed.image.color: `#61afef
 window.active.button.toggled.hover.image.color: #61afef
 
-window.inactive.button.unpressed.image.color: #696969
+window.inactive.button.unpressed.image.color: #888888
 window.inactive.button.pressed.image.color: #61afef
-window.inactive.button.disabled.image.color: #696969
+window.inactive.button.disabled.image.color: #aaaaaa
 window.inactive.button.hover.image.color: #61afef
-window.inactive.button.toggled.unpressed.image.color: #696969
+window.inactive.button.toggled.unpressed.image.color: #cccccc
 window.inactive.button.toggled.pressed.image.color: #61afef
 window.inactive.button.toggled.hover.image.color: #61afef
 
@@ -142,9 +141,9 @@ menu.separator.color: #1e2127
 
 menu.title.text.color: #ffffff
 menu.items.text.color: #ffffff
-menu.items.disabled.text.color: #696969
+menu.items.disabled.text.color: #aaaaaa
 menu.items.active.text.color: #000000
-menu.items.active.disabled.text.color: #696969
+menu.items.active.disabled.text.color: #bfbfbf
 
 menu.items.bg: flat solid
 menu.items.bg.color: #1e2127
