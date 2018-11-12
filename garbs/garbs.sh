@@ -35,7 +35,7 @@ esac done
 ### FUNCTIONS ###
 ###
 
-initialcheck() { pacman -S --noconfirm --needed dialog || { echo "Are you sure you're running this as the root user? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection?"; exit; } ;}
+initialcheck() { pacman -S --noconfirm --needed dialog || { echo "Are you sure you're running this as the root user? Does the root user have sudoers permissions? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection?"; exit; } ;}
 
 #ins_ls_extended() { # Installs ls_extended manually if not installed. 
 #	[[ -f /usr/bin/ls_extended ]] || (

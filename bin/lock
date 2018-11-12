@@ -4,6 +4,6 @@ revert() {
 }
 trap revert HUP INT TERM
 xset +dpms dpms 10 10 10
-i3lock -d --color 1e2127 --insidecolor=#1e2127ff  --insidewrongcolor=1e2127ff --ringwrongcolor=e06c75ff --ringvercolor=61afefff --insidevercolor=1e2127ff --ringcolor=262a32ff --verifcolor=ccccccff --wrongcolor=ccccccff --keyhlcolor=61afefff
+i3lock --color 1e2127 --insidecolor=#1e2127ff  --insidewrongcolor=1e2127ff --ringwrongcolor=e06c75ff --ringvercolor=61afefff --insidevercolor=1e2127ff --ringcolor=262a32ff --verifcolor=ccccccff --wrongcolor=ccccccff --keyhlcolor=61afefff --bshlcolor=e06c75ff
 revert
  

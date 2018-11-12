@@ -47,6 +47,11 @@ window.active.button.shade.disabled.image.color:    #696969
 window.active.button.shade.toggled.unpressed.image.color:   #4db6ac
 window.active.button.shade.toggled.hover.image.color:       #009688
 window.active.button.shade.toggled.pressed.image.color:     #00796b
+window.inactive.button.shade.hover.image.color:       #009688
+window.inactive.button.shade.pressed.image.color:     #00796b
+window.inactive.button.shade.disabled.image.color:    #696969
+window.inactive.button.shade.toggled.hover.image.color:       #009688
+window.inactive.button.shade.toggled.pressed.image.color:     #00796b
 
 !! orange: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
 window.active.button.desk.unpressed.image.color:    #ffb74d
@@ -56,18 +61,30 @@ window.active.button.desk.disabled.image.color:     #696969
 window.active.button.desk.toggled.unpressed.image.color:    #ffb74d
 window.active.button.desk.toggled.hover.image.color:        #ff9800
 window.active.button.desk.toggled.pressed.image.color:      #f57c00
+window.inactive.button.desk.hover.image.color:        #ff9800
+window.inactive.button.desk.pressed.image.color:      #f57c00
+window.inactive.button.desk.disabled.image.color:     #696969
+window.inactive.button.desk.toggled.hover.image.color:        #ff9800
+window.inactive.button.desk.toggled.pressed.image.color:      #f57c00
+
 
 !! green: u:300, h:500, p:700, d:grey300
 window.active.button.iconify.unpressed.image.color: #98c375
 window.active.button.iconify.hover.image.color:     #4caf50
 window.active.button.iconify.pressed.image.color:   #388e3c
 window.active.button.iconify.disabled.image.color:  #e0e0e0
+window.inactive.button.iconify.hover.image.color:     #4caf50
+window.inactive.button.iconify.pressed.image.color:   #388e3c
+window.inactive.button.iconify.disabled.image.color:  #e0e0e0
 
 !! red: u:300, h:500, p:700, d:grey300
 window.active.button.close.unpressed.image.color:   #e06c75
 window.active.button.close.hover.image.color:       #b84c55
 window.active.button.close.pressed.image.color:     #b84c55
 window.active.button.close.disabled.image.color:    #696969
+window.inactive.button.close.hover.image.color:       #b84c55
+window.inactive.button.close.pressed.image.color:     #b84c55
+window.inactive.button.close.disabled.image.color:    #696969
 
 !! blue: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
 window.active.button.max.unpressed.image.color:     #61afef
