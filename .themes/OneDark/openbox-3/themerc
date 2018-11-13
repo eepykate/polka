@@ -36,15 +36,15 @@ window.inactive.title.separator.color: #1e2127
 window.active.client.color: #1e2127
 window.inactive.client.color: #1e2127
 
-window.active.label.text.color: #ffffff
+window.active.label.text.color: #cccccc
 window.inactive.label.text.color: #c1c1c1
 
 !! teal: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
-window.active.button.shade.unpressed.image.color:   #4db6ac
+window.active.button.shade.unpressed.image.color:   #cccccc
 window.active.button.shade.hover.image.color:       #009688
 window.active.button.shade.pressed.image.color:     #00796b
 window.active.button.shade.disabled.image.color:    #696969
-window.active.button.shade.toggled.unpressed.image.color:   #4db6ac
+window.active.button.shade.toggled.unpressed.image.color:   #cccccc
 window.active.button.shade.toggled.hover.image.color:       #009688
 window.active.button.shade.toggled.pressed.image.color:     #00796b
 window.inactive.button.shade.hover.image.color:       #009688
@@ -54,11 +54,11 @@ window.inactive.button.shade.toggled.hover.image.color:       #009688
 window.inactive.button.shade.toggled.pressed.image.color:     #00796b
 
 !! orange: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
-window.active.button.desk.unpressed.image.color:    #ffb74d
+window.active.button.desk.unpressed.image.color:    #cccccc
 window.active.button.desk.hover.image.color:        #ff9800
 window.active.button.desk.pressed.image.color:      #f57c00
 window.active.button.desk.disabled.image.color:     #696969
-window.active.button.desk.toggled.unpressed.image.color:    #ffb74d
+window.active.button.desk.toggled.unpressed.image.color:    #cccccc
 window.active.button.desk.toggled.hover.image.color:        #ff9800
 window.active.button.desk.toggled.pressed.image.color:      #f57c00
 window.inactive.button.desk.hover.image.color:        #ff9800
@@ -69,7 +69,7 @@ window.inactive.button.desk.toggled.pressed.image.color:      #f57c00
 
 
 !! green: u:300, h:500, p:700, d:grey300
-window.active.button.iconify.unpressed.image.color: #98c375
+window.active.button.iconify.unpressed.image.color: #cccccc
 window.active.button.iconify.hover.image.color:     #4caf50
 window.active.button.iconify.pressed.image.color:   #388e3c
 window.active.button.iconify.disabled.image.color:  #e0e0e0
@@ -78,7 +78,7 @@ window.inactive.button.iconify.pressed.image.color:   #388e3c
 window.inactive.button.iconify.disabled.image.color:  #e0e0e0
 
 !! red: u:300, h:500, p:700, d:grey300
-window.active.button.close.unpressed.image.color:   #e06c75
+window.active.button.close.unpressed.image.color:   #cccccc
 window.active.button.close.hover.image.color:       #b84c55
 window.active.button.close.pressed.image.color:     #b84c55
 window.active.button.close.disabled.image.color:    #696969
@@ -87,20 +87,20 @@ window.inactive.button.close.pressed.image.color:     #b84c55
 window.inactive.button.close.disabled.image.color:    #696969
 
 !! blue: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
-window.active.button.max.unpressed.image.color:     #61afef
+window.active.button.max.unpressed.image.color:     #cccccc
 window.active.button.max.hover.image.color:         #61afef
 window.active.button.max.pressed.image.color:       #5092c7
 window.active.button.max.disabled.image.color:      #696969
-window.active.button.max.toggled.unpressed.image.color:     #61afef
+window.active.button.max.toggled.unpressed.image.color:     #cccccc
 window.active.button.max.toggled.hover.image.color:         #2196f3
 window.active.button.max.toggled.pressed.image.color:       #1976d2
 window.active.button.max.toggled.disabled.image.color:       #696969
 
-window.active.button.unpressed.image.color: #ffffff
+window.active.button.unpressed.image.color: #cccccc
 window.active.button.pressed.image.color: #61afef
 window.active.button.disabled.image.color: #696969
 window.active.button.hover.image.color: #61afef
-window.active.button.toggled.unpressed.image.color: #61afef
+window.active.button.toggled.unpressed.image.color: #cccccc
 window.active.button.toggled.pressed.image.color: `#61afef
 window.active.button.toggled.hover.image.color: #61afef
 
@@ -157,8 +157,8 @@ menu.overlap.y: 0
 menu.border.color: #1e2127
 menu.separator.color: #1e2127
 
-menu.title.text.color: #ffffff
-menu.items.text.color: #ffffff
+menu.title.text.color: #cccccc
+menu.items.text.color: #cccccc
 menu.items.disabled.text.color: #696969
 menu.items.active.text.color: #000000
 menu.items.active.disabled.text.color: #696969
@@ -180,7 +180,7 @@ osd.border.width: 1
 
 osd.border.color: #61afef
 
-osd.label.text.color: #ffffff
+osd.label.text.color: #cccccc
 
 osd.bg: flat solid
 osd.bg.color: #1e2127

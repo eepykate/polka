@@ -35,3 +35,8 @@ export UBUNTU_MENUPROXY
 
 #Default user
 export DEFAULT_USER="gauge"
+
+# Start graphical server if openbox not already running.
+#if [ "$TTY" = "/dev/tty1" ]; then
+#	pgrep -x openbox || exec startx
+#fi

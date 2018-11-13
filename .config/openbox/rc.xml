@@ -745,6 +745,11 @@
     </application>
   </applications>
   <applications>
+    <application class="conky">
+      <decor>no</decor>
+    </application>
+  </applications>
+  <applications>
     <application class="plasmashell">
       <layer>above</layer>
     </application>

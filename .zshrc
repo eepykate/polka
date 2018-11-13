@@ -46,6 +46,8 @@ alias rems="sudo pacman -Rs"
 alias src="sudo pacman -Ss"
 alias lst="pacman -Q|cut -f 1 -d ' '"
 alias p="sudo pacman"
+#Reconfigure openbox
+alias obr="openbox --reconfigure"
 #Open ZSH shell as root
 alias SU="sudo zsh"
 #Open blue matrix-like application in current shell

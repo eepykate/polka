@@ -27,6 +27,8 @@ feh --bg-fill "/home/$USER/Wallpapers/Hexagon outline OneSided.png" &
 lxqt-notificationd &
 volumeicon &
 xautolock -time 10 -locker /usr/bin/lock &
+kglobalaccel5 &
 albert &
 tint2 -c /home/gauge/.config/tint2/topleft.tint2rc &
 tint2 -c /home/gauge/.config/tint2/topright.tint2rc &
+conky &
