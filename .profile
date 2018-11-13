@@ -1,9 +1,11 @@
 #KDE as Desktop Session for openbox, for Qt themes
-if [[ $DESKTOP_SESSION="openbox" ]]; then
-export DESKTOP_SESSION="kde"
-export XDG_CURRENT_DESKTOP="KDE" 
-export KDE_SESSION_VERSION="5"
-fi
+#if [[ $DESKTOP_SESSION="openbox" ]]; then
+#export DESKTOP_SESSION="kde"
+#export XDG_CURRENT_DESKTOP="KDE" 
+#export KDE_SESSION_VERSION="5"
+#fi
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #Faster keyboard repeat rate
 xset r rate 250 30 

@@ -26,8 +26,8 @@ window.client.padding.width: 0
 window.client.padding.height: 0
 window.handle.width: 0
 
-padding.width: 2
-padding.height: 2
+padding.width: 1
+padding.height: 1
 
 window.active.border.color: #61afef
 window.inactive.border.color: #8592ad
