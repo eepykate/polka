@@ -1,4 +1,4 @@
-![Current scrot](https://i.imgur.com/5tndzYB.png)
+![Current scrot](https://i.imgur.com/6lFRnH9.png)
 
 ---
 
@@ -8,7 +8,7 @@
 
 **Window Manager:** Openbox
 
-**Qt Colour Scheme:** [OneDark](https://gitlab.com/GaugeK/dots/blob/master/.local/share/color-schemes/OneDark.colors)
+**Qt Colour Scheme:** [OneDark](https://gitlab.com/GaugeK/dots/blob/master/.config/qt5ct/colors/OneDark.conf) (qt5ct)
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 

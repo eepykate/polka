@@ -3,6 +3,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
 ,lxqt,is a modular desktop environment
+,plasma,is the KDE desktop environment
 ,nvidia,are the NVIDIA drivers
 ,nvidia-utils,are the NVIDIA drivers
 ,lib32-nvidia-utils,are the NVIDIA drivers
