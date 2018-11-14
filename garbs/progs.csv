@@ -79,6 +79,8 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,gimp,is an advanced image editor
 ,inkscape,is an advanced SVG editor
 ,qt5ct,
+,xssstate,
+,conky,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
 A,i3lock-color-git, is the lock screen
 A,qview,is an image viewer

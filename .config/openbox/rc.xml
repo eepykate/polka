@@ -177,6 +177,21 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+     <keybind key="C-A-d">
+      <action name="Execute">
+       <command>dolphin</command>
+      </action>
+   </keybind>
+    <keybind key="C-A-f">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-h">
+      <action name="Execute">
+        <command>hib</command>
+      </action>
+    </keybind>
     <keybind key="A-d">
       <action name="Execute">
         <command>/usr/bin/skippy-xd</command>
@@ -184,7 +199,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>/usr/bin/lock</command>
+        <command>lock</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -295,29 +310,24 @@
         <command>pulseaudio-ctl mute</command>
       </action>
     </keybind>
-    <keybind key="W-S-Print">
-      <action name="Execute">
-        <command>spectacle -fb</command>
-      </action>
-    </keybind>
     <keybind key="S-Print">
       <action name="Execute">
-        <command>spectacle -rb</command>
+        <command>scrot -s -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
       </action>
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>spectacle -mb</command>
+        <command>scrot -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
       </action>
     </keybind>
     <keybind key="W-Print">
       <action name="Execute">
-        <command>spectacle -ab</command>
+        <command>scrot -u -b -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
       </action>
     </keybind>
     <keybind key="C-Print">
       <action name="Execute">
-        <command>spectacle</command>
+        <command>scrpt -s -b -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
       </action>
     </keybind>
     <keybind key="W-space">
