@@ -3,7 +3,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
 ,lxqt,is a modular desktop environment
-,plasma,is a desktop environment
 ,nvidia,are the NVIDIA drivers
 ,nvidia-utils,are the NVIDIA drivers
 ,lib32-nvidia-utils,are the NVIDIA drivers
@@ -78,6 +77,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,vlc,is an application for watching movies
 ,gimp,is an advanced image editor
 ,inkscape,is an advanced SVG editor
+,qt5ct,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
 A,i3lock-color-git, is the lock screen
 A,qview,is an image viewer
@@ -88,3 +88,4 @@ A,python-instant-music-git,is used for downloading music through the terminal fr
 A,albert,is an application launcher
 A,gtk3-mushrooms,is gtk3 without CSD, and a few other improvements.
 A,skippy-xd-git, 
+
