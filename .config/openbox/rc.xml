@@ -177,11 +177,21 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-     <keybind key="C-A-d">
+    <keybind key="C-A-t">
+      <action name="Execute">
+       <command>synclient TouchpadOff=1</command>
+      </action>
+    </keybind>
+    <keybind key="W-A-t">
+      <action name="Execute">
+       <command>synclient TouchpadOff=0</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-d">
       <action name="Execute">
        <command>dolphin</command>
       </action>
-   </keybind>
+     </keybind>
     <keybind key="C-A-f">
       <action name="Execute">
         <command>firefox</command>
