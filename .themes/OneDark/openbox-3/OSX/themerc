@@ -1,0 +1,195 @@
+# Arc Openbox theme
+# Copyright (C) 2015 Dino Duratović <dinomol at mail dot com>
+#
+# #d8bfd8
+#
+# Inspired by and made for horst3180's Arc GTK theme
+# https://github.com/horst3180/Arc-theme
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+### WINDOW
+border.width: 2
+
+window.client.padding.width: 0
+window.client.padding.height: 0
+window.handle.width: 0
+
+padding.width: 1
+padding.height: 1
+
+window.active.border.color: #61afef
+window.inactive.border.color: #8592ad
+window.active.title.separator.color: #1e2127
+window.inactive.title.separator.color: #1e2127
+window.active.client.color: #1e2127
+window.inactive.client.color: #1e2127
+
+window.active.label.text.color: #cccccc
+window.inactive.label.text.color: #c1c1c1
+
+!! teal: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
+window.active.button.shade.unpressed.image.color:   #cccccc
+window.active.button.shade.hover.image.color:       #009688
+window.active.button.shade.pressed.image.color:     #00796b
+window.active.button.shade.disabled.image.color:    #696969
+window.active.button.shade.toggled.unpressed.image.color:   #cccccc
+window.active.button.shade.toggled.hover.image.color:       #009688
+window.active.button.shade.toggled.pressed.image.color:     #00796b
+window.inactive.button.shade.hover.image.color:       #009688
+window.inactive.button.shade.pressed.image.color:     #00796b
+window.inactive.button.shade.disabled.image.color:    #696969
+window.inactive.button.shade.toggled.hover.image.color:       #009688
+window.inactive.button.shade.toggled.pressed.image.color:     #00796b
+
+!! orange: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
+window.active.button.desk.unpressed.image.color:    #d19a66
+window.active.button.desk.hover.image.color:        #ff9800
+window.active.button.desk.pressed.image.color:      #f57c00
+window.active.button.desk.disabled.image.color:     #696969
+window.active.button.desk.toggled.unpressed.image.color:    #d19a66
+window.active.button.desk.toggled.hover.image.color:        #ff9800
+window.active.button.desk.toggled.pressed.image.color:      #f57c00
+window.inactive.button.desk.hover.image.color:        #ff9800
+window.inactive.button.desk.pressed.image.color:      #f57c00
+window.inactive.button.desk.disabled.image.color:     #696969
+window.inactive.button.desk.toggled.hover.image.color:        #ff9800
+window.inactive.button.desk.toggled.pressed.image.color:      #f57c00
+
+
+!! green: u:300, h:500, p:700, d:grey300
+window.active.button.iconify.unpressed.image.color: #98c379
+window.active.button.iconify.hover.image.color:     #4caf50
+window.active.button.iconify.pressed.image.color:   #388e3c
+window.active.button.iconify.disabled.image.color:  #e0e0e0
+window.inactive.button.iconify.hover.image.color:     #4caf50
+window.inactive.button.iconify.pressed.image.color:   #388e3c
+window.inactive.button.iconify.disabled.image.color:  #e0e0e0
+
+!! red: u:300, h:500, p:700, d:grey300
+window.active.button.close.unpressed.image.color:   #e06c75
+window.active.button.close.hover.image.color:       #b84c55
+window.active.button.close.pressed.image.color:     #b84c55
+window.active.button.close.disabled.image.color:    #696969
+window.inactive.button.close.hover.image.color:       #b84c55
+window.inactive.button.close.pressed.image.color:     #b84c55
+window.inactive.button.close.disabled.image.color:    #696969
+
+!! blue: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
+window.active.button.max.unpressed.image.color:     #61afef
+window.active.button.max.hover.image.color:         #61afef
+window.active.button.max.pressed.image.color:       #5092c7
+window.active.button.max.disabled.image.color:      #696969
+window.active.button.max.toggled.unpressed.image.color:     #cccccc
+window.active.button.max.toggled.hover.image.color:         #2196f3
+window.active.button.max.toggled.pressed.image.color:       #1976d2
+window.active.button.max.toggled.disabled.image.color:      #696969
+
+
+window.active.button.unpressed.image.color: #61afef
+window.active.button.pressed.image.color: #61afef
+window.active.button.disabled.image.color: #696969
+window.active.button.hover.image.color: #61afef
+window.active.button.toggled.unpressed.image.color: #61afef
+window.active.button.toggled.pressed.image.color: `#61afef
+window.active.button.toggled.hover.image.color: #61afef
+
+window.inactive.button.unpressed.image.color: #696969
+window.inactive.button.pressed.image.color: #61afef
+window.inactive.button.disabled.image.color: #696969
+window.inactive.button.hover.image.color: #61afef
+window.inactive.button.toggled.unpressed.image.color: #696969
+window.inactive.button.toggled.pressed.image.color: #61afef
+window.inactive.button.toggled.hover.image.color: #61afef
+
+window.active.title.bg: flat solid
+window.active.title.bg.color: #1e2127
+window.active.label.bg: flat solid
+window.active.label.bg.color: #1e2127
+#window.active.handle.bg: texture
+#window.active.grip.bg: texture
+window.inactive.title.bg: flat solid
+window.inactive.title.bg.color: #1e2127
+window.inactive.label.bg: flat solid
+window.inactive.label.bg.color: #1e2127
+#window.inactive.handle.bg: texture
+#window.inactive.grip.bg: texture
+
+window.active.button.unpressed.bg: parentrelative
+window.active.button.pressed.bg: parentrelative
+window.active.button.hover.bg: parentrelative
+window.active.button.disabled.bg: parentrelative
+window.active.button.toggled.unpressed.bg: parentrelative
+window.active.button.toggled.pressed.bg: parentrelative
+window.active.button.toggled.hover.bg: parentrelative
+window.inactive.button.unpressed.bg: parentrelative
+window.inactive.button.pressed.bg: parentrelative
+window.inactive.button.hover.bg: parentrelative
+window.inactive.button.disabled.bg: parentrelative
+window.inactive.button.toggled.unpressed.bg: parentrelative
+window.inactive.button.toggled.pressed.bg: parentrelative
+window.inactive.button.toggled.hover.bg: parentrelative
+
+window.label.text.justify: center
+
+#window.active.label.text.font: text shadow
+#window.inactive.label.text.font: text shadow
+
+### MENU
+menu.border.width: 2
+menu.separator.width: 2
+menu.separator.padding.width: 10
+menu.separator.padding.height: 2
+
+menu.overlap.x: 0
+menu.overlap.y: 0
+
+menu.border.color: #1e2127
+menu.separator.color: #1e2127
+
+menu.title.text.color: #cccccc
+menu.items.text.color: #cccccc
+menu.items.disabled.text.color: #696969
+menu.items.active.text.color: #000000
+menu.items.active.disabled.text.color: #696969
+
+menu.items.bg: flat solid
+menu.items.bg.color: #1e2127
+menu.items.active.bg: flat solid
+menu.items.active.bg.color: #61afef
+menu.title.bg: flat solid
+menu.title.bg.color: #1e2127
+
+menu.title.text.justify: center
+
+#menu.items.font: text shadow
+#menu.title.text.font: text shadow
+
+### OSD
+osd.border.width: 1
+
+osd.border.color: #61afef
+
+osd.label.text.color: #cccccc
+
+osd.bg: flat solid
+osd.bg.color: #1e2127
+osd.label.bg: flat solid
+osd.label.bg.color: #1e2127
+osd.hilight.bg: flat solid
+osd.hilight.bg.color: #61afef
+osd.unhilight.bg: flat solid
+osd.unhilight.bg.color: #1e2127
+
+#osd.label.text.font: text shadow

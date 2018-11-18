@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>OneDark</name>
+    <name>Faint_Dark</name>
     <titleLayout>CIMLN</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -179,19 +179,19 @@
   <keyboard>
     <keybind key="C-A-t">
       <action name="Execute">
-       <command>synclient TouchpadOff=1</command>
+        <command>synclient TouchpadOff=1</command>
       </action>
     </keybind>
     <keybind key="W-A-t">
       <action name="Execute">
-       <command>synclient TouchpadOff=0</command>
+        <command>synclient TouchpadOff=0</command>
       </action>
     </keybind>
     <keybind key="C-A-d">
       <action name="Execute">
-       <command>dolphin</command>
+        <command>dolphin</command>
       </action>
-     </keybind>
+    </keybind>
     <keybind key="C-A-f">
       <action name="Execute">
         <command>firefox</command>
@@ -327,17 +327,12 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
+        <command>scrot -m -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
       </action>
     </keybind>
     <keybind key="W-Print">
       <action name="Execute">
         <command>scrot -u -b -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
-      </action>
-    </keybind>
-    <keybind key="C-Print">
-      <action name="Execute">
-        <command>scrpt -s -b -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
       </action>
     </keybind>
     <keybind key="W-space">

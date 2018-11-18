@@ -24,6 +24,9 @@ function mc {
 export SUDO_PROMPT="$(/home/gauge/bin/bee)
 $(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\uE0B0")$(tput setab 4)$(tput setaf 0) password for %p $(tput sgr0)$(tput setaf 4)$(echo "\uE0B0")$(tput sgr0) " 
 
+#Correct wrong commands
+setopt CORRECT
+
 #Default GUI text editor
 export VISUAL='code'
 

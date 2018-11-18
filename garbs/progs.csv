@@ -3,7 +3,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
 ,lxqt,is a modular desktop environment
-,plasma,is the KDE desktop environment
 ,nvidia,are the NVIDIA drivers
 ,nvidia-utils,are the NVIDIA drivers
 ,lib32-nvidia-utils,are the NVIDIA drivers
@@ -82,6 +81,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xssstate,
 ,conky,
 ,xf86-input-synaptics,
+A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
 A,i3lock-color-git, is the lock screen
 A,qview,is an image viewer
