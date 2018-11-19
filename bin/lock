@@ -5,7 +5,8 @@
     --insidewrongcolor=1e2127ff\
     --ringwrongcolor=e06c75ff\
     --ringvercolor=61afefff\
-    --insidevercolor=1e2127ff --ringcolor=262a32ff\
+    --insidevercolor=1e2127ff\
+    --ringcolor=262a32ff\
     --verifcolor=ccccccff\
     --wrongcolor=ccccccff\
     --keyhlcolor=61afefff\
