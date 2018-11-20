@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>oomox-Theme1</name>
+    <name>Krayons</name>
     <titleLayout>CIMLN</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.

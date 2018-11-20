@@ -12,7 +12,7 @@
    version="1.0"
    height="1230"
    id="svg949"
-   sodipodi:docname="KvTheme1.svg"
+   sodipodi:docname="KvKrayons.svg"
    inkscape:version="0.92.2 2405546, 2018-03-11">
   <metadata
      id="metadata953">
@@ -39,9 +39,9 @@
      inkscape:window-height="1058"
      id="namedview951"
      showgrid="false"
-     inkscape:zoom="11.313708"
-     inkscape:cx="263.19409"
-     inkscape:cy="1187.6144"
+     inkscape:zoom="31.999999"
+     inkscape:cx="208.64561"
+     inkscape:cy="1184.4316"
      inkscape:window-x="1440"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -4999,7 +4999,7 @@
        inkscape:connector-curvature="0" />
     <path
        inkscape:connector-curvature="0"
-       style="display:inline;fill:#282a30;fill-opacity:1"
+       style="display:inline;fill:#21262f;fill-opacity:1"
        id="lineedit-normal"
        d="m 189.49393,40.999889 h 10 v 10.000003 h -10 z" />
     <path
