@@ -78,23 +78,23 @@ window.inactive.label.text.color: #c1c1c1
 !window.inactive.button.iconify.disabled.image.color:  #e0e0e0
 
 !! red: u:300, h:500, p:700, d:grey300
-!window.active.button.close.unpressed.image.color:   #cccccc
-!window.active.button.close.hover.image.color:       #b84c55
-!window.active.button.close.pressed.image.color:     #b84c55
-!window.active.button.close.disabled.image.color:    #696969
-!window.inactive.button.close.hover.image.color:       #b84c55
-!window.inactive.button.close.pressed.image.color:     #b84c55
-!window.inactive.button.close.disabled.image.color:    #696969
+window.active.button.close.unpressed.image.color:   #cccccc
+window.active.button.close.hover.image.color:       #e1b6b7
+window.active.button.close.pressed.image.color:     #e1b6b7
+window.active.button.close.disabled.image.color:    #696969
+window.inactive.button.close.hover.image.color:       #e1b6b7
+window.inactive.button.close.pressed.image.color:     #e1b6b7
+window.inactive.button.close.disabled.image.color:    #696969
 
-!! blue: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
+!! purple: u:300, h:500, p:700, d:grey300, tu:300, th:500, tp: 700
 !window.active.button.max.unpressed.image.color:     #cccccc
 !window.active.button.max.hover.image.color:         #fed2ff
-!window.active.button.max.pressed.image.color:       #5092c7
+!window.active.button.max.pressed.image.color:       #fed2ff
 !window.active.button.max.disabled.image.color:      #696969
 !window.active.button.max.toggled.unpressed.image.color:     #cccccc
-!window.active.button.max.toggled.hover.image.color:         #2196f3
-!window.active.button.max.toggled.pressed.image.color:       #1976d2
-!window.active.button.max.toggled.disabled.image.color:       #696969
+!window.active.button.max.toggled.hover.image.color:         #fed2ff
+!window.active.button.max.toggled.pressed.image.color:       #fed2ff
+!window.active.button.max.toggled.disabled.image.color:      #696969
 
 window.active.button.unpressed.image.color: #cccccc
 window.active.button.pressed.image.color: #b7cdff

@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=New Color Scheme
+ColorScheme=New Color Scheme 2
 Font=SauceCodePro Nerd Font,10,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
