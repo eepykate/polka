@@ -1,41 +1,172 @@
 URxvt.font: xft:SauceCodePro\ Nerd\ Font:style=Regular:size=11
 -uc|+uc
 
+! Extensions
+! ==========
+!
+! - matcher,selection-to-clipboard: for clicking on URLs
+! - font-size: for scaling fonts
+!   https://github.com/majutsushi/urxvt-font-size/blob/master/font-size
+!
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size
+
+
+! Fonts
+! =====
+URxvt.font: xft:Monospace:size=12
+URxvt.allow_bold: true
+
+
+! Scrolling
+! =========
+URxvt.saveLines: 10000
+URxvt.scrollBar: true
+URxvt.scrollstyle: rxvt
+URxvt.scrollBar_floating: true
+URxvt.scrollColor: #aaaaaa
+URxvt.scrollBar_right: true
+URxvt.thickness: 12
+
+! Scroll locking
+URxvt.scrollTtyOutput:      false
+URxvt.scrollWithBuffer:     true
+URxvt.scrollTtyKeypress:    true
+
+
+! Interaction
+! ===========
+
+! allow filepaths to select as one, otherwise delimit
+URxvt.cutchars: "\"(),<>[]{}|'`"
+
+! For clickable urls (RMB), not an exact match to gnome-shell.
+URxvt.url-launcher: xdg-open
+URxvt.matcher.button: 3
+
+
+! Key Bindings
+! ============
+
+! Copy/Paste, same keys as gnome-terminal
+! https://stackoverflow.com/questions/39884093
+! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings (optional)
+URxvt.keysym.C-M-c:    builtin-string:
+URxvt.keysym.C-M-v:    builtin-string:
+! Bind Ctrl-Shift-c & Ctrl-Shift-v to copy and paste
+! I dont know why, but I needed to use hex keysym values to get it to work
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
+URxvt.keysym.Home: \033[H
+URxvt.keysym.End:  \033[F
+
+! match vte/xterm
+URxvt.keysym.Control-Up:    \033[1;5A
+URxvt.keysym.Control-Down:  \033[1;5B
+URxvt.keysym.Control-Left:  \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+! clear the scrollback
+URxvt.keysym.Control-l: command:\033c
+
+! scale fonts
+URxvt.keysym.C-S-plus: font-size:increase
+URxvt.keysym.C-KP_Add: font-size:increase
+URxvt.keysym.C-S-underscore: font-size:decrease
+URxvt.keysym.C-KP_Subtract: font-size:decrease
+URxvt.keysym.C-0: font-size:reset
+URxvt.keysym.C-KP_0: font-size:reset
+
+
+! Theme/Colors
+! ============
+
+URxvt.fading: 0
+
+URxvt.cursorColor: #AAAAAA
+URxvt.cursorBlink: 1
+URxvt.cursorUnderline: 1
+
+URxvt.background: black
+URxvt.foreground: gray
+
+!!Onedark
+
+!! special
+!*.foreground:   #9ba2b2
+!*.background:   #1e2127
+!*.cursorColor:  #9ba2b2
+
+!! black
+!*.color0:       #1e2127
+!*.color8:       #1e2127
+
+!! red
+!*.color1:       #d95360
+!*.color9:       #d95360
+
+!! green
+!*.color2:       #86bb62
+!*.color10:      #86bb62
+
+!! yellow
+!*.color3:       #c7894f
+!*.color11:      #c7894f
+
+!! blue
+!*.color4:       #4d9cee
+!*.color12:      #4d9cee
+
+!! magenta
+!*.color5:       #b959d8
+!*.color13:      #b959d8
+
+!! cyan
+!*.color6:       #44a8b6
+!*.color14:      #44a8b6
+
+!! white
+!*.color7:       #9ba2b2
+!*.color15:      #9ba2b2
+
+!!Krayon
+
 ! special
-*.foreground:   #9ba2b2
-*.background:   #1e2127
-*.cursorColor:  #9ba2b2
+*.foreground:   #c5c8c6
+*.background:   #181a21
+*.cursorColor:  #c5c8c6
 
 ! black
-*.color0:       #1e2127
-*.color8:       #1e2127
+*.color0:       #181a21
+*.color8:       #181a21
 
 ! red
-*.color1:       #d95360
-*.color9:       #d95360
+*.color1:       #b6465f
+*.color9:       #b6465f
 
 ! green
-*.color2:       #86bb62
-*.color10:      #86bb62
+*.color2:       #3ab795
+*.color10:      #3ab795
 
 ! yellow
-*.color3:       #c7894f
-*.color11:      #c7894f
+*.color3:       #f0c987
+*.color11:      #f0c987
 
 ! blue
-*.color4:       #4d9cee
-*.color12:      #4d9cee
+*.color4:       #6992c5
+*.color12:      #6992c5
 
 ! magenta
-*.color5:       #b959d8
-*.color13:      #b959d8
+*.color5:       #afb3f7
+*.color13:      #afb3f7
 
 ! cyan
-*.color6:       #44a8b6
-*.color14:      #44a8b6
+*.color6:       #1d8a99
+*.color14:      #1d8a99
 
 ! white
-*.color7:       #9ba2b2
-*.color15:      #9ba2b2
-
-
+*.color7:       #707880
+*.color15:      #c5c8c6

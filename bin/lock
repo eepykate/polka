@@ -1,16 +1,16 @@
 #!/bin/sh
   i3lock \
-    --color 1e2127\
-    --insidecolor=1e2127ff\
-    --insidewrongcolor=1e2127ff\
-    --ringwrongcolor=e06c75ff\
-    --ringvercolor=61afefff\
-    --insidevercolor=1e2127ff\
-    --ringcolor=262a32ff\
+    --color 181a21\
+    --insidecolor=181a21ff\
+    --insidewrongcolor=181a21ff\
+    --ringwrongcolor=b6465fff\
+    --ringvercolor=6992c5ff\
+    --insidevercolor=181a21ff\
+    --ringcolor=2f3341ff\
     --verifcolor=ccccccff\
     --wrongcolor=ccccccff\
-    --keyhlcolor=61afefff\
-    --bshlcolor=e06c75ff &
+    --keyhlcolor=6992c5ff\
+    --bshlcolor=b6465fff &
 timeout="10000"
 while pgrep -x i3lock; do
   [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off
