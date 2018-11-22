@@ -30,6 +30,11 @@ setopt CORRECT
 #Default GUI text editor
 export VISUAL='code'
 
+#cd then ls
+c() {
+  cd $1 && ls_extended
+}
+
 #Aliases
 #git - List changed files since last commit
 alias gl="git diff --no-commit-id --name-only"

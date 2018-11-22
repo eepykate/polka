@@ -39,8 +39,7 @@ color-echo 'shell  '   'zsh'
 color-echo 'wm     '   'openbox'
 
 # colors
-echo -e "   $blu▪$rst $cyn▪$rst $prp▪$rst $ylw▪$rst $grn▪$rst $red▪$rst "
-#echo -e "   $blu█$rst $cyn█$rst $prp█$rst $ylw█$rst $grn█$rst $red█$rst "
+echo -e "   $red▪$rst $grn▪$rst $ylw▪$rst $blu▪$rst $prp▪$rst $cyn▪$rst"
 
 
 echo
