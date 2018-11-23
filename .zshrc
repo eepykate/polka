@@ -9,6 +9,18 @@ export EDITOR='vim'
 #Execute commands from ~/.zprofile when zsh is opened
 source ~/.zprofile
 
+#Correct wrong commands
+setopt CORRECT
+
+#Powerline sudo prompt
+export SUDO_PROMPT="$(/home/gauge/bin/bee)
+$(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\uE0B0")$(tput setab 4)$(tput setaf 0) password for %p $(tput sgr0)$(tput setaf 4)$(echo "\uE0B0")$(tput sgr0) " 
+
+#cd then ls
+c() {
+  cd $1 && ls_extended
+}
+
 #mkdir and cd
 function mc {
   if [ ! -n "$1" ]; then
@@ -20,20 +32,8 @@ function mc {
   fi
 }
 
-#Powerline sudo prompt
-export SUDO_PROMPT="$(/home/gauge/bin/bee)
-$(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\uE0B0")$(tput setab 4)$(tput setaf 0) password for %p $(tput sgr0)$(tput setaf 4)$(echo "\uE0B0")$(tput sgr0) " 
-
-#Correct wrong commands
-setopt CORRECT
-
 #Default GUI text editor
 export VISUAL='code'
-
-#cd then ls
-c() {
-  cd $1 && ls_extended
-}
 
 #Aliases
 #git - List changed files since last commit
