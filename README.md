@@ -1,4 +1,4 @@
-![Current scrot](https://i.imgur.com/6lFRnH9.png)
+![Current scrot](https://i.imgur.com/eWJc7Oj.png)
 
 ---
 
@@ -8,15 +8,17 @@
 
 **Window Manager:** Openbox
 
-**Qt Colour Scheme:** [OneDark](https://gitlab.com/GaugeK/dots/blob/master/.config/qt5ct/colors/OneDark.conf) (qt5ct)
+**Colour Scheme:** [Krayons](https://gitlab.com/GaugeK/dots/raw/master/colours/Krayons.png)
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** [KvOneDark-NoTrans](https://gitlab.com/GaugeK/dots/tree/master/.config/Kvantum/KvOneDark-NoTrans)
-
-**GTK Theme:** OneDark \(Generated with [oomox](https://github.com/themix-project/oomox)\)
+**Kvantum Theme:** [KvKrayons](https://gitlab.com/GaugeK/dots/tree/master/.config/Kvantum/KvKrayons)
 
 **Icon Theme:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+
+**Wallpaper:** [Hexagon Krayons](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Hexagon%20Krayons.png)
+
+**GTK Theme:** Krayons \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
 **Cursor Theme:** Breeze-Hacked
 
