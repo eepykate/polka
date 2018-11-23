@@ -1,359 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openbox_menu xmlns="http://openbox.org/3.4/menu">
-	<menu id="apps-accessories-menu" label="Accessories">
-		<item label="Calculator">
-			<action name="Execute">
-				<command>gnome-calculator</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Character Map">
-			<action name="Execute">
-				<command>gnome-character-map</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Ark File Archiver">
-			<action name="Execute">
-				<command>ark</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-	</menu>
-	<menu id="apps-editors-menu" label="Editors">
-		<item label="VSCode">
-			<action name="Execute">
-				<execute>code</execute>
-			</action>
-		</item>
-		<item label="Kate">
-			<action name="Execute">
-				<command>kate</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="GVim">
-			<action name="Execute">
-				<command>gvim</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-					<wmclass>GVim</wmclass>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Emacs">
-			<action name="Execute">
-				<command>emacs</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-					<wmclass>Emacs</wmclass>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="GEdit">
-			<action name="Execute">
-				<command>gedit</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Kwrite">
-			<action name="Execute">
-				<command>kwrite</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-	</menu>
-	<menu id="apps-term-menu" label="Terminals">
-		<item label="Rxvt Unicode">
-			<action name="Execute">
-				<command>urxvt</command>
-			</action>
-		</item>
-		<item label="Gnome Terminal">
-			<action name="Execute">
-				<command>gnome-terminal</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Xfce Terminal">
-			<action name="Execute">
-				<command>xfce4-terminal</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Konsole">
-			<action name="Execute">
-				<command>konsole</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Xterm">
-			<action name="Execute">
-				<command>xterm</command>
-			</action>
-		</item>
-	</menu>
-	<menu id="apps-net-menu" label="Internet">
-		<item label="Firefox">
-			<action name="Execute">
-				<command>firefox</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-					<wmclass>Firefox</wmclass>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Opera">
-			<action name="Execute">
-				<command>opera</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-					<wmclass>Opera</wmclass>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Konqueror">
-			<action name="Execute">
-				<command>konqueror</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Epiphany">
-			<action name="Execute">
-				<command>epiphany</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Pidgin Instant Messenger">
-			<action name="Execute">
-				<command>pidgin</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Kopete Instant Messenger">
-			<action name="Execute">
-				<command>kopete</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="XChat">
-			<action name="Execute">
-				<command>xchat</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-	</menu>
-	<menu id="apps-multimedia-menu" label="Multimedia">
-		<item label="Clementine">
-			<action name="Execute">
-				<command>amarok</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Rhythmbox">
-			<action name="Execute">
-				<command>rhythmbox</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="K3b">
-			<action name="Execute">
-				<command>k3b</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="MPlayer">
-			<action name="Execute">
-				<command>gmplayer</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-					<wmclass>MPlayer</wmclass>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Totem">
-			<action name="Execute">
-				<command>totem</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-	</menu>
-	<menu id="apps-fileman-menu" label="File Managers">
-		<item label="KDE File Manager">
-			<action name="Execute">
-				<command>kfmclient openURL ~</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Nautilus">
-			<action name="Execute">
-				<command>nautilus --no-desktop --browser</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Thunar">
-			<action name="Execute">
-				<command>Thunar</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Rox">
-			<action name="Execute">
-				<command>rox</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-					<wmclass>ROX-Filer</wmclass>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="PCMan File Manager">
-			<action name="Execute">
-				<command>pcmanfm</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-	</menu>
-	<menu id="apps-graphics-menu" label="Graphics">
-		<item label="Gimp">
-			<action name="Execute">
-				<command>gimp</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Inkscape">
-			<action name="Execute">
-				<command>inkscape</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Gwenview">
-			<action name="Execute">
-				<command>gwenview</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Dia Diagram Editor">
-			<action name="Execute">
-				<command>dia</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-	</menu>
-	<menu id="system-menu" label="System">
-		<item label="Openbox Configuration Manager">
-			<action name="Execute">
-				<command>obconf</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Gnome Control Center">
-			<action name="Execute">
-				<command>gnome-control-center</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="KDE Control Center">
-			<action name="Execute">
-				<command>kcontrol</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Xfce Settings">
-			<action name="Execute">
-				<command>xfce-setting-show</command>
-				<startupnotify>
-					<enabled>yes</enabled>
-				</startupnotify>
-			</action>
-		</item>
-		<item label="Manage Cups Printers">
-			<action name="Execute">
-				<command>xdg-open http://localhost:631/</command>
-				<startupnotify>
-					<enabled>no</enabled>
-					<icon>cups</icon>
-				</startupnotify>
-			</action>
-		</item>
-		<separator/>
-		<item label="Reconfigure Openbox">
-			<action name="Reconfigure"/>
-		</item>
-	</menu>
-	<menu id="root-menu" label="Openbox 3">
-		<separator label="Applications"/>
-		<menu id="apps-accessories-menu"/>
-		<menu id="apps-editors-menu"/>
-		<menu id="apps-graphics-menu"/>
-		<menu id="apps-net-menu"/>
-		<menu id="apps-multimedia-menu"/>
-		<menu id="apps-term-menu"/>
-		<menu id="apps-fileman-menu"/>
-		<separator label="System"/>
-		<menu id="system-menu"/>
-		<separator/>
-		<item label="Log Out">
-			<action name="Exit">
-				<prompt>yes</prompt>
-			</action>
-		</item>
-	</menu>
+<openbox_menu xmlns="http://openbox.org/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://openbox.org/">
+  <menu id="root-menu" label="Applications">
+    <item label="File Manager" icon="/home/gauge/.config/obmenu-generator/icons/2b1e72cf9214c6d7e698d44267cf8675.png"><action name="Execute"><command><![CDATA[xdg-open .]]></command></action></item>
+    <item label="Terminal" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[konsole]]></command></action></item>
+    <item label="Web Browser" icon="/home/gauge/.config/obmenu-generator/icons/d71ca48c6fc617810d002d6e31df0689.png"><action name="Execute"><command><![CDATA[xdg-open http://]]></command></action></item>
+    <item label="Run command" icon="/home/gauge/.config/obmenu-generator/icons/94b7b277b0b651dbb7f73429eeb500cc.png"><action name="Execute"><command><![CDATA[gmrun]]></command></action></item>
+  <separator label="Categories"/>
+  <menu id="0.995636305146949" icon="/home/gauge/.config/obmenu-generator/icons/31643ff91c9388921823807f94df951c.png" label="Accessories">
+    <item label="Albert" icon="/home/gauge/.config/obmenu-generator/icons/9d90989d8f98fa8d4558eaf0878883d0.png"><action name="Execute"><command><![CDATA[albert]]></command></action></item>
+    <item label="Android File Transfer (MTP)" icon="/home/gauge/.config/obmenu-generator/icons/924bf79b0cc1cd17714943e8b6025dd9.png"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="Ark" icon="/home/gauge/.config/obmenu-generator/icons/9a0320f7c759a564f455be505f047876.png"><action name="Execute"><command><![CDATA[ark]]></command></action></item>
+    <item label="Code" icon="/home/gauge/.config/obmenu-generator/icons/b4d2b52556f700dac3462d97aac056fa.png"><action name="Execute"><command><![CDATA[code-oss --unity-launch]]></command></action></item>
+    <item label="compton" icon="/home/gauge/.config/obmenu-generator/icons/608a314240176e5f24ecf39308716df6.png"><action name="Execute"><command><![CDATA[compton]]></command></action></item>
+    <item label="Conky Manager" icon="/home/gauge/.config/obmenu-generator/icons/6ac287ecf10e89fb8f59b83dc1915dcc.png"><action name="Execute"><command><![CDATA[conky-manager]]></command></action></item>
+    <item label="Filelight" icon="/home/gauge/.config/obmenu-generator/icons/b13163d248c092dfea35c6f2b98cdefb.png"><action name="Execute"><command><![CDATA[filelight]]></command></action></item>
+    <item label="Files" icon="/home/gauge/.config/obmenu-generator/icons/2b1e72cf9214c6d7e698d44267cf8675.png"><action name="Execute"><command><![CDATA[nautilus --new-window]]></command></action></item>
+    <item label="Kate" icon="/home/gauge/.config/obmenu-generator/icons/fa28bbccdb8ea53178a89feae5022254.png"><action name="Execute"><command><![CDATA[kate -b]]></command></action></item>
+    <item label="KCalc" icon="/home/gauge/.config/obmenu-generator/icons/3e5c52fba853ee96f5453cb7ec42eb82.png"><action name="Execute"><command><![CDATA[kcalc]]></command></action></item>
+    <item label="Klipper" icon="/home/gauge/.config/obmenu-generator/icons/9cadeaa20db6851876638d72c2fef649.png"><action name="Execute"><command><![CDATA[klipper]]></command></action></item>
+    <item label="Kvantum Manager" icon="/home/gauge/.config/obmenu-generator/icons/d718107352d5d1a9494a68bfc049f31a.png"><action name="Execute"><command><![CDATA[kvantummanager]]></command></action></item>
+    <item label="Latte" icon="/home/gauge/.config/obmenu-generator/icons/66f0d07032f9402991c9ceedcbe00fb9.png"><action name="Execute"><command><![CDATA[latte-dock]]></command></action></item>
+    <item label="Leonflix" icon="/home/gauge/.config/obmenu-generator/icons/0d65431a2b87792eb6113f6249fdab03.png"><action name="Execute"><command><![CDATA["/home/gauge/bin/Leonflix.AppImage"]]></command></action></item>
+    <item label="Mark Text" icon="/home/gauge/.config/obmenu-generator/icons/05f51f2a778113c0c0b678be257f02df.png"><action name="Execute"><command><![CDATA["/home/gauge/.apps/marktext-0.12.25-x86_64.appimage"]]></command></action></item>
+    <item label="Marker" icon="/home/gauge/.config/obmenu-generator/icons/8e1e24ff2d31d219633fe55c39ff33b3.png"><action name="Execute"><command><![CDATA[/usr/bin/marker]]></command></action></item>
+    <item label="Nemo" icon="/home/gauge/.config/obmenu-generator/icons/5fadd71e18dcd56518635eb4eeddf1c9.png"><action name="Execute"><command><![CDATA[nemo]]></command></action></item>
+    <item label="PCManFM-Qt File Manager" icon="/home/gauge/.config/obmenu-generator/icons/2b1e72cf9214c6d7e698d44267cf8675.png"><action name="Execute"><command><![CDATA[pcmanfm-qt]]></command></action></item>
+    <item label="Spectacle" icon="/home/gauge/.config/obmenu-generator/icons/ce2ee5731b735acc4a1a90d2039fab33.png"><action name="Execute"><command><![CDATA[spectacle]]></command></action></item>
+    <item label="Vim" icon="/home/gauge/.config/obmenu-generator/icons/4c950d27309e8bd0ae823cb594d6aaa5.png"><action name="Execute"><command><![CDATA[xterm -e 'vim']]></command></action></item>
+    <item label="Winetricks" icon="/home/gauge/.config/obmenu-generator/icons/591e68f2b7213a685aa8a1c277c3ba1a.png"><action name="Execute"><command><![CDATA[winetricks --gui]]></command></action></item>
+  </menu>
+  <menu id="0.557206197266595" icon="/home/gauge/.config/obmenu-generator/icons/2ea46923270fcf8b7d14ad46b1365e50.png" label="Development">
+    <item label="CMake" icon="/home/gauge/.config/obmenu-generator/icons/28ad37ecb1da5d71e0a295a6c4674e30.png"><action name="Execute"><command><![CDATA[cmake-gui]]></command></action></item>
+    <item label="Code" icon="/home/gauge/.config/obmenu-generator/icons/b4d2b52556f700dac3462d97aac056fa.png"><action name="Execute"><command><![CDATA[code-oss --unity-launch]]></command></action></item>
+    <item label="Cuttlefish" icon="/home/gauge/.config/obmenu-generator/icons/72326ced6b5dae039de2ecf6523097a0.png"><action name="Execute"><command><![CDATA[cuttlefish]]></command></action></item>
+    <item label="Electron" icon="/home/gauge/.config/obmenu-generator/icons/468d1f20b0126b8614b3960cfe5d4ea8.png"><action name="Execute"><command><![CDATA[electron]]></command></action></item>
+    <item label="GitKraken" icon="/home/gauge/.config/obmenu-generator/icons/0339e51f72c399a97ac4410a670be5d4.png"><action name="Execute"><command><![CDATA[gitkraken]]></command></action></item>
+    <item label="Plasma Engine Explorer" icon="/home/gauge/.config/obmenu-generator/icons/ad79af3a96bea07f8c39b4df1304655f.png"><action name="Execute"><command><![CDATA[plasmaengineexplorer]]></command></action></item>
+    <item label="Plasma Look And Feel Explorer" icon="/home/gauge/.config/obmenu-generator/icons/630b5d9affdc5a906e37694bfe52d6cb.png"><action name="Execute"><command><![CDATA[lookandfeelexplorer]]></command></action></item>
+    <item label="Plasma Theme Explorer" icon="/home/gauge/.config/obmenu-generator/icons/630b5d9affdc5a906e37694bfe52d6cb.png"><action name="Execute"><command><![CDATA[plasmathemeexplorer]]></command></action></item>
+    <item label="Qt Assistant" icon="/home/gauge/.config/obmenu-generator/icons/a5e0f9bf12a6f2f310bfbebc1c42a8d0.png"><action name="Execute"><command><![CDATA[assistant]]></command></action></item>
+    <item label="Qt Designer" icon="/home/gauge/.config/obmenu-generator/icons/ea485355820b181160f2912313a96a4d.png"><action name="Execute"><command><![CDATA[designer]]></command></action></item>
+    <item label="Qt Linguist" icon="/home/gauge/.config/obmenu-generator/icons/a5e0f9bf12a6f2f310bfbebc1c42a8d0.png"><action name="Execute"><command><![CDATA[linguist]]></command></action></item>
+    <item label="Qt QDbusViewer" icon="/home/gauge/.config/obmenu-generator/icons/a5e0f9bf12a6f2f310bfbebc1c42a8d0.png"><action name="Execute"><command><![CDATA[qdbusviewer]]></command></action></item>
+    <item label="Qt4 Assistant" icon="/home/gauge/.config/obmenu-generator/icons/15cd2d1332f219d628bcf64b267e717d.png"><action name="Execute"><command><![CDATA[assistant-qt4]]></command></action></item>
+    <item label="Qt4 Designer" icon="/home/gauge/.config/obmenu-generator/icons/ea485355820b181160f2912313a96a4d.png"><action name="Execute"><command><![CDATA[designer-qt4]]></command></action></item>
+    <item label="Qt4 Linguist" icon="/home/gauge/.config/obmenu-generator/icons/a1f109b4165c47e30ea018601e3ad0fe.png"><action name="Execute"><command><![CDATA[linguist-qt4]]></command></action></item>
+    <item label="Qt4 QDbusViewer" icon="/home/gauge/.config/obmenu-generator/icons/9005fd58dac0892993491b512c138b55.png"><action name="Execute"><command><![CDATA[qdbusviewer-qt4]]></command></action></item>
+  </menu>
+  <menu id="0.034139117729989" icon="/home/gauge/.config/obmenu-generator/icons/ab117c0d8bf7fb5e0b3d25f044a66c90.png" label="Games">
+    <item label="Borderlands 2" icon="/home/gauge/.config/obmenu-generator/icons/3352f434726193ddfb340168c1701d94.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/49520]]></command></action></item>
+    <item label="Borderlands: The Pre-Sequel" icon="/home/gauge/.config/obmenu-generator/icons/25f8f9f21adebdb70f389f9379c9546b.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/261640]]></command></action></item>
+    <item label="Counter-Strike: Global Offensive" icon="/home/gauge/.config/obmenu-generator/icons/7178a85b75c9a0d7c8017786f8be6f38.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/730]]></command></action></item>
+    <item label="Lutris" icon="/home/gauge/.config/obmenu-generator/icons/13669944596896dad98659d8413af2e0.png"><action name="Execute"><command><![CDATA[lutris]]></command></action></item>
+    <item label="Minecraft Launcher" icon="/home/gauge/.config/obmenu-generator/icons/b796e85cde552ba85144e5cc9db97a13.png"><action name="Execute"><command><![CDATA[/opt/minecraft-launcher/minecraft-launcher.sh]]></command></action></item>
+    <item label="Portal" icon="/home/gauge/.config/obmenu-generator/icons/bebcf1ce624ab0de8d0e0d63dee9692f.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/400]]></command></action></item>
+    <item label="Powder Toy" icon="/home/gauge/.config/obmenu-generator/icons/d8e715c1860f1f105db00d6d2b60ecde.png"><action name="Execute"><command><![CDATA['/home/gauge/Stuff/powder-93.3-lin64/powder64']]></command></action></item>
+    <item label="Skyrim Script Extender (SKSE)" icon="/home/gauge/.config/obmenu-generator/icons/365c311ff22a96b955693c08af5a82f0.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/365720]]></command></action></item>
+    <item label="Steam (Native)" icon="/home/gauge/.config/obmenu-generator/icons/e6ba1dc73480f6e70acb90fc8a9736e7.png"><action name="Execute"><command><![CDATA[/usr/bin/steam-native]]></command></action></item>
+    <item label="Steam (Runtime)" icon="/home/gauge/.config/obmenu-generator/icons/e6ba1dc73480f6e70acb90fc8a9736e7.png"><action name="Execute"><command><![CDATA[/usr/bin/steam-runtime]]></command></action></item>
+    <item label="SUPERHOT" icon="/home/gauge/.config/obmenu-generator/icons/45094bcbcca7225f1caa818a3231a05f.png"><action name="Execute"><command><![CDATA["/home/gauge/bin/SUPERHOT/start.sh" ""]]></command></action></item>
+    <item label="Terraria" icon="/home/gauge/.config/obmenu-generator/icons/4eec8254798b4dce4d4f5bfeae5c6a87.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/105600]]></command></action></item>
+    <item label="The Elder Scrolls V: Skyrim" icon="/home/gauge/.config/obmenu-generator/icons/0a4a6e2adb105c3ab78933187d2af8e0.png"><action name="Execute"><command><![CDATA[steam steam://rungameid/72850]]></command></action></item>
+  </menu>
+  <menu id="0.372824043823989" icon="/home/gauge/.config/obmenu-generator/icons/8d2157e545f368c92d50c2b46b1e1172.png" label="Graphics">
+    <item label="Flameshot" icon="/home/gauge/.config/obmenu-generator/icons/55dafaf1db22d9a3742bb1a42c1fbc5f.png"><action name="Execute"><command><![CDATA[flameshot]]></command></action></item>
+    <item label="GNU Image Manipulation Program" icon="/home/gauge/.config/obmenu-generator/icons/5242feedb9cb1a8864fe42b328f630c1.png"><action name="Execute"><command><![CDATA[gimp-2.10]]></command></action></item>
+    <item label="Gwenview" icon="/home/gauge/.config/obmenu-generator/icons/cf20d86a93a9a34ec28b20be736327a3.png"><action name="Execute"><command><![CDATA[gwenview]]></command></action></item>
+    <item label="Inkscape" icon="/home/gauge/.config/obmenu-generator/icons/25e004b520f5f1513c8e59f25dab6cfd.png"><action name="Execute"><command><![CDATA[inkscape]]></command></action></item>
+    <item label="KColorChooser" icon="/home/gauge/.config/obmenu-generator/icons/45f7a2d93be0ec5064600dbba6a4cbca.png"><action name="Execute"><command><![CDATA[kcolorchooser]]></command></action></item>
+    <item label="LXImage" icon="/home/gauge/.config/obmenu-generator/icons/cf20d86a93a9a34ec28b20be736327a3.png"><action name="Execute"><command><![CDATA[lximage-qt]]></command></action></item>
+    <item label="MATE Color Selection" icon="/home/gauge/.config/obmenu-generator/icons/a80269f86217aae8b664ecf67ab10626.png"><action name="Execute"><command><![CDATA[mate-color-select]]></command></action></item>
+    <item label="Okular" icon="/home/gauge/.config/obmenu-generator/icons/8fbc61091a9f7ebae0954eb94c17fd2c.png"><action name="Execute"><command><![CDATA[okular]]></command></action></item>
+    <item label="qView" icon="/home/gauge/.config/obmenu-generator/icons/88c941cf4743c765e91240f92786fcde.png"><action name="Execute"><command><![CDATA[qview]]></command></action></item>
+    <item label="Screenshot" icon="/home/gauge/.config/obmenu-generator/icons/f8b3b65b35a413449b1058cddac247d0.png"><action name="Execute"><command><![CDATA[lximage-qt --screenshot]]></command></action></item>
+  </menu>
+  <menu id="0.969289239158645" icon="/home/gauge/.config/obmenu-generator/icons/63f7c0b8a8945cb3093b74aaef5131ad.png" label="Multimedia">
+    <item label="Audacity" icon="/home/gauge/.config/obmenu-generator/icons/017d61bcf20d898ca3215b532f61d362.png"><action name="Execute"><command><![CDATA[env UBUNTU_MENUPROXY=0 audacity]]></command></action></item>
+    <item label="Clementine" icon="/home/gauge/.config/obmenu-generator/icons/4450d768b16481349299e4a8a2d5397b.png"><action name="Execute"><command><![CDATA[clementine]]></command></action></item>
+    <item label="Kdenlive" icon="/home/gauge/.config/obmenu-generator/icons/486b2cc322b59bd3148327bdd6a10954.png"><action name="Execute"><command><![CDATA[flatpak run org.kde.kdenlive]]></command></action></item>
+    <item label="OBS" icon="/home/gauge/.config/obmenu-generator/icons/9d1ea1219d86fe7d080a7126d442f1bc.png"><action name="Execute"><command><![CDATA[obs]]></command></action></item>
+    <item label="PNMixer" icon="/home/gauge/.config/obmenu-generator/icons/22cfb2823be5b07fac50bf9849b5bb76.png"><action name="Execute"><command><![CDATA[pnmixer]]></command></action></item>
+    <item label="PulseAudio Volume Control" icon="/home/gauge/.config/obmenu-generator/icons/69444a851b20aad47731d8338679c90f.png"><action name="Execute"><command><![CDATA[pavucontrol-qt]]></command></action></item>
+    <item label="Qt V4L2 test Utility" icon="/home/gauge/.config/obmenu-generator/icons/6305212b18732a416bbd53041bff3dbd.png"><action name="Execute"><command><![CDATA[qv4l2]]></command></action></item>
+    <item label="Qt V4L2 video capture utility" icon="/home/gauge/.config/obmenu-generator/icons/536fa375e9ddf3f93743c18aeecb4e9d.png"><action name="Execute"><command><![CDATA[qvidcap]]></command></action></item>
+    <item label="VLC media player" icon="/home/gauge/.config/obmenu-generator/icons/b62593f8f06c479dced575daa47f6ea5.png"><action name="Execute"><command><![CDATA[/usr/bin/vlc --started-from-file]]></command></action></item>
+    <item label="Volume Icon" icon="/home/gauge/.config/obmenu-generator/icons/69444a851b20aad47731d8338679c90f.png"><action name="Execute"><command><![CDATA[volumeicon]]></command></action></item>
+  </menu>
+  <menu id="0.167260866364799" icon="/home/gauge/.config/obmenu-generator/icons/d71ca48c6fc617810d002d6e31df0689.png" label="Network">
+    <item label="Angry IP Scanner" icon="/home/gauge/.config/obmenu-generator/icons/48dd93712022bac4b1b7c86640ade631.png"><action name="Execute"><command><![CDATA[/usr/bin/ipscan]]></command></action></item>
+    <item label="Avahi SSH Server Browser" icon="/home/gauge/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[/usr/bin/bssh]]></command></action></item>
+    <item label="Avahi VNC Server Browser" icon="/home/gauge/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[/usr/bin/bvnc]]></command></action></item>
+    <item label="Chromium" icon="/home/gauge/.config/obmenu-generator/icons/f9b7fbd83608c0dc063fa207420edd6c.png"><action name="Execute"><command><![CDATA[/usr/bin/chromium]]></command></action></item>
+    <item label="Discord" icon="/home/gauge/.config/obmenu-generator/icons/f1102fe07ebc4883618a8ca7321eed2a.png"><action name="Execute"><command><![CDATA[/home/gauge/bin/Discord/Discord]]></command></action></item>
+    <item label="Falkon" icon="/home/gauge/.config/obmenu-generator/icons/db8da1ee75ae4cacc742114cc9564068.png"><action name="Execute"><command><![CDATA[falkon]]></command></action></item>
+    <item label="Firefox" icon="/home/gauge/.config/obmenu-generator/icons/5058aa22a31c2e1ae31604822c39fafa.png"><action name="Execute"><command><![CDATA[/usr/lib/firefox/firefox]]></command></action></item>
+    <item label="KDE Connect Indicator" icon="/home/gauge/.config/obmenu-generator/icons/21b5424bcf3c1c8177173e758a9136f2.png"><action name="Execute"><command><![CDATA[kdeconnect-indicator]]></command></action></item>
+    <item label="Opera" icon="/home/gauge/.config/obmenu-generator/icons/ad36c94579a9cd127c51a92f713dd52c.png"><action name="Execute"><command><![CDATA[opera]]></command></action></item>
+    <item label="qBittorrent" icon="/home/gauge/.config/obmenu-generator/icons/0125c0f9d2a922967a749337e471311f.png"><action name="Execute"><command><![CDATA[qbittorrent]]></command></action></item>
+    <item label="Steam (Native)" icon="/home/gauge/.config/obmenu-generator/icons/e6ba1dc73480f6e70acb90fc8a9736e7.png"><action name="Execute"><command><![CDATA[/usr/bin/steam-native]]></command></action></item>
+    <item label="Steam (Runtime)" icon="/home/gauge/.config/obmenu-generator/icons/e6ba1dc73480f6e70acb90fc8a9736e7.png"><action name="Execute"><command><![CDATA[/usr/bin/steam-runtime]]></command></action></item>
+    <item label="Telegram Desktop" icon="/home/gauge/.config/obmenu-generator/icons/004f2c1c54510080f709f679957de024.png"><action name="Execute"><command><![CDATA[QT_STYLE_OVERRIDE=Breeze telegram-desktop --]]></command></action></item>
+    <item label="Youtube-dl GUI" icon="/home/gauge/.config/obmenu-generator/icons/b25bda4b99c4e1c97a4470c0232ce4ec.png"><action name="Execute"><command><![CDATA[youtube-dl-gui]]></command></action></item>
+  </menu>
+  <menu id="0.462588871034622" icon="/home/gauge/.config/obmenu-generator/icons/0b82a46b62fcd3afe7908b39cfd0d580.png" label="Office">
+    <item label="Mark Text" icon="/home/gauge/.config/obmenu-generator/icons/05f51f2a778113c0c0b678be257f02df.png"><action name="Execute"><command><![CDATA["/home/gauge/.apps/marktext-0.12.25-x86_64.appimage"]]></command></action></item>
+    <item label="Okular" icon="/home/gauge/.config/obmenu-generator/icons/8fbc61091a9f7ebae0954eb94c17fd2c.png"><action name="Execute"><command><![CDATA[okular]]></command></action></item>
+  </menu>
+  <menu id="0.211508918128935" icon="/home/gauge/.config/obmenu-generator/icons/10feb21e4262031d6e3f9dc974b06784.png" label="Other">
+    <item label="Blur" icon=""><action name="Execute"><command><![CDATA[xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0]]></command></action></item>
+    <item label="Borderlands 2 Save Editor" icon="/home/gauge/.config/obmenu-generator/icons/00da96c4c7b142849e81661010f2d5cb.png"><action name="Execute"><command><![CDATA["/home/gauge/.cxoffice/Gibbed/desktopdata/cxmenu/StartMenu.C^5E3A_users_crossover_Start^2BMenu/Borderlands+2+Save+Editor.lnk"]]></command></action></item>
+    <item label="Conky" icon=""><action name="Execute"><command><![CDATA[/usr/bin/conky --config ~/.conkyrc]]></command></action></item>
+    <item label="CrossOver" icon="/home/gauge/.config/obmenu-generator/icons/2f6cbd9a9bea2261097469dfc2814303.png"><action name="Execute"><command><![CDATA[/home/gauge/cxoffice/bin/crossover]]></command></action></item>
+    <item label="Doom" icon="/home/gauge/.config/obmenu-generator/icons/c0f531d9d234d74061ddd96a2a8c53e7.png"><action name="Execute"><command><![CDATA[env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Desktop/Doom.lnk]]></command></action></item>
+    <item label="Halo" icon=""><action name="Execute"><command><![CDATA[env WINEPREFIX="/home/gauge/.wine" wine /home/gauge/.wine/drive_c/Games/IGG-HalComEvol/Halo.exe -vidmode 1920,1080,60 -console]]></command></action></item>
+    <item label="Halo" icon=""><action name="Execute"><command><![CDATA[wine "/home/gauge/.wine/drive_c/Games/IGG-HalComEvol/Halo.exe" -console]]></command></action></item>
+    <item label="Kill current window" icon=""><action name="Execute"><command><![CDATA[xdotool getwindowfocus windowkill]]></command></action></item>
+    <item label="Konsole (root)" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[konsole]]></command></action></item>
+    <item label="Minecraft" icon="/home/gauge/.config/obmenu-generator/icons/df596f1125af654af436d103d661b515.png"><action name="Execute"><command><![CDATA[zenity --error --text="An error has occured when launching 'Minecraft'" --no-wrap]]></command></action></item>
+    <item label="NVIDIA X Server Settings" icon="/home/gauge/.config/obmenu-generator/icons/89ffecf94d6a3e91e2ed842da2d4b210.png"><action name="Execute"><command><![CDATA[/usr/bin/nvidia-settings]]></command></action></item>
+    <item label="Rofi" icon=""><action name="Execute"><command><![CDATA[/usr/bin/rofi -show run]]></command></action></item>
+    <item label="rofi" icon=""><action name="Execute"><command><![CDATA[rofi    -show run]]></command></action></item>
+    <item label="Uninstall CrossOver Linux" icon="/home/gauge/.config/obmenu-generator/icons/43b44cf50b7257cf6ff877387a7e115a.png"><action name="Execute"><command><![CDATA[/home/gauge/cxoffice/bin/cxuninstall]]></command></action></item>
+    <item label="Wifi" icon=""><action name="Execute"><command><![CDATA[/home/gauge/bin/wifi]]></command></action></item>
+  </menu>
+  <menu id="0.209713135604407" icon="/home/gauge/.config/obmenu-generator/icons/bcb151d4685693cd69071c109fe5aaa0.png" label="Settings">
+    <item label="Appearance" icon="/home/gauge/.config/obmenu-generator/icons/630b5d9affdc5a906e37694bfe52d6cb.png"><action name="Execute"><command><![CDATA[lxqt-config-appearance]]></command></action></item>
+    <item label="Brightness" icon="/home/gauge/.config/obmenu-generator/icons/326ec8560f476ba36b2feb163f9f5a63.png"><action name="Execute"><command><![CDATA[lxqt-config-brightness]]></command></action></item>
+    <item label="Customize Look and Feel" icon="/home/gauge/.config/obmenu-generator/icons/630b5d9affdc5a906e37694bfe52d6cb.png"><action name="Execute"><command><![CDATA[lxappearance]]></command></action></item>
+    <item label="Date and Time" icon="/home/gauge/.config/obmenu-generator/icons/d20dfbb171b8fc11232e164649636def.png"><action name="Execute"><command><![CDATA[lxqt-admin-time]]></command></action></item>
+    <item label="Desktop Notifications" icon="/home/gauge/.config/obmenu-generator/icons/630b5d9affdc5a906e37694bfe52d6cb.png"><action name="Execute"><command><![CDATA[lxqt-config-notificationd]]></command></action></item>
+    <item label="Desktop" icon="/home/gauge/.config/obmenu-generator/icons/f0a745c3a19bffde18fa6717b3a7daf8.png"><action name="Execute"><command><![CDATA[pcmanfm-qt --desktop-pref=general]]></command></action></item>
+    <item label="File Associations" icon="/home/gauge/.config/obmenu-generator/icons/ddf1b9ea01a1710fc67ee7e3c4f6efd7.png"><action name="Execute"><command><![CDATA[lxqt-config-file-associations]]></command></action></item>
+    <item label="Grub Customizer" icon="/home/gauge/.config/obmenu-generator/icons/8bf1d3819e5c0e2623835f025da780f5.png"><action name="Execute"><command><![CDATA[grub-customizer]]></command></action></item>
+    <item label="KDE Connect Settings" icon="/home/gauge/.config/obmenu-generator/icons/21b5424bcf3c1c8177173e758a9136f2.png"><action name="Execute"><command><![CDATA[kcmshell5 kcm_kdeconnect]]></command></action></item>
+    <item label="KDE System Settings" icon="/home/gauge/.config/obmenu-generator/icons/64fd08fb0d5580e36ef373a59a389749.png"><action name="Execute"><command><![CDATA[systemsettings5]]></command></action></item>
+    <item label="Keyboard and Mouse" icon="/home/gauge/.config/obmenu-generator/icons/a4e5205467b6f5a5a1c2d3acb656a10b.png"><action name="Execute"><command><![CDATA[lxqt-config-input]]></command></action></item>
+    <item label="Kvantum Manager" icon="/home/gauge/.config/obmenu-generator/icons/d718107352d5d1a9494a68bfc049f31a.png"><action name="Execute"><command><![CDATA[kvantummanager]]></command></action></item>
+    <item label="Locale" icon="/home/gauge/.config/obmenu-generator/icons/256f82c9404afb89080ba8cb3f20fc7b.png"><action name="Execute"><command><![CDATA[lxqt-config-locale]]></command></action></item>
+    <item label="LXQt Configuration Center" icon="/home/gauge/.config/obmenu-generator/icons/64fd08fb0d5580e36ef373a59a389749.png"><action name="Execute"><command><![CDATA[lxqt-config]]></command></action></item>
+    <item label="Monitor settings" icon="/home/gauge/.config/obmenu-generator/icons/690ad380a426f097241d6aa2e73b6027.png"><action name="Execute"><command><![CDATA[lxqt-config-monitor]]></command></action></item>
+    <item label="Network Connections" icon="/home/gauge/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[nm-connection-editor]]></command></action></item>
+    <item label="Oomox: customize icons and GTK themes" icon="/home/gauge/.config/obmenu-generator/icons/6c098b2cb5231bce225987e66a3a1865.png"><action name="Execute"><command><![CDATA[oomox-gui]]></command></action></item>
+    <item label="Openbox Configuration Manager" icon="/home/gauge/.config/obmenu-generator/icons/0476ece428f10447c407d0cc404807fd.png"><action name="Execute"><command><![CDATA[obconf]]></command></action></item>
+    <item label="Openbox Settings" icon="/home/gauge/.config/obmenu-generator/icons/61f3de6fd06f9847e869878302ba1980.png"><action name="Execute"><command><![CDATA[obconf-qt]]></command></action></item>
+    <item label="Power Management" icon="/home/gauge/.config/obmenu-generator/icons/c76723d61935a5c9ced3db3d6de7caee.png"><action name="Execute"><command><![CDATA[lxqt-config-powermanagement]]></command></action></item>
+    <item label="Qt5 Settings" icon="/home/gauge/.config/obmenu-generator/icons/630b5d9affdc5a906e37694bfe52d6cb.png"><action name="Execute"><command><![CDATA[qt5ct]]></command></action></item>
+    <item label="Session Settings" icon="/home/gauge/.config/obmenu-generator/icons/ddf1b9ea01a1710fc67ee7e3c4f6efd7.png"><action name="Execute"><command><![CDATA[lxqt-config-session]]></command></action></item>
+    <item label="Shortcut Keys" icon="/home/gauge/.config/obmenu-generator/icons/a4e5205467b6f5a5a1c2d3acb656a10b.png"><action name="Execute"><command><![CDATA[lxqt-config-globalkeyshortcuts]]></command></action></item>
+    <item label="System Settings" icon="/home/gauge/.config/obmenu-generator/icons/64fd08fb0d5580e36ef373a59a389749.png"><action name="Execute"><command><![CDATA[systemsettings5]]></command></action></item>
+    <item label="Tint2 Settings" icon="/home/gauge/.config/obmenu-generator/icons/01a88610ddf488636491630e3d1eba4b.png"><action name="Execute"><command><![CDATA[tint2conf]]></command></action></item>
+    <item label="Users and Groups" icon="/home/gauge/.config/obmenu-generator/icons/e5a05548cae88260e95f6312dd33b57a.png"><action name="Execute"><command><![CDATA[lxqt-admin-user]]></command></action></item>
+    <item label="Window Effects" icon="/home/gauge/.config/obmenu-generator/icons/608a314240176e5f24ecf39308716df6.png"><action name="Execute"><command><![CDATA[compton-conf]]></command></action></item>
+  </menu>
+  <menu id="0.397904917889491" icon="/home/gauge/.config/obmenu-generator/icons/ddf1b9ea01a1710fc67ee7e3c4f6efd7.png" label="System">
+    <item label="About LXQt" icon="/home/gauge/.config/obmenu-generator/icons/f7c04ff634b3d6c1e59e31dc087dfb35.png"><action name="Execute"><command><![CDATA[lxqt-about]]></command></action></item>
+    <item label="Android File Transfer (MTP)" icon="/home/gauge/.config/obmenu-generator/icons/924bf79b0cc1cd17714943e8b6025dd9.png"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="Avahi Zeroconf Browser" icon="/home/gauge/.config/obmenu-generator/icons/1be588c8d58263b210606a8bc5a67831.png"><action name="Execute"><command><![CDATA[/usr/bin/avahi-discover]]></command></action></item>
+    <item label="Date and Time" icon="/home/gauge/.config/obmenu-generator/icons/d20dfbb171b8fc11232e164649636def.png"><action name="Execute"><command><![CDATA[lxqt-admin-time]]></command></action></item>
+    <item label="Discover" icon="/home/gauge/.config/obmenu-generator/icons/10feb21e4262031d6e3f9dc974b06784.png"><action name="Execute"><command><![CDATA[plasma-discover]]></command></action></item>
+    <item label="Dolphin" icon="/home/gauge/.config/obmenu-generator/icons/2b1e72cf9214c6d7e698d44267cf8675.png"><action name="Execute"><command><![CDATA[dolphin]]></command></action></item>
+    <item label="GParted" icon="/home/gauge/.config/obmenu-generator/icons/feefe3f786c94721608425d615a79fc4.png"><action name="Execute"><command><![CDATA[/usr/bin/gparted]]></command></action></item>
+    <item label="Grub Customizer" icon="/home/gauge/.config/obmenu-generator/icons/8bf1d3819e5c0e2623835f025da780f5.png"><action name="Execute"><command><![CDATA[grub-customizer]]></command></action></item>
+    <item label="Hibernate" icon="/home/gauge/.config/obmenu-generator/icons/521bf402c88c23272166f6f16965b4af.png"><action name="Execute"><command><![CDATA[lxqt-leave --hibernate]]></command></action></item>
+    <item label="Htop" icon="/home/gauge/.config/obmenu-generator/icons/31643ff91c9388921823807f94df951c.png"><action name="Execute"><command><![CDATA[xterm -e 'htop']]></command></action></item>
+    <item label="Info Center" icon="/home/gauge/.config/obmenu-generator/icons/88ffe0d9a1cc97bf6da5b212a1d175b2.png"><action name="Execute"><command><![CDATA[kinfocenter]]></command></action></item>
+    <item label="jgmenu" icon="/home/gauge/.config/obmenu-generator/icons/01fe425790f2581bb6d65b1ef482a961.png"><action name="Execute"><command><![CDATA[jgmenu_run]]></command></action></item>
+    <item label="KDE Partition Manager" icon="/home/gauge/.config/obmenu-generator/icons/feefe3f786c94721608425d615a79fc4.png"><action name="Execute"><command><![CDATA[partitionmanager]]></command></action></item>
+    <item label="Konsole" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[konsole]]></command></action></item>
+    <item label="KSysGuard" icon="/home/gauge/.config/obmenu-generator/icons/31643ff91c9388921823807f94df951c.png"><action name="Execute"><command><![CDATA[ksysguard]]></command></action></item>
+    <item label="Leave" icon="/home/gauge/.config/obmenu-generator/icons/b977c6d90137d53f7b90c64457867366.png"><action name="Execute"><command><![CDATA[lxqt-leave]]></command></action></item>
+    <item label="Lock Screen" icon="/home/gauge/.config/obmenu-generator/icons/40a8d2b055ed2fcd412d83bf9d01cfbc.png"><action name="Execute"><command><![CDATA[lxqt-leave --lockscreen]]></command></action></item>
+    <item label="Logout" icon="/home/gauge/.config/obmenu-generator/icons/5dbc881a2b4d129e0902d3e045e71922.png"><action name="Execute"><command><![CDATA[lxqt-leave --logout]]></command></action></item>
+    <item label="multibootusb" icon="/home/gauge/.config/obmenu-generator/icons/2ae4422cceac0d79f68bce9d7d9f4789.png"><action name="Execute"><command><![CDATA[multibootusb-pkexec]]></command></action></item>
+    <item label="Oracle VM VirtualBox" icon="/home/gauge/.config/obmenu-generator/icons/4e1b1538a4a963baf8b1e415f51eba0a.png"><action name="Execute"><command><![CDATA[VirtualBox]]></command></action></item>
+    <item label="QTerminal drop down" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[qterminal --drop]]></command></action></item>
+    <item label="QTerminal" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[qterminal]]></command></action></item>
+    <item label="Reboot" icon="/home/gauge/.config/obmenu-generator/icons/e637845681dd5bf37941eb7330c502a4.png"><action name="Execute"><command><![CDATA[lxqt-leave --reboot]]></command></action></item>
+    <item label="Shutdown" icon="/home/gauge/.config/obmenu-generator/icons/b977c6d90137d53f7b90c64457867366.png"><action name="Execute"><command><![CDATA[lxqt-leave --shutdown]]></command></action></item>
+    <item label="Suspend" icon="/home/gauge/.config/obmenu-generator/icons/f93c7a46f6fc9ab7206cde0179801277.png"><action name="Execute"><command><![CDATA[lxqt-leave --suspend]]></command></action></item>
+    <item label="Tint2" icon="/home/gauge/.config/obmenu-generator/icons/01a88610ddf488636491630e3d1eba4b.png"><action name="Execute"><command><![CDATA[tint2]]></command></action></item>
+    <item label="urxvt (client)" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[urxvtc]]></command></action></item>
+    <item label="urxvt (tabbed)" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[urxvt-tabbed]]></command></action></item>
+    <item label="urxvt" icon="/home/gauge/.config/obmenu-generator/icons/a69674948cf02b71197d332b577d4b76.png"><action name="Execute"><command><![CDATA[urxvt]]></command></action></item>
+    <item label="Users and Groups" icon="/home/gauge/.config/obmenu-generator/icons/e5a05548cae88260e95f6312dd33b57a.png"><action name="Execute"><command><![CDATA[lxqt-admin-user]]></command></action></item>
+    <item label="UXTerm" icon="/home/gauge/.config/obmenu-generator/icons/afac685f41c48be465d4de9fe952f272.png"><action name="Execute"><command><![CDATA[uxterm]]></command></action></item>
+    <item label="Vala Panel" icon="/home/gauge/.config/obmenu-generator/icons/4bb665919ce48af5555aa3696e6665d8.png"><action name="Execute"><command><![CDATA[vala-panel]]></command></action></item>
+    <item label="XTerm" icon="/home/gauge/.config/obmenu-generator/icons/afac685f41c48be465d4de9fe952f272.png"><action name="Execute"><command><![CDATA[xterm]]></command></action></item>
+    <item label="Yakuake" icon="/home/gauge/.config/obmenu-generator/icons/2bf9266bd10564a59cda9aa513b424ab.png"><action name="Execute"><command><![CDATA[yakuake]]></command></action></item>
+  </menu>
+  <separator/>
+  <menu id="0.68529292686598" icon="/home/gauge/.config/obmenu-generator/icons/5d4fce55a4a4966e420dedb34dbd7138.png" label="Advanced Settings">
+    <item label="Conky RC" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.conkyrc]]></command></action></item>
+    <item label="Tint2 Panel" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.config/tint2/tint2rc]]></command></action></item>
+  <menu id="0.925393102913837" icon="/home/gauge/.config/obmenu-generator/icons/fa28bbccdb8ea53178a89feae5022254.png" label="Obmenu-Generator">
+    <item label="Menu Schema" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/schema.pl]]></command></action></item>
+    <item label="Menu Config" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/config.pl]]></command></action></item>
+  <separator/>
+    <item label="Generate a static menu" icon="/home/gauge/.config/obmenu-generator/icons/fa28bbccdb8ea53178a89feae5022254.png"><action name="Execute"><command><![CDATA[obmenu-generator -s -c]]></command></action></item>
+    <item label="Generate a static menu with icons" icon="/home/gauge/.config/obmenu-generator/icons/fa28bbccdb8ea53178a89feae5022254.png"><action name="Execute"><command><![CDATA[obmenu-generator -s -i -c]]></command></action></item>
+  <separator/>
+    <item label="Generate a dynamic menu" icon="/home/gauge/.config/obmenu-generator/icons/fa28bbccdb8ea53178a89feae5022254.png"><action name="Execute"><command><![CDATA[obmenu-generator -p]]></command></action></item>
+    <item label="Generate a dynamic menu with icons" icon="/home/gauge/.config/obmenu-generator/icons/fa28bbccdb8ea53178a89feae5022254.png"><action name="Execute"><command><![CDATA[obmenu-generator -p -i]]></command></action></item>
+  <separator/>
+    <item label="Refresh cache" icon="/home/gauge/.config/obmenu-generator/icons/c93628970a554fe212b9399a82505bcb.png"><action name="Execute"><command><![CDATA[obmenu-generator -d]]></command></action></item>
+  </menu>
+  <menu id="0.426896215446494" icon="/home/gauge/.config/obmenu-generator/icons/18d0310fcf7c8bb965edf7c46583c560.png" label="Openbox">
+    <item label="Openbox Autostart" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/autostart]]></command></action></item>
+    <item label="Openbox RC" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/rc.xml]]></command></action></item>
+    <item label="Openbox Menu" icon="/home/gauge/.config/obmenu-generator/icons/1616c248b5ea51e23e0e79bb6bb16601.png"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/menu.xml]]></command></action></item>
+    <item label="Reconfigure Openbox" icon="/home/gauge/.config/obmenu-generator/icons/18d0310fcf7c8bb965edf7c46583c560.png"><action name="Execute"><command><![CDATA[openbox --reconfigure]]></command></action></item>
+  </menu>
+  </menu>
+  <separator/>
+    <item label="Hibernate" icon="/home/gauge/.config/obmenu-generator/icons/521bf402c88c23272166f6f16965b4af.png"><action name="Execute"><command><![CDATA[hib]]></command></action></item>
+    <item label="Lock" icon="/home/gauge/.config/obmenu-generator/icons/40a8d2b055ed2fcd412d83bf9d01cfbc.png"><action name="Execute"><command><![CDATA[lock]]></command></action></item>
+    <item label="Exit" icon="/home/gauge/.config/obmenu-generator/icons/40ab053672503e7b5e174761adc67b1f.png"><action name="Exit"/></item>
+  </menu>
 </openbox_menu>

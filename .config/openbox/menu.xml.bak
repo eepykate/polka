@@ -1,0 +1,215 @@
+<openbox_pipe_menu>
+    <item label="File Manager"><action name="Execute"><command><![CDATA[xdg-open .]]></command></action></item>
+    <item label="Terminal"><action name="Execute"><command><![CDATA[xterm]]></command></action></item>
+    <item label="Web Browser"><action name="Execute"><command><![CDATA[xdg-open http://]]></command></action></item>
+    <item label="Run command"><action name="Execute"><command><![CDATA[gmrun]]></command></action></item>
+  <separator label="Categories"/>
+  <menu id="0.738856227210821" label="Accessories">
+    <item label="Albert"><action name="Execute"><command><![CDATA[albert]]></command></action></item>
+    <item label="Android File Transfer (MTP)"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="Ark"><action name="Execute"><command><![CDATA[ark]]></command></action></item>
+    <item label="Code"><action name="Execute"><command><![CDATA[code-oss --unity-launch]]></command></action></item>
+    <item label="compton"><action name="Execute"><command><![CDATA[compton]]></command></action></item>
+    <item label="Conky Manager"><action name="Execute"><command><![CDATA[conky-manager]]></command></action></item>
+    <item label="Filelight"><action name="Execute"><command><![CDATA[filelight]]></command></action></item>
+    <item label="Files"><action name="Execute"><command><![CDATA[nautilus --new-window]]></command></action></item>
+    <item label="Kate"><action name="Execute"><command><![CDATA[kate -b]]></command></action></item>
+    <item label="KCalc"><action name="Execute"><command><![CDATA[kcalc]]></command></action></item>
+    <item label="Klipper"><action name="Execute"><command><![CDATA[klipper]]></command></action></item>
+    <item label="Kvantum Manager"><action name="Execute"><command><![CDATA[kvantummanager]]></command></action></item>
+    <item label="Latte"><action name="Execute"><command><![CDATA[latte-dock]]></command></action></item>
+    <item label="Leonflix"><action name="Execute"><command><![CDATA["/home/gauge/bin/Leonflix.AppImage"]]></command></action></item>
+    <item label="Mark Text"><action name="Execute"><command><![CDATA["/home/gauge/.apps/marktext-0.12.25-x86_64.appimage"]]></command></action></item>
+    <item label="Marker"><action name="Execute"><command><![CDATA[/usr/bin/marker]]></command></action></item>
+    <item label="Nemo"><action name="Execute"><command><![CDATA[nemo]]></command></action></item>
+    <item label="PCManFM-Qt File Manager"><action name="Execute"><command><![CDATA[pcmanfm-qt]]></command></action></item>
+    <item label="Spectacle"><action name="Execute"><command><![CDATA[spectacle]]></command></action></item>
+    <item label="Vim"><action name="Execute"><command><![CDATA[xterm -e 'vim']]></command></action></item>
+    <item label="Winetricks"><action name="Execute"><command><![CDATA[winetricks --gui]]></command></action></item>
+  </menu>
+  <menu id="0.59797251443112" label="Development">
+    <item label="CMake"><action name="Execute"><command><![CDATA[cmake-gui]]></command></action></item>
+    <item label="Code"><action name="Execute"><command><![CDATA[code-oss --unity-launch]]></command></action></item>
+    <item label="Cuttlefish"><action name="Execute"><command><![CDATA[cuttlefish]]></command></action></item>
+    <item label="Electron"><action name="Execute"><command><![CDATA[electron]]></command></action></item>
+    <item label="GitKraken"><action name="Execute"><command><![CDATA[gitkraken]]></command></action></item>
+    <item label="Plasma Engine Explorer"><action name="Execute"><command><![CDATA[plasmaengineexplorer]]></command></action></item>
+    <item label="Plasma Look And Feel Explorer"><action name="Execute"><command><![CDATA[lookandfeelexplorer]]></command></action></item>
+    <item label="Plasma Theme Explorer"><action name="Execute"><command><![CDATA[plasmathemeexplorer]]></command></action></item>
+    <item label="Qt Assistant"><action name="Execute"><command><![CDATA[assistant]]></command></action></item>
+    <item label="Qt Designer"><action name="Execute"><command><![CDATA[designer]]></command></action></item>
+    <item label="Qt Linguist"><action name="Execute"><command><![CDATA[linguist]]></command></action></item>
+    <item label="Qt QDbusViewer"><action name="Execute"><command><![CDATA[qdbusviewer]]></command></action></item>
+    <item label="Qt4 Assistant"><action name="Execute"><command><![CDATA[assistant-qt4]]></command></action></item>
+    <item label="Qt4 Designer"><action name="Execute"><command><![CDATA[designer-qt4]]></command></action></item>
+    <item label="Qt4 Linguist"><action name="Execute"><command><![CDATA[linguist-qt4]]></command></action></item>
+    <item label="Qt4 QDbusViewer"><action name="Execute"><command><![CDATA[qdbusviewer-qt4]]></command></action></item>
+  </menu>
+  <menu id="0.38759469919945" label="Games">
+    <item label="Borderlands 2"><action name="Execute"><command><![CDATA[steam steam://rungameid/49520]]></command></action></item>
+    <item label="Borderlands: The Pre-Sequel"><action name="Execute"><command><![CDATA[steam steam://rungameid/261640]]></command></action></item>
+    <item label="Counter-Strike: Global Offensive"><action name="Execute"><command><![CDATA[steam steam://rungameid/730]]></command></action></item>
+    <item label="Lutris"><action name="Execute"><command><![CDATA[lutris]]></command></action></item>
+    <item label="Minecraft Launcher"><action name="Execute"><command><![CDATA[/opt/minecraft-launcher/minecraft-launcher.sh]]></command></action></item>
+    <item label="Portal"><action name="Execute"><command><![CDATA[steam steam://rungameid/400]]></command></action></item>
+    <item label="Powder Toy"><action name="Execute"><command><![CDATA['/home/gauge/Stuff/powder-93.3-lin64/powder64']]></command></action></item>
+    <item label="Skyrim Script Extender (SKSE)"><action name="Execute"><command><![CDATA[steam steam://rungameid/365720]]></command></action></item>
+    <item label="Steam (Native)"><action name="Execute"><command><![CDATA[/usr/bin/steam-native]]></command></action></item>
+    <item label="Steam (Runtime)"><action name="Execute"><command><![CDATA[/usr/bin/steam-runtime]]></command></action></item>
+    <item label="SUPERHOT"><action name="Execute"><command><![CDATA["/home/gauge/bin/SUPERHOT/start.sh" ""]]></command></action></item>
+    <item label="Terraria"><action name="Execute"><command><![CDATA[steam steam://rungameid/105600]]></command></action></item>
+    <item label="The Elder Scrolls V: Skyrim"><action name="Execute"><command><![CDATA[steam steam://rungameid/72850]]></command></action></item>
+  </menu>
+  <menu id="0.0526569435341528" label="Graphics">
+    <item label="Flameshot"><action name="Execute"><command><![CDATA[flameshot]]></command></action></item>
+    <item label="GNU Image Manipulation Program"><action name="Execute"><command><![CDATA[gimp-2.10]]></command></action></item>
+    <item label="Gwenview"><action name="Execute"><command><![CDATA[gwenview]]></command></action></item>
+    <item label="Inkscape"><action name="Execute"><command><![CDATA[inkscape]]></command></action></item>
+    <item label="KColorChooser"><action name="Execute"><command><![CDATA[kcolorchooser]]></command></action></item>
+    <item label="LXImage"><action name="Execute"><command><![CDATA[lximage-qt]]></command></action></item>
+    <item label="MATE Color Selection"><action name="Execute"><command><![CDATA[mate-color-select]]></command></action></item>
+    <item label="Okular"><action name="Execute"><command><![CDATA[okular]]></command></action></item>
+    <item label="qView"><action name="Execute"><command><![CDATA[qview]]></command></action></item>
+    <item label="Screenshot"><action name="Execute"><command><![CDATA[lximage-qt --screenshot]]></command></action></item>
+  </menu>
+  <menu id="0.776558386523067" label="Multimedia">
+    <item label="Audacity"><action name="Execute"><command><![CDATA[env UBUNTU_MENUPROXY=0 audacity]]></command></action></item>
+    <item label="Clementine"><action name="Execute"><command><![CDATA[clementine]]></command></action></item>
+    <item label="Kdenlive"><action name="Execute"><command><![CDATA[flatpak run org.kde.kdenlive]]></command></action></item>
+    <item label="OBS"><action name="Execute"><command><![CDATA[obs]]></command></action></item>
+    <item label="PNMixer"><action name="Execute"><command><![CDATA[pnmixer]]></command></action></item>
+    <item label="PulseAudio Volume Control"><action name="Execute"><command><![CDATA[pavucontrol-qt]]></command></action></item>
+    <item label="Qt V4L2 test Utility"><action name="Execute"><command><![CDATA[qv4l2]]></command></action></item>
+    <item label="Qt V4L2 video capture utility"><action name="Execute"><command><![CDATA[qvidcap]]></command></action></item>
+    <item label="VLC media player"><action name="Execute"><command><![CDATA[/usr/bin/vlc --started-from-file]]></command></action></item>
+    <item label="Volume Icon"><action name="Execute"><command><![CDATA[volumeicon]]></command></action></item>
+  </menu>
+  <menu id="0.119692500200458" label="Network">
+    <item label="Angry IP Scanner"><action name="Execute"><command><![CDATA[/usr/bin/ipscan]]></command></action></item>
+    <item label="Avahi SSH Server Browser"><action name="Execute"><command><![CDATA[/usr/bin/bssh]]></command></action></item>
+    <item label="Avahi VNC Server Browser"><action name="Execute"><command><![CDATA[/usr/bin/bvnc]]></command></action></item>
+    <item label="Chromium"><action name="Execute"><command><![CDATA[/usr/bin/chromium]]></command></action></item>
+    <item label="Discord"><action name="Execute"><command><![CDATA[/home/gauge/bin/Discord/Discord]]></command></action></item>
+    <item label="Falkon"><action name="Execute"><command><![CDATA[falkon]]></command></action></item>
+    <item label="Firefox"><action name="Execute"><command><![CDATA[/usr/lib/firefox/firefox]]></command></action></item>
+    <item label="KDE Connect Indicator"><action name="Execute"><command><![CDATA[kdeconnect-indicator]]></command></action></item>
+    <item label="Opera"><action name="Execute"><command><![CDATA[opera]]></command></action></item>
+    <item label="qBittorrent"><action name="Execute"><command><![CDATA[qbittorrent]]></command></action></item>
+    <item label="Steam (Native)"><action name="Execute"><command><![CDATA[/usr/bin/steam-native]]></command></action></item>
+    <item label="Steam (Runtime)"><action name="Execute"><command><![CDATA[/usr/bin/steam-runtime]]></command></action></item>
+    <item label="Telegram Desktop"><action name="Execute"><command><![CDATA[QT_STYLE_OVERRIDE=Breeze telegram-desktop --]]></command></action></item>
+    <item label="Youtube-dl GUI"><action name="Execute"><command><![CDATA[youtube-dl-gui]]></command></action></item>
+  </menu>
+  <menu id="0.140042378471062" label="Office">
+    <item label="Mark Text"><action name="Execute"><command><![CDATA["/home/gauge/.apps/marktext-0.12.25-x86_64.appimage"]]></command></action></item>
+    <item label="Okular"><action name="Execute"><command><![CDATA[okular]]></command></action></item>
+  </menu>
+  <menu id="0.455973246408654" label="Other">
+    <item label="Blur"><action name="Execute"><command><![CDATA[xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0]]></command></action></item>
+    <item label="Borderlands 2 Save Editor"><action name="Execute"><command><![CDATA["/home/gauge/.cxoffice/Gibbed/desktopdata/cxmenu/StartMenu.C^5E3A_users_crossover_Start^2BMenu/Borderlands+2+Save+Editor.lnk"]]></command></action></item>
+    <item label="Conky"><action name="Execute"><command><![CDATA[/usr/bin/conky --config ~/.conkyrc]]></command></action></item>
+    <item label="CrossOver"><action name="Execute"><command><![CDATA[/home/gauge/cxoffice/bin/crossover]]></command></action></item>
+    <item label="Doom"><action name="Execute"><command><![CDATA[env WINEPREFIX="/home/gauge/.wine" wine C:\\windows\\command\\start.exe /Unix /home/gauge/.wine/dosdevices/c:/ProgramData/Desktop/Doom.lnk]]></command></action></item>
+    <item label="Halo"><action name="Execute"><command><![CDATA[env WINEPREFIX="/home/gauge/.wine" wine /home/gauge/.wine/drive_c/Games/IGG-HalComEvol/Halo.exe -vidmode 1920,1080,60 -console]]></command></action></item>
+    <item label="Halo"><action name="Execute"><command><![CDATA[wine "/home/gauge/.wine/drive_c/Games/IGG-HalComEvol/Halo.exe" -console]]></command></action></item>
+    <item label="Kill current window"><action name="Execute"><command><![CDATA[xdotool getwindowfocus windowkill]]></command></action></item>
+    <item label="Konsole (root)"><action name="Execute"><command><![CDATA[konsole]]></command></action></item>
+    <item label="Minecraft"><action name="Execute"><command><![CDATA[zenity --error --text="An error has occured when launching 'Minecraft'" --no-wrap]]></command></action></item>
+    <item label="NVIDIA X Server Settings"><action name="Execute"><command><![CDATA[/usr/bin/nvidia-settings]]></command></action></item>
+    <item label="Rofi"><action name="Execute"><command><![CDATA[/usr/bin/rofi -show run]]></command></action></item>
+    <item label="rofi"><action name="Execute"><command><![CDATA[rofi    -show run]]></command></action></item>
+    <item label="Uninstall CrossOver Linux"><action name="Execute"><command><![CDATA[/home/gauge/cxoffice/bin/cxuninstall]]></command></action></item>
+    <item label="Wifi"><action name="Execute"><command><![CDATA[/home/gauge/bin/wifi]]></command></action></item>
+  </menu>
+  <menu id="0.916767484965394" label="Settings">
+    <item label="Appearance"><action name="Execute"><command><![CDATA[lxqt-config-appearance]]></command></action></item>
+    <item label="Brightness"><action name="Execute"><command><![CDATA[lxqt-config-brightness]]></command></action></item>
+    <item label="Customize Look and Feel"><action name="Execute"><command><![CDATA[lxappearance]]></command></action></item>
+    <item label="Date and Time"><action name="Execute"><command><![CDATA[lxqt-admin-time]]></command></action></item>
+    <item label="Desktop Notifications"><action name="Execute"><command><![CDATA[lxqt-config-notificationd]]></command></action></item>
+    <item label="Desktop"><action name="Execute"><command><![CDATA[pcmanfm-qt --desktop-pref=general]]></command></action></item>
+    <item label="File Associations"><action name="Execute"><command><![CDATA[lxqt-config-file-associations]]></command></action></item>
+    <item label="Grub Customizer"><action name="Execute"><command><![CDATA[grub-customizer]]></command></action></item>
+    <item label="KDE Connect Settings"><action name="Execute"><command><![CDATA[kcmshell5 kcm_kdeconnect]]></command></action></item>
+    <item label="KDE System Settings"><action name="Execute"><command><![CDATA[systemsettings5]]></command></action></item>
+    <item label="Keyboard and Mouse"><action name="Execute"><command><![CDATA[lxqt-config-input]]></command></action></item>
+    <item label="Kvantum Manager"><action name="Execute"><command><![CDATA[kvantummanager]]></command></action></item>
+    <item label="Locale"><action name="Execute"><command><![CDATA[lxqt-config-locale]]></command></action></item>
+    <item label="LXQt Configuration Center"><action name="Execute"><command><![CDATA[lxqt-config]]></command></action></item>
+    <item label="Monitor settings"><action name="Execute"><command><![CDATA[lxqt-config-monitor]]></command></action></item>
+    <item label="Network Connections"><action name="Execute"><command><![CDATA[nm-connection-editor]]></command></action></item>
+    <item label="Oomox: customize icons and GTK themes"><action name="Execute"><command><![CDATA[oomox-gui]]></command></action></item>
+    <item label="Openbox Configuration Manager"><action name="Execute"><command><![CDATA[obconf]]></command></action></item>
+    <item label="Openbox Settings"><action name="Execute"><command><![CDATA[obconf-qt]]></command></action></item>
+    <item label="Power Management"><action name="Execute"><command><![CDATA[lxqt-config-powermanagement]]></command></action></item>
+    <item label="Qt5 Settings"><action name="Execute"><command><![CDATA[qt5ct]]></command></action></item>
+    <item label="Session Settings"><action name="Execute"><command><![CDATA[lxqt-config-session]]></command></action></item>
+    <item label="Shortcut Keys"><action name="Execute"><command><![CDATA[lxqt-config-globalkeyshortcuts]]></command></action></item>
+    <item label="System Settings"><action name="Execute"><command><![CDATA[systemsettings5]]></command></action></item>
+    <item label="Tint2 Settings"><action name="Execute"><command><![CDATA[tint2conf]]></command></action></item>
+    <item label="Users and Groups"><action name="Execute"><command><![CDATA[lxqt-admin-user]]></command></action></item>
+    <item label="Window Effects"><action name="Execute"><command><![CDATA[compton-conf]]></command></action></item>
+  </menu>
+  <menu id="0.632156189589978" label="System">
+    <item label="About LXQt"><action name="Execute"><command><![CDATA[lxqt-about]]></command></action></item>
+    <item label="Android File Transfer (MTP)"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="Avahi Zeroconf Browser"><action name="Execute"><command><![CDATA[/usr/bin/avahi-discover]]></command></action></item>
+    <item label="Date and Time"><action name="Execute"><command><![CDATA[lxqt-admin-time]]></command></action></item>
+    <item label="Discover"><action name="Execute"><command><![CDATA[plasma-discover]]></command></action></item>
+    <item label="Dolphin"><action name="Execute"><command><![CDATA[dolphin]]></command></action></item>
+    <item label="GParted"><action name="Execute"><command><![CDATA[/usr/bin/gparted]]></command></action></item>
+    <item label="Grub Customizer"><action name="Execute"><command><![CDATA[grub-customizer]]></command></action></item>
+    <item label="Hibernate"><action name="Execute"><command><![CDATA[lxqt-leave --hibernate]]></command></action></item>
+    <item label="Htop"><action name="Execute"><command><![CDATA[xterm -e 'htop']]></command></action></item>
+    <item label="Info Center"><action name="Execute"><command><![CDATA[kinfocenter]]></command></action></item>
+    <item label="jgmenu"><action name="Execute"><command><![CDATA[jgmenu_run]]></command></action></item>
+    <item label="KDE Partition Manager"><action name="Execute"><command><![CDATA[partitionmanager]]></command></action></item>
+    <item label="Konsole"><action name="Execute"><command><![CDATA[konsole]]></command></action></item>
+    <item label="KSysGuard"><action name="Execute"><command><![CDATA[ksysguard]]></command></action></item>
+    <item label="Leave"><action name="Execute"><command><![CDATA[lxqt-leave]]></command></action></item>
+    <item label="Lock Screen"><action name="Execute"><command><![CDATA[lxqt-leave --lockscreen]]></command></action></item>
+    <item label="Logout"><action name="Execute"><command><![CDATA[lxqt-leave --logout]]></command></action></item>
+    <item label="multibootusb"><action name="Execute"><command><![CDATA[multibootusb-pkexec]]></command></action></item>
+    <item label="Oracle VM VirtualBox"><action name="Execute"><command><![CDATA[VirtualBox]]></command></action></item>
+    <item label="QTerminal drop down"><action name="Execute"><command><![CDATA[qterminal --drop]]></command></action></item>
+    <item label="QTerminal"><action name="Execute"><command><![CDATA[qterminal]]></command></action></item>
+    <item label="Reboot"><action name="Execute"><command><![CDATA[lxqt-leave --reboot]]></command></action></item>
+    <item label="Shutdown"><action name="Execute"><command><![CDATA[lxqt-leave --shutdown]]></command></action></item>
+    <item label="Suspend"><action name="Execute"><command><![CDATA[lxqt-leave --suspend]]></command></action></item>
+    <item label="Tint2"><action name="Execute"><command><![CDATA[tint2]]></command></action></item>
+    <item label="urxvt (client)"><action name="Execute"><command><![CDATA[urxvtc]]></command></action></item>
+    <item label="urxvt (tabbed)"><action name="Execute"><command><![CDATA[urxvt-tabbed]]></command></action></item>
+    <item label="urxvt"><action name="Execute"><command><![CDATA[urxvt]]></command></action></item>
+    <item label="Users and Groups"><action name="Execute"><command><![CDATA[lxqt-admin-user]]></command></action></item>
+    <item label="UXTerm"><action name="Execute"><command><![CDATA[uxterm]]></command></action></item>
+    <item label="Vala Panel"><action name="Execute"><command><![CDATA[vala-panel]]></command></action></item>
+    <item label="XTerm"><action name="Execute"><command><![CDATA[xterm]]></command></action></item>
+    <item label="Yakuake"><action name="Execute"><command><![CDATA[yakuake]]></command></action></item>
+  </menu>
+  <separator/>
+  <menu id="0.0481222551477849" label="Advanced Settings">
+    <item label="Conky RC"><action name="Execute"><command><![CDATA[geany ~/.conkyrc]]></command></action></item>
+    <item label="Tint2 Panel"><action name="Execute"><command><![CDATA[geany ~/.config/tint2/tint2rc]]></command></action></item>
+  <menu id="0.820754840960468" label="Obmenu-Generator">
+    <item label="Menu Schema"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/schema.pl]]></command></action></item>
+    <item label="Menu Config"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/config.pl]]></command></action></item>
+  <separator/>
+    <item label="Generate a static menu"><action name="Execute"><command><![CDATA[obmenu-generator -s -c]]></command></action></item>
+    <item label="Generate a static menu with icons"><action name="Execute"><command><![CDATA[obmenu-generator -s -i -c]]></command></action></item>
+  <separator/>
+    <item label="Generate a dynamic menu"><action name="Execute"><command><![CDATA[obmenu-generator -p]]></command></action></item>
+    <item label="Generate a dynamic menu with icons"><action name="Execute"><command><![CDATA[obmenu-generator -p -i]]></command></action></item>
+  <separator/>
+    <item label="Refresh cache"><action name="Execute"><command><![CDATA[obmenu-generator -d]]></command></action></item>
+  </menu>
+  <menu id="0.230825617706603" label="Openbox">
+    <item label="Openbox Autostart"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/autostart]]></command></action></item>
+    <item label="Openbox RC"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/rc.xml]]></command></action></item>
+    <item label="Openbox Menu"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/menu.xml]]></command></action></item>
+    <item label="Reconfigure Openbox"><action name="Execute"><command><![CDATA[openbox --reconfigure]]></command></action></item>
+  </menu>
+  </menu>
+  <separator/>
+    <item label="Lock"><action name="Execute"><command><![CDATA[xscreensaver-command -lock]]></command></action></item>
+    <item label="Exit"><action name="Exit"/></item>
+</openbox_pipe_menu>
