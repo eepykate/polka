@@ -66,9 +66,9 @@ reduce_menu_opacity=0
 
 [GeneralColors]
 window.color=#181a21
-base.color=#232630
+base.color=#1d2029
 alt.base.color=#181a21
-button.color=#232630
+button.color=#1d2029
 light.color=#404754
 mid.light.color=#313131
 dark.color=black
@@ -368,7 +368,7 @@ text.margin.bottom=0
 text.margin.left=3
 text.margin.right=3
 frame.top=0
-frame.bottom=0
+frame.bottom=3
 frame.left=0
 frame.right=0
 frame.expansion=0

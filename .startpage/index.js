@@ -100,7 +100,7 @@ function AnalogClock(canvas, date) {
 
     ctx.beginPath()
     ctx.lineWidth = 2
-    ctx.strokeStyle = '#eceff4'
+    ctx.strokeStyle = '#cccccc'
 
     ctx.arc(cx, cy, r, 0, 2 * Math.PI)
     ctx.stroke()
@@ -123,7 +123,7 @@ function AnalogClock(canvas, date) {
     ctx.stroke()
 
     ctx.beginPath()
-    ctx.strokeStyle = '#5e81ac'
+    ctx.strokeStyle = '#6992c5'
     var sr = s * 2 * Math.PI / 60 - Math.PI / 2
     var slx = r * Math.cos(sr) + cx
     var sly = r * Math.sin(sr) + cy

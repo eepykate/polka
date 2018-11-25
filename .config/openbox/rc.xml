@@ -322,17 +322,17 @@
     </keybind>
     <keybind key="S-Print">
       <action name="Execute">
-        <command>scrot -s -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
+        <command>scrot_selection</command>
       </action>
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -m -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
+        <command>scrot_fullscreen</command>
       </action>
     </keybind>
     <keybind key="W-Print">
       <action name="Execute">
-        <command>scrot -u -b -e 'mv $f ~/Stuff/Screenshots/scrot/'</command>
+        <command>scrot_focused'</command>
       </action>
     </keybind>
     <keybind key="W-space">

@@ -1,4 +1,3 @@
-URxvt.font: xft:SauceCodePro\ Nerd\ Font:style=Regular:size=11
 -uc|+uc
 
 ! Extensions
@@ -8,12 +7,12 @@ URxvt.font: xft:SauceCodePro\ Nerd\ Font:style=Regular:size=11
 ! - font-size: for scaling fonts
 !   https://github.com/majutsushi/urxvt-font-size/blob/master/font-size
 !
-URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size
+URxvt.perl-ext-common: default,matcher,selection-to-clipboard,font-size,resize-font
 
 
 ! Fonts
 ! =====
-URxvt.font: xft:Monospace:size=12
+URxvt.font: xft:SauceCodePro Nerd Font Mono:size=12
 URxvt.allow_bold: true
 
 
@@ -89,9 +88,6 @@ URxvt.fading: 0
 URxvt.cursorColor: #AAAAAA
 URxvt.cursorBlink: 1
 URxvt.cursorUnderline: 1
-
-URxvt.background: black
-URxvt.foreground: gray
 
 !!Onedark
 

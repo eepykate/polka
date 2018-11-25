@@ -1,14 +1,14 @@
 :root {
-    --bgdark: #1e2127;
-    --fgdark: #d8dee9;
+    --bgdark:  #181a21;
+    --fgdark:  #cccccc;
 
-    --bglight: #323842;
-    --fglight: #eceff4;
+    --bglight: #1d2129;
+    --border:  #393d49;
+    --fglight: #cccccc;
 
     --bgtitle: #4c566a;
 
-    --accent: #5e81ac;
-    #5e81ac;
+    --accent:  #6992c5;
 }
 
 html,
@@ -22,18 +22,18 @@ body {
 }
 
 @font-face {
-    font-family: 'Overpass';
-    src: local('Overpass');
+    font-family: 'SauceCodePro Nerd Font Mono';
+    src: local('SauceCodePro Nerd Font Mono');
 }
 
 body {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 666px;
 
     background: var(--bgdark);
     color: var(--fgdark);
 
-    font-family: 'Overpass', 'Arial';
+    font-family:  'SauceCodePro Nerd Font Mono';
 
     user-select: none;
     -moz-user-select: none;
@@ -41,6 +41,8 @@ body {
 
 .shadow-box {
     box-shadow: 5px 5px 10px 5px #101010;
+    text-align: center;
+    font-size: 1.05rem
 }
 
 body.nojs #top-header {
@@ -102,12 +104,12 @@ form input[type="text"] {
     box-sizing: border-box;
 
     padding: 10px;
-    border: 2px solid var(--bglight);
+    border: 2px solid var(--border);
 
     background: var(--bgdark);
     color: var(--fglight);
 
-    font-family: 'Overpass', 'Arial';
+    font-family: ,'SauceCodePro Nerd Font Mono', 'Overpass', 'Arial';
     font-size: 1.25rem;
     text-align: center;
 }
@@ -140,7 +142,8 @@ header.sticky + main {
 
 .nav-wrapper {
     margin: 10px;
-    border: 2px solid var(--bglight);
+    border: 2px solid var(--border);
+    background: var(--bgdark)
 }
 
 .nav-wrapper:hover {
@@ -174,7 +177,7 @@ main h1 {
     font-weight: normal;
 
     color: var(--fglight);
-    background: var(--bglight);
+    background: var(--bgdark);
     text-align: center;
 
     padding: 5px;

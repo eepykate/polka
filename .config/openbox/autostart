@@ -21,7 +21,7 @@ nm-applet &
 yakuake &
 #xfce4-panel &
 #latte-dock &
-feh --bg-fill "/home/$USER/Wallpapers/Hexagon outline OneSided.png" &
+feh --bg-fill "/home/gauge/Wallpapers/Hexagon Krayons.png"
 #lxqt-panel &
 #tint2 &
 lxqt-notificationd &
