@@ -208,48 +208,40 @@ manualinstall $aurhelper
 # and all build dependencies are installed.
 installationloop
 
-#ins_ls_extended
-
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
 
-#mkdir /home/$name/.local/share/fonts
-
-#mkdir /usr/share/fonts/truetype
-#mkdir /usr/share/fonts/truetype/customttf
-
-#curl -L "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf" > "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
-#chmod a+r "/usr/share/fonts/truetype/customttf/Sauce Code Pro Nerd Font Complete.ttf"
-
+#Agnoster ZSH theme
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/agnoster.zsh-theme -o /usr/share/oh-my-zsh/themes/agnoster.zsh-theme &>/dev/null
 
+#Sauce Code Pro font
 rm /tmp/SauceCodePro.zip &>/dev/null
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip > /tmp/SauceCodePro.zip &>/dev/null
 unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 fc-cache -f
 
+#ls with icons and colours
 if [ ! -f /usr/bin/ls_extended ]; then
 curl -L "https://gitlab.com/GaugeK/dots/raw/master/bin/ls_extended?inline=false" -o "/usr/bin/ls_extended"
 chmod a+x "/usr/bin/ls_extended"
 fi
 
-#if [ ! -f /usr/bin/lock ]; then
-#curl "https://gitlab.com/GaugeK/dots/raw/master/bin/lock" -o "/usr/bin/lock"
-#fi
-
+#Hibernate (for rofi)
 if [ ! -f /usr/bin/hibernate ]; then
 echo "#\!/usr/bin/bash
 
 systemctl hibernate" >> /usr/bin/hibernate
 fi
 
-#if [ ! -f /usr/bin/hib ]; then
-#echo "#\!/usr/bin/bash
+#Hibernate and lock
+if [ ! -f /usr/bin/hib ]; then
+echo "#\!/usr/bin/bash
 
-#systemctl hibernate && lock" >> /usr/bin/hib
-#fi
+systemctl hibernate && lock" >> /usr/bin/hib
+fi
 
+#Disable mouse acceleration
 if [ ! -f /etc/X11/xorg.conf.d/50-mouse-acceleration.conf ]; then
 echo 'Section "InputClass"
     Identifier "My Mouse"
@@ -260,7 +252,7 @@ echo 'Section "InputClass"
 EndSection' >> /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 fi
 
-
+#Touchpad stuff
 if [ ! -f /etc/X11/xorg.conf.d/70-synaptics.conf ]; then
 echo 'Section "InputClass"
     Identifier "touchpad"
@@ -304,9 +296,15 @@ newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/u
 
 # Make pacman and yay colorful because why not.
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
+#One line per pkg pacman
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
-sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
+#pacman loading bar in pacman
+if grep -q ILoveCandy "/etc/pacman.conf"; then
+	else
+	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
+fi
 
+#Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
 
