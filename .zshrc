@@ -36,6 +36,8 @@ function mc {
 export VISUAL='code'
 
 #Aliases
+#Emojis from ~/.emoji file
+alias emoji="cat ~/.emoji | grep "
 #git - List changed files since last commit
 alias gl="git diff --no-commit-id --name-only"
 #git - Add all unstaged files to staging area

@@ -304,6 +304,13 @@ if grep -q ILoveCandy "/etc/pacman.conf"; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
+#Screenshot folder
+if [ ! -f /home/$name/Stuff/Screenshots/scrot/ ]; then
+	mkdir /home/$name/Stuff
+	mkdir /home/$name/Stuff/Screenshots/
+	mkdir /home/$name/Stuff/Screenshots/scrot/
+fi
+
 #Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
