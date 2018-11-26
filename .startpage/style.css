@@ -104,7 +104,7 @@ form input[type="text"] {
     box-sizing: border-box;
 
     padding: 10px;
-    border: 2px solid var(--border);
+    border: 2px solid var(--bglight);
 
     background: var(--bgdark);
     color: var(--fglight);
@@ -142,7 +142,7 @@ header.sticky + main {
 
 .nav-wrapper {
     margin: 10px;
-    border: 2px solid var(--border);
+    border: 2px solid var(--bglight);
     background: var(--bgdark)
 }
 
@@ -177,7 +177,7 @@ main h1 {
     font-weight: normal;
 
     color: var(--fglight);
-    background: var(--bgdark);
+    background: var(--bglight);
     text-align: center;
 
     padding: 5px;

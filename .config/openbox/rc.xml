@@ -332,7 +332,7 @@
     </keybind>
     <keybind key="W-Print">
       <action name="Execute">
-        <command>scrot_focused'</command>
+        <command>scrot_focused</command>
       </action>
     </keybind>
     <keybind key="W-space">
