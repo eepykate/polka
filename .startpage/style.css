@@ -28,7 +28,7 @@ body {
 
 body {
     margin: 0 auto;
-    max-width: 666px;
+    max-width: 800px;
 
     background: var(--bgdark);
     color: var(--fgdark);
