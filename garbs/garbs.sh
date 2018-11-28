@@ -306,6 +306,12 @@ if grep -q ILoveCandy "/etc/pacman.conf"; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
+#Make sudo as normal user request the root user's password instead of that user's
+if grep -q "Defaults rootpw" "/etc/sudoers"; then
+	else
+	sed -i '/## Defaults specification/a Defaults rootpw' /etc/pacman.conf
+fi
+
 #Screenshot folder
 if [ ! -f /home/$name/Stuff/Screenshots/scrot/ ]; then
 	mkdir /home/$name/Stuff

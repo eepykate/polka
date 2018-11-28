@@ -23,9 +23,7 @@
 }
 
 * {
-  spacing: 4;
-  padding: 4;
-  border-color: #181a21;
+  border-color: #6992c5;
   background-color: transparent;
 }
 
@@ -36,7 +34,7 @@ window {
 }
 
 #mainbox {
-  border: 0;
+  border: 3;
   padding: 5;
 }
 
@@ -47,12 +45,17 @@ window {
 
 #textbox {
   text-color: @fg;
+  spacing: 4;
+  padding: 4;
+
 }
 
 
 inputbar {
   margin: 0px 0px 0px 0px;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
+  spacing: 4;
+  padding: 4;
 }
 
 prompt {
@@ -71,6 +74,8 @@ entry {
 
 #listview {
   lines: 8;
+  spacing: 4;
+  padding: 4;
 }
 
 #listview {
@@ -81,6 +86,8 @@ entry {
 
 #element {
   border: 0;
+  spacing: 4;
+  padding: 4;
 }
 
 #element normal.normal {
@@ -150,9 +157,9 @@ entry {
 }
 
 #prompt {
+  
   spacing: 0;
   border: 0;
-  border-radius: 4;
-  padding: 3 3 3;
+  border-radius: 0;
   text-color: @blue;
 }

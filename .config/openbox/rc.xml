@@ -222,11 +222,6 @@
         <command>/home/gauge/bin/wifi</command>
       </action>
     </keybind>
-    <keybind key="A-space">
-      <action name="Execute">
-        <command>lxqt-runner</command>
-      </action>
-    </keybind>
     <keybind key="W-F4">
       <action name="Execute">
         <command>xdotool getwindowfocus windowkill</command>

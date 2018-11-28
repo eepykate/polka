@@ -70,6 +70,8 @@ alias song="instantmusic -s "
 alias songs="instantmusic -l "
 #Kill current session
 alias kills="kill -9 -1"
+#Clear cache
+alias cc="echo 3 | sudo tee /proc/sys/vm/drop_caches"
 #GNU/Linux interjection copypasta
 alias rms="echo 'I'\''d just like to interject for a moment.  What you'\''re referring to as Linux,
 is in fact, GNU/Linux, or as I'\''ve recently taken to calling it, GNU plus Linux.
