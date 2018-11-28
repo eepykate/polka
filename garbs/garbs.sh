@@ -296,9 +296,11 @@ newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/u
 
 # Make pacman and yay colorful because why not.
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
+
 #One line per pkg pacman
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
-#pacman loading bar in pacman
+
+#Pacman-like loading bar in pacman
 if grep -q ILoveCandy "/etc/pacman.conf"; then
 	else
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
@@ -311,6 +313,9 @@ if [ ! -f /home/$name/Stuff/Screenshots/scrot/ ]; then
 	mkdir /home/$name/Stuff/Screenshots/scrot/
 fi
 
+#Make wifi faster on my card
+sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/modprobe.d/iwlwifi.conf'
+
 #Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
@@ -319,4 +324,5 @@ sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/
 finalize
 clear
 
+#Start the display manager
 systemctl start sddm
