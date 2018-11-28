@@ -1,0 +1,167 @@
+/* RASI Theme */
+
+* {
+  black:      #181a21;
+  red:        #b6465f;
+  green:      #3ab795;
+  yellow:     #f0c987;
+  blue:       #6992c5;
+  purple:     #afb3f7;
+  cyan:       #1d8a99;
+  emphasis:   #284a65;
+  text:       #ffffff;
+  text-alt:   #aaaaaa;
+  fg:         #aaaaaa;
+  bg:         #181a21;
+  
+  spacing: 0;
+  background-color: transparent;
+
+  font: "SauceCodePro Nerd Font 14";
+
+  text-color: @fg;
+}
+
+* {
+  spacing: 4;
+  padding: 4;
+  border-color: #181a21;
+  background-color: transparent;
+}
+
+#window {
+  border: 1;
+  padding: 2;
+  background-color: @bg;
+}
+
+#mainbox {
+  border: 0;
+  padding: 5;
+}
+
+#message {
+  border: 0px solid 0px 0px;
+  padding: 0px 0px 0px;
+  border-color: @bg;
+}
+
+#textbox {
+  text-color: @fg;
+}
+
+
+inputbar {
+  margin: 0px 0px 0px 0px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @blue;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: ":";
+  text-color: @text-alt;
+}
+
+entry {
+  margin: 0px 0px;
+}
+
+#listview {
+  border-color: @bg;
+  lines: 8;
+}
+
+#listview {
+  fixed-height: 0;
+  border: 0px solid 0px 0px;
+  padding: 2px 0px 0px;
+}
+
+#element {
+  border: 0;
+}
+
+#element normal.normal {
+  text-color: @fg;
+  background-color: @bg;
+}
+
+#element normal.urgent {
+  text-color: @fg;
+  background-color: @bg;
+}
+
+#element normal.active {
+  text-color: @black;
+  background-color: @blue;
+}
+
+#element selected.normal {
+  text-color: @black;
+  background-color: @blue;
+}
+
+#element selected.urgent {
+  text-color: @bg;
+  background-color: @blue;
+}
+
+#element selected.active {
+  text-color: @bg;
+  background-color: @blue;
+}
+
+#element alternate.normal {
+  text-color: @fg;
+  background-color: @bg;
+}
+
+#element alternate.urgent {
+  text-color: @fg;
+  background-color: @bg;
+}
+
+#element alternate.active {
+  text-color: @fg;
+  background-color: @bg;
+}
+
+#scrollbar {
+  border: 0;
+  width: 4px;
+  padding: 0;
+  handle-color: @normal-foreground;
+}
+
+#sidebar {
+  border: 0px solid 0px 0px;
+  border-color: #131317;
+}
+
+#button selected {
+  background-color: @selected-normal-background;
+  text-color: #ffffff;
+}
+
+#window.mainbox.inputbar {
+  spacing: 0;
+}
+
+#window.mainbox.inputbar.box {}
+
+#window.mainbox.inputbar.normal {
+  foreground: @normal-foreground;
+  background: @selected-normal-background;
+}
+
+#prompt {
+  spacing: 0;
+  border: 0;
+  border-radius: 4;
+  padding: 3 3 3;
+  text-color: @blue;
+}
