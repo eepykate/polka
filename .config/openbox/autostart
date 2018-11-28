@@ -24,7 +24,7 @@ yakuake &
 feh --bg-fill "/home/gauge/Wallpapers/Hexagon Krayons.png"
 #lxqt-panel &
 #tint2 &
-lxqt-notificationd &
+#lxqt-notificationd &
 #volumeicon &
 pnmixer &
 xautolock -time 10 -locker ~/bin/lock &
@@ -33,3 +33,4 @@ albert &
 tint2 -c /home/gauge/.config/tint2/topleft.tint2rc &
 tint2 -c /home/gauge/.config/tint2/topright.tint2rc &
 conky &
+dunst &

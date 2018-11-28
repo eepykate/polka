@@ -81,6 +81,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xssstate,
 ,conky,
 ,xf86-input-synaptics,
+,dunst, is a minimal notification daemon
 A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
 A,i3lock-color-git, is the lock screen
