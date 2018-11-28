@@ -29,10 +29,10 @@
   background-color: transparent;
 }
 
-#window {
-  border: 1;
-  padding: 2;
-  background-color: @bg;
+window {
+  transparency: "real";
+  fullscreen: false;
+  background-color: #181a21aa;
 }
 
 #mainbox {
@@ -43,7 +43,6 @@
 #message {
   border: 0px solid 0px 0px;
   padding: 0px 0px 0px;
-  border-color: @bg;
 }
 
 #textbox {
@@ -71,7 +70,6 @@ entry {
 }
 
 #listview {
-  border-color: @bg;
   lines: 8;
 }
 
@@ -87,12 +85,10 @@ entry {
 
 #element normal.normal {
   text-color: @fg;
-  background-color: @bg;
 }
 
 #element normal.urgent {
   text-color: @fg;
-  background-color: @bg;
 }
 
 #element normal.active {
@@ -106,28 +102,23 @@ entry {
 }
 
 #element selected.urgent {
-  text-color: @bg;
   background-color: @blue;
 }
 
 #element selected.active {
-  text-color: @bg;
   background-color: @blue;
 }
 
 #element alternate.normal {
   text-color: @fg;
-  background-color: @bg;
 }
 
 #element alternate.urgent {
   text-color: @fg;
-  background-color: @bg;
 }
 
 #element alternate.active {
   text-color: @fg;
-  background-color: @bg;
 }
 
 #scrollbar {
