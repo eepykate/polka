@@ -1,0 +1,4 @@
+#!/bin/sh
+pkill ffmpeg
+
+notify-send -t 2000 "recording stopped"

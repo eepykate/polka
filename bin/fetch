@@ -30,17 +30,17 @@ color-echo()
 #mins=$((${up}/60%60))       # seconds divided by 60 mod 60 is mins
 
 # distro
-color-echo 'distro '   'Arch'
+color-echo 'os   '   'Arch'
 
 # shell
-color-echo 'shell  '   'zsh'
+color-echo 'sh   '   'zsh'
 
 # wm
-color-echo 'wm     '   'openbox'
+color-echo 'wm   '   'openbox'
 
 # colors
 #echo -e "   $red▪$rst $grn▪$rst $ylw▪$rst $blu▪$rst $prp▪$rst $cyn▪$rst"
-echo -e "   $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst "
+echo -e "  $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst "
 #▼▲
 
 echo
