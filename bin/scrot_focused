@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scrot -b -u -e 'mv $f ~/Stuff/Screenshots/scrot/'; sleep 2 & notify-send "Screenshot of selection taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"
+scrot -b -u -e 'mv $f ~/Stuff/Screenshots/scrot/'; sleep 2 & notify-send "Screenshot of focused window taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"
