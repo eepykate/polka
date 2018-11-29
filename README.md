@@ -1,12 +1,12 @@
-![Current scrot](https://i.imgur.com/8B9KZTC.png)
-![Startpage](https://i.imgur.com/9EX5UKH.png)
+![Current scrot](https://i.imgur.com/C3kPE0T.png)
+![Startpage](https://i.imgur.com/FeRaHT9.mp4)
 
 
 ---
 
 **Details**
 
-**Distrobution:** Arch GNU + Linux
+**Distrobution:** Arch (GNU + Linux)
 
 **Window Manager:** Openbox
 
