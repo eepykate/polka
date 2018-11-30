@@ -67,6 +67,8 @@ body.nojs #top-header {
     width: 118px;
     height: 118px;
     margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #digital-clock {
@@ -76,6 +78,7 @@ body.nojs #top-header {
 #clock {
     text-align: center;
     font-size: 4rem;
+    margin-top: 20px;
 }
 
 #date {

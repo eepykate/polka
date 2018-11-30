@@ -331,4 +331,4 @@ finalize
 clear
 
 #Start the display manager
-systemctl start sddm
+#systemctl start sddm
