@@ -219,12 +219,12 @@
     </keybind>
     <keybind key="C-A-w">
       <action name="Execute">
-        <command>/home/gauge/bin/wifi</command>
+        <command>wifi</command>
       </action>
     </keybind>
     <keybind key="W-F4">
       <action name="Execute">
-        <command>xdotool getwindowfocus windowkill</command>
+        <command>xdodool getwindowfocus windowkill</command>
       </action>
     </keybind>
     <keybind key="C-W-Up">
