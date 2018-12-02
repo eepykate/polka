@@ -84,6 +84,8 @@
     # Set to 0 to disable.
     # Transient notifications ignore this setting.
     idle_threshold = 120
+    #Align the text to the center of the notification box
+    alignment = center
 
     ### Text ###
 
