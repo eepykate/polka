@@ -224,7 +224,7 @@
     </keybind>
     <keybind key="W-F4">
       <action name="Execute">
-        <command>xdodool getwindowfocus windowkill</command>
+        <command>xdotool getwindowfocus windowkill</command>
       </action>
     </keybind>
     <keybind key="C-W-Up">
