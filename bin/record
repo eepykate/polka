@@ -5,6 +5,33 @@
 # Records the desktop or a selected rectangle with ffmpeg.
 #
 
+#
+# Source:
+#   https://gitlab.com/gaugek/dots/
+#
+
+#
+# Syntax: 
+# $ record <offset x> <offset y> <width> <height> <frames per second>
+#
+# Defaults suit my setup. You can see them below.
+#
+
+offsetx=$1
+[ -z $offsetx ] && offsetx=1440
+
+offsety=$2
+[ -z $offsety ] && offsety=0
+
+width=$3
+[ -z $width ] && width=1920
+
+height=$4
+[ -z $height ] && height=1080
+
+rate=$5
+[ -z $rate ] && rate=30
+
 if [ "$1" = "-s" ]
 then
   set $(slop -q -o -f '%x %y %w %h') > /dev/null 2> /dev/null
@@ -29,8 +56,8 @@ fi
 
 notify-send -t 2000 "recording started"
 
-ffmpeg -y -f x11grab -draw_mouse 1 -s ${3}x${4} \
-    -r 30 -i :0.0+${1},${2} -qscale 0 \
+ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
+    -r ${rate} -i :0.0+${offsetx},${offsety} -qscale 0 \
     "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 \
     > /dev/null 2>&1
 
