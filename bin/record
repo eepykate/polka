@@ -12,25 +12,20 @@
 
 #
 # Syntax: 
-# $ record <offset x> <offset y> <width> <height> <frames per second>
+# $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
 #
 # Defaults suit my setup. You can see them below.
 #
 
-offsetx=$1
-[ -z $offsetx ] && offsetx=1440
+[ -n "$1" ] && offsetX="$1" || offsetX=1440
 
-offsety=$2
-[ -z $offsety ] && offsety=0
+[ -n "$2" ] && offsetY="$2" || offsetY=0
 
-width=$3
-[ -z $width ] && width=1920
+[ -n "$3" ] && width="$3"   || width=1920
 
-height=$4
-[ -z $height ] && height=1080
+[ -n "$4" ] && height="$4"  || height=1080
 
-rate=$5
-[ -z $rate ] && rate=30
+[ -n "$5" ] && rate="$5"    || rate=30
 
 if [ "$1" = "-s" ]
 then
@@ -38,8 +33,10 @@ then
 else
   if i3-msg nop > /dev/null 2> /dev/null
   then
-    OUTPUT="$(i3-msg -t get_workspaces | jq -r '.[] | select (.focused).output')"
-    JSON="$(i3-msg -t get_outputs | jq -r ".[]|select(.name==\"$OUTPUT\").rect")"
+    OUTPUT="$(i3-msg -t get_workspaces | \
+    jq -r '.[] | select (.focused).output')"
+    JSON="$(i3-msg -t get_outputs | \
+    jq -r ".[]|select(.name==\"$OUTPUT\").rect")"
     X="$(printf "$JSON" | jq -r '.x')"
     Y="$(printf "$JSON" | jq -r '.y')"
     W="$(printf "$JSON" | jq -r '.width')"
@@ -47,17 +44,23 @@ else
     set $(printf "%d %d %d %d" "$X" "$Y" "$W" "$H") > /dev/null 2> /dev/null
   else
     DESKTOP="$(xdotool get_desktop)"
-    [ "$DESKTOP" -eq 0 ] && DESKTOP="$(xrandr --nograb --query | grep -E '\sconnected\s' | wc -l)"
-    set $(xrandr --nograb --query | grep -E '\sconnected\s' | head -${DESKTOP} | tail -1 | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | awk -F'(x|+)' '{print $3 " " $4 " " $1 " " $2}') > /dev/null 2> /dev/null
+    [ "$DESKTOP" -eq 0 ] && DESKTOP="$(xrandr --nograb --query | \
+    grep -E '\sconnected\s' | \
+    wc -l)"
+    set $(xrandr --nograb --query | grep -E '\sconnected\s' | \
+    head -${DESKTOP} | \
+    tail -1 | \
+    grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | \
+    awk -F'(x|+)' '{print $3 " " $4 " " $1 " " $2}') > /dev/null 2> /dev/null
   fi
 fi
 
-[ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ] && exit 1
+[ -z "$@" ] && exit 1
 
 notify-send -t 2000 "recording started"
 
 ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
-    -r ${rate} -i :0.0+${offsetx},${offsety} -qscale 0 \
+    -r ${rate} -i :0.0+${offsetX},${offsetY} -qscale 0 \
     "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 \
     > /dev/null 2>&1
 
