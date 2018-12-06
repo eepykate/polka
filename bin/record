@@ -15,7 +15,7 @@
 # $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
 #
 # Defaults suit my setup. You can see them below.
-#
+# 
 
 [ -n "$1" ] && offsetX="$1" || offsetX=1440
 
@@ -55,7 +55,7 @@ else
   fi
 fi
 
-[ -z "$@" ] && exit 1
+[ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ] && exit 1
 
 notify-send -t 2000 "recording started"
 
