@@ -7,6 +7,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,nvidia-utils,are the NVIDIA drivers
 ,lib32-nvidia-utils,are the NVIDIA drivers
 ,xclip,
+,util-linux,
 ,sddm,is a display manager (login screen)
 ,kvantum-qt5,is a Qt theming engine
 ,qbittorrent,is a torrent client
@@ -82,6 +83,8 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,conky,
 ,xf86-input-synaptics,
 ,dunst, is a minimal notification daemon
+,gvim, is an advanced text editor
+A,obmenu-generator,
 A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
 A,i3lock-color-git, is the lock screen

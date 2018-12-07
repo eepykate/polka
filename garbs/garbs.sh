@@ -215,16 +215,16 @@ putgitrepo "$dotfilesrepo" "/home/$name"
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/agnoster.zsh-theme -o /usr/share/oh-my-zsh/themes/agnoster.zsh-theme &>/dev/null
 
 #Sauce Code Pro font
-rm /tmp/SauceCodePro.zip &>/dev/null
+rm -f /tmp/SauceCodePro.zip &>/dev/null
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip > /tmp/SauceCodePro.zip &>/dev/null
 unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 #Iosevka font
-rm /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
+rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip > /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-fc-cache -f
+fc-cache -f -v
 
 #ls with icons and colours
 if [ ! -f /usr/bin/ls_extended ]; then
@@ -289,7 +289,7 @@ fi
 [[ -f /usr/bin/pulseaudio ]] && resetpulse
 
 # Enable services here.
-serviceinit NetworkManager cronie 
+serviceinit NetworkManager 
 systemctl enable sddm
 
 # Most important command! Get rid of the beep!
@@ -306,15 +306,13 @@ sed -i "s/^#Color/Color/g" /etc/pacman.conf
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
 #Pacman-like loading bar in pacman
-if grep -q ILoveCandy "/etc/pacman.conf"; then
-	else
+if [ -z grep -q ILoveCandy "/etc/pacman.conf" ]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
 #Make sudo as normal user request the root user's password instead of that user's
-if grep -q "Defaults rootpw" "/etc/sudoers"; then
-	else
-	sed -i '/## Defaults specification/a Defaults rootpw' /etc/pacman.conf
+if [ -z grep -q "Defaults rootpw" "/etc/sudoers" ]; then
+	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
 fi
 
 #Screenshot folder
@@ -330,6 +328,31 @@ sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/m
 #Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
+
+#Enable hibernation (Probably won't work lmao)
+swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
+
+uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
+
+if [ -z $(grep "resume" "/etc/default/grub") ]; then 
+
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=$uswap \"/" /etc/default/grub 
+
+	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
+
+fi
+
+if [ -z $(grep "resume" "/etc/mkinitcpio.conf") ]; then 
+
+	sed -i '/HOOKS=/s/\<filesystems\>/resume &/' /etc/mkinitcpio.conf
+
+	mkinitcpio -p linux &>/dev/null
+
+fi
+
+sudo -u $name obmenu-generator -s -i
 
 # Last message! Install complete!
 finalize
