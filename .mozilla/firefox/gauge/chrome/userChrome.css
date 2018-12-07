@@ -23,6 +23,9 @@ margin-left:0 !important;
 pointer-events: auto !important;
 }
 
+.tabbrowser-tab{ opacity: 0.5 }
+.tabbrowser-tab:hover{ opacity: 0.75 }
+.tabbrowser-tab[selected]{ opacity: 1 }
 
 /* auto collapse nav bar height when in stealth mode (not active), kinda jumpy and annoying after a while so let's just comment it for now */
 
@@ -37,6 +40,10 @@ pointer-events: auto !important;
 height: 35px !important;
 }
 */
+
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
+	background-color: #1d2029 !important;
+  }
 
 :root:-moz-lwtheme-brighttext {                                      /* minor color changes to the default dark theme */
 	--color-overflow: #222;                                            /* >> button color */
