@@ -39,8 +39,8 @@ tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | s
 alias so="startx openbox-session"
 #Emojis from ~/.emoji file
 alias emoji="cat ~/.emoji | grep -i "
-#git - List changed files since last commit
-alias gl="git diff --no-commit-id --name-only"
+#git - better git log
+alias gl="git log --all --decorate --oneline --graph"
 #git - Add all unstaged files to staging area
 alias gaa="git add -A"
 #git - Commit, add -m "message" after, or --amend
