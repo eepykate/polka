@@ -22,8 +22,8 @@ body {
 }
 
 @font-face {
-    font-family: 'SauceCodePro Nerd Font Mono';
-    src: local('SauceCodePro Nerd Font Mono');
+    font-family: 'Iosevka Term', 'SauceCodePro Nerd Font Mono';
+    src: local('Iosevka Term');
 }
 
 body {
@@ -33,7 +33,7 @@ body {
     background: var(--bgdark);
     color: var(--fgdark);
 
-    font-family:  'SauceCodePro Nerd Font Mono';
+    font-family:  'Iosevka Term', 'SauceCodePro Nerd Font Mono';
 
     user-select: none;
     -moz-user-select: none;
@@ -42,7 +42,22 @@ body {
 .shadow-box {
     box-shadow: 5px 5px 10px 5px #101010;
     text-align: center;
-    font-size: 1.05rem
+    font-size: 14px
+}
+
+main h1 {
+    font-size: 16px;
+    font-weight: 500;
+
+    color: var(--fglight);
+    background: var(--bglight);
+    text-align: center;
+
+    padding: 5px;
+    margin: 0;
+
+/*     position: relative; */
+    z-index: 2;
 }
 
 body.nojs #top-header {
@@ -83,7 +98,7 @@ body.nojs #top-header {
 
 #date {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 36px;
 }
 
 header {
@@ -112,8 +127,8 @@ form input[type="text"] {
     background: var(--bgdark);
     color: var(--fglight);
 
-    font-family: ,'SauceCodePro Nerd Font Mono', 'Overpass', 'Arial';
-    font-size: 1.25rem;
+    font-family: 'Iosevka Term', 'SauceCodePro Nerd Font Mono';
+    font-size: 20px;
     text-align: center;
 }
 
@@ -175,20 +190,6 @@ main section {
     }
 }
 
-main h1 {
-    font-size: 1.1rem;
-    font-weight: normal;
-
-    color: var(--fglight);
-    background: var(--bglight);
-    text-align: center;
-
-    padding: 5px;
-    margin: 0;
-
-/*     position: relative; */
-    z-index: 2;
-}
 
 main nav {
     padding: 5px;

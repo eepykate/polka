@@ -1,5 +1,5 @@
 document.body.classList.remove('nojs')
-var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fry', 'Sat']
+var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 var clockElem = document.getElementById('clock')
 var dateElem = document.getElementById('date')
