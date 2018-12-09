@@ -180,7 +180,7 @@ initialcheck
 # Welcome user.
 welcomemsg || { clear; exit; }
 
-# Get and verify username and password.
+# Get and verify usernamex and password.
 getuserandpass
 
 # Give warning if user already exists.
@@ -207,6 +207,10 @@ manualinstall $aurhelper
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
 installationloop
+
+if [ -z grep "root ALL=(ALL) ALL" "/etc/sudoers" ]; then
+	sed -i '/## User privilege specification/a root ALL=(ALL) ALL' /etc/sudoers
+fi
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
@@ -306,12 +310,12 @@ sed -i "s/^#Color/Color/g" /etc/pacman.conf
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
 #Pacman-like loading bar in pacman
-if [ -z grep -q ILoveCandy "/etc/pacman.conf" ]; then
+if [ -z grep ILoveCandy "/etc/pacman.conf" ]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
 #Make sudo as normal user request the root user's password instead of that user's
-if [ -z grep -q "Defaults rootpw" "/etc/sudoers" ]; then
+if [ -z grep "Defaults rootpw" "/etc/sudoers" ]; then
 	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
 fi
 

@@ -23,9 +23,24 @@ margin-left:0 !important;
 pointer-events: auto !important;
 }
 
-.tabbrowser-tab{ opacity: 0.5 }
-.tabbrowser-tab:hover{ opacity: 0.75 }
+.tabbrowser-tab{ opacity: 0.33 }
+.tabbrowser-tab:hover{ opacity: 0.66 }
 .tabbrowser-tab[selected]{ opacity: 1 }
+
+
+/* Hide bookmarks bar until hover */
+#PersonalToolbar {
+    opacity:0 !important;
+    margin-top: -26px !important;
+    transition: all 0.2s ease 0s !important;
+}
+
+#navigator-toolbox:hover > #PersonalToolbar {
+    visibility: visible !important;
+    margin-top: 0px !important;
+    transition: all 0.2s ease 0s !important;
+    opacity: 1 !important;
+}
 
 /* auto collapse nav bar height when in stealth mode (not active), kinda jumpy and annoying after a while so let's just comment it for now */
 
