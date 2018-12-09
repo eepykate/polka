@@ -135,6 +135,7 @@ form input[type="text"] {
 form input[type="text"]:hover,
 form input[type="text"]:focus {
     border-color: var(--accent);
+    transition: all 0.2s ease 0s !important;
 }
 
 header.sticky form input[type="text"] {
@@ -166,10 +167,12 @@ header.sticky + main {
 
 .nav-wrapper:hover {
     border-color: var(--accent);
+    transition: all 0.2s ease 0s !important;
 }
 
 .nav-wrapper:hover h1 {
     background: var(--accent);
+    transition: all 0.2s ease 0s !important;
 }
 
 
