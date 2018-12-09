@@ -31,7 +31,7 @@
 <constant name="C_button_bg_hover" value="#cccccc" />
 <constant name="C_button_bg_active" value="#6992c5" />
 
-<constant name="C_button_border_hover" value="#191b23" />
+<constant name="C_button_border_hover" value="#181a22" />
 
 <constant name="C_icon_bg_focused" value="#cccccc" />
 <constant name="C_icon_bg_unfocused" value="#9f9fa1" />
