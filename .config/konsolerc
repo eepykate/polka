@@ -17,8 +17,8 @@ SaveGeometryOnExit=false
 ShowMenuBarByDefault=false
 
 [MainWindow]
-MenuBar=Enabled
-State=AAAA/wAAAAD9AAAAAAAAAyEAAAHKAAAABAAAAAQAAAAIAAAACPwAAAAA
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAt4AAAHYAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 
 [Notification Messages]
