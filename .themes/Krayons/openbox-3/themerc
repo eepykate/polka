@@ -178,17 +178,17 @@ menu.title.text.justify: center
 ### OSD
 osd.border.width: 1
 
-osd.border.color: #b7cdff
+osd.border.color: #6992c5
 
 osd.label.text.color: #cccccc
 
 osd.bg: flat solid
-osd.bg.color: #1f222f
+osd.bg.color: #1d2029
 osd.label.bg: flat solid
-osd.label.bg.color: #1f222f
+osd.label.bg.color: #1d2029
 osd.hilight.bg: flat solid
-osd.hilight.bg.color: #b7cdff
+osd.hilight.bg.color: #6992c5
 osd.unhilight.bg: flat solid
-osd.unhilight.bg.color: #1f222f
+osd.unhilight.bg.color: #1d2029
 
 #osd.label.text.font: text shadow
