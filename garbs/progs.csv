@@ -3,15 +3,11 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
 ,lxqt,is a modular desktop environment
-,nvidia,are the NVIDIA drivers
-,nvidia-utils,are the NVIDIA drivers
-,lib32-nvidia-utils,are the NVIDIA drivers
 ,xclip,
 ,util-linux,
 ,sddm,is a display manager (login screen)
 ,kvantum-qt5,is a Qt theming engine
 ,qbittorrent,is a torrent client
-,nvidia-settings,is a configuration tool for the NVIDIA drivers
 ,neofetch,is a system information tool, used normally for showing off in r/unixporn
 ,kdenlive,is an advanced video editor
 ,frei0r-plugins,is plugins for kdenlive
