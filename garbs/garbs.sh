@@ -340,29 +340,29 @@ sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/system
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
 
 #Enable hibernation (Probably won't work lmao)
-swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
+#swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
 
-uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
+#uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
 
-if [ -z $(grep "resume" "/etc/default/grub") ]; then 
-
-	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
-	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
-	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=$uswap \"/" /etc/default/grub 
-
-	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
-
-fi
-
-if [ -z $(grep "resume" "/etc/mkinitcpio.conf") ]; then 
-
-	sed -i '/HOOKS=/s/\<filesystems\>/resume &/' /etc/mkinitcpio.conf
-
-	mkinitcpio -p linux &>/dev/null
-
-fi
-
-sudo -u $name obmenu-generator -s -i
+#if [ -z $(grep "resume" "/etc/default/grub") ]; then 
+#
+#	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
+#	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
+#	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=$uswap \"/" /etc/default/grub 
+#
+#	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
+#
+#fi
+#
+#if [ -z $(grep "resume" "/etc/mkinitcpio.conf") ]; then 
+#
+#	sed -i '/HOOKS=/s/\<filesystems\>/resume &/' /etc/mkinitcpio.conf
+#
+#	mkinitcpio -p linux &>/dev/null
+#
+#fi
+#
+#sudo -u $name obmenu-generator -s -i
 
 # Last message! Install complete!
 finalize
