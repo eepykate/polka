@@ -1,6 +1,6 @@
 [Appearance]
-ColorScheme=New Color Scheme
-Font=SauceCodePro Nerd Font,10,-1,5,50,0,0,0,0,0
+ColorScheme=Krayons
+Font=Iosevka Term,10,-1,5,50,0,0,0,0,0,Regular
 
 [Cursor Options]
 CursorShape=2
