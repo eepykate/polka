@@ -338,12 +338,13 @@ sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/m
 #Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
+systemctl daemon-reload
 
 #Enable hibernation (Probably won't work lmao)
 #swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
-
+#
 #uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
-
+#
 #if [ -z $(grep "resume" "/etc/default/grub") ]; then 
 #
 #	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
@@ -361,7 +362,8 @@ sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/
 #	mkinitcpio -p linux &>/dev/null
 #
 #fi
-#
+
+
 #sudo -u $name obmenu-generator -s -i
 
 # Last message! Install complete!
