@@ -7,7 +7,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,util-linux,
 ,sddm,is a display manager (login screen)
 ,kvantum-qt5,is a Qt theming engine
-,qbittorrent,is a torrent client
+,transmission-qt,is a torrent client
 ,neofetch,is a system information tool, used normally for showing off in r/unixporn
 ,cmatrix,is a useless but fun matrix-like thing for terminal
 ,clementine,is a graphical music player
