@@ -9,8 +9,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,kvantum-qt5,is a Qt theming engine
 ,qbittorrent,is a torrent client
 ,neofetch,is a system information tool, used normally for showing off in r/unixporn
-,kdenlive,is an advanced video editor
-,frei0r-plugins,is plugins for kdenlive
 ,cmatrix,is a useless but fun matrix-like thing for terminal
 ,clementine,is a graphical music player
 ,volumeicon,is a volume icon that hangs in the systray
@@ -33,8 +31,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,konsole,is a Qt/KDE terminal emulator
 ,yakuake,is a Qt/KDE drop-down terminal
 ,zsh,is my shell of choice
-,ttf-inconsolata,is the monospace font of LARBS
-,ttf-linux-libertine,provides the sans and serif fonts for LARBS
 ,arandr,is a UI for screen adjustment
 ,dosfstools,allows your computer to access dos-like filesystems
 ,exfat-utils,allows management of FAT drives
@@ -45,7 +41,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,gnome-themes-extra,gives the dark GTK theme used in LARBS
 ,networkmanager,does exactly what it sounds like
 ,network-manager-applet,appears in the top right corner and manages the wi-fi connection
-,newsboat,is a terminal RSS client
 ,ntfs-3g,allows accessing NTFS partitions
 ,pulseaudio,is the audio system (>inb4 bloat)
 ,pulseaudio-alsa,is an audio interface with ALSA
@@ -53,12 +48,11 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,pulsemixer,is an intuitive ncurses audio controller
 ,python-pywal,generates color schemes based on your wallpaper
 ,scrot,can take quick screenshots at your request
-,unrar,extracts rar's
+,unrar,extracts rars
 ,unzip,unzips zips
 ,7z,
 ,w3m,is a terminal browser which can also view images
 ,wget,downloads sites and files on the command line
-,xcape,gives the special escape/super mappings of LARBS
 ,xdotool,provides window action utilities on the command line.
 ,xssstate,times out the screen if locked
 ,youtube-dl,can download any YouTube video (or playlist or channel) when given the link
@@ -75,7 +69,6 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,gimp,is an advanced image editor
 ,inkscape,is an advanced SVG editor
 ,qt5ct,
-,xssstate,
 ,conky,
 ,xf86-input-synaptics,
 ,dunst, is a minimal notification daemon
