@@ -154,6 +154,10 @@ finalize(){ \
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment.\\n\\n-Gauge" 12 80
 	}
 
+mystuff(){ \
+	dialog --infobox "Installing some of my configurations in the root directory" 4 50
+}
+
 ###
 ### THE ACTUAL SCRIPT ###
 ###
@@ -228,17 +232,19 @@ newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/u
 
 #--------------My stuff--------------
 
+mystuff
+
 #Agnoster ZSH theme
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/agnoster.zsh-theme -o /usr/share/oh-my-zsh/themes/agnoster.zsh-theme &>/dev/null
 
 #Sauce Code Pro font
 rm -f /tmp/SauceCodePro.zip &>/dev/null
-curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip > /tmp/SauceCodePro.zip &>/dev/null
+curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip >> /tmp/SauceCodePro.zip 
 unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 #Iosevka font
 rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
-curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip > /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
+curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 fc-cache -f
@@ -299,7 +305,7 @@ EndSection' >> /etc/X11/xorg.conf.d/70-synaptics.conf
 fi
 
 #Make sudo as normal user request the root user's password instead of that user's
-if [ -z grep "Defaults rootpw" "/etc/sudoers" ]; then
+if [[ -z $(grep "Defaults rootpw" "/etc/sudoers") ]]; then
 	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
 fi
 
@@ -307,7 +313,7 @@ fi
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
 #Pacman-like loading bar in pacman
-if [ -z grep ILoveCandy "/etc/pacman.conf" ]; then
+if [[ -z $(grep ILoveCandy "/etc/pacman.conf") ]]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
