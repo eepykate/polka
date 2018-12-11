@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-crossover-c4p">
+    <!-- X-Created-By=application_x-crossover-c4p::install -->
+    <generic-icon name="cxoffice-1_application_x-crossover-c4p"/>
+    <comment>CrossOver C4 Profile</comment>
+    <comment xml:lang="cs">CrossOver C4 profil</comment>
+    <comment xml:lang="da">CrossOvers C4-profil</comment>
+    <comment xml:lang="de">CrossOver C4-Profil</comment>
+    <comment xml:lang="es">Perfil CrossOver C4</comment>
+    <comment xml:lang="fr">Profil C4 CrossOver</comment>
+    <comment xml:lang="he">פרופיל C4 של CrossOver</comment>
+    <comment xml:lang="it">Profilo CrossOver C4</comment>
+    <comment xml:lang="ja">CrossOver C4 プロファイル</comment>
+    <comment xml:lang="lt">CrossOver C4 profilis</comment>
+    <comment xml:lang="nl">CrossOver C4 Profiel</comment>
+    <comment xml:lang="pl">Profil CrossOver C4</comment>
+    <comment xml:lang="pt">Perfil CrossOver C4</comment>
+    <comment xml:lang="pt_BR">Perfil CrossOver C4</comment>
+    <comment xml:lang="ro">Profil C4 CrossOver</comment>
+    <comment xml:lang="ru">Профиль CrossOver C4</comment>
+    <comment xml:lang="sv">C4-profil</comment>
+    <comment xml:lang="zh_CN">CrossOver C4 配置文件</comment>
+    <comment xml:lang="zh_TW">CrossOver C4 設定檔案</comment>
+    <glob pattern="*.c4p"/>
+  </mime-type>
+  <mime-type type="application/x-crossover-tie">
+    <!-- X-Created-By=application_x-crossover-tie::install -->
+    <generic-icon name="cxoffice-1_application_x-crossover-tie"/>
+    <comment>CrossOver CrossTie File</comment>
+    <comment xml:lang="cs">CrossTile soubory CrossOver</comment>
+    <comment xml:lang="da">CrossOvers CrossTie-fil</comment>
+    <comment xml:lang="de">CrossOver CrossTie Datei</comment>
+    <comment xml:lang="es">Archivo CrossOver CrossTie</comment>
+    <comment xml:lang="fr">Fichier CrossTie CrossOver</comment>
+    <comment xml:lang="he">קובץ CrossTie של CrossOver</comment>
+    <comment xml:lang="it">File CrossTie di CrossOver</comment>
+    <comment xml:lang="ja">CrossOver CrossTie ファイル</comment>
+    <comment xml:lang="lt">CrossOver CrossTie failas</comment>
+    <comment xml:lang="nl">CrossOver CrossTie bestand</comment>
+    <comment xml:lang="pl">Plik CrossOver CrossTie</comment>
+    <comment xml:lang="pt">Ficheiro CrossTie CrossOver</comment>
+    <comment xml:lang="pt_BR">Arquivo CrossOver CrossTie</comment>
+    <comment xml:lang="ro">Fisier CrossTie</comment>
+    <comment xml:lang="ru">Файл CrossOver CrossTie</comment>
+    <comment xml:lang="sv">CrossOvers CrossTie-fil</comment>
+    <comment xml:lang="zh_CN">CrossOver CrossTie 文件 (用于自动安装的信息文件)</comment>
+    <comment xml:lang="zh_TW">CrossOver CrossTie 檔案 (用於自動安裝的設定檔案)</comment>
+    <glob pattern="*.tie"/>
+  </mime-type>
+</mime-info>

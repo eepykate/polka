@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-crossover-msi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <generic-icon name="cxoffice-0_application_x-crossover-msi"/>
+  <comment>Windows Installer Package</comment>
+  <comment xml:lang="cs">Windows Instalační balíček</comment>
+  <comment xml:lang="da">Windows-installationsfil</comment>
+  <comment xml:lang="de">Windows Installationspaket</comment>
+  <comment xml:lang="es">Paquete Windows Installer</comment>
+  <comment xml:lang="fr">Paquet d’installation Windows</comment>
+  <comment xml:lang="he">חבילות התקנת חלונות</comment>
+  <comment xml:lang="it">Pacchetto Installer Windows</comment>
+  <comment xml:lang="ja">Windows インストーラー パッケージ</comment>
+  <comment xml:lang="lt">Windows diegimo paketas</comment>
+  <comment xml:lang="nl">Windows installatiebestand</comment>
+  <comment xml:lang="pl">Pakiet Instalatora Windows</comment>
+  <comment xml:lang="pt">Pacote Instalador Windows</comment>
+  <comment xml:lang="pt_BR">Pacote Instalador Windows</comment>
+  <comment xml:lang="ro">Pachet de instalare Windows (MSI)</comment>
+  <comment xml:lang="ru">Пакет Windows Installer</comment>
+  <comment xml:lang="sv">Windows-installationspaket</comment>
+  <comment xml:lang="zh_CN">Windows Installer 安装包</comment>
+  <comment xml:lang="zh_TW">Windows Installer 安裝檔案</comment>
+</mime-type>

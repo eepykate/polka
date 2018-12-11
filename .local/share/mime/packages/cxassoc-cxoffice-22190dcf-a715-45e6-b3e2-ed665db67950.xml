@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-crossover-appref-ms">
+    <!-- X-Created-By=application_x-crossover-appref-ms -->
+    <generic-icon name="cxoffice-22190dcf-a715-45e6-b3e2-ed665db67950_application_x-crossover-appref-ms"/>
+    <comment>Application Reference</comment>
+  </mime-type>
+  <mime-type type="application/x-crossover-compositefont">
+    <!-- X-Created-By=application_x-crossover-compositefont -->
+    <generic-icon name="cxoffice-22190dcf-a715-45e6-b3e2-ed665db67950_application_x-crossover-compositefont"/>
+    <comment>Composite Font File</comment>
+  </mime-type>
+</mime-info>

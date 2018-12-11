@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-crossover-exe">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <generic-icon name="cxoffice-0_application_x-crossover-exe"/>
+  <comment>Windows Application</comment>
+  <comment xml:lang="cs">Windows Aplikace</comment>
+  <comment xml:lang="da">Windows-program</comment>
+  <comment xml:lang="de">Windows Anwendung</comment>
+  <comment xml:lang="es">Aplicación Windows</comment>
+  <comment xml:lang="fr">Application Windows</comment>
+  <comment xml:lang="he">יישום חלונות</comment>
+  <comment xml:lang="it">Applicazione Windows</comment>
+  <comment xml:lang="ja">Windows アプリケーション</comment>
+  <comment xml:lang="lt">Windows programa</comment>
+  <comment xml:lang="nl">Windows programma</comment>
+  <comment xml:lang="pl">Aplikacja Windows</comment>
+  <comment xml:lang="pt">Aplicações Windows</comment>
+  <comment xml:lang="pt_BR">Aplicativo Windows</comment>
+  <comment xml:lang="ru">Приложение Windows</comment>
+  <comment xml:lang="sv">Windows-program</comment>
+  <comment xml:lang="zh_CN">Windows 程序</comment>
+  <comment xml:lang="zh_TW">Windows 應用程式</comment>
+</mime-type>

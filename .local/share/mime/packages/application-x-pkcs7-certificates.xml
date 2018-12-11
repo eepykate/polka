@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/x-pkcs7-certificates">
+        <comment>PKCS#7 certificate bundle</comment>
+        <glob-deleteall/>
+        <glob pattern="*.p7b"/>
+        <glob pattern="*.spc"/>
+    </mime-type>
+</mime-info>

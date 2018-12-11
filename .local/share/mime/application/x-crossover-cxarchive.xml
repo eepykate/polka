@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-crossover-cxarchive">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <generic-icon name="cxoffice-0_application_x-crossover-cxarchive"/>
+  <comment>CrossOver Bottle Archive</comment>
+  <comment xml:lang="cs">Archiv láhví CrossOver</comment>
+  <comment xml:lang="da">CrossOvers flaskearkiv</comment>
+  <comment xml:lang="de">CrossOver Flaschenarchiv</comment>
+  <comment xml:lang="es">Archivo comprimido de botella CrossOver</comment>
+  <comment xml:lang="fr">Bouteille archivée CrossOver</comment>
+  <comment xml:lang="he">ארכיון הבקבוקים של CrossOver</comment>
+  <comment xml:lang="it">Archivia Bottiglia CrossOver</comment>
+  <comment xml:lang="ja">CrossOver ボトルアーカイブ</comment>
+  <comment xml:lang="lt">CrossOver butelių archyvas</comment>
+  <comment xml:lang="nl">CrossOver flesarchief</comment>
+  <comment xml:lang="pl">Archiwum Butelki CrossOver</comment>
+  <comment xml:lang="pt">Arquivo de Garrafa CrossOver</comment>
+  <comment xml:lang="pt_BR">Arquivo Garrafa CrossOver</comment>
+  <comment xml:lang="ro">Recipient archivat CrossOver</comment>
+  <comment xml:lang="ru">Архив бутылки CrossOver</comment>
+  <comment xml:lang="sv">CrossOvers flaskarkiv</comment>
+  <comment xml:lang="zh_CN">CrossOver 容器存档</comment>
+  <comment xml:lang="zh_TW">CrossOver 容器封裝檔案</comment>
+  <glob pattern="*.cxarchive"/>
+</mime-type>

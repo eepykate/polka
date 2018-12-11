@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-crossover-lnk">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <generic-icon name="cxoffice-0_application_x-crossover-lnk"/>
+  <comment>Windows Shortcut</comment>
+  <comment xml:lang="cs">Windows zástupce</comment>
+  <comment xml:lang="da">Windows-genvej</comment>
+  <comment xml:lang="de">Windows Verknüpfung</comment>
+  <comment xml:lang="es">Acceso directo de Windows</comment>
+  <comment xml:lang="fr">Raccourci Windows</comment>
+  <comment xml:lang="he">קיצור דרך של חלונות</comment>
+  <comment xml:lang="it">Combinazioni da tastiera di Windows</comment>
+  <comment xml:lang="ja">Windows のショートカット</comment>
+  <comment xml:lang="lt">Windows nuoroda</comment>
+  <comment xml:lang="nl">Windows snelkoppeling</comment>
+  <comment xml:lang="pl">Skróty Windows</comment>
+  <comment xml:lang="pt">Atalho Windows</comment>
+  <comment xml:lang="pt_BR">Atalho Windows</comment>
+  <comment xml:lang="ru">Ярлык Windows</comment>
+  <comment xml:lang="sv">Windows-genväg</comment>
+  <comment xml:lang="zh_CN">Windows 快捷方式</comment>
+  <comment xml:lang="zh_TW">Windows 捷徑</comment>
+</mime-type>
