@@ -2,6 +2,8 @@
 export ZSH="/usr/share/oh-my-zsh"
 ZSH_THEME="agnoster"
 source $ZSH/oh-my-zsh.sh
+#Syntax Hightlighting in shell
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #Default terminal text editor
 export EDITOR='vim'
