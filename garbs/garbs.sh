@@ -1,12 +1,10 @@
 #!/bin/bash
 
-
-# Based off Luke Smith's LARBS - https://github.com/LukeSmithxyz/LARBS
 # Gauge's Auto Rice Boostrapping Script (GARBS)
-# by Gauge Krahe
+# Original by Luke Smith (https://github.com/LukeSmithxyz/LARBS)
 
-## Luke's Auto Rice Boostrapping Script (LARBS)
-## by Luke Smith <luke@lukesmith.xyz>
+# Luke's Auto Rice Boostrapping Script (LARBS)
+# by Luke Smith <luke@lukesmith.xyz>
 # License: GNU GPLv3
 
 # You can provide a custom repository with -r or a custom programs csv with -p.
@@ -16,7 +14,7 @@
 
 ###
 ### OPTIONS AND VARIABLES ###
-###6
+###
 
 while getopts ":a:r:p:h" o; do case "${o}" in
 	h) echo -e "Optional arguments for custom use:\\n  -r: Dotfiles repository (local file or url)\\n  -p: Dependencies and programs csv (local file or url)\\n  -a: AUR helper (must have pacman-like syntax)\\n  -h: Show this message" && exit ;;
@@ -27,7 +25,7 @@ while getopts ":a:r:p:h" o; do case "${o}" in
 esac done
 
 # DEFAULTS:
-[ -z ${dotfilesrepo+x} ] && dotfilesrepo="https://gitlab.com/GaugeK/dots.git"
+[ -z ${dotfilesrepo+x} ] && dotfilesrepo="https://gitlab.com/gaugek/dots.git"
 [ -z ${progsfile+x} ] && progsfile="https://gitlab.com/GaugeK/dots/raw/master/garbs/progs.csv"
 [ -z ${aurhelper+x} ] && aurhelper="yay"
 
@@ -35,19 +33,7 @@ esac done
 ### FUNCTIONS ###
 ###
 
-initialcheck() { pacman -S --noconfirm --needed dialog || { echo "Are you sure you're running this as the root user? Does the root user have sudoers permissions? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection?"; exit; } ;}
-
-#ins_ls_extended() { # Installs ls_extended manually if not installed. 
-#	[[ -f /usr/bin/ls_extended ]] || (
-#	dialog --infobox "Installing ls_extended, (ls with icons and colours...)" 8 50
-#	cd /tmp
-#	rm -rf /tmp/ls_extended*
-#	git clone https://aur.archlinux.org/ls_extended.git &>/dev/null &&
-#	chmod a+rw /tmp/ls_extended
-#	cd "ls_extended" &&
-#	sed -i '16,$d' .SRCINFO &&
-#	sudo -u $name makepkg --noconfirm -si &>/dev/null
-#	cd /tmp) ;}
+initialcheck() { pacman -Syyu --noconfirm --needed dialog || { echo "Are you sure you're running this as the root user? Are you sure you're using an Arch-based distro? ;-) Are you sure you have an internet connection?"; exit; } ;}
 
 preinstallmsg() { \
 	dialog --title "Let's get this party started!" --yes-label "Let's go!" --no-label "No, nevermind!" --yesno "The rest of the installation will now be totally automated, so you can sit back and relax.\\n\\nIt will take some time, but when done, you can relax even more with your complete system.\\n\\nNow just press <Let's go!> and the system will begin installation!" 13 60 || { clear; exit; }
@@ -59,7 +45,7 @@ welcomemsg() { \
 
 refreshkeys() { \
 	dialog --infobox "Refreshing Arch Keyring..." 4 40
-	pacman --noconfirm -Sy archlinux-keyring  &>/dev/null
+	pacman --noconfirm -Sy archlinux-keyring &>/dev/null
 	}
 
 getuserandpass() { \
@@ -80,7 +66,7 @@ getuserandpass() { \
 
 usercheck() { \
 	! (id -u $name &>/dev/null) ||
-	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. GARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nGARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that GARBS will change $name's password to the one you just gave." 14 70
+	dialog --colors --title "WARNING!" --yes-label "CONTINUE" --no-label "No wait..." --yesno "The user \`$name\` already exists on this system. LARBS can install for a user already existing, but it will \\Zboverwrite\\Zn any conflicting settings/dotfiles on the user account.\\n\\nLARBS will \\Zbnot\\Zn overwrite your user files, documents, videos, etc., so don't worry about that, but only click <CONTINUE> if you don't mind your settings being overwritten.\\n\\nNote also that LARBS will change $name's password to the one you just gave." 14 70
 	}
 
 adduserandpass() { \
@@ -93,7 +79,7 @@ adduserandpass() { \
 
 gitmakeinstall() {
 	dir=$(mktemp -d)
-	dialog --title "GARBS Installation" --infobox "Installing \`$(basename $1)\` ($n of $total) via \`git\` and \`make\`. $(basename $1) $2." 5 70
+	dialog --title "LARBS Installation" --infobox "Installing \`$(basename $1)\` ($n of $total) via \`git\` and \`make\`. $(basename $1) $2" 5 70
 	git clone --depth 1 "$1" "$dir" &>/dev/null
 	cd "$dir" || exit
 	make &>/dev/null
@@ -101,12 +87,12 @@ gitmakeinstall() {
 	cd /tmp ;}
 
 maininstall() { # Installs all needed programs from main repo.
-	dialog --title "GARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2." 5 70
+	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total). $1 $2" 5 70
 	pacman --noconfirm --needed -S "$1" &>/dev/null
 	}
 
 aurinstall() { \
-	dialog --title "GARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2." 5 70
+	dialog --title "LARBS Installation" --infobox "Installing \`$1\` ($n of $total) from the AUR. $1 $2" 5 70
 	grep "^$1$" <<< "$aurinstalled" && return
 	sudo -u $name $aurhelper -S --noconfirm "$1" &>/dev/null
 	}
@@ -131,8 +117,8 @@ serviceinit() { for service in "$@"; do
 	done ;}
 
 newperms() { # Set special sudoers settings for install (or after).
-	sed -i "/#GARBS/d" /etc/sudoers
-	echo -e "$@ #GARBS" >> /etc/sudoers ;}
+	sed -i "/#LARBS/d" /etc/sudoers
+	echo -e "$@ #LARBS" >> /etc/sudoers ;}
 
 systembeepoff() { dialog --infobox "Getting rid of that retarded error beep sound..." 10 50
 	rmmod pcspkr
@@ -153,7 +139,7 @@ resetpulse() { dialog --infobox "Reseting Pulseaudio..." 4 50
 
 manualinstall() { # Installs $1 manually if not installed. Used only for AUR helper here.
 	[[ -f /usr/bin/$1 ]] || (
-	dialog --infobox "Installing \"$1\", an AUR helper..." 8 50
+	dialog --infobox "Installing \"$1\", an AUR helper..." 4 50
 	cd /tmp
 	rm -rf /tmp/"$1"*
 	curl -sO https://aur.archlinux.org/cgit/aur.git/snapshot/"$1".tar.gz &&
@@ -164,7 +150,7 @@ manualinstall() { # Installs $1 manually if not installed. Used only for AUR hel
 
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
-	echo "exec_always --no-startup-id notify-send -i ~/.scripts/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000"  >> /home/$name/.config/i3/config
+	echo "exec_always --no-startup-id notify-send -i ~/.scripts/pix/larbs.png '<b>Welcome to LARBS:</b> Press Super+F1 for the manual.' -t 10000"  >> /home/$name/.config/i3/config
 	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment.\\n\\n-Gauge" 12 80
 	}
 
@@ -180,7 +166,7 @@ initialcheck
 # Welcome user.
 welcomemsg || { clear; exit; }
 
-# Get and verify usernamex and password.
+# Get and verify username and password.
 getuserandpass
 
 # Give warning if user already exists.
@@ -200,6 +186,9 @@ refreshkeys
 # in a fakeroot environment, this is required for all builds with AUR.
 newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
+dialog --title "LARBS Installation" --infobox "Installing \`basedevel\` for build software." 5 70
+pacman --noconfirm --needed -S base-devel &>/dev/null
+
 manualinstall $aurhelper
 
 # The command that does all the installing. Reads the progs.csv file and
@@ -208,12 +197,36 @@ manualinstall $aurhelper
 # and all build dependencies are installed.
 installationloop
 
+
+## Give root sudoers permissions if not already given (Also mine but this needs to be at the start)
 if [ -z grep "root ALL=(ALL) ALL" "/etc/sudoers" ]; then
 	sed -i '/## User privilege specification/a root ALL=(ALL) ALL' /etc/sudoers
 fi
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name"
+
+# Install the LARBS Firefox profile in ~/.mozilla/firefox/
+#putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
+
+# Installation of the post-install wizard
+#putgitrepo "https://github.com/LukeSmithxyz/arch-postinstall-wizard" "/home/$name/larbs-wizard"
+#ln -T /home/$name/.larbs-wizard/wizard.sh postinstall-wizard.sh
+
+# Pulseaudio, if/when initially installed, often needs a restart to work immediately.
+[[ -f /usr/bin/pulseaudio ]] && resetpulse
+
+# Enable services here.
+serviceinit NetworkManager cronie
+
+# Most important command! Get rid of the beep!
+systembeepoff
+
+# This line, overwriting the `newperms` command above will allow the user to run
+# serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
+newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
+
+#--------------My stuff--------------
 
 #Agnoster ZSH theme
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/agnoster.zsh-theme -o /usr/share/oh-my-zsh/themes/agnoster.zsh-theme &>/dev/null
@@ -285,32 +298,10 @@ echo 'Section "InputClass"
 EndSection' >> /etc/X11/xorg.conf.d/70-synaptics.conf
 fi
 
-
-# Install the LARBS Firefox profile in ~/.mozilla/firefox/
-#putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
-
-# Pulseaudio, if/when initially installed, often needs a restart to work immediately.
-[[ -f /usr/bin/pulseaudio ]] && resetpulse
-
-# Enable services here.
-serviceinit NetworkManager 
-systemctl enable sddm
-
-# Most important command! Get rid of the beep!
-systembeepoff
-
-if [[ -n $(lspci | grep NVIDIA) ]]; then
-	pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings 
+#Make sudo as normal user request the root user's password instead of that user's
+if [ -z grep "Defaults rootpw" "/etc/sudoers" ]; then
+	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
 fi
-
-#nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
-
-# This line, overwriting the `newperms` command above will allow the user to run
-# serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
-newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay"
-
-# Make pacman and yay colorful because why not.
-sed -i "s/^#Color/Color/g" /etc/pacman.conf
 
 #One line per pkg pacman
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
@@ -320,17 +311,8 @@ if [ -z grep ILoveCandy "/etc/pacman.conf" ]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
-#Make sudo as normal user request the root user's password instead of that user's
-if [ -z grep "Defaults rootpw" "/etc/sudoers" ]; then
-	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
-fi
-
-#Screenshot folder
-if [ ! -f /home/$name/Stuff/Screenshots/scrot/ ]; then
-	mkdir /home/$name/Stuff
-	mkdir /home/$name/Stuff/Screenshots/
-	mkdir /home/$name/Stuff/Screenshots/scrot/
-fi
+# Make pacman and yay colorful because why not.
+sed -i "s/^#Color/Color/g" /etc/pacman.conf
 
 #Make wifi faster on my card
 sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/modprobe.d/iwlwifi.conf'
@@ -366,9 +348,8 @@ systemctl daemon-reload
 
 #sudo -u $name obmenu-generator -s -i
 
+#--------------End My stuff--------------
+
 # Last message! Install complete!
 finalize
 clear
-
-#Start the display manager
-#systemctl start sddm
