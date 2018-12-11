@@ -1,0 +1,34 @@
+[PNMixer]
+SliderOrientation=horizontal
+DisplayTextVolume=true
+TextVolumePosition=2
+ScrollStep=5
+FineScrollStep=1
+MiddleClickAction=2
+CustomCommand=
+VolMuteKey=-1
+VolUpKey=-1
+VolDownKey=-1
+AlsaCard=USB Audio Device
+NormalizeVolume=true
+SystemTheme=true
+DrawVolMeter=false
+VolMeterPos=0
+VolMeterColor=0.3803863525390625;0.6862640380859375;0.9372406005859375;
+VolumeControlCommand=pavucontrol-qt
+EnableHotKeys=false
+VolMuteMods=0
+VolUpMods=0
+VolDownMods=0
+EnableNotifications=true
+HotkeyNotifications=false
+MouseNotifications=true
+PopupNotifications=false
+ExternalNotifications=true
+NotificationTimeout=1500
+
+[(default)]
+Channel=Master
+
+[USB Audio Device]
+Channel=PCM
