@@ -241,7 +241,7 @@ rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip > /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-fc-cache -f -v
+fc-cache -f
 
 #ls with icons and colours
 if [ ! -f /usr/bin/ls_extended ]; then
@@ -323,30 +323,37 @@ sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/
 systemctl daemon-reload
 
 #Enable hibernation (Probably won't work lmao)
-#swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
-#
-#uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
-#
-#if [ -z $(grep "resume" "/etc/default/grub") ]; then 
-#
-#	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
-#	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
-#	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=$uswap \"/" /etc/default/grub 
-#
-#	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
-#
-#fi
-#
-#if [ -z $(grep "resume" "/etc/mkinitcpio.conf") ]; then 
-#
-#	sed -i '/HOOKS=/s/\<filesystems\>/resume &/' /etc/mkinitcpio.conf
-#
-#	mkinitcpio -p linux &>/dev/null
-#
-#fi
 
+if [[ -n $(grep swap /etc/fstab) ]]; then
 
-#sudo -u $name obmenu-generator -s -i
+	swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
+
+	#uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
+
+	uswap="$(/usr/bin/ls -lha /dev/disk/by-uuid | grep ${swap} | awk '{print $9}')"
+
+fi
+
+if [[ -n $(grep swap /etc/fstab) ]] && [[ -z $(grep "resume" "/etc/default/grub") ]]; then 
+
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=UUID=${uswap} \"/" /etc/default/grub 
+
+	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
+
+fi
+
+if [[ -n $(grep swap /etc/fstab) ]] && [[ -z $(grep "resume" "/etc/mkinitcpio.conf") ]]; then 
+
+	sed -i '/HOOKS=/s/\<filesystems\>/resume &/' /etc/mkinitcpio.conf
+
+	mkinitcpio -p linux &>/dev/null
+
+fi
+
+#Generate the openbox menu
+sudo -u $name obmenu-generator -s -i &>/dev/null
 
 #--------------End My stuff--------------
 
