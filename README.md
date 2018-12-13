@@ -1,5 +1,6 @@
-![Current scrot](https://i.imgur.com/C3kPE0T.png)
-![Startpage](https://i.imgur.com/UZpi8yM.mp4)
+![Current scrot](https://i.imgur.com/VjRJaFw.png)
+
+![Firefox config / startpage](https://i.imgur.com/8jWQNgw.mp4)
 
 
 ---
@@ -30,4 +31,4 @@
 
 **Font:** Noto Sans 11
 
-**Terminal Font:** Source Code Pro 10
+**Terminal Font:** Iosevka Term 11
