@@ -22,7 +22,7 @@
 ### WINDOW
 border.width: 2
 
-window.client.padding.width: 2
+window.client.padding.width: 0
 window.client.padding.height: 0
 window.handle.width: 0
 
