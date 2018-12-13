@@ -132,6 +132,11 @@ form input[type="text"] {
     text-align: center;
 }
 
+main span:hover, main span:hover span  {
+    color: var(--accent) !important;
+    transition: all 0.2s ease 0s !important;
+  }
+
 form input[type="text"]:hover,
 form input[type="text"]:focus {
     border-color: var(--accent);
