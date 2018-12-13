@@ -27,6 +27,10 @@ pointer-events: auto !important;
 .tabbrowser-tab:hover{ opacity: 0.66 }
 .tabbrowser-tab[selected]{ opacity: 1 }
 
+/* Round URL bar */
+#urlbar, .searchbar-textbox{
+    border-radius: 1.5em !important;
+}
 
 /* Hide bookmarks bar until hover */
 #PersonalToolbar {
