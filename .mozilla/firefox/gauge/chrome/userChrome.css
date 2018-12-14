@@ -168,6 +168,27 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 	border: 0px !important;
 }
 
+#forward-button[disabled] {
+	color: #696969 !important;
+	background-image: none !important;
+}
+
+#forward-button {
+	color: #cccccc !important;
+	background-image: none !important;
+}
+
+#back-button[disabled] {
+	color: #696969 !important;
+	background-image: none !important;
+}
+
+#back-button {
+	color: #cccccc !important;
+	background-image: none !important;
+}
+
+
 /* bookmarks toolbar edge style */
 
 toolbarbutton.bookmark-item {
