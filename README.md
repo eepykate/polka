@@ -1,6 +1,6 @@
 ![Current scrot](https://i.imgur.com/VjRJaFw.png)
 
-![Firefox config / startpage](https://i.imgur.com/8jWQNgw.mp4)
+![Firefox config / startpage](https://i.imgur.com/q1EfwDi.mp4)
 
 
 ---
