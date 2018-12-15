@@ -132,16 +132,11 @@ form input[type="text"] {
     text-align: center;
 }
 
+
 main span:hover, main span:hover span  {
     color: var(--accent) !important;
     transition: all 0.2s ease 0s !important;
   }
-
-form input[type="text"]:hover,
-form input[type="text"]:focus {
-    border-color: var(--accent);
-    transition: all 0.2s ease 0s !important;
-}
 
 header.sticky form input[type="text"] {
     opacity: 0.85;
@@ -170,14 +165,20 @@ header.sticky + main {
     background: var(--bgdark)
 }
 
+form input[type="text"]:hover,
+form input[type="text"]:focus {
+    border-color: var(--accent);
+    transition: all 0.4s ease 0s !important;
+}
+
 .nav-wrapper:hover {
     border-color: var(--accent);
-    transition: all 0.2s ease 0s !important;
+    transition: all 0.4s !important;
 }
 
 .nav-wrapper:hover h1 {
     background: var(--accent);
-    transition: all 0.2s ease 0s !important;
+    transition: all 0.4s !important;
 }
 
 
