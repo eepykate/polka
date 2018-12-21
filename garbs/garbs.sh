@@ -321,7 +321,9 @@ fi
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
 
 #Make wifi faster on my card
-sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/modprobe.d/iwlwifi.conf'
+if [ -n /etc/modprobe.d/iwlwifi.conf ]; then
+	sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/modprobe.d/iwlwifi.conf'
+fi
 
 #Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
