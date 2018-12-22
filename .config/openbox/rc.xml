@@ -342,6 +342,11 @@
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
+        <command>rofi -show run</command>
+      </action>
+    </keybind>
+    <keybind key="C-space">
+      <action name="Execute">
         <command>dmenu_run -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16'</command>
       </action>
     </keybind>
