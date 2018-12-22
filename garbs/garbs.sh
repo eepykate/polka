@@ -362,6 +362,25 @@ if [[ -n $(grep swap /etc/fstab) ]] && [[ -z $(grep "resume" "/etc/mkinitcpio.co
 
 fi
 
+#Enable Multilib repo if not already enabled
+if [[ -n $(grep "\#\[multilib\]" /etc/pacman.conf) ]]; then
+
+	multiline="$(grep -n "\[multilib\]" /etc/pacman.conf |  tr -dc '0-9')"
+
+	multiline2="$(( ${multiline} + 1 ))"
+
+	sed -i "${multiline}s/\#\[multilib\]/\[multilib\]/" ~/pacman.conf
+
+	sed -i "${multiline2}s/\#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirrorlist/" ~/pacman.conf
+
+fi
+
+#Install the nvidia drivers
+if [[ -n $(lspci | grep NVIDIA) ]]; then
+	pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
+fi
+
+
 #Generate the openbox menu
 sudo -u $name obmenu-generator -s -i &>/dev/null
 
