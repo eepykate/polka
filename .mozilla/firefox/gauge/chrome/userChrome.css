@@ -28,7 +28,7 @@ pointer-events: auto !important;
 
 /* Round URL bar */
 #urlbar, .searchbar-textbox{
-    border-radius: 1.5em !important;
+    border-radius: 0.5em !important;
 }
 
 /* Hide bookmarks bar until hover */
@@ -247,8 +247,6 @@ toolbarbutton.bookmark-item:hover {
 	--toolbarbutton-border-radius: 0px !important;
 }
 
-
-
 #context-back > .menu-iconic-left, #context-forward > .menu-iconic-left, #context-reload > .menu-iconic-left, #context-stop > .menu-iconic-left, #context-bookmarkpage > .menu-iconic-left {
 	padding: 0px !important;
 }
@@ -286,14 +284,9 @@ filter: saturate(0%);
   display: -moz-box !important;
 }
 
-/*
- * Underlines and dims unloaded tabs
- *
- * Contributor(s): josemam
- */
-
 .tabbrowser-tab[pending] {
- font-style: italic;
+	font-style: italic;
+	filter: grayscale(100%) !important;
 }
 
 
@@ -312,4 +305,3 @@ toolbarspring {
 	background-color: #6992c5 !important;
 	height: 2px !important;
 }  
-
