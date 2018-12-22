@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Krayons
-Font=Iosevka Term,10,-1,5,50,0,0,0,0,0,Regular
+Font=Iosevka Term,11,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
 CursorShape=2
