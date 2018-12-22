@@ -72,6 +72,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,python,
 ,zsh-syntax-highlighting,
 ,gtk2-perl,
+,xautolock, locks the screen after a select amount of time
 A,obmenu-generator,
 A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
