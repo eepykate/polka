@@ -6,7 +6,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xclip,
 ,util-linux,
 ,sddm,is a display manager (login screen)
-,kvantum-qt5,is a Qt theming engine
+A,kvantum-qt4-git,is a Qt theming engine
 ,transmission-qt,is a torrent client
 ,neofetch,is a system information tool, used normally for showing off in r/unixporn
 ,cmatrix,is a useless but fun matrix-like thing for terminal
@@ -14,6 +14,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,volumeicon,is a volume icon that hangs in the systray
 ,tint2,is a panel designed for openbox
 ,noto-fonts,is the google noto fonts
+,noto-fonts-cjk,
 ,xorg-server,is the graphical server
 ,xorg-xdpyinfo,retrieves screen information for some scripts
 ,xorg-xwininfo,allows querying information about windows
@@ -75,6 +76,7 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,xautolock, locks the screen after a select amount of time
 ,dmenu,
 ,playerctl,
+,gst-plugins-good, allows clementine to work (bloat)
 A,obmenu-generator,
 A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
