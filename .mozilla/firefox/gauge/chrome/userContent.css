@@ -1,0 +1,10 @@
+@namespace url("http://www.w3.org/1999/xhtml");
+
+:root{
+  scrollbar-color: #6992c5 #181a21 !important;
+  scrollbar-width: thin !important;
+}
+
+* {
+  scrollbar-width: thin !important;
+} 

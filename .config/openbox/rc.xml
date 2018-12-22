@@ -177,6 +177,16 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+    <keybind key="C-A-u">
+      <action name="Execute">
+        <command>dmenuumount</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-m">
+      <action name="Execute">
+        <command>dmenumount</command>
+      </action>
+    </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
         <command>synclient TouchpadOff=1</command>
