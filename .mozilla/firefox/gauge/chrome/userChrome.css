@@ -24,11 +24,11 @@ pointer-events: auto !important;
 
 .tabbrowser-tab{ 
 	opacity: 0.33;
-	filter: grayscale(66%);
+	filter: grayscale(50%);
 }
 .tabbrowser-tab:hover{ 
 	opacity: 0.66;
-	filter: grayscale(33%);
+	filter: grayscale(0%);
 }
 .tabbrowser-tab[selected]{ 
 	opacity: 1;
@@ -364,11 +364,15 @@ toolbarspring {
     cursor: pointer !important; 
 }
 
-/*
-.tabbrowser-tab:hover {
-    border: 1px solid grey !important;
+
+.tabbrowser-tab {
+	padding-left: 2px !important;
+	padding-right: 2px !important;
 }
-*/
+
+.tabbrowser-tab {
+	margin-left: -2px !important;
+}
 
 .tabbrowser-tab[selected="true"]:hover {
     border: none !important;
