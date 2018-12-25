@@ -317,8 +317,8 @@ toolbarspring {
 	border-radius: 0.5em !important;
 }
 
-.tabbrowser-tab {
-    border-radius: 20px !important;
+.tabbrowser-tab, .tabbrowser-tabs {
+    border-radius: 0.5em !important;
 }
 
 :root{
@@ -341,6 +341,12 @@ toolbarspring {
     opacity: 1;
 }
 
+.tabbrowser-tab .tab-background {
+    border: 2px solid #696969 !important;  
+    border-bottom: none !important;
+    opacity: 1;
+}
+
 .tabbrowser-tab:hover .tab-background {
     border: 2px solid #6992c5 !important;
     border-bottom: none !important;
@@ -349,7 +355,7 @@ toolbarspring {
 
 .tab-background {
     border: none !important;
-    border-radius: 5px 5px 0 0 !important;
+    border-radius: 0.6em 0.6em 0 0 !important;
     opacity: .1;
 }
 
