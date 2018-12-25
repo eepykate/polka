@@ -317,9 +317,29 @@ toolbarspring {
 	border-radius: 0.5em !important;
 }
 
-.tabbrowser-tab, .tabbrowser-tabs {
-    border-radius: 0.5em !important;
+.tabbrowser-tab, .tab-content, .tabbrowser-tabs {
+    border-radius: 0.6em 0.6em 0 0 !important;
+	border-left: 1px solid transparent !important;
+	border-top: 1px solid transparent !important;
+	border-right: 1px solid transparent !important;
+
 }
+
+.tabbrowser-tab[selected=true] .tab-content, .tab-background {
+    border-radius: 0.6em 0.6em 0 0 !important;
+    border-left: 1px solid #334455 !important;
+    border-top: 1px solid #334455 !important;
+	border-right: 1px solid #334455 !important;
+}
+
+.tabbrowser-tab:hover .tab-content, .tab-background {
+    border-radius: 0.6em 0.6em 0 0 !important;
+    border-left: 1px solid #334455 !important;
+    border-top: 1px solid #334455 !important;
+	border-right: 1px solid #334455 !important;
+}
+
+
 
 :root{
 	--toolbarbutton-border-radius: 0.5em !important;
@@ -329,6 +349,9 @@ toolbarspring {
     color: #cccccc !important;          
 }
 
+.tabbrowser-tab:hover .tab-text.tab-label {
+    color: #ffffff !important;          
+}
 
 .tabbrowser-tab[selected="true"] .tab-text.tab-label {
     color: #ffffff !important;           
