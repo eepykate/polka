@@ -22,7 +22,7 @@ body {
 }
 
 @font-face {
-    font-family: 'Iosevka Term', 'SauceCodePro Nerd Font Mono';
+    font-family: 'Iosevka Term';
     src: local('Iosevka Term');
 }
 
@@ -33,7 +33,7 @@ body {
     background: var(--bgdark);
     color: var(--fgdark);
 
-    font-family:  'Iosevka Term', 'SauceCodePro Nerd Font Mono';
+    font-family:  'Iosevka Term';
 
     user-select: none;
     -moz-user-select: none;
@@ -53,11 +53,25 @@ main h1 {
     background: var(--bglight);
     text-align: center;
 
-    padding: 5px;
+    padding: 7px;
     margin: 0;
 
 /*     position: relative; */
     z-index: 2;
+}
+
+main span:hover {
+    background-color: var(--accent) !important;
+    color: var(--bgdark) !important;
+    transition: all 0.4s ease 0s !important;
+}
+
+main span {
+    display: block;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    z-index: 2;
+    margin: 5px;
 }
 
 body.nojs #top-header {
@@ -127,16 +141,11 @@ form input[type="text"] {
     background: var(--bgdark);
     color: var(--fglight);
 
-    font-family: 'Iosevka Term', 'SauceCodePro Nerd Font Mono';
+    font-family: 'Iosevka Term';
     font-size: 20px;
     text-align: center;
 }
 
-
-main span:hover, main span:hover span  {
-    color: var(--accent) !important;
-    transition: all 0.2s ease 0s !important;
-  }
 
 header.sticky form input[type="text"] {
     opacity: 0.85;
@@ -155,9 +164,11 @@ main {
     flex-flow: row wrap;
 }
 
+/*
 header.sticky + main {
     padding: 68px 0 10px 0;
 }
+*/
 
 .nav-wrapper {
     margin: 10px;
@@ -179,8 +190,8 @@ form input[type="text"]:focus {
 .nav-wrapper:hover h1 {
     background: var(--accent);
     transition: all 0.4s !important;
+    color: var(--bgdark);
 }
-
 
 main section {
     flex: 1 1 100%;
@@ -199,19 +210,9 @@ main section {
     }
 }
 
-
-main nav {
-    padding: 5px;
-}
-
-main nav a {
-    display: block;
-
+main a {
     color: var(--fglight);
     text-decoration: none;
-
-    padding: 0 15px;
-    margin: 5px 0;
 }
 
 main nav a img {
