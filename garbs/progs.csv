@@ -79,6 +79,7 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,gst-plugins-good, allows clementine to work (bloat)
 ,rsync,
 ,ffmpegthumbnailer,
+,ark,
 A,obmenu-generator,
 A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme
