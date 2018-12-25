@@ -34,4 +34,5 @@ tint2 -c /home/gauge/.config/tint2/topleft.tint2rc &
 tint2 -c /home/gauge/.config/tint2/topright.tint2rc &
 conky &
 dunst &
+cbatticon &
 
