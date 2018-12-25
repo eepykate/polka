@@ -336,19 +336,19 @@ toolbarspring {
 
 
 .tabbrowser-tab[selected="true"] .tab-background {
-    border: 2px solid #6992c5 !important;  
+    /* border: 2px solid #6992c5 !important;  */
     border-bottom: none !important;
     opacity: 1;
 }
 
 .tabbrowser-tab .tab-background {
-    border: 2px solid #696969 !important;  
+    /*border: 2px solid #696969 !important;  */
     border-bottom: none !important;
     opacity: 1;
 }
 
 .tabbrowser-tab:hover .tab-background {
-    border: 2px solid #6992c5 !important;
+    /*border: 2px solid #6992c5 !important; */
     border-bottom: none !important;
     opacity: 1;
 }
@@ -379,11 +379,6 @@ toolbarspring {
 .tabbrowser-tab {
 	margin-left: -2px !important;
 }
-
-.tabbrowser-tab[selected="true"]:hover {
-    border: none !important;
-}
-
 
 [tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
 .tabbrowser-tab:hover::after,
