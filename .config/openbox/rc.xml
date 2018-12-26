@@ -177,6 +177,16 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>brightness +10</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute"> 
+        <command>brightness -10</command>
+      </action>
+    </keybind>
     <keybind key="C-A-u">
       <action name="Execute">
         <command>dmenuumount</command>
