@@ -286,6 +286,9 @@ echo 'Section "InputClass"
     Identifier "touchpad"
     Driver "synaptics"
     MatchIsTouchpad "on"
+        Option "PalmDetect" "1"
+        Option "PalmMinWidth" "8"
+        Option "PalmMinZ" "100"
         Option "TapButton1" "1"
         Option "TapButton2" "3"
         Option "TapButton3" "2"
@@ -301,7 +304,8 @@ echo 'Section "InputClass"
         Option "FingerLow" "30"
         Option "FingerHigh" "50"
         Option "MaxTapTime" "125"
-EndSection' >> /etc/X11/xorg.conf.d/70-synaptics.conf
+EndSection
+' >> /etc/X11/xorg.conf.d/70-synaptics.conf
 fi
 
 #Make sudo as normal user request the root user's password instead of that user's
