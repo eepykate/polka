@@ -413,3 +413,37 @@ toolbarspring {
 #pageActionSeparator, #pocket-button {
     display: none !important;
 }
+
+
+/* Center text on the URL bar */
+#urlbar {
+	text-align: center;
+}
+
+/* restyle popup items */
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
+  -moz-box-orient: vertical !important;
+  text-align: center !important;
+  min-width: 60% !important;
+  max-width: 80% !important;
+  max-height: 75% !important;
+  padding: 4px 0px !important;
+  border-radius: 0.5em !important;
+}
+
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs {
+	display: none !important;
+}
+
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem:not(:-moz-any([type*="heuristic"],[actiontype="searchengine"],[actiontype="visiturl"],[actiontype="keyword"],[actiontype="switchtab"])) .ac-action {
+	visibility: collapse !important;
+	display: none !important;
+}
+
+#identity-box #identity-icon-labels {
+	display:none !important
+
+}
+#identity-box:hover #identity-icon-labels {
+	display:-moz-box !important
+}
