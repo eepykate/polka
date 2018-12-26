@@ -393,6 +393,14 @@ if [[ -n $(grep $name /etc/passwd | grep bash) ]]; then
 	sed -i "/$name/s/\/bin\/bash/\/usr\/bin\/zsh/" /etc/passwd
 fi
 
+
+#(re)install ST
+git clone https://gitlab.com/gaugek/st.git /tmp/st &&
+cd /tmp/st &&
+make &&
+make install;
+cd /tmp
+
 #--------------End My stuff--------------
 
 # Last message! Install complete!

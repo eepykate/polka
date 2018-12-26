@@ -179,12 +179,12 @@
   <keyboard>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>brightness +10</command>
+        <command>light -A 10</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute"> 
-        <command>brightness -10</command>
+        <command>light -U 10</command>
       </action>
     </keybind>
     <keybind key="C-A-u">
@@ -234,7 +234,7 @@
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>konsole</command>
+        <command>st</command>
       </action>
     </keybind>
     <keybind key="C-A-w">
