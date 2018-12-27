@@ -387,12 +387,12 @@ toolbarspring {
     display: none !important;
 }
 
-
+/*
 .tabbrowser-tab:hover,
 .tabbrowser-tab .tab-text.tab-label:hover {
     cursor: pointer !important; 
 }
-
+*/
 
 .tabbrowser-tab {
 	padding-left: 2px !important;
@@ -424,9 +424,6 @@ toolbarspring {
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
   -moz-box-orient: vertical !important;
   text-align: center !important;
-  min-width: 60% !important;
-  max-width: 80% !important;
-  max-height: 75% !important;
   padding: 4px 0px !important;
   border-radius: 0.5em !important;
 }
@@ -440,15 +437,6 @@ toolbarspring {
 #PopupAutoCompleteRichResult > richlistbox > richlistitem:hover > .ac-url[actiontype=remotetab]
 {
   display: none !important;
-}
-
-.searchbar-engine-one-off-item:not([selected]):not(.dummy):hover,
-.addengine-item:hover {
-  color: red !important;
-}
-
-.searchbar-engine-one-off-item[selected] {
-  color: red !important;
 }
 
 .autocomplete-richlistbox {
@@ -468,11 +456,22 @@ toolbarspring {
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
   display: block !important;
 }
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem #ibox-spacer {
-  width: 100000px !important;
-}
-/* fix large space issue at items end */
+
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
   border-inline-end: 0px solid transparent !important;
 }
-	
+
+#PopupAutoCompleteRichResult {
+	margin-left: 10% !important;
+	margin-right: 10% !important;
+	max-width: 80% !important;
+	border-radius: 0.6em !important;
+	border-left: 2px #334455 solid !important;
+	border-right: 2px #334455 solid !important;
+	border-bottom: 2px #334455 solid !important;
+
+}
+
+.autocomplete-richlistitem {
+	max-width: 90% !important;
+}
