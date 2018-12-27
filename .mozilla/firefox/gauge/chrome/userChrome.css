@@ -461,15 +461,13 @@ toolbarspring {
   border-inline-end: 0px solid transparent !important;
 }
 
-#PopupAutoCompleteRichResult {
-	margin-left: 10% !important;
-	margin-right: 10% !important;
-	max-width: 80% !important;
+#PopupAutoCompleteRichResult, .autocomplete-richlistbox, .autocomplete-richlistbox {
+	/*margin-left: 10% !important;
+	margin-right: 10% !important;*/
 	border-radius: 0.6em !important;
 	border-left: 2px #334455 solid !important;
 	border-right: 2px #334455 solid !important;
 	border-bottom: 2px #334455 solid !important;
-
 }
 
 .autocomplete-richlistitem {
