@@ -718,3 +718,41 @@ scrollbar {
 	border-radius: 1px!important;
 }
 
+/*/_______ADDONS_PAGE_FIX________/*/
+
+@-moz-document url(about:addons){
+	.addon.card { 
+	 
+	 max-width: 950px !important;
+	 padding: 4px !important;
+	 padding-right: 6px !important;
+	 padding-left: 11px !important;
+	 margin: -1px !important;
+	 margin-top: 4px !important; 
+	 font-size: 11px !important;
+	 font-family: Arial !important;
+	 /*font-weight: bold !important;*/
+	 border-radius: 7px !important;
+		
+ }
+ 
+ #header-inner {
+	 
+	 margin-left: -133px !important;
+	 margin-bottom: -27px !important;
+  
+ }
+ 
+ .heading-inner {
+	 width: 1795px !important;
+	 margin-left: -1185px !important;
+	 margin-top: -28px !important;
+	 
+ }
+ 
+ .toolbarbutton-icon {
+	 padding: 0px 2px !important;
+	 margin-left: -222px !important;
+	 margin-right: 0px !important;
+	 margin-top: -2px !important;
+	 padding-top: 2px !important;}

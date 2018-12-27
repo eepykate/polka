@@ -431,19 +431,48 @@ toolbarspring {
   border-radius: 0.5em !important;
 }
 
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs {
-	display: none !important;
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-tags:not([empty]),
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-separator:not([type=keyword]),
+#PopupAutoCompleteRichResult > richlistbox > richlistitem[selected] > .ac-url[actiontype=remotetab],
+#PopupAutoCompleteRichResult > richlistbox > richlistitem:hover > .ac-url[actiontype=remotetab]
+{
+  display: none !important;
 }
 
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem:not(:-moz-any([type*="heuristic"],[actiontype="searchengine"],[actiontype="visiturl"],[actiontype="keyword"],[actiontype="switchtab"])) .ac-action {
-	visibility: collapse !important;
-	display: none !important;
+.searchbar-engine-one-off-item:not([selected]):not(.dummy):hover,
+.addengine-item:hover {
+  color: red !important;
 }
 
-#identity-box #identity-icon-labels {
-	display:none !important
+.searchbar-engine-one-off-item[selected] {
+  color: red !important;
+}
 
+.autocomplete-richlistbox {
+	background: #181a21 !important;
+	color: #ffffff !important;
 }
-#identity-box:hover #identity-icon-labels {
-	display:-moz-box !important
+
+
+.ac-text-overflow-container > .ac-action-text:not([selected]) {
+	color: #6992c5 !important;
+	font-style: bold !important;
+	display: -moz-box !important;
+	visibility: visible !important;
+	font-weight: 500 !important;
 }
+
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
+  display: block !important;
+}
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem #ibox-spacer {
+  width: 100000px !important;
+}
+/* fix large space issue at items end */
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
+  border-inline-end: 0px solid transparent !important;
+}
+	
