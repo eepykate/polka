@@ -15,7 +15,7 @@ source ~/.zprofile
 setopt CORRECT
 
 #Powerline sudo prompt
-export SUDO_PROMPT="$(/home/$USER/bin/bee)
+export SUDO_PROMPT="$($HOME/bin/bee)
 $(tput setaf 4) sudo $(tput setab 4)$(tput setaf 0)$(echo "\uE0B0")$(tput setab 4)$(tput setaf 0) password for %p $(tput sgr0)$(tput setaf 4)$(echo "\uE0B0")$(tput sgr0) " 
 
 #mkdir and cd
