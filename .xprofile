@@ -44,3 +44,5 @@ export DEFAULT_USER="gauge"
 #fi
 
 (cd ~/.startpage;nohup python3 -m http.server) &
+
+xrdb -merge ~/.Xresources

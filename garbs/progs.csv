@@ -79,6 +79,7 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,gst-plugins-good, allows clementine to work (bloat)
 ,rsync,
 ,ffmpegthumbnailer,
+,ffmpegthumbs,
 ,ark,
 ,cbatticon,
 ,acpi,
