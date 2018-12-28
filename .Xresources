@@ -1,40 +1,40 @@
-*font: "xft:Iosevka Term:pixelsize=12"
+font: "xft:Iosevka Term:pixelsize=14:antialias=true:autohint=true";
 
 !!Krayons
 
 ! special
-*.foreground:   #c5c8c6
-*.background:   #181a21
-*.cursorColor:  #c5c8c6
+foreground:   #c5c8c6;
+background:   #181a21;
+cursorColor:  #c5c8c6;
 
 ! black
-*.color0:       #181a21
-*.color8:       #181a21
+color0:       #181a21;
+color8:       #181a21;
 
 ! red
-*.color1:       #b6465f
-*.color9:       #b6465f
+color1:       #b6465f;
+color9:       #b6465f;
 
 ! green
-*.color2:       #3ab795
-*.color10:      #3ab795
+color2:       #3ab795;
+color10:      #3ab795;
 
 ! yellow
-*.color3:       #f0c987
-*.color11:      #f0c987
+color3:       #f0c987;
+color11:      #f0c987;
 
 ! blue
-*.color4:       #6992c5
-*.color12:      #6992c5
+color4:       #6992c5;
+color12:      #6992c5;
 
 ! magenta
-*.color5:       #afb3f7
-*.color13:      #afb3f7
+color5:       #afb3f7;
+color13:      #afb3f7;
 
 ! cyan
-*.color6:       #1d8a99
-*.color14:      #1d8a99
+color6:       #1d8a99;
+color14:      #1d8a99;
 
 ! white
-*.color7:       #707880
-*.color15:      #c5c8c6
+color7:       #707880;
+color15:      #c5c8c6;
