@@ -334,8 +334,10 @@ sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/system
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
 systemctl daemon-reload
 
-#Enable hibernation (Probably won't work lmao)
+#Show details about boot while booting up
+sed -i "s/quiet//" /etc/default/grub
 
+#Enable hibernation (Probably won't work lmao)
 if [[ -n $(grep swap /etc/fstab) ]]; then
 
 	#swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
