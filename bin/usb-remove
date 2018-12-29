@@ -77,4 +77,4 @@ fi
 #echo "Connected USBs" "
 #$thing"
 
-notify-send "Connected USBs" "$thing"
+notify-send "USB Disconnected" "$thing"
