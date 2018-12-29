@@ -8,7 +8,7 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #Faster keyboard repeat rate
-#xset r rate 250 30 
+xset r rate 250 30 
 
 #Allow binaries/scripts from ~/bin to be used in shells without absolute path
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"

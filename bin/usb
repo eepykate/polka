@@ -1,0 +1,77 @@
+#!/bin/zsh
+
+dev="$(lsblk | awk '/sd[b-z][1-9]/ {print $1}' | tr -d '─├└')" 
+
+siz="$(lsblk | awk '/sd[b-z][1-9]/ {print $4}')" 
+
+label="$(/usr/bin/ls -lAH /dev/disk/by-label | awk '/sd[b-z][1-9]/ {print $9 " " $11 }' | tr -d './')"
+
+#label="$(echo $lab | tr -d './ ')"
+
+
+if [[ $(echo $dev | wc -l) -ge 1 ]]; then
+    dev1="$(echo $dev | sed -n -e 1p)"
+    label1="$(echo $label | grep $dev1 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+    siz1="$(echo $siz | awk '{print $1}' | sed -n -e 1p)"
+    thing="$label1 - $dev1 - $siz1"
+fi
+
+
+if [[ $(echo $dev | wc -l) -ge 2 ]]; then
+    dev2="$(echo $dev | sed -n -e 2p)"
+    label2="$(echo $label | grep $dev2 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+    siz2="$(echo $siz | sed -n -e 2p)"
+    thing="$label1 - $dev1 - $siz1 
+$label2 - $dev2 - $siz2"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 3 ]]; then
+    dev3="$(echo $dev | sed -n -e 3p)"
+    label3="$(echo $label | grep $dev3 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+    siz3="$(echo $siz | sed -n -e 3p)"
+    thing="$label1 - $dev1 - $siz1 
+$label2 - $dev2 - $siz2
+$label3 - $dev3 - $siz3"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 4 ]]; then
+    dev4="$(echo $dev | sed -n -e 4p)"
+    label4="$(echo $label | grep $dev4 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+    siz4="$(echo $siz  sed -n -e 4p)"
+    thing="$label1 - $dev1 - $siz1 
+$label2 - $dev2 - $siz2
+$label3 - $dev3 - $siz3
+$label4 - $dev4 - $siz4"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 5 ]]; then
+    dev5="$(echo $dev | sed -n -e 5p)"
+    label5="$(echo $label | grep $dev5 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+    siz5="$(echo $siz | sed -n -e 5p)"
+    thing="$label1 - $dev1 - $siz1 
+$label2 - $dev2 - $siz2
+$label3 - $dev3 - $siz3
+$label4 - $dev4 - $siz4
+$label5 - $dev5 - $siz5"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 6 ]]; then
+    dev6="$(echo $dev | sed -n -e 6p)"
+    label6="$(echo $label | grep $dev6 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+    siz6="$(echo $siz | sed -n -e 6p)"
+    thing="$label1 - $dev1 - $siz1 
+$label2 - $dev2 - $siz2
+$label3 - $dev3 - $siz3
+$label4 - $dev4 - $siz4
+$label5 - $dev5 - $siz5
+$label6 - $dev6 - $siz6"
+fi
+
+
+
+#echo "$label1 - $dev1 - $siz1"
+
+#echo "Connected USBs" "
+#$thing"
+
+notify-send "Connected USBs" "$thing"
