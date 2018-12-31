@@ -403,7 +403,17 @@ git clone https://gitlab.com/gaugek/st.git /tmp/st &&
 cd /tmp/st &&
 make &&
 make install;
-cd /tmp
+cd /tmp;
+
+
+#Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
+mkdir -p /usr/local/bin;
+curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove -o /usr/local/bin/usb-remove;
+curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-insert -o /usr/local/bin/usb-insert;
+curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb.rules -o /etc/udev/rules.d/usb.rules;
+
+udevadm control --reload-rules && udevadm trigger;
+
 
 #--------------End My stuff--------------
 
