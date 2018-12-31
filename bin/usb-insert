@@ -77,4 +77,21 @@ fi
 #echo "Connected USBs" "
 #$thing"
 
-notify-send "USB Connected" "$thing"
+#DISPLAY=:0.0 sudo -u gauge notify-send "USB Connected" "$thing"
+chmod a+rw /tmp/usb-log
+echo "USB Connected" >> /tmp/usb-log
+
+function notify-root() {
+    #Detect the name of the display in use
+    display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
+
+    #Detect the user using such display
+    user=$(who | grep '('$display')' | awk '{print $1}' | sed -n -e 1p)
+
+    #Detect the id of the user
+    uid=$(id -u $user)
+
+    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus /usr/bin/notify-send "$@"
+}
+
+notify-root "USB Connected" "$thing"
