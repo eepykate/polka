@@ -1,0 +1,114 @@
+#!/bin/zsh
+
+dev="$(lsblk | awk '/sd[b-z][1-9]/ {print $1}' | tr -d '─├└` ')" 
+
+siz="$(lsblk | awk '/sd[b-z][1-9]/ {print $4}')" 
+
+#label="$(/usr/bin/ls -lAH /dev/disk/by-label | awk '/sd[b-z][1-9]/ {print $9 " " $11 }' | tr -d './')"
+
+label="$(lsblk -o name,label)"
+
+mp="$(lsblk -o name,mountpoint)"
+
+#label1="$(echo $label | grep $dev1 | awk '{$1=""; print}' | sed 's/^ //')"
+
+#label1="$( [[ $(echo $label | grep sda1 | awk '{$1=""; print}' | sed 's/^ //' | wc -m) = 1 ]] && label1="No Label" || label1="$(echo $label | grep sda1 | awk '{$1=""; print}' | sed 's/^ //')") "
+
+# awk '{$1=""; print}'
+
+#label="$(echo $lab | tr -d './ ')"
+
+#label6="$(echo $label | grep $dev1 | sed 's/sd[b-z][1-9]//' | sed 's/\\x20/ /' | sed s'/ $//')"
+
+if [[ $(echo $dev | wc -m) = 1 ]]; then
+    thing="No USB storage devices detected"
+fi
+
+if [[ $(echo $dev | wc -m) -ge 3 ]]; then
+    dev1="$(echo $dev | sed -n -e 1p)"
+    [[ $(echo $label | grep $dev1 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label1="$(echo $label | grep $dev1 | awk '{$1=""; print}' | sed 's/^ //')"
+    siz1="$(echo $siz | awk '{print $1}' | sed -n -e 1p)"
+    [[ $(echo $mp | grep $dev1 | awk '{print $2}' | wc -m) = 1 ]] && mp1="Not mounted" || mp1="$(echo $mp | grep $dev1 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1"
+    
+fi
+
+
+if [[ $(echo $dev | wc -l) -ge 2 ]]; then
+    dev2="$(echo $dev | sed -n -e 2p)"
+    [[ $(echo $label | grep $dev2 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label2="$(echo $label | grep $dev2 | awk '{$1=""; print}' | sed 's/^ //')"
+    siz2="$(echo $siz | sed -n -e 2p)"
+    [[ $(echo $mp | grep $dev2 | awk '{print $2}' | wc -m) = 1 ]] && mp2="Not mounted" || mp2="$(echo $mp | grep $dev2 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 3 ]]; then
+    dev3="$(echo $dev | sed -n -e 3p)"
+    [[ $(echo $label | grep $dev3 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label3="$(echo $label | grep $dev3 | awk '{$1=""; print}' | sed 's/^ //')"
+    siz3="$(echo $siz | sed -n -e 3p)"
+    [[ $(echo $mp | grep $dev3 | awk '{print $2}' | wc -m) = 1 ]] && mp3="Not mounted" || mp3="$(echo $mp | grep $dev3 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 4 ]]; then
+    dev4="$(echo $dev | sed -n -e 4p)"
+    [[ $(echo $label | grep $dev4 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label4="$(echo $label | grep $dev4 | awk '{$1=""; print}' | sed 's/^ //')"
+    siz4="$(echo $siz  sed -n -e 4p)"
+    [[ $(echo $mp | grep $dev4 | awk '{print $2}' | wc -m) = 1 ]] && mp4="Not mounted" || mp4="$(echo $mp | grep $dev4 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3
+$label4 - $dev4 - $mp4 - $siz4"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 5 ]]; then
+    dev5="$(echo $dev | sed -n -e 5p)"
+    [[ $(echo $label | grep $dev5 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label5="$(echo $label | grep $dev5 | awk '{$1=""; print}' | sed 's/^ //')"
+    siz5="$(echo $siz | sed -n -e 5p)"
+    [[ $(echo $mp | grep $dev5 | awk '{print $2}' | wc -m) = 1 ]] && mp5="Not mounted" || mp5="$(echo $mp | grep $dev5 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3
+$label4 - $dev4 - $mp4 - $siz4
+$label5 - $dev5 - $mp5 - $siz5"
+fi
+
+if [[ $(echo $dev | wc -l) -ge 6 ]]; then
+    dev6="$(echo $dev | sed -n -e 6p)"
+    [[ $(echo $label | grep $dev6 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label6="$(echo $label | grep $dev6 | awk '{$1=""; print}' | sed 's/^ //')"
+    siz6="$(echo $siz | sed -n -e 6p)"
+    [[ $(echo $mp | grep $dev6 | awk '{print $2}' | wc -m) = 1 ]] && mp6="Not mounted" || mp6="$(echo $mp | grep $dev6 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3
+$label4 - $dev4 - $mp4 - $siz4
+$label5 - $dev5 - $mp5 - $siz5
+$label6 - $dev6 - $mp6 - $siz6"
+fi
+
+#echo "$label1 - $dev1 - $siz1"
+
+#echo "Connected USBs" "
+#$thing"
+
+#DISPLAY=:0.0 sudo -u gauge notify-send "USB Connected" "$thing"
+chmod a+rw /tmp/usb-log
+echo "USB Connected" >> /tmp/usb-log
+
+function notify-root() {
+    #Detect the name of the display in use
+    display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
+
+    #Detect the user using such display
+    user=$(who | grep '('$display')' | awk '{print $1}' | sed -n -e 1p)
+
+    #Detect the id of the user
+    uid=$(id -u $user)
+
+    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus /usr/bin/notify-send "$@"
+}
+
+notify-root "USB Connected" "$thing"
