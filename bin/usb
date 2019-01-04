@@ -8,6 +8,12 @@ siz="$(lsblk | awk '/sd[b-z][1-9]/ {print $4}')"
 
 label="$(lsblk -o name,label)"
 
+mp="$(lsblk -o name,mountpoint)"
+
+#label1="$(echo $label | grep $dev1 | awk '{$1=""; print}' | sed 's/^ //')"
+
+#label1="$( [[ $(echo $label | grep sda1 | awk '{$1=""; print}' | sed 's/^ //' | wc -m) = 1 ]] && label1="No Label" || label1="$(echo $label | grep sda1 | awk '{$1=""; print}' | sed 's/^ //')") "
+
 # awk '{$1=""; print}'
 
 #label="$(echo $lab | tr -d './ ')"
@@ -20,65 +26,72 @@ fi
 
 if [[ $(echo $dev | wc -m) -ge 3 ]]; then
     dev1="$(echo $dev | sed -n -e 1p)"
-    label1="$(echo $label | grep $dev1 | awk '{$1=""; print}' | sed 's/^ //')"
+    [[ $(echo $label | grep $dev1 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label1="$(echo $label | grep $dev1 | awk '{$1=""; print}' | sed 's/^ //')"
     siz1="$(echo $siz | awk '{print $1}' | sed -n -e 1p)"
-    thing="$label1 - $dev1 - $siz1"
+    [[ $(echo $mp | grep $dev1 | awk '{print $2}' | wc -m) = 1 ]] && mp1="Not mounted" || mp1="$(echo $mp | grep $dev1 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1"
+    
 fi
 
 
 if [[ $(echo $dev | wc -l) -ge 2 ]]; then
     dev2="$(echo $dev | sed -n -e 2p)"
-    label2="$(echo $label | grep $dev2 | awk '{$1=""; print}' | sed 's/^ //')"
+    [[ $(echo $label | grep $dev2 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label2="$(echo $label | grep $dev2 | awk '{$1=""; print}' | sed 's/^ //')"
     siz2="$(echo $siz | sed -n -e 2p)"
-    thing="$label1 - $dev1 - $siz1 
-$label2 - $dev2 - $siz2"
+    [[ $(echo $mp | grep $dev2 | awk '{print $2}' | wc -m) = 1 ]] && mp2="Not mounted" || mp2="$(echo $mp | grep $dev2 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2"
 fi
 
 if [[ $(echo $dev | wc -l) -ge 3 ]]; then
     dev3="$(echo $dev | sed -n -e 3p)"
-    label3="$(echo $label | grep $dev3 | awk '{$1=""; print}' | sed 's/^ //')"
+    [[ $(echo $label | grep $dev3 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label3="$(echo $label | grep $dev3 | awk '{$1=""; print}' | sed 's/^ //')"
     siz3="$(echo $siz | sed -n -e 3p)"
-    thing="$label1 - $dev1 - $siz1 
-$label2 - $dev2 - $siz2
-$label3 - $dev3 - $siz3"
+    [[ $(echo $mp | grep $dev3 | awk '{print $2}' | wc -m) = 1 ]] && mp3="Not mounted" || mp3="$(echo $mp | grep $dev3 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3"
 fi
 
 if [[ $(echo $dev | wc -l) -ge 4 ]]; then
     dev4="$(echo $dev | sed -n -e 4p)"
-    label4="$(echo $label | grep $dev4 | awk '{$1=""; print}' | sed 's/^ //')"
+    [[ $(echo $label | grep $dev4 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label4="$(echo $label | grep $dev4 | awk '{$1=""; print}' | sed 's/^ //')"
     siz4="$(echo $siz  sed -n -e 4p)"
-    thing="$label1 - $dev1 - $siz1 
-$label2 - $dev2 - $siz2
-$label3 - $dev3 - $siz3
-$label4 - $dev4 - $siz4"
+    [[ $(echo $mp | grep $dev4 | awk '{print $2}' | wc -m) = 1 ]] && mp4="Not mounted" || mp4="$(echo $mp | grep $dev4 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3
+$label4 - $dev4 - $mp4 - $siz4"
 fi
 
 if [[ $(echo $dev | wc -l) -ge 5 ]]; then
     dev5="$(echo $dev | sed -n -e 5p)"
-    label5="$(echo $label | grep $dev5 | awk '{$1=""; print}' | sed 's/^ //')"
+    [[ $(echo $label | grep $dev5 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label5="$(echo $label | grep $dev5 | awk '{$1=""; print}' | sed 's/^ //')"
     siz5="$(echo $siz | sed -n -e 5p)"
-    thing="$label1 - $dev1 - $siz1 
-$label2 - $dev2 - $siz2
-$label3 - $dev3 - $siz3
-$label4 - $dev4 - $siz4
-$label5 - $dev5 - $siz5"
+    [[ $(echo $mp | grep $dev5 | awk '{print $2}' | wc -m) = 1 ]] && mp5="Not mounted" || mp5="$(echo $mp | grep $dev5 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3
+$label4 - $dev4 - $mp4 - $siz4
+$label5 - $dev5 - $mp5 - $siz5"
 fi
 
 if [[ $(echo $dev | wc -l) -ge 6 ]]; then
     dev6="$(echo $dev | sed -n -e 6p)"
-    label6="$(echo $label | grep $dev6 | awk '{$1=""; print}' | sed 's/^ //')"
+    [[ $(echo $label | grep $dev6 | awk '{print $2}' | wc -m) = 1 ]] && label1="No label" || label6="$(echo $label | grep $dev6 | awk '{$1=""; print}' | sed 's/^ //')"
     siz6="$(echo $siz | sed -n -e 6p)"
-    thing="$label1 - $dev1 - $siz1 
-$label2 - $dev2 - $siz2
-$label3 - $dev3 - $siz3
-$label4 - $dev4 - $siz4
-$label5 - $dev5 - $siz5
-$label6 - $dev6 - $siz6"
+    [[ $(echo $mp | grep $dev6 | awk '{print $2}' | wc -m) = 1 ]] && mp6="Not mounted" || mp6="$(echo $mp | grep $dev6 | awk '{print $2}')"
+    thing="$label1 - $dev1 - $mp1 - $siz1 
+$label2 - $dev2 - $mp2 - $siz2
+$label3 - $dev3 - $mp3 - $siz3
+$label4 - $dev4 - $mp4 - $siz4
+$label5 - $dev5 - $mp5 - $siz5
+$label6 - $dev6 - $mp6 - $siz6"
 fi
 
 
 
-#echo "$label1 - $dev1 - $siz1"
+#echo "$label1 - $dev1 - $mp1 - $siz1"
 
 #echo "Connected USBs" "
 #$thing"
