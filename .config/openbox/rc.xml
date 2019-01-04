@@ -177,6 +177,21 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
+    <keybind key="W-u">
+      <action name="Execute">
+        <command>usb</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-End">
+      <action name="Execute">
+        <command>stop</command>
+      </action>
+    </keybind>
+    <keybind key="C-A-Insert">
+      <action name="Execute">
+        <command>record</command>
+      </action>
+    </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
         <command>light -A 10</command>

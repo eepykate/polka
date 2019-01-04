@@ -317,11 +317,11 @@ toolbarspring {
 	border-radius: 0.5em !important;
 }
 
-.tabbrowser-tab, .tab-content, .tabbrowser-tabs {
+.tabbrowser-tab[selected=false], .tab-content, .tab-background {
     border-radius: 0.6em 0.6em 0 0 !important;
-	border-left: 1px solid transparent !important;
-	border-top: 1px solid transparent !important;
-	border-right: 1px solid transparent !important;
+	border-left: 1px solid #334455 !important;
+	border-top: 1px solid #334455 !important;
+	border-right: 1px solid #334455 !important;
 
 }
 
@@ -338,8 +338,6 @@ toolbarspring {
     border-top: 1px solid #334455 !important;
 	border-right: 1px solid #334455 !important;
 }
-
-
 
 :root{
 	--toolbarbutton-border-radius: 0.5em !important;
@@ -398,11 +396,11 @@ toolbarspring {
 	padding-left: 2px !important;
 	padding-right: 2px !important;
 }
-
+/*
 .tabbrowser-tab {
 	margin-left: -2px !important;
 }
-
+*/
 [tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
 .tabbrowser-tab:hover::after,
 #tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
@@ -461,7 +459,7 @@ toolbarspring {
   border-inline-end: 0px solid transparent !important;
 }
 
-#PopupAutoCompleteRichResult, .autocomplete-richlistbox, .autocomplete-richlistbox {
+#PopupAutoCompleteRichResult {
 	/*margin-left: 10% !important;
 	margin-right: 10% !important;*/
 	border-radius: 0.6em !important;
@@ -472,4 +470,38 @@ toolbarspring {
 
 .autocomplete-richlistitem {
 	max-width: 90% !important;
+}
+
+
+.tabbrowser-tab:before,
+.tabbrowser-tab:after {
+  border-radius: 10px;
+  background: #BE3569;
+  z-index: 2;
+}
+
+/*Prevents White pre-load flash*/ 
+.tabbrowser-tabbox {
+	background-color:  #181a21 !important;
+}
+
+@-moz-document url(about:blank) {
+	* { background: #181a21 !important; }
+}
+
+@-moz-document url(chrome://browser/content/browser.xul){
+	browser, browser.display.background_color, tabbrowser tabpanels { background: #181a21 !important
+}  
+
+@-moz-document url(chrome://browser/content/browser.xul)
+{
+   #main-window,
+   browser[type="content-primary"],
+   browser[type="content"],
+   tabbrowser#content,
+   #content,
+   browser[type="content"] > html
+   {
+      background: #181a21 !important;
+   }
 }
