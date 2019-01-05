@@ -22,23 +22,25 @@ margin-left:0 !important;
 pointer-events: auto !important;
 }
 
+/* Tabs are de-saturated and transparent when inactive */
 .tabbrowser-tab{ 
-	opacity: 0.33;
-	filter: grayscale(50%);
+	opacity: 0.33 !important;
+	filter: grayscale(50%) !important;
 }
 .tabbrowser-tab:hover{ 
-	opacity: 0.66;
-	filter: grayscale(0%);
+	opacity: 0.66 !important;
+	filter: grayscale(0%) !important;
 }
 .tabbrowser-tab[selected]{ 
-	opacity: 1;
-	filter: grayscale(0%);
+	opacity: 1 !important;
+	filter: grayscale(0%) !important;
 }
 
 /* Round URL bar */
 #urlbar, .searchbar-textbox{
     border-radius: 0.5em !important;
 }
+
 
 /* Hide bookmarks bar until hover */
 #PersonalToolbar {
@@ -78,13 +80,14 @@ height: 35px !important;
 	--chrome-secondary-background-color: #1b2029 !important;              /* nav bar & active tab */
 	--chrome-color: #cccccc !important;                                   /* url & tab text, close tab & new tab buttons */
 	background-color: #181a21 !important;                                 /* top border of out of focus window */
-  }
+}
   
-  :root {
+:root {
 	--tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
 	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
 	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
-  }
+	background-color: #1d2029 !important;                                 /* top border of out of focus window */
+}
   
 
 /* url bar text shrinks when in "stealth mode" */
@@ -98,20 +101,8 @@ font-size: 13px !important;
 font-size: 16px !important;
 }
 
-
-/* some experimentation with expanding tab on hover to see the title better, it's kinda stupid but I was just messing around, could be something useful in the future */
-/*.tabbrowser-tab:not([selected]):hover { 
-   min-width: 300px !important;
-   transition: min-width 150ms var(--animation-easing-function) 2s !important;
-} */
-
-
-/* random style tweaks I like */
-/*
-Remove borders everywhere, some code copied from edge style for firefox
-*/
-
- :root {
+/* Hide tab border */
+:root {
   --tabs-border: transparent !important;
 }
 
@@ -132,20 +123,23 @@ Remove borders everywhere, some code copied from edge style for firefox
 
 /* nav bar is semi opaque when unhovered */
 #nav-bar > * {
-opacity:0.5;
-transition: opacity 0.3s;
+	opacity:0.5;
+	transition: opacity 0.3s;
+	background-color: #1d2029 !important;
 }
 
 #nav-bar:hover > * {
-opacity:1 !important;
+	opacity:1 !important;
+	background-color: #1d2029 !important;
+
 }
 
 #urlbar {
-opacity:1 !important;
+	opacity:1 !important;
 }
 
 #urlbar .urlbar-input-box {
-opacity:1 !important;
+	opacity:1 !important;
 }
 
 
@@ -159,23 +153,13 @@ opacity:1 !important;
 	margin-right: 1px !important;
 }
 
-.tab-background {
-	border-top: none !important;
-}
-
-.tabs-newtab-button, #new-tab-button, #alltabs-button {
-	color: rgba(240, 240, 240, 1);
-	border-top: 0px !important;
-	margin-bottom: 0px !important;
-}
-
-
 window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled], :not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class], #main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {
-
 	box-shadow: none !important;
 	border: 0px !important;
 }
 
+
+/* Make the forward / back button a darker colour when not able to be pressed */
 #forward-button[disabled] {
 	color: #696969 !important;
 	background-image: none !important;
@@ -254,12 +238,12 @@ toolbarbutton.bookmark-item:hover {
 }
 
 #tabbrowser-tabs {
-	--tab-loading-fill: #1d8a99 !important;
+	--tab-loading-fill: #1d8a99 !important; /* Colour of fill animation when tab is finished loading */
 	box-shadow: none !important;
 }
 
 .webextension-browser-action {
-filter: saturate(0%);
+	filter: saturate(0%);
 }
 
 
@@ -287,7 +271,6 @@ filter: saturate(0%);
 	filter: grayscale(100%) !important;
 }
 
-
 toolbarspring {
     min-width: 8px;
     max-width: 8px;
@@ -308,7 +291,12 @@ toolbarspring {
 	--tab-line-color: #1d2029 !important;
 }
 */
+/* Change colour of new tab button */
+.tabs-newtab-button > #new-tab-button > #alltabs-button {
+	color: #cccccc !important;
+}
 
+/* Round buttons */
 .close-icon {
 	border-radius: 0.5em !important;
 }
@@ -317,12 +305,23 @@ toolbarspring {
 	border-radius: 0.5em !important;
 }
 
+:root{
+	--toolbarbutton-border-radius: 0.5em !important;
+}
+
+/* Round tabs and add a border to everywhere but the buttom */
+
+.tab-background {
+    border: none !important;
+    border-radius: 0.6em 0.6em 0 0 !important;
+    opacity: .1;
+}
+
 .tabbrowser-tab[selected=false], .tab-content, .tab-background {
     border-radius: 0.6em 0.6em 0 0 !important;
 	border-left: 1px solid #334455 !important;
 	border-top: 1px solid #334455 !important;
 	border-right: 1px solid #334455 !important;
-
 }
 
 .tabbrowser-tab[selected=true] .tab-content, .tab-background {
@@ -330,6 +329,8 @@ toolbarspring {
     border-left: 1px solid #334455 !important;
     border-top: 1px solid #334455 !important;
 	border-right: 1px solid #334455 !important;
+	background-color: #1d2029 !important;
+	color: #ffffff !important;
 }
 
 .tabbrowser-tab:hover .tab-content, .tab-background {
@@ -337,10 +338,6 @@ toolbarspring {
     border-left: 1px solid #334455 !important;
     border-top: 1px solid #334455 !important;
 	border-right: 1px solid #334455 !important;
-}
-
-:root{
-	--toolbarbutton-border-radius: 0.5em !important;
 }
 
 .tabbrowser-tab .tab-text.tab-label {
@@ -355,36 +352,12 @@ toolbarspring {
     color: #ffffff !important;           
 }
 
-
-.tabbrowser-tab[selected="true"] .tab-background {
-    /* border: 2px solid #6992c5 !important;  */
-    border-bottom: none !important;
-    opacity: 1;
-}
-
-.tabbrowser-tab .tab-background {
-    /*border: 2px solid #696969 !important;  */
-    border-bottom: none !important;
-    opacity: 1;
-}
-
-.tabbrowser-tab:hover .tab-background {
-    /*border: 2px solid #6992c5 !important; */
-    border-bottom: none !important;
-    opacity: 1;
-}
-
-.tab-background {
-    border: none !important;
-    border-radius: 0.6em 0.6em 0 0 !important;
-    opacity: .1;
-}
-
-
+/* No line at the top of tabs, so that you can round the tabs */
 .tab-line {                            
     display: none !important;
 }
 
+/* Change the cursor when hovering over a tab */
 /*
 .tabbrowser-tab:hover,
 .tabbrowser-tab .tab-text.tab-label:hover {
@@ -392,22 +365,20 @@ toolbarspring {
 }
 */
 
+/* Small padding between tabs */
 .tabbrowser-tab {
 	padding-left: 2px !important;
 	padding-right: 2px !important;
 }
-/*
-.tabbrowser-tab {
-	margin-left: -2px !important;
-}
-*/
+
+/* No border on tabs i guess? frankly idk */
 [tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
 .tabbrowser-tab:hover::after,
 #tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
     border: none !important;              
 }
 
-
+/* Hide a few buttons on the url bar */
 #pageActionSeparator, #pocket-button {
     display: none !important;
 }
@@ -426,6 +397,7 @@ toolbarspring {
   border-radius: 0.5em !important;
 }
 
+/* Clean up (hide) a few items on the search popup */
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
@@ -505,3 +477,84 @@ toolbarspring {
       background: #181a21 !important;
    }
 }
+
+
+/* Makes popups, menus and context menus dark */
+.panel-arrowcontent,
+#alltabs-popup .arrowscrollbox-scrollbox,
+menupopup:not(#BMB_bookmarksPopup),
+.textbox-contextmenu{
+	border: none !important;
+	background: #181a21 !important;
+	color: #cccccc !important;
+}
+
+/* #MakeThingsDarkThemeAgain */
+#navigator-toolbox,
+#TabsToolbar {
+	background: #181a21 !important;
+}
+
+menuitem[disabled="true"],
+menu[disabled="true"]{
+	color: #696969 !important;
+}
+
+menuitem:hover,
+menu:hover{
+	background-color:#2e323f !important;
+}
+
+#nav-bar {
+	background-color: #1d2029 !important;
+}
+
+#tabbrowser-tabs {
+	background-color: #181a21 !important;
+}
+
+#urlbar, .searchbar-textbox{
+    background-color: #282b37 !important;
+}
+
+
+#PersonalToolbar {
+	background-color: #181a21 !important;
+}
+
+.box-inherit-scrollbox-innerbox {
+	background-color: #ffffff !important;
+}
+
+#navigator-toolbox, #navigator-toolbox > #PersonalToolbar {
+	background-color: #1d2029 !important;
+}
+
+#navigator-toolbox, #TabsToolbar, #nav-bar, #PersonalToolbar, 
+.browser-toolbar, #personal-bookmarks, 
+#toolbar-menubar.browser-toolbar.chromeclass-menubar {
+	background-color: #1d2029 !important;
+}
+
+#navigator-toolbox,
+#TabsToolbar {
+	background: #1d2029 !important;
+}
+
+#navigator-toolbox #nav-bar {      
+	background: #1d2029 !important;
+}   
+/* Disable small ugly grey border on the bookmarks bar because "my" gtk theme sucks */
+#PersonalToolbar {
+	padding: 0px !important;
+}
+
+/* Padding around bookmarks */
+/*
+.bookmark-item {
+	padding-left: 3px !important;
+	padding-right: 3px !important;
+	margin-left: 3px !important;
+	margin-right: 3px !important;
+}
+*/
