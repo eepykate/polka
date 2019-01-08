@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Firefox
+Comment=Browse the Web
+Exec=/usr/lib/firefox/firefox %u
+Icon=firefox
+Path=
+Terminal=false
+StartupNotify=false
