@@ -50,6 +50,7 @@
       <property name="&lt;Shift&gt;Print" type="string" value="scrot_selection"/>
       <property name="&lt;Super&gt;Print" type="string" value="scrot_focused"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;space" type="string" value="dmenu_run -nf &apos;#CCCCCC&apos; -nb &apos;#181A21&apos; -sb &apos;#6992c5&apos; -sf &apos;#181A21&apos; -fn &apos;Iosevka term-16&apos;"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;w" type="string" value="wifi"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -122,7 +123,6 @@
       <property name="&lt;Alt&gt;F4" type="string" value="close_window_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;Left" type="string" value="move_window_left_key"/>
       <property name="&lt;Alt&gt;F6" type="string" value="stick_window_key"/>
-      <property name="&lt;Alt&gt;F10" type="string" value="maximize_window_key"/>
       <property name="&lt;Alt&gt;F12" type="string" value="above_key"/>
       <property name="&lt;Alt&gt;F9" type="string" value="hide_window_key"/>
       <property name="&lt;Alt&gt;F8" type="string" value="resize_window_key"/>
@@ -158,6 +158,8 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;Left" type="string" value="prev_workspace_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;Right" type="string" value="move_window_next_workspace_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;Left" type="string" value="move_window_prev_workspace_key"/>
+      <property name="&lt;Alt&gt;F10" type="string" value="maximize_window_key"/>
+      <property name="&lt;Super&gt;d" type="string" value="show_desktop_key"/>
     </property>
   </property>
   <property name="providers" type="array">

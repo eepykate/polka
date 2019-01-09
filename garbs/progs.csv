@@ -51,7 +51,7 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,scrot,can take quick screenshots at your request
 ,unrar,extracts rars
 ,unzip,unzips zips
-,7z,
+,p7zip,
 ,w3m,is a terminal browser which can also view images
 ,wget,downloads sites and files on the command line
 ,xdotool,provides window action utilities on the command line.
@@ -83,6 +83,9 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,ark,
 ,cbatticon,
 ,acpi,
+,xfce4, is a desktop environment
+,xfce4-goodies, is plugins for xfce
+A,vala-panel-appmenu-xfce-git, is a global menu for xfce4-panel
 A,obmenu-generator,
 A,pnmixer,
 A,breeze-hacked-cursor-theme,is my choice of cursor theme

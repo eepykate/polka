@@ -1,13 +1,37 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[/home/gauge/Desktop/Skyrim Script Extender (SKSE).url]
+row=7
+col=0
+
+[/home/gauge/Desktop/The Elder Scrolls V Skyrim.url]
+row=0
+col=0
+
+[/home/gauge/Desktop/Steam.desktop]
+row=5
+col=0
+
+[/home/gauge/Desktop/The Elder Scrolls V Skyrim.desktop]
+row=6
+col=0
+
 [/home/gauge/Desktop/steam.desktop]
 row=4
 col=0
 
-[a0d25c46-288c-4968-97e7-f9728f784d1c]
+[/home/gauge/Desktop/Skyrim Script Extender (SKSE).desktop]
 row=0
-col=0
+col=1
+
+[a0d25c46-288c-4968-97e7-f9728f784d1c]
+row=2
+col=1
+
+[0F796D965A5E5B9D]
+row=1
+col=1
 
 [Trash]
 row=1
