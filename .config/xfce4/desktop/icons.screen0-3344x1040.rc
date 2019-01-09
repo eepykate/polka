@@ -1,13 +1,13 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/gauge/Desktop/steam.desktop]
-row=4
-col=0
-
 [a0d25c46-288c-4968-97e7-f9728f784d1c]
 row=0
 col=0
+
+[0F796D965A5E5B9D]
+row=3
+col=14
 
 [Trash]
 row=1
