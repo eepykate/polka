@@ -85,6 +85,11 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,acpi,
 ,xfce4, is a desktop environment
 ,xfce4-goodies, is plugins for xfce
+,appmenu-gtk-module,
+,appmenu-qt4,
+A,vala-panel-appmenu-common-git,
+A,vala-panel-appmenu-registrar-git,
+A,vala-panel-appmenu-xfce-git,
 A,vala-panel-appmenu-xfce-git, is a global menu for xfce4-panel
 A,obmenu-generator,
 A,pnmixer,

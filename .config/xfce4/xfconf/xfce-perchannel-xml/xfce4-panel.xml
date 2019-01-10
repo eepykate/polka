@@ -5,28 +5,37 @@
   <property name="panels" type="array">
     <value type="int" value="1"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=8;x=2073;y=1063"/>
-      <property name="length" type="uint" value="66"/>
+      <property name="position" type="string" value="p=9;x=2399;y=16"/>
+      <property name="length" type="uint" value="100"/>
       <property name="size" type="uint" value="32"/>
-      <property name="disable-struts" type="bool" value="true"/>
-      <property name="background-alpha" type="uint" value="50"/>
+      <property name="disable-struts" type="bool" value="false"/>
+      <property name="background-alpha" type="uint" value="33"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="5"/>
-        <value type="int" value="1"/>
-        <value type="int" value="2"/>
         <value type="int" value="9"/>
+        <value type="int" value="7"/>
+        <value type="int" value="10"/>
+        <value type="int" value="1"/>
+        <value type="int" value="3"/>
+        <value type="int" value="2"/>
         <value type="int" value="6"/>
         <value type="int" value="4"/>
         <value type="int" value="8"/>
       </property>
-      <property name="background-style" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="false"/>
-      <property name="length-adjust" type="bool" value="true"/>
+      <property name="length-adjust" type="bool" value="false"/>
       <property name="mode" type="uint" value="0"/>
-      <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
       <property name="nrows" type="uint" value="1"/>
       <property name="span-monitors" type="bool" value="false"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="6168"/>
+        <value type="uint" value="6682"/>
+        <value type="uint" value="8481"/>
+        <value type="uint" value="65535"/>
+      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -36,6 +45,7 @@
       <property name="show-handle" type="bool" value="false"/>
       <property name="middle-click" type="uint" value="1"/>
       <property name="sort-order" type="uint" value="4"/>
+      <property name="flat-buttons" type="bool" value="true"/>
     </property>
     <property name="plugin-2" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
@@ -50,7 +60,29 @@
         <property name="popup-at-pointer" type="bool" value="false"/>
       </property>
     </property>
-    <property name="plugin-9" type="string" value="xfce4-verve-plugin"/>
     <property name="plugin-8" type="string" value="xfce4-orageclock-plugin"/>
+    <property name="plugin-3" type="string" value="appmenu">
+      <property name="plugins" type="empty">
+        <property name="plugin-3" type="empty">
+          <property name="compact-mode" type="bool" value="false"/>
+          <property name="bold-application-name" type="bool" value="true"/>
+          <property name="expand" type="bool" value="true"/>
+        </property>
+      </property>
+    </property>
+    <property name="plugin-7" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15471000972.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15471000851.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-10" type="string" value="separator">
+      <property name="style" type="uint" value="3"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
   </property>
 </channel>
