@@ -43,7 +43,7 @@ tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | s
 #lolcat with a few options
 alias lol="lolcat -t -p 0.9 2>/dev/null"
 #ls but with some better stuff
-alias l="ls -h --group-directories-first"
+alias l="ls_extended -h --group-directories-first"
 #Start openbox (from tty)
 alias so="startx openbox-session"
 #Emojis from ~/.emoji file
@@ -75,7 +75,6 @@ alias SU="sudo zsh"
 alias mat="cmatrix -C blue"
 #ls with icons
 alias ls="ls_extended"
-alias l="ls_extended"
 #Normal ls
 alias LS="/usr/bin/ls"
 #Kill window (Name of window needed after, like firefox, or vlc)
