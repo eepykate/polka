@@ -88,6 +88,7 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,appmenu-gtk-module,
 ,appmenu-qt4,
 ,imagemagick,
+,xorg-xgamma, allows for changing brightness back to default after playing a wine game
 A,vala-panel-appmenu-common-git,
 A,vala-panel-appmenu-registrar-git,
 A,vala-panel-appmenu-xfce-git,
