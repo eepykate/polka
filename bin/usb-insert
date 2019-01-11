@@ -1,18 +1,5 @@
 #!/bin/zsh
 
-if [[ -n $ID_INPUT_KEY  ]]; then
-    type="Keyboard"
-fi
-
-if [[ -n $ID_INPUT_MOUSE  ]]; then
-    type="Mouse"
-fi
-
-if [[ $ID_TYPE == disk ]]; then
-    dev="$(echo $DEVNAME)"
-    type="Disk"
-fi
-
 product=$(echo -e $ID_MODEL_ENC) 
 
 brand="$(echo -e $ID_VENDOR_ENC)"
