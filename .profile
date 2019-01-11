@@ -10,17 +10,6 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 #Faster keyboard repeat rate
 xset r rate 250 30 
 
-#Allow binaries/scripts from ~/bin to be used in shells without absolute path
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
-#Default terminal editor
-export EDITOR="nvim"
-#Default terminal
-export TERMINAL="konsole"
-#Default browser
-export BROWSER="firefox"
-export TRUEBROWSER="firefox"
-
-
 #GTK Global menu
 if [ -n "$GTK_MODULES" ]; then
     GTK_MODULES="${GTK_MODULES}:appmenu-gtk-module"
@@ -38,13 +27,11 @@ export UBUNTU_MENUPROXY
 #Default user
 export DEFAULT_USER="gauge"
 
-
-# Start graphical server if openbox not already running.dds `~/.scripts` and all subdirectories to $PATH
-export PATH="$PATH:$(du "$HOME/bin/" | cut -f2 | tr '\n' ':')"
-export EDITOR="vim"
+export PATH="$PATH:$(du "$HOME/bin/" | cut -f2 | tr '\n' ':'):$HOME/.local/bin"
+export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
-export FILE="ranger"
+export FILE="dolphin"
 
 # less/man colors
 export LESS=-R
