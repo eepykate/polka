@@ -139,7 +139,7 @@ widgetStyle=kvantum-dark
 
 [KFileDialog Settings]
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=0
 LocationCombo Completionmode=5
 PathCombo Completionmode=5

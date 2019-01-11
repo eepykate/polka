@@ -384,7 +384,7 @@ if [[ -n $(grep "\#\[multilib\]" /etc/pacman.conf) ]]; then
 fi
 
 #Install the nvidia drivers
-if [[ -n $(lspci | grep NVIDIA) ]]; then
+if [[ -n $(lspci | grep -i NVIDIA) ]]; then
 	pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
 fi
 

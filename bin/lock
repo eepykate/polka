@@ -1,18 +1,27 @@
 #!/bin/sh
-  i3lock \
-    --color 181a21\
-    --insidecolor=181a21ff\
-    --insidewrongcolor=181a21ff\
-    --ringwrongcolor=b6465fff\
-    --ringvercolor=6992c5ff\
-    --insidevercolor=181a21ff\
-    --ringcolor=2f3341ff\
-    --verifcolor=ccccccff\
-    --wrongcolor=ccccccff\
-    --keyhlcolor=6992c5ff\
-    --bshlcolor=b6465fff &
+
+rm -f "~/Wallpapers/lock.png"
+scrot -m -e 'mv $f ~/Wallpapers/lock.png'  &&
+convert "/home/$USER/Wallpapers/lock.png" -filter Gaussian -resize 50% \
+  -define filter:sigma=2.5 -resize 200%  "/home/$USER/Wallpapers/lock.png" &&
+    i3lock \
+      --image="/home/$USER/Wallpapers/lock.png" \
+      --insidewrongcolor=181a21ff\
+      --ringwrongcolor=b6465fff\
+      --ringvercolor=6992c5ff\
+      --insidevercolor=181a21ff\
+      --ringcolor=2f3341ff\
+      --verifcolor=ccccccff\
+      --wrongcolor=ccccccff\
+      --keyhlcolor=6992c5ff\
+      --bshlcolor=b6465fff &
 timeout="10000"
 while pgrep -x i3lock; do
   [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off
   sleep 5
 done
+
+##To disable image blur locking, remove the `scrot -m -e 'mv $f ~/Wallpapers/lock.png'  &&  convert ~/Wallpapers/lock.png -blur 0x8 ~/Wallpapers/lock.png &&`, and `-i "~/Wallpapers/lock.png" \`, and add this after `i3lock \` (On a new line)
+#--color 181a21\
+#--insidecolor=181a21ff\
+
