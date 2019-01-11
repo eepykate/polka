@@ -234,6 +234,9 @@ newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/u
 
 mystuff
 
+mkdir -p /usr/share/fonts/TTF
+mkdir -p /usr/share/fonts/OTF
+
 #Agnoster ZSH theme
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/agnoster.zsh-theme -o /usr/share/oh-my-zsh/themes/agnoster.zsh-theme &>/dev/null
 
@@ -246,6 +249,10 @@ unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
+
+#Fira code font
+curl -Ls https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf > "/usr/share/fonts/OTF/Fira Code Mono.otf"
+
 
 fc-cache -f
 
