@@ -6,10 +6,11 @@ convert "/home/$USER/Wallpapers/lock.png" -filter Gaussian -resize 50% \
   -define filter:sigma=2.5 -resize 200%  "/home/$USER/Wallpapers/lock.png" &&
     i3lock \
       --image="/home/$USER/Wallpapers/lock.png" \
-      --insidewrongcolor=181a21ff\
+      --insidewrongcolor=181a2100\
+      --insidecolor=181a2100\
+      --insidevercolor=181a2100\
       --ringwrongcolor=b6465fff\
       --ringvercolor=6992c5ff\
-      --insidevercolor=181a21ff\
       --ringcolor=2f3341ff\
       --verifcolor=ccccccff\
       --wrongcolor=ccccccff\
@@ -21,7 +22,6 @@ while pgrep -x i3lock; do
   sleep 5
 done
 
-##To disable image blur locking, remove the `scrot -m -e 'mv $f ~/Wallpapers/lock.png'  &&  convert ~/Wallpapers/lock.png -blur 0x8 ~/Wallpapers/lock.png &&`, and `-i "~/Wallpapers/lock.png" \`, and add this after `i3lock \` (On a new line)
+##To disable blur and scrot, change all occurences of `181a2100` to `181a21ff`, and relace the line containing `--image` with the line below (Without the `#`)
 #--color 181a21\
-#--insidecolor=181a21ff\
 
