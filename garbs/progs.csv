@@ -71,7 +71,6 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,dunst, is a minimal notification daemon
 ,gvim, is an advanced text editor
 ,python,
-,zsh-syntax-highlighting,
 ,gtk2-perl,
 ,xautolock, locks the screen after a select amount of time
 ,dmenu,

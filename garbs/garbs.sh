@@ -399,6 +399,9 @@ fi
 #Generate the openbox menu
 sudo -u $name obmenu-generator -s -i &>/dev/null
 
+#Syntax highlighting in zsh 
+git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
+
 #Change default shell to zsh
 if [[ -n $(grep $name /etc/passwd | grep bash) ]]; then
 	sed -i "/$name/s/\/bin\/bash/\/usr\/bin\/zsh/" /etc/passwd
