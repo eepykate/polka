@@ -417,11 +417,18 @@ toolbarspring {
 
 .ac-text-overflow-container > .ac-action-text:not([selected]) {
 	color: #6992c5 !important;
-	font-style: bold !important;
 	display: -moz-box !important;
 	visibility: visible !important;
 	font-weight: 500 !important;
 }
+
+.ac-text-overflow-container > .ac-action-text[selected=true] {
+	color: #6992c5 !important;
+	display: -moz-box !important;
+	visibility: visible !important;
+	font-weight: 700 !important;
+}
+
 
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
   display: block !important;
