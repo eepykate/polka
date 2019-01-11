@@ -156,6 +156,9 @@ Speedbar Width=105
 View Style=Simple
 listViewIconSize=10
 
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
 [Toolbar style]
 ToolButtonStyle=TextBesideIcon
 ToolButtonStyleOtherToolbars=TextBesideIcon

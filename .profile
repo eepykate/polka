@@ -13,7 +13,7 @@ xset r rate 250 30
 #Allow binaries/scripts from ~/bin to be used in shells without absolute path
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 #Default terminal editor
-export EDITOR="vim"
+export EDITOR="nvim"
 #Default terminal
 export TERMINAL="konsole"
 #Default browser
@@ -38,7 +38,23 @@ export UBUNTU_MENUPROXY
 #Default user
 export DEFAULT_USER="gauge"
 
-# Start graphical server if openbox not already running.
+
+# Start graphical server if openbox not already running.dds `~/.scripts` and all subdirectories to $PATH
+export PATH="$PATH:$(du "$HOME/bin/" | cut -f2 | tr '\n' ':')"
+export EDITOR="vim"
+export TERMINAL="st"
+export BROWSER="firefox"
+export FILE="ranger"
+
+# less/man colors
+export LESS=-R
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #if [ "$TTY" = "/dev/tty1" ]; then
 #	pgrep -x openbox || exec startx
 #fi
