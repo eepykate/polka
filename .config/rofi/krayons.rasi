@@ -5,7 +5,7 @@
   red:        #b6465f;
   green:      #3ab795;
   yellow:     #f0c987;
-  blue:       #6992c5;
+  blue:       #6992c5bb;
   purple:     #afb3f7;
   cyan:       #1d8a99;
   emphasis:   #284a65;
@@ -31,11 +31,12 @@ window {
   transparency: "real";
   fullscreen: false;
   background-color: #181a21bb;
+  width: 600px;
 }
 
 #mainbox {
-  border: 3;
-  padding: 5;
+  border: 0;
+  padding: 25;
 }
 
 #message {
@@ -54,8 +55,8 @@ window {
 inputbar {
   margin: 0px 0px 0px 0px;
   children: [prompt, textbox-prompt-colon, entry, case-indicator];
-  spacing: 4;
-  padding: 4;
+  spacing: 5;
+  padding: 5;
 }
 
 prompt {
@@ -73,7 +74,7 @@ entry {
 }
 
 #listview {
-  lines: 8;
+  lines: 5;
   spacing: 4;
   padding: 4;
 }
