@@ -31,12 +31,12 @@ window {
   transparency: "real";
   fullscreen: false;
   background-color: #181a21bb;
-  width: 600px;
+  width: 400px;
 }
 
 #mainbox {
   border: 0;
-  padding: 25;
+  padding: 15;
 }
 
 #message {
@@ -48,7 +48,6 @@ window {
   text-color: @fg;
   spacing: 4;
   padding: 4;
-
 }
 
 
@@ -74,7 +73,7 @@ entry {
 }
 
 #listview {
-  lines: 5;
+  lines: 4;
   spacing: 4;
   padding: 4;
 }
@@ -87,8 +86,9 @@ entry {
 
 #element {
   border: 0;
-  spacing: 4;
-  padding: 4;
+  spacing: 2;
+  padding: 5;
+  border-radius: 0.3em;
 }
 
 #element normal.normal {
@@ -158,7 +158,6 @@ entry {
 }
 
 #prompt {
-  
   spacing: 0;
   border: 0;
   border-radius: 0;

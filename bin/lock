@@ -2,8 +2,8 @@
 
 rm -f "~/Wallpapers/lock.png"
 scrot -m -e 'mv $f ~/Wallpapers/lock.png'  &&
-convert "/home/$USER/Wallpapers/lock.png" -filter Gaussian -resize 50% \
-  -define filter:sigma=2.5 -resize 200%  "/home/$USER/Wallpapers/lock.png" &&
+convert "/home/$USER/Wallpapers/lock.png" -filter Gaussian -resize 20% \
+  -define filter:sigma=2.5 -resize 500%  "/home/$USER/Wallpapers/lock.png" &&
     i3lock \
       --image="/home/$USER/Wallpapers/lock.png" \
       --insidewrongcolor=181a2100\
