@@ -17,7 +17,7 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "SauceCodePro Nerd Font 14";
+  font: "Iosevka Term 14";
 
   text-color: @fg;
 }
@@ -32,6 +32,8 @@ window {
   fullscreen: false;
   background-color: #181a21bb;
   width: 400px;
+  border-color: #6992c533;
+  border: 2px;
 }
 
 #mainbox {
