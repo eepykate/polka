@@ -340,15 +340,15 @@ sed -i "s/quiet//" /etc/default/grub
 #Enable hibernation (Probably won't work lmao)
 if [[ -n $(grep swap /etc/fstab) ]]; then
 
-	swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
+	#swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
 
-	swap="$(echo /dev/$swap)"
+	#swap="$(echo /dev/$swap)"
 
 	#uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
 
 	#uswap="$(/usr/bin/ls -lha /dev/disk/by-uuid | grep ${swap} | awk '{print $9}')"
 
-	#uswap="$(grep swap /etc/fstab | awk '{print $1}')"
+	uswap="$(grep swap /etc/fstab | awk '{print $1}')"
 
 fi
 
@@ -356,7 +356,7 @@ if [[ -n $(grep swap /etc/fstab) ]] && [[ -z $(grep "resume" "/etc/default/grub"
 
 	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
 	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
-	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=${swap} \"/" /etc/default/grub 
+	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=${uswap} \"/" /etc/default/grub 
 
 	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
 
