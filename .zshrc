@@ -4,7 +4,7 @@
 export ZSH="/usr/share/oh-my-zsh"
 #ZSH_THEME="agnoster"
 source $ZSH/oh-my-zsh.sh
-#
+
 #Syntax Hightlighting in shell
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
@@ -21,8 +21,8 @@ source ~/.zprofile
 #Correct wrong commands
 #setopt CORRECT
 
+#Colourful sudo prompt
 export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p: "
-
 
 #Disable Ctrl-S && Ctrl-Q
 stty -ixon
