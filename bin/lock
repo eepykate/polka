@@ -1,27 +1,21 @@
 #!/bin/sh
 
-rm -f "~/Wallpapers/lock.png"
-scrot -m -e 'mv $f ~/Wallpapers/lock.png'  &&
-convert "/home/$USER/Wallpapers/lock.png" -filter Gaussian -resize 20% \
-  -define filter:sigma=2.5 -resize 500%  "/home/$USER/Wallpapers/lock.png" &&
-    i3lock \
-      --image="/home/$USER/Wallpapers/lock.png" \
-      --insidewrongcolor=181a2100\
-      --insidecolor=181a2100\
-      --insidevercolor=181a2100\
-      --ringwrongcolor=b6465fff\
-      --ringvercolor=6992c5ff\
-      --ringcolor=2f3341ff\
-      --verifcolor=ccccccff\
-      --wrongcolor=ccccccff\
-      --keyhlcolor=6992c5ff\
-      --bshlcolor=b6465fff &
+i3lock \
+  --blur="8" \
+  --insidewrongcolor=181a2100\
+  --insidecolor=181a2100\
+  --insidevercolor=181a21ff\
+  --ringwrongcolor=b6465fff\
+  --ringvercolor=6992c5ff\
+  --ringcolor=2f3341ff\
+  --verifcolor=ccccccff\
+  --wrongcolor=ccccccff\
+  --keyhlcolor=6992c5ff\
+  --bshlcolor=b6465fff &
 timeout="10000"
 while pgrep -x i3lock; do
   [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off
   sleep 5
 done
 
-##To disable blur and scrot, change all occurences of `181a2100` to `181a21ff`, and relace the line containing `--image` with the line below (Without the `#`)
-#--color 181a21\
-
+#To disable blur, replace `--blur="8"` with `--color 181a21`
