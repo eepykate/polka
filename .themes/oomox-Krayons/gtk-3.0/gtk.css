@@ -1111,7 +1111,7 @@ button.combo:disabled {
 toolbar {
   -GtkWidget-window-dragging: true;
   padding: 2px;
-  background-color: #1d2029;
+  background-color: #181a21;
 }
 
 .osd toolbar {
@@ -1123,7 +1123,7 @@ toolbar.osd, .app-notification, frame.documents-dropdown {
   padding: 4px;
   border-radius: 4px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23), inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: #1d2029;
+  background-color: #181a21;
 }
 
 toolbar.osd:backdrop, .app-notification:backdrop, frame.documents-dropdown:backdrop {
@@ -1175,7 +1175,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
   border-style: solid;
   border-width: 0 1px 1px;
   border-color: rgba(0, 0, 0, 0.26);
-  background-color: #1d2029;
+  background-color: #181a21;
 }
 
 searchbar > revealer > box,
@@ -1184,7 +1184,7 @@ searchbar > revealer > box,
   border-style: solid;
   border-width: 0 0 1px;
   border-color: rgba(0, 0, 0, 0.26);
-  background-color: #1d2029;
+  background-color: #181a21;
   background-clip: border-box;
 }
 
@@ -3269,7 +3269,7 @@ filechooserbutton:drop(active) {
  ***********/
 .sidebar {
   border-style: none;
-  background-color: #1d2029;
+  background-color: #181a21;
 }
 
 stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
@@ -6196,7 +6196,11 @@ XfdesktopIconView.view .rubberband {
 }
 
 .nemo-window .nemo-inactive-pane .view:not(:selected) {
-  background-color: #1d2029;
+  background-color: #181a21;
+}
+
+.NemoPlacesTreeView {
+  background-color: #181a21;
 }
 
 /* GTK NAMED COLORS

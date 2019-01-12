@@ -208,7 +208,22 @@ if [ -z grep "root ALL=(ALL) ALL" "/etc/sudoers" ]; then
 fi
 
 # Install the dotfiles in the user's home directory
-putgitrepo "$dotfilesrepo" "/home/$name"
+putgitrepo "$dotfilesrepo" "/home/$name/git"
+ln -sf /home/$name/git/.*                                 /home/$name/
+ln -sf /home/$name/git/.config/*                          /home/$name/.config/
+ln -sf /home/$name/git/.local/share/*                     /home/$name/.local/share/
+ln -sf /home/$name/git/.icons/*                           /home/$name/.icons/
+ln -sf /home/$name/git/.fluxbox/                          /home/$name/.fluxbox/
+cp  -f /home/$name/git/.mozilla/firefox/profiles.ini      /home/$name/.mozilla/firefox/profiles.ini
+ln -sf /home/$name/git/.mozilla/firefox/gauge/chrome/     /home/$name/.mozilla/firefox/gauge/chrome/
+cp  -f /home/$name/git/.mozilla/firefox/gauge/prefs.js    /home/$name/.mozilla/firefox/gauge/prefs.js
+ln -sf /home/$name/git/.startpage/                        /home/$name/.startpage
+ln -sf /home/$name/git/.themes/*                          /home/$name/.themes/
+ln -sf /home/$name/git/bin/*                              /home/$name/bin/
+ln -sf /home/$name/git/colours/                           /home/$name/colours
+ln -sf /home/$name/git/garbs/                             /home/$name/garbs/
+ln -sf /home/$name/git/Wallpapers/*                       /home/$name/Wallpapers/
+#ln -s /home/$name/git/   /home/$name/ -f
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/
 #putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
@@ -415,6 +430,7 @@ make &&
 make install;
 cd /tmp;
 
+mkdir -p /home/$name/Stuff/Screenshots/scrot/
 
 #Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
 mkdir -p /usr/local/bin;
