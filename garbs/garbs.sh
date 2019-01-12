@@ -442,8 +442,8 @@ udevadm control --reload-rules && udevadm trigger;
 
 
 #Minimal zsh prompt theme
-curl -L "https://raw.githubusercontent.com/xPMo/twodir-zsh-theme/master/async.zsh" -o /usr/share/zsh/site-functions/async
-curl -L "https://raw.githubusercontent.com/xPMo/twodir-zsh-theme/master/pure.zsh" -o /usr/share/zsh/site-functions/prompt_pure_setup
+curl -L "https://gitlab.com/gaugek/dots/raw/master/bin/async.zsh" -o /usr/share/zsh/site-functions/async
+curl -L "https://gitlab.com/gaugek/dots/raw/master/bin/pure.zsh" -o /usr/share/zsh/site-functions/prompt_pure_setup
 
 
 #--------------End My stuff--------------
