@@ -441,6 +441,11 @@ curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb.rules -o /etc/udev/rul
 udevadm control --reload-rules && udevadm trigger;
 
 
+#Minimal zsh prompt theme
+curl -L "https://raw.githubusercontent.com/xPMo/twodir-zsh-theme/master/async.zsh" -o /usr/share/zsh/site-functions/async
+curl -L "https://raw.githubusercontent.com/xPMo/twodir-zsh-theme/master/pure.zsh" -o /usr/share/zsh/site-functions/prompt_pure_setup
+
+
 #--------------End My stuff--------------
 
 # Last message! Install complete!

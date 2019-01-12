@@ -1,9 +1,12 @@
 #ZSH stuff
 export ZSH="/usr/share/oh-my-zsh"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
 source $ZSH/oh-my-zsh.sh
 #Syntax Hightlighting in shell
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+autoload -U promptinit; promptinit
+prompt pure
 
 #Default terminal text editor
 export EDITOR='vim'
