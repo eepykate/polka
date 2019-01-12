@@ -146,7 +146,7 @@ prompt_pure_preprompt_render() {
 	endbracket="$(echo -e "%F{blue}]" )"
 
 	# Construct the new prompt with a clean preprompt.
-	PROMPT="$startbracket ${(j. .)preprompt_parts} $endbracket $isroot  "  # Join parts, space separated.
+	PROMPT="$startbracket ${(j. .)preprompt_parts} $endbracket $isroot%F{white} "  # Join parts, space separated.
 
 	# Expand the prompt for future comparision.
 	local expanded_prompt
@@ -583,7 +583,8 @@ prompt_pure_setup() {
 	fi
 
 	# if a virtualenv is activated, display it in grey
-	PROMPT+='%([ 12V.%F{242}%12v%f. ])'
+	PROMPT+='$startbracket %(12V.%F{242}%12v%f.) $endbracket $isroot%F{white}'
+	 ${(j. .)preprompt_parts}
 
 	# set RPS1 to the return code if nonzero
 	RPS1="%(?..%F{red}%? ↵%f)"
