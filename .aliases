@@ -52,3 +52,5 @@ alias kills="kill -9 -1"
 alias cc="echo 3 | sudo tee /proc/sys/vm/drop_caches"
 #vim = nvim
 alias vim="nvim"
+#tmux
+alias t="tmux"
