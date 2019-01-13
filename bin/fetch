@@ -11,38 +11,21 @@ rst="\e[0m"
 
 echo
 
-color-echo()
-{  # print with colors
-  echo -e " ${blu}${1}${rst}${2}"
-}
-
 os="$(grep ID= /etc/os-release | sed 's/[^=]*=//' | sed -n 1p)"
 sh="$(echo $SHELL | sed 's/.*\///')"
 
 id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}')
 wm="$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t 2>/dev/null | grep 'WM_NAME' | awk '{print $3}' | sed -n 1p | tr -d '\"')"
 
-## distro
-#color-echo 'os '   "   $os"   
-#
-## shell
-#color-echo 'sh '   "   $sh"
-#
-## wm
-#color-echo 'wm '   "   $wm"
+colour-printf() {
+    printf " ${blu}${1}${rst}"
+    printf "%9s" "$2"
+    printf "\n"
+}
 
-printf "${blu} os${rst}"
-printf "%9s" "${os}"
-printf "\n"
-
-printf "${blu} os${rst}"
-printf "%9s" "${sh}"
-printf "\n"
-
-printf "${blu} wm${rst}"
-printf "%9s" "${wm}"
-printf "\n"
-
+colour-printf os $os
+colour-printf sh $sh
+colour-printf wm $wm
 
 # colors
 #echo -e "   $red▪$rst $grn▪$rst $ylw▪$rst ${blu}▪$rst $prp▪$rst $cyn▪$rst"
