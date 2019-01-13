@@ -1,40 +1,50 @@
-font: "xft:Iosevka Term:pixelsize=14:antialias=true:autohint=true";
+font: Iosevka Term:pixelsize=14:antialias=true:autohint=true
+borderpx: 50
+tabspaces: 4
+*termname: st-256color
+shell: /bin/zsh
+xfps: 60
+actionfps: 60
+blinktimeout: 0.5
+bellvolume: 0
+cwscale: 1.0
+chscale: 1.0
 
 !!Krayons
 
-! special
-foreground:   #c5c8c6;
-background:   #181a21;
-cursorColor:  #c5c8c6;
+!! special
+*foreground:   #bcccda
+*background:   #181a21
+*cursorColor:  #cbcccda
 
-! black
-color0:       #181a21;
-color8:       #181a21;
+!! black
+*color0:       #181a21
+*color8:       #181a21
 
-! red
-color1:       #b6465f;
-color9:       #b6465f;
+!! red
+*color1:       #b6465f
+*color9:       #b6465f
 
-! green
-color2:       #3ab795;
-color10:      #3ab795;
+!! green
+*color2:       #3ab795
+*color10:      #3ab795
 
-! yellow
-color3:       #f0c987;
-color11:      #f0c987;
+!! yellow
+*color3:       #f0c987
+*color11:      #f0c987
 
-! blue
-color4:       #6992c5;
-color12:      #6992c5;
+!! blue
+*color4:       #6992c5
+*color12:      #6992c5
 
-! magenta
-color5:       #afb3f7;
-color13:      #afb3f7;
+!! magenta
+*color5:       #afb3f7
+*color13:      #afb3f7
 
-! cyan
-color6:       #2194a9;
-color14:      #2194a9;
+!! cyan
+*color6:       #2194a9
+*color14:      #2194a9
 
-! white
-color7:       #707880;
-color15:      #c5c8c6;
+!! white
+*color7:       #bcccda
+*color15:      #bcccda

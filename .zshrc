@@ -22,7 +22,7 @@ source ~/.zprofile
 #setopt CORRECT
 
 #Colourful sudo prompt
-export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p: "
+export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "
 
 #Disable Ctrl-S && Ctrl-Q
 stty -ixon
