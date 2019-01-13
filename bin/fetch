@@ -22,17 +22,30 @@ sh="$(echo $SHELL | sed 's/.*\///')"
 id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}')
 wm="$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t 2>/dev/null | grep 'WM_NAME' | awk '{print $3}' | sed -n 1p | tr -d '\"')"
 
-# distro
-color-echo ' os '   "   $os"   
+## distro
+#color-echo 'os '   "   $os"   
+#
+## shell
+#color-echo 'sh '   "   $sh"
+#
+## wm
+#color-echo 'wm '   "   $wm"
 
-# shell
-color-echo ' sh '   "   $sh"
+printf "${blu} os${rst}"
+printf "%9s" "${os}"
+printf "\n"
 
-# wm
-color-echo ' wm '   "   $wm"
+printf "${blu} os${rst}"
+printf "%9s" "${sh}"
+printf "\n"
+
+printf "${blu} wm${rst}"
+printf "%9s" "${wm}"
+printf "\n"
+
 
 # colors
-#echo -e "   $red▪$rst $grn▪$rst $ylw▪$rst $blu▪$rst $prp▪$rst $cyn▪$rst"
+#echo -e "   $red▪$rst $grn▪$rst $ylw▪$rst ${blu}▪$rst $prp▪$rst $cyn▪$rst"
 echo -e " $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst "
 #▼▲
 
