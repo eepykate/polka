@@ -146,11 +146,11 @@ prompt_pure_preprompt_render() {
 	endbracket="$(echo -e "%F{blue}]" )"
 
 	# Construct the new prompt with a clean preprompt.
-	PROMPT="$startbracket ${(j. .)preprompt_parts} $endbracket $isroot%F{white} "  # Join parts, space separated.
+	PROMPT="${(j. .)preprompt_parts} $isroot%F{white} "  # Join parts, space separated.
 
 	# Expand the prompt for future comparision.
 	local expanded_prompt
-	expanded_prompt="$startbracket ${(S%%)PROMPT} $endbracket"
+	expanded_prompt="${(S%%)PROMPT}"
 
 	if [[ $1 == precmd ]]; then
 		# Initial newline, for spaciousness.
