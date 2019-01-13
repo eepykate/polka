@@ -11,25 +11,23 @@ rst="\e[0m"
 
 echo
 
-os="$(grep ID= /etc/os-release | sed 's/[^=]*=//' | sed -n 1p)"
-sh="$(echo $SHELL | sed 's/.*\///')"
+os="$(grep ID= /etc/os-release | sed 's/[^=]*=//' | sed -n 1p | tr '[:upper:]' '[:lower:]' )"   # Get distro
+sh="$(echo $SHELL | sed 's/.*\///' | tr '[:upper:]' '[:lower:]' )"   # Get default shell
+id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' | tr '[:upper:]' '[:lower:]' )   # Get window manager
+wm="$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t 2>/dev/null | grep 'WM_NAME' | awk '{print $3}' | sed -n 1p | tr -d '\"')"   # Get window manager Part 1
+term=$(xprop -id $WINDOWID WM_CLASS | cut -d" " -f 4 | cut -d "\"" -f 2 | sed 's/[-^]\-*//' | tr '[:upper:]' '[:lower:]' )   # Get terminal emulator Part 2
 
-id=$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}')
-wm="$(xprop -id "$id" -notype -len 100 -f _NET_WM_NAME 8t 2>/dev/null | grep 'WM_NAME' | awk '{print $3}' | sed -n 1p | tr -d '\"')"
-
-colour-printf() {
-    printf " ${blu}${1}${rst}"
+colour-printf() { #Prints $1 in blue, and $2 in white, with padding between them
+    printf " ${blu}${1}${rst}" 
     printf "%9s" "$2"
     printf "\n"
 }
 
-colour-printf os $os
-colour-printf sh $sh
-colour-printf wm $wm
+colour-printf "os  "   "$os"     # print distro
+colour-printf "sh  "   "$sh"     # Print shell of user
+colour-printf "wm  "   "$wm"     # Print Window Manager
+colour-printf "term"   "$term"   # Print terminal emulator
 
-# colors
-#echo -e "   $red▪$rst $grn▪$rst $ylw▪$rst ${blu}▪$rst $prp▪$rst $cyn▪$rst"
-echo -e " $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst "
-#▼▲
+echo -e "  $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst  " #▼▲
 
 echo
