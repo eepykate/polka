@@ -14,3 +14,5 @@ vmap <C-v> <ESC>"+p
 imap <C-v> <ESC>"+pa
 
 "set ttymouse=xterm2
+
+color term
