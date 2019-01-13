@@ -14,42 +14,24 @@
 # Syntax: 
 # $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
 #
-# Defaults suit my setup. You can see them below.
+# If there are no arguments after running the command, it asks you for what arguments you want to use.
 # 
 
-if [ -n $(echo $1) ];then
+if [ $# -eq 0 ];then
   offsetX="$(echo -e "1440\n0" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Offset for the X axis")"
-  #offsetY="$(echo -e "0" | dmenu -i -p "Offset for the X axis")"
+  offsetY="$(echo -e "0" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Offset for the X axis")"
   width="$(echo -e "1920\n1366\n1440" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Width")"
   height="$(echo -e "1080\n768\n900" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Height")"
   rate="$(echo -e "30\n60" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Framerate")"
 fi
 
-
 if [[ $(echo -e "No\nYes" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Are you ready to record?") = Yes ]]; then 
   
-  if \
-  [[ -n $(pacman -Qq | grep nvidia-utils) ]] && 
-  [[ -n $(lspci | grep -i nvidia ) ]]; then
-    notify-send -t 2000 "recording started"
-  
-    ffmpeg -loglevel debug \
-        -f x11grab \
-        -s ${width}x${height} -framerate ${rate} -i :0.0 \
-        -thread_queue_size 1024 -f alsa -ac 2 -ar 44100 -i :0.0+${offsetX},${offsetY} \
-        -c:v h264_nvenc -preset:v llhq  \
-        -rc:v vbr_minqp -qmin:v 19  \
-        -f mpegts - | nc -l -p 9000
-  
-  else
-  
-    notify-send -t 2000 "recording started"
-  
-    ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
-        -r ${rate} -i :0.0+${offsetX},${offsetY} -qscale 0 \
-        "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 \
-        > /dev/null 2>&1
-  
-  fi
+  notify-send -t 2000 "recording started"
+
+  ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
+      -r ${rate} -i :0.0+${offsetX},${offsetY} -qscale 0 \
+      "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 \
+      > /dev/null 2>&1
 
 fi
