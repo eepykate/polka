@@ -150,7 +150,7 @@ prompt_pure_preprompt_render() {
 
 	# Expand the prompt for future comparision.
 	local expanded_prompt
-	expanded_prompt="[ ${(S%%)PROMPT} ]"
+	expanded_prompt="$startbracket ${(S%%)PROMPT} $endbracket"
 
 	if [[ $1 == precmd ]]; then
 		# Initial newline, for spaciousness.
