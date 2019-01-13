@@ -14,8 +14,8 @@ echo
 os="$(source /etc/os-release; echo $ID )"   # Get distro
 sh="$(echo "${SHELL##*/}")"   # Get default shell 
 id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' )"   # Get window manager
-wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | awk /WM_NAME/ | awk '!/_NET_WM_NAME/' | awk '{print $3}' | awk '{gsub("\"", ""); print}')"   # Get window manager Part 1
-term="$(xprop -id $WINDOWID WM_CLASS | awk '{print $3}' | awk '{gsub("\"", ""); gsub(",", ""); print}' )"   # Get terminal emulator Part 2
+wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | awk /\_NET_WM_NAME/ | awk '{print $3 $4}' | awk '{gsub("\"", ""); gsub("Shell", ""); print}' )"   # Get window manager Part 2
+term="$(xprop -id $(xprop -root | awk '/NET_ACTIVE_WINDOW\(WINDOW\)/ {print $5; exit;}') |awk -F = '/WM_CLASS/ {print $2; exit;}'| awk '{print $2}' | awk '{gsub("\"", ""); print}' | awk '{gsub("-terminal","");print}' )"   # Get terminal emulator Part 2
 
 colour-printf() { #Prints $1 in blue, and $2 in white, with padding between them
     printf " ${blu}${1}${rst}" 
