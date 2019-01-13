@@ -1,56 +1,36 @@
-#Aliases
-alias v="nvim"
-#lolcat with a few options
-alias lol="lolcat -t -p 0.9 2>/dev/null"
-#ls but with some better stuff
-alias l="ls_extended -h --group-directories-first"
-#Start openbox (from tty)
-alias so="startx openbox-session"
-#Emojis from ~/.emoji file
-alias emoji="cat ~/.emoji | grep -i "
-#git - better git log
-alias gl="git log --all --decorate --oneline --graph"
-#git - Add all unstaged files to staging area
-alias gaa="git add -A"
-#git - Commit, add -m "message" after, or --amend
-alias gc="git commit"
-#git - Push commits to remote repository
-alias gp="git push -f"
-#git - view status
-alias gs="git status"
-#Git commit --message
-alias gcm="git commit -m"
-#Git commit --amend
-alias gca="git commit --amend"
-#Pacman/yay aliases
-alias ins="sudo pacman -S"
-alias insa="yay -S"
-alias upd="sudo pacman -Syu"
-alias rem="sudo pacman -R"
-alias rems="sudo pacman -Rs"
-alias src="sudo pacman -Ss"
-alias lst="pacman -Q|cut -f 1 -d ' '"
-alias p="sudo pacman"
-#Reconfigure openbox
-alias obr="openbox --reconfigure"
-#Open ZSH shell as root
-alias SU="sudo zsh"
-#Open blue matrix-like application in current shell
-alias mat="cmatrix -C blue"
-#ls with icons
-alias ls="ls_extended"
-#Normal ls
-alias LS="/usr/bin/ls"
-#Kill window (Name of window needed after, like firefox, or vlc)
-alias fuck="killall -9"
-#Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
-alias song="instantmusic -s "
-alias songs="instantmusic -l "
-#Kill current session
-alias kills="kill -9 -1"
-#Clear cache
-alias cc="echo 3 | sudo tee /proc/sys/vm/drop_caches"
-#vim = nvim
-alias vim="nvim"
-#tmux
-alias t="tmux"
+#     Aliases     # 
+alias l="ls_extended -h --group-directories-first"      # ls, group directories, and human readable sizes
+alias lol="lolcat -t -p 0.9 2>/dev/null"   # lolcat with some options
+alias yt="youtube-dl --add-metadata -i"    # Download video link
+alias yta="yt -x -f bestaudio/best"        # Download only audio
+alias emoji="cat ~/.emoji | grep -i "      # Emojis from ~/.emoji file
+alias obr="openbox --reconfigure"   # Reconfigure openbox
+alias songs="instantmusic -l "      # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
+alias song="instantmusic -s "       # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
+alias mat="cmatrix -C blue"         # blue cmatrix
+alias kills="kill -9 -1"   # Kill current session
+alias fuck="killall -9"    # kill window
+alias LS="/usr/bin/ls"     # normal ls
+alias ls="ls_extended"     # ls with icons and colour
+alias SU="sudo zsh"        # open zsh as root user
+alias vim="nvim"           # vim = nvim
+alias v="nvim"             # short neovim
+alias t="tmux"             # tmux
+
+# pacman/yay
+alias upd="sudo pacman -Syu"        # Update the system
+alias rems="sudo pacman -Rs"        # Install <package>
+alias rem="sudo pacman -R"          # Remove <package>
+alias ins="sudo pacman -S"          # Remove <package> and dependencies that aren't used anywhere else
+alias p="sudo pacman"      # quicker way to type sudo pacman
+alias src="yay -Ss"        # Search <keywords> (Includes aur)
+alias insa="yay -S"        # Install <package> fromn the aur
+
+# Git
+alias gl="git log --all --decorate --oneline --graph"   # git - Better git log
+alias gca="git commit --amend"   # git - Commit all staged files in the last commit
+alias gcm="git commit -m"        # git - commit with message in quotes
+alias gp="git push -f"           # git - Push and overwrite remote repository
+alias gaa="git add -A"           # git - Add all unstaged files to staging area 
+alias gs="git status"            # git - status
+alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)

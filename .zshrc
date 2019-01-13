@@ -1,34 +1,14 @@
-#     ~/.zshrc     #
-#
-#oh-my-zsh
-export ZSH="/usr/share/oh-my-zsh"
-#ZSH_THEME="agnoster"
-source $ZSH/oh-my-zsh.sh
-
-#Syntax Hightlighting in shell
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
-#Shell theme
-autoload -U promptinit; promptinit
-prompt pure
-
-#Default terminal text editor
-export EDITOR='vim'
-
-#Execute commands from ~/.zprofile when zsh is opened
-source ~/.zprofile
-
-#Correct wrong commands
-#setopt CORRECT
-
-#Colourful sudo prompt
-export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "
-
-#Disable Ctrl-S && Ctrl-Q
-stty -ixon
-
-#Default GUI text editor
-export VISUAL='code'
-
-#Aliases
-source ~/.aliases
+#     ~/.zshrc     # 
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh      # Syntax Hightlighting in shell
+export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "      # Colourful sudo prompt
+export ZSH="/usr/share/oh-my-zsh"      # oh-my-zsh location
+source $ZSH/oh-my-zsh.sh               # start oh-my-zsh
+autoload -U promptinit; promptinit     # Start shell theme daemon thingy
+prompt pure                            # Shell theme
+export VISUAL='code'     # Default GUI text editor
+export EDITOR='vim'      # Default terminal text editor
+#ZSH_THEME="agnoster"    # oh-my-zsh theme
+#setopt CORRECT          # Correct wrong commands
+source ~/.zprofile       # Execute commands from ~/.zprofile when zsh is opened
+source ~/.aliases        # Aliases
+stty -ixon               # Disable Ctrl-S && Ctrl-Q
