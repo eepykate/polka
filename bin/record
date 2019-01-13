@@ -23,6 +23,12 @@ if [ $# -eq 0 ];then
   width="$(echo -e "1920\n1366\n1440" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Width")"
   height="$(echo -e "1080\n768\n900" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Height")"
   rate="$(echo -e "30\n60" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Framerate")"
+else
+  offsetX="$1"
+  offsetY="$2"
+  width="$3"
+  height="$4"
+  rate="$5"
 fi
 
 if [[ $(echo -e "No\nYes" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Are you ready to record?") = Yes ]]; then 

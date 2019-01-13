@@ -1,4 +1,4 @@
-![Current scrot](https://i.imgur.com/VjRJaFw.png)
+![Current scrot](https://i.imgur.com/LSK374V.png)
 
 ![Firefox config / startpage](https://i.imgur.com/q1EfwDi.mp4)
 
@@ -15,19 +15,19 @@
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** [KvKrayons](https://gitlab.com/GaugeK/dots/tree/master/.config/Kvantum/KvKrayons)
+**Kvantum Theme:** KvKrayons
 
 **Icon Theme:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 **Wallpaper:** [Hexagon Krayons](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Hexagon%20Krayons.png)
 
-**GTK Theme:** Krayons \(Generated with [oomox](https://github.com/themix-project/oomox)\)
+**GTK Theme:** oomox-Krayons \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
 **Cursor Theme:** Breeze-Hacked
 
-**oh-my-zsh Theme:** Agnoster
+**oh-my-zsh Theme:** Modified pure
 
-**Panel:** Tint2
+**Panel:** xfce4-panel
 
 **Font:** Noto Sans 11
 
