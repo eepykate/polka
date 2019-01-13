@@ -7,13 +7,13 @@ unmountusb() {
 	[ -z "$drives" ] && exit
 	chosen=$(echo "$drives" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Unmount which drive?" | awk '{print $1}')
 	[ -z "$chosen" ] && exit
-	sudo -A umount "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted."
+	sudo -A umount "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted." || notify-send "Failed to unmount $chosen"
 	}
 
 unmountandroid() { \
 	chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Unmount which device?")
 	[ -z "$chosen" ] && exit
-	fusermount -u "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted."
+	fusermount -u "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted." || notify-send "Failed to unmount $chosen"
 	}
 
 asktype() { \
