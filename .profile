@@ -8,7 +8,7 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #Faster keyboard repeat rate
-xset r rate 250 30 
+xset r rate 200 60 
 
 #GTK Global menu
 if [ -n "$GTK_MODULES" ]; then
