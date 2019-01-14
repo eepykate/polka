@@ -53,6 +53,7 @@
       <property name="&lt;Shift&gt;Print" type="string" value="scrot_selection"/>
       <property name="XF86AudioRaiseVolume" type="string" value="pulseaudio-ctl up"/>
       <property name="XF86AudioLowerVolume" type="string" value="pulseaudio-ctl downj"/>
+      <property name="XF86AudioPlay" type="string" value="playerctl play-pause"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
