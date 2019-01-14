@@ -16,6 +16,7 @@ alias SU="sudo zsh"        # open zsh as root user
 alias vim="nvim"           # vim = nvim
 alias v="nvim"             # short neovim
 alias t="tmux"             # tmux
+alias f="fff"              # terminal file manager
 
 # pacman/yay
 alias upd="sudo pacman -Syu"        # Update the system

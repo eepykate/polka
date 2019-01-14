@@ -40,9 +40,8 @@ hi DIffAdd      ctermbg=NONE   ctermfg=2
 hi DiffDelete   ctermbg=NONE   ctermfg=1
 hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
-hi LineNr       ctermbg=NONE   ctermfg=7
 hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
-hi CursorLineNr ctermbg=NONE   ctermfg=15   cterm=bold
+hi CursorLineNr ctermbg=NONE   ctermfg=7    cterm=bold
 hi MatchParen   ctermbg=8      ctermfg=15
 hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE

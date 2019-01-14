@@ -1,18 +1,25 @@
-set number relativenumber
-" Enable syntax highlighting
-syntax on
-":set mouse-=a
+" Line number on the side
+set number relativenumber 
 
+" Enable syntax highlighting
+syntax on   
+
+" Mouse support
 set mouse=a
-"vnoremap <C-c> "*y
-"vnoremap <C-v> "*p
-"set go+=a
-"set clipboard=unnamed
+
+" Copy
 vmap <C-c> "+yi
+imap <C-c> "+yi
+
+" Cut
 vmap <C-x> "+c
-vmap <C-v> <ESC>"+p
+
+" Paste
+vmap <C-v> <ESC>"+pa
 imap <C-v> <ESC>"+pa
 
-"set ttymouse=xterm2
+" Ctrl +n twice in normal mode toggles number sidebar
+nmap <C-N><C-N> :set invnumber<CR>  
 
+" Set colour scheme to terminal's colour scheme (~/.config/nvim/colors/term.vim)   " Paste
 color term
