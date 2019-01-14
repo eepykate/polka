@@ -19,9 +19,9 @@ alias t="tmux"             # tmux
 
 # pacman/yay
 alias upd="sudo pacman -Syu"        # Update the system
-alias rems="sudo pacman -Rs"        # Install <package>
+alias rems="sudo pacman -Rs"        # Remove <package> and dependencies that aren't used anywhere else 
 alias rem="sudo pacman -R"          # Remove <package>
-alias ins="sudo pacman -S"          # Remove <package> and dependencies that aren't used anywhere else
+alias ins="sudo pacman -S"          # install package from official repos
 alias p="sudo pacman"      # quicker way to type sudo pacman
 alias src="yay -Ss"        # Search <keywords> (Includes aur)
 alias insa="yay -S"        # Install <package> fromn the aur
