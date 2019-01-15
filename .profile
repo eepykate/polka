@@ -27,7 +27,7 @@ export UBUNTU_MENUPROXY
 #Default user
 export DEFAULT_USER="gauge"
 
-export PATH="$PATH:$(du "$HOME/bin/" | cut -f2 | tr '\n' ':'):$HOME/.local/bin"
+export PATH="$PATH:$(du "$HOME/bin" | cut -f2 | tr '\n' ':'):$HOME/.local/bin"
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"

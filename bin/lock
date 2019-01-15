@@ -14,8 +14,9 @@ i3lock \
   --bshlcolor=b6465fff &
 timeout="10000"
 while pgrep -x i3lock; do
-  [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off
-  sleep 5
-done
+  [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
+  sleep 5;
+done;
+exit;
 
 #To disable blur, replace `--blur="8"` with `--color 181a21`

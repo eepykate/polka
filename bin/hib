@@ -1,6 +1,6 @@
-#!/usr/bin/bash 
+#!/bin/bash 
 
 lock & 
 sleep 4; 
 systemctl hibernate;
-killall -9 hib
+killall -9 hib && exit
