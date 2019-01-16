@@ -2,5 +2,4 @@
 
 lock & 
 sleep 4; 
-systemctl hibernate;
-killall -9 hib && exit
+systemctl hibernate

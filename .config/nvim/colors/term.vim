@@ -22,7 +22,7 @@ hi Pmenu        ctermbg=8      ctermfg=7
 hi PmenuSel     ctermbg=8      ctermfg=4
 hi PmenuSbar    ctermbg=8      ctermfg=8
 hi PmenuThumb   ctermbg=8      ctermfg=8
-hi Search       ctermbg=8      ctermfg=15
+hi Search       ctermbg=7      ctermfg=8
 hi SpellBad     ctermbg=NONE   ctermfg=1    cterm=underline
 hi SpellCap     ctermbg=NONE   ctermfg=2    cterm=underline
 hi SpellLocal   ctermbg=NONE   ctermfg=10   cterm=underline

@@ -375,7 +375,7 @@ prompt_pure_check_git_status() {
 
 	(( left > 0 )) && ret+="%F{green}$left"
 	(( left * right > 0 )) && ret+="%F{242}:"
-	(( right > 0 )) && ret+="%F{red}$right"
+	#(( right > 0 )) && ret+="%F{red}$right"
 
 	[[ -n $ret ]] || return
 	typeset -g REPLY="%F{242}[$ret%F{242}]"
@@ -584,10 +584,10 @@ prompt_pure_setup() {
 
 	# if a virtualenv is activated, display it in grey
 	PROMPT+='$startbracket %(12V.%F{242}%12v%f.) $endbracket $isroot%F{white}'
-	 ${(j. .)preprompt_parts}
+	 #${(j. .)preprompt_parts}
 
 	# set RPS1 to the return code if nonzero
-	RPS1="%(?..%F{red}%? ↵%f)"
+	#RPS1="%(?..%F{red}%? ↵%f)"
 
 	# Store prompt expansion symbols for in-place expansion via (%). For
 	# some reason it does not work without storing them in a variable first.

@@ -14,7 +14,7 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    height: 99%;
 
     margin: 0;
     padding: 0;
@@ -26,7 +26,19 @@ body {
     src: local('Iosevka Term');
 }
 
+
 body {
+    background: var(--bgdark);
+    color: var(--fgdark);
+
+    font-family:  'Iosevka Term';
+
+/*    user-select: none;
+    -moz-user-select: none; */
+}
+
+
+#page {
     margin: 0 auto;
     max-width: 800px;
 
@@ -34,10 +46,8 @@ body {
     color: var(--fgdark);
 
     font-family:  'Iosevka Term';
-
-    user-select: none;
-    -moz-user-select: none;
 }
+
 
 .shadow-box {
     box-shadow: 5px 5px 10px 5px #101010;
@@ -79,107 +89,77 @@ body.nojs #top-header {
 }
 
 #top-header {
-    padding: 20px;
+    padding: 15px;
 }
 
-#header-cont {
-    display: flex;
-    flex-flow: row wrap;
-}
+.search-box input[type="text"] {
+    width: 800px;
+    max-width: 100%;
 
-#analog-clock {
-    flex: 1 1 auto;
-}
-
-#analog-clock-canvas {
-    display: block;
-    width: 118px;
-    height: 118px;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-#digital-clock {
-    flex: 1 1 auto;
-}
-
-#clock {
-    text-align: center;
-    font-size: 4rem;
-    margin-top: 20px;
-}
-
-#date {
-    text-align: center;
-    font-size: 36px;
-}
-
-header {
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-header.sticky {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10;
-}
-
-form {
-    margin: 10px 10px 0 10px;
-}
-
-form input[type="text"] {
-    width: 100%;
-    box-sizing: border-box;
-
-    padding: 10px;
-    border: 2px solid var(--bglight);
+    padding: 5px;
+    border: 2px solid var(--border);
 
     background: var(--bgdark);
     color: var(--fglight);
 
     font-family: 'Iosevka Term';
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
+    display: block;
 }
 
-
-header.sticky form input[type="text"] {
-    opacity: 0.85;
+.search-box {
+    width: 800px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
-header.sticky form input[type="text"]:hover,
-header.sticky form input[type="text"]:focus {
-    opacity: 1;
+.search-box input[type="text"]:hover {
+    border-color: var(--accent);
+    transition: all 0.4s !important;
+
 }
 
+.search-box {
+    padding-top: 12px;
+}
 
-main {
+main, #header {
     overflow-y: auto;
 
     display: flex;
     flex-flow: row wrap;
 }
 
-/*
-header.sticky + main {
-    padding: 68px 0 10px 0;
+.header {
+    background-color: #1e2029;
+    width: 100% !important;
+    height: 80px;
 }
-*/
+
+#digital-clock {
+    /* margin-left: 87%; */
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+}
+
+#clock {
+    display: inline-block;
+    font-size: 18px;
+}
+
+#date {
+    display: inline-block;
+    font-size: 14px;
+} 
 
 .nav-wrapper {
     margin: 10px;
     border: 2px solid var(--bglight);
     background: var(--bgdark)
-}
-
-form input[type="text"]:hover,
-form input[type="text"]:focus {
-    border-color: var(--accent);
-    transition: all 0.4s ease 0s !important;
 }
 
 .nav-wrapper:hover {
