@@ -1,0 +1,15 @@
+#!/bin/bash
+
+dir=~/Stuff/Screenshots/maim
+name="maim-$(date +%F_%H:%M:%S)"
+
+mkdir -p "$dir" || exit 1
+
+maim -u "${dir}/${name}.png" &&
+    notify-send "Fullscreen screenshot taken at ${dir}/${name}.png"
+
+
+
+#maim -iu $(xdotool getactivewindow) "~/Stuff/Screenshots/maim/$(date %Y-%m-%d %H \: %M).png" &&
+#notify-send "Screenshot of selection taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"
+
