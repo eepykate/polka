@@ -27,7 +27,7 @@ export UBUNTU_MENUPROXY
 #Default user
 export DEFAULT_USER="gauge"
 
-export PATH="$PATH:$(du "$HOME/bin" | cut -f2 | tr '\n' ':'):$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
@@ -46,7 +46,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #	pgrep -x openbox || exec startx
 #fi
 
-(cd ~/.startpage;nohup python3 -m http.server) &
+(cd ~/.startpage1;nohup python3 -m http.server) &
 
 xrdb ~/.Xresources
 
