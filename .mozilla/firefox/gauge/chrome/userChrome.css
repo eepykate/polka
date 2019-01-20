@@ -3,13 +3,13 @@
 
 /* Colours (Hopefully) */
 :root {
-	--bgdark:    #181a21;
-    --bglight:   #1e2029;
+	--bgdark:    #15171d;
+    --bglight:   #1c202a;
 
-    --fgdark:    #cccccc;
-	--fglight:   #cccccc;
+    --fgdark:    #cbe3f1;
+	--fglight:   #cbe3f1;
 	
-    --accent:    #6992c5;
+    --accent:    #4d9de0;
 	--border:    #334455;
 	--disabled:  #696969;
 }

@@ -14,19 +14,3 @@ Traceback (most recent call last):
   File "/usr/lib/python3.7/socketserver.py", line 463, in server_bind
     self.socket.bind(self.server_address)
 OSError: [Errno 98] Address already in use
-Traceback (most recent call last):
-  File "/usr/lib/python3.7/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/usr/lib/python3.7/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/usr/lib/python3.7/http/server.py", line 1262, in <module>
-    test(HandlerClass=handler_class, port=args.port, bind=args.bind)
-  File "/usr/lib/python3.7/http/server.py", line 1230, in test
-    with ServerClass(server_address, HandlerClass) as httpd:
-  File "/usr/lib/python3.7/socketserver.py", line 452, in __init__
-    self.server_bind()
-  File "/usr/lib/python3.7/http/server.py", line 137, in server_bind
-    socketserver.TCPServer.server_bind(self)
-  File "/usr/lib/python3.7/socketserver.py", line 466, in server_bind
-    self.socket.bind(self.server_address)
-OSError: [Errno 98] Address already in use

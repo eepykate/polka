@@ -8,23 +8,20 @@
     <title>Home</title>
 </head>
 
-<body class="nojs">
-    <div id="top-header">
-        <div id="header-cont">
-            <div id="analog-clock">
-                <canvas id="analog-clock-canvas" width="120" height="120"></canvas>
-            </div>
-            <div id="digital-clock">
-                <div id="clock"></div>
-                <div id="date"></div>
-            </div>
-        </div>
-    </div>
-    <header id="sticky-header">
-        <form class="shadow-box" method="GET" action="https://ddg.gg/" autocomplete="off">
+
+<body id="body">
+    <div class="header">
+        <form class="search-box" method="GET" action="https://ddg.gg/" autocomplete="off">
             <input type="text" name="q" placeholder="Search">
         </form>
-    </header>
+        <div id="digital-clock">
+            <div id="clock"></div>
+            <div id="date"></div>
+        </div>
+    </div>
+    <div id="page">
+    <div id="top-header">
+    </div>
     <main>
         <section>
             <div class="shadow-box nav-wrapper">
@@ -84,6 +81,7 @@
     </main>
 
     <script src="index.js"></script>
+    </div>
 </body>
 
 </html>

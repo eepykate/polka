@@ -46,7 +46,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #	pgrep -x openbox || exec startx
 #fi
 
-(cd ~/.startpage1;nohup python3 -m http.server) &
+(cd ~/.startpage;nohup python3 -m http.server) &
 
 xrdb ~/.Xresources
 

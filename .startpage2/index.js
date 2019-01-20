@@ -3,7 +3,9 @@ var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 var clockElem = document.getElementById('clock')
 var dateElem = document.getElementById('date')
+var header = document.getElementById('sticky-header')
 var topHeader = document.getElementById('top-header')
+var analogClockCanvas = document.getElementById('analog-clock-canvas')
 
 var sections = document.querySelectorAll('.nav-wrapper')
 
@@ -52,6 +54,7 @@ function DateComp(elem, date) {
 
 function timer() {
     var now = new Date()
+    AnalogClock(analogClockCanvas, now)
     ClockComp(clockElem, now)
     DateComp(dateElem, now)
     stickpx = topHeader.clientHeight
@@ -82,3 +85,50 @@ function fixSectionHeight() {
 fixSectionHeight()
 window.addEventListener('resize', fixSectionHeight)
 
+function AnalogClock(canvas, date) {
+    var ctx = canvas.getContext('2d')
+
+    var h = date.getHours() % 12
+    var m = date.getMinutes()
+    var s = date.getSeconds()
+
+    var cx = canvas.height / 2
+    var cy = canvas.width / 2
+    var r = canvas.height / 2 - 1
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath()
+    ctx.lineWidth = 2
+    ctx.strokeStyle = '#cccccc'
+
+    ctx.arc(cx, cy, r, 0, 2 * Math.PI)
+    ctx.stroke()
+
+    var hr = (
+        h * 2 * Math.PI / 12
+        + m * 2 * Math.PI / 12 / 60
+        - Math.PI / 2
+    )
+    var hlx = 3 / 5 * r * Math.cos(hr) + cx
+    var hly = 3 / 5 * r * Math.sin(hr) + cy
+    ctx.moveTo(cx, cy)
+    ctx.lineTo(hlx, hly)
+
+    var mr = m * 2 * Math.PI / 60 - Math.PI / 2
+    var mlx = r * Math.cos(mr) + cx
+    var mly = r * Math.sin(mr) + cy
+    ctx.moveTo(cx, cy)
+    ctx.lineTo(mlx, mly)
+    ctx.stroke()
+
+    ctx.beginPath()
+    ctx.strokeStyle = '#6992c5'
+    var sr = s * 2 * Math.PI / 60 - Math.PI / 2
+    var slx = r * Math.cos(sr) + cx
+    var sly = r * Math.sin(sr) + cy
+    ctx.moveTo(cx, cy)
+    ctx.lineTo(slx, sly)
+
+    ctx.stroke()
+}
