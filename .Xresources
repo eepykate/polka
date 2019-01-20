@@ -10,40 +10,80 @@ bellvolume: 0
 cwscale: 1.0
 chscale: 1.0
 
-!!Krayons
+!!!Krayons
+!
+!!! special
+!*foreground:   #bcccda
+!*background:   #181a21
+!*cursorColor:  #bcccda
+!
+!!! black
+!*color0:       #181a21
+!*color8:       #181a21
+!
+!!! red
+!*color1:       #b6465f
+!*color9:       #b6465f
+!
+!!! green
+!*color2:       #3ab795
+!*color10:      #3ab795
+!
+!!! yellow
+!*color3:       #f0c987
+!*color11:      #f0c987
+!
+!!! blue
+!*color4:       #6992c5
+!*color12:      #6992c5
+!
+!!! magenta
+!*color5:       #afb3f7
+!*color13:      #afb3f7
+!
+!!! cyan
+!*color6:       #21a4b8
+!*color14:      #21a4b8
+!
+!!! white
+!*color7:       #bcccda
+!*color15:      #bcccda
+
+
+!! Colour scheme that does not have a name yet.png.jpeg.jpg.svg.xbm.xpm
 
 !! special
 *foreground:   #bcccda
-*background:   #181a21
-*cursorColor:  #cbcccda
+*background:   #15171d
+*cursorColor:  #bcccda
 
 !! black
-*color0:       #181a21
-*color8:       #181a21
+*color0:       #1c202a
+*color8:       #1c202a
 
 !! red
-*color1:       #b6465f
-*color9:       #b6465f
+*color1:       #ed254e
+*color9:       #d12350
 
 !! green
-*color2:       #3ab795
-*color10:      #3ab795
+*color2:       #29c583
+*color10:      #27b47b
 
 !! yellow
-*color3:       #f0c987
-*color11:      #f0c987
+*color3:       #ffd97d
+*color11:      #ffa166
 
 !! blue
-*color4:       #6992c5
-*color12:      #6992c5
+*color4:       #4d9de0
+*color12:      #347fc4
 
 !! magenta
-*color5:       #afb3f7
-*color13:      #afb3f7
+*color5:       #e12994
+*color13:      #c4379f
 
 !! cyan
-*color6:       #21a4b8
-*color14:      #21a4b8
+*color6:       #23a6c1
+*color14:      #1998b3
 
 !! white
 *color7:       #bcccda
