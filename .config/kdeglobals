@@ -109,7 +109,7 @@ ForegroundVisited=82,148,226
 
 [DirSelect Dialog]
 DirSelectDialog Size=640,480
-History Items[$e]=file:$HOME/Movies,file:$HOME/Stuff/Linux Distros,file:$HOME/Stuff/Linux Distros,file:$HOME/Music,file:$HOME/Music,file:$HOME/Music,file:$HOME/Stuff/Linux Distros
+History Items[$e]=file:$HOME/Music,file:$HOME/Movies,file:$HOME/Stuff/Linux Distros,file:$HOME/Stuff/Linux Distros,file:$HOME/Music,file:$HOME/Music,file:$HOME/Music,file:$HOME/Stuff/Linux Distros
 
 [General]
 BrowserApplication[$e]=firefox.desktop

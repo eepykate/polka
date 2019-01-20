@@ -5,10 +5,13 @@ name="maim-$(date +%F_%H:%M:%S)"
 
 mkdir -p "$dir" || exit 1
 
-maim -iu $(xdotool getactivewindow) "${dir}/${name}.png" &&
-    notify-send "Screenshot of focused window taken as ${dir}/${name}.png"
+maim -ui $(xdotool getactivewindow) "${dir}/${name}.png" &&
+    name1="${name}-$(file ${dir}/${name}.png | awk '{gsub(",","")} {print $5 "x" $7}')" &&
+    mv ${dir}/${name}.png ${dir}/${name1}.png &&
+    notify-send "Screenshot of focused window taken as ${dir}/${name1}.png"
 
 
+# awk '{gsub(",","")} {print $5 "x" $7}'
 
 #maim -iu $(xdotool getactivewindow) "~/Stuff/Screenshots/maim/$(date %Y-%m-%d %H \: %M).png" &&
 #notify-send "Screenshot of selection taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"
