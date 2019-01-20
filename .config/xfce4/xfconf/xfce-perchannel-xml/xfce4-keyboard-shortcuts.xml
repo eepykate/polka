@@ -48,12 +48,13 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;space" type="string" value="dmenu_run -nf &apos;#CCCCCC&apos; -nb &apos;#181A21&apos; -sb &apos;#6992c5&apos; -sf &apos;#181A21&apos; -fn &apos;Iosevka term-16&apos;"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;w" type="string" value="wifi"/>
       <property name="XF86AudioRaiseVolume" type="string" value="pulseaudio-ctl up"/>
-      <property name="XF86AudioLowerVolume" type="string" value="pulseaudio-ctl downj"/>
       <property name="XF86AudioPlay" type="string" value="playerctl play-pause"/>
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Super&gt;Print" type="string" value="maim_focused"/>
       <property name="&lt;Shift&gt;Print" type="string" value="maim_selection"/>
       <property name="Print" type="string" value="maim_fullscreen"/>
+      <property name="XF86AudioMute" type="string" value="pulseaudio-ctl mute"/>
+      <property name="XF86AudioLowerVolume" type="string" value="pulseaudio-ctl down"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
