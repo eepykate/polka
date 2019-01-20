@@ -374,7 +374,7 @@ prompt_pure_check_git_status() {
 	local ret left=${1:-0} right=${2:-0}
 
 	(( left > 0 )) && ret+="%F{green}$left"
-	(( left * right > 0 )) && ret+="%F{242}:"
+	#(( left * right > 0 )) && ret+="%F{242}:"
 	#(( right > 0 )) && ret+="%F{red}$right"
 
 	[[ -n $ret ]] || return
