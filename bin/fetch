@@ -8,6 +8,7 @@ blu="\e[34m"
 prp="\e[35m"
 bprp="\e[35;1m"
 rst="\e[0m"
+bold="\e[1m"
 
 echo
 
@@ -18,7 +19,7 @@ wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | awk '/\_NET_WM_NAME/ {gsub(
 term="$(xprop -id $(xprop -root | awk '/NET_ACTIVE_WINDOW\(WINDOW\)/ {print $5}') | awk -F = '/WM_CLASS/ {print $2}' | awk '{gsub("\"", ""); gsub("-terminal",""); print $2}')"   # Get terminal emulator
 
 colour-printf() { #Prints $1 in blue, and $2 in white, with padding between them
-    printf " ${blu}${1}${rst}" 
+    printf " ${blu}${bold}${1}${rst}" 
     printf "%9s" "${2,,}"
     printf "\n"
 }
