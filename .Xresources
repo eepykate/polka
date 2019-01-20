@@ -50,12 +50,12 @@ chscale: 1.0
 !*color15:      #bcccda
 
 
-!! Colour scheme that does not have a name yet.png.jpeg.jpg.svg.xbm.xpm
+!! Pop
 
 !! special
-*foreground:   #bcccda
+*foreground:   #cbe3f1
 *background:   #15171d
-*cursorColor:  #bcccda
+*cursorColor:  #cbe3f1
 
 !! black
 *color0:       #1c202a
@@ -78,7 +78,7 @@ chscale: 1.0
 *color12:      #347fc4
 
 !! magenta
-*color5:       #e12994
+*color5:       #dd55ba
 *color13:      #c4379f
 
 !! cyan
@@ -86,5 +86,5 @@ chscale: 1.0
 *color14:      #1998b3
 
 !! white
-*color7:       #bcccda
-*color15:      #bcccda
+*color7:       #cbe3f1
+*color15:      #9aafc4
