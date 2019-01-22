@@ -17,6 +17,6 @@ while pgrep -x i3lock; do
   [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
   sleep 5;
 done;
-exit;
+exit
 
 #To disable blur, replace `--blur="8"` with `--color 181a21`
