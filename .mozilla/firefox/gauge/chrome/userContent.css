@@ -1,5 +1,14 @@
 @namespace url("http://www.w3.org/1999/xhtml");
 
+:root{
+  scrollbar-color: var(--accent) var(--bgdark) !important;
+  scrollbar-width: thin !important;
+}
+
+* {
+  scrollbar-width: thin !important;
+} 
+
 :root {
 	--bgdark:    #15171d;
     --bglight:   #1c202a;
@@ -7,21 +16,13 @@
     --fgdark:    #cbe3f1;
 	--fglight:   #cbe3f1;
 	
-    --blue:      #4d9de0;
-    --cyan:      #23a6c1;
-    --green:     #29c583;
+    --accent:    #4d9de0;
 	--border:    #334455;
+	--border1:   #223344;
+	--border2:   #334455;
 	--disabled:  #696969;
 }
 
-:root{
-  scrollbar-color: var(--blue) var(--bgdark) !important;
-  scrollbar-width: thin !important;
-}
-
-* {
-  scrollbar-width: thin !important;
-} 
 
 /* Dark native firefox pages */
 
@@ -55,8 +56,8 @@
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
 dialog, window, .prefpane, .windowDialog  {}
-tab {color: var(--bgdark)!important;}
-xul|listheader, xul|treecols {border-bottom: 1px solid #696969!important;}
+tab {color: var(--fglight)!important;}
+xul|listheader, xul|treecols {border-bottom: 1px solid var(--disabled)!important;}
 
 @namespace url(http://www.w3.org/1999/xhtml);
 
@@ -65,52 +66,52 @@ xul|listheader, xul|treecols {border-bottom: 1px solid #696969!important;}
 	/*	**************** TYPICALLY USED COLORS ****************/
 	/*	var(--bgdark)	background*/
 	/*	var(--bglight)	panels*/
-	/*	#223344	list odd background color*/
+	/*	var(--border1)	list odd background color*/
 
 	/*	var(--border)	[1]borders, separators, lines... darker*/
-	/*	#667788	[2]borders, separators, lines... lighter*/
+	/*	var(--border2)	[2]borders, separators, lines... lighter*/
 
-	/*	var(--blue)	active color MIN icons*/
-	/*	var(--blue)	active color of MAX elements*/
-	/*	var(--blue)	link, title, active borders*/
-	/*	var(--cyan)	link visited*/
+	/*	var(--accent)	active color MIN icons*/
+	/*	var(--accent)	active color of MAX elements*/
+	/*	var(--accent)	link, title, active borders*/
+	/*	#1d8a99	link visited*/
 
-	/*	#696969	disabled text, subtitle*/
-	/*	var(--bgdark)	default text*/
-	/*	var(--fglight)	selected text*/
+	/*	var(--disabled)	disabled text, subtitle*/
+	/*	var(--fglight)	default text*/
+	/*	#FFF	selected text*/
 
-	--in-content-page-color: var(--bgdark)!important;
+	--in-content-page-color: var(--fglight)!important;
 	--in-content-page-background: var(--bgdark)!important;
-	--in-content-text-color: var(--bgdark)!important;
-	--in-content-selected-text: var(--bgdark)!important;
+	--in-content-text-color: var(--fglight)!important;
+	--in-content-selected-text: var(--fglight)!important;
 	--in-content-box-background: var(--bglight)!important;
-	--in-content-box-background-odd: #223344!important;
+	--in-content-box-background-odd: var(--border1)!important;
 	--in-content-box-background-hover: var(--bglight)!important;
-	--in-content-box-background-active: var(--bglight)!important;
+	--in-content-box-background-active: var(--accent)!important;
 	--in-content-box-border-color: var(--border)!important;
 	--in-content-item-hover: rgba(192,192,192,0.2)!important;
-	--in-content-item-selected: var(--blue)!important;
+	--in-content-item-selected: var(--accent)!important;
 	--in-content-border-highlight: var(--border)!important;
-	--in-content-border-focus: var(--blue)!important;
-	--in-content-border-color: var(--bgdark)!important;
-	--in-content-category-outline-focus: 1px dotted var(--blue)!important;
-	--in-content-category-text: var(--bgdark)!important;
-	--in-content-category-text-active: var(--bgdark)!important;
-	--in-content-category-text-selected: var(--blue)!important;
-	--in-content-category-text-selected-active: var(--fglight)!important;
+	--in-content-border-focus: var(--accent)!important;
+	--in-content-border-color: var(--fglight)!important;
+	--in-content-category-outline-focus: 1px dotted var(--accent)!important;
+	--in-content-category-text: var(--fglight)!important;
+	--in-content-category-text-active: var(--fglight)!important;
+	--in-content-category-text-selected: var(--accent)!important;
+	--in-content-category-text-selected-active: #fff!important;
 	--in-content-category-background-hover: rgba(64,64,64,0.6)!important;
-	--in-content-category-background-active: var(--blue)!important;
-	--in-content-category-background-selected-hover: var(--blue)!important;
-	--in-content-category-background-selected-active: rgba(0,64,96,1)!important;
+	--in-content-category-background-active: var(--accent)!important;
+	--in-content-category-background-selected-hover: var(--accent)!important;
+	--in-content-category-background-selected-active: var(--accent)!important;
 	--in-content-tab-color: var(--bglight)!important;
-	--in-content-link-color: var(--blue)!important;
-	--in-content-link-color-hover: var(--bgdark)!important;
-	--in-content-link-color-active: var(--blue)!important;
-	--in-content-link-color-visited: var(--cyan)!important;
+	--in-content-link-color: var(--accent)!important;
+	--in-content-link-color-hover: var(--fglight)!important;
+	--in-content-link-color-active: var(--accent)!important;
+	--in-content-link-color-visited: #1d8a99!important;
 	--in-content-primary-button-background: var(--bgdark) !important;
 	--in-content-primary-button-background-hover: var(--border) !important;
-	--in-content-primary-button-background-active: var(--blue) !important;
-	--in-content-table-background: #223344 !important;
+	--in-content-primary-button-background-active: var(--accent) !important;
+	--in-content-table-background: var(--border1) !important;
 	--in-content-table-border-dark-color: var(--border) !important;
 	--in-content-table-header-background: var(--bgdark) !important;
 	--grey-20: var(--bglight)!important;
@@ -166,7 +167,7 @@ xul|*.radio-check[selected] {
 /**************************************************************/
 dialog, window, .prefpane, .windowDialog {
 	background-color: var(--bgdark)!important;
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 }
 
 richlistitem[selected="true"] {
@@ -174,7 +175,7 @@ richlistitem[selected="true"] {
 }
 
 .title {
-	fill: #696969!important;
+	fill: var(--disabled)!important;
 }
 
 .top-site-outer .top-site-icon {
@@ -195,7 +196,7 @@ richlistitem[selected="true"] {
 
 }
 #warningTitle {
-	color: var(--blue)!important;
+	color: var(--accent)!important;
 }
 
 
@@ -207,44 +208,44 @@ browser,
 html, body {
 	background-color:var(--bgdark)!important;	/*priority 1*/
 	background: var(--bgdark) !important;		/*priority 1*/
-	color:var(--bgdark) !important;			/*priority 1*/
+	color:var(--fglight) !important;			/*priority 1*/
 
 	--newtab-background-color: var(--bgdark) !important;
 	--newtab-border-primary-color: var(--border) !important;
 	--newtab-border-secondary-color: var(--border) !important;
 	--newtab-button-primary-color: var(--bglight) !important;
 	--newtab-button-secondary-color: inherit !important;
-	--newtab-element-active-color: rgba(105, 146, 197, 0.6) !important;
+	--newtab-element-active-color: var(--accent) !important;
 	--newtab-element-hover-color: var(--bglight) !important;
-	--newtab-icon-primary-color: var(--bgdark) !important;
-	--newtab-icon-secondary-color: #667788 !important;
-	--newtab-icon-tertiary-color: var(--blue) !important;
+	--newtab-icon-primary-color: var(--fglight) !important;
+	--newtab-icon-secondary-color: var(--border2) !important;
+	--newtab-icon-tertiary-color: var(--accent) !important;
 	--newtab-inner-box-shadow-color: rgba(0, 0, 0, 0.1) !important;
-	--newtab-link-primary-color: var(--blue) !important;
-	--newtab-link-secondary-color: var(--blue) !important;
-	--newtab-text-conditional-color: #667788 !important;
-	--newtab-text-primary-color: var(--bgdark) !important;
-	--newtab-text-secondary-color: #696969 !important;
+	--newtab-link-primary-color: var(--accent) !important;
+	--newtab-link-secondary-color: var(--accent) !important;
+	--newtab-text-conditional-color: var(--border2) !important;
+	--newtab-text-primary-color: var(--fglight) !important;
+	--newtab-text-secondary-color: var(--disabled) !important;
 	--newtab-textbox-background-color: var(--bgdark) !important;
 	--newtab-textbox-border: var(--border) !important;
-	--newtab-textbox-focus-color: var(--blue) !important;
-	--newtab-textbox-focus-boxshadow: 0 0 0 1px rgba(0, 96, 192, 0.2), 0 0 0 4px rgba(0, 96, 192, 0.1) !important;
+	--newtab-textbox-focus-color: var(--accent) !important;
+	--newtab-textbox-focus-boxshadow: 0 0 0 1px var(--accent), 0 0 0 4px var(--accent) !important;
 	--newtab-contextmenu-background-color: var(--bgdark) !important;
-	--newtab-contextmenu-button-color: var(--blue) !important;
+	--newtab-contextmenu-button-color: var(--accent) !important;
 	--newtab-modal-color: var(--bgdark) !important;
 	--newtab-overlay-color: rgba(0, 0, 0, 0.5) !important;
-	--newtab-section-header-text-color: var(--bgdark) !important;
-	--newtab-section-navigation-text-color: var(--green) !important;
-	--newtab-section-active-contextmenu-color: var(--fglight) !important;
+	--newtab-section-header-text-color: var(--fglight) !important;
+	--newtab-section-navigation-text-color: #0F0 !important;
+	--newtab-section-active-contextmenu-color: #FFF !important;
 	--newtab-search-border-color: var(--border) !important;
 	--newtab-search-dropdown-color: var(--bgdark) !important;
 	--newtab-search-dropdown-header-color: var(--bglight) !important;
 	--newtab-search-header-background-color: var(--bglight) !important;
-	--newtab-search-icon-color: var(--bgdark) !important;
+	--newtab-search-icon-color: var(--fglight) !important;
 	--newtab-topsites-background-color: var(--bgdark) !important;
 	--newtab-topsites-icon-shadow: inset 0 0 0 1px !important;
 	--newtab-topsites-label-color: inherit !important;
-	--newtab-card-active-outline-color: var(--blue) !important;
+	--newtab-card-active-outline-color: var(--accent) !important;
 	--newtab-card-background-color: #111 !important;
 	--newtab-card-hairline-color: rgba(64, 64, 64, 0.0) !important;
 	--newtab-card-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5) !important;
@@ -257,37 +258,37 @@ body[lwt-newtab-brighttext] {
 	--newtab-border-secondary-color: var(--border) !important;
 	--newtab-button-primary-color: var(--bglight) !important;
 	--newtab-button-secondary-color: inherit !important;
-	--newtab-element-active-color: var(--blue)99 !important;
+	--newtab-element-active-color: var(--accent)99 !important;
 	--newtab-element-hover-color: var(--bglight) !important;
-	--newtab-icon-primary-color: var(--bgdark) !important;
-	--newtab-icon-secondary-color: #667788 !important;
-	--newtab-icon-tertiary-color: var(--blue) !important;
+	--newtab-icon-primary-color: var(--fglight) !important;
+	--newtab-icon-secondary-color: var(--border2) !important;
+	--newtab-icon-tertiary-color: var(--accent) !important;
 	--newtab-inner-box-shadow-color: rgba(0, 0, 0, 0.1) !important;
-	--newtab-link-primary-color: var(--blue) !important;
-	--newtab-link-secondary-color: var(--blue) !important;
-	--newtab-text-conditional-color: #667788 !important;
-	--newtab-text-primary-color: var(--bgdark) !important;
-	--newtab-text-secondary-color: #696969 !important;
+	--newtab-link-primary-color: var(--accent) !important;
+	--newtab-link-secondary-color: var(--accent) !important;
+	--newtab-text-conditional-color: var(--border2) !important;
+	--newtab-text-primary-color: var(--fglight) !important;
+	--newtab-text-secondary-color: var(--disabled) !important;
 	--newtab-textbox-background-color: var(--bgdark) !important;
 	--newtab-textbox-border: var(--border) !important;
-	--newtab-textbox-focus-color: var(--blue) !important;
-	--newtab-textbox-focus-boxshadow: 0 0 0 1px var(--blue)33, 0 0 0 4px var(--blue)1a !important;
+	--newtab-textbox-focus-color: var(--accent) !important;
+	--newtab-textbox-focus-boxshadow: 0 0 0 1px var(--accent)33, 0 0 0 4px var(--accent)1a !important;
 	--newtab-contextmenu-background-color: var(--bgdark) !important;
-	--newtab-contextmenu-button-color: var(--blue) !important;
+	--newtab-contextmenu-button-color: var(--accent) !important;
 	--newtab-modal-color: var(--bgdark) !important;
 	--newtab-overlay-color: rgba(0, 0, 0, 0.5) !important;
-	--newtab-section-header-text-color: var(--bgdark) !important;
-	--newtab-section-navigation-text-color: var(--green) !important;
-	--newtab-section-active-contextmenu-color: var(--fglight) !important;
+	--newtab-section-header-text-color: var(--fglight) !important;
+	--newtab-section-navigation-text-color: #3ab795 !important;
+	--newtab-section-active-contextmenu-color: #FFF !important;
 	--newtab-search-border-color: var(--border) !important;
 	--newtab-search-dropdown-color: var(--bgdark) !important;
 	--newtab-search-dropdown-header-color: var(--bglight) !important;
 	--newtab-search-header-background-color: var(--bglight) !important;
-	--newtab-search-icon-color: var(--bgdark) !important;
+	--newtab-search-icon-color: var(--fglight) !important;
 	--newtab-topsites-background-color: var(--bgdark) !important;
 	--newtab-topsites-icon-shadow: inset 0 0 0 1px !important;
 	--newtab-topsites-label-color: inherit !important;
-	--newtab-card-active-outline-color: var(--blue) !important;
+	--newtab-card-active-outline-color: var(--accent) !important;
 	--newtab-card-background-color: #111 !important;
 	--newtab-card-hairline-color: rgba(64, 64, 64, 0.0) !important;
 	--newtab-card-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5) !important;
@@ -297,11 +298,11 @@ body[lwt-newtab-brighttext] {
 
 /* TUTORIAL DIALOG ********************************************/
 #onboarding-tour-description {
-	color:var(--bgdark)!important;
+	color:var(--fglight)!important;
 }
 
 .onboarding-tour-item {
-	--onboarding-tour-item-active-color: var(--blue)!important;
+	--onboarding-tour-item-active-color: var(--accent)!important;
 }
 
 .onboarding-tour-content {
@@ -309,7 +310,7 @@ body[lwt-newtab-brighttext] {
 }
 
 #onboarding-overlay-dialog {
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 	background: var(--bgdark)e!important;
 	background-color: rgba(32, 32, 32 ,0.85) !important;
 	border: 1px solid rgb(64, 64, 64, 0.9)!important;
@@ -317,7 +318,7 @@ body[lwt-newtab-brighttext] {
 }
 
 .onboarding-action-button {
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 	background: var(--bgdark)0!important;
 	background-color: rgba(32, 32, 32 ,0)!important;
 	border: 1px solid rgba(64, 64, 64, 1)!important;
@@ -325,7 +326,7 @@ body[lwt-newtab-brighttext] {
 }
 
 .onboarding-tour-action-button {
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 	background: var(--bgdark)d!important;
 	background-color: rgba(48, 48, 48, 0.85)!important;
 	border: 1px solid rgba(64, 64, 64, 1)!important;
@@ -377,11 +378,11 @@ xul|*.radio-check[selected] {
 /* TREE VIEWS *************************************************/
 xul|treecol:not([hideheader="true"]), xul|treecolpicker {
 	background-color: var(--bgdark)!important;
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 }
 
 xul|treecol:not([hideheader="true"]):not(:first-child), xul|treecolpicker {
-	border-image: linear-gradient(transparent 0%, transparent 20%, #696969 20%, #696969 80%, transparent 80%, transparent 100%) 1 1!important;
+	border-image: linear-gradient(transparent 0%, transparent 20%, var(--disabled) 20%, var(--disabled) 80%, transparent 80%, transparent 100%) 1 1!important;
 }
 
 xul|listheader, xul|treecols {
@@ -394,14 +395,14 @@ xul|listheader, xul|treecols {
 }
 
 .header-name {
-	background-color: var(--blue)!important;
+	background-color: var(--accent)!important;
 }
 
 
 /* DIALOG BOXES ***********************************************/
 *|*.dialogBox {
 	background-color: var(--bgdark)!important;
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 	border: 1px solid var(--border)!important;
 	border-radius: 1px!important;
 }
@@ -455,11 +456,11 @@ xul|listheader, xul|treecols {
     border-right: 1px solid var(--border)!important;
     border-bottom: 1px solid var(--border)!important;
     -moz-context-properties: fill;
-    fill: #696969!important;
+    fill: var(--disabled)!important;
 }
 
 .button {
-	color: #696969!important;
+	color: var(--disabled)!important;
 	background-color: var(--bgdark)!important;
 
 }
@@ -483,12 +484,12 @@ xul|listheader, xul|treecols {
 
 .font-type-buttons > button:active:hover, .font-type-buttons > button.selected,
 .color-scheme-buttons > button:active:hover, .color-scheme-buttons > button.selected {
-    box-shadow: inset 0 -3px 0 0 var(--blue)!important;
+    box-shadow: inset 0 -3px 0 0 var(--accent)!important;
 }
 .font-type-buttons > button, .font-size-buttons > button,
 .content-width-buttons > button, .line-height-buttons > button {
-    border-left: 1px solid #696969!important;
-    border-bottom: 1px solid #696969!important;
+    border-left: 1px solid var(--disabled)!important;
+    border-bottom: 1px solid var(--disabled)!important;
 }
 
 .sepia-button {
@@ -503,23 +504,23 @@ table {
 }
 
 th {
-	border-color: #667788!important;
+	border-color: var(--border2)!important;
 }
 
 th.title-column {
 	background-color: var(--bgdark)
-	border-color: #667788!important;
+	border-color: var(--border2)!important;
 }
 
 .active-policies tr.odd, .errors tr:nth-child(2n+1), tbody:nth-child(4n+1) {
-	background-color: #223344 !important;
+	background-color: var(--border1) !important;
 }
 tr:hover td {
-	background-color: var(--blue)!important;
+	background-color: var(--accent)!important;
 }
 
 .major-section {
-	background-color: var(--blue)!important;
+	background-color: var(--accent)!important;
 }
 
 .notice-box {
@@ -528,12 +529,12 @@ tr:hover td {
 }
 
 #action-box > h3, #reset-box > h3 {
-	background-color:var(--blue)!important;
+	background-color:var(--accent)!important;
 }
 
 .firstrun-sign-in {
 	background-color: var(--bgdark)!important;
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 }
 
 .firstrun-sign-in .email-input {
@@ -545,14 +546,14 @@ tr:hover td {
 }
 
 .firstrun-sign-in .continue-button {
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 	background: var(--bglight)!important;
 	border: 1px solid rgb(64, 64, 64)!important;
 	border-radius: 1px!important;
 }
 
 .firstrun-sign-in .skip-button {
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 	background: var(--bgdark)!important;
 	border: 1px solid rgb(64, 64, 64)!important;
 	border-radius: 1px!important;
@@ -560,20 +561,20 @@ tr:hover td {
 
 .detail-view-container {
 	background: var(--bgdark)d!important;
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 }
 
 .addon-view .warning {
-	color: var(--blue)!important;
+	color: var(--accent)!important;
 }
 
 .schema {
-	color:var(--bgdark)!important;
+	color:var(--fglight)!important;
 background-color: var(--bglight)!important;
 
 }
 .detail-row, .detail-row-complex {
-	color: #696969;
+	color: var(--disabled);
 	text-shadow: 0 1px 1px transparent!important;
 }
 
@@ -594,7 +595,7 @@ background-color: var(--bglight)!important;
 }
 
 html|h1 {
-  color: var(--blue)!important;
+  color: var(--accent)!important;
 }
 
 scrollbar {
@@ -703,8 +704,8 @@ scrollbar {
 }
 
 .myshots-all-buttons-container button:active {
-	background-color: var(--blue)!important;
-	border: 1px solid var(--blue)!important;
+	background-color: var(--accent)!important;
+	border: 1px solid var(--accent)!important;
 }
   
 .myshots-all-buttons-container .myshots-button {}
@@ -714,15 +715,15 @@ scrollbar {
 .button.primary, .primary.highlight-button-cancel,
 .highlight-button-save, .primary.highlight-button-download,
 .primary.highlight-button-copy, .preview-button-save {
-    background-color: var(--blue)!important;
-    color: var(--bgdark)!important;
+    background-color: var(--accent)!important;
+    color: var(--fglight)!important;
 }
 
 .button.secondary, .highlight-button-cancel,
 .secondary.highlight-button-save, .highlight-button-download,
 .highlight-button-copy, .secondary.preview-button-save {
 	background-color: var(--bgdark)!important;
-	color: var(--bgdark)!important;
+	color: var(--fglight)!important;
 }
 
 .button, .highlight-button-cancel, .highlight-button-save,
