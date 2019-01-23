@@ -1,17 +1,17 @@
 #!/bin/sh
 
 i3lock \
-  --blur="8" \
-  --insidewrongcolor=181a2100\
-  --insidecolor=181a2100\
-  --insidevercolor=181a21ff\
-  --ringwrongcolor=b6465fff\
-  --ringvercolor=6992c5ff\
+  --blur="12" \
+  --insidewrongcolor=15171d00\
+  --insidecolor=15171d00\
+  --insidevercolor=15171dff\
+  --ringwrongcolor=ed254eff\
+  --ringvercolor=4d9de0ff\
   --ringcolor=2f3341ff\
   --verifcolor=ccccccff\
   --wrongcolor=ccccccff\
-  --keyhlcolor=6992c5ff\
-  --bshlcolor=b6465fff &
+  --keyhlcolor=4d9de0ff\
+  --bshlcolor=ed254eff &
 timeout="10000"
 while pgrep -x i3lock; do
   [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
@@ -19,4 +19,3 @@ while pgrep -x i3lock; do
 done;
 exit
 
-#To disable blur, replace `--blur="8"` with `--color 181a21`
