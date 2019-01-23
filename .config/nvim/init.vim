@@ -19,7 +19,7 @@ vmap <C-v> <ESC>"+pa
 imap <C-v> <ESC>"+pa
 
 " Ctrl +n twice in normal mode toggles number sidebar
-nmap <C-N><C-N> :set invnumber<CR>  
+nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>  
 
 " Set colour scheme to terminal's colour scheme (~/.config/nvim/colors/term.vim)   " Paste
 color term
