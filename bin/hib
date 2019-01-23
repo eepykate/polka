@@ -1,5 +1,6 @@
 #!/bin/bash 
 
-lock & 
-sleep 4; 
-systemctl hibernate
+lock &
+sleep 4;
+systemctl hibernate;
+exit
