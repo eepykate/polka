@@ -1,5 +1,5 @@
 font: Iosevka Term:pixelsize=14:antialias=true:autohint=true
-borderpx: 50
+borderpx: 15
 tabspaces: 4
 *termname: st-256color
 shell: /bin/zsh
