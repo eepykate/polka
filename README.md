@@ -1,6 +1,8 @@
-![Current scrot](https://i.imgur.com/LSK374V.png)
+![Current scrot](https://i.imgur.com/gQ0py8b.png)
 
-![Firefox config / startpage](https://i.imgur.com/q1EfwDi.mp4)
+![Rofi](https://i.imgur.com/2sPs95f.png)
+
+![Firefox config / startpage](https://i.imgur.com/bL1fZnK.mp4)
 
 
 ---
@@ -9,19 +11,19 @@
 
 **Distrobution:** Arch (GNU + Linux)
 
-**Window Manager:** Openbox
+**Window Manager:** Xfwm4 on XFCE4
 
-**Colour Scheme:** [Krayons](https://gitlab.com/GaugeK/dots/raw/master/colours/Krayons.png)
+**Colour Scheme:** [Pop](https://gitlab.com/GaugeK/dots/raw/master/colours/Pop.png)
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** KvKrayons
+**Kvantum Theme:** KvPop
 
 **Icon Theme:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-**Wallpaper:** [Hexagon Krayons](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Hexagon%20Krayons.png)
+**Wallpaper:** [Hexagon Pop](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Hexagon%Pop.png)
 
-**GTK Theme:** oomox-Krayons \(Generated with [oomox](https://github.com/themix-project/oomox)\)
+**GTK Theme:** oomox-Pop \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
 **Cursor Theme:** Breeze-Hacked
 
@@ -31,4 +33,4 @@
 
 **Font:** Noto Sans 11
 
-**Terminal Font:** Iosevka Term 11
+**Terminal Font:** Iosevka Term 
