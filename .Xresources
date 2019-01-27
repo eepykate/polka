@@ -1,14 +1,15 @@
-font: Iosevka Term:pixelsize=14:antialias=true:autohint=true
-borderpx: 15
-tabspaces: 4
-*termname: st-256color
-shell: /bin/zsh
-xfps: 60
-actionfps: 60
-blinktimeout: 0.5
-bellvolume: 0
-cwscale: 1.0
-chscale: 1.0
+*font:         Iosevka Nerd Font Mono:pixelsize=14:antialias=true:autohint=true
+rofi.font:     Iosveka Nerd Font Mono 14
+borderpx:      15
+tabspaces:     4
+*termname:     st-256color
+shell:         /bin/zsh
+xfps:          60
+actionfps:     60
+bellvolume:    0
+cwscale:       1.0
+chscale:       1.0
+blinktimeout:  0.5
 
 !!!Krayons
 !
