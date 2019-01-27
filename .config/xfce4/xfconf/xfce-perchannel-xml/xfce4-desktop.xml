@@ -34,7 +34,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/gauge/Wallpapers/Hexagon Krayons.png"/>
+          <property name="last-image" type="string" value="/home/gauge/Wallpapers/Hexagon Pop.png"/>
           <property name="color1" type="array">
             <value type="uint" value="6168"/>
             <value type="uint" value="6682"/>
@@ -79,7 +79,7 @@
     <property name="icon-size" type="uint" value="32"/>
   </property>
   <property name="last" type="empty">
-    <property name="window-width" type="int" value="739"/>
-    <property name="window-height" type="int" value="616"/>
+    <property name="window-width" type="int" value="816"/>
+    <property name="window-height" type="int" value="690"/>
   </property>
 </channel>

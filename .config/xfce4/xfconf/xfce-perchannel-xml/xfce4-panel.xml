@@ -31,9 +31,9 @@
       <property name="nrows" type="uint" value="1"/>
       <property name="span-monitors" type="bool" value="false"/>
       <property name="background-color" type="array">
-        <value type="uint" value="6168"/>
-        <value type="uint" value="6682"/>
-        <value type="uint" value="8481"/>
+        <value type="uint" value="5397"/>
+        <value type="uint" value="5911"/>
+        <value type="uint" value="7453"/>
         <value type="uint" value="65535"/>
       </property>
       <property name="leave-opacity" type="uint" value="100"/>

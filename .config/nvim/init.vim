@@ -29,7 +29,7 @@ set softtabstop=4      " Number of spaces in tab when editing
 set shiftwidth=4       " Number of spaces to use for autoindent
 set expandtab          " Tabs are spaces
 set copyindent         " Copy the indentation from the previous line
-set autoindent
+"set autoindent
 
 set incsearch          " Search as characters are typed
 set hlsearch           " Highlight matches
