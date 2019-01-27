@@ -7,30 +7,30 @@ pgrep -x dmenu && exit
 
 getmount() { \
 	[ -z "$chosen" ] && exit 1
-	mp="$(find $1 | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Type in mount point.")"
+	mp="$(find $1 | dmenu -i -p "Type in mount point.")"
 	[ "$mp" = "" ] && exit 1
 	if [ ! -d "$mp" ]; then
-		mkdiryn=$(printf "No\\nYes" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "$mp does not exist. Create it?")
+		mkdiryn=$(printf "No\\nYes" | dmenu -i -p "$mp does not exist. Create it?")
 		[ "$mkdiryn" = "Yes" ] && (mkdir -p "$mp" || sudo -A mkdir -p "$mp")
 	fi
 	}
 
 mountusb() { \
-	chosen="$(echo "$usbdrives" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Mount which drive?" | awk '{print $1}')"
+	chosen="$(echo "$usbdrives" | dmenu -i -p "Mount which drive?" | awk '{print $1}')"
 	sudo -A mount "$chosen" && notify-send "$chosen mounted." && exit 0
 	getmount "/mnt /media /mount /home -maxdepth 5 -type d"
 	sudo -A mount "$chosen" "$mp" && notify-send "$chosen mounted to $mp."
 	}
 
 mountandroid() { \
-	chosen=$(echo "$anddrives" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Which Android device?" | cut -d : -f 1)
+	chosen=$(echo "$anddrives" | dmenu -i -p "Which Android device?" | cut -d : -f 1)
 	getmount "$HOME -maxdepth 3 -type d"
 	simple-mtpfs --device "$chosen" "$mp"
 	notify-send "Android device mounted to $mp."
 	}
 
 asktype() { \
-	case $(printf "USB\\nAndroid" | dmenu -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16' -i -p "Mount a USB drive or Android device?") in
+	case $(printf "USB\\nAndroid" | dmenu -i -p "Mount a USB drive or Android device?") in
 		USB) mountusb ;;
 		Android) mountandroid ;;
 	esac
