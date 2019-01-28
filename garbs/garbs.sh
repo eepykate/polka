@@ -261,9 +261,9 @@ curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Source
 unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 #Iosevka font
-#rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
-#curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
-#unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
+rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
+curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
+unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 rm /tmp/Iosevka.zip
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -o /tmp/Iosevka.zip
