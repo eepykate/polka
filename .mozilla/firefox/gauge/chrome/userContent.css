@@ -15,7 +15,7 @@
 	--border1:     #223344;
 	--border2:     #334455;
 	--disabled:    #696969;
-	--selected:    #cbe3f122;
+	--bglightest:    #cbe3f122;
 }
 
 :root{
@@ -62,7 +62,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-box-background-hover: var(--bglighter) !important;
 	--in-content-box-background-active: var(--bglight) !important;
 	--in-content-box-border-color: var(--bglighter) !important;
-	--in-content-primary-button-background: var(--blue) !important;
+	--in-content-primary-button-background: var(--bglightest) !important;
 	--in-content-primary-button-background-hover: var(--blue) !important;
 	--in-content-primary-button-background-active: var(--blue) !important;
 
@@ -96,15 +96,15 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-border-focus: var(--blue) !important;
 
 	/* Buttons background colors */
-	--button-background: var(--selected);
+	--button-background: var(--bglightest);
 	--button-background-hover: var(--blue);
-	--button-border: var(--selected)}
+	--button-border: var(--bglightest)}
 
 /*------ FILE BROWSING PAGE ------*/
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
 coloring part, go to the common part for all firefox pages (if you use a global userstyle,
 you don't even need these, so just comment it all out).*/
-@-moz-document url-prefix(file://) {
+1@-moz-document url-prefix(file://) {
 :root {background-color: var(--bgdark) !important; color: #ccc !important}
 
 /* COMMENT OUT THIS SECTION IF BROWSING LOCAL HTML PAGES */
@@ -114,7 +114,7 @@ you don't even need these, so just comment it all out).*/
 
 pre {padding: 1em !important}
 
-h1 {color: #fff !important; border-bottom: none !important}
+@-moz-document:not(url-prefix(file://)) { h1 {color: #fff !important; border-bottom: none !important} }
 tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}
 .ellipsis tr:hover {outline: none !important}
 
@@ -515,7 +515,7 @@ url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
 url(about:devtools), url(about:serviceworkers) {
 
 p, pre, li, label {color: #AAA !important}
-h1 {color: var(--blue) !important}
+h1 {color: var(--fglight) !important; font-weight: 700 !important;}
 h2 {color: #ddd !important}
 h3 {color: #ddd !important}
 
@@ -661,7 +661,7 @@ url-prefix(about:studies), url(about:webrtc) {
 @-moz-document url-prefix(about:cache){
 #submit {
 	-moz-appearance: none !important;
-	background: var(--selected) !important;
+	background: var(--bglightest) !important;
     color: #FFF !important;
     padding: 0.5em;
 	border: 1px solid var(--blue) !important}
@@ -913,7 +913,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .addon .description {color: #aaa !important}
 
 .addon:hover {
-	background-color: #383838 !important;
+	background-color: var(--bglightest) !important;
 	box-shadow: none !important}
 
 .addon:hover .description {color: #ccc !important}
