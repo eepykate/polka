@@ -47,17 +47,16 @@ hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 
 " language syntax
-" hi Comment      ctermbg=NONE   ctermfg=8    cterm=NONE
 hi Comment      ctermbg=NONE   ctermfg=6    ctermbg=NONE cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=4    cterm=NONE
-hi String       ctermbg=NONE   ctermfg=5    cterm=NONE
+hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=9    cterm=NONE
-hi Number       ctermbg=NONE   ctermfg=2    cterm=NONE
+hi Number       ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Boolean      ctermbg=NONE   ctermfg=11   cterm=NONE
-hi Float        ctermbg=NONE   ctermfg=2    cterm=NONE
-hi Identifier   ctermbg=NONE   ctermfg=2    cterm=NONE
-hi Function     ctermbg=NONE   ctermfg=4    cterm=NONE
-hi Conditional  ctermbg=NONE   ctermfg=5    cterm=NONE
+hi Float        ctermbg=NONE   ctermfg=4    cterm=NONE
+hi Identifier   ctermbg=NONE   ctermfg=4    cterm=NONE
+hi Function     ctermbg=NONE   ctermfg=3    cterm=NONE
+hi Conditional  ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Repeat       ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Label        ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Operator     ctermbg=NONE   ctermfg=1    cterm=NONE
@@ -68,10 +67,10 @@ hi Define       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Macro        ctermbg=NONE   ctermfg=1    cterm=NONE
 hi PreCondit    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Type         ctermbg=NONE   ctermfg=9    cterm=NONE
-hi StorageClass ctermbg=NONE   ctermfg=4    cterm=NONE
+hi StorageClass ctermbg=NONE   ctermfg=1    cterm=NONE
 hi PreProc      ctermbg=NONE   ctermfg=12   cterm=NONE
 hi Structure    ctermbg=NONE   ctermfg=5    cterm=NONE
-hi Special      ctermbg=NONE   ctermfg=12   cterm=NONE
+hi Special      ctermbg=NONE   ctermfg=13   cterm=NONE
 hi SpecialChar  ctermbg=NONE   ctermfg=3    cterm=NONE
 hi Delimiter    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Underliend   ctermbg=NONE   ctermfg=1    cterm=underline
