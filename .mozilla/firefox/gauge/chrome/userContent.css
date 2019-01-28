@@ -1,7 +1,25 @@
-@namespace url("http://www.w3.org/1999/xhtml");
+:root {
+	--bgdark:      #15171d;
+    --bglight:     #1c202a;
+    --bglighter:   #282d3b;
+    --bglightest:  #41485c;
+  
+    --fgdark:      #cbe3f1;
+	--fglight:     #cbe3f1;
+	  
+    --blue:        #4d9de0;
+	--green:       #29c583;
+	--yellow:      #ffd97d;
+	--red:         #ed254e;
+	--border:      #334455;
+	--border1:     #223344;
+	--border2:     #334455;
+	--disabled:    #696969;
+	--selected:    #cbe3f122;
+}
 
 :root{
-  scrollbar-color: var(--accent) var(--bgdark) !important;
+  scrollbar-color: var(--blue) var(--bgdark) !important;
   scrollbar-width: thin !important;
 }
 
@@ -9,765 +27,1242 @@
   scrollbar-width: thin !important;
 } 
 
+
+/* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
+/* Made by Izheil */
+/* Last updated: 25/01/2019 */
+
+/* This part imports the Addons file if there is one, so that you don't have to edit the dynamic URL
+from the addons rules every time we update anything here */
+@import 'addons.css';
+
+/*------ COMMON PART FOR ALL FIREFOX PAGES ------*/
 :root {
-	--bgdark:    #15171d;
-    --bglight:   #1c202a;
+/* These variable changes the scrollbars size and color. If you use the JS method instead, you don't need to change these.
+The scrollbars-width only has 3 acceptable values, auto, thin, and none:
+auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
+    --scrollbars-width: thin;
+    --scrollbars-thumb-color: var(--blue);
+    --scrollbars-track-color: var(--bglighter);
 
-    --fgdark:    #cbe3f1;
-	--fglight:   #cbe3f1;
+/* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
+like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
+text-inputting things. Leave as "none" for default letter color. */
+/*	--text-color-for-input-fields: var(--bglightest);
+
+/* You can put the url of an image that you want to be used as background for the about:home page.
+To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't forget the ending semicolon! */
+	--home-background-image: none;
+
+/* These change some Firefox pages colors (Mainly used for the 404 error page) */
+	--in-content-page-color: #ccc !important;
+	--in-content-page-background: var(--bgdark) !important;
+	--in-content-text-color: #ccc !important;
+	--in-content-box-background: var(--bglight) !important;
+	--in-content-box-background-hover: var(--bglightest) !important;
+	--in-content-box-background-active: var(--bglight) !important;
+	--in-content-box-border-color: var(--bglightest) !important;
+	--in-content-primary-button-background: var(--blue) !important;
+	--in-content-primary-button-background-hover: var(--blue) !important;
+	--in-content-primary-button-background-active: var(--blue) !important;
+
+	/* Variable to change most pages context menu highlights */
+	--in-content-context-highlight: var(--blue);
+
+	/* This changes context menu background colors. The last number changes the opacity %. 
+	Change that 1 for 0.9 for semitransparent backgrounds */
+	--in-content-context-background: rgba(68,68,68, 1); 
+
+	/* Variable to change the about:addons page extension names color */
+	--addons-addon-name: var(--blue);
+	--addons-addon-name-active: #0ef;
+
+	/* Variables to change all link colors on most pages */
+	--in-content-link-color: var(--blue) !important;
+  	--in-content-link-color-hover: var(--blue) !important;
+  	--in-content-link-color-active: var(--blue) !important;
+  	--in-content-link-color-visited: var(--blue) !important;
 	
-    --accent:    #4d9de0;
-	--border:    #334455;
-	--border1:   #223344;
-	--border2:   #334455;
-	--disabled:  #696969;
+	/* These change the selected categories color on sidebars on about: pages*/
+	--in-content-category-text-selected: var(--blue) !important;
+	--in-content-category-text-selected-active: var(--blue) !important;
+
+	/* These change some colors on about:home */
+	/*--home-text: var(--blue);
+	--home-search-engine-choices: linear-gradient(#559,#115);
+	--Home-search-item-text-color: var(--blue);*/
+
+	/* This one changes the border of all boxes with a blue border focus effect */
+	--in-content-border-focus: var(--blue) !important;
+
+	/* Buttons background colors */
+	--button-background: var(--selected);
+	--button-background-hover: var(--blue);
+	--button-border: var(--selected)}
+
+/*------ FILE BROWSING PAGE ------*/
+/* This was placed here for bug fixing of styles overriding when testing things, for the 
+coloring part, go to the common part for all firefox pages (if you use a global userstyle,
+you don't even need these, so just comment it all out).*/
+@-moz-document url-prefix(file://) {
+:root {background-color: var(--bgdark) !important; color: #ccc !important}
+
+/* COMMENT OUT THIS SECTION IF BROWSING LOCAL HTML PAGES */
+/* body:not([style="margin-bottom: 8px !important;"]) {
+	background: var(--bglight) !important;
+	border: none !important} */
+
+pre {padding: 1em !important}
+
+h1 {color: #fff !important; border-bottom: none !important}
+tbody > tr:hover {outline: 1px dotted var(--bglightest) !important}
+.ellipsis tr:hover {outline: none !important}
+
+#UI_goUp a.up:link, a.file:link, a.dir:link {color: var(--blue) !important}
+#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: var(--blue) !important}
+#UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: var(--blue) !important}
+#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050dd !important}
+
+th {color: #ddd !important}
+td {color: #aaa !important}} 
+
+/*------ INPUT BOXES TEXT ------*/
+
+/* This changes the input fields text color (fix for custom OS themes) *//*
+@-moz-document url-prefix(http){
+form select, input[type=text], input[type=email], input[type=password], input[type=date], 
+input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
+input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
+{color: var(--text-color-for-input-fields) !important}
 }
 
+/*------ END OF INPUT BOXES TEXT - SCROLLBAR COLORS BELOW ------*/
+:root{
+  scrollbar-color: var(--scrollbars-thumb-color) var(--scrollbars-track-color) !important;
+  scrollbar-width: var(--scrollbars-width) !important}
 
-/* Dark native firefox pages */
+*|* {scrollbar-width: var(--scrollbars-width) !important}
+/*------ END OF SCROLLBAR COLORS ------*/
 
-/* - This Source Code Form is subject to the terms of the Mozilla Public
-   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
-   - You can obtain one at http://mozilla.org/MPL/2.0/. */
+/* Ublock Origin element picker window */
+#ublock0-epicker aside {
+	background: var(--bglight) !important;
+	color: #ccc !important;
+	border: 1px solid var(--bglighter) !important}
 
-/*	Stylesheet from Cathode Overheated 4.0 theme
-    Created by Enframed, 2018-11-08
-    
-	
-    userContent.css affects the browser's content, which are all Firefox-specific
-	pages. This includes the new tab page (about:newtab), the options page
-	(about:preferences), addons page (about:addons), and so on. 
-	
-	Note. This file does not exist in your profile default. You should replace
-	it manually to the 'chrome' folder. There is require to create it
-	(all lower case) at this path:
-	
-	Windows Vista, 7, 8 and 10:
-	"C:\Users\<user name>\AppData\Roaming\Mozilla\Firefox\Profiles\xxxxxxxx.default" folder,
-	
-	Linux:
-	"/home/<username>/.mozilla/firefox/xxxxxxxx.default" folder,
-	
-	Mac OS X:
-	"Users/<username>/Library/Application Support/Firefox/Profiles/xxxxxxxx.default" folder.
-	
-	PS: This CSS contains unexacting faults have no effect on working. */ 
-   
-@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+#ublock0-epicker #resultsetCount {background-color: var(--bglighter) !important; color: #ddd !important}
 
-dialog, window, .prefpane, .windowDialog  {}
-tab {color: var(--fglight)!important;}
-xul|listheader, xul|treecols {border-bottom: 1px solid var(--disabled)!important;}
+#ublock0-epicker section > div:first-child > textarea {
+	background: var(--bglightest) !important; 
+	color: #ddd !important;
+	border: 1px solid var(--bglighter) !important}
 
-@namespace url(http://www.w3.org/1999/xhtml);
+#ublock0-epicker section > div:first-child {border: 1px solid var(--bglighter) !important}
 
-*|*:root {
+#ublock0-epicker aside #cosmeticFilters li:hover {background: rgba(255,255,255,0.2) !important}
 
-	/*	**************** TYPICALLY USED COLORS ****************/
-	/*	var(--bgdark)	background*/
-	/*	var(--bglight)	panels*/
-	/*	var(--border1)	list odd background color*/
+#ublock0-epicker aside button:not(#create) {
+    -moz-appearance: none !important;
+    border-radius: 3px !important;
+    background: var(--bglightest) !important;
+    color: #ddd !important;
+    border: none !important}
 
-	/*	var(--border)	[1]borders, separators, lines... darker*/
-	/*	var(--border2)	[2]borders, separators, lines... lighter*/
+#ublock0-epicker aside button:not(#create):hover {
+    background: #111 !important;
+    color: #ddd !important}
 
-	/*	var(--accent)	active color MIN icons*/
-	/*	var(--accent)	active color of MAX elements*/
-	/*	var(--accent)	link, title, active borders*/
-	/*	#1d8a99	link visited*/
+#ublock0-epicker aside #create {
+	-moz-appearance: none !important;
+    border-radius: 3px !important;
+    background: #ffbb33 !important;
+    color: #000 !important;
+    border: none !important}
 
-	/*	var(--disabled)	disabled text, subtitle*/
-	/*	var(--fglight)	default text*/
-	/*	#FFF	selected text*/
+#ublock0-epicker aside #create:hover {
+    background: #cc8800 !important;
+    color: #ddd !important}
 
-	--in-content-page-color: var(--fglight)!important;
-	--in-content-page-background: var(--bgdark)!important;
-	--in-content-text-color: var(--fglight)!important;
-	--in-content-selected-text: var(--fglight)!important;
-	--in-content-box-background: var(--bglight)!important;
-	--in-content-box-background-odd: var(--border1)!important;
-	--in-content-box-background-hover: var(--bglight)!important;
-	--in-content-box-background-active: var(--accent)!important;
-	--in-content-box-border-color: var(--border)!important;
-	--in-content-item-hover: rgba(192,192,192,0.2)!important;
-	--in-content-item-selected: var(--accent)!important;
-	--in-content-border-highlight: var(--border)!important;
-	--in-content-border-focus: var(--accent)!important;
-	--in-content-border-color: var(--fglight)!important;
-	--in-content-category-outline-focus: 1px dotted var(--accent)!important;
-	--in-content-category-text: var(--fglight)!important;
-	--in-content-category-text-active: var(--fglight)!important;
-	--in-content-category-text-selected: var(--accent)!important;
-	--in-content-category-text-selected-active: #fff!important;
-	--in-content-category-background-hover: rgba(64,64,64,0.6)!important;
-	--in-content-category-background-active: var(--accent)!important;
-	--in-content-category-background-selected-hover: var(--accent)!important;
-	--in-content-category-background-selected-active: var(--accent)!important;
-	--in-content-tab-color: var(--bglight)!important;
-	--in-content-link-color: var(--accent)!important;
-	--in-content-link-color-hover: var(--fglight)!important;
-	--in-content-link-color-active: var(--accent)!important;
-	--in-content-link-color-visited: #1d8a99!important;
-	--in-content-primary-button-background: var(--bgdark) !important;
-	--in-content-primary-button-background-hover: var(--border) !important;
-	--in-content-primary-button-background-active: var(--accent) !important;
-	--in-content-table-background: var(--border1) !important;
-	--in-content-table-border-dark-color: var(--border) !important;
-	--in-content-table-header-background: var(--bgdark) !important;
-	--grey-20: var(--bglight)!important;
-	--grey-90: var(--bgdark)!important;
-	--grey-90-a10: rgba(24, 26, 33, 0.1)!important;
-	--grey-90-a20: rgba(24, 26, 33, 0.2)!important;
-	--grey-90-a30: rgba(24, 26, 33, 0.3)!important;
+/* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
+#historyItems .scrollbox-innerbox {background-color: var(--bglight) !important}
+
+.update-name {color: var(--green) !important}
+.update-type {color: #FA0 !important}
+
+.tab-middle, .treecol-text {color: #FFF !important}
+
+/* This part covers all the dialog boxes backgrounds */
+dialog, window, .prefpane, 
+.prefwindow, .windowDialog {
+ 	background-color: var(--bgdark) !important;
+ 	color: #ccc !important}
+ 	
+/* This changes the "add certificate exception" dialog background color */
+#badCertAdvancedPanel {background-color: var(--bglight) !important}
+
+.exceptionDialogButtonContainer {background-color: var(--bglighter) !important}
+
+/* This should change the "not found" page image colors */
+
+.connectionFailure #errorPageContainer:not(.button-container),
+.netInterrupt #errorPageContainer:not(.button-container),
+.netTimeout #errorPageContainer:not(.button-container),
+.netReset #errorPageContainer:not(.button-container),
+.netOffline #errorPageContainer:not(.button-container),
+.dnsNotFound #errorPageContainer:not(.button-container),
+.malformedURI #errorPageContainer, #lic-info .license-header:not(a) {filter: invert(98%) hue-rotate(200deg)}
+
+/* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
+only the images */
+.connectionFailure #errorPageContainer .button-container,
+.netInterrupt #errorPageContainer .button-container,
+.netTimeout #errorPageContainer .button-container,
+.netReset #errorPageContainer .button-container,
+.netOffline #errorPageContainer .button-container,
+.dnsNotFound #errorPageContainer .button-container,
+.malformedURI #errorPageContainer .button-container,
+.connectionFailure #errorPageContainer #text-container,
+.netInterrupt #errorPageContainer #text-container,
+.netTimeout #errorPageContainer #text-container,
+.netReset #errorPageContainer #text-container,
+.netOffline #errorPageContainer #text-container,
+.dnsNotFound #errorPageContainer #text-container,
+.malformedURI #errorPageContainer #text-container, 
+#lic-info .license-header p, #lic-info .license-header h1 {filter: invert(98%) hue-rotate(-200deg)}
+
+#errorPageContainer #text-container h1 {color: #1C7BFF !important}
+
+#startPrivateBrowsing {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: var(--bglighter) !important;
+  color: #ddd !important;
+  padding: 2px !important}
+
+#startPrivateBrowsing:hover {
+  background: var(--bglight) !important;
+  color: #fff !important}
+
+/*------ LOG BROWSING PAGE (about:sync-log) ------*/
+@-moz-document url-prefix(about:sync-log) {
+html {background-color: var(--bgdark) !important}
+
+body {background: var(--bglight) !important; border: 1px solid #111 !important}
+
+h1 {color: #fff !important; border-bottom: none !important}
+tbody > tr:hover {outline: 1px dotted var(--bglightest) !important}
+.ellipsis tr:hover {outline: none !important}
+
+#UI_goUp a.up:link, a.file:link, a.dir:link {color: var(--blue) !important}
+#UI_goUp a.up:visited, .ellipsis a.file:visited, .ellipsis a.dir:visited {color: var(--blue) !important}
+#UI_goUp a.up:hover, .ellipsis a.file:hover, .ellipsis a.dir:hover {color: var(--blue) !important}
+#UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: #0050dd !important}
+
+th {color: #ddd !important}
+td {color: #aaa !important}}
+
+/*------ VIEW SOURCE ------*/
+@-moz-document url-prefix(view-source:){
+html {
+	background: var(--bgdark) !important;
+	color: #ccc !important}
+
+.attribute-name {color: var(--green) !important}
+.start-tag, .end-tag {color: #f93 !important}
+.attribute-value {color: var(--blue) !important}
 }
 
+/*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
+@-moz-document url-prefix(about:home), url-prefix(about:newtab) {
 
-/* WINDOWS STYLE BOXES ****************************************/
-@media (-moz-windows-default-theme: 0) {
-xul|*.checkbox-check {
-	border: 1px solid var(--in-content-border-color)!important;
-	border-radius: 1px!important;
-	background-color: var(--in-content-border-color)!important;
-	background-image: linear-gradient(var(--bgdark), var(--bgdark))!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
-}
+body { 
+ 	background-color: var(--bgdark) !important;
+    color: var(--home-text) !important;
+    overflow: auto !important}
 
-xul|checkbox:not([disabled="true"]):hover > xul|*.checkbox-check {
-	border-radius: 1px!important;
-	border-color: var(--in-content-border-focus)!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
-}
+/* Context menus of the web area */
+.context-menu {
+	background-color: var(--bglighter) !important;
+	color: #ccc}
 
-xul|*.checkbox-check[checked] {
-	-moz-context-properties: fill;
-	fill: val(--in-content-border-focus)!important;
-	border-radius: 1px!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
-}
+.context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus {
+	background-color: var(--in-content-context-highlight) !important}
 
-xul|*.radio-check {
-	border: 1px solid var(--in-content-border-color)!important;
-	border-radius: 50%;
-	background-color: var(--in-content-border-color)!important;
-	background-image: linear-gradient(var(--bgdark), var(--bgdark))!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
-}
+/* Context menus of the about information area */
+.info-option {background-color: var(--bglight) !important; border: 1px solid #000 !important}
+.info-option::before {filter: invert(73%) !important}
 
-xul|radio:not([disabled="true"]):hover > xul|*.radio-check {
-	border-color: var(--in-content-border-focus)!important;
-}
+.info-option-manage button {color: var(--in-content-link-color) !important}
 
-xul|*.radio-check[selected] {
-	-moz-context-properties: fill;
-	fill: val(--in-content-border-focus)!important;
-}
-}
+.info-option-manage button:hover {color: var(--in-content-link-color-hover) !important}
+.info-option-manage button::after {fill: var(--in-content-link-color) !important}
 
+/* The preferences button */
+.prefs-button .icon.icon-settings {fill: #ddd !important}
 
-/**************************************************************/
-dialog, window, .prefpane, .windowDialog {
-	background-color: var(--bgdark)!important;
-	color: var(--fglight)!important;
-}
+.prefs-button button:hover, .prefs-button button:focus {background-color: rgba(255,255,255,0.2) !important}
 
-richlistitem[selected="true"] {
+/* The popups part starts here */
+.modal-overlay {background: #000 !important}
+
+.modal {
+ 	background: var(--bgdark) !important;
+    border: 1px solid var(--bglightest) !important}
+
+/* The cards borders part starts here */
+.card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
+    background-color: var(--bglightest) !important;
+    border: 1px solid var(--bglight) !important;
+    fill: rgba(170, 170, 170, 0.8) !important}
+
+.top-sites-list .top-site-outer > a.active .tile, .top-sites-list .top-site-outer > a:focus .tile, 
+.card-outer > a.active .card, .card-outer > a:focus .card 
+{box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #000 !important}
+
+.top-sites-list .top-site-outer:hover .tile, .top-sites-list .top-site-outer:focus .tile, 
+.top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus, 
+.active):not(.placeholder) 
+{box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px var(--bglightest) !important}
+
+/* No need to say this goes for the buttons */
+.actions button {
+    background: var(--bglighter) !important;
+    border: none !important;
+	color: #fff !important}
+
+.actions button:hover {box-shadow: 0 0 0 5px var(--bglighter) !important}
+.actions button.done:hover {box-shadow: 0 0 0 5px var(--blue) !important}
+
+.actions button.done {
+    background: var(--blue) !important;
+    border: solid 1px var(--blue) !important}
+
+/* Search box style */
+#newtab-search-text[keepfocus="true"] {
+	box-shadow: 0 0 4px 0 var(--in-content-border-focus) !important;
+	border: 1px solid var(--in-content-border-focus) !important}
+
+#newtab-search-text {
+	color: var(--home-text) !important}
+
+.search-label {fill: var(--in-content-border-focus) !important}
+
+#searchSuggestionTable {-moz-appearance: none !important}
+
+.contentSearchSuggestionsTable {
+    background-color: var(--bglight) !important}
+
+.contentSearchSuggestionsList {
+	background-color: var(--bglighter) !important;
+    color: #ccc !important}
+
+.contentSearchOneOffsTable {border-top: 1px solid #000 !important}
+
+.contentSearchSuggestionTable .contentSearchOneOffsTable .contentSearchSuggestionsContainer {
+	background: var(--home-search-engine-choices) !important}
+
+.contentSearchSuggestionsList .contentSearchSuggestionRow:hover,
+.contentSearchSuggestionsList .contentSearchSuggestionRow.formHistory.selected {background: rgba(255,255,255,0.1) !important; color: #fff !important}
+
+.contentSearchSuggestionTable .contentSearchHeader, .contentSearchSuggestionTable .contentSearchSettingsButton {border-color: #000 !important}
+
+.contentSearchOneOffItem:not(.last-row) {border-bottom: 1px solid #000 !important}
+
+.contentSearchSuggestionsContainer button:hover {background: rgba(255,255,255, 0.25) !important}
+
+.contentSearchHeader {
+ 	background: var(--bglight) !important;
+ 	color: var(--bglightest) !important;
+ 	border-bottom: 1px solid #000 !important}
+
+.contentSearchSearchWithHeaderSearchText {
+	color: var(--Home-search-item-text-color) !important}
+
+.contentSearchSettingsButton {
+    background: linear-gradient(var(--bglight),#111) !important;
+    color: var(--bglightest) !important}
+
+.contentSearchSettingsButton.selected {
+    color: var(--bglightest) !important}
+
+.contentSearchSettingsButton:active {
+    background: linear-gradient(#111,var(--bglight)) !important}
+
+.search-button {
+	fill: var(--in-content-border-focus) !important}
+
+/* Firefox news at the bottom of the screen snippets */
+#snippets-container, input {
+	background-color: var(--bgdark) !important}
+
+#snippets-container p {
+	color: var(--home-text) !important}
+
+.snippet p em {
+	background: transparent !important;
+	font-weight: 900 !important;
+	color: var(--home-text) !important}
+
+.monthly-checkbox-label {color: #ccc !important}
+
+.block-snippet-button {
+	filter: invert(50%) !important}
+
+.button-link {
+	background-color: var(--green) !important;
+	color: #FFF !important;
+	border: 1px solid var(--green) !important}
+
+.button-link:hover {
+	background-color: var(--green) !important;
+	color: #FFF !important;
+	border: 1px solid var(--green) !important}
+
+.button-link:active {
+	background-color: var(--green) !important;
+	color: #FFF !important;
+	border: 1px solid var(--green) !important}
+
+.button.donation-amount.donation-amount-first, .button.donation-amount.donation-amount-second,
+.button.donation-amount.donation-amount-third, .button.donation-amount.donation-amount-fourth {
 	background-color: var(--bglight) !important;
-}
+	color: #fff !important;
+	border: 1px solid var(--bglight) !important}
 
-.title {
-	fill: var(--disabled)!important;
-}
+#snippets-container .button-selected {
+	background-color: var(--bgdark) !important;
+	border: 1px solid var(--blue) !important}
 
-.top-site-outer .top-site-icon {
-	color: var(--border)!important;
-	border-radius: 0px!important;
-}
+/* Edit top sites */
+input[type=text] {color: #aaa !important}
 
-.top-site-outer .tile {
-	border-radius: 1px!important;
-	box-shadow: inset 0 0 0 0px var(--newtab-inner-box-shadow-color), var(--newtab-card-shadow)!important;
-}
+.edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin, 
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
+	background-color: var(--bglightest) !important;
+	border-right: none !important}
 
-.top-site-outer .default-icon, .top-site-outer .search-topsite {
-	background-size: 16px!important;
-	height: 24px!important;
-	width: 24px!important;
-	display: none!important;
+.edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
+	border-left: 1px solid var(--bglight) !important}
 
-}
-#warningTitle {
-	color: var(--accent)!important;
-}
+.edit-menu {border: 1px solid var(--bglight) !important; background-color: var(--bglightest) !important}
 
+.edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
+.edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
+	background-color: var(--bglightest) !important}
 
-/* ALL ABOUT: PAGES STYLE *************************************/
-@-moz-document url-prefix(about:){
-#content,
-#appcontent,
-browser,
-html, body {
-	background-color:var(--bgdark)!important;	/*priority 1*/
-	background: var(--bgdark) !important;		/*priority 1*/
-	color:var(--fglight) !important;			/*priority 1*/
+.section-title span, .title span, .card-details p, .form-input-container label span,
+.modal-message span, .modal-message p {color: #ccc !important}
 
-	--newtab-background-color: var(--bgdark) !important;
-	--newtab-border-primary-color: var(--border) !important;
-	--newtab-border-secondary-color: var(--border) !important;
-	--newtab-button-primary-color: var(--bglight) !important;
-	--newtab-button-secondary-color: inherit !important;
-	--newtab-element-active-color: var(--accent) !important;
-	--newtab-element-hover-color: var(--bglight) !important;
-	--newtab-icon-primary-color: var(--fglight) !important;
-	--newtab-icon-secondary-color: var(--border2) !important;
-	--newtab-icon-tertiary-color: var(--accent) !important;
-	--newtab-inner-box-shadow-color: rgba(0, 0, 0, 0.1) !important;
-	--newtab-link-primary-color: var(--accent) !important;
-	--newtab-link-secondary-color: var(--accent) !important;
-	--newtab-text-conditional-color: var(--border2) !important;
-	--newtab-text-primary-color: var(--fglight) !important;
-	--newtab-text-secondary-color: var(--disabled) !important;
-	--newtab-textbox-background-color: var(--bgdark) !important;
-	--newtab-textbox-border: var(--border) !important;
-	--newtab-textbox-focus-color: var(--accent) !important;
-	--newtab-textbox-focus-boxshadow: 0 0 0 1px var(--accent), 0 0 0 4px var(--accent) !important;
-	--newtab-contextmenu-background-color: var(--bgdark) !important;
-	--newtab-contextmenu-button-color: var(--accent) !important;
-	--newtab-modal-color: var(--bgdark) !important;
-	--newtab-overlay-color: rgba(0, 0, 0, 0.5) !important;
-	--newtab-section-header-text-color: var(--fglight) !important;
-	--newtab-section-navigation-text-color: #0F0 !important;
-	--newtab-section-active-contextmenu-color: #FFF !important;
-	--newtab-search-border-color: var(--border) !important;
-	--newtab-search-dropdown-color: var(--bgdark) !important;
-	--newtab-search-dropdown-header-color: var(--bglight) !important;
-	--newtab-search-header-background-color: var(--bglight) !important;
-	--newtab-search-icon-color: var(--fglight) !important;
-	--newtab-topsites-background-color: var(--bgdark) !important;
-	--newtab-topsites-icon-shadow: inset 0 0 0 1px !important;
-	--newtab-topsites-label-color: inherit !important;
-	--newtab-card-active-outline-color: var(--accent) !important;
-	--newtab-card-background-color: #111 !important;
-	--newtab-card-hairline-color: rgba(64, 64, 64, 0.0) !important;
-	--newtab-card-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5) !important;
-	--newtab-snippets-background-color: var(--border) !important;
-	--newtab-snippets-hairline-color: transparent !important;
-}
-body[lwt-newtab-brighttext] {
-	--newtab-background-color: var(--bgdark) !important;
-	--newtab-border-primary-color: var(--border) !important;
-	--newtab-border-secondary-color: var(--border) !important;
-	--newtab-button-primary-color: var(--bglight) !important;
-	--newtab-button-secondary-color: inherit !important;
-	--newtab-element-active-color: var(--accent)99 !important;
-	--newtab-element-hover-color: var(--bglight) !important;
-	--newtab-icon-primary-color: var(--fglight) !important;
-	--newtab-icon-secondary-color: var(--border2) !important;
-	--newtab-icon-tertiary-color: var(--accent) !important;
-	--newtab-inner-box-shadow-color: rgba(0, 0, 0, 0.1) !important;
-	--newtab-link-primary-color: var(--accent) !important;
-	--newtab-link-secondary-color: var(--accent) !important;
-	--newtab-text-conditional-color: var(--border2) !important;
-	--newtab-text-primary-color: var(--fglight) !important;
-	--newtab-text-secondary-color: var(--disabled) !important;
-	--newtab-textbox-background-color: var(--bgdark) !important;
-	--newtab-textbox-border: var(--border) !important;
-	--newtab-textbox-focus-color: var(--accent) !important;
-	--newtab-textbox-focus-boxshadow: 0 0 0 1px var(--accent)33, 0 0 0 4px var(--accent)1a !important;
-	--newtab-contextmenu-background-color: var(--bgdark) !important;
-	--newtab-contextmenu-button-color: var(--accent) !important;
-	--newtab-modal-color: var(--bgdark) !important;
-	--newtab-overlay-color: rgba(0, 0, 0, 0.5) !important;
-	--newtab-section-header-text-color: var(--fglight) !important;
-	--newtab-section-navigation-text-color: #3ab795 !important;
-	--newtab-section-active-contextmenu-color: #FFF !important;
-	--newtab-search-border-color: var(--border) !important;
-	--newtab-search-dropdown-color: var(--bgdark) !important;
-	--newtab-search-dropdown-header-color: var(--bglight) !important;
-	--newtab-search-header-background-color: var(--bglight) !important;
-	--newtab-search-icon-color: var(--fglight) !important;
-	--newtab-topsites-background-color: var(--bgdark) !important;
-	--newtab-topsites-icon-shadow: inset 0 0 0 1px !important;
-	--newtab-topsites-label-color: inherit !important;
-	--newtab-card-active-outline-color: var(--accent) !important;
-	--newtab-card-background-color: #111 !important;
-	--newtab-card-hairline-color: rgba(64, 64, 64, 0.0) !important;
-	--newtab-card-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5) !important;
-	--newtab-snippets-background-color: var(--border) !important;
-	--newtab-snippets-hairline-color: transparent !important;
-}
+.modal-message .icon {fill: #fff !important}
 
-/* TUTORIAL DIALOG ********************************************/
-#onboarding-tour-description {
-	color:var(--fglight)!important;
-}
+.card-details h4 {color: #ddd}
 
-.onboarding-tour-item {
-	--onboarding-tour-item-active-color: var(--accent)!important;
-}
+.actions {border-top: none !important}
 
-.onboarding-tour-content {
-	/* filter: invert(80%); !!!PERNICIOUS!!!*/
-}
+.form-wrapper input:hover {border: 1px solid var(--blue) !important}
+
+/* Tour pop-up */
+#onboarding-overlay {
+	background: rgba(0,0,0,0.5) !important}
 
 #onboarding-overlay-dialog {
-	color: var(--fglight)!important;
-	background: var(--bgdark)e!important;
-	background-color: rgba(32, 32, 32 ,0.85) !important;
-	border: 1px solid rgb(64, 64, 64, 0.9)!important;
-	border-radius: 1px!important;
+	background: var(--bglight) !important;
+	border: 1px solid rgba(0, 0, 0, 0.2)}
+
+#onboarding-overlay p, #onboarding-overlay li.onboarding-tour-item-container span:not(.onboarding-active) {
+	color: #aaa !important}
+
+#onboarding-overlay header, #onboarding-overlay h1 {color: #FFF !important}
+
+#onboarding-skip-tour-button {
+	background: var(--bgdark) !important;
+	color: #ddd !important;
+	border: 1px solid #111 !important}
+
+#onboarding-skip-tour-button:hover {background: var(--bglight) !important}
+
+#onboarding-skip-tour-button:active {background: #111 !important}
+
+#onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
+
+/* This adds a background image of your choice in the main area 
+Delete the final /* to use -> */
+body {
+  background-image: var(--home-background-image) !important;
+  background-size: cover !important;
+  background-position: center !important}
+
+.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
+.sidebar .actions, #snippets-container, .collapsible-section.top-sites.animation-enabled.active,
+.collapsible-section.section.animation-enabled.active {
+	background: rgba(0,0,0,0.6) !important}
+
+.context-menu-button.icon {fill: #aaa !important}
+
+.top-site-outer .top-site-icon.rich-icon, 
+.top-site-outer .screenshot {background-color: transparent !important}
 }
 
-.onboarding-action-button {
-	color: var(--fglight)!important;
-	background: var(--bgdark)0!important;
-	background-color: rgba(32, 32, 32 ,0)!important;
-	border: 1px solid rgba(64, 64, 64, 1)!important;
-	border-radius: 1px!important;
+/*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
+@-moz-document url(about:about), url(about:), 
+url(https://www.mozilla.org/credits/), url-prefix(about:cache),
+url-prefix(about:checkerboard), url-prefix(about:plugins), 
+url-prefix(about:buildconfig), url-prefix(about:support), 
+url-prefix(about:profiles), url(about:crashes), url(about:license),
+url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
+url(about:rights), url(about:robots), url-prefix(about:studies), 
+url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
+url(about:devtools), url(about:serviceworkers) {
+
+p, pre, li, label {color: #AAA !important}
+h1 {color: #1C7BFF !important}
+h2 {color: #ddd !important}
+h3 {color: #ddd !important}
+
+button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: var(--button-background) !important;
+  color: #ddd !important;
+  border: 1px solid var(--button-border) !important;
+  padding: 0.5em !important}
+
+button:hover {
+	background: var(--button-background-hover) !important;
+    color: #FFF !important}
+
+textarea {
+	-moz-appearance: none !important;
+	background: var(--bglight);
+	color: #aaa;
+	border: 1px solid var(--bglight)}
+
+#action-box {background-color: var(--bglight) !important}
 }
 
-.onboarding-tour-action-button {
-	color: var(--fglight)!important;
-	background: var(--bgdark)d!important;
-	background-color: rgba(48, 48, 48, 0.85)!important;
-	border: 1px solid rgba(64, 64, 64, 1)!important;
-	border-radius: 1px!important;
+@-moz-document url-prefix(about:) {
+tree {background-color: var(--in-content-box-background) !important}
+treechildren::-moz-tree-row {background-color: transparent !important}
+treechildren::-moz-tree-image {fill: var(--in-content-box-background) !important}
+treechildren::-moz-tree-row(hover) {background-color: rgba(0,149,221,0.25) !important}
+treechildren::-moz-tree-row(selected) {background-color: var(--blue) !important}
 }
 
+/*------ ABOUT: PAGES WITH TABLES  ------*/
+@-moz-document url-prefix(about:cache), url-prefix(about:plugins), 
+url-prefix(about:buildconfig), url-prefix(about:networking),
+url-prefix(about:telemetry) {
 
-/* CHECKBOXES AND RADIO BUTTONS *******************************/
+th {background: var(--bglight) !important; 
+	color: #fff !important;
+	outline: 1px solid #000 !important;
+	padding-left: 4px !important}
 
-xul|*.checkbox-check {
-	border: 1px solid var(--in-content-border-color)!important;
-	border-radius: 1px!important;
-	background-color: var(--in-content-border-color)!important;
-	background-image: linear-gradient(var(--bgdark), var(--bgdark))!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
+td {background: var(--bglightest) !important; 
+	color: #ddd !important;
+	outline: 1px solid #000 !important;
+	border: none !important;
+	padding-left: 4px !important}}
+
+/*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
+@-moz-document url(about:), url(about:about), url(https://www.mozilla.org/credits/),
+url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
+url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memory),
+url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
+url(about:webrtc) {
+body, html {background-color: var(--bgdark) !important}}
+
+/* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) */
+@-moz-document url(about:blank) {
+  body:not(#ublock0-epicker) {background: var(--bgdark)}
 }
 
-xul|checkbox:not([disabled="true"]):hover > xul|*.checkbox-check {
-	border-radius: 1px!important;
-	border-color: var(--in-content-border-focus)!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
+/*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
+@-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/), 
+url-prefix(about:credits), url(about:devtools), url(about:license), 
+url-prefix(about:crashes), url(about:rights), url(about:serviceworkers) {
+.container, #reportListUnsubmitted, #reportListSubmitted,
+#aboutPageContainer, #welcome-page .box, #welcome-page .features,
+#lic-info, #serviceworkers {
+	padding: 3em !important; 
+	background: #363636 !important; 
+	border-radius: 6px !important}
+
+#reportListSubmitted, #welcome-page .features {
+	margin-top: 1em !important;
+	margin-bottom: 1em !important}
+
+#welcome-page .features {border-top: none !important}
+
+#welcome-page .left-pane {filter: invert(98%) hue-rotate(200deg) !important}
+
+tbody > tr:hover {outline: 1px dotted var(--bglightest) !important}}
+
+/*------ CONTEXT MENUS FOR ALL ABOUT: PAGES ------*/
+@-moz-document url-prefix(about:) {
+
+/* This changes the color of the context menus */
+menuitem, menu {
+	-moz-appearance: none !important;
+	background-color: var(--in-content-context-background) !important;
+	color: #ccc !important;
+	padding-top: 3px !important;
+	padding-bottom: 3px !important}
+
+menupopup {
+	-moz-appearance: none !important;
+	background-color: var(--in-content-context-background) !important;
+	border: 1px solid #111 !important}
+
+/* This changes the text of disabled items */
+menuitem[disabled="true"],
+menu[disabled="true"] {color: var(--bglightest) !important}
+	
+/* This changes the color on hover of the context-menu items */
+menuitem:hover,
+menu:hover {
+	-moz-appearance: none !important;
+	background-color: var(--in-content-context-highlight) !important}
+
+/* This does the same but for disabled ones */
+menuitem:hover[disabled="true"],
+menu:hover[disabled="true"] {
+	-moz-appearance: none !important;
+	background-color: var(--bglight) !important}
+
+/* Context menu separator color override */
+menuseparator {
+  -moz-appearance: none !important;
+  margin: 1px 0 1px 2.3em !important;
+  height: 1px !important;
+  border: none !important;
+  background: var(--bgdark) !important;
+  padding: 0 !important}}
+
+/*------ ABOUT: PAGE (about:) ------*/
+@-moz-document url(about:), url(https://www.mozilla.org/credits/) {
+#aboutPageList {color: #ddd !important}}
+
+/*------ DIVS OVER BACKGROUND PAGES ------*/
+@-moz-document url(about:robots), url(about:serviceworkers),
+url-prefix(about:studies), url(about:webrtc) {
+#stage, #errorPageContainer, .warningMessage,
+.info-box-content, .stats, .log {background: var(--bglight) !important; border: 1px solid #111 !important}
+.fold-trigger {color: #fff !important}
 }
 
-xul|*.checkbox-check[checked] {
-	-moz-context-properties: fill;
-	fill: val(--in-content-border-focus)!important;
-	border-radius: 1px!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
+/*------ SERVICE WORKERS PAGE (about:serviceworkers) ------*/
+@-moz-document url(about:serviceworkers) {
+#warning_no_serviceworkers {background: var(--bgdark) !important}
+.warningMessage {color: #ddd !important}
 }
 
-xul|*.radio-check {
-	border: 1px solid var(--in-content-border-color)!important;
-	border-radius: 50%;
-	background-color: var(--in-content-border-color)!important;
-	background-image: linear-gradient(var(--bgdark), var(--bgdark))!important;
-	box-shadow: 0 0px 0px 0 #000, inset 0 2px 0 0 rgba(0, 0, 0, 0)!important;
+/*------ CACHE PAGE (about:cache) ------*/
+@-moz-document url-prefix(about:cache){
+#submit {
+	-moz-appearance: none !important;
+	background: var(--selected) !important;
+    color: #FFF !important;
+    padding: 0.5em;
+	border: 1px solid var(--blue) !important}
+
+#submit:hover {
+	background: var(--blue) !important;
+    color: var(--bgdark) !important}
+
+#appid {
+	-moz-appearance: none !important;
+	background: var(--bglight);
+	border: 1px solid var(--bglightest);
+	color: #ddd}
+
+table#entries tr:nth-child(even) {background-color: var(--bgdark) !important}
 }
 
-xul|radio:not([disabled="true"]):hover > xul|*.radio-check {
-	border-color: var(--in-content-border-focus)!important;
+/*------ CHECKERBOARD PAGE (about:checkerboard) ------*/
+@-moz-document url-prefix(about:checkerboard) {
+#raw {color: #aaa !important}
+
+th {background: var(--bglight) !important}
+td {background: var(--bglighter) !important}
 }
 
-xul|*.radio-check[selected] {
-	-moz-context-properties: fill;
-	fill: val(--in-content-border-focus)!important;
-}
+/*------ NETWORKING PAGE (about:networking) ------*/
+@-moz-document url-prefix(about:networking), url-prefix(about:telemetry) {
 
+.category {color: #ddd !important; font-weight: bold !important}
+.category[selected="true"], .category.selected {color: var(--in-content-category-text-selected) !important}
 
-/* TREE VIEWS *************************************************/
-xul|treecol:not([hideheader="true"]), xul|treecolpicker {
-	background-color: var(--bgdark)!important;
-	color: var(--fglight)!important;
-}
-
-xul|treecol:not([hideheader="true"]):not(:first-child), xul|treecolpicker {
-	border-image: linear-gradient(transparent 0%, transparent 20%, var(--disabled) 20%, var(--disabled) 80%, transparent 80%, transparent 100%) 1 1!important;
-}
-
-xul|listheader, xul|treecols {
-	border-bottom: 1px solid var(--in-content-border-highlight)!important;
-}
-
-.header-button:not([disabled="true"]):hover,
-#header-utils-btn:not([disabled="true"]):hover {
-	background-color: #404040!important;
-}
-
-.header-name {
-	background-color: var(--accent)!important;
-}
-
-
-/* DIALOG BOXES ***********************************************/
-*|*.dialogBox {
-	background-color: var(--bgdark)!important;
-	color: var(--fglight)!important;
-	border: 1px solid var(--border)!important;
-	border-radius: 1px!important;
-}
-
-*|*.groupbox-title {
-	background-color: var(--bgdark)!important;
-	border-bottom: 1px solid var(--border)!important;
-}
-
-
-/* CATEGORIES *************************************************/
-*|*#categories > *|*.category:hover {
-	background-color: var(--in-content-category-background-hover);
-	border-radius: 1px!important;
-}
-
-*|*#categories > *|*.category:hover:active {
-	background-color: var(--in-content-category-background-active);
-}
-
-*|*#categories > *|*.category[selected],
-*|*#categories > *|*.category.selected {
-	color: var(--in-content-category-text)!important;
-	background-color: var(--in-content-category-background-selected-hover)!important;
-}
-
-*|*#categories > *|*.category[selected]:hover,
-*|*#categories > *|*.category.selected:hover {
-	background-color: var(--in-content-category-background-selected-hover)!important;
-}
-
-*|*#categories > *|*.category[selected]:hover:active,
-*|*#categories > *|*.category.selected:hover:active {
-	color: var(--in-content-category-text-selected-active)!important;
-	background-color: var(--in-content-category-background-selected-active)!important;
-}
-
-*|*.navigation {
-	border-width: 1px;
-	border: 1px solid rgb(64, 64, 64) !important;
-}
-
-
-/* READ MODE TOOLBAR *****************************************/
-.toolbar {
-    background-color: var(--bgdark)!important;
-    border-right: 1px solid var(--border)!important;
-}
-
-.toolbar .button {
-    border-right: 1px solid var(--border)!important;
-    border-bottom: 1px solid var(--border)!important;
-    -moz-context-properties: fill;
-    fill: var(--disabled)!important;
-}
-
-.button {
-	color: var(--disabled)!important;
-	background-color: var(--bgdark)!important;
-
-}
-
-.button:hover, .font-size-buttons > button:hover,
-.font-type-buttons > button:hover, .content-width-buttons > button:hover,
-.line-height-buttons > button:hover {
-	background-color: var(--border)!important;
-}
-
-.dropdown-popup {
-    background-color: var(--bglight)!important;
-    border-radius: 2px!important;
-    border: 1px solid var(--border)!important;
-    box-shadow: 0 1px 3px #111!important;
-}
-
-.dropdown-arrow {
-    filter: brightness(20%)!important;
-}
-
-.font-type-buttons > button:active:hover, .font-type-buttons > button.selected,
-.color-scheme-buttons > button:active:hover, .color-scheme-buttons > button.selected {
-    box-shadow: inset 0 -3px 0 0 var(--accent)!important;
-}
-.font-type-buttons > button, .font-size-buttons > button,
-.content-width-buttons > button, .line-height-buttons > button {
-    border-left: 1px solid var(--disabled)!important;
-    border-bottom: 1px solid var(--disabled)!important;
-}
-
-.sepia-button {
-    color: #554030!important;
-    background-color: #A98!important;
-}
-
-
-/* TABLES & OTHERS ********************************************/
-table {
-	border: 0px!important;
-}
-
-th {
-	border-color: var(--border2)!important;
-}
-
-th.title-column {
-	background-color: var(--bgdark)
-	border-color: var(--border2)!important;
-}
-
-.active-policies tr.odd, .errors tr:nth-child(2n+1), tbody:nth-child(4n+1) {
-	background-color: var(--border1) !important;
-}
-tr:hover td {
-	background-color: var(--accent)!important;
-}
-
-.major-section {
-	background-color: var(--accent)!important;
-}
-
-.notice-box {
-	background-color: var(--in-content-table-header-background) !important;
-	border: 1px solid var(--in-content-border-highlight)!important;
-}
-
-#action-box > h3, #reset-box > h3 {
-	background-color:var(--accent)!important;
-}
-
-.firstrun-sign-in {
-	background-color: var(--bgdark)!important;
-	color: var(--fglight)!important;
-}
-
-.firstrun-sign-in .email-input {
-	border: 1px solid var(--border)!important;
-}
-
-.firstrun-sign-in .email-input:hover {
-	border-color: var(--border)!important;
-}
-
-.firstrun-sign-in .continue-button {
-	color: var(--fglight)!important;
-	background: var(--bglight)!important;
-	border: 1px solid rgb(64, 64, 64)!important;
-	border-radius: 1px!important;
-}
-
-.firstrun-sign-in .skip-button {
-	color: var(--fglight)!important;
-	background: var(--bgdark)!important;
-	border: 1px solid rgb(64, 64, 64)!important;
-	border-radius: 1px!important;
-}
-
-.detail-view-container {
-	background: var(--bgdark)d!important;
-	color: var(--fglight)!important;
-}
-
-.addon-view .warning {
-	color: var(--accent)!important;
-}
-
-.schema {
-	color:var(--fglight)!important;
-background-color: var(--bglight)!important;
-
-}
-.detail-row, .detail-row-complex {
-	color: var(--disabled);
-	text-shadow: 0 1px 1px transparent!important;
-}
-
-.addon-target-container {
-	background: var(--bglight)!important;
-}
-
-.service-worker-multi-process {
-	background-color: var(--bglight)!important;
-}
-
-*|textbox {
-    border-radius: 1px!important;
-}
-
-*|button.primary {
-    border-color: var(--border)!important;
-}
-
-html|h1 {
-  color: var(--accent)!important;
-}
-
-scrollbar {
-    background-color: val(--in-content-box-border-color)!important;
-}
+select {border: 1px solid #111 !important}
 
 #ping-picker {
-    background-color: var(--bgdark)!important;
+	background-color: var(--bglight) !important; 
+	border: 1px solid #111 !important}
+
+#categories, #category-raw {background: var(--bglight) !important}
+#categories {margin-bottom: 0 !important}
 }
 
-#content > div {
-    border: 0 !important;
-    border-radius: 1px !important;
-    background: none repeat scroll 0% 0% var(--bglight) !important;
+/*------ RIGHTS PAGE (about:rights) ------*/
+@-moz-document url-prefix(about:rights){
+.rights-header {filter: invert(98%) hue-rotate(200deg) }
+.rights-header div {filter: invert(98%) hue-rotate(-200deg)}
+}
+/*------ DEBUGGING PAGE (about:debugging) ------*/
+@-moz-document url-prefix(about:debugging) {
+
+/* This affects the categories part */
+#categories {background-color: var(--bglight) !important}
+
+#categories button {
+	background-color: var(--bglight) !important;
+	color: #fff !important}
+
+#categories button:hover {background-color: var(--bglighter) !important}
+
+#categories button.selected {color: var(--in-content-category-text-selected) !important}
+
+/* This affects the main content part */
+.target-list .addon-target-container {
+	background-color: var(--bglight) !important; 
+	box-shadow: none !important}
+
+.main-content button {
+    background: var(--button-background) !important;
+    color: #ddd !important;
+    border: 1px solid var(--button-border) !important}
+
+.main-content button:hover {
+	background: var(--button-background-hover) !important;
+    color: #FFF !important;
+	text-decoration: none !important}
+
+.addons-tip-icon {filter: invert(100%) !important}
+
+/* These are the alert message that appears on the "workers" category, and the status notice */
+.service-worker-multi-process {
+	background-color: #a44 !important; 
+	color: #ddd !important;
+	border-radius: 6px !important}
+
+span.target-status {background-color: var(--bgdark) !important}
 }
 
-.info-box-content {
-	background: var(--bglight)!important;
-	border: 1px solid rgb(64, 64, 64)!important;
-    border-radius: 1px!important;
+/*------ CONFIGURATION PAGE (about:config) ------*/
+@-moz-document url(about:config) {
+:root {
+	--in-content-page-color: #aaa !important;
+	--in-content-page-background: var(--bgdark) !important;
+	--in-content-primary-button-background: #d55 !important;
+	--in-content-primary-button-background-hover: #d22 !important;
+	--in-content-primary-button-background-active: #D00 !important;
+	--in-content-text-color: #0da !important;
+	--in-content-item-selected: #4080CC !important;
+	--in-content-box-background: var(--bglight) !important;
+	--in-content-box-background-hover: var(--bglight) !important;
+	--in-content-box-background-active: var(--bglightest) !important}
+
+#configTreeBody::-moz-tree-row(odd) {
+	background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+
+/* Warning pre-title before the actual config page (D'uh) */
+#warningTitle {color: #FFF !important}}
+
+/*------ PLUGINS PAGE (about:plugins) ------*/
+@-moz-document url-prefix(about:plugins), url-prefix(about:buildconfig) {
+.notice {
+	background-color: #101010 !important;
+	color: #FA0 !important}
+
+.notice a:link {color: #4080CC !important}
+
+dl {color: #ddd !important}}
+
+/*------ MEMORY LOAD PAGE (about:memory) ------*/
+@-moz-document url-prefix(about:memory){
+.opsRow {
+	background-color: var(--bglight) !important;
+	color: #AAA !important;
+	border: 1px solid #111 !important}
 }
 
-*|*.Button--action {
-	background: var(--bgdark)!important;
-	background-color: rgb(32, 32, 32)!important;
-	border: 1px solid rgb(64, 64, 64)!important;
-	border-radius: 1px!important;
+/*------ DOWNLOADED FILES PAGE (about:downloads) ------*/
+@-moz-document url(about:downloads){
+:root {
+	--in-content-page-background: var(--bgdark) !important;
+	--in-content-text-color: #aaa !important;
+	--in-content-box-background: #404040 !important;
+	--in-content-box-border-color: var(--bglightest) !important}}
+
+/*------ INFORMATION PAGES WITH TABLES ------*/
+@-moz-document url-prefix(about:support), url-prefix(about:profiles), 
+url(about:performance), url(about:url-classifier) {
+
+:root {
+	--in-content-table-header-background: var(--bglight) !important;
+	--aboutSupport-table-background: var(--bglightest) !important;
+	--aboutProfiles-table-background: var(--bglightest) !important;
+	--in-content-link-color-hover: var(--blue) !important;
+	--in-content-box-border-color: #aaa !important;
+	--in-content-table-border-dark-color: #000 !important;
+	--in-content-border-color: #000 !important}
+
+td {background: var(--bglightest) !important}
+
+.page-subtitle {color: #ddd !important}
+
+#profiles hr {display: none !important}
 }
 
+/*------ SETTINGS/ADDONS COMMON PART (about:preferences, about:addons) ------*/
+@-moz-document url-prefix(about:preferences), url-prefix(about:addons){
 
-/* IMAGE FILTERS **********************************************/
-.searchBarHiddenImage {
-	filter: invert(86%);
-}
-.searchBarShownImage {
-	filter: invert(86%);
-}
+/* Sidebar */
+:root {
+	--in-content-page-background: var(--bgdark) !important;
+	--in-content-category-text: #fff !important;
+	--in-content-text-color: #fff !important;
+	--in-content-selected-text: #000 !important;
+	--in-content-item-selected: var(--in-content-category-text-selected) !important;
+	--in-content-item-hover: rgba(0,90,170,0.25) !important;
+	background-color: var(--bglight) !important}
 
-#homeContentsGroup checkbox[src] .checkbox-icon {
-	filter: invert(70%);
-}
-.content-blocking-checkbox .checkbox-icon {
-	filter: invert(70%);
-}
+/* Main Content */
+.main-content {
+ 	background-color: var(--bgdark) !important;
+    color: #AAA !important}
 
-.addon-view[type="plugin"] .icon {
-	filter: invert(70%);
-}
+.groupbox-title, 
 
-.inverted-icons .target-icon {
-	filter: invert(70%)!important;
-}
+/* These last two apply to some general panel labels in the preferences page (if 
+it's updated and if its the default browser) */
+#isDefaultLabel, #updateBox {color: #FFF !important}
 
-.meta-rating > .star[on="true"] {
-	filter: invert(70%);
-}
+/* Search Panel, Dialog boxes and inputs in general */
+#engineList, .dialogBox > .groupbox-title, #browserHomePage,
+#searchInput {background-color: var(--bglight) !important}
 
-.tree-columnpicker-icon {
-	filter: invert(70%);
-}
-
-.addons-tip-icon {
-	filter: invert(70%);
+.dialogTitleBar {background: var(--bglight) !important; border-bottom: 1px solid var(--bglightest) !important}
+.dialogTitleBar label {color: #fff !important}
 }
 
-.warning {
-	filter: contrast(0%)!important;
+/*------ SETTINGS PAGE (about:preferences) ------*/
+@-moz-document url-prefix(about:preferences){
+
+.dialogBox {background-color: var(--bgdark) !important}
+
+/* Selector tables */
+#applicationsGroup richlistitem[selected="true"] {
+	background-color: rgba(255,255,255, 0.2) !important;
+	color: var(--blue) !important}
+
+/* Search bar images on "search" category */
+image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
+
+/* This changes some of the buttons color */
+.accessory-button, button {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: var(--button-background) !important;
+  color: #ddd !important;
+  border: 1px solid var(--button-border) !important}
+
+.accessory-button:hover, button:hover {
+	background: var(--button-background-hover) !important;
+    color: #FFF !important}
+
+treecol {
+	background-color: var(--bglightest) !important;
+	color: #FFF !important}
+
+treecol:hover {background-color: var(--bglighter) !important}
+
+.fxaSyncIllustration, #fxaNoLoginStatus .fxaProfileImage {filter: invert(98%) hue-rotate(200deg)}
+
+.extension-controlled > description {
+	color: #000 !important;
+	filter: invert(81%) !important}
 }
 
-.fxaSyncIllustration {
-	filter: brightness(30%);
+/*------ EXTENSIONS PAGE (about:addons) ------*/
+@-moz-document url-prefix(about:addons){
+
+/* Context menus*/
+#header-utils-btn .scrollbox-innerbox,
+.arrowscrollbox-scrollbox {background-color: var(--bglight) !important}
+
+/* This changes some of the buttons color */
+.accessory-button, button, #header-utils-btn {
+  -moz-appearance: none !important;
+  border-radius: 3px !important;
+  background: var(--bglightest) !important;
+  color: #eee !important;
+  border: none !important}
+
+#header-utils-btn {fill: black !important}
+
+.accessory-button:hover, button:hover, 
+#header-utils-btn:hover {
+	background: var(--bglight) !important;
+    color: #FFF !important}
+
+/* These change the addons background colors */
+.card {
+	max-width: 800px !important}
+
+.addon .description {color: #aaa !important}
+
+.addon:hover {
+	background-color: #383838 !important;
+	box-shadow: none !important}
+
+.addon:hover .description {color: #ccc !important}
+
+.content-inner-container .basicinfo-container {color: var(--addons-addon-name) !important}
+.addon.addon-view[selected="true"] .basicinfo-container {color: var(--addons-addon-name-active) !important}
+
+.addon.addon-view[active="false"] {opacity: 0.7}
+.addon.addon-view[active="false"] .basicinfo-container, 
+.addon.addon-view[active="false"] .description {color: #888 !important}
+
+.addon.addon-view[selected="true"] .description {color: #FFF !important}
+
+/* This changes the background highlight color of uninstalled extensions */
+.addon-view[pending="disable"], .addon-view[pending="uninstall"] {
+    --view-highlight-color: #111 !important}
+
+/* These change the selectors on the plugins page */
+.addon-control.state.no-auto-hide {background-color: #383838 !important}
+.addon-control.state.no-auto-hide:hover {background-color: var(--bglight) !important}
+.addon-control.state.no-auto-hide[open="true"] {background-color: var(--bglight) !important}
+
+.menulist-label-box {background: transparent !important}
+
+/* Should be self explanatory... but this is the alert message that goes over the addons list */
+.alert, .message-bar {
+	border: 1px solid var(--bglight) !important;
+	background-color: rgba(255,255,255,0.10) !important;
+	color: #Fff !important}
+
+/* Description of the addons/themes */
+.detail-view-container {color: #ccc !important}
+
+#detail-contributions {
+	background-color: rgba(0,0,0,0.15) !important; 
+	border: 1px solid var(--bglight) !important}
+
+#detail-rows * {text-shadow: none !important}
+
+#detail-rows .detail-row-label {color: #fff !important}
+
+#detail-contrib-description {color: #aaa !important}
 }
 
-.fxaProfileImage {
-	filter: brightness(30%);
+/* This is still in the addons page, it's the "discover" page thing */
+@-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
+
+.disco-content h1, .content h2 {color: #FFF !important}
+
+.disco-content p, .content p, .content blockquote {color: #AAA !important}
+
+#react-view {background-color: var(--bgdark) !important}
+
+.addon.theme, .addon.extension, .addon.theme {background-color: var(--bglight) !important}
+
+.heading a {color: var(--blue) !important}
+.heading a:visited {color: var(--blue) !important}
+.heading a:hover {color: var(--blue) !important}
+.heading a:active {color: #0050dd !important}
 }
 
-.left-pane {
-	filter: invert(80%);
+/*------ HEALTHREPORT PAGE (about:healthreport) ------*/
+@-moz-document url-prefix(https://fhr.cdn.mozilla.net/){
+.headerContainer, .persistentHeader {
+	background: var(--bgdark) !important;
+	color: #ddd !important}
+
+.sidebar, #health, body, .tipBox-container {
+	background: var(--bglight) !important;
+	color: #ddd !important}
+
+li {color: #ddd !important}
+
+span, .statsBoxSection-header {color: #fff !important}
+
+.tipBox-header {
+	background: var(--bglight) !important;
+	color: #ddd !important}
+
+.tipBox-content {background: var(--bglightest) !important}
 }
 
-.license-header {
-	/* filter: invert(80%); !!!PERNICIOUS!!! */
+/*------ MOZILLA ADDONS PAGE (Includes both the new and the old) ------*/
+@-moz-document url-prefix(https://addons.mozilla.org) {
+
+html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
+#main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a, body.restyle,
+.Card-footer, .Paginate 
+{background: var(--bgdark) !important}
+
+#footer {
+    background-color: var(--bgdark) !important;
+    background-image: linear-gradient(to bottom,var(--bgdark) 0,var(--bgdark) 123px,
+    	#000 123px,#000 200px,#101010 200px,rgba(90,90,90,0) 400px) !important}
+
+.listing-header, .listing .item, .object-lead, .listing-footer {
+	background: linear-gradient(var(--bgdark), var(--bglight)) !important;
+	border-bottom: 1px solid #000 !important}	
+
+#search-tools-sidebar {border-radius: 0px !important}
+
+#react-autowhatever-1 * {background-color: var(--bglight) !important}
+
+.Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
+.CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
+.Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
+.ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
+.Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
+a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
+.highlight, .AutoSearchInput-query, .Search .SearchResults-message  {
+	background-color: var(--bglight) !important;
+	color: #ccc !important}
+
+.HeroSection-content {color: #fff !important}
+
+.Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
+
+.PermissionsCard-list .Icon {filter: brightness(700%) !important}
+
+.extra .button.disabled.not-available {background-color: var(--bglight) !important; border: 1px solid var(--bglightest) !important}
+
+#search-facets .facets {background: transparent !important}
+
+#search-facets .facets .facet.active, #search-facets .facets .facet, 
+#sorter > ul > li.extras ul, #sorter > ul > li.extras a:hover {background-color: var(--bglight) !important; border: 1px solid var(--bglightest) !important}
+#search-facets .facets .facet.active, #search-facets .facets .facet:hover,
+#sorter > ul > li.extras > ul > li > a:hover {background-color: var(--bglight) !important}
+
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
+.PermissionCard-learn-more, .AddAddonToCollection-select, #CollectionSort-select {
+	background-color: var(--bglightest) !important;
+	color: #FFF !important}
+
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):hover, 
+.PermissionCard-learn-more:hover, .AddAddonToCollection-select:hover {
+	background-color: var(--bglight) !important;
+	color: #1494FB !important}
+
+.other-categories .divider {border-top: 1px dotted #000 !important}
+
+.listing-footer {border-top: 1px solid #000 !important}
+
+.item .item-info {
+    border-left: 1px dotted #000 !important;
 }
+
+button.DropdownMenu-button, button.TooltipMenu-opener, 
+button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
+#aux-nav > ul > li {background: transparent !important}
+
+ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
+ul.TooltipMenu-list li.ListItem, tr.LanguageTools-table-row:nth-child(odd) {
+	background-color: var(--bgdark) !important;
+	color: #ccc !important}
+
+ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li, .highlight 
+{border: none !important}
+
+th.LanguageTools-header-cell {background-color: #101010 !important}
+
+.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, 
+.Home-SubjectShelf-link:hover, a.Button.Categories-link:hover 
+{color: #0d96ff !important}
+
+.Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited 
+{color: #343a40 !important}
+
+a.SearchResult-link h2, span, label *, 
+p, a, h4, h2, blockquote, li, .num-results 
+{color: #ccc !important}
+
+.header-bg {
+    background-color: #000 !important;
+    background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
+    linear-gradient(to bottom,rgba(90,90,90,0) 0,var(--bglightest) 500px,#fff 0),
+    repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,var(--bglight) 550px,rgba(90,90,90,0) 550px,var(--bglight) 800px,
+    rgba(90,90,90,0) 800px,var(--bglight) 950px) !important}
+
+.Paginate .Paginate-item, li.p-popular {background-color: var(--bglight) !important}
+
+.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, 
+.Paginate .Paginate-item:hover, li.p-popular:hover, #search-tools-sidebar li a:hover,
+.other-apps li a:hover, #site-search-suggestions a.sel, #site-search-suggestions a:hover, 
+#site-search-suggestions.sel a.sel:hover, #site-search-suggestions li p a:hover, 
+#other-apps ul.other-apps, #addon-list-options li:not(.selected) a:hover, 
+.pagination li:not(.selected) a:hover, #aux-nav > ul > li:not(:first-child)::before, 
+#addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus 
+{background-color: var(--bgdark) !important}
+
+a.SearchResult-link:hover h2, span:not(.Addon-author):hover, a:hover {color: #1494FB !important}
+
+h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
+h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
+{color: #FFF !important}
+
+.install a.caution {text-shadow: 1px 1px red !important}
+
+.install strong {color: #FA0 !important}
+
+.AMInstallButton-button--uninstall {background-color: #882626 !important}
+.AMInstallButton-button--uninstall:hover {background-color: #aa3333 !important; color: #fff !important}
+
+input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
+select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
+input#search-q {
+	background-color: var(--bgdark) !important;
+	color: #FFF !important}
+
+#site-search-suggestions .wrap, ul.other-apps {
+    background: var(--bgdark) !important;
+    border: 1px solid #101010 !important}
+
+.Notice-generic {background-color: var(--bglightest) !important}
+
+.ShowMoreCard-contents::after 
+{background: linear-gradient(rgba(48, 48, 48, 0.3), var(--bglight)) !important}
 }
 
+/*------ MOZILLA LOGIN PAGE (The login page inside https://addons.mozilla.org) ------*/
+@-moz-document url-prefix(https://accounts.firefox.com) {
 
-/* SCREENSHOT UI **********************************************/
+html, body {background-color: var(--bgdark) !important}
 
-.myshots-all-buttons-container {
-	background: var(--bgdark)!important;
-	border-radius: 1px!important;
+#stage.fade-in-forward .sign-in #main-content.card, #stage #main-content.panel {
+	background-color: var(--bglight) !important;
+	color: #ccc !important}
+
+form input, .show-password-label {
+	background-color: var(--bglight) !important;
+	color: #ccc !important}
 }
 
-.myshots-all-buttons-container .spacer {
-	background-color: var(--border)!important;
+/*------ MOZILLA SUPPORT PAGE (https://support.mozilla.org) ------*/
+@-moz-document url-prefix(https://support.mozilla.org/) {
+
+
+html, body {background-color: var(--bgdark) !important}
+
+h1, h2 {color: #fff !important}
+h3 {color: #ddd !important}
+p:not(.main-content) {color: #ccc !important}
+
+a:link {color: var(--in-content-link-color) !important}
+a:visited {color: var(--in-content-link-color) !important}
+a:hover {color: var(--in-content-link-color-hover) !important}
+a:active {color: var(--in-content-link-color-hover) !important}
+
+#announcements {background: transparent !important}
+#announcements .announce-bar {background-color: var(--bglightest) !important}
+
+body > header {
+	background: var(--bglighter) !important;
+	border-top: none !important;
+	border-bottom: 1px solid #aaa !important;
+	color: #ccc !important}
+
+a.btn, a.volunteer-button {color: #fff !important}
+
+.logo {filter: invert(100%) !important}
+.footer-logo {fill: #ddd !important}
+
+#aux-nav li a, .question-meta li, .asked-on, .asked-by,
+.footnote, #selected-product, .inner-wrap .legend li, #tagged,
+div {color: #ccc !important}
+#aux-nav li a:hover {background-color: rgba(0,0,0,0.5) !important}
+
+#main-breadcrumbs {background: var(--bglight) !important}
+#main-breadcrumbs li:not(a), .card-grid > li > a,
+.product-list .product a, .sidebar-header {color: #ccc !important}
+
+.answers .notice, .karma-titles li, .warning, #toc, #doc-content .note, 
+.tag-list a, .wiki-doc .vote-wrap {
+	background-color: var(--bglight) !important; 
+	color: #ccc !important;
+	border: 1px solid var(--bglighter) !important}
+
+.main-content, #try-an-article, .grid_6 article, #pw-reset,
+#retrieve-username, .hero-bar, .row .content-box, .highlight-box, .wiki-doc {
+	background-color: var(--bglight) !important; 
+	border-radius: 6px !important; 
+	color: #ccc !important}
+
+#doc-content tr:nth-child(2n+1) {background: var(--bglight) !important}
+
+.main-content::before {filter: brightness(27%) !important}
+
+.sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 
+.sidebar-nav .sidebar-nav > li > a, .sidebar-nav .sidebox, .sidebar-nav > li > a,
+#email-subscribe-kbox, #showfor-panel,
+#register-form, .subtopics > li > a {background-color: var(--bglight) !important; color: #ccc !important}
+.sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
+
+.button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
+
+.sidebar-nav a {border-color: var(--bglighter) !important}
+
+.cf::before, #document-list > ul > li > a::before, .submit-button {filter: invert(50%)}
+
+.topic-list, #search-results-list .content-box {
+	background-color: var(--bglight) !important;
+	border: 1px dotted var(--bglighter) !important;
+	padding: 10px !important}
+
+.result a, .result a:hover
+
+.sidebox.condensed {border-color: #373737 !important}
+
+.card-grid > li, .card-grid > li::before, .bullet, .feature-box .inner-wrap, .product-list .product,
+.sidebar-header, .questions > section, #top-contributors .feature-box {background: var(--bglight) !important}
+
+.questions > section .thread-meta {background: var(--bglightest) !important; border: none !important}
+
+.feature-box .inner-wrap {border: none !important}
+
+.sidebar-nav.sidebar-folding > li.selected > span, .feature-box, .sidebar-nav .selected:not(.subtopic) a {border-color: #822 !important}
+.sidebar-nav.sidebar-folding > li.selected > span::before, .sidebar-nav .selected a::before {filter: brightness(25%) !important}
+
+.sidebar-nav a:hover {background-color: #404040 !important; color: var(--in-content-link-color) !important}
+
+.sidebar-nav > li.selected {border-bottom: #373737 !important}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], 
+textarea {
+	background: var(--bglight) !important; 
+	color: #ccc !important}
+
+#search-q {border: 2px solid var(--bglight) !important}
+
+.simple-search-form .searchbox {
+	background: var(--bglight) !important}
+
+.simple-search-form input {color: #ccc !important}
+
+#email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
+#pw-reset input[type="submit"], .btn, span.button, .volunteer-button {
+	background: linear-gradient(#2050AA, #203050) !important;
+    color: #FFF !important;
+    padding: 0.5em;
+	border: 1px solid var(--blue) !important;
+	box-shadow: none !important}
+
+#email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
+#pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover {
+	background: linear-gradient(#203050, #2050AA) !important;
+    color: var(--blue) !important}
+
+.questions #owner-tabs a.selected, .questions #owner-tabs a:hover.selected {background: var(--bglight) !important}
+
+.questions #filter-section {background: linear-gradient(to bottom, var(--bglight),rgba(70,70,70,0.01)) !important}
+
+footer {background: #111 !important}
 }
-
-.myshots-all-buttons-container button {
-	background-color: var(--bgdark)!important;
-}
-
-.myshots-all-buttons-container button:hover {
-	background-color: var(--border)!important;
-	border: 1px solid var(--border)!important;
-}
-
-.myshots-all-buttons-container button:active {
-	background-color: var(--accent)!important;
-	border: 1px solid var(--accent)!important;
-}
-  
-.myshots-all-buttons-container .myshots-button {}
-.myshots-all-buttons-container .full-page {}
-.myshots-all-buttons-container .visible {}
-
-.button.primary, .primary.highlight-button-cancel,
-.highlight-button-save, .primary.highlight-button-download,
-.primary.highlight-button-copy, .preview-button-save {
-    background-color: var(--accent)!important;
-    color: var(--fglight)!important;
-}
-
-.button.secondary, .highlight-button-cancel,
-.secondary.highlight-button-save, .highlight-button-download,
-.highlight-button-copy, .secondary.preview-button-save {
-	background-color: var(--bgdark)!important;
-	color: var(--fglight)!important;
-}
-
-.button, .highlight-button-cancel, .highlight-button-save,
-.highlight-button-download, .highlight-button-copy,
-.preview-button-save {
-	border: 1px solid var(--border)!important;
-	border-radius: 1px!important;
-}
-
-/*/_______ADDONS_PAGE_FIX________/*/
-
-@-moz-document url(about:addons){
-	.addon.card { 
-	 
-	 max-width: 950px !important;
-	 padding: 4px !important;
-	 padding-right: 6px !important;
-	 padding-left: 11px !important;
-	 margin: -1px !important;
-	 margin-top: 4px !important; 
-	 font-size: 11px !important;
-	 font-family: Arial !important;
-	 /*font-weight: bold !important;*/
-	 border-radius: 7px !important;
-		
- }
- 
- #header-inner {
-	 
-	 margin-left: -133px !important;
-	 margin-bottom: -27px !important;
-  
- }
- 
- .heading-inner {
-	 width: 1795px !important;
-	 margin-left: -1185px !important;
-	 margin-top: -28px !important;
-	 
- }
- 
- .toolbarbutton-icon {
-	 padding: 0px 2px !important;
-	 margin-left: -222px !important;
-	 margin-right: 0px !important;
-	 margin-top: -2px !important;
-	 padding-top: 2px !important;}
