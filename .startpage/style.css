@@ -134,7 +134,7 @@ main, #header {
 }
 
 .header {
-    background-color: #1e2029;
+    background-color: var(--bglight);
     width: 100% !important;
     height: 80px;
 }
