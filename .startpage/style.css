@@ -109,6 +109,10 @@ body.nojs #top-header {
     box-shadow: 4px 4px 4px 1.5px rgba(0, 0, 0, 0.3);
 }
 
+.search-box input[type="text"]:focus {
+    border: 2px solid var(--accent);
+}
+
 .search-box {
     width: 800px;
     max-width: 80%;
