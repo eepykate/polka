@@ -3,13 +3,13 @@
 # or
 # /usr/share/xfwm4/defaults
 
+full_width_title=false
 active_text_color=#cccccc
 active_text_shadow_color=#cccccc
 inactive_text_color=#a0a1a3
 inactive_text_shadow_color=#a0a1a3
 title_shadow_active=false
 title_shadow_inactive=false
-full_width_title=true
 title_vertical_offset_active=0
 title_vertical_offset_inactive=0
 button_offset=0
