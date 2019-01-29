@@ -42,10 +42,10 @@ Recent Files[$e]=file:$HOME/.local/share/applications//discord.svg,file:///usr/s
 Recent URLs[$e]=file:///usr/share/icons/,file:$HOME/.local/share/applications/
 
 [KPropertiesDialog]
-Height 1080=354
+Height 1080=398
 Height 900=444
 Width 1440=402
-Width 1920=393
+Width 1920=463
 
 [MainWindow]
 Height 1080=628
@@ -69,7 +69,7 @@ New TabNew TabCtrl+T=false
 
 [Open-with settings]
 CompletionMode=1
-History=code,kate,inkscape,konsole
+History=code,inkscape,kate,konsole
 
 [PreviewSettings]
 Plugins=audiothumbnail,comicbookthumbnail,djvuthumbnail,marble_thumbnail_shp,exrthumbnail,directorythumbnail,fontthumbnail,marble_thumbnail_gpx,marble_thumbnail_geojson,pothumbnail,htmlthumbnail,imagethumbnail,jpegthumbnail,marble_thumbnail_kmz,marble_thumbnail_kml,kraorathumbnail,mltpreview,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,marble_thumbnail_osm,designerthumbnail,svgthumbnail,ffmpegthumbs,webarchivethumbnail

@@ -151,6 +151,7 @@ main, #header {
     display: block;
     text-align: center;
     padding-top: 5px;
+    text-shadow: 8px 8px 9px rgba(0, 0, 0, 0.8);
 }
 
 #clock {
