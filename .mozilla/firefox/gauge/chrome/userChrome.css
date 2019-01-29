@@ -14,27 +14,6 @@
 	--disabled:  #696969;
 }
 
-
-/* Contextual toolbar buttons, only show on hover, this is what matters, the rest of the file are just style tweaks I like
- */
-:root:not([customizing]) #nav-bar toolbarbutton
- {
-    margin-left: -28px !important;
-    opacity: 0 !important;
-    transform: scale(.85, .85) !important;
-    pointer-events: none !important;
-    transition: all 100ms var(--animation-easing-function) !important;
-}
-
-:root:not([customizing]) :hover > #nav-bar toolbarbutton,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
-:root:not([customizing]) :hover > #titlebar toolbarbutton {
-    transform: scale(1, 1) !important;
-opacity:1 !important;
-margin-left:0 !important;
-pointer-events: auto !important;
-}
-
 /* Tabs are de-saturated and transparent when inactive */
 .tabbrowser-tab{ 
 	opacity: 0.33 !important;
@@ -67,6 +46,324 @@ pointer-events: auto !important;
     margin-top: 0px !important;
     transition: all 0.2s ease 0s !important;
     opacity: 1 !important;
+}
+
+/* Change colour of new tab button */
+.tabs-newtab-button > #new-tab-button > #alltabs-button {
+	color: var(--fglight) !important;
+}
+
+/* Round buttons */
+.close-icon {
+	border-radius: 0.5em !important;
+}
+
+.tabs-newtab-button > #new-tab-button > #alltabs-button {
+	border-radius: 0.5em !important;
+}
+
+:root{
+	--toolbarbutton-border-radius: 0.5em !important;
+}
+
+/* Round tabs and add a border to everywhere but the bottom */
+.tab-background {
+    border: none !important;
+    border-radius: 0.6em 0.6em 0 0 !important;
+    opacity: .1;
+}
+
+.tabbrowser-tab[selected=false], .tab-content, .tab-background {
+    border-radius: 0.6em 0.6em 0 0 !important;
+	border-left: 1px solid var(--border) !important;
+	border-top: 1px solid var(--border) !important;
+	border-right: 1px solid var(--border) !important;
+}
+
+.tabbrowser-tab[selected=true] .tab-content, .tab-background {
+    border-radius: 0.6em 0.6em 0 0 !important;
+    border-left: 1px solid var(--border) !important;
+    border-top: 1px solid var(--border) !important;
+	border-right: 1px solid var(--border) !important;
+	background-color: var(--bglight) !important;
+	color: #ffffff !important;
+}
+
+.tabbrowser-tab:hover .tab-content, .tab-background {
+    border-radius: 0.6em 0.6em 0 0 !important;
+    border-left: 1px solid var(--border) !important;
+    border-top: 1px solid var(--border) !important;
+	border-right: 1px solid var(--border) !important;
+}
+
+.tabbrowser-tab .tab-text.tab-label {
+    color: var(--fglight) !important;          
+}
+
+.tabbrowser-tab:hover .tab-text.tab-label {
+    color: #ffffff !important;          
+}
+
+.tabbrowser-tab[selected="true"] .tab-text.tab-label {
+    color: #ffffff !important;           
+}
+
+/* No line at the top of tabs, so that you can round the tabs */
+.tab-line {                            
+    display: none !important;
+}
+
+/* Change the cursor when hovering over a tab */
+/*
+.tabbrowser-tab:hover,
+.tabbrowser-tab .tab-text.tab-label:hover {
+    cursor: pointer !important; 
+}
+*/
+
+/* Small padding between tabs */
+.tabbrowser-tab {
+	padding-left: 2px !important;
+	padding-right: 2px !important;
+}
+
+/* No border on tabs i guess? frankly idk */
+[tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
+.tabbrowser-tab:hover::after,
+#tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
+    border: none !important;              
+}
+
+/* Hide a few buttons on the navbar */
+#pageActionSeparator, #pocket-button {
+    display: none !important;
+}
+
+
+/* Center text on the URL bar */
+#urlbar {
+	text-align: center;
+} 
+
+/* Clean up (hide) a few items on the search popup */
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-tags:not([empty]),
+#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-separator:not([type=keyword]),
+#PopupAutoCompleteRichResult > richlistbox > richlistitem[selected] > .ac-url[actiontype=remotetab],
+#PopupAutoCompleteRichResult > richlistbox > richlistitem:hover > .ac-url[actiontype=remotetab]
+{
+  display: none !important;
+}
+
+/* restyle popup items */
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
+	-moz-box-orient: vertical !important;
+	text-align: center !important;
+	padding: 0px 0px !important;
+	border-radius: 0.5em !important;
+    padding-left: 14px !important;
+}
+  
+.autocomplete-richlistbox {
+	background: var(--bglight) !important;
+	color: #ffffff !important;
+}
+
+.ac-text-overflow-container > .ac-action-text:not([selected]) {
+	color: var(--accent) !important;
+	display: -moz-box !important;
+	visibility: visible !important;
+	font-weight: 500 !important;
+}
+
+.ac-text-overflow-container > .ac-action-text[selected=true] {
+	color: var(--fglight) !important;
+	display: -moz-box !important;
+	visibility: visible !important;
+	font-weight: 700 !important;
+}
+
+.ac-text-overflow-container > .ac-title[selected=true] {
+	display: -moz-box !important;
+	font-weight: 700 !important;
+}
+
+.ac-text-overflow-container > .ac-url[selected=true] {
+	display: -moz-box !important;
+	font-weight: 700 !important;
+}
+
+.ac-text-overflow-container > .ac-text[selected=true] {
+	display: -moz-box !important;
+	font-weight: 700 !important;
+}
+
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"], .ac-url > .ac-text-overflow-container > .ac-url-text[selected=true]{
+	color: var(--fglight) !important;
+	font-weight: 700 !important;
+}  
+
+
+
+/* Add a border and rounding to the urlbar/search popup */
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
+  display: block !important;
+}
+
+#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
+  border-inline-end: 0px solid transparent !important;
+}
+
+#PopupAutoCompleteRichResult {
+	/*margin-left: 10% !important;
+	margin-right: 10% !important;*/
+	border-radius: 0 0 0.6em 0.6em !important;
+	border-left: 2px var(--border) solid !important;
+	border-right: 2px var(--border) solid !important;
+	border-bottom: 2px var(--border) solid !important;
+}
+
+
+/* Padding around the sides of the urlbar/search popup */
+.autocomplete-richlistitem {
+	max-width: 90% !important;
+}
+
+/*Prevents White pre-load flash*/ 
+.tabbrowser-tabbox {
+	background-color:  var(--bgdark) !important;
+}
+
+@-moz-document url(about:blank) {
+	* { background: var(--bgdark) !important; }
+}
+
+@-moz-document url(chrome://browser/content/browser.xul){
+	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important
+}  
+
+@-moz-document url(chrome://browser/content/browser.xul)
+{
+   #main-window,
+   browser[type="content-primary"],
+   browser[type="content"],
+   tabbrowser#content,
+   #content,
+   browser[type="content"] > html
+   {
+      background: var(--bgdark) !important;
+   }
+}
+
+
+/* Makes popups, menus and context menus dark */
+.panel-arrowcontent,
+#alltabs-popup .arrowscrollbox-scrollbox,
+menupopup:not(#BMB_bookmarksPopup),
+.textbox-contextmenu{
+	border: none !important;
+	background: var(--bgdark) !important;
+	color: var(--fglight) !important;
+}
+
+/* Dark navbar */
+#navigator-toolbox,
+#TabsToolbar {
+	background: var(--bgdark) !important;
+}
+
+menuitem[disabled="true"],
+menu[disabled="true"]{
+	color: var(--disabled) !important;
+}
+
+menuitem:hover,
+menu:hover{
+	background-color:#2e323f !important;
+}
+
+#nav-bar {
+	background-color: var(--bglight) !important;
+}
+
+#tabbrowser-tabs {
+	background-color: var(--bgdark) !important;
+}
+
+#urlbar, .searchbar-textbox{
+    background-color: #282b37 !important;
+}
+
+#PersonalToolbar {
+	background-color: var(--bgdark) !important;
+}
+
+.box-inherit-scrollbox-innerbox {
+	background-color: #ffffff !important;
+}
+
+#navigator-toolbox, #navigator-toolbox > #PersonalToolbar {
+	background-color: var(--bglight) !important;
+}
+
+#navigator-toolbox, #TabsToolbar, #nav-bar, #PersonalToolbar, 
+.browser-toolbar, #personal-bookmarks, 
+#toolbar-menubar.browser-toolbar.chromeclass-menubar {
+	background-color: var(--bglight) !important;
+}
+
+#navigator-toolbox,
+#TabsToolbar {
+	background: var(--bglight) !important;
+}
+
+#navigator-toolbox #nav-bar {      
+	background: var(--bglight) !important;
+}   
+
+/* Disable small ugly grey border on the bookmarks bar because "my" gtk theme sucks */
+#PersonalToolbar {
+	padding: 0px !important;
+}
+
+/* Padding around bookmarks */
+/*
+.bookmark-item {
+	padding-left: 3px !important;
+	padding-right: 3px !important;
+	margin-left: 3px !important;
+	margin-right: 3px !important;
+}
+*/
+
+
+/* Make buttons on the navbar light grey (Doesn't seem to work) */
+/*
+#alltabs-button, #new-tab-button, #back-button, #forward-button, #reload-button, #home-button, #stop-button, #downloads-button, #nav-bar-overflow-button, #PanelUI-menu-button,  {
+	color: var(--fglight) !important;
+	background-image: none !important;
+}*/
+
+/* Contextual toolbar buttons, only show on hover, this is what matters, the rest of the file are just style tweaks I like
+ */
+:root:not([customizing]) #nav-bar toolbarbutton
+ {
+    margin-left: -28px !important;
+    opacity: 0 !important;
+    transform: scale(.85, .85) !important;
+    pointer-events: none !important;
+    transition: all 100ms var(--animation-easing-function) !important;
+}
+
+:root:not([customizing]) :hover > #nav-bar toolbarbutton,
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
+:root:not([customizing]) :hover > #titlebar toolbarbutton {
+    transform: scale(1, 1) !important;
+opacity:1 !important;
+margin-left:0 !important;
+pointer-events: auto !important;
 }
 
 /* auto collapse nav bar height when in stealth mode (not active), kinda jumpy and annoying after a while so let's just comment it for now */
@@ -298,300 +595,3 @@ toolbarspring {
 	--tab-line-color: var(--bglight) !important;
 }
 */
-/* Change colour of new tab button */
-.tabs-newtab-button > #new-tab-button > #alltabs-button {
-	color: var(--fglight) !important;
-}
-
-/* Round buttons */
-.close-icon {
-	border-radius: 0.5em !important;
-}
-
-.tabs-newtab-button > #new-tab-button > #alltabs-button {
-	border-radius: 0.5em !important;
-}
-
-:root{
-	--toolbarbutton-border-radius: 0.5em !important;
-}
-
-/* Round tabs and add a border to everywhere but the bottom */
-.tab-background {
-    border: none !important;
-    border-radius: 0.6em 0.6em 0 0 !important;
-    opacity: .1;
-}
-
-.tabbrowser-tab[selected=false], .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
-	border-left: 1px solid var(--border) !important;
-	border-top: 1px solid var(--border) !important;
-	border-right: 1px solid var(--border) !important;
-}
-
-.tabbrowser-tab[selected=true] .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
-    border-left: 1px solid var(--border) !important;
-    border-top: 1px solid var(--border) !important;
-	border-right: 1px solid var(--border) !important;
-	background-color: var(--bglight) !important;
-	color: #ffffff !important;
-}
-
-.tabbrowser-tab:hover .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
-    border-left: 1px solid var(--border) !important;
-    border-top: 1px solid var(--border) !important;
-	border-right: 1px solid var(--border) !important;
-}
-
-.tabbrowser-tab .tab-text.tab-label {
-    color: var(--fglight) !important;          
-}
-
-.tabbrowser-tab:hover .tab-text.tab-label {
-    color: #ffffff !important;          
-}
-
-.tabbrowser-tab[selected="true"] .tab-text.tab-label {
-    color: #ffffff !important;           
-}
-
-/* No line at the top of tabs, so that you can round the tabs */
-.tab-line {                            
-    display: none !important;
-}
-
-/* Change the cursor when hovering over a tab */
-/*
-.tabbrowser-tab:hover,
-.tabbrowser-tab .tab-text.tab-label:hover {
-    cursor: pointer !important; 
-}
-*/
-
-/* Small padding between tabs */
-.tabbrowser-tab {
-	padding-left: 2px !important;
-	padding-right: 2px !important;
-}
-
-/* No border on tabs i guess? frankly idk */
-[tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
-.tabbrowser-tab:hover::after,
-#tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
-    border: none !important;              
-}
-
-/* Hide a few buttons on the navbar */
-#pageActionSeparator, #pocket-button {
-    display: none !important;
-}
-
-
-/* Center text on the URL bar */
-#urlbar {
-	text-align: center;
-}
-
-
-/* Clean up (hide) a few items on the search popup */
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-tags:not([empty]),
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-separator:not([type=keyword]),
-#PopupAutoCompleteRichResult > richlistbox > richlistitem[selected] > .ac-url[actiontype=remotetab],
-#PopupAutoCompleteRichResult > richlistbox > richlistitem:hover > .ac-url[actiontype=remotetab]
-{
-  display: none !important;
-}
-
-/* restyle popup items */
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
-	-moz-box-orient: vertical !important;
-	text-align: center !important;
-	padding: 4px 0px !important;
-	border-radius: 0.5em !important;
-}
-  
-.autocomplete-richlistbox {
-	background: var(--bglight) !important;
-	color: #ffffff !important;
-}
-
-.ac-text-overflow-container > .ac-action-text:not([selected]) {
-	color: var(--accent) !important;
-	display: -moz-box !important;
-	visibility: visible !important;
-	font-weight: 500 !important;
-}
-
-.ac-text-overflow-container > .ac-action-text[selected=true] {
-	color: var(--fglight) !important;
-	display: -moz-box !important;
-	visibility: visible !important;
-	font-weight: 700 !important;
-}
-
-.ac-text-overflow-container > .ac-title[selected=true] {
-	display: -moz-box !important;
-	font-weight: 700 !important;
-}
-
-.ac-text-overflow-container > .ac-url[selected=true] {
-	display: -moz-box !important;
-	font-weight: 700 !important;
-}
-
-.ac-text-overflow-container > .ac-text[selected=true] {
-	display: -moz-box !important;
-	font-weight: 700 !important;
-}
-
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"], .ac-url > .ac-text-overflow-container > .ac-url-text[selected=true]{
-	color: var(--fglight) !important;
-	font-weight: 700 !important;
-}  
-
-
-
-/* Add a border and rounding to the urlbar/search popup */
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
-  display: block !important;
-}
-
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
-  border-inline-end: 0px solid transparent !important;
-}
-
-#PopupAutoCompleteRichResult {
-	/*margin-left: 10% !important;
-	margin-right: 10% !important;*/
-	border-radius: 0 0 0.6em 0.6em !important;
-	border-left: 2px var(--border) solid !important;
-	border-right: 2px var(--border) solid !important;
-	border-bottom: 2px var(--border) solid !important;
-}
-
-
-/* Padding around the sides of the urlbar/search popup */
-.autocomplete-richlistitem {
-	max-width: 90% !important;
-}
-
-/*Prevents White pre-load flash*/ 
-.tabbrowser-tabbox {
-	background-color:  var(--bgdark) !important;
-}
-
-@-moz-document url(about:blank) {
-	* { background: var(--bgdark) !important; }
-}
-
-@-moz-document url(chrome://browser/content/browser.xul){
-	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important
-}  
-
-@-moz-document url(chrome://browser/content/browser.xul)
-{
-   #main-window,
-   browser[type="content-primary"],
-   browser[type="content"],
-   tabbrowser#content,
-   #content,
-   browser[type="content"] > html
-   {
-      background: var(--bgdark) !important;
-   }
-}
-
-
-/* Makes popups, menus and context menus dark */
-.panel-arrowcontent,
-#alltabs-popup .arrowscrollbox-scrollbox,
-menupopup:not(#BMB_bookmarksPopup),
-.textbox-contextmenu{
-	border: none !important;
-	background: var(--bgdark) !important;
-	color: var(--fglight) !important;
-}
-
-/* Dark navbar */
-#navigator-toolbox,
-#TabsToolbar {
-	background: var(--bgdark) !important;
-}
-
-menuitem[disabled="true"],
-menu[disabled="true"]{
-	color: var(--disabled) !important;
-}
-
-menuitem:hover,
-menu:hover{
-	background-color:#2e323f !important;
-}
-
-#nav-bar {
-	background-color: var(--bglight) !important;
-}
-
-#tabbrowser-tabs {
-	background-color: var(--bgdark) !important;
-}
-
-#urlbar, .searchbar-textbox{
-    background-color: #282b37 !important;
-}
-
-#PersonalToolbar {
-	background-color: var(--bgdark) !important;
-}
-
-.box-inherit-scrollbox-innerbox {
-	background-color: #ffffff !important;
-}
-
-#navigator-toolbox, #navigator-toolbox > #PersonalToolbar {
-	background-color: var(--bglight) !important;
-}
-
-#navigator-toolbox, #TabsToolbar, #nav-bar, #PersonalToolbar, 
-.browser-toolbar, #personal-bookmarks, 
-#toolbar-menubar.browser-toolbar.chromeclass-menubar {
-	background-color: var(--bglight) !important;
-}
-
-#navigator-toolbox,
-#TabsToolbar {
-	background: var(--bglight) !important;
-}
-
-#navigator-toolbox #nav-bar {      
-	background: var(--bglight) !important;
-}   
-
-/* Disable small ugly grey border on the bookmarks bar because "my" gtk theme sucks */
-#PersonalToolbar {
-	padding: 0px !important;
-}
-
-/* Padding around bookmarks */
-/*
-.bookmark-item {
-	padding-left: 3px !important;
-	padding-right: 3px !important;
-	margin-left: 3px !important;
-	margin-right: 3px !important;
-}
-*/
-
-
-/* Make buttons on the navbar light grey (Doesn't seem to work) */
-/*
-#alltabs-button, #new-tab-button, #back-button, #forward-button, #reload-button, #home-button, #stop-button, #downloads-button, #nav-bar-overflow-button, #PanelUI-menu-button,  {
-	color: var(--fglight) !important;
-	background-image: none !important;
-}*/
