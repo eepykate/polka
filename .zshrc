@@ -9,7 +9,7 @@ autoload -U promptinit; promptinit       # Start shell theme daemon
 prompt pure                              # Shell theme
 export VISUAL='code'     # Default GUI text editor
 export EDITOR='vim'      # Default terminal text editor
-#ZSH_THEME="agnoster"    # oh-my-zsh themeAa
+#ZSH_THEME="agnoster"    # oh-my-zsh theme
 #setopt CORRECT          # Correct wrong commands
 source ~/.zprofile       # Execute commands from ~/.zprofile when zsh is opened
 source ~/.aliases        # Aliases
