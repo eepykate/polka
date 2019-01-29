@@ -33,7 +33,7 @@ hi TabLine      ctermbg=0      ctermfg=NONE
 hi TabLineSel   ctermbg=0      ctermfg=15
 hi TabLineFill  ctermbg=0      ctermfg=NONE
 hi Title        ctermbg=NONE   ctermfg=15
-hi Visual       ctermbg=7      ctermfg=8
+hi Visual       ctermbg=15     ctermfg=8    cterm=standout
 hi WildMenu     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi WarningMsg   ctermbg=NONE   ctermfg=11   cterm=NONE
 hi DIffAdd      ctermbg=NONE   ctermfg=2
@@ -42,7 +42,7 @@ hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
 hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
 hi CursorLineNr ctermbg=NONE   ctermfg=7    cterm=bold
-hi MatchParen   ctermbg=8      ctermfg=15
+hi MatchParen   ctermbg=3      ctermfg=0
 hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 

@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/gauge/.config/fontconfig/conf.d'
 let g:netrw_dirhist_2='/home/gauge/.mozilla/firefox/gauge/chrome'
+let g:netrw_dirhist_3='/home/gauge/git/.config/nvim/colors'
