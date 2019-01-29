@@ -204,26 +204,42 @@ installationloop
 
 ## Give root sudoers permissions if not already given (Also mine but this needs to be at the start)
 if [ -z grep "root ALL=(ALL) ALL" "/etc/sudoers" ]; then
-	sed -i '/## User privilege specification/a root ALL=(ALL) ALL' /etc/sudoers
+	echo "root ALL=(ALL) ALL" >> /etc/sudoers
 fi
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name/git"
-ln -sf /home/$name/git/.*                                 /home/$name/
-ln -sf /home/$name/git/.config/*                          /home/$name/.config/
-ln -sf /home/$name/git/.local/share/*                     /home/$name/.local/share/
-ln -sf /home/$name/git/.icons/*                           /home/$name/.icons/
-ln -sf /home/$name/git/.fluxbox/                          /home/$name/.fluxbox/
-cp  -f /home/$name/git/.mozilla/firefox/profiles.ini      /home/$name/.mozilla/firefox/profiles.ini
-ln -sf /home/$name/git/.mozilla/firefox/gauge/chrome/     /home/$name/.mozilla/firefox/gauge/chrome/
-cp  -f /home/$name/git/.mozilla/firefox/gauge/prefs.js    /home/$name/.mozilla/firefox/gauge/prefs.js
-ln -sf /home/$name/git/.startpage/                        /home/$name/.startpage
-ln -sf /home/$name/git/.themes/*                          /home/$name/.themes/
-ln -sf /home/$name/git/bin/*                              /home/$name/bin/
-ln -sf /home/$name/git/colours/                           /home/$name/colours
-ln -sf /home/$name/git/garbs/                             /home/$name/garbs/
-ln -sf /home/$name/git/Wallpapers/*                       /home/$name/Wallpapers/
-#ln -s /home/$name/git/   /home/$name/ -f
+
+#Symlink / copy files from ~/git into ~/
+
+mkdir -p \
+	/home/$name/.mozilla/firefox/gauge/chrome \
+	/home/$name/.config \
+	/home/$name/.local/share \
+	/home/$name/bin \
+	/home/$name/.icons/default \
+	/home/$name/.config/backup \
+	/home/$name/.themes \
+	/home/$name/
+
+
+find /home/$name/git/.config/ -maxdepth 1 > /tmp/config.txt
+sed -e 's/git\///' -e '1d' < /tmp/config.txt > /tmp/config_1.txt
+while read i ; do mv $i /home/$name/.config/backup/ ; done < /tmp/config_1.txt
+while read i ; do ln -sf $i /home/$name/.config/ ; done < /tmp/config.txt
+
+cp -rf /home/$name/git/.local/share/* /home/$name/.local/share/
+cp -rf /home/$name/git/.themes/* /home/$name/.themes/
+
+cp -f /home/$name/git/.icons/default/index.theme /home/$name/.icons/default/index.theme 
+
+find /home/$name/git/ -maxdepth 1 | grep -v "local\|config\|bin\|mozilla\|theme\|icon\|git" > /tmp/home.txt
+while read i ; do ln -sf $i /home/$name/ ; done < /tmp/home.txt
+
+ln -sf /home/$name/git/.mozilla/firefox/gauge/chrome/* /home/$name/.mozilla/firefox/gauge/chrome/
+cp /home/$name/git/.mozilla/firefox/profiles.ini /home/$name/.mozilla/firefox/profiles.ini
+
+ln -sf /home/$name/git/bin/* /home/$name/bin/
 
 # Install the LARBS Firefox profile in ~/.mozilla/firefox/
 #putgitrepo "https://github.com/LukeSmithxyz/mozillarbs.git" "/home/$name/.mozilla/firefox"
