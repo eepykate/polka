@@ -92,12 +92,12 @@ body.nojs #top-header {
     padding: 15px;
 }
 
+
 .search-box input[type="text"] {
     width: 800px;
     max-width: 100%;
 
-    padding: 5px;
-    border: 2px solid var(--border);
+    border: 0px solid var(--border);
 
     background: var(--bgdark);
     color: var(--fglight);
@@ -105,13 +105,59 @@ body.nojs #top-header {
     font-family: 'Iosevka Term';
     font-size: 16px;
     text-align: center;
+    /*box-shadow: 4px 4px 4px 1.5px rgba(0, 0, 0, 0.3);*/
+}
+
+#digital-clock {
+    font-family: 'Iosevka Term';
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 4px 4px 4px 1.5px rgba(0, 0, 0, 0.3);
+    /* margin-left: 87%;
+    padding-top: 5px; */
+    text-align: center;
+    box-shadow: none;
+
+}
+
+.search-box, .search-box input[type="text"] {display:none;}
+#digital-clock {display: block;}
+
+#search-clock:hover, #search-clock:focus, #search-clock:focus-within {
+    border: 2px solid var(--accent);
+}
+
+ 
+
+#search-clock {
     display: block;
+    background-color: var(--bglight);
+    width: 800px;
+    max-width: 100%;
+
+    padding: 10px;
+    border: 2px solid var(--border);
+
+    background: var(--bgdark);
+    color: var(--fglight);
+
+    font-family: 'Iosevka Term';
     box-shadow: 4px 4px 4px 1.5px rgba(0, 0, 0, 0.3);
 }
 
-.search-box input[type="text"]:focus {
-    border: 2px solid var(--accent);
+#search-clock:hover #digital-clock ,
+#search-clock:focus-within #digital-clock {
+    display: none;
 }
+
+#search-clock:hover .search-box, #search-clock:hover .search-box input[type="text"],
+.search-box input[type="text"]:focus {
+    display: block;
+}
+
+/*.search-box input[type="text"]:focus {
+    border: 2px solid var(--accent);
+}*/
 
 .search-box {
     width: 800px;
@@ -119,18 +165,16 @@ body.nojs #top-header {
     margin-left: auto;
     margin-right: auto;
     display: block;
-
 }
 
 
-.search-box input[type="text"]:hover {
+#search-clock:hover, #search-clock:focus-within {
     border-color: var(--accent);
     transition: all 0.4s !important;
-
 }
 
 .search-box {
-    padding-top: 12px;
+    padding: 0;
 }
 
 main, #header {
@@ -146,12 +190,9 @@ main, #header {
     height: 80px;
 }
 
-#digital-clock {
-    /* margin-left: 87%; */
-    display: block;
-    text-align: center;
-    padding-top: 5px;
-    text-shadow: 8px 8px 9px rgba(0, 0, 0, 0.8);
+.header > * {
+    margin: 0 auto;
+
 }
 
 #clock {
