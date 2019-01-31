@@ -53,14 +53,14 @@
      height="22"
      id="rect2"
      x="0"
-     y="0.0042372919"
+     y="0"
      style="fill:#1c202a;stroke-width:0.68736762;fill-opacity:1" />
   <rect
      width="22"
-     height="1.9839778"
+     height="2"
      id="rect4"
      x="0"
-     y="0.0042372919"
+     y="0"
      style="fill:#4d9de0;fill-opacity:1;stroke-width:1.16778517" />
   <circle
      style="fill:#4d9de0;stroke-width:1.12804556;fill-opacity:1"
@@ -78,9 +78,9 @@
        id="rect820"
        style="opacity:1;fill:#15171d;fill-opacity:1;stroke:none;stroke-width:1.9369545;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     <rect
-       y="20.2"
+       y="20"
        x="0"
-       height="1.8"
+       height="2"
        width="22"
        id="rect823"
        style="opacity:1;fill:#1c202a;fill-opacity:1;stroke:none;stroke-width:2.45846462;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />

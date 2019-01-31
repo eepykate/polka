@@ -53,7 +53,7 @@
      height="22"
      id="rect2"
      x="0"
-     y="0.00099311769"
+     y="0"
      style="fill:#6992c5;fill-opacity:1;stroke-width:0.6636495" />
   <rect
      width="2"
@@ -64,7 +64,7 @@
      style="fill:#cccccc;fill-opacity:0.1" />
   <rect
      style="fill:#15171d;fill-opacity:1;stroke-width:2.2012198"
-     y="0.00099311769"
+     y="0"
      x="0"
      id="rect822"
      height="22"
@@ -73,7 +73,7 @@
      style="opacity:1;fill:#4d9de0;fill-opacity:1;stroke:none;stroke-width:4.39800119;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
      id="rect814"
      width="14.151318"
-     height="1.9951006"
+     height="2"
      x="0"
-     y="0.00099311769" />
+     y="0" />
 </svg>

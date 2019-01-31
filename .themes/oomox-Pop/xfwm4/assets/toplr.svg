@@ -43,7 +43,7 @@
      showgrid="false"
      inkscape:zoom="256"
      inkscape:cx="3.9153468"
-     inkscape:cy="20.332755"
+     inkscape:cy="20"
      inkscape:window-x="1440"
      inkscape:window-y="32"
      inkscape:window-maximized="1"
@@ -53,11 +53,11 @@
      height="22"
      id="rect2"
      x="0"
-     y="0.00099311769"
+     y="0"
      style="fill:#6992c5;stroke-width:0.8291375;fill-opacity:1" />
   <rect
      style="fill:#4d9de0;stroke-width:0.8291375;fill-opacity:1"
-     y="0.00099311769"
+     y="0"
      x="0"
      id="rect822"
      height="22"

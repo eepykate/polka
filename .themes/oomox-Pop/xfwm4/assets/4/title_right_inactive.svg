@@ -49,13 +49,12 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6" />
   <rect
-     style="fill:#15171d;fill-opacity:1;stroke-width:2.20333934"
+     style="fill:#15171d;fill-opacity:1;stroke-width:2.20119929"
      y="0"
-     x="-14.080341"
+     x="0"
      id="rect822"
      height="22"
-     width="14.0834"
-     transform="scale(-1,1)" />
+     width="14" />
   <g
      transform="matrix(-1,0,0,1,14,0)"
      id="g840">
@@ -82,9 +81,9 @@
        id="rect820"
        style="opacity:1;fill:#15171d;fill-opacity:1;stroke:none;stroke-width:1.01387703;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
     <rect
-       y="20.200001"
+       y="20"
        x="0"
-       height="1.8"
+       height="2"
        width="7"
        id="rect823"
        style="opacity:1;fill:#1c202a;fill-opacity:1;stroke:none;stroke-width:1.39211655;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal" />
