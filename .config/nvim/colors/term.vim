@@ -33,7 +33,7 @@ hi TabLine      ctermbg=0      ctermfg=NONE
 hi TabLineSel   ctermbg=0      ctermfg=15
 hi TabLineFill  ctermbg=0      ctermfg=NONE
 hi Title        ctermbg=NONE   ctermfg=15
-hi Visual       ctermbg=15     ctermfg=8    cterm=standout
+hi Visual       ctermbg=0      ctermfg=NONE cterm=reverse
 hi WildMenu     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi WarningMsg   ctermbg=NONE   ctermfg=11   cterm=NONE
 hi DIffAdd      ctermbg=NONE   ctermfg=2
