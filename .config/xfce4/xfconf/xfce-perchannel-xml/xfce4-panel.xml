@@ -126,6 +126,7 @@
       <property name="names-visible" type="array">
         <value type="string" value="orage"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="obs"/>
         <value type="string" value="pnmixer"/>
         <value type="string" value="discord"/>
       </property>
