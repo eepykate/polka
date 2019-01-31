@@ -71,9 +71,10 @@ main h1 {
 }
 
 main span:hover {
-    background-color: var(--accent) !important;
-    color: var(--bgdark) !important;
+    /*background-color: var(--accent) !important;*/
+    color: var(--accent) !important;
     transition: all 0.4s ease 0s !important;
+    outline: none;
 }
 
 main span {
@@ -206,4 +207,9 @@ main a {
 main nav a img {
     width: 1rem;
     height: 1rem;
+}
+
+* {
+    outline: none;
+    text-decoration: none;
 }
