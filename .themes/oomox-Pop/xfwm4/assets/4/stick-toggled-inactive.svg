@@ -7,27 +7,27 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2"
+   width="22"
    height="22"
-   viewBox="0 0 2 22"
+   viewBox="0 0 22 22"
    version="1.1"
-   id="svg6"
-   sodipodi:docname="toplr_inactive.svg"
+   id="svg12"
+   sodipodi:docname="stick-toggled-inactive.svg"
    inkscape:version="0.92.2 2405546, 2018-03-11">
   <metadata
-     id="metadata12">
+     id="metadata18">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs10" />
+     id="defs16" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -39,27 +39,42 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1058"
-     id="namedview8"
+     id="namedview14"
      showgrid="false"
-     inkscape:zoom="128"
-     inkscape:cx="4.6769797"
-     inkscape:cy="20.159403"
+     inkscape:zoom="29.5"
+     inkscape:cx="20.400049"
+     inkscape:cy="17.914767"
      inkscape:window-x="1440"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6" />
+     inkscape:current-layer="svg12" />
   <rect
-     width="2"
+     width="22"
      height="22"
      id="rect2"
      x="0"
-     y="0.00099311769"
-     style="fill:#6992c5;stroke-width:0.8291375;fill-opacity:1" />
+     y="3.8621337e-09"
+     style="fill:#181a21;stroke-width:0.6875" />
   <rect
-     style="fill:#696969;stroke-width:0.8291375;fill-opacity:1"
-     y="0.00099311769"
+     width="22"
+     height="0.6875"
+     id="rect4"
      x="0"
-     id="rect822"
-     height="22"
-     width="2" />
+     y="3.8621337e-09"
+     style="fill:#cccccc;fill-opacity:0.1;stroke-width:0.6875" />
+  <g
+     id="g10"
+     style="opacity:0.5;fill:#cccccc"
+     transform="scale(0.6875)">
+    <circle
+       cx="16"
+       cy="16"
+       r="12"
+       id="circle6"
+       style="opacity:0" />
+    <path
+       d="m 16,10 a 6,6 0 0 0 -6,6 6,6 0 0 0 6,6 6,6 0 0 0 6,-6 6,6 0 0 0 -6,-6 z m 0,2 a 4,4 0 0 1 4,4 4,4 0 0 1 -4,4 4,4 0 0 1 -4,-4 4,4 0 0 1 4,-4 z m 0,2 a 2,2 0 0 0 -2,2 2,2 0 0 0 2,2 2,2 0 0 0 2,-2 2,2 0 0 0 -2,-2 z"
+       id="path8"
+       inkscape:connector-curvature="0" />
+  </g>
 </svg>
