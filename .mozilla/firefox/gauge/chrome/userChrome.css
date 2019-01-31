@@ -80,12 +80,12 @@
 }
 
 /* Round tabs & change colour*/
-.tabbrowser-tab, .tab-content, .tab-background {
+.tab-content, .tab-background {
     border-radius: 0.6em 0.6em 0 0 !important;
     background-color: var(--bgdark) !important;
 }
 
-.tabbrowser-tab[selected=false], .tab-content, .tab-background {
+.tabbrowser-tab[selected=false] .tab-content, .tab-background {
     background-color: var(--bgdark) !important;
 }
 
@@ -123,8 +123,8 @@
 
 /* Small padding between tabs */
 .tabbrowser-tab {
-	padding-left: 2px !important;
-	padding-right: 2px !important;
+	margin-left: 2px !important;
+	margin-right: 2px !important;
 }
 
 /* No border on tabs i guess? frankly idk */
