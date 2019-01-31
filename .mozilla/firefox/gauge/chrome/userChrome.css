@@ -15,17 +15,25 @@
 }
 
 /* Tabs are de-saturated and transparent when inactive */
+
+.tabbrowser-tab:not([selected=true]):not(:hover) > .tab-stack > .tab-content > * {
+    filter: grayscale(50%) !important;
+}
+
+/*
+.tabbrowser-tab[selected=true] > .tab-stack > .tab-content > *,
+.tabbrowser-tab:hover > .tab-stack > .tab-content > *{
+    filter: grayscale(0%) !important;
+}*/
+
 .tabbrowser-tab{ 
 	opacity: 0.33 !important;
-	filter: grayscale(50%) !important;
 }
 .tabbrowser-tab:hover{ 
 	opacity: 0.66 !important;
-	filter: grayscale(0%) !important;
 }
 .tabbrowser-tab[selected]{ 
 	opacity: 1 !important;
-	filter: grayscale(0%) !important;
 }
 
 /* Round URL bar */
@@ -53,6 +61,11 @@
 	color: var(--fglight) !important;
 }
 
+.tabs-newtab-button:hover > #new-tab-button > #alltabs-button {
+	color: var(--accent) !important;
+	background-color: transparent !important;
+}
+
 /* Round buttons */
 .close-icon {
 	border-radius: 0.5em !important;
@@ -66,34 +79,23 @@
 	--toolbarbutton-border-radius: 0.5em !important;
 }
 
-/* Round tabs and add a border to everywhere but the bottom */
-.tab-background {
-    border: none !important;
+/* Round tabs & change colour*/
+.tabbrowser-tab, .tab-content, .tab-background {
     border-radius: 0.6em 0.6em 0 0 !important;
-    opacity: .1;
+    background-color: var(--bgdark) !important;
 }
 
 .tabbrowser-tab[selected=false], .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
-	border-left: 1px solid var(--border) !important;
-	border-top: 1px solid var(--border) !important;
-	border-right: 1px solid var(--border) !important;
+    background-color: var(--bgdark) !important;
 }
 
 .tabbrowser-tab[selected=true] .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
-    border-left: 1px solid var(--border) !important;
-    border-top: 1px solid var(--border) !important;
-	border-right: 1px solid var(--border) !important;
 	background-color: var(--bglight) !important;
 	color: #ffffff !important;
 }
 
 .tabbrowser-tab:hover .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
-    border-left: 1px solid var(--border) !important;
-    border-top: 1px solid var(--border) !important;
-	border-right: 1px solid var(--border) !important;
+    background-color: var(--bglight) !important;
 }
 
 .tabbrowser-tab .tab-text.tab-label {
@@ -114,12 +116,10 @@
 }
 
 /* Change the cursor when hovering over a tab */
-/*
 .tabbrowser-tab:hover,
 .tabbrowser-tab .tab-text.tab-label:hover {
     cursor: pointer !important; 
 }
-*/
 
 /* Small padding between tabs */
 .tabbrowser-tab {

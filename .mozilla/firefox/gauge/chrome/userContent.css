@@ -4,7 +4,7 @@
     --bglighter:   #282d3b;
     --bglightest:  #41485c;
   
-    --fgdark:      #cbe3f1;
+    --fgdark:      #9aafc4;
 	--fglight:     #cbe3f1;
 	  
     --blue:        #4d9de0;
@@ -88,9 +88,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-category-text-selected-active: var(--blue) !important;
 
 	/* These change some colors on about:home */
-	/*--home-text: var(--blue);
-	--home-search-engine-choices: linear-gradient(#559,#115);
-	--Home-search-item-text-color: var(--blue);*/
+	--home-text: var(--fglight);
+	--home-search-engine-choices: var(--bglight);
+	--Home-search-item-text-color: var(--blue);
 
 	/* This one changes the border of all boxes with a blue border focus effect */
 	--in-content-border-focus: var(--blue) !important;
@@ -372,18 +372,18 @@ body {
 
 .contentSearchHeader {
  	background: var(--bglight) !important;
- 	color: var(--bglighter) !important;
+ 	color: var(--fglight) !important;
  	border-bottom: 1px solid #000 !important}
 
 .contentSearchSearchWithHeaderSearchText {
 	color: var(--Home-search-item-text-color) !important}
 
 .contentSearchSettingsButton {
-    background: linear-gradient(var(--bglight),#111) !important;
-    color: var(--bglighter) !important}
+    background: var(--bglight) !important;
+    color: var(--fgdark) !important}
 
 .contentSearchSettingsButton.selected {
-    color: var(--bglighter) !important}
+    color: var(--fglight) !important}
 
 .contentSearchSettingsButton:active {
     background: linear-gradient(#111,var(--bglight)) !important}
