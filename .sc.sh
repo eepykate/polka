@@ -1,0 +1,8 @@
+alias fchr="cd ~/.mozilla/firefox/gauge/chrome/ && ls_extended -h --group-directories-first"
+alias zshrc="$EDITOR ~/.zshrc" 
+alias vimrc="$EDITOR ~/.config/nvim/init.vim" 
+alias pro="$EDITOR ~/.profile" 
+alias xpro="$EDITOR ~/.xprofile" 
+alias xres="$EDITOR ~/.Xresources" 
+alias sc="$EDITOR ~/.sc" 
+alias aliases="$EDITOR ~/.aliases" 

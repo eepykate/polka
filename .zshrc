@@ -13,4 +13,6 @@ export EDITOR='vim'      # Default terminal text editor
 #setopt CORRECT          # Correct wrong commands
 source ~/.zprofile       # Execute commands from ~/.zprofile when zsh is opened
 source ~/.aliases        # Aliases
+shortcuts 
+source ~/.sc.sh
 stty -ixon               # Disable Ctrl-S && Ctrl-Q
