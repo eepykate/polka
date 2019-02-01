@@ -16,7 +16,7 @@
 
 /* Tabs are de-saturated and transparent when inactive */
 
-.tabbrowser-tab:not([selected=true]):not(:hover) > .tab-stack > .tab-content > * {
+.tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
     filter: grayscale(50%) !important;
 }
 
@@ -80,21 +80,19 @@
 }
 
 /* Round tabs & change colour*/
-.tab-content, .tab-background {
+.tabbrowser-tab, .tab-content, .tab-background {
     border-radius: 0.6em 0.6em 0 0 !important;
-    background-color: var(--bgdark) !important;
+    background-color: transparent !important;
 }
 
-.tabbrowser-tab[selected=false] .tab-content, .tab-background {
-    background-color: var(--bgdark) !important;
-}
-
-.tabbrowser-tab[selected=true] .tab-content, .tab-background {
+.tabbrowser-tab[selected=true],
+.tabbrowser-tab[selected=true] .tab-content {
 	background-color: var(--bglight) !important;
 	color: #ffffff !important;
 }
 
-.tabbrowser-tab:hover .tab-content, .tab-background {
+.tabbrowser-tab:hover,
+.tabbrowser-tab:hover .tab-content {
     background-color: var(--bglight) !important;
 }
 
@@ -132,6 +130,15 @@
 .tabbrowser-tab:hover::after,
 #tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
     border: none !important;              
+}
+
+/*#tabbrowser-tabs[movingtab=true] > *, #TabsToolbar > * {
+    padding: 0 !important;
+    margin: 0 !important;
+}*/
+
+#navigator-toolbox[movingtab] #tabbrowser-tabs {
+    margin-bottom: -30px !important;
 }
 
 /* Hide a few buttons on the navbar */
@@ -380,9 +387,9 @@ height: 35px !important;
 }
 */
 
-.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
+/*.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
 	background-color: var(--bglight) !important;
-  }
+}*/
 
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
 	--color-overflow: #222;                                         /* >> button color */
