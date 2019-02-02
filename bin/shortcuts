@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cp /dev/null ~/.sc.sh
-
+printf "" > ~/.sc.sh
 sed '/^#/d' ~/.sc | awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls_extended -h --group-directories-first\""}' >> ~/.sc.sh
 sed '/^#/d' ~/.sc | awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"\" "}' >> ~/.sc.sh
-
