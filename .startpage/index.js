@@ -82,3 +82,12 @@ function fixSectionHeight() {
 fixSectionHeight()
 window.addEventListener('resize', fixSectionHeight)
 
+var n = document.getElementById("notes");
+/* save */
+var s = function(){localStorage.setItem("notes", n.value);}
+/* retrieve (only on page load) */
+if(window.localStorage){ n.value = localStorage.getItem("notes");}
+/* autosave onchange and every 500ms and when you close the window */
+n.onchange = s();
+setInterval( s, 500);
+window.onunload = s();

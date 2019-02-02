@@ -50,9 +50,10 @@ body {
 
 
 .shadow-box {
-    box-shadow: 5px 5px 10px 5px #101010;
+    box-shadow: 4px 4px 15px 1.5px rgba(0, 0, 0, 0.4);
     text-align: center;
     font-size: 14px
+    transition: all 0.4s ease 0s; 
 }
 
 main h1 {
@@ -73,7 +74,6 @@ main h1 {
 main span:hover {
     /*background-color: var(--accent) !important;*/
     color: var(--accent) !important;
-    transition: all 0.4s ease 0s !important;
     outline: none;
 }
 
@@ -83,6 +83,7 @@ main span {
     padding-bottom: 3px;
     z-index: 2;
     margin: 5px;
+    transition: all 0.4s ease 0s; 
 }
 
 body.nojs #top-header {
@@ -107,11 +108,12 @@ body.nojs #top-header {
     font-size: 16px;
     text-align: center;
     display: block;
-    box-shadow: 4px 4px 4px 1.5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease 0s; 
 }
 
 .search-box input[type="text"]:focus {
     border: 2px solid var(--accent);
+    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
 }
 
 .search-box {
@@ -120,14 +122,12 @@ body.nojs #top-header {
     margin-left: auto;
     margin-right: auto;
     display: block;
-
 }
 
 
 .search-box input[type="text"]:hover {
     border-color: var(--accent);
-    transition: all 0.4s !important;
-
+    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
 }
 
 .search-box {
@@ -152,7 +152,7 @@ main, #header {
     display: block;
     text-align: center;
     padding-top: 5px;
-    text-shadow: 8px 8px 9px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.8);
 }
 
 #clock {
@@ -168,17 +168,22 @@ main, #header {
 .nav-wrapper {
     margin: 10px;
     border: 2px solid var(--bglight);
-    background: var(--bgdark)
+    background: var(--bgdark);
+    transition: all 0.4s ease 0s; 
 }
 
 .nav-wrapper:hover {
     border-color: var(--accent);
-    transition: all 0.4s !important;
+    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
+}
+
+.nav-wrapper h1 {
+    transition: all 0.4s ease 0s; 
+
 }
 
 .nav-wrapper:hover h1 {
     background: var(--accent);
-    transition: all 0.4s !important;
     color: var(--bgdark);
 }
 
@@ -212,4 +217,31 @@ main nav a img {
 * {
     outline: none;
     text-decoration: none;
+}
+
+
+#notes {
+    display: block;
+    background-color: var(--bgdark);
+    color: var(--fglight);
+    border: none;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    max-width: 800px;
+    width: 90%;
+    border: 2px solid var(--bglight);
+    transition: all 0.4s ease 0s; 
+}
+
+#notes:focus {
+    border: 2px solid var(--accent);
+    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
+}
+
+#notes:hover {
+    border: 2px solid var(--accent);
+    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
 }
