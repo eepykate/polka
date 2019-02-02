@@ -14,8 +14,16 @@
 	--disabled:  #696969;
 }
 
-/* Tabs are de-saturated and transparent when inactive */
+/* Stop white flash on opening a new tab */
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+  background: var(--bgdark)!important
+}
 
+/* Tabs are de-saturated and transparent when inactive */
 .tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
     filter: grayscale(50%) !important;
 }
