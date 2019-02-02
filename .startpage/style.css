@@ -14,11 +14,12 @@
 html,
 body {
     width: 100%;
-    height: 99%;
+    height: 100%;
 
     margin: 0;
     padding: 0;
     border: none;
+    position:relative;
 }
 
 @font-face {
@@ -46,6 +47,8 @@ body {
     color: var(--fgdark);
 
     font-family:  'Iosevka Term';
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -226,22 +229,43 @@ main nav a img {
     color: var(--fglight);
     border: none;
     padding: 15px;
-    margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    max-width: 800px;
-    width: 90%;
     border: 2px solid var(--bglight);
     transition: all 0.4s ease 0s; 
+    margin-left: -250px;
+    width: 350px;
+    margin-bottom: 25px;
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+    margin-bottom: -40px;
 }
 
 #notes:focus {
     border: 2px solid var(--accent);
     box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
+    margin-left: 25px;
+    z-index: 420;
+    margin-bottom: 25px;
 }
 
 #notes:hover {
     border: 2px solid var(--accent);
     box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
+    margin-left: 25px;
+    z-index: 420;
+    margin-bottom: 25px;
+}
+
+.pen {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    margin-bottom: 60px;
+    margin-left: 70px;
+}
+
+#note-box:focus-within .pen {
+    display: none;
 }
