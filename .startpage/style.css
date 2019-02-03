@@ -245,6 +245,8 @@ main nav a img {
     color: var(--bgdark);
     overflow: hidden;
     margin-left: -40px;
+    font-family: "Iosevka Term";
+    font-size: 13px;
 }
 
 #notes:focus {
@@ -253,8 +255,8 @@ main nav a img {
     margin-left: 25px;
     z-index: 420;
     margin-bottom: 25px;
-    width: 350px;
-    height: 140px;
+    width: 366px;
+    height: 160px;
     border-radius: 0;
     color: #fff;
     overflow: visible;
