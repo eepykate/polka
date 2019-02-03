@@ -13,4 +13,4 @@ vmap <C-x> "+c
 vmap <C-v> <ESC>"+p
 imap <C-v> <ESC>"+pa
 
-set ttymouse=xterm2
+set ttymouse=sgr
