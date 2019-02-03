@@ -232,13 +232,19 @@ main nav a img {
     margin-right: auto;
     border: 2px solid var(--bglight);
     transition: all 0.4s ease 0s; 
-    margin-left: -250px;
-    width: 350px;
+    width: 25px;
+    height: 20px;
     margin-bottom: 25px;
     position: fixed;
-    bottom: 0;
-    z-index: 0;
-    margin-bottom: -40px;
+    left: 0;
+    top: 150px;
+    z-index: 69;
+    margin-bottom: 0px;
+    border-radius: 0 5em 5em 0;
+    resize: none;
+    color: var(--bgdark);
+    overflow: hidden;
+    margin-left: -2px;
 }
 
 #notes:focus {
@@ -247,6 +253,11 @@ main nav a img {
     margin-left: 25px;
     z-index: 420;
     margin-bottom: 25px;
+    width: 350px;
+    height: 140px;
+    border-radius: 0;
+    color: #fff;
+    overflow: visible;
 }
 
 #notes:hover {
@@ -255,17 +266,25 @@ main nav a img {
     margin-left: 25px;
     z-index: 420;
     margin-bottom: 25px;
+    width: 350px;
+    height: 140px;
+    border-radius: 0;
+    color: #fff;
+    overflow: visible;
 }
 
 .pen {
     position: fixed;
-    bottom: 0;
-    left: 0;
+    top: 168px;
+    left: 10px;
     width: 20px;
-    margin-bottom: 60px;
-    margin-left: 70px;
+    transition: all 0.4s ease 0s; 
+    z-index: 69;
 }
 
-#note-box:focus-within .pen {
-    display: none;
+.note-box:hover > .pen,
+.note-box:focus-within > .pen {
+    opacity: 0;
+    margin-left: 25px;
 }
+
