@@ -3,19 +3,37 @@
 # Source:
 #   https://gitlab.com/gaugek/dots/
 #
+# if $1 is unspecified, it asks if you want to manually specify the resolution and offset, or get them automatically from a display of your choice 
+#
 # Syntax: 
 # $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
-#
-# If there are no arguments specified when running the command, it asks you for what arguments to use with dmenu
 # 
 
-[ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
-[ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
-[ -n "$3" ] && width="$3"   || width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
-[ -n "$4" ] && height="$4"  || height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
-[ -n "$5" ] && rate="$5"    || rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
+if [[ -z $1 ]]; then
+    DoM="$(echo -e "Display\nManual" | dmenu -i -p "Manual dimensions or automatic from display?")"
+else
+    DoM="Manual"
+fi
 
-if [[ $(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?") = Yes ]]; then 
+if [[ ${DoM} = Display ]]; then
+    displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
+    display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
+    display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
+    
+    width="$(echo   $display_res | awk '{print $1}' )"
+    height="$(echo  $display_res | awk '{print $2}' )"
+    offsetX="$(echo $display_res | awk '{print $3}' )"
+    offsetY="$(echo $display_res | awk '{print $4}' )"
+    rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
+elif [[ ${DoM} = Manual ]]; then
+    [ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
+    [ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
+    [ -n "$3" ] && width="$3"   || width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
+    [ -n "$4" ] && height="$4"  || height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
+    [ -n "$5" ] && rate="$5"    || rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
+fi
+
+if [[ -n $DoM ]] && [[ $(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?") = Yes ]]; then 
     notify-send -t 2000 "recording started"
 
     ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
