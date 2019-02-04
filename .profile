@@ -1,37 +1,18 @@
-#KDE as Desktop Session for openbox, for Qt themes
-#if [[ $DESKTOP_SESSION="openbox" ]]; then
-#export DESKTOP_SESSION="kde"
-#export XDG_CURRENT_DESKTOP="KDE" 
-#export KDE_SESSION_VERSION="5"
-#fi
+#     ~/.profile     #
+export QT_QPA_PLATFORMTHEME="qt5ct"  # Qt themes for non-Qt DEs/WMs
+xset r rate 200 60                   # Faster keyboard repeat rate
+# Default programs                   # Default programs
+export VISUAL="code-oss"             # Graphical text editor 
+export EDITOR="nvim"                 # Terminal text editor
+export TERMINAL="st"                 # Terminal
+export BROWSER="firefox"             # Web Browser
+export FILE="dolphin"                # File manager
 
-export QT_QPA_PLATFORMTHEME="qt5ct"
+# Default user - mainly to hide the user@hostname with agnoster zsh theme
+#export DEFAULT_USER="gauge" 
 
-#Faster keyboard repeat rate
-xset r rate 200 60 
-
-#GTK Global menu
-if [ -n "$GTK_MODULES" ]; then
-    GTK_MODULES="${GTK_MODULES}:appmenu-gtk-module"
-else
-    GTK_MODULES="appmenu-gtk-module"
-fi
-
-if [ -z "$UBUNTU_MENUPROXY" ]; then
-    UBUNTU_MENUPROXY=1
-fi
-
-export GTK_MODULES
-export UBUNTU_MENUPROXY
-
-#Default user
-export DEFAULT_USER="gauge"
-
+# Places where binaries/scripts go so you dont have to type the whole path to run them
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
-export EDITOR="nvim"
-export TERMINAL="st"
-export BROWSER="firefox"
-export FILE="dolphin"
 
 # less/man colors
 export LESS=-R
@@ -42,6 +23,7 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m' # reset underline
+
 #if [ "$TTY" = "/dev/tty1" ]; then
 #	pgrep -x openbox || exec startx
 #fi
