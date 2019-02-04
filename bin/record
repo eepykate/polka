@@ -1,35 +1,24 @@
-#!/bin/sh
-
+#!/bin/bash
+#
 # Source:
 #   https://gitlab.com/gaugek/dots/
 #
 # Syntax: 
 # $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
 #
-# If there are no arguments after running the command, it asks you for what arguments you want to use.
+# If there are no arguments specified when running the command, it asks you for what arguments to use with dmenu
 # 
 
-if [ $# -eq 0 ];then
-  offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
-  offsetY="$(echo -e "0" | dmenu -i -p "Offset for the X axis")"
-  width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
-  height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
-  rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
-else
-  offsetX="$1"
-  offsetY="$2"
-  width="$3"
-  height="$4"
-  rate="$5"
-fi
+[ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
+[ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
+[ -n "$3" ] && width="$3"   || width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
+[ -n "$4" ] && height="$4"  || height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
+[ -n "$5" ] && rate="$5"    || rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
 
 if [[ $(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?") = Yes ]]; then 
-  
-  notify-send -t 2000 "recording started"
+    notify-send -t 2000 "recording started"
 
-  ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
-      -r ${rate} -i :0.0+${offsetX},${offsetY} -qscale 0 \
-      "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 \
-      > /dev/null 2>&1
-
+    ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
+        -r ${rate} -i :0.0+${offsetX},${offsetY} -qscale 0 \
+        "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
 fi

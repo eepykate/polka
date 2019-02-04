@@ -37,11 +37,11 @@ set ignorecase         " Ignore case when searching
 set smartcase          " Ignore case when only lower case is typed
 
 " Automatic Brace
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {}<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
+"inoremap ( ()<Esc>i
+"inoremap [ []<Esc>i
+"inoremap { {}<Esc>i
+"inoremap " ""<Esc>i
+"inoremap ' ''<Esc>i
 
 " .rasi files use css syntax highlighting
 au BufReadPost *.rasi set syntax=css       
