@@ -8,6 +8,9 @@ export TERMINAL="st"                 # Terminal
 export BROWSER="firefox"             # Web Browser
 export FILE="dolphin"                # File manager
 
+# Custom ls colours
+eval "$(dircolors ~/.dircolors)" 
+
 # Default user - mainly to hide the user@hostname with agnoster zsh theme
 #export DEFAULT_USER="gauge" 
 
