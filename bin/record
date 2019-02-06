@@ -36,7 +36,15 @@ fi
 if [[ -n $DoM ]] && [[ $(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?") = Yes ]]; then 
     notify-send -t 2000 "recording started"
 
-    ffmpeg -y -f x11grab -draw_mouse 1 -s ${width}x${height} \
-        -r ${rate} -i :0.0+${offsetX},${offsetY} -qscale 0 \
-        "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
+    if [[ -n $(lspci | grep -i nvidia) ]]; then
+        ffmpeg -y -f x11grab -draw_mouse 1 \
+            -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+            -qscale 0 -vcodec h264_nvenc \
+            "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
+    else
+        ffmpeg -y -f x11grab -draw_mouse 1 \
+            -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+            -qscale 0 \
+            "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
+    fi
 fi
