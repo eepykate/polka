@@ -56,9 +56,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 /* These change some Firefox pages colors (Mainly used for the 404 error page) */
 	--in-content-page-color: #ccc !important;
-	--in-content-page-background: var(--bgdark) !important;
+	--in-content-page-background: var(--bglight) !important;
 	--in-content-text-color: #ccc !important;
-	--in-content-box-background: var(--bglight) !important;
+	--in-content-box-background: var(--bgdark) !important;
 	--in-content-box-background-hover: var(--bglighter) !important;
 	--in-content-box-background-active: var(--bglight) !important;
 	--in-content-box-border-color: var(--bglighter) !important;
@@ -752,7 +752,7 @@ span.target-status {background-color: var(--bgdark) !important}
 @-moz-document url(about:config) {
 :root {
 	--in-content-page-color: #aaa !important;
-	--in-content-page-background: var(--bgdark) !important;
+	--in-content-page-background: var(--bglight) !important;
 	--in-content-primary-button-background: var(--red) !important;
 	--in-content-primary-button-background-hover: var(--red) !important;
 	--in-content-primary-button-background-active: var(--red) !important;
@@ -819,7 +819,7 @@ td {background: var(--bglighter) !important}
 
 /* Sidebar */
 :root {
-	--in-content-page-background: var(--bgdark) !important;
+	--in-content-page-background: var(--bglight) !important;
 	--in-content-category-text: #fff !important;
 	--in-content-text-color: #fff !important;
 	--in-content-selected-text: #000 !important;
@@ -829,8 +829,18 @@ td {background: var(--bglighter) !important}
 
 /* Main Content */
 .main-content {
- 	background-color: var(--bgdark) !important;
+ 	background-color: var(--bglight) !important;
     color: #AAA !important}
+
+.navigation {
+	background-color: var(--bgdark) !important;
+	margin-right: 0 !important;
+}
+
+.category[selected=true], .category[current="true"] {
+	background-color: var(--bglight) !important;
+	border-left: 4px solid var(--fglight) !important;
+}
 
 .groupbox-title, 
 
@@ -887,6 +897,14 @@ treecol:hover {background-color: var(--bglighter) !important}
 /*------ EXTENSIONS PAGE (about:addons) ------*/
 @-moz-document url-prefix(about:addons){
 
+#category-box {
+	background-color: var(--bgdark) !important;
+}
+
+.main-content {
+	background-color: var(--bglight) !important;
+}
+	
 /* Context menus*/
 #header-utils-btn .scrollbox-innerbox,
 .arrowscrollbox-scrollbox {background-color: var(--bglight) !important}
@@ -915,6 +933,10 @@ treecol:hover {background-color: var(--bglighter) !important}
 .addon:hover {
 	background-color: var(--bglightest) !important;
 	box-shadow: none !important}
+
+.addon {
+	background: var(--bgdark) !important;
+}
 
 .addon:hover .description {color: #ccc !important}
 
@@ -961,13 +983,15 @@ treecol:hover {background-color: var(--bglighter) !important}
 /* This is still in the addons page, it's the "discover" page thing */
 @-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
 
-.disco-content h1, .content h2 {color: #FFF !important}
+.disco-content h1, .content h2,
+.DiscoPane-header-intro h1 {color: #FFF !important}
 
-.disco-content p, .content p, .content blockquote {color: #AAA !important}
+.disco-content p, .content p, .content blockquote,
+.DiscoPane-header-intro p {color: #AAA !important}
 
-#react-view {background-color: var(--bgdark) !important}
+#react-view {background-color: var(--bglight) !important}
 
-.addon.theme, .addon.extension, .addon.theme {background-color: var(--bglight) !important}
+.addon.theme, .addon.extension, .addon.theme {background-color: var(--bgdark) !important}
 
 .heading a {color: var(--blue) !important}
 .heading a:visited {color: var(--blue) !important}
