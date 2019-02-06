@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Format of ~/.sc: 
+# $1 = (d)irectory or (f)ile
+# $2 = name of alias
+# $3 = file or folder to edit / cd to
+
 printf "" > ~/.sc.sh
-sed '/^#/d' ~/.sc | awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls_extended -h --group-directories-first\""}' >> ~/.sc.sh
-sed '/^#/d' ~/.sc | awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"\" "}' >> ~/.sc.sh
+sed '/^#/d' ~/.sc | tee \
+    >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls_extended -h --group-directories-first\""}' >> ~/.sc.sh) \
+    >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ~/.sc.sh) \
+    >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"\" "}' >> ~/.sc.sh) &>/dev/null
+

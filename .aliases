@@ -36,3 +36,19 @@ alias gp="git push -f"           # git - Push and overwrite remote repository
 alias gaa="git add -A"           # git - Add all unstaged files to staging area 
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
+
+# Dynamically generated aliases from ~/.sc
+# Format of ~/.sc: 
+# $1 = (d)irectory or (f)ile
+# $2 = name of alias
+# $3 = file or folder to edit / cd to
+if [[ -f ~/.sc ]]; then
+    printf "" > ~/.sc.sh
+    sed '/^#/d' ~/.sc | tee \
+        >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls_extended -h --group-directories-first\""}' >> ~/.sc.sh) \
+        >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ~/.sc.sh) \
+        >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"\" "}' >> ~/.sc.sh) &>/dev/null
+fi
+
+[[ -f ~/.sc.sh ]] && source ~/.sc.sh       # Add directory / file shortcuts to shell
+

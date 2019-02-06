@@ -2,8 +2,6 @@
 shopt -s autocd          # Cd into directory without physically typing "cd"
 source ~/.profile        # source ~/.profile when bash is opened
 source ~/.aliases        # Aliases
-shortcuts                # Generate directory / file aliases
-source ~/.sc.sh          # Add directory / file aliases to shell
 stty -ixon               # Disable Ctrl-S && Ctrl-Q
 
 # Colourful sudo prompt
