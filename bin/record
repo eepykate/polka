@@ -25,24 +25,36 @@ if [[ ${DoM} = Display ]]; then
     offsetX="$(echo $display_res | awk '{print $3}' )"
     offsetY="$(echo $display_res | awk '{print $4}' )"
     rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
+    audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Manual ]]; then
     [ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
     [ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
     [ -n "$3" ] && width="$3"   || width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
     [ -n "$4" ] && height="$4"  || height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
     [ -n "$5" ] && rate="$5"    || rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
+    [ -n "$6" ] && audio="$6"   || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 fi
 
-if [[ -n $DoM ]] && [[ $(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?") = Yes ]]; then 
+if [[ $audio = yes ]]; then 
+    audio="-f pulse -i `pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g'`"
+else
+    audio=""
+fi
+
+RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
+
+if [[ -n $DoM ]] && [[ $RtR = Yes ]]; then 
     notify-send -t 2000 "recording started"
 
     if [[ -n $(lspci | grep -i nvidia) ]]; then
-        ffmpeg -y -f x11grab -draw_mouse 1 \
+        ffmpeg -y $(printf " $audio") \
+            -f x11grab -draw_mouse 1 \
             -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
             -qscale 0 -vcodec h264_nvenc \
             "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
     else
-        ffmpeg -y -f x11grab -draw_mouse 1 \
+        ffmpeg -y $(printf " $audio") \
+            -f x11grab -draw_mouse 1 \
             -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
             -qscale 0 \
             "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
