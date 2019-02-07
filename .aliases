@@ -43,7 +43,7 @@ alias gc="git commit"            # git - Commit all staged files (needs -m, --am
 if [[ -f ~/.sc ]]; then
     printf "" > ~/.sc.sh
     sed '/^#/d' ~/.sc | tee \
-        >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls -h --group-directories-first --color=auto \""}' >> ~/.sc.sh) \
+        >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls\""}' >> ~/.sc.sh) \
         >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ~/.sc.sh) \
         >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"\" "}' >> ~/.sc.sh) &>/dev/null
 fi

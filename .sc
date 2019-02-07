@@ -1,4 +1,4 @@
-d   fchr       ~/.mozilla/firefox/gauge/chrome/
+d   fchr       $HOME/.mozilla/firefox/gauge/chrome/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
 f   pro        ~/.profile
