@@ -2,8 +2,8 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"  # Qt themes for non-Qt DEs/WMs
 xset r rate 200 60                   # Faster keyboard repeat rate
 # Default programs                   # Default programs
-export VISUAL="code-oss"             # Graphical text editor 
 export EDITOR="nvim"                 # Terminal text editor
+export VISUAL="$EDITOR"              # Graphical text editor 
 export TERMINAL="st"                 # Terminal
 export BROWSER="firefox"             # Web Browser
 export FILE="dolphin"                # File manager
