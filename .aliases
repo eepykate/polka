@@ -40,13 +40,6 @@ alias gc="git commit"            # git - Commit all staged files (needs -m, --am
 # $1 = (d)irectory or (f)ile
 # $2 = name of alias
 # $3 = file or folder to edit / cd to
-if [[ -f ~/.sc ]]; then
-    printf "" > ~/.sc.sh
-    sed '/^#/d' ~/.sc | tee \
-        >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3" && ls\""}' >> ~/.sc.sh) \
-        >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ~/.sc.sh) \
-        >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"\" "}' >> ~/.sc.sh) &>/dev/null
-fi
 
 [[ -f ~/.sc.sh ]] && source ~/.sc.sh       # Add directory / file shortcuts to shell
 
