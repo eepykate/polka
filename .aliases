@@ -35,6 +35,11 @@ alias gaa="git add -A"           # git - Add all unstaged files to staging area
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
 
+preexec() { LS_USED=$(echo $1|cut -d' ' -f1) }
+chpwd() {
+     ls --color=auto --group-directories-first -hF;
+}
+
 # Dynamically generated aliases from ~/.sc
 # Format of ~/.sc: 
 # $1 = (d)irectory or (f)ile
