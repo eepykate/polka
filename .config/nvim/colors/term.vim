@@ -68,7 +68,7 @@ hi Macro        ctermbg=NONE   ctermfg=1    cterm=NONE
 hi PreCondit    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Type         ctermbg=NONE   ctermfg=9    cterm=NONE
 hi StorageClass ctermbg=NONE   ctermfg=1    cterm=NONE
-hi PreProc      ctermbg=NONE   ctermfg=12   cterm=NONE
+hi PreProc      ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Structure    ctermbg=NONE   ctermfg=5    cterm=NONE
 hi Special      ctermbg=NONE   ctermfg=13   cterm=NONE
 hi SpecialChar  ctermbg=NONE   ctermfg=3    cterm=NONE
