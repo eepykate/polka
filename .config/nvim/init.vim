@@ -46,3 +46,7 @@ set smartcase          " Ignore case when only lower case is typed
 " .rasi files use css syntax highlighting
 au BufReadPost *.rasi set syntax=css       
 
+
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+call plug#end()

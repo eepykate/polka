@@ -41,6 +41,14 @@
 	display: -moz-box !important;
 }
 
+.tab-icon-pending:hover {
+	display: none !important;
+}
+
+.tab-icon-pending:hover ~ .tab-close-button {
+	display: -moz-box !important;
+}
+
 /*.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
 	display: -moz-box !important;
 }*/

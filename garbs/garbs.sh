@@ -288,8 +288,11 @@ unzip -o /tmp/Iosevka.zip -d /usr/share/fonts/TTF/ &>/dev/null
 #Fira code font
 #curl -Ls https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf > "/usr/share/fonts/OTF/Fira Code Mono.otf"
 
-
 fc-cache -f
+
+# vim-plug for neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #ls with icons and colours
 if [ ! -f /usr/bin/ls_extended ]; then

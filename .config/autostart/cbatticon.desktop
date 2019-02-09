@@ -8,5 +8,5 @@ Exec=cbatticon --command-left-click "battery"
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
-Hidden=false
+Hidden=true
 
