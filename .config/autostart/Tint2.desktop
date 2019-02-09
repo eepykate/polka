@@ -2,9 +2,9 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=Stop XFCE4-Panel
+Name=Tint2
 Comment=
-Exec=xfce4-panel -q
+Exec=tint
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
