@@ -66,7 +66,7 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#6992c5"
+    frame_color = "#4d9de0"
 
     # Define a color for the separator.
     # possible values are:
@@ -84,8 +84,6 @@
     # Set to 0 to disable.
     # Transient notifications ignore this setting.
     idle_threshold = 120
-    #Align the text to the center of the notification box
-    alignment = center
 
     ### Text ###
 
@@ -133,7 +131,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = right
+    alignment = center
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -249,23 +247,23 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#ffffff"
-    foreground = "#181a21"
+    background = "#15171d"
+    foreground = "#cbe3f1"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#181a21"
-    foreground = "#cccccc"
+    background = "#15171d"
+    foreground = "#cbe3f1"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#181a21"
-    foreground = "#cccccc"
-    frame_color = "#ff0000"
+    background = "#15171d"
+    foreground = "#cbe3f1"
+    frame_color = "#ed254e"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
