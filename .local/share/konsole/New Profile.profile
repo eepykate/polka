@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=Krayons
+ColorScheme=Pop
 Font=Iosevka Term,11,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
