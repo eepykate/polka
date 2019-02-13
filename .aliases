@@ -6,8 +6,10 @@ alias ls="ls -h --group-directories-first --color=auto"
 alias lol="lolcat -t -p 0.9 2>/dev/null"   # lolcat with some options
 alias emoji="cat ~/.emoji | grep -i "      # Emojis from ~/.emoji file
 alias obr="openbox --reconfigure"   # Reconfigure openbox
+alias grep="grep --color=auto"
 alias songs="instantmusic -l "      # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
 alias song="instantmusic -s "       # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
+alias grep="grep --color=auto"
 alias mat="cmatrix -C blue"         # blue cmatrix
 alias kills="kill -9 -1"   # Kill current session
 alias fuck="killall -9"    # kill window

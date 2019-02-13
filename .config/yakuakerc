@@ -42,4 +42,4 @@ view-full-screen=Ctrl+Shift+F11
 [Window]
 DynamicTabTitles=true
 Height=90
-ToggleToFocus=true
+ToggleToFocus=false

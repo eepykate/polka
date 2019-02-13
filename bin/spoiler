@@ -1,0 +1,9 @@
+#!/bin/bash
+
+while getopts rd option; do 
+    case "${option}" in 
+        r) sed "s/\(.\)/>!\1!</g";;
+        d) sed 's/|/\\|/g' | sed "s/\(.\)/||\1||/g";;
+    esac
+done
+
