@@ -42,10 +42,10 @@ Recent Files[$e]=file:$HOME/.local/share/applications//discord.svg,file:///usr/s
 Recent URLs[$e]=file:///usr/share/icons/,file:$HOME/.local/share/applications/
 
 [KPropertiesDialog]
-Height 1080=410
+Height 1080=482
 Height 900=444
 Width 1440=402
-Width 1920=381
+Width 1920=449
 
 [MainWindow]
 Height 1080=628
