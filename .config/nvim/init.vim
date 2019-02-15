@@ -52,4 +52,4 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 call plug#end()
 
 set cursorline
-set cursorcolumn
+"set cursorcolumn
