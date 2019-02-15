@@ -9,8 +9,13 @@
 # $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
 # 
 
+dir="$HOME/Videos/recordings"
+name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after in the actual recording part
+
+[[ -d $dir ]] || mkdir -p $dir
+
 if [[ -z $1 ]]; then
-    DoM="$(echo -e "Display\nManual" | dmenu -i -p "Manual dimensions or automatic from display?")"
+    DoM="$(echo -e "Display\nManual\nSlop" | dmenu -i -p "Automatic dimensions from display, Manual dimensions, or select a region?")"
 else
     DoM="Manual"
 fi
@@ -26,6 +31,18 @@ if [[ ${DoM} = Display ]]; then
     offsetY="$(echo $display_res | awk '{print $4}' )"
     rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
     audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
+elif [[ ${DoM} = Slop ]]; then
+    #734x479+1440+357
+    slop="$(slop)"
+    slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
+
+    width="$(echo   $slop1 | awk '{print $1}' )"
+    height="$(echo  $slop1 | awk '{print $2}' )"
+    offsetX="$(echo $slop1 | awk '{print $3}' )"
+    offsetY="$(echo $slop1 | awk '{print $4}' )"
+    rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
+    audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
+
 elif [[ ${DoM} = Manual ]]; then
     [ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
     [ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
@@ -51,12 +68,12 @@ if [[ -n $DoM ]] && [[ $RtR = Yes ]]; then
             -f x11grab -draw_mouse 1 \
             -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
             -qscale 0 -vcodec h264_nvenc \
-            "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
+            "${dir}/${name}".mp4 
     else
         ffmpeg -y $(printf " $audio") \
             -f x11grab -draw_mouse 1 \
             -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
             -qscale 0 \
-            "$HOME/Videos/recordings/$(date '+%Y-%m-%d.%H:%M:%S')".mp4 
+            "${dir}/${name}".mp4 
     fi
 fi
