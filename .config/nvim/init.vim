@@ -50,3 +50,6 @@ au BufReadPost *.rasi set syntax=css
 call plug#begin()
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 call plug#end()
+
+set cursorline
+set cursorcolumn

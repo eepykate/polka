@@ -40,14 +40,15 @@ hi DIffAdd      ctermbg=NONE   ctermfg=2
 hi DiffDelete   ctermbg=NONE   ctermfg=1
 hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
-hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
+hi CursorLine   ctermbg=0      ctermfg=NONE cterm=NONE
 hi CursorLineNr ctermbg=NONE   ctermfg=7    cterm=bold
+hi CursorColumn ctermbg=0      ctermfg=NONE
 hi MatchParen   ctermbg=3      ctermfg=0
 hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 
 " language syntax
-hi Comment      ctermbg=NONE   ctermfg=6    ctermbg=NONE cterm=italic
+hi Comment      ctermbg=NONE   ctermfg=6    cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=9    cterm=NONE
