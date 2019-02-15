@@ -1,8 +1,8 @@
-rofi.font:        Iosveka Nerd Font Mono 14
-URxvt.font:       xft:Iosevka Nerd Font Mono:style=Regular:pixelsize=14
+rofi.font:        Iosveka Term 14
+URxvt.font:       xft:Iosveka Term:style=Regular:pixelsize=14
 *shell:           /bin/zsh
 st.termname:      st-256color
-st.font:          Iosevka Nerd Font Mono:pixelsize=14:antialias=true:autohint=true
+st.font:          Iosevka Term:pixelsize=14:antialias=true:autohint=true
 st.borderpx:      15
 st.tabspaces:     4
 st.xfps:          60
