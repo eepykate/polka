@@ -456,10 +456,13 @@ cd /tmp;
 mkdir -p /home/$name/Stuff/Screenshots/scrot/
 
 #Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
-mkdir -p /usr/local/bin;
+mkdir -p /usr/local/bin /usr/local/sounds;
 curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove -o /usr/local/bin/usb-remove;
 curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-insert -o /usr/local/bin/usb-insert;
 curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb.rules -o /etc/udev/rules.d/usb.rules;
+curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
+curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
+
 
 udevadm control --reload-rules && udevadm trigger;
 
