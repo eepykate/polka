@@ -462,14 +462,14 @@ height: 35px !important;
 
 /* url bar text shrinks when in "stealth mode" */
 #nav-bar #urlbar {
-font-size: 13px !important;
+    font-size: 15px !important;
     transition: all 100ms var(--animation-easing-function) !important;
 }
 
-:root:not([customizing]) :hover > #nav-bar #urlbar,
+/*:root:not([customizing]) :hover > #nav-bar #urlbar,
 :root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #urlbar {
-font-size: 16px !important;
-}
+    font-size: 16px !important;
+}*/
 
 /* Hide tab border */
 :root {
