@@ -1,10 +1,10 @@
-#!/bin/zsh
+#!/bin/bash
 
-product=$(echo -e $ID_MODEL_ENC) 
+product="$(echo -e $ID_MODEL_ENC)"
 
 brand="$(echo -e $ID_VENDOR_ENC)"
 
-function notify-root() {
+dar() {
     #Detect the name of the display in use
     display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
 
@@ -14,10 +14,15 @@ function notify-root() {
     #Detect the id of the user
     uid=$(id -u $user)
 
-    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus /usr/bin/notify-send "$@"
+    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
 }
 
-notify-root "New device detected" \
-"Type: $type
-Product: $product
-Brand: $brand"
+out="$(printf "Brand:"
+printf "%20s" "$brand\n​"
+printf "Product:"
+printf "%16s" "$product​"
+)"
+
+dar notify-send "New device detected" "$out"
+
+dar paplay /usr/local/sounds/usb-insert.wav

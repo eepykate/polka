@@ -1,6 +1,6 @@
-#!/bin/zsh
+#!/bin/bash
 
-function notify-root() {
+function dar() {
     #Detect the name of the display in use
     display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
 
@@ -10,7 +10,10 @@ function notify-root() {
     #Detect the id of the user
     uid=$(id -u $user)
 
-    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus /usr/bin/notify-send "$@"
+    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
 }
 
-notify-root "Device removed" 
+dar notify-send "Device removed" 
+
+dar paplay /usr/local/sounds/usb-remove.wav
+
