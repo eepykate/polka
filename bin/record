@@ -3,26 +3,59 @@
 # Source:
 #   https://gitlab.com/gaugek/dots/
 #
-# if $1 is unspecified, it asks if you want to manually specify the resolution and offset, or get them automatically from a display of your choice 
-#
-# Syntax: 
-# $ record <Offset X> <Offset Y> <Width> <Height> <Frames Per Second>
-# 
 
 dir="$HOME/Videos/recordings"
-name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after in the actual recording part
+name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after this is listed in the actual recording part
+
+re="\e[31m"
+gr="\e[32m"
+ye="\e[33m"
+cy="\e[36m"
+bl="\e[34m"
+pu="\e[35m"
+n="\e[0m"
+b="\e[1m"
+
+help="
+${b}CLI Syntax: ${n} 
+  ${ye}\$${n} ${gr}record ${bl}<Offset X> <Offset Y> <Width> <Height> <Frames Per Second> <Desktop audio (yes|no)>${n}
+
+When ran without any arguments (Or with missing arguments), it will get the (missing) options with dmenu
+
+${b}CLI Arguments:  ${n}
+  ${b}-h / --help:    ${n}  Displays what you are viewing right now
+  ${b}-d / --display: ${n}  Record selected display
+  ${b}-s / --slop:    ${n}  Use slop to get region to record
+  ${b}-n / --no-nvenc:${n}  Disable nvenc (for nvidia cards)
+"
 
 [[ -d $dir ]] || mkdir -p $dir
 
-if [[ -z $1 ]]; then
+opts=`getopt -o d:smhn --long display:,slop,manual,help,no-nvenc -- "$@"`
+eval set -- "$opts"
+
+while true ; do
+    case "$1" in
+        -d|--display) [[ -n $2 ]] && DoM="Display" && display_select="$2"; shift 2;;
+        -s|--slop) DoM="Slop" ; shift 1;;
+        -m|--manual) DoM="Manual"; shift 1;;
+		-h|--help) echo -e "$help"; exit ;;
+		-n|--no-nvenc) nvenc=" ";;
+		--) shift; break;;
+    esac
+done
+
+if   [[ -z $1 ]] && [[ -z $DoM ]]; then
     DoM="$(echo -e "Display\nManual\nSlop" | dmenu -i -p "Automatic dimensions from display, Manual dimensions, or select a region?")"
-else
+elif [[ -n $1 ]] && [[ -z $DoM ]]; then
     DoM="Manual"
 fi
 
 if [[ ${DoM} = Display ]]; then
-    displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
-    display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
+	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
+	if [[ -z $display_select ]]; then 
+		display_select="$(echo -e "$displays" | awk '{print $2}' | dmenu -i -p "Display to record")"
+	fi
     display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
     
     width="$(echo   $display_res | awk '{print $1}' )"
@@ -32,7 +65,6 @@ if [[ ${DoM} = Display ]]; then
     rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
     audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Slop ]]; then
-    #734x479+1440+357
     slop="$(slop)"
     slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
 
@@ -42,7 +74,6 @@ elif [[ ${DoM} = Slop ]]; then
     offsetY="$(echo $slop1 | awk '{print $4}' )"
     rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
     audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
-
 elif [[ ${DoM} = Manual ]]; then
     [ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
     [ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
@@ -60,14 +91,16 @@ fi
 
 RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
 
-if [[ -n $DoM ]] && [[ $RtR = Yes ]]; then 
+[[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
+
+if [[ $RtR = Yes ]]; then 
     notify-send -t 2000 "recording started"
 
     if [[ -n $(lspci | grep -i nvidia) ]]; then
         ffmpeg -y $(printf " $audio") \
             -f x11grab -draw_mouse 1 \
             -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
-            -qscale 0 -vcodec h264_nvenc \
+            -qscale 0 $(printf " $nvenc") \
             "${dir}/${name}".mp4 
     else
         ffmpeg -y $(printf " $audio") \
