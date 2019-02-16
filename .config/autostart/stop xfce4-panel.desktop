@@ -8,5 +8,5 @@ Exec=xfce4-panel -q
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
-Hidden=true
+Hidden=false
 
