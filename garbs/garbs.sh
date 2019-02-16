@@ -469,6 +469,9 @@ curl -L "https://gitlab.com/gaugek/dots/raw/master/bin/async.zsh" -o /usr/share/
 curl -L "https://gitlab.com/gaugek/dots/raw/master/bin/pure.zsh" -o /usr/share/zsh/site-functions/prompt_pure_setup
 
 
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 #--------------End My stuff--------------
 
 # Last message! Install complete!
