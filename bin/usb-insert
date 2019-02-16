@@ -23,6 +23,6 @@ printf "Product:"
 printf "%16s" "$product​"
 )"
 
-dar notify-send "New device detected" "$out"
+dar /usr/bin/notify-send "New device detected" "$out"
 
-dar paplay /usr/local/sounds/usb-insert.wav
+dar /usr/bin/paplay /usr/local/sounds/usb-insert.wav
