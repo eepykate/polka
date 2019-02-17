@@ -1,6 +1,11 @@
 " Line number on the side
 set number relativenumber 
 
+map h <insert>
+map i <Up>
+map j <Left>
+map k <Down>
+
 " Enable syntax highlighting
 syntax on   
 
