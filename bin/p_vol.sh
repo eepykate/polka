@@ -5,9 +5,9 @@ vol="$(echo ${pactl}  | awk '{print $1 "%"}')"
 mute="$(echo ${pactl} | awk '{print $2}')"
 
 if [ $mute = yes ]; then
-    output="🔇 Muted"
+    output="♪ Muted"
 elif [ $mute = no ]; then
-    output="🔊 ${vol}"
+    output="♪ ${vol}"
 fi
 
 ##           🔊    🔇    
