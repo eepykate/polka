@@ -6,12 +6,32 @@
 	--bgdark:    #15171d;
     --bglight:   #1c202a;
 
-    --fgdark:    #cbe3f1;
+    --fgdark:    #9aafc4;
 	--fglight:   #cbe3f1;
 	
     --accent:    #4d9de0;
 	--border:    #334455;
 	--disabled:  #696969;
+}
+
+:root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
+	--color-overflow: #222;                                         /* >> button color */
+	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
+	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
+	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
+	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
+}
+  
+:root {
+	--tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
+	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
+	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
+	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
+	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
+	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
+	background-color: var(--bglight) !important;                       /* top border of out of focus window */
+	--color-overflow: var(--fglight);                                  /* >> button color */
+
 }
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
@@ -91,7 +111,7 @@ browser[type=content] > html {
 
 
 /* Hide bookmarks bar until hover */
-#PersonalToolbar {
+/*#PersonalToolbar {
     opacity:0 !important;
     margin-top: -26px !important;
     transition: all 0.2s ease 0s !important;
@@ -102,7 +122,7 @@ browser[type=content] > html {
     margin-top: 0px !important;
     transition: all 0.2s ease 0s !important;
     opacity: 1 !important;
-}
+}*/
 
 /* Change colour of new tab button */
 .tabs-newtab-button > #new-tab-button > #alltabs-button {
@@ -129,18 +149,17 @@ browser[type=content] > html {
 
 /* Round tabs & change colour*/
 .tabbrowser-tab, .tab-content, .tab-background {
-    border-radius: 0.6em 0.6em 0 0 !important;
     background-color: transparent !important;
 }
 
 .tabbrowser-tab[selected=true],
-.tabbrowser-tab[selected=true] .tab-content {
+.tabbrowser-tab[selected=true] .tab-stack .tab-content {
 	background-color: var(--bglight) !important;
 	color: #ffffff !important;
 }
 
 .tabbrowser-tab:hover,
-.tabbrowser-tab:hover .tab-content {
+.tabbrowser-tab:hover .tab-stack .tab-content {
     background-color: var(--bglight) !important;
 }
 
@@ -196,12 +215,12 @@ browser[type=content] > html {
 
 
 /* Center text on the URL bar */
-#urlbar {
+/*#urlbar {
 	text-align: center;
-} 
+} */
 
 /* Clean up (hide) a few items on the search popup */
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
+/*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-tags:not([empty]),
@@ -210,15 +229,22 @@ browser[type=content] > html {
 #PopupAutoCompleteRichResult > richlistbox > richlistitem:hover > .ac-url[actiontype=remotetab]
 {
   display: none !important;
-}
+}*/
 
 /* restyle popup items */
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
-	-moz-box-orient: vertical !important;
+	/*-moz-box-orient: vertical !important;
 	text-align: center !important;
 	padding: 0px 0px !important;
 	border-radius: 0.5em !important;
-    padding-left: 14px !important;
+	padding-left: 14px !important;*/
+	margin-left: 0 !important;
+	padding-left: 0 !important;
+}
+
+.search-panel-one-offs, .search-panel-one-offs > *, .search-one-offs,
+.search-panel-searchforwith, .search-panel-current-input, .searchbar-oneoffheader-search {
+	background-color: var(--bglight) !important;
 }
   
 .autocomplete-richlistbox {
@@ -289,7 +315,7 @@ browser[type=content] > html {
 /*Prevents White pre-load flash*/ 
 .tabbrowser-tabbox {
 	background-color:  var(--bgdark) !important;
-}
+}
 
 @-moz-document url(about:blank) {
 	* { background: var(--bgdark) !important; }
@@ -383,94 +409,6 @@ menu:hover{
 	padding: 0px !important;
 }
 
-/* Padding around bookmarks */
-/*
-.bookmark-item {
-	padding-left: 3px !important;
-	padding-right: 3px !important;
-	margin-left: 3px !important;
-	margin-right: 3px !important;
-}
-*/
-
-
-/* Make buttons on the navbar light grey (Doesn't seem to work) */
-/*
-#alltabs-button, #new-tab-button, #back-button, #forward-button, #reload-button, #home-button, #stop-button, #downloads-button, #nav-bar-overflow-button, #PanelUI-menu-button,  {
-	color: var(--fglight) !important;
-	background-image: none !important;
-}*/
-
-/* Contextual toolbar buttons, only show on hover, this is what matters, the rest of the file are just style tweaks I like
- */
-:root:not([customizing]) #nav-bar toolbarbutton
- {
-    margin-left: -28px !important;
-    opacity: 0 !important;
-    transform: scale(.85, .85) !important;
-    pointer-events: none !important;
-    transition: all 100ms var(--animation-easing-function) !important;
-}
-
-:root:not([customizing]) :hover > #nav-bar toolbarbutton,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar toolbarbutton,
-:root:not([customizing]) :hover > #titlebar toolbarbutton {
-    transform: scale(1, 1) !important;
-opacity:1 !important;
-margin-left:0 !important;
-pointer-events: auto !important;
-}
-
-/* auto collapse nav bar height when in stealth mode (not active), kinda jumpy and annoying after a while so let's just comment it for now */
-
-/*
-#nav-bar {
-	height: 30px !important;
-    transition: all 300ms var(--animation-easing-function) !important;
-}
-
-:root:not([customizing]) :hover > #nav-bar,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar {
-height: 35px !important;
-}
-*/
-
-/*.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"]) {
-	background-color: var(--bglight) !important;
-}*/
-
-:root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
-	--color-overflow: #222;                                         /* >> button color */
-	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
-	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
-	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
-	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
-}
-  
-:root {
-	--tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
-	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
-	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
-	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
-	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
-	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
-	background-color: var(--bglight) !important;                       /* top border of out of focus window */
-	--color-overflow: var(--fglight);                                  /* >> button color */
-
-}
-  
-
-/* url bar text shrinks when in "stealth mode" */
-#nav-bar #urlbar {
-    font-size: 15px !important;
-    transition: all 100ms var(--animation-easing-function) !important;
-}
-
-/*:root:not([customizing]) :hover > #nav-bar #urlbar,
-:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar #urlbar {
-    font-size: 16px !important;
-}*/
-
 /* Hide tab border */
 :root {
   --tabs-border: transparent !important;
@@ -490,28 +428,6 @@ height: 35px !important;
 	border-top: 0px !important;
 	box-shadow: none !important;
 }
-
-/* nav bar is semi opaque when unhovered */
-#nav-bar > * {
-	opacity:0.5;
-	transition: opacity 0.3s;
-	background-color: var(--bglight) !important;
-}
-
-#nav-bar:hover > * {
-	opacity:1 !important;
-	background-color: var(--bglight) !important;
-
-}
-
-#urlbar {
-	opacity:1 !important;
-}
-
-#urlbar .urlbar-input-box {
-	opacity:1 !important;
-}
-
 
 #urlbar, .searchbar-textbox {
 	border: 0px !important;
@@ -610,13 +526,6 @@ toolbarbutton.bookmark-item:hover {
     text-shadow: none !important;
 }
 
-
-/*
- * Only show close buttons on background tabs when hovering with the mouse
- *
- * Contributor(s): Timvde
- */
-
 .tabbrowser-tab[pending] {
 	font-style: italic;
 	filter: grayscale(100%) !important;
@@ -629,7 +538,7 @@ toolbarspring {
 
 /* Change tab max width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-    max-width: 300px !important;
+    max-width: 200px !important;
 }
 
 /*
@@ -642,3 +551,87 @@ toolbarspring {
 	--tab-line-color: var(--bglight) !important;
 }
 */
+
+
+#TabsToolbar .tabbrowser-tab *
+{
+	transition: all 350ms var(--animation-easing-function) !important;
+}
+
+#navigator-toolbox #TabsToolbar #tabbrowser-tabs {
+	transition: none !important;
+}
+
+.titlebar-buttonbox-container {
+	width: 172px;
+}
+
+/* Move Tab-bar beside Nav-bar */
+#TabsToolbar {      
+	margin-bottom: 0px !important;                /* not needed anymore? */
+	margin-top: 0px !important;                   /*  */
+	margin-left: 35vw !important;
+	margin-right: -34px !important;
+	max-height: 32px !important;
+}
+
+#navigator-toolbox {
+	box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+}
+
+.tabbrowser-tab[last-visible-tab] {
+	border-inline-end: none !important;
+}
+
+
+#navigator-toolbox #nav-bar {      
+	margin-bottom: -1px !important;               /* remove navbar bottom 1px border */
+	margin-top: -32px !important;
+	margin-right: 65vw !important; 
+	border-top: none !important;
+	z-index: 1000 !important;
+	box-shadow: none !important;
+	transition: all 350ms var(--animation-easing-function) !important;
+	transition-delay: 0.5s !important;
+	margin-left: 0 !important;
+}   
+
+#navigator-toolbox #nav-bar:hover {
+	margin-right: 25vw !important;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+	transition: all 350ms var(--animation-easing-function) !important;
+	transition-delay: 0.1s !important;
+	margin-left: 0;
+}
+
+:root:not([customizing]) #navigator-toolbox #nav-bar:focus-within {
+	margin-right: 25vw !important;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+	transition: all 350ms var(--animation-easing-function) !important;
+	transition-delay: 0.1s !important;
+	margin-left: 0;
+}
+
+#nav-bar-customization-target {
+	/*margin-left: -48px !important;*/
+	transition: all 350ms var(--animation-easing-function) !important;
+	transition-delay: 0.5s !important;
+}
+
+#urlbar {
+	background-color: transparent !important;  /* Transparent URL Bar */
+	border-style: none !important;
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+	min-height: 32px !important;
+	padding-top: 1px !important;
+}
+
+
+#navigator-toolbox #PanelUI-button {
+	-moz-box-ordinal-group: 0 !important;
+	background: transparent !important;
+	margin-right: 2px;
+	transition: all 350ms var(--animation-easing-function) !important;
+	transition-delay: 0.5s !important;
+}

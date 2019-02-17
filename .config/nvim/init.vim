@@ -13,8 +13,8 @@ syntax on
 set mouse=a
 
 " Copy
-vmap <C-c> "+yi
-imap <C-c> "+yi
+vmap <C-c> "+yh
+imap <C-c> "+yh
 
 " Cut
 vmap <C-x> "+c
