@@ -11,15 +11,54 @@ fi
 [[ -n $2 ]] && p="$2" || p="5"
 
 case $1 in 
-    up)    amixer -D pulse sset Master $p%+ >/dev/null;;
-    down)  amixer -D pulse sset Master $p%- >/dev/null;;
-    mute)  amixer -D pulse sset Master $mute >/dev/null;;
-    pause) playerctl pause;;
-    play)  playerctl play;;
-    pp)    playerctl pause-play;;
-    next)  playerctl next;;
-    prev)  playerctl previous;;
+    up)     amixer -D pulse sset Master $p%+ >/dev/null;;
+    down)   amixer -D pulse sset Master $p%- >/dev/null;;
+    mute)   amixer -D pulse sset Master $mute >/dev/null;;
+    unmute) amixer -D pulse sset Master $mute >/dev/null;;
+    pause)  playerctl pause;;
+    play)   playerctl play;;
+    pp)     playerctl play-pause;;
+    next)   playerctl next;;
+    prev)   playerctl previous;;
     previous) playerctl previous;;
 esac
 
-p_vol.sh
+
+pc_amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
+pc_vol="$(echo ${pc_amix}  | awk '{print $5}')"
+pc_mute="$(echo ${pc_amix} | awk '{print $6}')"
+
+if [ $pc_mute = off ]; then
+    output="♪ Muted"
+elif [ $pc_mute = on ]; then
+    output="♪ ${pc_vol}"
+fi
+
+playing="$(playerctl metadata xesam:title 2>/dev/null) - $(playerctl metadata xesam:artist 2>/dev/null)"
+
+if [[ $(playerctl status 2>/dev/null) == "Paused" ]]; then
+    song="⏸  $playing"
+elif [[ $(playerctl status 2>/dev/null) == "Playing" ]]; then
+    song="▶  $playing"
+elif [[ -z $(playerctl status 2>/dev/null)  ]]; then
+    song="No playing media"
+fi
+
+
+case $1 in 
+    up)     printf "%s\n" "$output" ;;
+    down)   printf "%s\n" "$output";;
+    mute)   printf "%s\n" "$output";;
+    unmute) printf "%s\n" "$output";;
+    pause)  printf "$song\n";;
+    play)   printf "$song\n";;
+    pp)     printf "$song\n";;
+    next)   printf "$song\n";;
+    prev)   printf "$song\n";;
+    previous) printf "$song\n";;
+    status) case $2 in 
+                vol)  printf "%s\n" "$output";;
+                song) printf "%s\n" "$song";;
+                *) printf "%s  /  %s\n" "$song" "$output";;
+            esac;;
+esac
