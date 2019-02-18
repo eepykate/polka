@@ -1,13 +1,22 @@
-![Current scrot](https://i.imgur.com/gQ0py8b.png)
+<div align="center">
+    <h2><b>Current setup</b></h2>
+    <img src="https://i.imgur.com/ydpHovL.png">
+    <br>
+    <h3><b>Rofi</b></h3>
+    <img src="https://i.imgur.com/2sPs95f.png">
+    <br>
+    <h3><b>Firefox</b></h3>
 
-![Rofi](https://i.imgur.com/2sPs95f.png)
-
-![Firefox config / startpage](https://i.imgur.com/bL1fZnK.mp4)
-
+https://giant.gfycat.com/FoolhardyMagnificentBovine.mp4
+    
+<br>
+</div>
 
 ---
 
-**Details**
+<div align="center">
+    <h2><b>Details</b></h2>
+</div>
 
 **Distrobution:** Arch (GNU + Linux)
 
@@ -23,13 +32,13 @@
 
 **Wallpaper:** [Hexagon Pop](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Hexagon%Pop.png)
 
-**GTK Theme:** oomox-Pop \(Generated with [oomox](https://github.com/themix-project/oomox)\)
+**GTK Theme:** Pop \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
 **Cursor Theme:** Breeze-Hacked
 
-**oh-my-zsh Theme:** Modified pure
+**zsh Theme:** Modified pure
 
-**Panel:** xfce4-panel
+**Panel:** tint2
 
 **Font:** Noto Sans 11
 
