@@ -69,6 +69,10 @@
 	display: -moz-box !important;
 }
 
+.tab-content:not(> .tab-icon-image) > .tab-close-button {
+	display: -moz-box !important;
+}
+
 /*.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
 	display: -moz-box !important;
 }*/
@@ -181,16 +185,16 @@ browser[type=content] > html {
 }
 
 /* Change the cursor when hovering over a tab */
-.tabbrowser-tab:hover,
+/*.tabbrowser-tab:hover,
 .tabbrowser-tab .tab-text.tab-label:hover {
     cursor: pointer !important; 
-}
+}*/
 
 /* Small padding between tabs */
-.tabbrowser-tab {
+/*.tabbrowser-tab {
 	margin-left: 2px !important;
 	margin-right: 2px !important;
-}
+}*/
 
 /* No border on tabs i guess? frankly idk */
 [tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
@@ -232,15 +236,13 @@ browser[type=content] > html {
 }*/
 
 /* restyle popup items */
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
-	/*-moz-box-orient: vertical !important;
+/*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
+	-moz-box-orient: vertical !important;
 	text-align: center !important;
 	padding: 0px 0px !important;
 	border-radius: 0.5em !important;
-	padding-left: 14px !important;*/
-	margin-left: 0 !important;
-	padding-left: 0 !important;
-}
+    padding-left: 14px !important;
+}*/
 
 .search-panel-one-offs, .search-panel-one-offs > *, .search-one-offs,
 .search-panel-searchforwith, .search-panel-current-input, .searchbar-oneoffheader-search {
@@ -538,7 +540,7 @@ toolbarspring {
 
 /* Change tab max width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-    max-width: 200px !important;
+    max-width: 250px !important;
 }
 
 /*
@@ -635,3 +637,13 @@ toolbarspring {
 	transition: all 350ms var(--animation-easing-function) !important;
 	transition-delay: 0.5s !important;
 }
+
+#navigator-toolbox #nav-bar {      
+	margin-bottom: -1px !important;               /* remove navbar bottom 1px border */
+}   
+
+.tabs-newtab-button {
+    z-index: 42069 !important;    
+    display: -moz-box !important;
+}
+
