@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sleep 5; conky
+sleep 5; exec conky

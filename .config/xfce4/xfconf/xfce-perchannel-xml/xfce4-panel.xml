@@ -16,6 +16,7 @@
         <value type="int" value="7"/>
         <value type="int" value="10"/>
         <value type="int" value="1"/>
+        <value type="int" value="3"/>
         <value type="int" value="2"/>
         <value type="int" value="6"/>
         <value type="int" value="4"/>
@@ -128,7 +129,7 @@
         <value type="string" value="obs"/>
         <value type="string" value="pnmixer"/>
         <value type="string" value="discord"/>
-        <value type="string" value="pamac-tray"/>
+        <value type="string" value="transmission"/>
       </property>
       <property name="items" type="array">
         <value type="string" value="14418443623.desktop"/>

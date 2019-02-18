@@ -22,5 +22,16 @@
   </property>
   <property name="splash" type="empty">
     <property name="Engine" type="string" value=""/>
+    <property name="engines" type="empty">
+      <property name="balou" type="empty">
+        <property name="Theme" type="string" value="Default"/>
+      </property>
+      <property name="simple" type="empty">
+        <property name="Font" type="string" value="Sans Bold 10"/>
+        <property name="BgColor" type="string" value="#000000"/>
+        <property name="FgColor" type="string" value="#ffffff"/>
+        <property name="Image" type="string" value=""/>
+      </property>
+    </property>
   </property>
 </channel>
