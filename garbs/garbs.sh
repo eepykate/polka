@@ -281,9 +281,10 @@ rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-rm /tmp/Iosevka.zip
-curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -o /tmp/Iosevka.zip
-unzip -o /tmp/Iosevka.zip -d /usr/share/fonts/TTF/ &>/dev/null
+# Iosevka Nerd Font
+rm /tmp/Iosevka-nerd-font.zip
+curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -o /tmp/Iosevka-nerd-font.zip
+unzip -o /tmp/Iosevka-nerd-font.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 #Fira code font
 #curl -Ls https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf > "/usr/share/fonts/OTF/Fira Code Mono.otf"
