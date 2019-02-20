@@ -13,6 +13,7 @@ fi
 case $1 in 
     up)     amixer -D pulse sset Master $p%+ >/dev/null;;
     down)   amixer -D pulse sset Master $p%- >/dev/null;;
+    set)    amixer -D pulse sset Master $2%  >/dev/null;;
     mute)   amixer -D pulse sset Master $mute >/dev/null;;
     unmute) amixer -D pulse sset Master $mute >/dev/null;;
     pause)  playerctl pause;;
@@ -22,6 +23,7 @@ case $1 in
     prev)   playerctl previous;;
     previous) playerctl previous;;
 esac
+
 
 
 pc_amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
@@ -34,22 +36,29 @@ elif [ $pc_mute = on ]; then
     output="♪ ${pc_vol}"
 fi
 
-playing="$(playerctl metadata xesam:title 2>/dev/null) - $(playerctl metadata xesam:artist 2>/dev/null)"
+media="$(playerctl metadata xesam:title 2>/dev/null)"
+artist="$(playerctl metadata xesam:artist 2>/dev/null)"
 
-if [[ $(playerctl status 2>/dev/null) == "Paused" ]]; then
-    song="⏸  $playing"
-elif [[ $(playerctl status 2>/dev/null) == "Playing" ]]; then
-    song="▶  $playing"
-elif [[ -z $(playerctl status 2>/dev/null)  ]]; then
+[[ -n $artist ]] && SpA="$media - $artist" || SpA="$media"
+
+playing="$(playerctl status 2>/dev/null)"
+
+if [[ $playing == "Paused" ]]; then
+    song="⏸  $SpA"
+elif [[ $playing == "Playing" ]]; then
+    song="▶  $SpA"
+elif [[ -z $playing  ]]; then
     song="No playing media"
 fi
 
 
+
 case $1 in 
-    up)     printf "%s\n" "$output" ;;
-    down)   printf "%s\n" "$output";;
-    mute)   printf "%s\n" "$output";;
-    unmute) printf "%s\n" "$output";;
+    up)     printf "%s\n" "$output"; notify-send "Volume increased to $(printf "%s" "$output" | sed 's/♪ //')";;
+    down)   printf "%s\n" "$output"; notify-send "Volume decreased to $(printf "%s" "$output" | sed 's/♪ //')";;
+    set)    printf "%s\n" "$output"; notify-send "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
+    mute)   printf "%s\n" "$output"; notify-send "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
+    unmute) printf "%s\n" "$output"; notify-send "$(printf "Volume %s" "${mute}d" | sed 's/♪ //')";;
     pause)  printf "$song\n";;
     play)   printf "$song\n";;
     pp)     printf "$song\n";;
