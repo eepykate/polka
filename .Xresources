@@ -25,27 +25,27 @@ st.blinktimeout:  0.5
 
 !! red
 *color1:       #ed254e
-*color9:       #d12350
+*color9:       #ed254e
 
 !! green
 *color2:       #29c583
-*color10:      #27b47b
+*color10:      #29c583
 
 !! yellow
 *color3:       #ffd97d
-*color11:      #ffa166
+*color11:      #ffd97d
 
 !! blue
 *color4:       #4d9de0
-*color12:      #347fc4
+*color12:      #4d9de0
 
 !! magenta
 *color5:       #dd55ba
-*color13:      #c4379f
+*color13:      #dd55ba
 
 !! cyan
 *color6:       #23a6c1
-*color14:      #1998b3
+*color14:      #23a6c1
 
 !! white
 *color7:       #cbe3f1
