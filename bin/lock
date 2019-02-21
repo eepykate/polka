@@ -12,10 +12,12 @@ i3lock \
   --wrongcolor=ccccccff\
   --keyhlcolor=4d9de0ff\
   --bshlcolor=ed254eff &
+
 timeout="10000"
+
 while pgrep -x i3lock; do
-  [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
-  sleep 5;
+    [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
+    sleep 5;
 done;
 exit
 
