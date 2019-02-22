@@ -573,7 +573,7 @@ toolbarspring {
 	margin-bottom: 0px !important;                /* not needed anymore? */
 	margin-top: 0px !important;                   /*  */
 	margin-left: 35vw !important;
-	margin-right: -34px !important;
+	/*margin-right: -34px !important; */
 	max-height: 32px !important;
 }
 
