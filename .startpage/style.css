@@ -276,7 +276,7 @@ main nav a img {
 }*/
 
 #notes:hover:not(:focus) {
-    margin-left: -10px;
+    margin-left: -25px;
 }
 
 .pen {
@@ -287,7 +287,7 @@ main nav a img {
     transition: all 0.4s ease 0s; 
     z-index: 69;
     pointer-events: none;
-    margin-left: 16px;
+    margin-left: 8px;
 }
 
 #notes:focus ~ .pen {

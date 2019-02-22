@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/gauge/.mozilla/firefox/gauge/chrome'
 let g:netrw_dirhist_2='/home/gauge/git/.config/nvim/plugged/coc.nvim'
+let g:netrw_dirhist_3='/home/gauge/bin'
+let g:netrw_dirhist_4='/home/gauge/Stuff/Unixporn 2019-2-21'
