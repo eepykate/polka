@@ -34,7 +34,6 @@
       <property name="&lt;Primary&gt;Escape" type="string" value="xfdesktop --menu"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;space" type="string" value="rofi -show run"/>
-      <property name="&lt;Super&gt;u" type="string" value="usb"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Insert" type="string" value="record"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;End" type="string" value="stop"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;m" type="string" value="dmenumount"/>
@@ -46,7 +45,6 @@
       <property name="&lt;Super&gt;Return" type="string" value="st"/>
       <property name="&lt;Super&gt;F4" type="string" value="xdotool getwindowfocus windowkill"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;w" type="string" value="wifi"/>
-      <property name="XF86AudioPlay" type="string" value="playerctl play-pause"/>
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Super&gt;Print" type="string" value="maim_focused"/>
       <property name="&lt;Shift&gt;Print" type="string" value="maim_selection"/>
@@ -55,6 +53,10 @@
       <property name="XF86AudioLowerVolume" type="string" value="vol down"/>
       <property name="XF86AudioRaiseVolume" type="string" value="vol up"/>
       <property name="XF86AudioMute" type="string" value="vol mute"/>
+      <property name="XF86AudioNext" type="string" value="vol next"/>
+      <property name="XF86AudioPrev" type="string" value="vol prev"/>
+      <property name="XF86AudioPlay" type="string" value="vol pp"/>
+      <property name="XF86AudioStop" type="string" value="vol stop"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

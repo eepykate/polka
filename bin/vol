@@ -16,12 +16,13 @@ case $1 in
     set)    amixer -D pulse sset Master $2%  >/dev/null;;
     mute)   amixer -D pulse sset Master $mute >/dev/null;;
     unmute) amixer -D pulse sset Master $mute >/dev/null;;
-    pause)  playerctl pause;;
-    play)   playerctl play;;
-    pp)     playerctl play-pause;;
-    next)   playerctl next;;
-    prev)   playerctl previous;;
-    previous) playerctl previous;;
+    pause)  playerctl pause 2>/dev/null;;
+    play)   playerctl play 2>/dev/null;;
+    pp)     playerctl play-pause 2>/dev/null;;
+    next)   playerctl next 2>/dev/null;;
+    prev)   playerctl previous 2>/dev/null;;
+    stop)   playerctl stop 2>/dev/null;;
+    previous) playerctl previous 2>/dev/null;;
 esac
 
 
@@ -39,18 +40,30 @@ fi
 media="$(playerctl metadata xesam:title 2>/dev/null)"
 artist="$(playerctl metadata xesam:artist 2>/dev/null)"
 
-[[ -n $artist ]] && SpA="$media - $artist" || SpA="$media"
+[[ -n $artist ]] && SpA="$artist - $media" || SpA="$media"
 
 playing="$(playerctl status 2>/dev/null)"
 
 if [[ $playing == "Paused" ]]; then
     song="⏸  $SpA"
+    play="paused"
+    output_pp="Media $play
+$song"
 elif [[ $playing == "Playing" ]]; then
     song="▶  $SpA"
+    play="resumed"
+    output_pp="Media $play
+$song"
+    output_next="Skipped to the next in playlist
+$song"
+    output_prev="Jumped back in playlist
+$song"
 elif [[ -z $playing  ]]; then
     song="No playing media"
+    output_prev="No playing media" 
+    output_next="No playing media"
+    output_pp="No playing media"
 fi
-
 
 
 case $1 in 
@@ -59,12 +72,13 @@ case $1 in
     set)    printf "%s\n" "$output"; notify-send "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
     mute)   printf "%s\n" "$output"; notify-send "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
     unmute) printf "%s\n" "$output"; notify-send "$(printf "Volume %s" "${mute}d" | sed 's/♪ //')";;
-    pause)  printf "$song\n";;
-    play)   printf "$song\n";;
-    pp)     printf "$song\n";;
-    next)   printf "$song\n";;
-    prev)   printf "$song\n";;
-    previous) printf "$song\n";;
+    pause)  printf "$song\n"; notify-send "$output_pp";;
+    play)   printf "$song\n"; notify-send "$output_pp";;
+    pp)     printf "$song\n"; notify-send "$output_pp";;
+    next)   printf "$song\n"; notify-send "$output_next";;
+    prev)   printf "$song\n"; notify-send "$output_prev";;
+    stop)   printf "Media stopped\n"; notify-send "Media stopped";;
+    previous) printf "$song\n"; notify-send "$output_prev";;
     status) case $2 in 
                 vol)  printf "%s\n" "$output";;
                 song) printf "%s\n" "$song";;
