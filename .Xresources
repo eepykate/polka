@@ -1,5 +1,5 @@
-rofi.font:        Iosveka Term 14
-URxvt.font:       xft:Iosveka Term:style=Regular:pixelsize=14
+rofi.font:        Iosevka Term 14
+URxvt.font:       xft:Iosevka Term:style=Regular:pixelsize=14
 *shell:           /bin/zsh
 st.termname:      st-256color
 st.font:          Iosevka Term:pixelsize=14:antialias=true:autohint=true
