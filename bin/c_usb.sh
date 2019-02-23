@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dev="$(lsblk | awk '/sd[a-z]/ {print $1}' | tr -d '─├└` ')" 
 siz="$(lsblk -o name,size | awk '/sd[a-z]/' | tr -d '─├└`')" 
@@ -21,7 +21,7 @@ for num in $dev; do
         thing="$thing$(printf "%-12s" "$label") \
 $(printf "%-10s" " - /dev/$num") \
 $(printf "%-16s" " - $mounted") \
-$([[ -n $used ]] && printf "%-14s" " - $used/$size" || printf "%-14s" " - $size")​$line​"
+$([[ -n $used ]] && printf "%-16s" " - $used/$size" || printf "%-16s" " - $size")​$line​"
 fi
 done
 

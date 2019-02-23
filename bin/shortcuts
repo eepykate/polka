@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Format of ~/.sc: 
 # $1 = (d)irectory or (f)ile

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 printf " "     #   
 top -bn1 | grep "Cpu(s)" | \

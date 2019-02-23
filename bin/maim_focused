@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dir=~/Stuff/Screenshots/maim
 name="maim-$(date +%F_%H:%M:%S)"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
 #pactl="$(pulseaudio-ctl full-status)"

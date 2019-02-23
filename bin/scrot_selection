@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 sleep 0.125;
 scrot -s -e 'mv $f ~/Stuff/Screenshots/scrot/' &&
