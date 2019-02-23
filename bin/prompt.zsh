@@ -73,6 +73,6 @@ git_info() {
 ## Two Liner
 #PS1='%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})%1{│%}%{$reset_color%} $(ssh_info)%{$fg[blue]%}%~%u $(git_info)
 #%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%} %(!.#.$)%{$reset_color%} '
-#
+# %(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%}
 ## One Liner
-PS1='%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%} %{$fg[blue]%}%~%u%{$reset_color%} $(git_info)%{$reset_color%}%(!.#.$)%{$reset_color%} '
+PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})%~%u%{$reset_color%} $(git_info)%{$reset_color%}%(!.#.$)%{$reset_color%} '
