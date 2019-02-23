@@ -75,13 +75,13 @@ case $1 in
     set)    printf "%s\n" "$output"; notify 69 "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
     mute)   printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
     unmute) printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //')";;
-    pause)  printf "$song\n"; notify 420 "$output_pp" "$song";;
-    play)   printf "$song\n"; notify 420 "$output_pp" "$song";;
-    pp)     printf "$song\n"; notify 420 "$output_pp" "$song";;
-    next)   printf "$song\n"; notify 420 "$output_next" "$song";;
-    prev)   printf "$song\n"; notify 420 "$output_prev" "$song";;
+    pause)  printf "$song\n"; notify 420 "$output_pp" "$SpA";;
+    play)   printf "$song\n"; notify 420 "$output_pp" "$SpA";;
+    pp)     printf "$song\n"; notify 420 "$output_pp" "$SpA";;
+    next)   printf "$song\n"; notify 420 "$output_next" "$SpA";;
+    prev)   printf "$song\n"; notify 420 "$output_prev" "$SpA";;
     stop)   printf "Media stopped\n"; notify 420 "Media stopped";;
-    previous) printf "$song\n"; notify 420  "$output_prev" "$song";;
+    previous) printf "$song\n"; notify 420  "$output_prev" "$SpA";;
     status) case $2 in 
                 vol)  printf "%s\n" "$output";;
                 song) printf "%s\n" "$song";;
