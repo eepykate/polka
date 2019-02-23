@@ -52,3 +52,6 @@ setopt always_to_end
 
 bindkey '^E' end-of-line
 bindkey '^A' beginning-of-line
+
+echo -n -e "\033]0;$(dirs)\007"
+chpwd () { echo -n -e "\033]0;$(dirs)\007" }
