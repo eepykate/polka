@@ -1,5 +1,42 @@
 #!/bin/bash
 
+n="\e[0m"
+b="\e[1m"
+
+help="Amixer and playerctl wrapper script
+
+All options send a notification, with the exceptions of status
+
+${b}Options: ${n}
+ ${b}Audio: ${n}
+   ${b}status${n}     List playing media and volume
+    - ${b}vol${n}       List volume
+    - ${b}song${n}      List playing media
+   ${b}set${n}        Set volume to number
+   ${b}up${n}         Increase volume by number (5 if unspecified)
+   ${b}down${n}       Decrease volume by number (5 if unspecified)
+   ${b}m${n}          Toggle mute
+   ${b}mute${n}       Mute 
+   ${b}unmute${n}     Unmute 
+ ${b}Media: ${n}
+   ${b}next${n}       Skip ahead in playlist
+   ${b}prev(ious)${n} Jump back in playlist
+   ${b}stop${n}       Stop media
+   ${b}play${n}       Play media
+   ${b}pause${n}      Pause media
+   ${b}pp${n}         Toggle play/pause"
+
+opts=`getopt -o h --long help -- "$@"`
+eval set -- "$opts"
+
+while true ; do
+    case "$1" in
+		-h|--help) echo -e "$help"; exit ;;
+		--) shift; break;;
+    esac
+done
+
+
 function notify() {
     gdbus call -e -d "org.freedesktop.Notifications" \
         -o /org/freedesktop/Notifications \
@@ -21,8 +58,9 @@ case $1 in
     up)     amixer -D pulse sset Master $p%+ >/dev/null;;
     down)   amixer -D pulse sset Master $p%- >/dev/null;;
     set)    amixer -D pulse sset Master $2%  >/dev/null;;
-    mute)   amixer -D pulse sset Master $mute >/dev/null;;
-    unmute) amixer -D pulse sset Master $mute >/dev/null;;
+    m)      amixer -D pulse sset Master $mute >/dev/null;;
+    mute)   amixer -D pulse sset Master mute >/dev/null;;
+    unmute) amixer -D pulse sset Master unmute >/dev/null;;
     pause)  playerctl pause 2>/dev/null;;
     play)   playerctl play 2>/dev/null;;
     pp)     playerctl play-pause 2>/dev/null;;
@@ -73,8 +111,9 @@ case $1 in
     up)     printf "%s\n" "$output"; notify 69 "Volume increased to $(printf "%s" "$output" | sed 's/♪ //')";;
     down)   printf "%s\n" "$output"; notify 69 "Volume decreased to $(printf "%s" "$output" | sed 's/♪ //')";;
     set)    printf "%s\n" "$output"; notify 69 "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
-    mute)   printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
-    unmute) printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //')";;
+    m)      printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
+    mute)   printf "%s\n" "$output"; notify 69 "$(printf "Volume muted\n")";;
+    unmute) printf "%s\n" "$output"; notify 69 "$(printf "Volume unmuted\n%s" "$song")";;
     pause)  printf "$song\n"; notify 420 "$output_pp" "$SpA";;
     play)   printf "$song\n"; notify 420 "$output_pp" "$SpA";;
     pp)     printf "$song\n"; notify 420 "$output_pp" "$SpA";;
