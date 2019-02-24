@@ -36,40 +36,21 @@
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
 
-.tab-icon-image:hover {
-	display: none !important;
-}
-
-.tab-close-button {
+.tabbrowser-tab .tab-close-button {
     -moz-box-ordinal-group: 0 !important;
-    border-radius: 50% !important;
-    margin-right: -16px !important;
-	opacity: 1 !important;
-	padding-right: 4px !important; 
+    margin: 0px 4px 0px -2px !important;
 }
 
 .tabbrowser-tab .tab-close-button {
-  margin-left: -2px !important;
-  margin-right: 0px !important;
-}
-
-.tab-close-button {
 	display: none !important;
 }
 
-.tab-icon-image:hover ~ .tab-close-button {
-	display: -moz-box !important;
+.tabbrowser-tab:hover .tab-icon-image,
+.tabbrowser-tab:hover .tab-throbber {
+	display: none;
 }
 
-.tab-icon-pending:hover {
-	display: none !important;
-}
-
-.tab-icon-pending:hover ~ .tab-close-button {
-	display: -moz-box !important;
-}
-
-.tab-content:not(> .tab-icon-image) > .tab-close-button {
+.tabbrowser-tab:hover .tab-close-button {
 	display: -moz-box !important;
 }
 
