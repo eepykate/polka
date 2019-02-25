@@ -17,7 +17,7 @@ git_info() {
     MERGING="${prp}︎⚡${rst}"
     UNTRACKED="${blu}*${rst}"
     MODIFIED="${blu}*${rst}"
-    STAGED="${cyn}*${rst}"
+    STAGED="${prp}*${rst}"
     FLAGS=""
     DIVERGENCES=""
 
@@ -53,7 +53,7 @@ git_info() {
     #[ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
     [[ -n "${DIVERGENCES}" ]] && GIT_INFO+="${DIVERGENCES}"
     [[ -n "${FLAGS}" ]] && GIT_INFO+="${FLAGS}"
-    echo -e "${GIT_INFO}"
+    echo -e "${GIT_INFO} "
 }
 
 
@@ -61,7 +61,7 @@ PS1='$(
     [ $? -eq 0 ] && color=4 || color=1
     [ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD"
 
-    printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" " \$ "
+    printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" "\$ "
 )'
 
 #    printf "\033[;3%sm$pwd\033[m %s%s" "$color" "$(git_info)" "\$ "

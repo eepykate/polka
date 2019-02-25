@@ -20,7 +20,7 @@ git_info() {
   local MERGING="%{$fg[magenta]%}⚡︎%{$reset_color%}"
   local UNTRACKED="%{$fg[blue]%}*%{$reset_color%}"
   local MODIFIED="%{$fg[blue]%}*%{$reset_color%}"
-  local STAGED="%{$fg[cyan]%}*%{$reset_color%}"
+  local STAGED="%{$fg[magenta]%}*%{$reset_color%}"
 
   local -a DIVERGENCES
   local -a FLAGS
