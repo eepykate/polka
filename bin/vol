@@ -106,10 +106,18 @@ elif [[ -z $playing  ]]; then
     output_pp="No playing media"
 fi
 
+if [[ $(printf "%s" "$output" | sed 's/♪ //') = Muted ]]; then
+    up="Volume is muted"
+    down="Volume is muted"
+else
+    up="Volume increased to $(printf "%s" "$output" | sed 's/♪ //')"
+    down="Volume decreased to $(printf "%s" "$output" | sed 's/♪ //')"
+fi
+
 
 case $1 in 
-    up)     printf "%s\n" "$output"; notify 69 "Volume increased to $(printf "%s" "$output" | sed 's/♪ //')";;
-    down)   printf "%s\n" "$output"; notify 69 "Volume decreased to $(printf "%s" "$output" | sed 's/♪ //')";;
+    up)     printf "%s\n" "$output"; notify 69 "$up";;
+    down)   printf "%s\n" "$output"; notify 69 "$down";;
     set)    printf "%s\n" "$output"; notify 69 "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
     m)      printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
     mute)   printf "%s\n" "$output"; notify 69 "$(printf "Volume muted\n")";;
