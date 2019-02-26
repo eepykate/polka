@@ -1,12 +1,11 @@
-red="\e[31m"
-grn="\e[32m"
-ylw="\e[33m"
-cyn="\e[36m"
-blu="\e[34m"
-prp="\e[35m"
-bprp="\e[35;1m"
-rst="\e[0m"
-bold="\e[1m"
+red="\[\e[31m\]"
+grn="\[\e[32m\]"
+ylw="\[\e[33m\]"
+cyn="\[\e[36m\]"
+blu="\[\e[34m\]"
+prp="\[\e[35m\]"
+rst="\[\e[0m\]"
+bold="\[\e[1m\]"
 
 
 git_info() {
@@ -14,7 +13,7 @@ git_info() {
 
     AHEAD="${cyn}⇡${NUM_AHEAD}${rst}"
     BEHIND="${cyn}⇣${NUM_BEHIND}${rst}"
-    MERGING="${prp}︎⚡${rst}"
+    MERGING="${prp}⚡${rst}"
     UNTRACKED="${blu}*${rst}"
     MODIFIED="${blu}*${rst}"
     STAGED="${prp}*${rst}"
@@ -48,30 +47,27 @@ git_info() {
         FLAGS+=" ${STAGED}"
     fi
 
-    GIT_INFO="\033[38;5;15m±"
-    GIT_INFO="${GIT_INFO} \033[38;5;15m${BRANCH}${rst}"
+    GIT_INFO="\[\e[0;97m\]±"
+    GIT_INFO="${GIT_INFO} \[\033[38;5;15m\]${BRANCH}${rst}"
     #[ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
     [[ -n "${DIVERGENCES}" ]] && GIT_INFO+="${DIVERGENCES}"
     [[ -n "${FLAGS}" ]] && GIT_INFO+="${FLAGS}"
     echo -e "${GIT_INFO} "
 }
 
-
-PS1='$(
+prompt() {
     [ $? -eq 0 ] && color=4 || color=1
     [ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD"
 
-    printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" "\$ "
-)'
+    #printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" "\$ "
+    PS1="\[\e[0;3${color}m\]$pwd\[\e[0m\] $(git_info)\$ "
+}
 
-#    printf "\033[;3%sm$pwd\033[m %s%s" "$color" "$(git_info)" "\$ "
-
-
-#printf "\033[1;3%sm│\033[m %s%s\n" "$color" "$pwd"
-#printf "\033[1;3%sm│\033[m " "$color"
-
+PROMPT_COMMAND="prompt"
 
 #PS1='$(
-#    [ $? -eq 0 ] && color=4 || color=1;
-#    [ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD")\
-#\e[0;3${color}m${pwd}\e[0;34m $(git_info) \e[0;34m\$ '
+#    [ $? -eq 0 ] && color=4 || color=1
+#    [ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD"
+#
+#    printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" "\$ "
+#)'
