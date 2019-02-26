@@ -22,7 +22,7 @@ hi Pmenu        ctermbg=8      ctermfg=7
 hi PmenuSel     ctermbg=8      ctermfg=4
 hi PmenuSbar    ctermbg=8      ctermfg=8
 hi PmenuThumb   ctermbg=8      ctermfg=8
-hi Search       ctermbg=3      ctermfg=8
+hi Search       ctermbg=2      ctermfg=8
 hi SpellBad     ctermbg=NONE   ctermfg=1    cterm=underline
 hi SpellCap     ctermbg=NONE   ctermfg=2    cterm=underline
 hi SpellLocal   ctermbg=NONE   ctermfg=10   cterm=underline
@@ -43,7 +43,7 @@ hi EndOfBuffer  ctermbg=NONE   ctermfg=0
 hi CursorLine   ctermbg=0      ctermfg=NONE cterm=NONE
 hi CursorLineNr ctermbg=NONE   ctermfg=7    cterm=bold
 hi CursorColumn ctermbg=0      ctermfg=NONE
-hi MatchParen   ctermbg=3      ctermfg=0
+hi MatchParen   ctermbg=2      ctermfg=0
 hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 
