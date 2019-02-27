@@ -52,11 +52,11 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;space" type="string" value="dmenu_run"/>
       <property name="XF86AudioLowerVolume" type="string" value="vol down"/>
       <property name="XF86AudioRaiseVolume" type="string" value="vol up"/>
-      <property name="XF86AudioMute" type="string" value="vol mute"/>
       <property name="XF86AudioNext" type="string" value="vol next"/>
       <property name="XF86AudioPrev" type="string" value="vol prev"/>
       <property name="XF86AudioPlay" type="string" value="vol pp"/>
       <property name="XF86AudioStop" type="string" value="vol stop"/>
+      <property name="XF86AudioMute" type="string" value="vol m"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

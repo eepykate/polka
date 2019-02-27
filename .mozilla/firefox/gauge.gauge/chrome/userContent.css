@@ -1,16 +1,16 @@
 :root {
-	--bgdark:      #15171d;
-    --bglight:     #1c202a;
-    --bglighter:   #282d3b;
+	--bgdark:      #12151a;
+    --bglight:     #161720;
+    --bglighter:   #222631;
     --bglightest:  #41485c;
   
     --fgdark:      #9aafc4;
-	--fglight:     #cbe3f1;
+	--fglight:     #d8eefa;
 	  
-    --blue:        #4d9de0;
-	--green:       #29c583;
-	--yellow:      #ffd97d;
-	--red:         #ed254e;
+    --blue:        #02a4fc;
+	--green:       #12e689;
+	--yellow:      #f0d35c;
+	--red:         #f0185a;
 	--border:      #334455;
 	--border1:     #223344;
 	--border2:     #334455;

@@ -12,41 +12,41 @@ st.cwscale:       1.0
 st.chscale:       1.0
 st.blinktimeout:  0.5
 
-!! Pop
+!! Pure
 
 !! special
-*foreground:   #cbe3f1
-*background:   #15171d
-*cursorColor:  #cbe3f1
+*foreground:   #d8eefa
+*background:   #12151a
+*cursorColor:  #d8eefa
 
 !! black
-*color0:       #1c202a
-*color8:       #1c202a
+*color0:       #161720
+*color8:       #161720
 
 !! red
-*color1:       #ed254e
-*color9:       #ed254e
+*color1:       #f0185a
+*color9:       #f0185a
 
 !! green
-*color2:       #29c583
-*color10:      #29c583
+*color2:       #12e689
+*color10:      #12e689
 
 !! yellow
-*color3:       #ffd97d
-*color11:      #ffd97d
+*color3:       #f0d35c
+*color11:      #f0d35c
 
 !! blue
-*color4:       #4d9de0
-*color12:      #4d9de0
+*color4:       #02a4fc
+*color12:      #02a4fc
 
 !! magenta
-*color5:       #dd55ba
-*color13:      #dd55ba
+*color5:       #ef2ca5
+*color13:      #ef2ca5
 
 !! cyan
-*color6:       #23a6c1
-*color14:      #23a6c1
+*color6:       #27b1d9
+*color14:      #27b1d9
 
 !! white
-*color7:       #cbe3f1
-*color15:      #9aafc4
+*color7:       #d8eefa
+*color15:      #d8eefa
