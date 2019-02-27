@@ -60,12 +60,24 @@ git_info() {
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
   GIT_INFO+="" 
   echo "${(j: :)GIT_INFO}"
-
 }
 
-#PS1='
-#$(ssh_info)%{$fg[magenta]%}%~%u $(git_info)
-#%(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
+# Set the title to either the directory or the active program
+title() {
+  [[  $DISABLE_AUTO_TITLE == true ]] && return
+  
+	# Don't set title over serial console.
+ 	case $TTY in
+	  /dev/ttyS[0-9]*) return;;
+	esac
+
+  print -n -r $'\e]0;'${hostname}$1$'\a'
+}
+
+title "$(dirs)" 
+chpwd() {   title "$(dirs)" }
+precmd() {  title "$(dirs)" }
+preexec() { title "$2" }
 
 # Use $ as the non-root prompt character; # for root        # ❯
 # Change the line color if the last command had a nonzero exit code
@@ -75,4 +87,5 @@ git_info() {
 #%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%} %(!.#.$)%{$reset_color%} '
 # %(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%}
 ## One Liner
+
 PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})%~%u%{$reset_color%} $(git_info)%{$reset_color%}%(!.#.$)%{$reset_color%} '
