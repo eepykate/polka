@@ -9,22 +9,22 @@ All options send a notification, with the exceptions of status
 
 ${b}Options: ${n}
  ${b}Audio: ${n}
-   ${b}status${n}     List playing media and volume
-    - ${b}vol${n}       List volume
-    - ${b}song${n}      List playing media
-   ${b}set${n}        Set volume to number
-   ${b}up${n}         Increase volume by number (5 if unspecified)
-   ${b}down${n}       Decrease volume by number (5 if unspecified)
-   ${b}m${n}          Toggle mute
-   ${b}mute${n}       Mute 
-   ${b}unmute${n}     Unmute 
+   ${b}status${n}         List playing media and volume
+    - ${b}vol${n}           List volume
+    - ${b}song${n}          List playing media
+   ${b}set${n}            Set volume to number
+   ${b}up${n}             Increase volume by number (5 if unspecified)
+   ${b}down${n}           Decrease volume by number (5 if unspecified)
+   ${b}m${n}              Toggle mute
+   ${b}mute${n}           Mute 
+   ${b}unmute${n}         Unmute 
  ${b}Media: ${n}
-   ${b}next${n}       Skip ahead in playlist
-   ${b}prev(ious)${n} Jump back in playlist
-   ${b}stop${n}       Stop media
-   ${b}play${n}       Play media
-   ${b}pause${n}      Pause media
-   ${b}pp${n}         Toggle play/pause"
+   ${b}next${n}           Skip ahead in playlist
+   ${b}prev(ious)${n}     Jump back in playlist
+   ${b}stop${n}           Stop media
+   ${b}play${n}           Play media
+   ${b}pause${n}          Pause media
+   ${b}pp${n}             Toggle play/pause"
 
 opts=`getopt -o h --long help -- "$@"`
 eval set -- "$opts"
