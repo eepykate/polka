@@ -1,14 +1,14 @@
 :root {
-    --bgdark:  #15171d;
+    --bgdark:  #12151a;
     --fgdark:  #9aafc4;
 
-    --bglight: #1c202a;
-    --border:  #393d49;
-    --fglight: #cbe3f1;
+    --bglight: #161720;
+    --border:  #1f242d;
+    --fglight: #d8eefa;
 
     --bgtitle: #4c566a;
 
-    --accent:  #4d9de0;
+    --accent:  #02a4fc;
 }
 
 html,
