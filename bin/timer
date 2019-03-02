@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 counting () {
   for ((i=minutes*60;i>=0;i--)); do
@@ -18,13 +18,11 @@ ctimer () {
   if [ $# -eq 1 ]; then
     counting
     paplay $alarm_tone 2>/dev/null &
-    notify-send -u critical "Timer finished" \
-      -i dialog-warning -t 8000
+    notify-send -u critical "Timer finished"
   elif [ $# -eq 2 ]; then
     counting
     paplay $alarm_tone 2>/dev/null &
-    notify-send -u critical "Timer finished: $task" \
-      -i dialog-warning -t 8000
+    notify-send -u critical "Timer finished: $task"
   elif [ $# -gt 2 ]; then
     echo "Error:  Task has unescaped space"
   fi
