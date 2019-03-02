@@ -6,6 +6,7 @@ Window-Maximized 1080x1920=true
 
 [CompactMode]
 FontWeight=50
+IconSize=32
 PreviewSize=32
 
 [Desktop Entry]
