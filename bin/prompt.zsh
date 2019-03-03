@@ -18,7 +18,7 @@ git_info() {
   local AHEAD="%{$fg[cyan]%}⇡NUM%{$reset_color%}"
   local BEHIND="%{$fg[cyan]%}⇣NUM%{$reset_color%}"
   local MERGING="%{$fg[magenta]%}⚡︎%{$reset_color%}"
-  local UNTRACKED="%{$fg[blue]%}*%{$reset_color%}"
+  local UNTRACKED="%{$fg[cyan]%}*%{$reset_color%}"
   local MODIFIED="%{$fg[blue]%}*%{$reset_color%}"
   local STAGED="%{$fg[magenta]%}*%{$reset_color%}"
 
@@ -53,7 +53,7 @@ git_info() {
   fi
 
   local -a GIT_INFO
-  GIT_INFO+=( "%{\033[38;5;15m±%}" )
+  GIT_INFO+=( "%{\033[38;5;15m%}±" )
   GIT_INFO+=( "%{\033[38;5;15m%}$GIT_LOCATION%{$reset_color%}" )
   [ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
   [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
@@ -88,4 +88,4 @@ preexec() { title "$2" }
 # %(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%}
 ## One Liner
 
-PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})%~%u%{$reset_color%} $(git_info)%{$reset_color%}%(!.#.$)%{$reset_color%} '
+PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})%~%u%{$reset_color%} $(git_info)%{$reset_color%}%(!.#.$)%{$reset_color%} '\
