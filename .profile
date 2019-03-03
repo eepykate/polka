@@ -7,6 +7,7 @@ export VISUAL="$EDITOR"              # Graphical text editor
 export TERMINAL="st"                 # Terminal
 export BROWSER="firefox"             # Web Browser
 export FILE="dolphin"                # File manager
+export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
 # Custom ls colours
 eval "$(dircolors ~/.dircolors)" 

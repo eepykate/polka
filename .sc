@@ -1,8 +1,16 @@
-d   fchr       $HOME/.mozilla/firefox/gauge/chrome/
+d   fchr       ~/.mozilla/firefox/gauge.gauge/chrome/
+d   dots       ~/git/
+d   bin        ~/bin/
+d   scrots     ~/Stuff/Screenshots/maim/
+d   recordings ~/Videos/recordings/
+d   wp         ~/Wallpapers/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
+f   bashrc     ~/.bashrc
 f   pro        ~/.profile
 f   xpro       ~/.xprofile
+f   zpro       ~/.zprofile
 f   xres       ~/.Xresources
 f   sc         ~/.sc
 f   aliases    ~/.aliases
+f   scsh       ~/.sc.sh
