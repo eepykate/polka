@@ -1,227 +1,110 @@
 :root {
-    --bgdark:  #12151a;
-    --fgdark:  #9aafc4;
+    --bgdark:      #12151a;
+    --fgdark:      #9aafc4;
 
-    --bglight: #161720;
-    --border:  #1f242d;
-    --fglight: #d8eefa;
+    --bglight:     #161720;
+    --bglighter:   #26303b;
+    --border:      #1f242d;
+    --fglight:     #d8eefa;
 
-    --bgtitle: #4c566a;
+    --bgtitle:     #4c566a;
 
-    --accent:  #02a4fc;
+    --accent:      #02a4fc;
 }
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-
-    margin: 0;
-    padding: 0;
-    border: none;
-    position:relative;
-}
-
-@font-face {
-    font-family: 'Iosevka Term';
-    src: local('Iosevka Term');
-}
-
 
 body {
-    background: var(--bgdark);
-    color: var(--fgdark);
-
-    font-family:  'Iosevka Term';
-
-/*    user-select: none;
-    -moz-user-select: none; */
+    background-color: var(--bgdark);
 }
-
 
 #page {
+    /*width: 90vw;
+    height: 90%;*/
+    max-width: 700px;
+    max-height: 600px;
+	  	
     margin: 0 auto;
-    max-width: 800px;
-
-    background: var(--bgdark);
-    color: var(--fgdark);
-
-    font-family:  'Iosevka Term';
-    position: relative;
-    z-index: 1;
 }
 
-
-.shadow-box {
-    box-shadow: 4px 4px 15px 1.5px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    font-size: 14px
-    transition: all 0.4s ease 0s; 
-}
-
-main h1 {
-    font-size: 16px;
-    font-weight: 500;
-
-    color: var(--fglight);
-    background: var(--bglight);
-    text-align: center;
-
-    padding: 7px;
-    margin: 0;
-
-/*     position: relative; */
-    z-index: 2;
-}
-
-main span:hover {
-    /*background-color: var(--accent) !important;*/
-    color: var(--accent) !important;
-    outline: none;
-}
-
-main span {
-    display: block;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    z-index: 2;
-    margin: 5px;
-    transition: all 0.4s ease 0s; 
-}
-
-body.nojs #top-header {
-    min-height: 158px;
-}
-
-#top-header {
-    padding: 15px;
-}
-
-.search-box input[type="text"] {
-    width: 800px;
-    max-width: 100%;
-
-    padding: 5px;
-    border: 2px solid var(--border);
-
-    background: var(--bgdark);
-    color: var(--fglight);
-
-    font-family: 'Iosevka Term';
-    font-size: 16px;
-    text-align: center;
-    display: block;
-    transition: all 0.4s ease 0s; 
-}
-
-.search-box input[type="text"]:focus {
-    border: 2px solid var(--accent);
-    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
-}
-
-.search-box {
-    width: 800px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-
-.search-box input[type="text"]:hover {
-    border-color: var(--accent);
-    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
-}
-
-.search-box {
-    padding-top: 12px;
-}
-
-main, #header {
-    overflow-y: auto;
-
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.header {
-    background-color: var(--bglight);
-    width: 100% !important;
-    height: 80px;
-}
-
-#digital-clock {
-    /* margin-left: 87%; */
-    display: block;
-    text-align: center;
-    padding-top: 5px;
-    text-shadow: 3px 3px 9px rgba(0, 0, 0, 0.8);
+#links {
+    width: 90vw;
+    max-width: 700px;
+    margin-top: auto;
 }
 
 #clock {
-    display: inline-block;
-    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
-#date {
-    display: inline-block;
-    font-size: 14px;
-} 
-
-.nav-wrapper {
-    margin: 10px;
-    border: 2px solid var(--bglight);
-    background: var(--bgdark);
-    transition: all 0.4s ease 0s; 
-}
-
-.nav-wrapper:hover {
-    border-color: var(--accent);
-    box-shadow: 4px 4px 8px 1.5px rgba(0, 0, 0, 0.3);
-}
-
-.nav-wrapper h1 {
-    transition: all 0.4s ease 0s; 
-
-}
-
-.nav-wrapper:hover h1 {
-    background: var(--accent);
-    color: var(--bgdark);
-}
-
-main section {
-    flex: 1 1 100%;
-    box-sizing: border-box;
-}
-
-@media only screen and (min-width: 480px) {
-    main section {
-        flex: 1 1 50%;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    main section {
-        flex: 1 1 25%;
-    }
-}
-
-main a {
+#time {
     color: var(--fglight);
+    margin: 15 0;
+    display: inline-block;
+}
+
+.search-box input[type="text"] {
+    background-color: var(--bglight);
+    border: 2px solid var(--border);   
+    color: var(--fgdark);
+    transition: all 400ms ease 0s;
+    width: 90vw;
+    max-width: 500px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search-box input[type="text"]:focus,
+.search-box input[type="text"]:hover {
+    border: 2px solid var(--accent);   
+}
+
+.line {
+    display: block;
+    padding-top: 10px;
+}
+
+.title {
+    color: var(--fglight);
+    font-size: 18px;
+    margin-right: 25px;
+    margin-left: 15px;
+    transition: all 300ms ease 0s;
+    display: inline-block;
+    width: 50px;
+}
+
+.links {
+    font-size: 14px;
+    padding: 5px 7px;
+    display: inline-block;
+    width: 70px;
+}
+
+hr {
+    color: var(--bglighter);
+    margin: 2px;
+    transition: all 300ms ease 0s;
+}
+
+a:visited, a {
+    color: var(--fgdark);
     text-decoration: none;
-}
-
-main nav a img {
-    width: 1rem;
-    height: 1rem;
-}
-
-* {
     outline: none;
-    text-decoration: none;
+    transition: all 300ms ease 0s;
 }
 
+a:hover {
+    color: var(--accent);
+}
+
+.line:hover > .title,
+.line:hover > hr,
+.line:hover > a > .title {
+    color: var(--accent);
+}
 
 #notes {
     display: block;

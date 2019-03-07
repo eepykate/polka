@@ -9,86 +9,44 @@
 </head>
 
 
-<body id="body">
-    <div class="header">
+<body onload="startTime()">
+    <link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <textarea id="notes" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
+    <img class="pen" src="pen.svg">
+    <div id="page">
         <form class="search-box" method="GET" action="https://ddg.gg/" autocomplete="off">
             <input type="text" name="q" placeholder="Search">
         </form>
-        <div id="digital-clock">
-            <div id="clock"></div>
-            <div id="date"></div>
+        <div id="clock">
+            <p id="time"></p>
+        </div>
+        <div id="links">
+            <div class="line">
+                <span class="title">Stuff:</span>
+                <a href="https://youtube.com/"><span class="links">Youtube</span></a>
+                <a href="https://youtube.com/feed/subscriptions"><span class="links">YT Subs</span></a>
+                <a href="https://mail.google.com"><span class="links">Gmail</span></a>
+                <a href="https://imgur.com/upload"><span class="links">Imgur</span></a>
+                <hr>
+            </div>
+            <div class="line">
+                <a href="https://reddit.com/"><span class="title" class="links">Reddit:</span></a>
+                <a href="https://reddit.com/r/LinuxMasterRace"><span class="links">LinuxMR</span></a>
+                <a href="https://reddit.com/r/Unixporn"><span class="links">Unixporn</span></a>
+                <a href="https://reddit.com/me/m/linux"><span class="links">m/Linux</span></a>
+                <hr>
+            </div>
+            <div class="line">
+                <span class="title">Social:</span>
+                <a href="https://web.whatsapp.com/"><span class="links">Whatsapp</span></a>
+                <a href="https://discordapp.com/channels/@me"><span class="links">Discord</span></a>
+                <a href="https://linuxrocks.online/web/getting-started"><span class="links">Mastodon</span></a>
+                <hr>
+            </div>
         </div>
     </div>
-    <div id="top-header">
-    </div>
-    <link rel="shortcut icon" type="image/png" href="./favicon.png">
-    <div id="page">
-    <main>
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>Stuff</h1>
-                <nav>
-                    <a href="https://mail.google.com">
-                        <span>Gmail</span>
-                    </a>
-                    <a href="https://youtube.com">
-                        <span>Youtube</span>
-                    </a>
-                    <a href="https://youtube.com/feed/subscriptions">
-                        <span>Youtube (Subs)</span>
-                    </a>
-                    <a href="https://imgur.com/upload">
-                        <span>Imgur (Upload)</span>
-                    </a>
-            </div>
-        </section>
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <a href="https://www.reddit.com/">
-                    <h1>Reddit</h1>
-                </a>
-                <nav>
-                    <a href="https://www.reddit.com/r/LinuxMasterRace">
-                        <span>r/LinuxMasterRace</span>
-                    </a>
-                    <a href="https://www.reddit.com/r/UnixPorn">
-                        <span>r/UnixPorn</span>
-                    </a>
-                    <a href="https://www.reddit.com/me/m/linux">
-                        <span>m/Linux</span>
-                    </a>
-                    <a href="https://www.reddit.com/me/m/Creative">
-                        <span>m/Creative</span>
-                    </a>
-
-                </nav>
-            </div>
-        </section>
-        <section>
-            <div class="shadow-box nav-wrapper">
-                <h1>Social Media/Messaging</h1>
-                <nav>
-                    <a href="https://discordapp.com/channels/@me">
-                        <span>Discord</span>
-                    </a>    
-                    <a href="https://web.whatsapp.com">
-                        <span>Whatsapp</span>
-                    </a>
-                    <a href="https://mastodon.social/web/getting-started">
-                        <span>Mastodon</span>
-                    </a>
-                    <a href="https://linuxrocks.online/web/getting-started">
-                        <span>Mastodon (Linux)</span>
-                    </a>
-            </div>
-        </section>
-        <textarea id="notes" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
-        <img class="pen" src="pen.svg">
-        
-    </main>
-
-    <script src="index.js"></script>
-</div>
+    <script src="script.js"></script>
 </body>
 
 </html>
+    
