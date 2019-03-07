@@ -26,10 +26,10 @@ conky.config = {
 
 conky.text = [[
 
-${color grey}${font ZegoeLight-U:pixelsize=33}${time %A}${font}
+${color a8b9c2}${font ZegoeLight-U:pixelsize=33}${time %A}${font}
 ${hr 1}
-${color grey}${font ZegoeLight-U:pixelsize=13}${time %B %d, %Y}${font ZegoeLight-U:pixelsize=10}${alignr}#uptime:${font}
+${color a8b9c2}${font ZegoeLight-U:pixelsize=13}${time %B %d, %Y}${font ZegoeLight-U:pixelsize=10}${alignr}#uptime:${font}
 
-${voffset 2}${color grey}${font ZegoeLight-U:pixelsize=13}${time  %I:%M:%S%p}${alignr}#${uptime_short}${font}
+${voffset 2}${color a8b9c2}${font ZegoeLight-U:pixelsize=13}${time  %I:%M:%S%p}${alignr}#${uptime_short}${font}
 
 ]];

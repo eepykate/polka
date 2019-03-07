@@ -60,3 +60,5 @@ setopt always_to_end
 
 bindkey '^E' end-of-line
 bindkey '^A' beginning-of-line
+bindkey '\177' backward-delete-char
+
