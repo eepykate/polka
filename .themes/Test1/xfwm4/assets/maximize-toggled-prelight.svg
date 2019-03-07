@@ -12,7 +12,7 @@
    viewBox="0 0 20 8"
    version="1.1"
    id="svg12"
-   sodipodi:docname="maximize-prelight.svg"
+   sodipodi:docname="maximize-toggled-prelight.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata18">
@@ -38,14 +38,14 @@
      inkscape:pageopacity="-3"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
+     inkscape:window-height="1046"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="22.627417"
-     inkscape:cx="1.6910413"
-     inkscape:cy="5.2096175"
+     inkscape:zoom="22.627418"
+     inkscape:cx="-6.5652852"
+     inkscape:cy="7.0749606"
      inkscape:window-x="1440"
-     inkscape:window-y="-3"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg12" />
   <rect
@@ -66,4 +66,9 @@
   <g
      id="g834"
      transform="translate(0,-14)" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 9.8674174,0.82295398 6.051117,4.6392542 9.8674174,8.4555545 13.683717,4.6392542 9.8674174,0.82295398"
+     id="path823"
+     inkscape:connector-curvature="0" />
 </svg>

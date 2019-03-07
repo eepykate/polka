@@ -38,14 +38,14 @@
      inkscape:pageopacity="-3"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
+     inkscape:window-height="1046"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="22.627417"
-     inkscape:cx="-1.4025509"
-     inkscape:cy="6.8448019"
+     inkscape:zoom="32"
+     inkscape:cx="10.269714"
+     inkscape:cy="5.6894449"
      inkscape:window-x="1440"
-     inkscape:window-y="-3"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg12" />
   <rect
@@ -66,4 +66,9 @@
   <g
      id="g834"
      transform="translate(0,-14)" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 5.6925501,2.6828326 10.009739,7.0000207 14.326927,2.6828326"
+     id="path821"
+     inkscape:connector-curvature="0" />
 </svg>
