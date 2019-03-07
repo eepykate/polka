@@ -10,8 +10,3 @@ maim -u "${dir}/${name}.png" &&
     mv ${dir}/${name}.png ${dir}/${name1}.png &&
     notify-send "Fullscreen screenshot taken at ${dir}/${name1}.png"
 
-
-
-#maim -iu $(xdotool getactivewindow) "~/Stuff/Screenshots/maim/$(date %Y-%m-%d %H \: %M).png" &&
-#notify-send "Screenshot of selection taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"
-

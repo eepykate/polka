@@ -10,9 +10,3 @@ maim -ui $(xdotool getactivewindow) "${dir}/${name}.png" &&
     mv ${dir}/${name}.png ${dir}/${name1}.png &&
     notify-send "Screenshot of focused window taken as ${dir}/${name1}.png"
 
-
-# awk '{gsub(",","")} {print $5 "x" $7}'
-
-#maim -iu $(xdotool getactivewindow) "~/Stuff/Screenshots/maim/$(date %Y-%m-%d %H \: %M).png" &&
-#notify-send "Screenshot of selection taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"
-
