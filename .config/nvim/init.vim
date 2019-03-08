@@ -1,10 +1,10 @@
 " Line number on the side
 set number relativenumber 
 
-map h <insert>
-map i <Up>
-map j <Left>
-map k <Down>
+"map h <insert>
+"map i <Up>
+"map j <Left>
+"map k <Down>
 
 " Enable syntax highlighting
 syntax on   
@@ -13,15 +13,15 @@ syntax on
 set mouse=a
 
 " Copy
-vmap <C-c> "+yh
-imap <C-c> "+yh
+vmap <C-c> "+y
+imap <C-c> "+y
 
 " Cut
 vmap <C-x> "+c
 
 " Paste
-vmap <C-v> <ESC>"+pa
-imap <C-v> <ESC>"+pa
+vmap <C-v> <ESC>"+p
+imap <C-v> <ESC>"+p
 
 " Ctrl +n twice in normal mode toggles number sidebar 
 nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>  
