@@ -1,8 +1,8 @@
 d   fchr       ~/.mozilla/firefox/gauge.gauge/chrome/
 d   dots       ~/git/
 d   bin        ~/bin/
-d   scrots     ~/Stuff/Screenshots/maim/
-d   recordings ~/Videos/recordings/
+d   pics       ~/Stuff/Screenshots/maim/
+d   recs       ~/Videos/recordings/
 d   wp         ~/Wallpapers/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
