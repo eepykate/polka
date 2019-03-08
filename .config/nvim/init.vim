@@ -13,15 +13,15 @@ syntax on
 set mouse=a
 
 " Copy
-vmap <C-c> "+y
-imap <C-c> "+y
+vmap <C-c> "+yi
+imap <C-c> "+yi
 
 " Cut
-vmap <C-x> "+c
+vmap <C-x> "+ci
 
 " Paste
-vmap <C-v> <ESC>"+p
-imap <C-v> <ESC>"+p
+vmap <C-v> <ESC>"+pi
+imap <C-v> <ESC>"+pi
 
 " Ctrl +n twice in normal mode toggles number sidebar 
 nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>  
