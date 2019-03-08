@@ -56,10 +56,10 @@
     <property name="snap_to_windows" type="bool" value="true"/>
     <property name="snap_width" type="int" value="10"/>
     <property name="sync_to_vblank" type="bool" value="false"/>
-    <property name="theme" type="string" value="Pure"/>
+    <property name="theme" type="string" value="Test1"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="center"/>
-    <property name="title_font" type="string" value="Roboto Medium 12"/>
+    <property name="title_font" type="string" value="Roboto Condensed, 9"/>
     <property name="title_horizontal_offset" type="int" value="0"/>
     <property name="titleless_maximize" type="bool" value="false"/>
     <property name="title_shadow_active" type="string" value="false"/>
