@@ -12,22 +12,36 @@ bold="\e[1m"
 
 echo
 
-os="$(. /etc/os-release; echo $ID )"   # Get distro
-sh="$(echo "${SHELL##*/}")"   # Get default shell 
-id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' )"   # Get window manager
-wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | awk '/\_NET_WM_NAME/ {gsub("\"", "") gsub("Shell", ""); print $3 $4}')"   # Get window manager Part 2
-term="$(xprop -id $(xprop -root | awk '/NET_ACTIVE_WINDOW\(WINDOW\)/ {print $5}') | awk -F = '/WM_CLASS/ {print $2}' | awk '{gsub("\"", ""); gsub("-terminal",""); print $2}')"   # Get terminal emulator
+tty="$(tty)"
 
-colour-printf() { #Prints $1 in blue, and $2 in white, with padding between them
+# Get distro
+os="$(. /etc/os-release; printf "$ID")"
+
+# Get default shell 
+sh="${SHELL##*/}"
+
+# Get window manager
+[[ $tty =~ /dev/tty* ]] && wm="TTY" || \
+    id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' )" \
+    wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | \
+        awk '/\_NET_WM_NAME/ {gsub("\"", "") gsub("Shell", ""); print $3 $4}')"
+
+# Get Terminal emulator
+[[ $tty =~ /dev/tty* ]] && term="$(tty | sed 's/.*\///')" || \
+    term="$(xprop -id $(xprop -root | awk '/NET_ACTIVE_WINDOW\(WINDOW\)/ {print $5}') | \
+        awk -F = '/WM_CLASS/ {print $2}' | awk '{gsub("\"", ""); gsub("-terminal",""); print $2}')" 
+
+# Prints $1 in blue, and $2 in white, with padding between them
+printc() { 
     printf " ${blu}${bold}${1}${rst}" 
     printf "%9s" "${2,,}"
     printf "\n"
 }
 
-colour-printf "os  "   "$os"     # print distro
-colour-printf "sh  "   "$sh"     # Print shell of user
-colour-printf "wm  "   "$wm"     # Print Window Manager
-colour-printf "term"   "$term"   # Print terminal emulator
+printc "os  "   "$os"     # print distro
+printc "sh  "   "$sh"     # Print shell of user
+printc "wm  "   "$wm"     # Print Window Manager
+printc "term"   "$term"   # Print terminal emulator
 
 echo -e "  $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst  " #▼▲
 
