@@ -1,13 +1,15 @@
 " Line number on the side
 set number relativenumber 
 
+cmap ft filetype detect
+
 "map h <insert>
 "map i <Up>
 "map j <Left>
 "map k <Down>
 
 " Enable syntax highlighting
-syntax on   
+syntax on
 
 " Mouse support
 set mouse=a
