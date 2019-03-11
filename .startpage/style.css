@@ -44,7 +44,7 @@ body {
 }
 
 .search-box input[type="text"] {
-    background-color: var(--bglight);
+    background-color: var(--bgdark);
     border: 2px solid var(--border);   
     color: var(--fgdark);
     transition: all 400ms ease 0s;
@@ -160,6 +160,7 @@ a:hover {
 
 #notes:hover:not(:focus) {
     margin-left: -25px;
+    border-color: var(--accent);
 }
 
 .pen {

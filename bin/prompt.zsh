@@ -35,8 +35,8 @@ git_info() {
     DIVERGENCES+=( "${BEHIND//NUM/$NUM_BEHIND}" )
   fi
 
-  local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
-  if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
+  local GIT_DIR="$( git rev-parse --git-dir 2> /dev/null)"
+  if [ -n $GIT_DIR ] && [[ -f $GIT_DIR/MERGE_HEAD ]]; then
     FLAGS+=( "$MERGING" )
   fi
 
