@@ -14,6 +14,8 @@ bindkey '^[[1;5D' backward-word       # [Ctrl-LeftArrow] - move backward one wor
 bindkey '^[[5~' up-line-or-history    # [PageUp] - Up a line of history
 bindkey '^[[6~' down-line-or-history  # [PageDown] - Down a line of history
 bindkey '^[[Z' reverse-menu-complete  # [Shift-Tab] - move through the completion menu backwards
+bindkey '^[[H' beginning-of-line      # [Home] - Go to beginning of line
+bindkey '^[[4~' end-of-line           # [End] - Go to end of line
 bindkey '^r' history-incremental-search-backward  # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
 
 setopt auto_cd   # cd by just typing the directory name
