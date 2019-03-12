@@ -3,15 +3,17 @@
 
 /* Colours (Hopefully) */
 :root {
-	--bgdark:    #12151a;
-    --bglight:   #161720;
+	--bgdark:      #12151a;
+    --bglight:     #161720;
+    --bglighter:   #222631;
 
-    --fgdark:    #9aafc4;
-	--fglight:   #d8eefa;
+    --fgdark:      #9aafc4;
+	--fglight:     #d8eefa;
 	
-    --accent:    #02a4fc;
-	--border:    #334455;
-	--disabled:  #696969;
+    --accent:      #02a4fc;
+	--border:      #334455;
+	--disabled:    #696969;
+	--button:  #cbe3f122;
 }
 
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
@@ -20,6 +22,7 @@
 	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
 	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
 	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
+	--lwt-text-color: var(--fglight) !important;
 }
   
 :root {
@@ -31,6 +34,8 @@
 	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
 	background-color: var(--bglight) !important;                       /* top border of out of focus window */
 	--color-overflow: var(--fglight);                                  /* >> button color */
+	--lwt-toolbar-field-color: var(--fglight) !important;
+	--lwt-text-color: var(--fglight) !important;
 
 }
 
@@ -272,7 +277,11 @@ browser[type=content] > html {
 
 
 /* Add a border and rounding to the urlbar/search popup */
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
+.search-panel-one-offs-header, .search-panel-header, .search-panel-current-input, #PopupAutoCompleteRichResult, .autocomplete-richlistitem, .box-inherit, .scrollbox-innerbox, .autocomplete-richlistbox {
+	border: none !important;
+}
+
+/*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
   display: block !important;
 }
 
@@ -281,14 +290,14 @@ browser[type=content] > html {
 }
 
 #PopupAutoCompleteRichResult {
-	/*margin-left: 10% !important;
-	margin-right: 10% !important;*/
+	margin-left: 10% !important;
+	margin-right: 10% !important;
 	border-radius: 0 0 0.6em 0.6em !important;
 	border-left: 2px var(--border) solid !important;
 	border-right: 2px var(--border) solid !important;
 	border-bottom: 2px var(--border) solid !important;
 }
-
+*/
 
 /* Padding around the sides of the urlbar/search popup */
 .autocomplete-richlistitem {
@@ -534,3 +543,20 @@ toolbarspring {
 	--tab-line-color: var(--bglight) !important;
 }
 */
+
+.findbar-container {
+	background-color: var(--bglight) !important;
+}
+
+.findbar-closebutton {
+	background-color: var(--bgdark) !important;
+	border-radius: 0 !important;
+}
+
+.findbar-textbox {
+	background-color: var(--bgdark) !important;
+}
+
+.findbar-highlight {
+	background-color: var(--button) !important;
+}
