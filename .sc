@@ -1,9 +1,12 @@
+d   mn         /mnt/
+d   me         /media/
 d   fchr       ~/.mozilla/firefox/gauge.gauge/chrome/
 d   dots       ~/git/
 d   bin        ~/bin/
 d   pics       ~/Stuff/Screenshots/maim/
 d   recs       ~/Videos/recordings/
 d   wp         ~/Wallpapers/
+d   h          ~/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
 f   bashrc     ~/.bashrc
