@@ -281,6 +281,14 @@ browser[type=content] > html {
 	border: none !important;
 }
 
+#PopupAutoCompleteRichResult .autocomplete-richlistitem {
+	border-top-right-radius: 0 !important;
+	border-top-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	
+}
+
 /*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
   display: block !important;
 }
@@ -559,4 +567,12 @@ toolbarspring {
 
 .findbar-highlight {
 	background-color: var(--button) !important;
+}
+
+.downloadsListBox {
+	background-color: var(--bglight) !important;
+}
+
+.downloadsFooterButtons, .downloadsPanelFooterButton {
+	background-color: var(--bgdark) !important;
 }
