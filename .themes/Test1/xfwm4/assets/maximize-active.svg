@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="20"
    height="14"
-   viewBox="0 0 20 8"
+   viewBox="0 0 20 14"
    version="1.1"
    id="svg12"
    sodipodi:docname="maximize-active.svg"
@@ -38,14 +38,14 @@
      inkscape:pageopacity="-3"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1058"
+     inkscape:window-height="1046"
      id="namedview14"
      showgrid="false"
      inkscape:zoom="22.627417"
-     inkscape:cx="-2.684182"
+     inkscape:cx="-12.230124"
      inkscape:cy="6.5796368"
      inkscape:window-x="1440"
-     inkscape:window-y="-3"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg12" />
   <rect
@@ -54,20 +54,20 @@
      width="20"
      height="14"
      x="0"
-     y="-3" />
+     y="0" />
   <rect
      width="14"
      height="8"
      id="rect2"
      x="3"
-     y="1"
+     y="4"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:0.39528471" />
   <rect
      width="20"
      height="2"
      id="rect4"
      x="0"
-     y="1"
+     y="-2"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:1.11803401"
      transform="scale(1,-1)" />
   <g

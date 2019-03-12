@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="20"
    height="14"
-   viewBox="0 0 20 8"
+   viewBox="0 0 20 14"
    version="1.1"
    id="svg12"
    sodipodi:docname="maximize-pressed.svg"
@@ -53,14 +53,14 @@
      height="14"
      id="rect2"
      x="0"
-     y="-3"
+     y="0"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:0.39528471" />
   <rect
      width="20"
      height="2"
      id="rect4"
      x="0"
-     y="1"
+     y="-2"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:1.11803401"
      transform="scale(1,-1)" />
   <g
@@ -68,7 +68,7 @@
      transform="translate(0,-14)" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 9.8674174,0.82295398 6.051117,4.6392542 9.8674174,8.4555545 13.683717,4.6392542 9.8674174,0.82295398"
+     d="M 9.8674174,3.651381 6.051117,7.4676812 9.8674174,11.283981 13.683717,7.4676812 9.8674174,3.651381"
      id="path823"
      inkscape:connector-curvature="0" />
 </svg>

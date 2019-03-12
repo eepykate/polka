@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="20"
    height="14"
-   viewBox="0 0 20 8"
+   viewBox="0 0 20 14"
    version="1.1"
    id="svg12"
    sodipodi:docname="maximize-prelight.svg"
@@ -42,8 +42,8 @@
      id="namedview14"
      showgrid="false"
      inkscape:zoom="22.627417"
-     inkscape:cx="4.5527974"
-     inkscape:cy="8.2096717"
+     inkscape:cx="1.3266227"
+     inkscape:cy="10.463575"
      inkscape:window-x="1440"
      inkscape:window-y="20"
      inkscape:window-maximized="1"
@@ -53,14 +53,14 @@
      height="14"
      id="rect2"
      x="0"
-     y="-3"
+     y="0"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:0.39528471" />
   <rect
      width="20"
      height="2"
      id="rect4"
      x="0"
-     y="1"
+     y="-2"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:1.11803401"
      transform="scale(1,-1)" />
   <g
@@ -68,7 +68,7 @@
      transform="translate(0,-14)" />
   <path
      style="fill:none;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="M 5.4561061,6.9669787 9.7491772,2.6739069 14.042248,6.9669787"
+     d="M 5.4561061,9.1324932 9.7491772,4.8394214 14.042248,9.1324932"
      id="path821-3"
      inkscape:connector-curvature="0" />
 </svg>

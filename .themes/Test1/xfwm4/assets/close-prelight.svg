@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="20"
    height="14"
-   viewBox="0 0 20 8"
+   viewBox="0 0 20 14"
    version="1.1"
    id="svg12"
    sodipodi:docname="close-prelight.svg"
@@ -42,7 +42,7 @@
      id="namedview14"
      showgrid="false"
      inkscape:zoom="22.627417"
-     inkscape:cx="10.303519"
+     inkscape:cx="0.75757745"
      inkscape:cy="3.7170673"
      inkscape:window-x="1440"
      inkscape:window-y="20"
@@ -53,14 +53,14 @@
      height="14"
      id="rect2"
      x="0"
-     y="-3"
+     y="0"
      style="fill:#f0185a;fill-opacity:1;stroke-width:0.39528471" />
   <rect
      width="20"
      height="2"
      id="rect4"
      x="0"
-     y="1"
+     y="-2"
      style="fill:#02a4fc;fill-opacity:1;stroke-width:1.11803401"
      transform="scale(1,-1)" />
   <g
@@ -68,17 +68,17 @@
      transform="translate(0,-14)" />
   <g
      id="g850"
-     transform="matrix(1.0070651,0,0,1.0113609,-0.2360633,0.19990405)"
+     transform="matrix(1.0070651,0,0,1.0113609,-0.2360633,3.1999041)"
      style="stroke-width:1.05083573;stroke-miterlimit:4;stroke-dasharray:none">
     <path
        inkscape:connector-curvature="0"
        id="path831"
        d="M 6.7230387,1.3270001 13.606282,8.210243"
-       style="fill:none;stroke:#000000;stroke-width:1.5.05083573;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        inkscape:connector-curvature="0"
        id="path831-6"
        d="M 13.379578,1.5038728 6.8999114,8.0333703"
-       style="fill:none;stroke:#000000;stroke-width:1.5.05083573;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>

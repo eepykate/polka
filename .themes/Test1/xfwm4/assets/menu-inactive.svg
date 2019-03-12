@@ -9,7 +9,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="20"
    height="14"
-   viewBox="0 0 20 8"
+   viewBox="0 0 20 14"
    version="1.1"
    id="svg12"
    sodipodi:docname="menu-inactive.svg"
@@ -54,20 +54,20 @@
      width="20"
      height="14"
      x="0"
-     y="-3" />
+     y="0" />
   <rect
      width="14"
      height="8"
      id="rect2"
      x="3"
-     y="1"
+     y="4"
      style="fill:#26303b;fill-opacity:1;stroke-width:0.39528471" />
   <rect
      width="20"
      height="2"
      id="rect4"
      x="0"
-     y="1"
+     y="-2"
      style="fill:#26303b;fill-opacity:1;stroke-width:1.11803401"
      transform="scale(1,-1)" />
   <g
