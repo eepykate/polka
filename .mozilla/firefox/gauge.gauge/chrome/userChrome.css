@@ -552,10 +552,6 @@ toolbarspring {
 }
 */
 
-.findbar-container {
-	background-color: var(--bglight) !important;
-}
-
 .findbar-closebutton {
 	background-color: var(--bgdark) !important;
 	border-radius: 0 !important;
@@ -569,10 +565,11 @@ toolbarspring {
 	background-color: var(--button) !important;
 }
 
-.downloadsListBox {
-	background-color: var(--bglight) !important;
-}
-
 .downloadsFooterButtons, .downloadsPanelFooterButton {
 	background-color: var(--bgdark) !important;
+}
+
+.downloadMainArea, .download-state, .downloadContainer,
+.identity-popup-security-content, .downloadsListBox, .findbar-container {
+	background-color: var(--bglight);
 }
