@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Source:
-#   https://gitlab.com/gaugek/dots/
+#   https://gitlab.com/GaugeK/dots/
 #
 
 dir="$HOME/Videos/recordings"
@@ -17,32 +17,36 @@ n="\e[0m"
 b="\e[1m"
 
 help="
-Gauge Krahe's ${ye}(https://gitlab.com/gaugek)${n} ffmpeg recording script
+Gauge Krahe's ${ye}(https://gitlab.com/GaugeK)${n} ffmpeg recording script
 
 ${b}CLI Syntax: ${n} 
-  ${ye}\$${n} ${gr}record ${bl}<Offset X> <Offset Y> <Width> <Height> <Frames Per Second> <Desktop audio (yes|no)>${n}
+  \$ ${gr}record${n} <Offset X> <Offset Y> <Width> <Height> <Frames Per Second> <Desktop audio (yes|no)>${n}
+  \$ ${gr}record${n} ${cy}-s ${n}<Frames Per Second> <Desktop audio (yes|no)>${n}
+  \$ ${gr}record${n} ${cy}-d ${n}<Display name (ex: HDMI-0)> <Frames Per Second> <Desktop audio (yes|no)>${n}
 
 When ran without any arguments (Or with missing arguments), it will get the (missing) options with dmenu
 
 ${b}CLI Arguments:  ${n}
-  ${b}-h / --help:    ${n}  Displays what you are viewing right now
-  ${b}-d / --display: ${n}  Record selected display
-  ${b}-s / --slop:    ${n}  Use slop to get region to record
-  ${b}-n / --no-nvenc:${n}  Disable nvenc (for nvidia cards)
+  ${b}-h / --help:     ${n}  Displays what you are viewing right now
+  ${b}-d / --display:  ${n}  Record selected display
+  ${b}-s / --slop:     ${n}  Use slop to get region to record
+  ${b}-n / --no-nvenc: ${n}  Disable nvenc (for nvidia cards)
+  ${b}-c / --noconfirm:${n}  Disable confirmation to start the recording
 "
 
 [[ -d $dir ]] || mkdir -p $dir
 
-opts=`getopt -o d:smhn --long display:,slop,manual,help,no-nvenc -- "$@"`
+opts=$(getopt -o d:smhnc --long display:,slop,manual,help,no-nvenc,noconfirm -- "$@")
 eval set -- "$opts"
 
-while true ; do
+while true; do
     case "$1" in
         -d|--display) [[ -n $2 ]] && DoM="Display" && display_select="$2"; shift 2;;
-        -s|--slop) DoM="Slop" ; shift 1;;
+        -s|--slop) DoM="Slop"; shift 1;;
         -m|--manual) DoM="Manual"; shift 1;;
 		-h|--help) echo -e "$help"; exit ;;
 		-n|--no-nvenc) nvenc=" "; shift 1;;
+        -c|--noconfirm) RtR="Yes"; shift 1;;
 		--) shift; break;;
     esac
 done
@@ -64,8 +68,8 @@ if [[ ${DoM} = Display ]]; then
     height="$(echo  $display_res | awk '{print $2}' )"
     offsetX="$(echo $display_res | awk '{print $3}' )"
     offsetY="$(echo $display_res | awk '{print $4}' )"
-    rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
-    audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
+    [[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
+    [[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Slop ]]; then
     slop="$(slop)"
     slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
@@ -74,8 +78,8 @@ elif [[ ${DoM} = Slop ]]; then
     height="$(echo  $slop1 | awk '{print $2}' )"
     offsetX="$(echo $slop1 | awk '{print $3}' )"
     offsetY="$(echo $slop1 | awk '{print $4}' )"
-    rate="$(echo -e "30\n60"     | dmenu -i -p "Framerate")"
-    audio="$(echo -e "no\nyes"   | dmenu -i -p "Desktop audio?")"
+    [[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
+    [[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Manual ]]; then
     [ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
     [ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
@@ -91,7 +95,7 @@ else
     audio=""
 fi
 
-RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
+[[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
 
 [[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
 
