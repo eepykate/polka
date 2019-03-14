@@ -46,7 +46,7 @@ cf() { cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; }
 #     ls --color=auto --group-directories-first -hF;
 #}
 
-[[ -f ~/.sc.sh ]] && source ~/.sc.sh       # Add directory / file shortcuts to shell
+[[ -f ~/.config/sc.sh ]] && source ~/.config/sc.sh  # Add directory / file shortcuts to shell
 
 alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
 

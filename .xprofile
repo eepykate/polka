@@ -53,5 +53,5 @@ sysresources=/etc/X11/xinit/.Xresources
 
 xrdb ~/.Xresources &
 (cd ~/.startpage;nohup python3 -m http.server) &
-ls "$HOME/.sc" | entr shortcuts &
+echo "$HOME/.config/sc" | entr shortcuts &
 

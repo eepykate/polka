@@ -14,6 +14,6 @@ f   pro        ~/.profile
 f   xpro       ~/.xprofile
 f   zpro       ~/.zprofile
 f   xres       ~/.Xresources
-f   sc         ~/.sc
-f   aliases    ~/.aliases
-f   scsh       ~/.sc.sh
+f   sc         ~/.config/sc
+f   aliases    ~/.config/aliases
+f   scsh       ~/.config/sc.sh

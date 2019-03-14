@@ -2,7 +2,7 @@
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh   # Syntax Hightlighting in shell
 export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "   # Colourful sudo prompt
 source ~/.profile
-source ~/.aliases    # Aliases
+source ~/.config/aliases    # Aliases
 source prompt.zsh    # Shell theme
 stty -ixon           # Disable Ctrl-S && Ctrl-Q
 
@@ -31,9 +31,9 @@ zle -N down-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
 # History
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=420690
-SAVEHIST=420690
+HISTFILE="$HOME/.config/.zsh_history"
+HISTSIZE=690420
+SAVEHIST=690420
 setopt extended_history        # record timestamp of command in HISTFILE
 setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_dups        # ignore duplicated commands history list
@@ -42,7 +42,7 @@ setopt inc_append_history      # add commands to HISTFILE in order of execution
 setopt share_history           # share command history data
 
 # Better autocompletion
-autoload -U compinit && compinit
+autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 ZSH_CACHE_DIR=$HOME/.cache/zsh
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
