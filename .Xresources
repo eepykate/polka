@@ -15,9 +15,9 @@ st.blinktimeout:  0.5
 !! Pure
 
 !! special
-*foreground:   #d8eefa
+*foreground:   #d6e5fb
 *background:   #12151a
-*cursorColor:  #d8eefa
+*cursorColor:  #d6e5fb
 
 !! black
 *color0:       #161720
@@ -48,5 +48,5 @@ st.blinktimeout:  0.5
 *color14:      #27b1d9
 
 !! white
-*color7:       #d8eefa
-*color15:      #d8eefa
+*color7:       #d6e5fb
+*color15:      #d6e5fb

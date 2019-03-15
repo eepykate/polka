@@ -12,7 +12,7 @@
    viewBox="0 0 22 22"
    version="1.1"
    id="svg12"
-   sodipodi:docname="maximize-toggled-prelight.svg"
+   sodipodi:docname="maximize-toggled-pressed.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata18">
@@ -42,7 +42,7 @@
      id="namedview14"
      showgrid="false"
      inkscape:zoom="22.627417"
-     inkscape:cx="-0.2663532"
+     inkscape:cx="-9.7681006"
      inkscape:cy="8.0873565"
      inkscape:window-x="1440"
      inkscape:window-y="20"
@@ -69,7 +69,7 @@
      y="-0.0017901659"
      style="fill:#12151a;stroke-width:0.68755597;fill-opacity:1" />
   <circle
-     style="opacity:1;fill:#262e3e;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
+     style="opacity:1;fill:#1c2434;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:normal"
      id="path822"
      cx="11"
      cy="11"
