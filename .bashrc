@@ -1,7 +1,7 @@
 #     ~/.bashrc     #
 shopt -s autocd          # Cd into directory without physically typing "cd"
 source ~/.profile        # source ~/.profile when bash is opened
-source ~/.aliases        # Aliases
+source ~/.config/aliases # Aliases
 stty -ixon               # Disable Ctrl-S && Ctrl-Q
 
 # Colourful sudo prompt

@@ -55,12 +55,16 @@ git_info() {
     echo -e "${GIT_INFO} "
 }
 
+listdirs() {
+    dirs | grep -o "[^/]*/[^/]*/[^/]*$" || dirs 
+}
+
 prompt() {
     [ $? -eq 0 ] && color=4 || color=1
-    [ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD"
+    #[ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD"
 
     #printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" "\$ "
-    PS1="\[\e[0;3${color}m\]$pwd\[\e[0m\] $(git_info)\$ "
+    PS1="\[\e[0;3${color}m\]$(listdirs)\[\e[0m\] $(git_info)\$ "
 }
 
 PROMPT_COMMAND="prompt"

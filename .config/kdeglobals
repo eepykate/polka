@@ -117,6 +117,7 @@ ColorScheme=OneDark
 Name=Breeze
 XftHintStyle=
 XftSubPixel=
+dbfile=/home/gauge/.mozilla/firefox/gauge.gauge/places.sqlite
 fixed=SauceCodePro Nerd Font Mono,10,-1,5,50,0,0,0,0,0,Regular
 font=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
 menuFont=Noto Sans,11,-1,5,50,0,0,0,0,0,Regular
