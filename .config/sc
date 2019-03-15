@@ -7,6 +7,7 @@ d   pics       ~/Stuff/Screenshots/maim/
 d   recs       ~/Videos/recordings/
 d   wp         ~/Wallpapers/
 d   h          ~/
+d   suck       ~/Stuff/git/suckless/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
 f   bashrc     ~/.bashrc
