@@ -18,3 +18,4 @@ f   xres       ~/.Xresources
 f   sc         ~/.config/sc
 f   aliases    ~/.config/aliases
 f   scsh       ~/.config/sc.sh
+f   xin        ~/.xinitrc
