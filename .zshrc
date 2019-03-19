@@ -9,6 +9,7 @@ stty -ixon           # Disable Ctrl-S && Ctrl-Q
 
 #     Stuff that makes zsh usable     #
 bindkey '^[[P' delete-char            # [Delete] - Delete character under cursor
+bindkey '^[[3~' delete-char           # ^^
 bindkey '^[[1;5C' forward-word        # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word       # [Ctrl-LeftArrow] - move backward one word
 bindkey '^[[5~' up-line-or-history    # [PageUp] - Up a line of history
