@@ -32,10 +32,9 @@ thing="$(printf "$thing" | sed '$ d')"
 
 function notify-root() {
     #Detect the name of the display in use
-    display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
-
+    #display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
     #Detect the user using such display
-    user=$(who | grep '('$display')' | awk '{print $1}' | sed -n -e 1p)
+    user=$(who | grep "$DISPLAY" | awk '{print $1}' | sed -n -e 1p)
 
     #Detect the id of the user
     uid=$(id -u $user)
