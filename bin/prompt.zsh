@@ -53,17 +53,12 @@ git_info() {
     fi
 
     local -a GIT_INFO
-    GIT_INFO+=( "%{\033[38;5;15m%}±" )
-    GIT_INFO+=( "%{\033[38;5;15m%}$GIT_LOCATION%{$reset_color%}" )
     [ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-    GIT_INFO+="" 
+    GIT_INFO+=( "%{\033[38;5;15m%}$GIT_LOCATION%{$reset_color%}" )
+    GIT_INFO+=( "%{\033[38;5;15m%}±" )
     echo "${(j: :)GIT_INFO}"
-}
-
-listdir() {
-    dirs | sed 's|/[^]*||'
 }
 
 # Set the title to either the directory or the active program
@@ -72,28 +67,30 @@ title() {
   
 	# Don't set title over serial console.
  	case $TTY in
-	  /dev/ttyS[0-9]*) return;;
+	    /dev/tty[0-9]*) return;;
 	esac
 
     print -n -r $'\e]0;'${hostname}$1$'\a'
 }
 
+# Displays the last 3 parent dirs in the current path
 listdirs() {
-    dirs | grep -o "[^/]*/[^/]*/[^/]*$" || dirs 
+    dirs | grep -o "\(^~/\)\?\(^/\)\?[^/]*/[^/]*/[^/]*$" || dirs 
 }
 
-title "$(dirs)" 
-chpwd() {   title "$(dirs)" }
-precmd() {  title "$(dirs)" }
+# Sets the title to the current directory or the name of the current application
+title "$(dirs)"
+chpwd() { title "$(dirs)" }
+precmd() { title "$(dirs)" }
 preexec() { title "$2" }
 
-# Use $ as the non-root prompt character; # for root        # ❯
-# Change the line color if the last command had a nonzero exit code
+# ❯
 
 ## Two Liner
 #PS1='%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})%1{│%}%{$reset_color%} $(ssh_info)%{$fg[blue]%}%~%u $(git_info)
 #%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%} %(!.#.$)%{$reset_color%} '
-# %(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%}
-## One Liner
 
-PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%u%{$reset_color%} $(git_info)%{$reset_color%}%(!.#.$)%{$reset_color%} '\
+## One Liner
+# Has the current directory and # if you're root, $ if not on the left, with git info on the right
+PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%{$reset_color%} %(!.#.$)%{$reset_color%} '
+RPS1='$(git_info)%{$reset_color%}'
