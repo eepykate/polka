@@ -6,27 +6,27 @@ for x in "$(xrdb -query | grep color | sed "s/.*\./export /g;s/:\s*/=\"/g;s/$/\"
     eval "$x"; 
 done
 
-capacity=$(cat /sys/class/power_supply/"$1"/capacity) || exit
+cap=$(cat /sys/class/power_supply/"$1"/capacity) || exit
 status=$(cat /sys/class/power_supply/"$1"/status)
 
-case "$capacity" in
-    [0-9]|1[0-9])         bat="" ;;
-    2[0-9])               bat="" ;;
-    3[0-9])               bat="" ;;
-    4[0-9])               bat="" ;;
-    5[0-9])               bat="" ;;
-    6[0-9])               bat="" ;;
-    7[0-9])               bat="" ;;
+case "$cap" in
+    [0-9]|1[0-9])         bat=" $cap" ;;
+    2[0-9])               bat=" $cap" ;;
+    3[0-9])               bat=" $cap" ;;
+    4[0-9])               bat=" $cap" ;;
+    5[0-9])               bat=" $cap" ;;
+    6[0-9])               bat=" $cap" ;;
+    7[0-9])               bat=" $cap" ;;
     8[0-9])               bat="" ;;
     9[0-9])               bat="" ;;
     *)                    bat="" ;;
 esac
 
-if [ "$capacity" -ge 75 ]; then
+if [ "$cap" -ge 75 ]; then
 	color="$color10"
-elif [ "$capacity" -ge 50 ]; then
+elif [ "$cap" -ge 50 ]; then
 	color="$color15"
-elif [ "$capacity" -ge 25 ]; then
+elif [ "$cap" -ge 25 ]; then
 	color="$color11"
 else
 	color="$color9"
