@@ -91,6 +91,6 @@ preexec() { title "$2" }
 #%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})│%{$reset_color%} %(!.#.$)%{$reset_color%} '
 
 ## One Liner
-# Has the current directory and # if you're root, $ if not on the left, with git info on the right
-PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%{$reset_color%} %(!.#.$)%{$reset_color%} '
+# Has the current directory and ❯ with green colour if USER is root, default foreground if not
+PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%{$reset_color%} %(!.%{$fg[green]%}.%{$fg[default]%})❯%{$reset_color%} '
 RPS1='$(git_info)%{$reset_color%}'
