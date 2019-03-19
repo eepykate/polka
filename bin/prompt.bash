@@ -63,8 +63,9 @@ prompt() {
     [ $? -eq 0 ] && color=4 || color=1
     #[ -z "${PWD##$HOME*}" ] && pwd="~${PWD#$HOME}" || pwd="$PWD"
 
+    [[ $UID = 0 ]] && color2="33" || color2="0"
     #printf "\[\e[0;3%sm\]$pwd\[\e[0m\] %s%s" "$color" "$(git_info)" "\$ "
-    PS1="\[\e[0;3${color}m\]$(listdirs)\[\e[0m\] $(git_info)\$ "
+    PS1="\[\e[0;3${color}m\]$(listdirs)\[\e[0m\] $(git_info)\[\e[0;${color2}m\]❯ "
 }
 
 PROMPT_COMMAND="prompt"

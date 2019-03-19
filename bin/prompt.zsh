@@ -3,7 +3,7 @@ autoload -U colors && colors # Enable colors in prompt
 
 # Echoes a username/host string when connected over SSH (empty otherwise)
 ssh_info() {
-    [[ "$SSH_CONNECTION" != '' ]] && echo '%(!.%{$fg[red]%}.%{$fg[yellow]%})%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:' || echo ''
+    [[ "$SSH_CONNECTION" != '' ]] && echo "${USER}@$(hostname)" || echo ''
 }
 
 # Echoes information about Git repository status when inside a Git repository
@@ -70,7 +70,7 @@ title() {
 	    /dev/tty[0-9]*) return;;
 	esac
 
-    print -n -r $'\e]0;'${hostname}$1$'\a'
+    print -n -r $'\e]0;'$(ssh_info)$1$'\a'
 }
 
 # Displays the last 3 parent dirs in the current path
@@ -92,5 +92,5 @@ preexec() { title "$2" }
 
 ## One Liner
 # Has the current directory and ❯ with green colour if USER is root, default foreground if not
-PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%{$reset_color%} %(!.%{$fg[green]%}.%{$fg[default]%})❯%{$reset_color%} '
+PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%{$reset_color%} %(!.%{$fg[yellow]%}.%{$fg[default]%})❯%{$reset_color%} '
 RPS1='$(git_info)%{$reset_color%}'
