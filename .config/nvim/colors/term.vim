@@ -10,15 +10,15 @@ let g:colors_name='term'
 
 set numberwidth=1
 
-hi Normal       ctermbg=NONE   ctermfg=7
-hi Cursor       ctermbg=NONE   ctermfg=7
+hi Normal       ctermbg=NONE   ctermfg=15
+hi Cursor       ctermbg=NONE   ctermfg=15
 hi Directory    ctermbg=NONE   ctermfg=4
 hi ErrorMsg     ctermbg=NONE   ctermfg=1
 hi VertSplit    ctermbg=NONE   ctermfg=0    cterm=NONE
-hi LineNr       ctermbg=NONE   ctermfg=7
+hi LineNr       ctermbg=NONE   ctermfg=15
 hi SignColumn   ctermbg=NONE   ctermfg=NONE cterm=NONE
 hi NonText      ctermbg=NONE   ctermfg=0
-hi Pmenu        ctermbg=8      ctermfg=7
+hi Pmenu        ctermbg=8      ctermfg=15
 hi PmenuSel     ctermbg=8      ctermfg=4
 hi PmenuSbar    ctermbg=8      ctermfg=8
 hi PmenuThumb   ctermbg=8      ctermfg=8
@@ -28,7 +28,7 @@ hi SpellCap     ctermbg=NONE   ctermfg=2    cterm=underline
 hi SpellLocal   ctermbg=NONE   ctermfg=10   cterm=underline
 hi SpellRare    ctermbg=NONE   ctermbg=3    cterm=underline
 hi StatusLine   ctermbg=0      ctermfg=15   cterm=NONE
-hi StatusLineNC ctermbg=0      ctermfg=7    cterm=NONE
+hi StatusLineNC ctermbg=0      ctermfg=15    cterm=NONE
 hi TabLine      ctermbg=0      ctermfg=NONE
 hi TabLineSel   ctermbg=0      ctermfg=15
 hi TabLineFill  ctermbg=0      ctermfg=NONE
@@ -41,7 +41,7 @@ hi DiffDelete   ctermbg=NONE   ctermfg=1
 hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
 hi CursorLine   ctermbg=0      ctermfg=NONE cterm=NONE
-hi CursorLineNr ctermbg=NONE   ctermfg=7    cterm=bold
+hi CursorLineNr ctermbg=NONE   ctermfg=15    cterm=bold
 hi CursorColumn ctermbg=0      ctermfg=NONE
 hi MatchParen   ctermbg=2      ctermfg=0
 hi ModeMsg      ctermbg=NONE   ctermfg=5
@@ -51,7 +51,7 @@ hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 hi Comment      ctermbg=NONE   ctermfg=6    cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
-hi Character    ctermbg=NONE   ctermfg=9    cterm=NONE
+hi Character    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Number       ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Boolean      ctermbg=NONE   ctermfg=11   cterm=NONE
 hi Float        ctermbg=NONE   ctermfg=4    cterm=NONE
@@ -61,13 +61,13 @@ hi Conditional  ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Repeat       ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Label        ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Operator     ctermbg=NONE   ctermfg=1    cterm=NONE
-hi Keyword      ctermbg=NONE   ctermfg=9    cterm=NONE
+hi Keyword      ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Exception    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Include      ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Define       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Macro        ctermbg=NONE   ctermfg=1    cterm=NONE
 hi PreCondit    ctermbg=NONE   ctermfg=1    cterm=NONE
-hi Type         ctermbg=NONE   ctermfg=9    cterm=NONE
+hi Type         ctermbg=NONE   ctermfg=1    cterm=NONE
 hi StorageClass ctermbg=NONE   ctermfg=1    cterm=NONE
 hi PreProc      ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Structure    ctermbg=NONE   ctermfg=5    cterm=NONE
