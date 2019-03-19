@@ -29,8 +29,8 @@
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7071068"
-     inkscape:cx="263.95071"
-     inkscape:cy="523.53122"
+     inkscape:cx="500.42035"
+     inkscape:cy="555.2234"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -134,7 +134,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -298,28 +298,28 @@
          y="184.52989"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';stroke-width:0.26458332">34b0fd</tspan></text>
     <rect
-       style="opacity:1;vector-effect:none;fill:#219fd9;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#1c8ade;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-8"
        width="31.906874"
        height="31.906878"
        x="187.49945"
        y="132.69554" />
     <rect
-       style="opacity:1;vector-effect:none;fill:#219fd9;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#1c8ade;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-8-7"
        width="31.906874"
        height="31.906874"
        x="219.40633"
        y="132.69553" />
     <rect
-       style="opacity:1;vector-effect:none;fill:#469fec;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#3a99ec;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-8-1"
        width="31.906874"
        height="31.906874"
        x="187.49944"
        y="164.60242" />
     <rect
-       style="opacity:1;vector-effect:none;fill:#469fec;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#3a99ec;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-8-1-5"
        width="31.906874"
        height="31.906874"
@@ -335,7 +335,7 @@
          id="tspan2989"
          x="203.56395"
          y="152.53835"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';stroke-width:0.26458332">219fd9</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';stroke-width:0.26458332">1c8ade</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -346,7 +346,7 @@
          id="tspan2993"
          x="203.61157"
          y="184.44522"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';stroke-width:0.26458332">469fec</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';stroke-width:0.26458332">3a99ec</tspan></text>
     <rect
        style="opacity:1;vector-effect:none;fill:#ffdd74;fill-opacity:1;stroke:none;stroke-width:0.66014504;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-44"
@@ -525,7 +525,7 @@
          y="271.83661"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';fill:#000000;fill-opacity:1;stroke-width:0.25879386">d6e5fb</tspan></text>
     <rect
-       style="opacity:1;vector-effect:none;fill:#959fae;fill-opacity:1;stroke:none;stroke-width:0.65743291;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#aab5c6;fill-opacity:1;stroke:none;stroke-width:0.65743291;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-5-5"
        width="31.775789"
        height="31.775789"
@@ -533,7 +533,7 @@
        y="-252.08957"
        transform="scale(1,-1)" />
     <rect
-       style="opacity:1;vector-effect:none;fill:#959fae;fill-opacity:1;stroke:none;stroke-width:0.65743291;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       style="opacity:1;vector-effect:none;fill:#aab5c6;fill-opacity:1;stroke:none;stroke-width:0.65743291;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
        id="rect856-5-9-6"
        width="31.775789"
        height="31.775789"
@@ -550,7 +550,7 @@
          id="tspan2941-9"
          x="204.02219"
          y="239.96985"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';fill:#000000;fill-opacity:1;stroke-width:0.25879386">959fae</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Iosevka Term';-inkscape-font-specification:'Iosevka Term';fill:#000000;fill-opacity:1;stroke-width:0.25879386">aab5c6</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"

@@ -44,9 +44,9 @@ st.blinktimeout:  0.5
 *color13:      #ef5ad7
 
 !! cyan
-*color6:       #219fd9
-*color14:      #469fec
+*color6:       #1c8ade
+*color14:      #3a99ec
 
 !! white
-*color7:       #959fae
+*color7:       #aab5c6
 *color15:      #d6e5fb
