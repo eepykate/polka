@@ -20,7 +20,7 @@ st.blinktimeout:  0.5
 *cursorColor:  #d6e5fb
 
 !! black
-*color0:       #161720
+*color0:       #1b1c28
 *color8:       #1f212e
 
 !! red

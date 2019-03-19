@@ -91,7 +91,7 @@ c() {
 }
 
 bk() { 
-    cp -r $1 "$1 $(date +%Y-%m-%d\ %H:%M:%S).bk"
+    cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
 }
 
 mc() { 
