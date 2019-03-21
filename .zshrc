@@ -3,7 +3,7 @@ source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.
 export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "   # Colourful sudo prompt
 source ~/.profile
 source ~/.config/aliases    # Aliases
-source prompt.zsh    # Shell theme
+source slight.zsh     # Shell theme
 stty -ixon           # Disable Ctrl-S && Ctrl-Q
 
 
