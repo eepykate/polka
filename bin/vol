@@ -84,8 +84,9 @@ fi
 
 media="$(playerctl metadata xesam:title 2>/dev/null)"
 artist="$(playerctl metadata xesam:artist 2>/dev/null)"
+file="$(playerctl metadata xesam:url | sed -e 's|^.*/||' -e 's|\%20| |')"
 
-[[ -n $artist ]] && SpA="$artist - $media" || SpA="$media"
+[[ -n $artist ]] && SpA="$artist - $media" || [[ -n $media ]] && SpA="$media" || SpA="$file"
 
 playing="$(playerctl status 2>/dev/null)"
 
