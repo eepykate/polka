@@ -19,3 +19,5 @@ f   sc         ~/.config/sc
 f   aliases    ~/.config/aliases
 f   scsh       ~/.config/sc.sh
 f   xin        ~/.xinitrc
+f   sz         ~/bin/slight.zsh
+f   sb         ~/bin/slight.bash
