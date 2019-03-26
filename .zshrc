@@ -8,6 +8,9 @@ stty -ixon           # Disable Ctrl-S && Ctrl-Q
 
 
 #     Stuff that makes zsh usable     #
+bindkey '^E' end-of-line              # [Ctrl-E] - Jump to the end of the line
+bindkey '^A' beginning-of-line        # [Ctrl-A] - Jump to the start of the line
+bindkey '^?' backward-delete-char     # [Backspace] - Delete backward
 bindkey '^[[P' delete-char            # [Delete] - Delete character under cursor
 bindkey '^[[3~' delete-char           # ^^
 bindkey '^[[1;5C' forward-word        # [Ctrl-RightArrow] - move forward one word
@@ -60,8 +63,5 @@ unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt complete_in_word
 setopt always_to_end
-
-bindkey '^E' end-of-line
-bindkey '^A' beginning-of-line
-bindkey '\177' backward-delete-char
+set -k     # Allow comments in shell
 
