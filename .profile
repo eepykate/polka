@@ -33,7 +33,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #fi
 
 
-if [ "$TERM" = "linux" ]  || [ "$TERM" = "fbterm" ]; then
+if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]P012151a" #black
     echo -en "\e]P81f212e" #darkgrey
     echo -en "\e]P1f0185a" #darkred
@@ -51,4 +51,5 @@ if [ "$TERM" = "linux" ]  || [ "$TERM" = "fbterm" ]; then
     echo -en "\e]P7aab5c6" #lightgrey
     echo -en "\e]PFd6e5fb" #white
     clear #for background artifacting
+    sudo /usr/bin/kbdrate -d 200 -r 30
 fi
