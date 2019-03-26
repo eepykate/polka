@@ -37,7 +37,7 @@ alias gaa="git add -A"           # git - Add all unstaged files to staging area
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
 
-se() { du -a $HOME/bin/ $HOME/git | awk '{print $3}' | fzf | xargs -r $EDITOR; }
+se() { du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR; }
 cf() { cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; }
 
 # ls on cd

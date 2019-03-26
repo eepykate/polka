@@ -56,7 +56,7 @@ git_info() {
 }
 
 listdirs() {
-    dirs | grep -o "[^/]*/[^/]*/[^/]*$" || dirs 
+    dirs | grep -o "\(^~/\)\?\(^/\)\?[^/]*/[^/]*/[^/]*$" || dirs
 }
 
 prompt() {

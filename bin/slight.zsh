@@ -1,16 +1,15 @@
 setopt prompt_subst
-autoload -U colors && colors
 
 git_info() {
     git rev-parse --is-inside-work-tree &>/dev/null || return
 
     local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
-    local AHEAD="%{$fg[cyan]%}⇡NUM%{$reset_color%}"
-    local BEHIND="%{$fg[cyan]%}⇣NUM%{$reset_color%}"
-    local MERGING="%{$fg[yellow]%}⚡︎%{$reset_color%}"
-    local UNTRACKED="%{$fg[cyan]%}U%{$reset_color%}"
-    local MODIFIED="%{$fg[blue]%}M%{$reset_color%}"
-    local STAGED="%{$fg[magenta]%}S%{$reset_color%}"
+    local AHEAD="%{\e[36m%}⇡NUM%{\e[0m%}"
+    local BEHIND="%{\e[36m%}⇣NUM%{\e[0m%}"
+    local MERGING="%{\e[33m%}⚡︎%{\e[0m%}"
+    local UNTRACKED="%{\e[36m%}U%{\e[0m%}"
+    local MODIFIED="%{\e[34m%}M%{\e[0m%}"
+    local STAGED="%{\e[35m%}S%{\e[0m%}"
 
     local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
     local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
@@ -26,11 +25,11 @@ git_info() {
     ! git diff --cached --quiet 2> /dev/null && FLAGS+=( "$STAGED" )
 
     local -a GIT_INFO
-    [ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
+    [[ -n "$GIT_STATUS" ]] && GIT_INFO+=( "$GIT_STATUS" )
     [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
     [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-    GIT_INFO+=( "%{\033[38;5;15m%}$GIT_LOCATION%{$reset_color%}" )
-    GIT_INFO+=( "%{\033[38;5;15m%}±" )
+    GIT_INFO+=( "%{\e[0m%}$GIT_LOCATION" )
+    GIT_INFO+=( "%{\e[0m%}±" )
     echo "${(j: :)GIT_INFO}"
 }
 
@@ -42,5 +41,5 @@ chpwd() { title "$(dirs)" }
 precmd() { title "$(dirs)" }
 preexec() { title "$2" }
 
-PS1='%(?.%{$fg[blue]%}.%{$fg[red]%})$(listdirs)%{$reset_color%} %(!.%{$fg[yellow]%}.%{$fg[default]%})❯%{$reset_color%} '
-RPS1='$(git_info)%{$reset_color%}'
+PS1=$'%(?.%{\e[34m%}.%{\e[31m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
+RPS1=$'$(git_info)%{\e[0m%}'
