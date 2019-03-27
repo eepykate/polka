@@ -18,32 +18,36 @@
             <input type="text" name="q" placeholder="Search">
         </form>
         <div id="clock">
-            <p id="time"></p>
+            <span id="date"></span>
+            <span id="time"></span>
         </div>
-        <div id="links">
-            <div class="line">
-                <span class="title">Stuff:</span>
-                <a href="https://youtube.com/"><span class="links">Youtube</span></a>
-                <a href="https://youtube.com/feed/subscriptions"><span class="links">YT Subs</span></a>
-                <a href="https://mail.google.com"><span class="links">Gmail</span></a>
-                <a href="https://imgur.com/upload"><span class="links">Imgur</span></a>
-                <hr>
-            </div>
-            <div class="line">
-                <a href="https://reddit.com/"><span class="title" class="links">Reddit:</span></a>
-                <a href="https://reddit.com/r/LinuxMasterRace"><span class="links">LinuxMR</span></a>
-                <a href="https://reddit.com/r/Unixporn"><span class="links">Unixporn</span></a>
-                <a href="https://reddit.com/me/m/linux"><span class="links">m/Linux</span></a>
-                <hr>
-            </div>
-            <div class="line">
-                <span class="title">Social:</span>
-                <a href="https://web.whatsapp.com/"><span class="links">Whatsapp</span></a>
-                <a href="https://discordapp.com/channels/@me"><span class="links">Discord</span></a>
-                <a href="https://linuxrocks.online/web/getting-started"><span class="links">Mastodon</span></a>
-                <hr>
-            </div>
-        </div>
+        <main>
+            <section>
+                <div class="box">
+                    <span class="title">Stuff</span>
+                    <a href="https://youtube.com/"><span class="links">Youtube</span></a>
+                    <a href="https://youtube.com/feed/subscriptions"><span class="links">YT Subs</span></a>
+                    <a href="https://mail.google.com"><span class="links">Gmail</span></a>
+                    <a href="https://imgur.com/upload"><span class="links">Imgur</span></a>
+                </div>
+            </section>
+            <section>
+                <div class="box">
+                    <a href="https://reddit.com/"><span class="title">Reddit</span></a>
+                    <a href="https://reddit.com/r/LinuxMasterRace"><span class="links">LinuxMR</span></a>
+                    <a href="https://reddit.com/r/Unixporn"><span class="links">Unixporn</span></a>
+                    <a href="https://reddit.com/me/m/linux"><span class="links">m/Linux</span></a>
+                </div>
+            </section>
+            <section>
+                <div class="box">
+                    <span class="title">Social</span>
+                    <a href="https://web.whatsapp.com/"><span class="links">Whatsapp</span></a>
+                    <a href="https://discordapp.com/channels/@me"><span class="links">Discord</span></a>
+                    <a href="https://linuxrocks.online/web/getting-started"><span class="links">Mastodon</span></a>
+                </div>
+            </section>
+        </main>
     </div>
     <script src="script.js"></script>
 </body>

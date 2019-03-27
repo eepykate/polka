@@ -4,7 +4,7 @@
 
     --bglight:     #161720;
     --bglighter:   #26303b;
-    --border:      #1f242d;
+    --border:      #1a1b26;
     --fglight:     #d8eefa;
 
     --bgtitle:     #4c566a;
@@ -22,34 +22,37 @@ body {
     max-width: 700px;
     max-height: 600px;
 	  	
-    margin: 0 auto;
+    margin: 25px auto;
 }
 
-#links {
-    width: 90vw;
+main {
     max-width: 700px;
     margin-top: auto;
+    display: flex;
+    margin: 2vh auto;
+    overflow-y: auto;
+    flex-flow: row wrap;
 }
 
 #clock {
     display: block;
     margin: 0 auto;
     text-align: center;
+    padding: 10px;
 }
 
-#time {
+#time, #date {
     color: var(--fglight);
-    margin: 15 0;
-    display: inline-block;
+    display: block;
 }
 
 .search-box input[type="text"] {
     background-color: var(--bgdark);
     border: 2px solid var(--border);   
     color: var(--fgdark);
-    transition: all 400ms ease 0s;
-    width: 90vw;
-    max-width: 500px;
+    transition: all 300ms ease 0s;
+    width: 90%;
+    max-width: 600px;
     height: 30px;
     display: block;
     margin: 0 auto;
@@ -61,26 +64,43 @@ body {
     border: 2px solid var(--accent);   
 }
 
-.line {
+.box {
     display: block;
-    padding-top: 10px;
+    width: auto;
+    text-align: center;
+    border: 2px solid var(--border);
+    transition: all 300ms ease 0s;
+    margin: 15px;
+    box-shadow: 9px 10px 16px 3px rgba(0,0,0,0.3);   
 }
+
+.box:hover {
+    border: 2px solid var(--accent);
+}
+
+.box:hover > .title,
+.box:hover > * > .title {
+    background-color: var(--accent);
+}
+
 
 .title {
     color: var(--fglight);
     font-size: 18px;
-    margin-right: 25px;
-    margin-left: 15px;
     transition: all 300ms ease 0s;
-    display: inline-block;
-    width: 50px;
+    display: block;
+    text-align: center;
+    background-color: var(--border);
+    padding: 5px;
 }
 
 .links {
     font-size: 14px;
-    padding: 5px 7px;
+    padding: 6px 0;
     display: inline-block;
     width: 70px;
+    width: 100%;
+    display: block;
 }
 
 hr {
@@ -100,12 +120,6 @@ a:hover {
     color: var(--accent);
 }
 
-.line:hover > .title,
-.line:hover > hr,
-.line:hover > a > .title {
-    color: var(--accent);
-}
-
 #notes {
     display: block;
     background-color: var(--bgdark);
@@ -120,7 +134,7 @@ a:hover {
     margin-bottom: 25px;
     position: fixed;
     left: 0;
-    top: 150px;
+    top: 50px;
     z-index: 69;
     margin-bottom: 0px;
     border-radius: 0 5em 5em 0;
@@ -165,7 +179,7 @@ a:hover {
 
 .pen {
     position: fixed;
-    top: 168px;
+    top: 68px;
     left: 0px;
     width: 20px;
     transition: all 0.4s ease 0s; 
@@ -183,3 +197,19 @@ a:hover {
     margin-left: -6px;
 }
 
+main section {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 480px) {
+    main section {
+        flex: 1 1 50%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    main section {
+        flex: 1 1 25%;
+    }
+}
