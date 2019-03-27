@@ -1,21 +1,23 @@
  
 conky.config = {
-	alignment = 'bottom_left',
+	alignment = 'top_right',
 	background = false,
 	cpu_avg_samples = 2,
 	double_buffer = true,
 	draw_borders = false,
 	draw_outline = false,
 	draw_shades = false,
-	gap_x = 1600,
-	gap_y = 880,
+	gap_x = 220,
+	gap_y = 110,
 	maximum_width = 280,
-	minimum_width = 160,
+	minimum_width = 166,
 	net_avg_samples = 2,
-	own_window = true,
-	own_window_type = 'desktop',
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0, 
 	update_interval = 1.0,
 	uppercase = false,
 	use_spacer = 'right',
@@ -26,10 +28,9 @@ conky.config = {
 
 conky.text = [[
 
-${color a8b9c2}${font ZegoeLight-U:pixelsize=33}${time %A}${font}
+${alignc}${color a8b9c2}${font Roboto Condensed:pixelsize=30}${time %A}${font}
 ${hr 1}
-${color a8b9c2}${font ZegoeLight-U:pixelsize=13}${time %B %d, %Y}${font ZegoeLight-U:pixelsize=10}${alignr}#uptime:${font}
-
-${voffset 2}${color a8b9c2}${font ZegoeLight-U:pixelsize=13}${time  %I:%M:%S%p}${alignr}#${uptime_short}${font}
+${alignc}${color a8b9c2}${font Roboto Condensed:pixelsize=16}${time %B %d, %Y}${font}
+${alignc}${font Roboto Condensed:pixelsize=14}${time  %I:%M:%S%p}
 
 ]];
