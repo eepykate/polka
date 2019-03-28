@@ -31,7 +31,7 @@ time_since_last_command() {
     new_epoch="$(date +%s%3N)"
     [[ -n $epoch ]] || return
     tp="$(( $new_epoch - $epoch ))" && tp="$(( $tp / 1000 ))" 
-    [[ $tp -gt 5 ]] || return
+    [[ $tp -ge 5 ]] || return
     local H=$(($tp/60/60%24));   local M=$(($tp/60%60));   local S=$(($tp%60))
     if [[ $H -ne 0 ]]; then; time_passed="${H}h ${M}m ${S}s"; elif [[ $M -ne 0 ]]; then; time_passed="${M}m ${S}s"; else; time_passed="${S}s"; fi
 }
