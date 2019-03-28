@@ -22,7 +22,7 @@ body {
     max-width: 700px;
     max-height: 600px;
 	  	
-    margin: 25px auto;
+    margin: 0 auto;
 }
 
 main {
@@ -52,11 +52,12 @@ main {
     color: var(--fgdark);
     transition: all 300ms ease 0s;
     width: 90%;
-    max-width: 600px;
+    max-width: 700px;
     height: 30px;
     display: block;
     margin: 0 auto;
     text-align: center;
+    box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);
 }
 
 .search-box input[type="text"]:focus,
@@ -127,7 +128,7 @@ a:hover {
     border: none;
     padding: 15px;
     margin-right: auto;
-    border: 2px solid var(--bglight);
+    border: 2px solid var(--border);
     transition: all 0.4s ease 0s; 
     width: 40px;
     height: 20px;
