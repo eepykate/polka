@@ -27,10 +27,15 @@ git_info() {
 }
 
 time_since_last_command() {
-    unset time_passed
+    unset time_passed tp   #M H S D
     new_epoch="$(date +%s%3N)"
-    [[ -n $epoch ]] && time_passed="$(( $new_epoch - $epoch ))" && time_passed="$(( $time_passed / 1000 ))" 
-    #[[ $time_passed -ge 5 ]] && echo "$time_passed"
+    [[ -n $epoch ]] || return
+    tp="$(( $new_epoch - $epoch ))" && tp="$(( $tp / 1000 ))" 
+    [[ $tp -gt 5 ]] || return
+    local H=$(($tp/60/60%24)) #; [[ $H -ne 0 ]] && local h="$(printf "%02d%s" "$H" ":")"
+    local M=$(($tp/60%60))    #; [[ $M -ne 0 ]] && local m="$(printf "%02d%s" "$M" ":")"  
+    local S=$(($tp%60))       #; [[ $S -ne 0 ]] && local s="$(printf "%02d%s" "$S")"      || local s="00"
+    if [[ $H -ne 0 ]]; then; time_passed="${H}h ${M}m ${S}s"; elif [[ $M -ne 0 ]]; then; time_passed="${M}m ${S}s"; else; time_passed="${S}s"; fi
 }
 
 listdirs() {  dirs | grep -o "\(^~/\)\?\(^/\)\?[^/]*/[^/]*/[^/]*$" || dirs  }
@@ -42,4 +47,4 @@ precmd() { title "$(dirs)"; time_since_last_command; unset epoch }
 preexec() { title "$2"; epoch="$(date +%s%3N)" }
 
 PS1=$'%(?.%{\e[34m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
-RPS1=$'$(git_info)%{\e[0m%}$([[ $time_passed -ge 5 ]] && printf "%s" "\%\{\e[33m\%\} ${time_passed}s")'
+RPS1=$'$(git_info)%{\e[0m%} %{\e[33m%}${time_passed}%{\e[0m%}'
