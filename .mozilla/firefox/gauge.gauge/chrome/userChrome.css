@@ -194,10 +194,6 @@ browser[type=content] > html {
     margin: 0 !important;
 }*/
 
-#navigator-toolbox[movingtab] #tabbrowser-tabs {
-    margin-bottom: -30px !important;
-}
-
 /* Hide a few buttons on the navbar */
 #pageActionSeparator, #pocket-button {
     display: none !important;
@@ -557,19 +553,17 @@ toolbarspring {
 	border-radius: 0 !important;
 }
 
-.findbar-textbox {
-	background-color: var(--bgdark) !important;
-}
-
 .findbar-highlight {
 	background-color: var(--button) !important;
 }
 
-.downloadsFooterButtons, .downloadsPanelFooterButton {
-	background-color: var(--bgdark) !important;
+.downloadMainArea, .download-state, .downloadContainer,
+.identity-popup-security-content, .findbar-container,
+#downloadsListBox, #mainPopupSet, #identity-popup {
+	background-color: var(--bglight) !important;
 }
 
-.downloadMainArea, .download-state, .downloadContainer,
-.identity-popup-security-content, .downloadsListBox, .findbar-container {
-	background-color: var(--bglight);
+.downloadsFooterButtons, .downloadsPanelFooterButton,
+.findbar-textbox, #identity-popup-clear-sitedata-footer {	
+	background-color: var(--bgdark) !important; 
 }
