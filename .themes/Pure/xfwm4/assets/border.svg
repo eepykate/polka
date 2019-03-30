@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="2"
-   height="2"
-   viewBox="0 0 2 2"
+   width="5"
+   height="5"
+   viewBox="0 0 5 5"
    version="1.1"
    id="svg4"
    sodipodi:docname="border.svg"
-   inkscape:version="0.92.2 2405546, 2018-03-11">
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata10">
     <rdf:RDF>
@@ -29,29 +29,30 @@
   <defs
      id="defs8" />
   <sodipodi:namedview
-     pagecolor="#ffffff"
+     pagecolor="#12151a"
      bordercolor="#666666"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
      guidetolerance="10"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="-3"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1026"
+     inkscape:window-height="1046"
      id="namedview6"
      showgrid="false"
      inkscape:zoom="64"
-     inkscape:cx="-2.0043519"
-     inkscape:cy="1.4201313"
+     inkscape:cx="-4.9887269"
+     inkscape:cy="2.0763813"
      inkscape:window-x="1440"
-     inkscape:window-y="32"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4" />
   <rect
-     width="2"
-     height="2"
-     fill="#181a21"
+     width="5"
+     height="5"
      id="rect2"
-     style="fill:#02a4fc;fill-opacity:1" />
+     style="fill:#12151a;fill-opacity:1;stroke-width:2.5"
+     x="0"
+     y="0" />
 </svg>

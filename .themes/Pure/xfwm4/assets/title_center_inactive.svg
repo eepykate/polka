@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="14"
+   width="6"
    height="22"
-   viewBox="0 0 14 22"
+   viewBox="0 0 6 22"
    version="1.1"
    id="svg6"
-   sodipodi:docname="title_center_inactive.svg"
+   sodipodi:docname="title_left.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata12">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,42 +38,21 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1026"
+     inkscape:window-height="1038"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="45.254836"
-     inkscape:cx="4.1760938"
-     inkscape:cy="11.655004"
+     inkscape:zoom="22.627417"
+     inkscape:cx="-2.5035668"
+     inkscape:cy="10.468607"
      inkscape:window-x="1440"
-     inkscape:window-y="32"
+     inkscape:window-y="20"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6" />
   <rect
-     width="13.974042"
-     height="21.999006"
-     id="rect2"
-     x="0"
-     y="0.00099311769"
-     style="fill:#6992c5;fill-opacity:1;stroke-width:2.19165707" />
-  <rect
-     width="2"
-     height="1"
-     id="rect4"
-     x="0"
-     y="-10"
-     style="fill:#cccccc;fill-opacity:0.1" />
-  <rect
-     style="fill:#12151a;fill-opacity:1;stroke-width:2.1985774"
-     y="0.00099311769"
+     style="fill:#12151a;fill-opacity:1;stroke-width:1.43614078"
+     y="0"
      x="0"
      id="rect822"
-     height="21.999006"
-     width="14.06243" />
-  <rect
-     style="opacity:1;fill:#696969;fill-opacity:1;stroke:none;stroke-width:4.37889433;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0;paint-order:normal"
-     id="rect814"
-     width="14.028629"
-     height="1.9951006"
-     x="0"
-     y="0.00099311769" />
+     height="22"
+     width="6" />
 </svg>
