@@ -1,30 +1,31 @@
 :root {
-	--bgdark:      #12151a;
-    --bglight:     #161720;
-    --bglighter:   #222631;
-    --bglightest:  #41485c;
-  
-    --fgdark:      #9aafc4;
-	--fglight:     #d8eefa;
-	  
-    --blue:        #02a4fc;
+--bgdark: #141117;
+--bglight: #19141e;
+--bglighter: #342036;
+	--bglightest:  #41485c;
+	
+--fgdark: #987ea2;
+--fglight: #f3d6fb;
+		
+	--accent: #ab32c1;
+	--blue:        #02a4fc;
 	--green:       #12e689;
 	--yellow:      #f0d35c;
 	--red:         #f0185a;
-	--border:      #334455;
+--border: #342036;
 	--border1:     #223344;
 	--border2:     #334455;
-	--disabled:    #696969;
+--disabled: #696969;
 	--bglightest:  #cbe3f122;
 }
 
 :root{
-  scrollbar-color: var(--blue) var(--bgdark) !important;
-  scrollbar-width: thin !important;
+	scrollbar-color: var(--accent) var(--bgdark) !important;
+	scrollbar-width: thin !important;
 }
 
 * {
-  scrollbar-width: thin !important;
+	scrollbar-width: thin !important;
 } 
 
 
@@ -41,9 +42,9 @@ from the addons rules every time we update anything here */
 /* These variable changes the scrollbars size and color. If you use the JS method instead, you don't need to change these.
 The scrollbars-width only has 3 acceptable values, auto, thin, and none:
 auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
-    --scrollbars-width: thin;
-    --scrollbars-thumb-color: var(--blue);
-    --scrollbars-track-color: var(--bglighter);
+		--scrollbars-width: thin;
+		--scrollbars-thumb-color: var(--blue);
+		--scrollbars-track-color: var(--bglighter);
 
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
 like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
@@ -79,9 +80,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 	/* Variables to change all link colors on most pages */
 	--in-content-link-color: var(--blue) !important;
-  	--in-content-link-color-hover: var(--blue) !important;
-  	--in-content-link-color-active: var(--blue) !important;
-  	--in-content-link-color-visited: var(--blue) !important;
+		--in-content-link-color-hover: var(--blue) !important;
+		--in-content-link-color-active: var(--blue) !important;
+		--in-content-link-color-visited: var(--blue) !important;
 	
 	/* These change the selected categories color on sidebars on about: pages*/
 	--in-content-category-text-selected: var(--blue) !important;
@@ -138,8 +139,8 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 
 /*------ END OF INPUT BOXES TEXT - SCROLLBAR COLORS BELOW ------*/
 :root{
-  scrollbar-color: var(--scrollbars-thumb-color) var(--scrollbars-track-color) !important;
-  scrollbar-width: var(--scrollbars-width) !important}
+	scrollbar-color: var(--scrollbars-thumb-color) var(--scrollbars-track-color) !important;
+	scrollbar-width: var(--scrollbars-width) !important}
 
 *|* {scrollbar-width: var(--scrollbars-width) !important}
 /*------ END OF SCROLLBAR COLORS ------*/
@@ -162,26 +163,26 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 #ublock0-epicker aside #cosmeticFilters li:hover {background: rgba(255,255,255,0.2) !important}
 
 #ublock0-epicker aside button:not(#create) {
-    -moz-appearance: none !important;
-    border-radius: 3px !important;
-    background: var(--bglighter) !important;
-    color: #ddd !important;
-    border: none !important}
+		-moz-appearance: none !important;
+		border-radius: 3px !important;
+		background: var(--bglighter) !important;
+		color: #ddd !important;
+		border: none !important}
 
 #ublock0-epicker aside button:not(#create):hover {
-    background: #111 !important;
-    color: #ddd !important}
+		background: #111 !important;
+		color: #ddd !important}
 
 #ublock0-epicker aside #create {
 	-moz-appearance: none !important;
-    border-radius: 3px !important;
-    background: var(--yellow) !important;
-    color: #000 !important;
-    border: none !important}
+		border-radius: 3px !important;
+		background: var(--yellow) !important;
+		color: #000 !important;
+		border: none !important}
 
 #ublock0-epicker aside #create:hover {
-    background: var(--yellow) !important;
-    color: #ddd !important}
+		background: var(--yellow) !important;
+		color: #ddd !important}
 
 /* This part covers the preferences page update scrollbox (No, I couldn't put it inside the preferences section) */
 #historyItems .scrollbox-innerbox {background-color: var(--bglight) !important}
@@ -233,15 +234,15 @@ only the images */
 #errorPageContainer #text-container h1 {color: var(--blue) !important}
 
 #startPrivateBrowsing {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: var(--bglighter) !important;
-  color: #ddd !important;
-  padding: 2px !important}
+	-moz-appearance: none !important;
+	border-radius: 3px !important;
+	background: var(--bglighter) !important;
+	color: #ddd !important;
+	padding: 2px !important}
 
 #startPrivateBrowsing:hover {
-  background: var(--bglight) !important;
-  color: #fff !important}
+	background: var(--bglight) !important;
+	color: #fff !important}
 
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
@@ -277,8 +278,8 @@ html {
 
 body { 
  	background-color: var(--bgdark) !important;
-    color: var(--home-text) !important;
-    overflow: auto !important}
+		color: var(--home-text) !important;
+		overflow: auto !important}
 
 /* Context menus of the web area */
 .context-menu {
@@ -307,13 +308,13 @@ body {
 
 .modal {
  	background: var(--bgdark) !important;
-    border: 1px solid var(--bglighter) !important}
+		border: 1px solid var(--bglighter) !important}
 
 /* The cards borders part starts here */
 .card-outer .context-menu-button, .top-sites-list .top-site-outer .context-menu-button {
-    background-color: var(--bglighter) !important;
-    border: 1px solid var(--bglight) !important;
-    fill: rgba(170, 170, 170, 0.8) !important}
+		background-color: var(--bglighter) !important;
+		border: 1px solid var(--bglight) !important;
+		fill: rgba(170, 170, 170, 0.8) !important}
 
 .top-sites-list .top-site-outer > a.active .tile, .top-sites-list .top-site-outer > a:focus .tile, 
 .card-outer > a.active .card, .card-outer > a:focus .card 
@@ -326,16 +327,16 @@ body {
 
 /* No need to say this goes for the buttons */
 .actions button {
-    background: var(--bglighter) !important;
-    border: none !important;
+		background: var(--bglighter) !important;
+		border: none !important;
 	color: #fff !important}
 
 .actions button:hover {box-shadow: 0 0 0 5px var(--bglighter) !important}
 .actions button.done:hover {box-shadow: 0 0 0 5px var(--blue) !important}
 
 .actions button.done {
-    background: var(--blue) !important;
-    border: solid 1px var(--blue) !important}
+		background: var(--blue) !important;
+		border: solid 1px var(--blue) !important}
 
 /* Search box style */
 #newtab-search-text[keepfocus="true"] {
@@ -350,11 +351,11 @@ body {
 #searchSuggestionTable {-moz-appearance: none !important}
 
 .contentSearchSuggestionsTable {
-    background-color: var(--bglight) !important}
+		background-color: var(--bglight) !important}
 
 .contentSearchSuggestionsList {
 	background-color: var(--bglighter) !important;
-    color: #ccc !important}
+		color: #ccc !important}
 
 .contentSearchOneOffsTable {border-top: 1px solid #000 !important}
 
@@ -379,14 +380,14 @@ body {
 	color: var(--Home-search-item-text-color) !important}
 
 .contentSearchSettingsButton {
-    background: var(--bglight) !important;
-    color: var(--fgdark) !important}
+		background: var(--bglight) !important;
+		color: var(--fgdark) !important}
 
 .contentSearchSettingsButton.selected {
-    color: var(--fglight) !important}
+		color: var(--fglight) !important}
 
 .contentSearchSettingsButton:active {
-    background: linear-gradient(#111,var(--bglight)) !important}
+		background: linear-gradient(#111,var(--bglight)) !important}
 
 .search-button {
 	fill: var(--in-content-border-focus) !important}
@@ -488,9 +489,9 @@ input[type=text] {color: #aaa !important}
 /* This adds a background image of your choice in the main area 
 Delete the final /* to use -> */
 body {
-  background-image: var(--home-background-image) !important;
-  background-size: cover !important;
-  background-position: center !important}
+	background-image: var(--home-background-image) !important;
+	background-size: cover !important;
+	background-position: center !important}
 
 .prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
 .sidebar .actions, #snippets-container, .collapsible-section.top-sites.animation-enabled.active,
@@ -520,16 +521,16 @@ h2 {color: #ddd !important}
 h3 {color: #ddd !important}
 
 button {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: var(--button-background) !important;
-  color: #ddd !important;
-  border: 1px solid var(--button-border) !important;
-  padding: 0.5em !important}
+	-moz-appearance: none !important;
+	border-radius: 3px !important;
+	background: var(--button-background) !important;
+	color: #ddd !important;
+	border: 1px solid var(--button-border) !important;
+	padding: 0.5em !important}
 
 button:hover {
 	background: var(--button-background-hover) !important;
-    color: #FFF !important}
+		color: #FFF !important}
 
 textarea {
 	-moz-appearance: none !important;
@@ -574,7 +575,7 @@ body, html {background-color: var(--bgdark) !important}}
 
 /* Fix for Ublock Origin Element picker and DOM inspector (while keeping about:blank dark) */
 @-moz-document url(about:blank) {
-  body:not(#ublock0-epicker) {background: var(--bgdark)}
+	body:not(#ublock0-epicker) {background: var(--bgdark)}
 }
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
@@ -632,12 +633,12 @@ menu:hover[disabled="true"] {
 
 /* Context menu separator color override */
 menuseparator {
-  -moz-appearance: none !important;
-  margin: 1px 0 1px 2.3em !important;
-  height: 1px !important;
-  border: none !important;
-  background: var(--bgdark) !important;
-  padding: 0 !important}}
+	-moz-appearance: none !important;
+	margin: 1px 0 1px 2.3em !important;
+	height: 1px !important;
+	border: none !important;
+	background: var(--bgdark) !important;
+	padding: 0 !important}}
 
 /*------ ABOUT: PAGE (about:) ------*/
 @-moz-document url(about:), url(https://www.mozilla.org/credits/) {
@@ -662,13 +663,13 @@ url-prefix(about:studies), url(about:webrtc) {
 #submit {
 	-moz-appearance: none !important;
 	background: var(--bglightest) !important;
-    color: #FFF !important;
-    padding: 0.5em;
+		color: #FFF !important;
+		padding: 0.5em;
 	border: 1px solid var(--blue) !important}
 
 #submit:hover {
 	background: var(--blue) !important;
-    color: var(--bgdark) !important}
+		color: var(--bgdark) !important}
 
 #appid {
 	-moz-appearance: none !important;
@@ -728,13 +729,13 @@ select {border: 1px solid #111 !important}
 	box-shadow: none !important}
 
 .main-content button {
-    background: var(--button-background) !important;
-    color: #ddd !important;
-    border: 1px solid var(--button-border) !important}
+		background: var(--button-background) !important;
+		color: #ddd !important;
+		border: 1px solid var(--button-border) !important}
 
 .main-content button:hover {
 	background: var(--button-background-hover) !important;
-    color: #FFF !important;
+		color: #FFF !important;
 	text-decoration: none !important}
 
 .addons-tip-icon {filter: invert(100%) !important}
@@ -830,7 +831,7 @@ td {background: var(--bglighter) !important}
 /* Main Content */
 .main-content {
  	background-color: var(--bglight) !important;
-    color: #AAA !important}
+		color: #AAA !important}
 
 .navigation {
 	background-color: var(--bgdark) !important;
@@ -871,15 +872,15 @@ image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 
 /* This changes some of the buttons color */
 .accessory-button, button {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: var(--button-background) !important;
-  color: #ddd !important;
-  border: 1px solid var(--button-border) !important}
+	-moz-appearance: none !important;
+	border-radius: 3px !important;
+	background: var(--button-background) !important;
+	color: #ddd !important;
+	border: 1px solid var(--button-border) !important}
 
 .accessory-button:hover, button:hover {
 	background: var(--button-background-hover) !important;
-    color: #FFF !important}
+		color: #FFF !important}
 
 treecol {
 	background-color: var(--bglighter) !important;
@@ -911,18 +912,18 @@ treecol:hover {background-color: var(--bglighter) !important}
 
 /* This changes some of the buttons color */
 .accessory-button, button, #header-utils-btn {
-  -moz-appearance: none !important;
-  border-radius: 3px !important;
-  background: var(--bglighter) !important;
-  color: #eee !important;
-  border: none !important}
+	-moz-appearance: none !important;
+	border-radius: 3px !important;
+	background: var(--bglighter) !important;
+	color: #eee !important;
+	border: none !important}
 
 #header-utils-btn {fill: black !important}
 
 .accessory-button:hover, button:hover, 
 #header-utils-btn:hover {
 	background: var(--bglight) !important;
-    color: #FFF !important}
+		color: #FFF !important}
 
 /* These change the addons background colors */
 .card {
@@ -951,7 +952,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 
 /* This changes the background highlight color of uninstalled extensions */
 .addon-view[pending="disable"], .addon-view[pending="uninstall"] {
-    --view-highlight-color: #111 !important}
+		--view-highlight-color: #111 !important}
 
 /* These change the selectors on the plugins page */
 .addon-control.state.no-auto-hide {background-color: #383838 !important}
@@ -1029,9 +1030,9 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 {background: var(--bgdark) !important}
 
 #footer {
-    background-color: var(--bgdark) !important;
-    background-image: linear-gradient(to bottom,var(--bgdark) 0,var(--bgdark) 123px,
-    	#000 123px,#000 200px,#101010 200px,rgba(90,90,90,0) 400px) !important}
+		background-color: var(--bgdark) !important;
+		background-image: linear-gradient(to bottom,var(--bgdark) 0,var(--bgdark) 123px,
+			#000 123px,#000 200px,#101010 200px,rgba(90,90,90,0) 400px) !important}
 
 .listing-header, .listing .item, .object-lead, .listing-footer {
 	background: linear-gradient(var(--bgdark), var(--bglight)) !important;
@@ -1081,7 +1082,7 @@ button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not
 .listing-footer {border-top: 1px solid #000 !important}
 
 .item .item-info {
-    border-left: 1px dotted #000 !important;
+		border-left: 1px dotted #000 !important;
 }
 
 button.DropdownMenu-button, button.TooltipMenu-opener, 
@@ -1110,11 +1111,11 @@ p, a, h4, h2, blockquote, li, .num-results
 {color: #ccc !important}
 
 .header-bg {
-    background-color: #000 !important;
-    background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
-    linear-gradient(to bottom,rgba(90,90,90,0) 0,var(--bglighter) 500px,#fff 0),
-    repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,var(--bglight) 550px,rgba(90,90,90,0) 550px,var(--bglight) 800px,
-    rgba(90,90,90,0) 800px,var(--bglight) 950px) !important}
+		background-color: #000 !important;
+		background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
+		linear-gradient(to bottom,rgba(90,90,90,0) 0,var(--bglighter) 500px,#fff 0),
+		repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,var(--bglight) 550px,rgba(90,90,90,0) 550px,var(--bglight) 800px,
+		rgba(90,90,90,0) 800px,var(--bglight) 950px) !important}
 
 .Paginate .Paginate-item, li.p-popular {background-color: var(--bglight) !important}
 
@@ -1147,8 +1148,8 @@ input#search-q {
 	color: #FFF !important}
 
 #site-search-suggestions .wrap, ul.other-apps {
-    background: var(--bgdark) !important;
-    border: 1px solid #101010 !important}
+		background: var(--bgdark) !important;
+		border: 1px solid #101010 !important}
 
 .Notice-generic {background-color: var(--bglighter) !important}
 
@@ -1274,15 +1275,15 @@ textarea {
 #email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
 #pw-reset input[type="submit"], .btn, span.button, .volunteer-button {
 	background: linear-gradient(#2050AA, #203050) !important;
-    color: #FFF !important;
-    padding: 0.5em;
+		color: #FFF !important;
+		padding: 0.5em;
 	border: 1px solid var(--blue) !important;
 	box-shadow: none !important}
 
 #email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
 #pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
-    color: var(--blue) !important}
+		color: var(--blue) !important}
 
 .questions #owner-tabs a.selected, .questions #owner-tabs a:hover.selected {background: var(--bglight) !important}
 
