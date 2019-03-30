@@ -1,8 +1,8 @@
-application/x-crossover-c4p:cxoffice-1_application_x-crossover-c4p
-application/x-crossover-msi:cxoffice-0_application_x-crossover-msi
-application/x-crossover-tie:cxoffice-1_application_x-crossover-tie
-application/x-crossover-exe:cxoffice-0_application_x-crossover-exe
-application/x-crossover-cxarchive:cxoffice-0_application_x-crossover-cxarchive
-application/x-crossover-lnk:cxoffice-0_application_x-crossover-lnk
 application/x-crossover-compositefont:cxoffice-22190dcf-a715-45e6-b3e2-ed665db67950_application_x-crossover-compositefont
+application/x-crossover-msi:cxoffice-0_application_x-crossover-msi
+application/x-crossover-cxarchive:cxoffice-0_application_x-crossover-cxarchive
+application/x-crossover-c4p:cxoffice-1_application_x-crossover-c4p
 application/x-crossover-appref-ms:cxoffice-22190dcf-a715-45e6-b3e2-ed665db67950_application_x-crossover-appref-ms
+application/x-crossover-exe:cxoffice-0_application_x-crossover-exe
+application/x-crossover-tie:cxoffice-1_application_x-crossover-tie
+application/x-crossover-lnk:cxoffice-0_application_x-crossover-lnk

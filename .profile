@@ -1,6 +1,6 @@
 #     ~/.profile     #
 export QT_QPA_PLATFORMTHEME="qt5ct"  # Qt themes for non-Qt DEs/WMs
-xset r rate 200 60                   # Faster keyboard repeat rate
+[[ $TERM != linux ]] && xset r rate 200 60                   # Faster keyboard repeat rate
 # Default programs                   # Default programs
 export EDITOR="nvim"                 # Terminal text editor
 export VISUAL="$EDITOR"              # Graphical text editor 
@@ -50,6 +50,6 @@ if [[ "$TERM" = "linux" ]]; then
     echo -en "\e]PE26c5ff" #cyan
     echo -en "\e]P7aab5c6" #lightgrey
     echo -en "\e]PFd6e5fb" #white
-    clear #for background artifacting
-    sudo /usr/bin/kbdrate -d 200 -r 30
+    sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null
+    #clear #for background artifacting
 fi
