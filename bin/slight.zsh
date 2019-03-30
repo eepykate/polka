@@ -44,5 +44,5 @@ chpwd() { title "$(dirs)" }
 precmd() { title "$(dirs)"; time_since_last_command; unset epoch }
 preexec() { title "$2"; epoch="$(date +%s%3N)" }
 
-PS1=$'%(?.%{\e[34m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
+PS1=$'%(?.%{\e[35;1m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
 RPS1=$'$(git_info)%{\e[0m%} %{\e[33m%}${time_passed}%{\e[0m%}'

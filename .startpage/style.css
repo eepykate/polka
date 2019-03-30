@@ -1,15 +1,15 @@
 :root {
-	--bgdark:      #12151a;
-	--fgdark:      #9aafc4;
+	--bgdark:      #141117;
+	--fgdark:      #987ea2;
 
-	--bglight:     #161720;
-	--bglighter:   #26303b;
-	--border:      #1a1b26;
-	--fglight:     #d8eefa;
+	--bglight:     #19141e;
+	--bglighter:   #342036;
+	--border:      #342036;
+	--fglight:     #f3d6fb;
 
 	--bgtitle:     #4c566a;
 
-	--accent:      #02a4fc;
+	--accent:      #ab32c1;
 }
 
 body {

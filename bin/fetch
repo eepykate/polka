@@ -33,7 +33,7 @@ sh="${SHELL##*/}"
 
 # Prints $1 in blue, and $2 in white, with padding between them
 printc() { 
-	printf " ${blu}${bold}${1}${rst}" 
+	printf " ${prp}${bold}${1}${rst}" 
 	printf "%9s" "${2,,}"
 	printf "\n"
 }

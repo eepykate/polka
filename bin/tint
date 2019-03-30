@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-tint2 -c /home/gauge/.config/tint2/pure-topleft.tint2rc &
-tint2 -c /home/gauge/.config/tint2/pure-topright.tint2rc
+tint2 -c /home/gauge/.config/tint2/berry-topleft.tint2rc &
+tint2 -c /home/gauge/.config/tint2/berry-topright.tint2rc
 

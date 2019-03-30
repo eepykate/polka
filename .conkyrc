@@ -28,9 +28,9 @@ conky.config = {
 
 conky.text = [[
 
-${alignc}${color a8b9c2}${font Roboto Condensed:pixelsize=30}${time %A}${font}
+${alignc}${color f3d6fb}${font Roboto Condensed:pixelsize=30}${time %A}${font}
 ${hr 1}
-${alignc}${color a8b9c2}${font Roboto Condensed:pixelsize=16}${time %B %d, %Y}${font}
+${alignc}${color f3d6fb}${font Roboto Condensed:pixelsize=16}${time %B %d, %Y}${font}
 ${alignc}${font Roboto Condensed:pixelsize=14}${time  %I:%M:%S%p}
 
 ]];

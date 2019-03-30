@@ -5,6 +5,7 @@ export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput 
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
 stty -ixon           # Disable Ctrl-S && Ctrl-Q
+source /usr/share/zsh/plugins/zsh-autosuggestions.zsh
 
 
 #     Stuff that makes zsh usable     #
