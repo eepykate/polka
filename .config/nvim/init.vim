@@ -34,7 +34,7 @@ color term
 set tabstop=2          " Number of visual spaces per Tab
 set softtabstop=2      " Number of spaces in tab when editing
 set shiftwidth=2       " Number of spaces to use for autoindent
-set expandtab          " Tabs are spaces
+"set expandtab          " Tabs are spaces
 set copyindent         " Copy the indentation from the previous line
 "set autoindent
 
