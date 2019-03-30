@@ -31,9 +31,9 @@ nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 " Use Terminal's colour scheme (Requires that file in ~/.config/nvim/colors (If you're using nvim))
 color term
 
-set tabstop=4          " Number of visual spaces per Tab
-set softtabstop=4      " Number of spaces in tab when editing
-set shiftwidth=4       " Number of spaces to use for autoindent
+set tabstop=2          " Number of visual spaces per Tab
+set softtabstop=2      " Number of spaces in tab when editing
+set shiftwidth=2       " Number of spaces to use for autoindent
 set expandtab          " Tabs are spaces
 set copyindent         " Copy the indentation from the previous line
 "set autoindent

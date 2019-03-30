@@ -40,21 +40,21 @@ opts=$(getopt -o d:smhnc --long display:,slop,manual,help,no-nvenc,noconfirm -- 
 eval set -- "$opts"
 
 while true; do
-    case "$1" in
-        -d|--display) [[ -n $2 ]] && DoM="Display" && display_select="$2"; shift 2;;
-        -s|--slop) DoM="Slop"; shift 1;;
-        -m|--manual) DoM="Manual"; shift 1;;
+	case "$1" in
+		-d|--display) [[ -n $2 ]] && DoM="Display" && display_select="$2"; shift 2;;
+		-s|--slop) DoM="Slop"; shift 1;;
+		-m|--manual) DoM="Manual"; shift 1;;
 		-h|--help) echo -e "$help"; exit ;;
 		-n|--no-nvenc) nvenc=" "; shift 1;;
-        -c|--noconfirm) RtR="Yes"; shift 1;;
+		-c|--noconfirm) RtR="Yes"; shift 1;;
 		--) shift; break;;
-    esac
+	esac
 done
 
 if   [[ -z $1 ]] && [[ -z $DoM ]]; then
-    DoM="$(echo -e "Display\nManual\nSlop" | dmenu -i -p "Automatic dimensions from display, Manual dimensions, or select a region?")"
+	DoM="$(echo -e "Display\nManual\nSlop" | dmenu -i -p "Automatic dimensions from display, Manual dimensions, or select a region?")"
 elif [[ -n $1 ]] && [[ -z $DoM ]]; then
-    DoM="Manual"
+	DoM="Manual"
 fi
 
 if [[ ${DoM} = Display ]]; then
@@ -62,37 +62,37 @@ if [[ ${DoM} = Display ]]; then
 	if [[ -z $display_select ]]; then 
 		display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
 	fi
-    display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
-    
-    width="$(echo   $display_res | awk '{print $1}' )"
-    height="$(echo  $display_res | awk '{print $2}' )"
-    offsetX="$(echo $display_res | awk '{print $3}' )"
-    offsetY="$(echo $display_res | awk '{print $4}' )"
-    [[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
-    [[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
+	display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
+	
+	width="$(echo   $display_res | awk '{print $1}' )"
+	height="$(echo  $display_res | awk '{print $2}' )"
+	offsetX="$(echo $display_res | awk '{print $3}' )"
+	offsetY="$(echo $display_res | awk '{print $4}' )"
+	[[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
+	[[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Slop ]]; then
-    slop="$(slop)"
-    slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
+	slop="$(slop)"
+	slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
 
-    width="$(echo   $slop1 | awk '{print $1}' )"
-    height="$(echo  $slop1 | awk '{print $2}' )"
-    offsetX="$(echo $slop1 | awk '{print $3}' )"
-    offsetY="$(echo $slop1 | awk '{print $4}' )"
-    [[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
-    [[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
+	width="$(echo   $slop1 | awk '{print $1}' )"
+	height="$(echo  $slop1 | awk '{print $2}' )"
+	offsetX="$(echo $slop1 | awk '{print $3}' )"
+	offsetY="$(echo $slop1 | awk '{print $4}' )"
+	[[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
+	[[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Manual ]]; then
-    [ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
-    [ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
-    [ -n "$3" ] && width="$3"   || width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
-    [ -n "$4" ] && height="$4"  || height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
-    [ -n "$5" ] && rate="$5"    || rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
-    [ -n "$6" ] && audio="$6"   || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
+	[ -n "$1" ] && offsetX="$1" || offsetX="$(echo -e "1440\n0" | dmenu -i -p "Offset for the X axis")"
+	[ -n "$2" ] && offsetY="$2" || offsetY="$(echo -e "0" | dmenu -i -p "Offset for the Y axis")"
+	[ -n "$3" ] && width="$3"   || width="$(echo -e "1920\n1366\n1440" | dmenu -i -p "Width")"
+	[ -n "$4" ] && height="$4"  || height="$(echo -e "1080\n768\n900" | dmenu -i -p "Height")"
+	[ -n "$5" ] && rate="$5"    || rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
+	[ -n "$6" ] && audio="$6"   || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 fi
 
 if [[ $audio = yes ]]; then 
-    audio="-f pulse -i `pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g'`"
+	audio="-f pulse -i `pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g'`"
 else
-    audio=""
+	audio=""
 fi
 
 [[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
@@ -100,11 +100,11 @@ fi
 [[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
 
 if [[ $RtR = Yes ]]; then 
-    notify-send -t 2000 "recording started"
+	notify-send -t 2000 "recording started"
 
-    ffmpeg -y $(printf " $audio") \
-        -f x11grab -draw_mouse 1 \
-        -s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
-        -qscale 0 $(printf " $nvenc") \
-        "${dir}/${name}".mp4 
+	ffmpeg -y $(printf " $audio") \
+		-f x11grab -draw_mouse 1 \
+		-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+		-qscale 0 $(printf " $nvenc") \
+		"${dir}/${name}".mp4 
 fi

@@ -2,27 +2,27 @@
 
 scrot "/tmp/lock.png"
 ffmpeg -y -i /tmp/lock.png \
-    -filter_complex "boxblur=15" -vframes 1 \
-    /tmp/lock_blur.png &>/dev/null
+	-filter_complex "boxblur=15" -vframes 1 \
+	/tmp/lock_blur.png &>/dev/null
 
 i3lock \
-    --image=/tmp/lock_blur.png \
-    --insidewrongcolor=15171d00 \
-    --insidecolor=15171d00 \
-    --insidevercolor=15171dff \
-    --ringwrongcolor=ed254eff \
-    --ringvercolor=4d9de0ff \
-    --ringcolor=2f3341ff \
-    --verifcolor=ccccccff \
-    --wrongcolor=ccccccff \
-    --keyhlcolor=4d9de0ff \
-    --bshlcolor=ed254eff &
+	--image=/tmp/lock_blur.png \
+	--insidewrongcolor=15171d00 \
+	--insidecolor=15171d00 \
+	--insidevercolor=15171dff \
+	--ringwrongcolor=ed254eff \
+	--ringvercolor=4d9de0ff \
+	--ringcolor=2f3341ff \
+	--verifcolor=ccccccff \
+	--wrongcolor=ccccccff \
+	--keyhlcolor=4d9de0ff \
+	--bshlcolor=ed254eff &
 
 timeout="10000"
 
 while pgrep -x i3lock; do
-    [[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
-    sleep 5;
+	[[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
+	sleep 5;
 done 
 
 exit

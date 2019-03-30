@@ -6,9 +6,9 @@ vol="$(echo ${amix}  | awk '{print $5}')"
 mute="$(echo ${amix} | awk '{print $6}')"
 
 if [ $mute = off ]; then
-    output="♪ Muted"
+  output="♪ Muted"
 elif [ $mute = on ]; then
-    output="♪ ${vol}"
+  output="♪ ${vol}"
 fi
 
 ##           🔊    🔇    

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 dar() {
-    display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
-    user=$(who | grep -i 'pts' | awk '{print $1}' | sed -n -e 1p)
-    uid=$(id -u $user)
+	display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
+	user=$(who | grep -i 'pts' | awk '{print $1}' | sed -n -e 1p)
+	uid=$(id -u $user)
 
-    sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
+	sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
 }
 
 product="$(echo -e $ID_MODEL_ENC)"

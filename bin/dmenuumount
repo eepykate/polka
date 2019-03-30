@@ -8,20 +8,20 @@ unmountusb() {
 	chosen=$(echo "$drives" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
 	[ -z "$chosen" ] && exit
 	sudo -A umount "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted." || notify-send "Failed to unmount $chosen"
-	}
+}
 
 unmountandroid() { \
 	chosen=$(awk '/simple-mtpfs/ {print $2}' /etc/mtab | dmenu -i -p "Unmount which device?")
 	[ -z "$chosen" ] && exit
 	fusermount -u "$chosen" && pgrep -x dunst && notify-send "$chosen unmounted." || notify-send "Failed to unmount $chosen"
-	}
+}
 
 asktype() { \
 	case $(printf "USB\\nAndroid" | dmenu -i -p "Unmount a USB drive or Android device?") in
 		USB) unmountusb ;;
 		Android) unmountandroid ;;
 	esac
-	}
+}
 
 drives=$(lsblk -nrpo "name,type,size,mountpoint" | awk '$2=="part"&&$4!~/\/boot|\/home$|SWAP/&&length($4)>1{printf "%s (%s)\n",$4,$3}')
 

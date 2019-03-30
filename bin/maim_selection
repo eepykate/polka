@@ -6,7 +6,7 @@ name="maim-$(date +%F_%H:%M:%S)"
 mkdir -p "$dir" || exit 1
 
 maim -su "${dir}/${name}.png" &&
-    name1="${name}-$(file ${dir}/${name}.png | awk '{gsub(",","")} {print $5 "x" $7}')" &&
-    mv ${dir}/${name}.png ${dir}/${name1}.png &&
-    notify-send "Screenshot of selection taken at ${dir}/${name1}.png"
+	name1="${name}-$(file ${dir}/${name}.png | awk '{gsub(",","")} {print $5 "x" $7}')" &&
+	mv ${dir}/${name}.png ${dir}/${name1}.png &&
+	notify-send "Screenshot of selection taken at ${dir}/${name1}.png"
 

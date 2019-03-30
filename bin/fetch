@@ -22,20 +22,20 @@ sh="${SHELL##*/}"
 
 # Get window manager
 [[ $tty =~ /dev/tty* ]] && wm="TTY" || \
-    id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' )" \
-    wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | \
-        awk '/\_NET_WM_NAME/ {gsub("\"", "") gsub("Shell", ""); print $3 $4}')"
+	id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' )" \
+	wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | \
+		awk '/\_NET_WM_NAME/ {gsub("\"", "") gsub("Shell", ""); print $3 $4}')"
 
 # Get Terminal emulator
 [[ $tty =~ /dev/tty* ]] && term="$(tty | sed 's/.*\///')" || \
-    term="$(xprop -id $(xprop -root | awk '/NET_ACTIVE_WINDOW\(WINDOW\)/ {print $5}') | \
-        awk -F = '/WM_CLASS/ {print $2}' | awk '{gsub("\"", ""); gsub("-terminal",""); print $2}')" 
+	term="$(xprop -id $(xprop -root | awk '/NET_ACTIVE_WINDOW\(WINDOW\)/ {print $5}') | \
+		awk -F = '/WM_CLASS/ {print $2}' | awk '{gsub("\"", ""); gsub("-terminal",""); print $2}')" 
 
 # Prints $1 in blue, and $2 in white, with padding between them
 printc() { 
-    printf " ${blu}${bold}${1}${rst}" 
-    printf "%9s" "${2,,}"
-    printf "\n"
+	printf " ${blu}${bold}${1}${rst}" 
+	printf "%9s" "${2,,}"
+	printf "\n"
 }
 
 printc "os  "   "$os"     # print distro
