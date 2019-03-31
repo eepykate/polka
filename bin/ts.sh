@@ -65,7 +65,6 @@ if [[ -n "$theme" ]]; then
 		conky &>/dev/null &!
 
 	sed "s/theme=\".*\"/theme=\"$theme\"/" -i ~/bin/tint; tint
-	true
 
 	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
@@ -80,4 +79,12 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--button:.*#.*\;/--fgdark: $button\;/" \
 		-e "s/.*--disabled:.*#.*\;/--disabled: $disabled\;/" 
 
+	sed "s/    frame_color = \".*\"/    frame_color = \"$accent\"/" -i ~/.config/dunst/dunstrc
+	sed "s/    background = \".*\"/    background = \"$bgdark\"/"  -i ~/.config/dunst/dunstrc
+	sed "s/    foreground = \".*\"/    foreground = \"$fglight\"/"  -i ~/.config/dunst/dunstrc
+	pkill dunst &&
+	dunst &>/dev/null &!
+
+
+	true
 fi
