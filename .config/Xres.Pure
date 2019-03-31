@@ -1,0 +1,39 @@
+!! Pure
+
+!! special
+*foreground:   #d6e5fb
+*background:   #12151a
+*cursorColor:  #d6e5fb
+
+!! black
+*color0:       #1b1c28
+*color8:       #1f212e
+
+!! red
+*color1:       #f0185a
+*color9:       #ff4551
+
+!! green
+*color2:       #12e689
+*color10:      #3aff93
+
+!! yellow
+*color3:       #ffa463
+*color11:      #ffdd74
+
+!! blue
+*color4:       #02a4fc
+*color12:      #34b0fd
+
+!! magenta
+*color5:       #ef2ca5
+*color13:      #ef5ad7
+
+!! cyan
+*color6:       #26c5ff
+*color14:      #26c5ff
+
+!! white
+*color7:       #aab5c6
+*color15:      #d6e5fb
+

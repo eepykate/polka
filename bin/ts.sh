@@ -43,20 +43,16 @@ elif [[ $theme = Berry ]]; then
 
 fi
 
-#[[ $theme = Pure  ]] && accent="4" && foreground="d8eefa"
-#[[ $theme = Berry ]] && accent="5" && foreground="f3d6fb"
-
 if [[ -n "$theme" ]]; then
 	xfconf-query -c xsettings -p /Net/ThemeName -s "$theme"
 	xfconf-query -c xfwm4 -p /general/theme -s "$theme"
 	kvantummanager --set "$theme"
-	[[ -f ~/.Xresources.${theme} ]] && 
-		mv ~/.Xresources ~/.config/.Xresources.${time} && 
-		cp ~/.Xresources.${theme} ~/.Xresources && 
-		xrdb ~/.Xresources &&
-		echo "~/.Xresources has been moved to ~/.config/.Xresources.${time}"
+	[[ -f ~/.config/Xres.$theme ]] && 
+		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources &&
+		xrdb $HOME/.Xresources
+
 	[[ -n $accentn ]] && 
-		sed "s/color=\".\"/color=\"$accentn\"/" -i ~/bin/slight.zsh
+		sed --follow-symlinks -i "s/color=\".\"/color=\"$accentn\"/" -i ~/bin/slight.zsh
 	[[ -f $HOME/Wallpapers/Midnight-${theme}.png ]] && 
 		cp $HOME/Wallpapers/Midnight-${theme}.png $HOME/Wallpapers/Wallpaper.png
 
@@ -64,12 +60,13 @@ if [[ -n "$theme" ]]; then
 		pkill -9 conky && 
 		conky &>/dev/null &!
 
-	sed "s/theme=\".*\"/theme=\"$theme\"/" -i ~/bin/tint; tint
+	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; tint
 
 	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 $HOME/.startpage/style.css" | \
-		xargs sed -i -e "s/.*--bgdark:.*#.*\;/--bgdark: $bgdark\;/" \
+		xargs sed --follow-symlinks -i \
+		-e "s/.*--bgdark:.*#.*\;/--bgdark: $bgdark\;/" \
 		-e "s/.*--bglight:.*#.*\;/--bglight: $bglight\;/" \
 		-e "s/.*--bglighter:.*#.*\;/--bglighter: $bglighter\;/" \
 		-e "s/.*--fgdark:.*#.*\;/--fgdark: $fgdark\;/" \
@@ -79,9 +76,9 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--button:.*#.*\;/--fgdark: $button\;/" \
 		-e "s/.*--disabled:.*#.*\;/--disabled: $disabled\;/" 
 
-	sed "s/    frame_color = \".*\"/    frame_color = \"$accent\"/" -i ~/.config/dunst/dunstrc
-	sed "s/    background = \".*\"/    background = \"$bgdark\"/"  -i ~/.config/dunst/dunstrc
-	sed "s/    foreground = \".*\"/    foreground = \"$fglight\"/"  -i ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"$accent\"/" ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"$bgdark\"/"   ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"$fglight\"/"  ~/.config/dunst/dunstrc
 	pkill dunst &&
 	dunst &>/dev/null &!
 
