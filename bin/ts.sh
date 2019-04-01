@@ -26,6 +26,7 @@ if [[ $theme = Pure ]]; then
 	accent="#02a4fc"
 	button="#cbe3f122"
 	border="#1a1b26"
+	red="#f0185a"
 
 elif [[ $theme = Berry ]]; then 
 	accentn="5"
@@ -40,13 +41,14 @@ elif [[ $theme = Berry ]]; then
   accent="#ab32c1"
   button="#f3d6fb22"
 	border="#342036"
+	red="#cb1f62"
 
 fi
 
 if [[ -n "$theme" ]]; then
 	xfconf-query -c xsettings -p /Net/ThemeName -s "$theme"
 	xfconf-query -c xfwm4 -p /general/theme -s "$theme"
-	kvantummanager --set "$theme"
+	kvantummanager --set "$theme" &>/dev/null
 	[[ -f ~/.config/Xres.$theme ]] && 
 		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources &&
 		xrdb $HOME/.Xresources
@@ -60,7 +62,8 @@ if [[ -n "$theme" ]]; then
 		pkill -9 conky && 
 		conky &>/dev/null &!
 
-	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; tint
+	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
+	tint &>/dev/null &! 
 
 	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
@@ -76,11 +79,15 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--button:.*#.*\;/--fgdark: $button\;/" \
 		-e "s/.*--disabled:.*#.*\;/--disabled: $disabled\;/" 
 
+	#sed -E 's/(.*):/\1-/'
 	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"$accent\"/" ~/.config/dunst/dunstrc
 	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"$bgdark\"/"   ~/.config/dunst/dunstrc
 	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"$fglight\"/"  ~/.config/dunst/dunstrc
+	tac ~/.config/dunst/dunstrc | sed "0,/    frame_color = \".*\"/s//    frame_color = \"$red\"/" | tac | tee ~/.config/dunst/dunstrc &>/dev/null
 	pkill dunst &&
 	dunst &>/dev/null &!
+	#sed --follow-symlinks -i -e 's/\[urgency_critical\]\n    background \= \".*\"\n    foreground \= \".*\"\n    frame_color \= \".*\"/\[urgency_critical\]\n    background \= \"$bgdark\"\n    foreground \= \"$fglight\"\n    frame_color \= \"$red\"/' ~/.config/dunst/dunstrc
+
 
 
 	true
