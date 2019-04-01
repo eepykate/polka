@@ -4,7 +4,7 @@ export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput 
 #source ~/.profile
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
-stty -ixon           # Disable Ctrl-S && Ctrl-Q
+stty -ixon            # Disable Ctrl-S && Ctrl-Q
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
@@ -36,7 +36,7 @@ zle -N down-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
 # History
-HISTFILE="$HOME/.config/.zsh_history"
+HISTFILE="$HOME/.config/zsh_history"
 HISTSIZE=690420
 SAVEHIST=690420
 setopt extended_history        # record timestamp of command in HISTFILE
