@@ -6,4 +6,5 @@ theme="Berry"
 
 tint2 -c $HOME/.config/tint2/$theme-topleft.tint2rc  &>/dev/null &!
 tint2 -c $HOME/.config/tint2/$theme-topright.tint2rc &>/dev/null &!
+pgrep nm-applet &>/dev/null || nm-applet &>/dev/null &!
 
