@@ -22,7 +22,7 @@ timeout="10000"
 
 while pgrep -x i3lock; do
 	[[ $timeout -lt $(xssstate -i) ]] && xset dpms force off;
-	sleep 5;
-done 
+	sleep 5
+done  &>/dev/null
 
 exit
