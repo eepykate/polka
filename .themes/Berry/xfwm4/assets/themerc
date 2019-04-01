@@ -6,8 +6,8 @@
 full_width_title=true
 active_text_color=#f3d6fb
 active_text_shadow_color=#f3d6fb
-inactive_text_color=#4d5565
-inactive_text_shadow_color=#a0a1a3
+inactive_text_color=#836786
+inactive_text_shadow_color=#836786
 title_shadow_active=false
 title_shadow_inactive=false
 title_vertical_offset_active=0
