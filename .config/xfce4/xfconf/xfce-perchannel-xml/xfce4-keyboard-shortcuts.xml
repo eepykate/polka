@@ -40,7 +40,6 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;u" type="string" value="dmenuumount"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="synclient TouchpadOff=1"/>
       <property name="&lt;Alt&gt;&lt;Super&gt;t" type="string" value="synclient TouchpadOff=0"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;d" type="string" value="dolphin"/>
       <property name="&lt;Super&gt;l" type="string" value="lock"/>
       <property name="&lt;Super&gt;Return" type="string" value="st"/>
       <property name="&lt;Super&gt;F4" type="string" value="xdotool getwindowfocus windowkill"/>
@@ -57,6 +56,8 @@
       <property name="XF86AudioPlay" type="string" value="vol pp"/>
       <property name="XF86AudioStop" type="string" value="vol stop"/>
       <property name="XF86AudioMute" type="string" value="vol m"/>
+      <property name="&lt;Super&gt;f" type="string" value="firefox"/>
+      <property name="&lt;Super&gt;c" type="string" value="thunar"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
