@@ -1,11 +1,11 @@
 #     ~/.zshrc     #
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh   # Syntax Hightlighting in shell
-export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "   # Colourful sudo prompt
-#source ~/.profile
+# Syntax highlighting + fish-like autosuggestions
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+export SUDO_PROMPT=$'\e[34m[sudo]\e[33m password for %p:\e[0m '   # Colourful sudo prompt
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
 stty -ixon            # Disable Ctrl-S && Ctrl-Q
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 #     Stuff that makes zsh usable     #
@@ -64,5 +64,5 @@ unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt complete_in_word
 setopt always_to_end
-set -k     # Allow comments in shell
 
+set -k     # Allow comments in shell

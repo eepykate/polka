@@ -35,7 +35,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 xrdb ~/.Xresources &!
 (cd ~/.startpage; python3 -m http.server &>/dev/null) &!
 shortcuts &!
-pgrep entr &>/dev/null || echo "$HOME/.config/sc" | entr shortcuts &!
+echo "$HOME/.config/sc" | entr shortcuts &!
 
 if [[ "$TERM" = "linux" ]]; then
 	echo -en "\e]P012151a" #black

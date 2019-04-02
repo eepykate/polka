@@ -23,3 +23,5 @@ f   scsh       ~/.config/sc.sh
 f   xin        ~/.xinitrc
 f   sz         ~/bin/slight.zsh
 f   sb         ~/bin/slight.bash
+f   Xb         ~/.config/Xres.Berry
+f   Xp         ~/.config/Xres.Pure
