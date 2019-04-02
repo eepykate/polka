@@ -12,4 +12,4 @@ st.cwscale:       1.0
 st.chscale:       1.0
 st.blinktimeout:  0.5
 
-#include ".config/Xres.Berry"
+#include ".config/Xres.Pure"
