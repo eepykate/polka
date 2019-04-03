@@ -6,6 +6,7 @@ export SUDO_PROMPT=$'\e[34m[sudo]\e[33m password for %p:\e[0m '   # Colourful su
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
 stty -ixon            # Disable Ctrl-S && Ctrl-Q
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 
 
 #     Stuff that makes zsh usable     #
