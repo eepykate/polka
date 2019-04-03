@@ -31,16 +31,18 @@
 
 window {
   transparency: "real";
-  fullscreen: false;
-  background-color: #12151aee;
+  fullscreen: true;
+  background-color: #12151acc;
   width: 400px;
   border-color: @blue;
   border: 0px;
+	padding: 30%; 
 }
 
 #mainbox {
   border: 0;
   padding: 20;
+  width: 250px;
 }
 
 #message {

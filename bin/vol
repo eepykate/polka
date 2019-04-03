@@ -24,7 +24,7 @@ ${b}Options: ${n}
   ${b}stop${n}           Stop media
   ${b}play${n}           Play media
   ${b}pause${n}          Pause media
-  ${b}pp${n}             Toggle play/pause"
+  ${b}p${n}              Toggle play/pause"
 
 opts=`getopt -o h --long help -- "$@"`
 eval set -- "$opts"
@@ -63,7 +63,7 @@ case $1 in
 	unmute) amixer -D pulse sset Master unmute >/dev/null;;
 	pause)  playerctl pause 2>/dev/null;;
 	play)   playerctl play 2>/dev/null;;
-	pp)     playerctl play-pause 2>/dev/null;;
+	p)      playerctl play-pause 2>/dev/null;;
 	next)   playerctl next 2>/dev/null;;
 	prev)   playerctl previous 2>/dev/null;;
 	stop)   playerctl stop 2>/dev/null;;
@@ -126,7 +126,7 @@ case $1 in
 	unmute) printf "%s\n" "$output"; notify 69 "$(printf "Volume unmuted\n%s" "$song")";;
 	pause)  printf "$song\n"; notify 420 "$output_pp" "$SpA";;
 	play)   printf "$song\n"; notify 420 "$output_pp" "$SpA";;
-	pp)     printf "$song\n"; notify 420 "$output_pp" "$SpA";;
+	p)      printf "$song\n"; notify 420 "$output_pp" "$SpA";;
 	next)   printf "$song\n"; notify 420 "$output_next" "$SpA";;
 	prev)   printf "$song\n"; notify 420 "$output_prev" "$SpA";;
 	stop)   printf "Media stopped\n"; notify 420 "Media stopped";;
