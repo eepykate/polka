@@ -62,9 +62,6 @@ if [[ -n "$theme" ]]; then
 		pkill -9 conky && 
 		conky &>/dev/null &!
 
-	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
-	tint &>/dev/null &! 
-
 	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 $HOME/.startpage/style.css" | \
@@ -83,10 +80,13 @@ $HOME/.startpage/style.css" | \
 	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"$accent\"/" ~/.config/dunst/dunstrc
 	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"$bgdark\"/"   ~/.config/dunst/dunstrc
 	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"$fglight\"/"  ~/.config/dunst/dunstrc
-	tac ~/.config/dunst/dunstrc | sed "0,/    frame_color = \".*\"/s//    frame_color = \"$red\"/" | tac | tee ~/.config/dunst/dunstrc &>/dev/null
-	pkill dunst &&
+	dunst_red_last_linenum="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 3 ))"
+	sed --follow-symlinks -i "${dunst_red_last_linenum}s/    frame_color = \".*\"/    frame_color = \"$red\"/" ~/.config/dunst/dunstrc
+	killall -9 dunst &> /dev/null;
 	dunst &>/dev/null &!
-	#sed --follow-symlinks -i -e 's/\[urgency_critical\]\n    background \= \".*\"\n    foreground \= \".*\"\n    frame_color \= \".*\"/\[urgency_critical\]\n    background \= \"$bgdark\"\n    foreground \= \"$fglight\"\n    frame_color \= \"$red\"/' ~/.config/dunst/dunstrc
+
+	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
+	tint &>/dev/null &! 
 
 
 
