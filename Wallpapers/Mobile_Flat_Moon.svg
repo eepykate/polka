@@ -9,28 +9,28 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1920"
-   height="1080"
-   viewBox="0 0 507.99999 285.75001"
+   width="1080"
+   height="2220"
+   viewBox="0 0 285.74999 587.37502"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="Flat_Moon.svg"
-   inkscape:export-filename="/home/gauge/Wallpapers/things/Flat_Moon.png"
+   sodipodi:docname="Mobile_Flat_Moon.svg"
+   inkscape:export-filename="/home/gauge/Wallpapers/things/Mobile_Flat_Moon.png"
    inkscape:export-xdpi="192"
    inkscape:export-ydpi="192">
   <defs
      id="defs2" />
   <sodipodi:namedview
      id="base"
-     pagecolor="#161720"
+     pagecolor="#000000"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="8"
-     inkscape:cx="1024.1166"
-     inkscape:cy="548.36953"
+     inkscape:zoom="0.088388348"
+     inkscape:cx="-1915.1564"
+     inkscape:cy="814.88917"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -57,10 +57,11 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 1"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(0,301.625)">
     <g
        id="g4549"
-       transform="translate(0.18898205,-1.7008889)">
+       transform="translate(-110.93602,-152.51338)">
       <circle
          transform="translate(0,-11.249992)"
          r="25.891371"
@@ -73,7 +74,7 @@
          sodipodi:nodetypes="ccc"
          inkscape:connector-curvature="0"
          id="path847"
-         d="m 272.8859,138.27535 c -14.9066,7.16401 -5.81826,24.05241 6.60696,20.72979 0.85011,-6.71265 -0.86457,-14.43554 -6.60696,-20.72979 z"
+         d="m 272.89334,138.32555 c -14.9066,7.16401 -5.81826,24.05241 6.60696,20.72979 0.83708,-6.61035 -0.8492,-14.37234 -6.60696,-20.72979 z"
          style="opacity:1;fill:#aeb5ba;fill-opacity:1;stroke:none;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       <circle
          transform="translate(0,-11.249992)"
