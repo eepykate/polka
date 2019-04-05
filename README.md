@@ -13,7 +13,7 @@
     <h2><b>Details</b></h2>
 </div>
 
-**Distrobution:** Arch (GNU + Linux)
+**Distribution:** Arch (GNU + Linux)
 
 **Window Manager:** Xfwm4 on XFCE4
 
