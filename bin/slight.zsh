@@ -13,14 +13,14 @@ git_info() {
 	[[ "$NUM_AHEAD" -gt 0 ]] && DIVERGENCES+=( "%{\e[36m%}⇡%{\e[0m%}$NUM_AHEAD" )
 	[[ "$NUM_BEHIND" -gt 0 ]] && DIVERGENCES+=( "%{\e[36m%}⇣%{\e[0m%}$NUM_BEHIND" )
 	[[ -n $GIT_DIR ]] && [[ -f $GIT_DIR/MERGE_HEAD ]] && FLAGS+=( "%{\e[33m%}⚡︎%{\e[0m%}" )
-	[[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]] && FLAGS+=( "%{\e[36m%}U%{\e[0m%}" )
-	! git diff --quiet 2> /dev/null && FLAGS+=( "%{\e[34m%}M%{\e[0m%}" )
 	! git diff --cached --quiet 2> /dev/null && FLAGS+=( "%{\e[35m%}S%{\e[0m%}" )
+	! git diff --quiet 2> /dev/null && FLAGS+=( "%{\e[34m%}M%{\e[0m%}" )
+	[[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]] && FLAGS+=( "%{\e[36m%}U%{\e[0m%}" )
 
 	local -a GIT_INFO
 	[[ -n "$GIT_STATUS" ]] && GIT_INFO+=( "$GIT_STATUS" )
-	[[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
-	[[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
+	[[ -n ${DIVERGENCES} ]] && GIT_INFO+=( "${(j:-:)DIVERGENCES}" )
+	[[ -n ${FLAGS} ]] && GIT_INFO+=( "${(j:-:)FLAGS}" )
 	GIT_INFO+=( "$GIT_LOCATION" )
 	GIT_INFO+=( "±" )
 	echo "${(j: :)GIT_INFO}"
@@ -44,5 +44,7 @@ chpwd() { title "$(dirs)" }
 precmd() { title "$(dirs)"; time_since_last_command; unset epoch }
 preexec() { title "$2"; epoch="$(date +%s%3N)" }
 
-PS1=$'%(?.%{\e[35;1m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
+color="4"
+
+PS1=$'%(?.%{\e[3${color};1m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
 RPS1=$'$(git_info)%{\e[0m%} %{\e[33m%}${time_passed}%{\e[0m%}'
