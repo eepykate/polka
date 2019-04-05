@@ -34,6 +34,7 @@ alias gcm="git commit -m"        # git - commit with message in quotes
 alias gpf="git push -f"          # git - Push and overwrite remote repository
 alias gp="git push"              # git - Push
 alias gaa="git add -A"           # git - Add all unstaged files to staging area 
+alias ga="git add"               # git - Add <file(s)>
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
 
@@ -52,49 +53,49 @@ alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
 
 
 e() {
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.bz2)   tar xzjf $1 ;;
-            *.tar.gz)    tar xzvf $1 ;;
-            *.bz2)       bunzip2 $1 ;;
-            *.rar)       unrar xv $1 ;;
-            *.gz)        gunzip $1 ;;
-            *.tar)       tar xzvf $1 ;;
-            *.tbz2)      tar xzjf $1 ;;
-            *.tgz)       tar xzvf $1 ;;
-            *.zip)       unzip $1 ;;
-            *.7z)        7z $1 ;;
-            *.xz)        xz -d $1 ;;
-            *)           echo "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   tar xzjf $1 ;;
+			*.tar.gz)    tar xzvf $1 ;;
+			*.bz2)       bunzip2 $1 ;;
+			*.rar)       unrar xv $1 ;;
+			*.gz)        gunzip $1 ;;
+			*.tar)       tar xzvf $1 ;;
+			*.tbz2)      tar xzjf $1 ;;
+			*.tgz)       tar xzvf $1 ;;
+			*.zip)       unzip $1 ;;
+			*.7z)        7z $1 ;;
+			*.xz)        xz -d $1 ;;
+			*)           echo "'$1' cannot be extracted via extract()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }
 
 c() {
 
-    unset opts
-    exclude=""
-    opts=`getopt -o x: --long exclude: -- "$@"`
-    eval set -- "$opts"
+	unset opts
+	exclude=""
+	opts=`getopt -o x: --long exclude: -- "$@"`
+	eval set -- "$opts"
 
-    while true; do
-        case $1 in
-            -x|--exclude) exclude="--exclude $2"; shift 2;;
-            --) shift; break;;
-        esac
-    done
-    echo $exclude
+	while true; do
+		case $1 in
+			-x|--exclude) exclude="--exclude $2"; shift 2;;
+			--) shift; break;;
+		esac
+	done
+	echo $exclude
 
-    tar -czvf "$1_$(date +%Y-%m-%d).tar.gz" $(printf " $exclude") $1
+	tar -czvf "$1_$(date +%Y-%m-%d).tar.gz" $(printf " $exclude") $1
 }
 
 bk() { 
-    cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
+	cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
 }
 
 mc() { 
-    mkdir -p "$1"; cd "$1";
+	mkdir -p "$1"; cd "$1";
 } 
 

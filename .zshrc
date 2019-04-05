@@ -1,7 +1,7 @@
 #     ~/.zshrc     #
-# Syntax highlighting + fish-like autosuggestions
+# Syntax highlighting ## + fish-like autosuggestions
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 export SUDO_PROMPT=$'\e[34m[sudo]\e[33m password for %p:\e[0m '   # Colourful sudo prompt
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
