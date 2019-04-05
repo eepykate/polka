@@ -53,11 +53,12 @@
       <property name="XF86AudioRaiseVolume" type="string" value="vol up"/>
       <property name="XF86AudioNext" type="string" value="vol next"/>
       <property name="XF86AudioPrev" type="string" value="vol prev"/>
-      <property name="XF86AudioPlay" type="string" value="vol pp"/>
       <property name="XF86AudioStop" type="string" value="vol stop"/>
       <property name="XF86AudioMute" type="string" value="vol m"/>
       <property name="&lt;Super&gt;f" type="string" value="firefox"/>
-      <property name="&lt;Super&gt;c" type="string" value="thunar"/>
+      <property name="&lt;Super&gt;c" type="string" value="dolphin"/>
+      <property name="XF86AudioPlay" type="string" value="vol p"/>
+      <property name="&lt;Super&gt;u" type="string" value="rofi-emoji"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

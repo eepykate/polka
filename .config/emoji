@@ -1,3 +1,4 @@
+​   zero-width space; U+200B
 😀 grinning face; U+1F600
 😃 grinning face with big eyes; U+1F603
 😄 grinning face with smiling eyes; U+1F604
@@ -899,9 +900,9 @@
 🎖 military medal; U+1F396
 🏆 trophy; U+1F3C6
 🏅 sports medal; U+1F3C5
-🥇 1st place medal; U+1F947 
-🥈 2nd place medal; U+1F948 
-🥉 3rd place medal; U+1F949 
+1st place medal; U+1F947 🥇
+2nd place medal; U+1F948 🥈
+3rd place medal; U+1F949 🥉
 ⚽ soccer ball; U+26BD
 ⚾ baseball; U+26BE
 🥎 softball; U+1F94E
@@ -1300,7 +1301,7 @@
 © copyright; U+00A9
 ® registered; U+00AE
 ™ trade mark; U+2122
-️⃣ keycap: ; U+0023 U+FE0F U+20E3
+️⃣ keycap: #; U+0023 U+FE0F U+20E3
 *️⃣ keycap: *; U+002A U+FE0F U+20E3
 0️⃣ keycap: 0; U+0030 U+FE0F U+20E3
 1️⃣ keycap: 1; U+0031 U+FE0F U+20E3
