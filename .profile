@@ -32,7 +32,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #	pgrep -x openbox || exec startx
 #fi
 
-xrdb ~/.Xresources &!
+#xrdb ~/.Xresources &!
 (cd ~/.startpage; python3 -m http.server &>/dev/null) &!
 shortcuts &!
 echo "$HOME/.config/sc" | entr shortcuts &!
