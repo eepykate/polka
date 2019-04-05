@@ -1,6 +1,8 @@
 <div align="center">
     <h2><b>Current setup</b></h2>
-    <img src="https://i.imgur.com/6Qg4iDZ.png">
+    <img src="https://i.imgur.com/enEaEKa.png">
+    <br>
+    <img src="https://i.imgur.com/Eg8kVOA.png">
     <br>
 <br>
 </div>
@@ -19,13 +21,13 @@
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** KvPure
+**Kvantum Theme:** Pure
 
 **Icon Theme:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-**Wallpaper:** [Midnight](https://i.imgur.com/a5KjtHO.png) \(Made by me\)
+**Wallpaper:** [Earth + Moon](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Flat_Earth_Moon.png), [Moon](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Flat_Moon.png) \(Made by me\)
 
-**WM Theme:** [Pure-test1](https://gitlab.com/GaugeK/dots/tree/806d3953c08e2ac87fbc46ed2f74ab3efb3fd162/.themes/Pure-test1)
+**WM Theme:** [Pure](https://gitlab.com/GaugeK/dots/tree/master/.themes/Pure)
 
 **GTK Theme:** Pure \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
@@ -39,7 +41,7 @@
 
 **Terminal Shell:** Zsh 
 
-**Terminal Prompt:** [Slight](https://pastebin.com/u9UdsivF) 
+**Terminal Prompt:** [Slight](https://gitlab.com/GaugeK/dots/blob/master/bin/slight.zsh) 
 
 **Terminal:** [Simple Terminal](https://gitlab.com/GaugeK/st)
 
@@ -47,9 +49,7 @@
 
 **Programs shown in the screenshot:**
 
-Simple terminal with [my custom fetch script](https://gitlab.com/GaugeK/dots/blob/master/bin/fetch) and [this color script](https://github.com/stark/Color-Scripts/blob/master/color-scripts/blocks1).
-
-[qView](https://github.com/jurplel/qView) with [this file open](https://i.imgur.com/KJRJhBJ.png) 
+Simple terminal with [my custom fetch script](https://gitlab.com/GaugeK/dots/blob/master/bin/fetch), [vol status](https://gitlab.com/GaugeK/dots/blob/master/bin/vol), A demonstration of my shell theme, and 2 more st windows that show off my WM theme.
 
 ---
 
