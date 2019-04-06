@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-set -x
-name="Template-gen"
+#set -x
+#name="Template-gen"
 
 # -----Colour scheme for the template----- #
 
@@ -24,42 +24,43 @@ name="Template-gen"
 
 # ---------------------------------------- #
 
+name="aaaaa1"
+
 ## Change this to your colour scheme
-#fglight="fafcff"
-#fgdark="4d5565"
-#bgdark="000000"
-#bgmid="111111"
-#bglight="222222"
-#bglighter="444444"
-#border="333333"
-#accent="0000ff"
-#accent2="0069aa"
-#button_press_light="556670"
-#button_press_dark="445560"
-#textbox_underline="474747"
-#textbox="202020"
-#link="0066ff"
-#link_visited="00ff66"
-#red="ff0000"
-
-# Change this to your colour scheme
-fglight="fafcff"
-fgdark="4d5565"
-bgdark="000000"
-bgmid="111111"
-bglight="222222"
-bglighter="444444"
+fglight="4d4d4c"
+fgdark="4d4d4c"
+bgdark="f3f3f3"
+bgmid="f3f3f3"
+bglight="ebebeb"
+bglighter="ebebeb"
 border="333333"
-accent="0000ff"
-accent2="0069aa"
-button_press_light="556670"
-button_press_dark="445560"
-textbox_underline="474747"
-textbox="202020"
-link="0066ff"
-link_visited="00ff66"
-red="ff0000"
+accent="ff2050"
+accent2="5390db"
+button_press_light="a3a3a3"
+button_press_dark="797979"
+textbox_underline="cccccc"
+textbox="e7e7e7"
+link="5390db"
+link_visited="19c762"
+red="ff2050"
 
+#[[ -z $name    ]] && printf "name "   && read name
+#[[ -z $fglight ]] && printf "fglight "   && read fglight
+#[[ -z $fgdark  ]] && printf "fgdark "    && read fgdark
+#[[ -z $bgdark  ]] && printf "bgdark "    && read bgdark
+#[[ -z $bgmid   ]] && printf "bgmid "     && read bgmid
+#[[ -z $bglight ]] && printf "bglight "   && read bglight
+#[[ -z $bglighter ]] && printf "bglighter " && read bglighter
+#[[ -z $border  ]] && printf "border "    && read border
+#[[ -z $accent  ]] && printf "accent "    && read accent
+#[[ -z $accent2 ]] && printf "accent2 "   && read accent2
+#[[ -z $textbox ]] && printf "textbox "   && read textbox
+#[[ -z $link    ]] && printf "link "      && read link
+#[[ -z $link_visited ]] && printf "link_visited " && read link_visited
+#[[ -z $red     ]] && printf "red "       && read red
+#[[ -z $textbox_underline ]] && printf "textbox_underline " && read fglight
+#[[ -z $button_press_dark ]] && printf "button_press_dark " && read button_press_dark
+#[[ -z $button_press_light ]] && printf "button_press_light " && read button_press_light
 
 gen_oomox() {
 
@@ -83,7 +84,7 @@ gen_oomox() {
 	
 	/opt/oomox/plugins/theme_materia/materia-theme/change_color.sh \
 	$HOME/.config/oomox/colors/$name &&
-	mv ~/.themes/oomox-$name/xfwm4/ ~/.themes/$name/xfwm4-old &&
+	mv ~/.themes/oomox-$name/xfwm4/ ~/.themes/oomox-$name/xfwm4-old &&
 	cp -r ~/.themes/oomox-$name ~/.themes/$name &&
 	echo -e "\n\n# ---Your GTK theme has been generated using oomox--- #\n\n"
 
@@ -105,7 +106,9 @@ genkvantum() {
 
 	[[ -d ~/.config/Kvantum/$name ]] && return && echo "A Kvantum theme with your name already exists."
 	[[ -d ~/.config/Kvantum/Template ]] || return
-	cp -r ~/.config/Kvantum/Template/ ~/.config/Kvantum/$name || return
+	cp -r ~/.config/Kvantum/Template/ ~/.config/Kvantum/$name && \
+	mv ~/.config/Kvantum/$name/Template.svg ~/.config/Kvantum/$name/$name.svg && \
+	mv ~/.config/Kvantum/$name/Template.kvconfig ~/.config/Kvantum/$name/$name.kvconfig || return
 
 	sed -i --follow-symlinks \
 		-e "s/000000/$bgdark/" \
@@ -140,7 +143,7 @@ genxfwm4() {
 	[[ -n $border ]] || return
 
 	[[ -d ~/.themes/Template ]] || return
-	cp -r ~/.themes/Template/ ~/.themes/$name || return
+	cp -r ~/.themes/Template/xfwm4/ ~/.themes/$name/xfwm4/ || return
 
 	sed -i --follow-symlinks \
 	-e "s/000000/$bgdark/" \
@@ -150,7 +153,9 @@ genxfwm4() {
 	-e "s/fafcff/$fglight/" \
 	-e "s/4d5565/$fgdark/" \
 	-e "s/333333/$border/" \
-	~/.themes/$name/xfwm4/assets/*
+	~/.themes/$name/xfwm4/assets/* &&
+
+	echo -e "\n\n# ---Your Xfwm4 theme has been generated--- #\n\n"
 
 }
 
@@ -166,7 +171,7 @@ while true; do
 	esac
 done
 
-[[ $xfwm != no ]] && genxfwm4
 [[ $kvantum != no ]] && genkvantum
 [[ $oomox != no ]] && gen_oomox
+[[ $xfwm != no ]] && genxfwm4
 
