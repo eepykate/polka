@@ -6,8 +6,8 @@
 *cursorColor:  #d6e5fb
 
 !! black
-*color0:       #1b1c28
-*color8:       #1f212e
+*color0:       #222333
+*color8:       #3d405b
 
 !! red
 *color1:       #f0185a
