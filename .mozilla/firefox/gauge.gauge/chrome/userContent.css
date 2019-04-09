@@ -1,18 +1,18 @@
 :root {
---bgdark: #141117;
---bglight: #19141e;
---bglighter: #342036;
+--bgdark: #12151a;
+--bglight: #161720;
+--bglighter: #222631;
 	--bglightest:  #41485c;
 	
---fgdark: #987ea2;
---fglight: #f3d6fb;
+--fgdark: #9aafc4;
+--fglight: #d8eefa;
 		
-	--accent: #ab32c1;
+--accent: #02a4fc;
 	--blue:        #02a4fc;
 	--green:       #12e689;
 	--yellow:      #f0d35c;
 	--red:         #f0185a;
---border: #342036;
+--border: #1a1b26;
 	--border1:     #223344;
 	--border2:     #334455;
 --disabled: #696969;
@@ -43,7 +43,7 @@ from the addons rules every time we update anything here */
 The scrollbars-width only has 3 acceptable values, auto, thin, and none:
 auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
 		--scrollbars-width: thin;
-		--scrollbars-thumb-color: var(--blue);
+		--scrollbars-thumb-color: var(--accent);
 		--scrollbars-track-color: var(--bglighter);
 
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color

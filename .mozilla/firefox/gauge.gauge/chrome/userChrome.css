@@ -3,17 +3,17 @@
 
 /* Colours (Hopefully) */
 :root {
---bgdark: #141117;
---bglight: #19141e;
---bglighter: #342036;
+--bgdark: #12151a;
+--bglight: #161720;
+--bglighter: #222631;
 
---fgdark: #987ea2;
---fglight: #f3d6fb;
+--fgdark: #9aafc4;
+--fglight: #d8eefa;
 	
---accent: #ab32c1;
---border: #342036;
+--accent: #02a4fc;
+--border: #1a1b26;
 --disabled: #696969;
---fgdark: #987ea2;
+--fgdark: #9aafc4;
 }
 
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
@@ -71,6 +71,10 @@
 browser[type=content-primary],
 browser[type=content] > html {
 	background: var(--bgdark)!important
+}
+
+#tabbrowser-tabpanels {
+  background: var(--bgdark) !important;
 }
 
 /* Tabs are de-saturated and transparent when inactive */
@@ -567,3 +571,11 @@ toolbarspring {
 .findbar-textbox, #identity-popup-clear-sitedata-footer {	
 	background-color: var(--bgdark) !important; 
 }
+
+/* Hide the fullscreen warning popup */
+@-moz-document url(chrome://browser/content/browser.xul) {
+	#fullscreen-warning {
+		display: none !important;
+	}
+}
+
