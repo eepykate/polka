@@ -14,12 +14,18 @@ syntax on
 " Mouse support
 set mouse=a
 
+map k gk
+map j gj
+
+map <Up> gk
+map <Down> gj
+
 " Copy
 vmap <C-c> "+yi
 imap <C-c> "+yi
 
 " Cut
-vmap <C-x> "+ci
+vmap <C-x> "+c
 
 " Paste
 vmap <C-v> <ESC>"+pi
