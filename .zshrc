@@ -10,8 +10,6 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 
 
 #     Stuff that makes zsh usable     #
-bindkey '^E' end-of-line              # [Ctrl-E] - Jump to the end of the line
-bindkey '^A' beginning-of-line        # [Ctrl-A] - Jump to the start of the line
 bindkey '^?' backward-delete-char     # [Backspace] - Delete backward
 bindkey '^[[P' delete-char            # [Delete] - Delete character under cursor
 bindkey '^[[3~' delete-char           # ^^
@@ -20,7 +18,9 @@ bindkey '^[[1;5D' backward-word       # [Ctrl-LeftArrow] - move backward one wor
 bindkey '^[[5~' up-line-or-history    # [PageUp] - Up a line of history
 bindkey '^[[6~' down-line-or-history  # [PageDown] - Down a line of history
 bindkey '^[[Z' reverse-menu-complete  # [Shift-Tab] - move through the completion menu backwards
+bindkey '^A' beginning-of-line        # [Ctrl-A] - Jump to the start of the line
 bindkey '^[[H' beginning-of-line      # [Home] - Go to beginning of line
+bindkey '^E' end-of-line              # [Ctrl-E] - Jump to the end of the line
 bindkey '^[[4~' end-of-line           # [End] - Go to end of line
 bindkey '^r' history-incremental-search-backward  # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
 
