@@ -538,8 +538,13 @@ toolbarspring {
 
 /* Change tab max width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-		max-width: 250px !important;
+	max-width: 200px !important;
 }
+
+/*.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: 100px !important;
+} */
+
 
 /*
 .tab-line {
@@ -551,6 +556,8 @@ toolbarspring {
 	--tab-line-color: var(--bglight) !important;
 }
 */
+
+
 
 .findbar-closebutton {
 	background-color: var(--bgdark) !important;
@@ -576,6 +583,73 @@ toolbarspring {
 @-moz-document url(chrome://browser/content/browser.xul) {
 	#fullscreen-warning {
 		display: none !important;
+	}
+}
+
+/* One Liner */
+@media only screen and (min-width: 1000px) {
+	#tabbrowser-tabs {
+		height: 32px !important;
+		margin-top: 0 !important;
+	}
+	#tabbrowser-tabs[movingtab] {
+		margin-top: -32px !important;
+		margin-left: 1px !important;
+		height: 32px !important;
+	}
+
+	.tabbrowser-tab {
+		margin-top: -2px !important;
+	}
+	
+	#TabsToolbar, #nav-bar, #titlebar { 
+		height: 32px !important;
+	}
+	
+	#TabsToolbar {
+		margin-left: 30vw !important;
+	}
+	
+	#nav-bar {
+		margin-top: -32px !important;
+		margin-right: 70vw !important;
+		z-index: 69;
+		transition: all 200ms ease 0.1s;
+	}
+
+	#nav-bar:focus-within {
+		margin-right: 20vw !important;
+	}
+
+	#PanelUI-button,
+	#customization-panel-container,
+	#customization-panelWrapper .panel-arrow { /* Move Hamburger to left */
+		-moz-box-ordinal-group: 0 !important;
+		margin-right: -6px !important;
+		margin-top: 1px !important;
+	}
+	
+	#PlacesToolbar {
+		margin-top: 2px;
+		margin-bottom: -2px;
+	}
+	
+	#page-action-buttons {
+		display: none !important;
+	}
+	
+	#urlbar,
+		.searchbar-textbox {
+		box-shadow: none !important;
+	}
+	
+	#urlbar:hover,
+		.searchbar-textbox:hover {
+		box-shadow: none !important;
+	}         
+	 
+	#urlbar {
+		background-color: transparent !important;  /* Transparent URL Bar */
 	}
 }
 
