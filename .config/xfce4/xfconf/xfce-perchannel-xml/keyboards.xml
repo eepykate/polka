@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="keyboards" version="1.0">
+  <property name="Default" type="empty">
+    <property name="KeyRepeat" type="bool" value="true">
+      <property name="Delay" type="int" value="200"/>
+      <property name="Rate" type="int" value="60"/>
+    </property>
+  </property>
+</channel>

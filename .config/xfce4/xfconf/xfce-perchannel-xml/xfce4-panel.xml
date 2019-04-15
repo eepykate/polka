@@ -40,6 +40,8 @@
       <property name="autohide-behavior" type="uint" value="0"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="6"/>
+        <value type="int" value="1"/>
+        <value type="int" value="2"/>
       </property>
       <property name="background-alpha" type="uint" value="100"/>
       <property name="enter-opacity" type="uint" value="100"/>
@@ -182,5 +184,7 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-6" type="string" value="genmon"/>
+    <property name="plugin-1" type="string" value="genmon"/>
+    <property name="plugin-2" type="string" value="genmon"/>
   </property>
 </channel>

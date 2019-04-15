@@ -48,6 +48,11 @@ cf() { cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; }
 #     ls --color=auto --group-directories-first -hF;
 #}
 
+function cli() {
+	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
+	xclip -selection clipboard -t image/png $HOME/Stuff/Screenshots/maim/$image
+}
+
 [[ -f ~/.config/sc.sh ]] && source ~/.config/sc.sh  # Add directory / file shortcuts to shell
 
 alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
