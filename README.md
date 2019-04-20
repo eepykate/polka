@@ -1,10 +1,7 @@
 <div align="center">
     <h2><b>Current setup</b></h2>
-    <img src="https://i.imgur.com/enEaEKa.png">
+    <img src="https://i.imgur.com/Niler8f.png">
     <br>
-    <img src="https://i.imgur.com/Eg8kVOA.png">
-    <br>
-<br>
 </div>
 
 ---
@@ -17,19 +14,19 @@
 
 **Window Manager:** Xfwm4 on XFCE4
 
-**Colour Scheme:** [Pure](https://gitlab.com/GaugeK/dots/raw/master/colours/Pure.png)
+**Colour Scheme:** [aaaaa](https://gitlab.com/GaugeK/dots/raw/master/colours/aaaaa.png)
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** Pure
+**Kvantum Theme:** aaaaa
 
 **Icon Theme:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-**Wallpaper:** [Earth + Moon](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Flat_Earth_Moon.png), [Moon](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Flat_Moon.png) \(Made by me\)
+**Wallpaper:** [Moon](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Flat_Moon-aaaaa.png)
 
-**WM Theme:** [Pure](https://gitlab.com/GaugeK/dots/tree/master/.themes/Pure)
+**WM Theme:** [aaaaa](https://gitlab.com/GaugeK/dots/tree/master/.themes/aaaaa)
 
-**GTK Theme:** Pure \(Generated with [oomox](https://github.com/themix-project/oomox)\)
+**GTK Theme:** aaaaa \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
 **Cursor Theme:** Bibata Oil
 
@@ -44,12 +41,6 @@
 **Terminal Prompt:** [Slight](https://gitlab.com/GaugeK/dots/blob/master/bin/slight.zsh) 
 
 **Terminal:** [Simple Terminal](https://gitlab.com/GaugeK/st)
-
----
-
-**Programs shown in the screenshot:**
-
-Simple terminal with [my custom fetch script](https://gitlab.com/GaugeK/dots/blob/master/bin/fetch), [vol status](https://gitlab.com/GaugeK/dots/blob/master/bin/vol), A demonstration of my shell theme, and 2 more st windows that show off my WM theme.
 
 ---
 
@@ -82,6 +73,8 @@ Simple terminal with [my custom fetch script](https://gitlab.com/GaugeK/dots/blo
 **Super + Alt + M:** Open dmenu mount script 
 
 **Super + Alt + U:** Open dmenu unmount script
+
+**Super + T:** Toggle the panel \([Script](https://gitlab.com/GaugeK/dots/blob/master/bin/tp.sh)\)  -  Also mapped to Super + Shift + F1, which I have a macro on my mouse for.
 
 Media keys use [this wrapper script](https://gitlab.com/GaugeK/dots/blob/master/bin/vol)
 
