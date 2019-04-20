@@ -26,3 +26,4 @@ f   sb         ~/bin/slight.bash
 f   Xb         ~/.config/Xres.Berry
 f   Xp         ~/.config/Xres.Pure
 f   Xa         ~/.config/Xres.aaaaa
+f   drc        ~/.config/dunst/dunstrc
