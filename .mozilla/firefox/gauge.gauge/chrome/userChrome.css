@@ -3,17 +3,17 @@
 
 /* Colours (Hopefully) */
 :root {
---bgdark: #12151a;
---bglight: #161720;
---bglighter: #222631;
+--bgdark: #252a33;
+--bglight: #2b303b;
+--bglighter: #2b303b;
 
---fgdark: #9aafc4;
---fglight: #d8eefa;
+--fgdark: #7790a7;
+--fglight: #7790a7;
 	
---accent: #02a4fc;
---border: #1a1b26;
+--accent: #ebcb8b;
+--border: #2b303b;
 --disabled: #696969;
---fgdark: #9aafc4;
+--fgdark: #7790a7;
 }
 
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
@@ -187,11 +187,11 @@ browser[type=content] > html {
 }*/
 
 /* No border on tabs i guess? frankly idk */
-[tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
+/* [tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
 .tabbrowser-tab:hover::after,
 #tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
 		border: none !important;              
-}
+} */
 
 /*#tabbrowser-tabs[movingtab=true] > *, #TabsToolbar > * {
 		padding: 0 !important;
@@ -589,20 +589,23 @@ toolbarspring {
 /* One Liner */
 @media only screen and (min-width: 1000px) {
 	#tabbrowser-tabs {
-		height: 32px !important;
 		margin-top: 0 !important;
+		margin-bottom: 0px !important;
+
 	}
-	#tabbrowser-tabs[movingtab] {
+	/*#tabbrowser-tabs[movingtab] {
 		margin-top: -32px !important;
 		margin-left: 1px !important;
-		height: 32px !important;
-	}
+		margin-bottom: -24px !important;
+	}*/
 
-	.tabbrowser-tab {
-		margin-top: -2px !important;
+
+	#navigator-toolbox[movingtab] #tabbrowser-tabs {
+		margin-bottom: -1px !important;
+		margin-left: 1px !important;
 	}
 	
-	#TabsToolbar, #nav-bar, #titlebar { 
+	#TabsToolbar, #nav-bar, #titlebar, #tabbrowser-tabs, .tabbrowser-tab { 
 		height: 32px !important;
 	}
 	
