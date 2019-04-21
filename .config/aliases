@@ -105,3 +105,13 @@ mc() {
 	mkdir -p "$1"; cd "$1";
 } 
 
+rc() {
+	xrdb ~/.Xresources
+	xresthing.sh
+	
+	for tty in /dev/pts/[0-9]*; do
+		[[ -w $tty ]] &&
+			eval /tmp/colours.sh > "$tty"
+	done
+}
+
