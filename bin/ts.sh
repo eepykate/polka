@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 
-opts="$(getopt -o t: --long theme: -- "$@")"
+opts="$(getopt -o t:w: --long theme:,wallpaper: -- "$@")"
 eval set -- "$opts"
 while true; do
 	case $1 in
 		-t|--theme) theme="$2"; shift 2;;
+		-w|--wallpaper) wallpaper="$2"; shift 2;;
 		--) shift; break;;
 	esac
 done
 
 time="$(date "+%Y-%m-%d_%H:%M:%S")"
-themes="Berry\nPure"
+themes="Berry\nPure\naaaaa"
 [[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -i -p "What theme would you like to use?")"
 
 if [[ $theme = Pure ]]; then 
@@ -43,6 +44,22 @@ elif [[ $theme = Berry ]]; then
 	border="#342036"
 	red="#cb1f62"
 
+elif [[ $theme = aaaaa ]]; then
+	
+	accentn="3"
+	bgdark="#252a33"
+  bglight="#2b303b"
+  bglighter="#343a48"
+
+  fgdark="#7790a7"
+  fglight="#7790a7"
+	
+	disabled="#696969"
+  accent="#ebcb8b"
+  button="#7790a722"
+	border="#2b303b"
+	red="#bf616a"
+	
 fi
 
 if [[ -n "$theme" ]]; then
@@ -55,8 +72,8 @@ if [[ -n "$theme" ]]; then
 
 	[[ -n $accentn ]] && 
 		sed --follow-symlinks -i "s/color=\".\"/color=\"$accentn\"/" -i ~/bin/slight.zsh
-	[[ -f $HOME/Wallpapers/Midnight-${theme}.png ]] && 
-		cp $HOME/Wallpapers/Midnight-${theme}.png $HOME/Wallpapers/Wallpaper.png
+	#[[ -f $HOME/Wallpapers/Midnight-${theme}.png ]] && 
+		#cp $HOME/Wallpapers/Midnight-${theme}.png $HOME/Wallpapers/Wallpaper.png
 
 	[[ -f ~/.conkyrc ]] && [[ -n $fglight ]] && sed "s/\${color ......}/\${color $fglight}/" -i ~/.conkyrc &&
 		pkill -9 conky && 
@@ -88,7 +105,11 @@ $HOME/.startpage/style.css" | \
 	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
 	tint &>/dev/null &! 
 
+	rc
 
+	[[ -n $wallpaper ]] &&
+		[[ -f ~/Wallpapers/$wallpaper-$theme.png ]] &&
+			cp ~/Wallpapers/$wallpaper-$theme.png ~/Wallpapers/Wallpaper.png
 
 	true
 fi
