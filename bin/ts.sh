@@ -15,12 +15,12 @@ themes="Berry\nPure\naaaaa"
 [[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -i -p "What theme would you like to use?")"
 
 if [[ $theme = Pure ]]; then 
-    accentn="4"
-    bgdark="#12151a"
-    bglight="#161720"
-    bglighter="#222631"
+	accentn="4"
+	bgdark="#12151a"
+  bglight="#161720"
+  bglighter="#222631"
 
-    fgdark="#9aafc4"
+  fgdark="#9aafc4"
 	fglight="#d8eefa"
 
 	disabled="#696969"
@@ -32,33 +32,33 @@ if [[ $theme = Pure ]]; then
 elif [[ $theme = Berry ]]; then 
 	accentn="5"
 	bgdark="#141117"
-    bglight="#19141e"
-    bglighter="#342036"
+  bglight="#19141e"
+  bglighter="#342036"
 
-    fgdark="#987ea2"
-    fglight="#f3d6fb"
+  fgdark="#987ea2"
+  fglight="#f3d6fb"
 	
 	disabled="#696969"
-    accent="#ab32c1"
-    button="#f3d6fb22"
+  accent="#ab32c1"
+  button="#f3d6fb22"
 	border="#342036"
 	red="#cb1f62"
 
 elif [[ $theme = aaaaa ]]; then
 	
 	accentn="3"
-	bgdark="#252a33"
-    bglight="#2b303b"
-    bglighter="#343a48"
+	bgdark="#232a35"
+  bglight="#29303d"
+  bglighter="#343a48"
 
-    fgdark="#7790a7"
-    fglight="#7790a7"
+  fgdark="#92a1ae"
+  fglight="#92a1ae"
 	
 	disabled="#696969"
-    accent="#ebcb8b"
-    button="#7790a722"
-	border="#2b303b"
-	red="#bf616a"
+  accent="#eccb86"
+  button="#7790a722"
+	border="#29303d"
+	red="#c05863"
 	
 fi
 

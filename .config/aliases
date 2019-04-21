@@ -97,7 +97,7 @@ c() {
 	tar -czvf "$1_$(date +%Y-%m-%d).tar.gz" $(printf " $exclude") $1
 }
 
-bk() { 
+bk() {
 	cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
 }
 
