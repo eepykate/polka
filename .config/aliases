@@ -94,7 +94,7 @@ c() {
 	done
 	echo $exclude
 
-	tar -czvf "$1_$(date +%Y-%m-%d).tar.gz" $(printf " $exclude") $1
+	tar -czvf "${1##*/}_$(date +%Y-%m-%d).tar.gz" $(printf " $exclude") $1
 }
 
 bk() {
