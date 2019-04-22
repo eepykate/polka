@@ -10,35 +10,41 @@
     <h2><b>Details</b></h2>
 </div>
 
+https://i.imgur.com/5WGadF6.png
+
+**Other screenshot with Firefox and Dolphin:** https://i.imgur.com/rFOudEQ.png
+
+---
+
 **Distribution:** Arch (GNU + Linux)
 
-**Window Manager:** Xfwm4 on XFCE4
+**Window Manager:** Xfwm4 on Xfce4
 
-**Colour Scheme:** [aaaaa](https://gitlab.com/GaugeK/dots/raw/master/colours/aaaaa.png)
+**Colour Scheme:** [Frost](https://gitlab.com/GaugeK/dots/raw/master/colours/Frost.png) [Xresources](https://gitlab.com/GaugeK/dots/raw/master/.config/Xres.Frost) (Needs a name)
 
 **Qt Widget Style:** [Kvantum](https://github.com/tsujan/Kvantum/tree/master/Kvantum)
 
-**Kvantum Theme:** aaaaa
+**Kvantum Theme:** Frost
 
 **Icon Theme:** [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
-**Wallpaper:** [Moon](https://gitlab.com/GaugeK/dots/raw/master/Wallpapers/Flat_Moon-aaaaa.png)
+**Wallpaper:** [Moon](https://i.imgur.com/IzTNKfp.png) 
 
-**WM Theme:** [aaaaa](https://gitlab.com/GaugeK/dots/tree/master/.themes/aaaaa)
+**WM Theme:** [Frost](https://gitlab.com/GaugeK/dots/tree/master/.themes/Frost)
 
-**GTK Theme:** aaaaa \(Generated with [oomox](https://github.com/themix-project/oomox)\)
+**GTK Theme:** Frost \(Generated with [oomox](https://github.com/themix-project/oomox)\)
 
 **Cursor Theme:** Bibata Oil
 
 **Panel:** tint2
 
-**Font:** Roboto Condensed  (Regular, bold for titlebars)
+**Font:** Roboto Condensed
 
 **Terminal Font:** Iosevka Term  (Nerd font)
 
-**Terminal Shell:** Zsh 
+**Shell:** Zsh
 
-**Terminal Prompt:** [Slight](https://gitlab.com/GaugeK/dots/blob/master/bin/slight.zsh) 
+**Shell Prompt:** [Slight](https://gitlab.com/GaugeK/dots/blob/master/bin/slight.zsh) 
 
 **Terminal:** [Simple Terminal](https://gitlab.com/GaugeK/st)
 
@@ -48,15 +54,15 @@
 
 **Super + Return:** Open terminal emulator (st)
 
-**Super + Space:** Show rofi (How I launch my applications)
+**Super + Space:** Show rofi
 
-**Super + L:** Lock the screen
+**Super + L:** Lock the screen (i3lock-color)
 
-**Print:** Fullscreen screenshot using maim
+**Print:** Fullscreen screenshot using maim [link](https://gitlab.com/GaugeK/dots/blob/master/bin/maim_fullscreen)
 
-**Shift + Print:** Screenshot a selection with maim
+**Shift + Print:** Screenshot a selection with maim [link](https://gitlab.com/GaugeK/dots/blob/master/bin/maim_selection)
 
-**Super + Print:** Screenshot active window using maim
+**Super + Print:** Screenshot active window using maim [link](https://gitlab.com/GaugeK/dots/blob/master/bin/maim_focused)
 
 **Ctrl + Alt + Insert:** Record the screen with [this script](https://gitlab.com/GaugeK/dots/blob/master/bin/record) (Displays dmenu prompts)
 
@@ -73,6 +79,14 @@
 **Super + Alt + M:** Open dmenu mount script 
 
 **Super + Alt + U:** Open dmenu unmount script
+
+**Super + F:** Open Firefox
+
+**Super + C:** Open Dolphin
+
+**Super + U:** Open rofi emoji script (Stolen from [here](https://gist.github.com/xywei/1e2c8a2fa6f17ba3f61b2e0d9f17bb7a))
+
+**Ctrl + Alt + S:** Run my trash [Theme Switcher](https://gitlab.com/GaugeK/dots/blob/master/bin/ts.sh)   (WARNING! BAD CODE!)
 
 **Super + T:** Toggle the panel \([Script](https://gitlab.com/GaugeK/dots/blob/master/bin/tp.sh)\)  -  Also mapped to Super + Shift + F1, which I have a macro on my mouse for.
 
