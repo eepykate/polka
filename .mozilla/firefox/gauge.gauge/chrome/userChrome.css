@@ -3,17 +3,17 @@
 
 /* Colours (Hopefully) */
 :root {
---bgdark: #252a33;
---bglight: #2b303b;
---bglighter: #2b303b;
+--bgdark: #232a35;
+--bglight: #29303d;
+--bglighter: #343a48;
 
---fgdark: #7790a7;
---fglight: #7790a7;
+--fgdark: #92a1ae;
+--fglight: #92a1ae;
 	
---accent: #ebcb8b;
---border: #2b303b;
+--accent: #ecac87;
+--border: #29303d;
 --disabled: #696969;
---fgdark: #7790a7;
+--fgdark: #92a1ae;
 }
 
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
@@ -50,12 +50,12 @@
 	display: none !important;
 }
 
-.tabbrowser-tab:hover .tab-icon-image,
-.tabbrowser-tab:hover .tab-throbber {
+.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image,
+.tabbrowser-tab:not([pinned="true"]):hover .tab-throbber {
 	display: none;
 }
 
-.tabbrowser-tab:hover .tab-close-button {
+.tabbrowser-tab:not([pinned="true"]):hover .tab-close-button {
 	display: -moz-box !important;
 }
 
