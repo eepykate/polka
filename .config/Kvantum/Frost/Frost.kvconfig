@@ -84,7 +84,7 @@ window.text.color=#92a1ae
 button.text.color=#92a1ae
 disabled.text.color=#696969
 tooltip.text.color=#92a1ae
-highlight.text.color=#92a1aeff
+highlight.text.color=#000000aa
 link.color=#ecb789
 link.visited.color=#9cbc81
 progress.indicator.text.color=#92a1ae
@@ -332,7 +332,7 @@ text.margin.right=4
 text.normal.color=#92a1ae
 text.focus.color=#ecb789
 text.press.color=#92a1ae
-text.toggle.color=#92a1ae
+text.toggle.color=#000000
 frame.expansion=0
 
 [Splitter]

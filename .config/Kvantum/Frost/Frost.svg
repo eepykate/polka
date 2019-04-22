@@ -39,9 +39,9 @@
      inkscape:window-height="1038"
      id="namedview951"
      showgrid="false"
-     inkscape:zoom="0.35355338"
-     inkscape:cx="-585.60984"
-     inkscape:cy="537.82893"
+     inkscape:zoom="11.313708"
+     inkscape:cx="201.98351"
+     inkscape:cy="1081.1885"
      inkscape:window-x="1440"
      inkscape:window-y="20"
      inkscape:window-maximized="1"
@@ -2275,22 +2275,14 @@
        d="M 210,142.5 V 135 c -4,0 -7.5,3.5 -7.5,7.5 z"
        inkscape:connector-curvature="0" />
     <rect
-       width="7.5"
-       x="202.5"
-       y="142.5"
-       height="16"
-       style="fill:#232a35;fill-opacity:1;stroke:none;opacity:1"
-       id="progress-pattern-disabled-left"
-       d="m 495.50262,453.85937 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1164.01685,-9 9,9 m -400.00562,-9 9,9 m -400.00561,-9 9,9 m -400.00562,-9 9,9" />
-    <use
-       width="450"
-       x="0"
-       y="0"
-       height="1230"
+       d="m 495.50262,453.85937 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1164.01685,-9 9,9 m -400.00562,-9 9,9 m -400.00561,-9 9,9 m -400.00562,-9 9,9"
        id="progress-pattern-disabled-top"
-       xlink:href="#progress-pattern-disabled-left"
-       transform="rotate(90,218,150.5)"
-       style="fill:#232a35;fill-opacity:1;opacity:1" />
+       style="opacity:1;fill:#232a35;fill-opacity:1;stroke:none"
+       height="16"
+       y="-226"
+       x="134.99998"
+       width="7.5"
+       transform="rotate(90)" />
     <use
        width="450"
        x="0"
@@ -2309,24 +2301,23 @@
        xlink:href="#progress-pattern-disabled-topleft"
        transform="rotate(180,218,150.5)"
        style="fill:#232a35;fill-opacity:1;opacity:1" />
-    <use
-       width="450"
-       x="0"
-       y="0"
-       height="1230"
+    <rect
+       d="m 495.50262,453.85937 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1164.01685,-9 9,9 m -400.00562,-9 9,9 m -400.00561,-9 9,9 m -400.00562,-9 9,9"
        id="progress-pattern-disabled-right"
-       xlink:href="#progress-pattern-disabled-left"
-       transform="translate(23.5)"
-       style="fill:#232a35;fill-opacity:1;opacity:1" />
-    <use
-       width="450"
-       x="0"
-       y="0"
-       height="1230"
+       style="opacity:1;fill:#232a35;fill-opacity:1;stroke:none"
+       height="16"
+       y="142.5"
+       x="226"
+       width="7.5" />
+    <rect
+       d="m 495.50262,453.85937 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1164.01685,-9 9,9 m -400.00562,-9 9,9 m -400.00561,-9 9,9 m -400.00562,-9 9,9"
        id="progress-pattern-disabled-bottom"
-       xlink:href="#progress-pattern-disabled-left"
-       transform="rotate(-90,218,150.5)"
-       style="fill:#232a35;fill-opacity:1;opacity:1" />
+       style="opacity:1;fill:#232a35;fill-opacity:1;stroke:none"
+       height="16"
+       y="210"
+       x="-166.00002"
+       width="7.5"
+       transform="rotate(-90)" />
     <use
        width="450"
        x="0"
@@ -2335,15 +2326,6 @@
        id="progress-pattern-disabled-bottomleft"
        xlink:href="#progress-pattern-disabled-topleft"
        transform="rotate(-90,218,150.5)"
-       style="fill:#232a35;fill-opacity:1;opacity:1" />
-    <use
-       width="450"
-       x="0"
-       y="0"
-       height="1230"
-       id="progress-pattern-disabled"
-       xlink:href="#progress-pattern-disabled-left"
-       transform="matrix(2.129303d,0,0,1,-221.99999,0)"
        style="fill:#232a35;fill-opacity:1;opacity:1" />
     <path
        style="fill:#232a35;fill-opacity:1;fill-rule:evenodd;stroke:none"
@@ -6073,6 +6055,22 @@
          id="rect1921-7-6-6-7"
          style="opacity:1;fill:#ecb789;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:9.30000019;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers" />
     </g>
+    <path
+       style="display:inline;opacity:0.98999999;fill:#232a35;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"
+       id="progress-pattern-disabled"
+       d="m 210,142.5 v 16.00001 h 15.99999 V 142.5 Z"
+       inkscape:connector-curvature="0"
+       inkscape:label="#progress-normal-3" />
+    <rect
+       d="m 495.50262,453.85937 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1176.01685,3 -1173.01685,0 m 1164.01685,-9 9,9 m -400.00562,-9 9,9 m -400.00561,-9 9,9 m -400.00562,-9 9,9"
+       id="progress-pattern-disabled-left"
+       style="display:inline;opacity:1;fill:#232a35;fill-opacity:1;stroke:none"
+       height="16"
+       y="142.5"
+       x="-210"
+       width="7.5"
+       transform="scale(-1,1)"
+       inkscape:label="progress-pattern-disabled-left" />
   </g>
   <g
      inkscape:groupmode="layer"
