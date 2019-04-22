@@ -19,6 +19,7 @@ f   zpro       ~/.zprofile
 f   xres       ~/.Xresources
 f   sc         ~/.config/sc
 f   aliases    ~/.config/aliases
+f   a          ~/.config/aliases
 f   scsh       ~/.config/sc.sh
 f   xin        ~/.xinitrc
 f   sz         ~/bin/slight.zsh

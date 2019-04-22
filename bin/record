@@ -71,7 +71,7 @@ if [[ ${DoM} = Display ]]; then
 	[[ -n $1 ]] && rate="$1"  || rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
 	[[ -n $2 ]] && audio="$2" || audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 elif [[ ${DoM} = Slop ]]; then
-	slop="$(slop)"
+	slop="$(slop -l -c 0.92549,0.67451,0.52941,0.2 -b 2 -p 2)"
 	slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
 
 	width="$(echo   $slop1 | awk '{print $1}' )"
