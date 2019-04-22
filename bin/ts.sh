@@ -17,10 +17,10 @@ themes="Berry\nPure\nFrost"
 if [[ $theme = Pure ]]; then 
 	accentn="4"
 	bgdark="#12151a"
-  bglight="#161720"
-  bglighter="#222631"
+	bglight="#161720"
+	bglighter="#222631"
 
-  fgdark="#9aafc4"
+	fgdark="#9aafc4"
 	fglight="#d8eefa"
 
 	disabled="#696969"
@@ -32,15 +32,15 @@ if [[ $theme = Pure ]]; then
 elif [[ $theme = Berry ]]; then 
 	accentn="5"
 	bgdark="#141117"
-  bglight="#19141e"
-  bglighter="#342036"
+	bglight="#19141e"
+	bglighter="#342036"
 
-  fgdark="#987ea2"
-  fglight="#f3d6fb"
+	fgdark="#987ea2"
+	fglight="#f3d6fb"
 	
 	disabled="#696969"
-  accent="#ab32c1"
-  button="#f3d6fb22"
+	accent="#ab32c1"
+	button="#f3d6fb22"
 	border="#342036"
 	red="#cb1f62"
 
@@ -48,15 +48,15 @@ elif [[ $theme = Frost ]]; then
 	
 	accentn="3"
 	bgdark="#232a35"
-  bglight="#29303d"
-  bglighter="#343a48"
+	bglight="#29303d"
+	bglighter="#343a48"
 
-  fgdark="#92a1ae"
-  fglight="#92a1ae"
+	fgdark="#92a1ae"
+	fglight="#92a1ae"
 	
 	disabled="#696969"
-  accent="#ecac87"
-  button="#7790a722"
+	accent="#ecac87"
+	button="#7790a722"
 	border="#29303d"
 	red="#c05863"
 	
