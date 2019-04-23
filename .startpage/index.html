@@ -16,17 +16,21 @@
 			<span class="text"></span>
 			<span class="text"></span>
 		</div>	
-		<div id="sidebar">
-		<div class="tabs">
-			<a href="#" class="tablinks tablink1" onclick="changeTab('notes1')" id="defaultOpen">Tab 1</a>
-			<a href="#" class="tablinks tablink2" onclick="changeTab('notes2')">Tab 2</a>
-			<a href="#" class="tablinks tablink3" onclick="changeTab('notes3')">Tab 3</a>
-			<hr>
+	<div id="sidebar">
+		<div class="sidebar-top">
+			<div class="tabs">
+				<a href="#" class="tablinks tablink1" onclick="changeTab('notes1')" id="defaultOpen">Tab 1</a>
+				<a href="#" class="tablinks tablink2" onclick="changeTab('notes2')">Tab 2</a>
+				<a href="#" class="tablinks tablink3" onclick="changeTab('notes3')">Tab 3</a>
+				<hr>
+			</div>
 		</div>
-		<textarea class="tabcontent" id="notes1" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
-		<textarea class="tabcontent" id="notes2" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
-		<textarea class="tabcontent" id="notes3" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
-		<!img class="pen" src="pen.svg">
+		<div class="notearea">
+			<textarea class="tabcontent" id="notes1" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
+			<textarea class="tabcontent" id="notes2" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
+			<textarea class="tabcontent" id="notes3" rows="8" cols="25" placeholder="Type some notes..." ></textarea>
+			<!img class="pen" src="pen.svg">
+		</div>
 	</div>
 	<div id="page">
 		<div id="clock">

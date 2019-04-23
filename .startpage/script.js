@@ -94,6 +94,28 @@ n2.onchange = s();
 setInterval( s, 500);
 window.onunload = s();
 
+/* First page of notes */
+var n1 = document.getElementById("notes1");
+// retrieve (only on page load) 
+if(window.localStorage){ n1.value = localStorage.getItem("notes1");}
+// save 
+var s = function(){localStorage.setItem("notes1", n1.value);}
+// autosave onchange and every 500ms and when you close the window 
+n1.onchange = s();
+setInterval( s, 500);
+window.onunload = s();
+
+/* Third page of notes */
+var n2 = document.getElementById("notes3");
+// retrieve (only on page load) 
+if(window.localStorage){ n2.value = localStorage.getItem("notes3");}
+// save 
+var s = function(){localStorage.setItem("notes3", n2.value);}
+// autosave onchange and every 500ms and when you close the window 
+n2.onchange = s();
+setInterval( s, 500);
+window.onunload = s();
+
 function toggleSidebar(){
 	document.getElementById("sidebar").classList.toggle('active');
 }

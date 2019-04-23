@@ -1,15 +1,15 @@
 :root {
---bgdark: #232a35;
---bglight: #29303d;
---bglighter: #343a48;
+--bgdark: #12151a;
+--bglight: #171a24;
+--bglighter: #222631;
 
---fgdark: #92a1ae;
---fglight: #92a1ae;
+--fgdark: #808fa1;
+--fglight: #afc4dc;
 	
---accent: #ecac87;
---border: #303848;
+--accent: #02a4fc;
+--border: #1e2130;
 --disabled: #696969;
---fgdark: #92a1ae;
+--fgdark: #808fa1;
 }
 
 body {
@@ -242,15 +242,24 @@ a:hover {	color: var(--accent);}
 }
 
 #notes1, #notes2, #notes3  {
-	position: absolute;
-	right: 0;
-	bottom: 0;
 	width: 250px;
 	background-color: var(--bglight);
 	color: var(--fglight);
 	margin: 0 auto;
-	height: 85vh;
+	height: 100%;
+	min-height: content;
 	border: none;
+}
+
+.notearea {
+	position: absolute;
+	top: 66px; 
+	bottom: 20px; 
+	width: 100%;
+}
+
+.sidebar-top {
+	display: block;
 }
 
 #sidebar:not(.active) {
@@ -318,13 +327,9 @@ a:hover {	color: var(--accent);}
 	display: inline-block;
 }
 
-.tablinks:hover {
-	color: var(--accent);
-}
+.tablinks:hover { color: var(--accent); }
 
-.tablinks.selected {
-	color: var(--accent);
-}
+.tablinks.selected { color: var(--accent); }
 
 main section {
 	flex: 1 1 100%;
