@@ -6,8 +6,8 @@
 --fgdark: #92a1ae;
 --fglight: #92a1ae;
 	
---accent: #eccb86;
---border: #29303d;
+--accent: #ecac87;
+--border: #303848;
 --disabled: #696969;
 --fgdark: #92a1ae;
 }
@@ -23,6 +23,7 @@ body {
 	max-height: 600px;
 	  	
 	margin: 0 auto;
+	margin-top: 20px;
 }
 
 main {
@@ -43,36 +44,52 @@ main {
 
 #time, #date {
 	color: var(--fglight);
-	display: block;
+	display: inline-block;
+	margin: 0 5px;
+	width: 90px;
+}
+
+#time {
+	text-align: left;
+}
+
+#date { 
+	text-align: right;
+}
+
+.slash {
+	color: var(--fgdark)
 }
 
 .search-box input[type="text"] {
-	background-color: var(--bgdark);
-	border: 2px solid var(--border);   
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid var(--border);   
 	color: var(--fgdark);
-	transition: all 300ms ease 0s;
+	transition: all 200ms;
 	width: 90%;
-	max-width: 700px;
+	max-width: 400px;
 	height: 30px;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-	box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);
+	/*box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);*/
 }
 
 .search-box input[type="text"]:focus,
 .search-box input[type="text"]:hover {
-	border: 2px solid var(--accent);   
+	border-bottom: 2px solid var(--accent);   
+	max-width: 500px;
 }
 
 .box {
 	display: block;
 	width: auto;
 	text-align: center;
-	border: 2px solid var(--border);
+	border: 2px solid var(--bglight);
 	transition: all 300ms ease 0s;
 	margin: 15px;
-	box-shadow: 9px 10px 16px 3px rgba(0,0,0,0.3);   
+	box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);   
 }
 
 .box:hover {
@@ -92,7 +109,7 @@ main {
 	transition: all 300ms ease 0s;
 	display: block;
 	text-align: center;
-	background-color: var(--border);
+	background-color: var(--bglight);
 	padding: 5px;
 }
 
