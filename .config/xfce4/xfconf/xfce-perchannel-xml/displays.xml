@@ -23,7 +23,7 @@
       <property name="Primary" type="bool" value="true"/>
       <property name="Position" type="empty">
         <property name="X" type="int" value="1440"/>
-        <property name="Y" type="int" value="50"/>
+        <property name="Y" type="int" value="0"/>
       </property>
     </property>
   </property>

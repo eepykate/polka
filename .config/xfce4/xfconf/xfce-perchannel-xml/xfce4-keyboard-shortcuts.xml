@@ -31,7 +31,6 @@
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="XF86WWW" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
-      <property name="&lt;Primary&gt;Escape" type="string" value="xfdesktop --menu"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;space" type="string" value="rofi -show run"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Insert" type="string" value="record"/>
@@ -61,6 +60,8 @@
       <property name="&lt;Super&gt;u" type="string" value="rofi-emoji"/>
       <property name="&lt;Super&gt;t" type="string" value="tp.sh"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;F1" type="string" value="tp.sh"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="ts.sh --wallpaper Flat_Moon"/>
+      <property name="&lt;Super&gt;v" type="string" value="select_link.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
