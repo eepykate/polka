@@ -61,8 +61,13 @@ au BufReadPost *.rasi set syntax=css
 
 
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+	Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+	Plug 'chrisbra/Colorizer'
 call plug#end()
 
 set cursorline
 "set cursorcolumn
+
+" :let g:colorizer_auto_color = 1
+
+:let g:colorizer_auto_filetype='css,html'

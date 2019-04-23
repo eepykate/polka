@@ -1,13 +1,11 @@
 #     ~/.zshrc     #
-# Syntax highlighting ## + fish-like autosuggestions
+# Syntax highlighting
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 export SUDO_PROMPT=$'\e[34m[sudo]\e[33m password for %p:\e[0m '   # Colourful sudo prompt
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
 stty -ixon            # Disable Ctrl-S && Ctrl-Q
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
-
+export EDITOR="nvim"  # Needs to be here or sc.sh won't work as root (I cp these there) 
 
 #     Stuff that makes zsh usable     #
 bindkey '^?' backward-delete-char     # [Backspace] - Delete backward

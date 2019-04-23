@@ -56,7 +56,7 @@ function cli() {
 
 function clv() {
 	local video="$(ls -1t $HOME/Videos/recordings | head -1)"
-	xclip -selection clipboard -t image/png $HOME/Videos/recordings/$video
+	xclip -selection clipboard -t video/mp4 $HOME/Videos/recordings/$video
 }
 
 [[ -f ~/.config/sc.sh ]] && source ~/.config/sc.sh  # Add directory / file shortcuts to shell
