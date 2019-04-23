@@ -17,11 +17,11 @@ themes="Berry\nPure\nFrost"
 if [[ $theme = Pure ]]; then 
 	accentn="4"
 	bgdark="#12151a"
-	bglight="#161720"
+	bglight="#171a24"
 	bglighter="#222631"
 
 	fgdark="#9aafc4"
-	fglight="#d8eefa"
+	fglight="#a5b8d0"
 
 	disabled="#696969"
 	accent="#02a4fc"

@@ -7,12 +7,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="22"
-   height="22"
-   viewBox="0 0 22 22"
+   width="18"
+   height="5"
+   viewBox="0 0 18 5"
    version="1.1"
    id="svg12"
-   sodipodi:docname="menu-inactive.svg"
+   sodipodi:docname="close-inactive.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata18">
@@ -38,27 +38,21 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
-     inkscape:window-height="1038"
+     inkscape:window-height="1058"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="14.75"
-     inkscape:cx="1.1109138"
-     inkscape:cy="16.035558"
+     inkscape:zoom="45.254834"
+     inkscape:cx="6.8543744"
+     inkscape:cy="6.8610742"
      inkscape:window-x="1440"
-     inkscape:window-y="20"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg12" />
   <rect
-     width="21.995764"
-     height="21.995764"
+     width="22.000002"
+     height="5"
      id="rect2"
      x="0"
-     y="0.0042372919"
-     style="fill:#12151a;stroke-width:0.68736762;fill-opacity:1" />
-  <circle
-     style="fill:#4d5565;stroke-width:1.12804556;fill-opacity:1"
-     id="circle8"
-     r="2.2560911"
-     cy="11.002119"
-     cx="10.997882" />
+     y="0"
+     style="fill:#1b1f28;fill-opacity:1;stroke-width:0.68741727" />
 </svg>

@@ -49,6 +49,14 @@ cf() { cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; }
 #     ls --color=auto --group-directories-first -hF;
 #}
 
+hextorgb() {
+	hex="$1"
+	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
+}
+
+rgbtohex() { printf "%02X%02X%02X\n" $@ }
+
+
 function cli() {
 	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
 	xclip -selection clipboard -t image/png $HOME/Stuff/Screenshots/maim/$image

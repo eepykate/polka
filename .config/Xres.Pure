@@ -1,9 +1,9 @@
 !! Pure
-! 161720
+! 171a24
 !! special
 *foreground:   #d6e5fb
 *background:   #12151a
-*cursorColor:  #d6e5fb
+*cursorColor:  #a5b8d0
 
 !! black
 *color0:       #222333
@@ -34,6 +34,6 @@
 *color14:      #26c5ff
 
 !! white
-*color7:       #acb7c7
-*color15:      #d6e5fb
+*color7:       #808fa1
+*color15:      #afc4dc
 

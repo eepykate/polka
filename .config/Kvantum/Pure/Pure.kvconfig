@@ -70,20 +70,20 @@ saturation=1.00
 
 [GeneralColors]
 window.color=#12151a
-base.color=#161720
+base.color=#171a24
 alt.base.color=#12151a
-button.color=#161720
+button.color=#171a24
 light.color=#404754
 mid.light.color=#313131
 dark.color=black
 mid.color=#191919
 highlight.color=#02a4fc
 inactive.highlight.color=#02a4fc
-text.color=#d6e5fbff
-window.text.color=#d6e5fbff
-button.text.color=#d6e5fbff
+text.color=#afc4dcff
+window.text.color=#afc4dcff
+button.text.color=#afc4dcff
 disabled.text.color=#696969
-tooltip.text.color=#d6e5fb
+tooltip.text.color=#afc4dc
 highlight.text.color=#000000aa
 link.color=#02a4fc
 link.visited.color=#12e689
@@ -121,9 +121,9 @@ frame.right=3
 interior=true
 interior.element=button
 indicator.size=9
-text.normal.color=#d6e5fbff
+text.normal.color=#afc4dcff
 text.focus.color=#02a4fc
-text.press.color=#d6e5fbff
+text.press.color=#afc4dcff
 text.toggle.color=#02a4fc
 text.shadow=0
 text.margin=1
@@ -148,13 +148,13 @@ frame.top=1
 frame.bottom=1
 frame.left=1
 frame.right=1
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 
 [DockTitle]
 inherits=PanelButtonCommand
 frame=false
 interior=false
-text.normal.color=#d6e5fb96
+text.normal.color=#afc4dc96
 text.focus.color=#02a4fc
 text.bold=true
 
@@ -165,20 +165,20 @@ interior=true
 frame.left=1
 indicator.element=spin
 indicator.size=10
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 
 [RadioButton]
 inherits=PanelButtonCommand
 frame=false
 interior.element=radio
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.focus.color=#02a4fc
 
 [CheckBox]
 inherits=PanelButtonCommand
 frame=false
 interior.element=checkbox
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.focus.color=#02a4fc
 
 [Focus]
@@ -219,8 +219,8 @@ indicator.size=9
 
 [ToolboxTab]
 inherits=PanelButtonCommand
-text.normal.color=#d6e5fbc8
-text.press.color=#d6e5fb96
+text.normal.color=#afc4dcc8
+text.press.color=#afc4dc96
 text.focus.color=#02a4fc
 
 [Tab]
@@ -236,7 +236,7 @@ frame.top=0
 frame.bottom=3
 frame.left=2
 frame.right=2
-text.normal.color=#d6e5fb78
+text.normal.color=#afc4dc78
 text.focus.color=#02a4fc
 text.toggle.color=#02a4fc
 frame.expansion=0
@@ -264,7 +264,7 @@ frame.bottom=3
 frame.left=1
 frame.right=1
 text.bold=true
-text.normal.color=#d6e5fb96
+text.normal.color=#afc4dc96
 text.focus.color=#02a4fc
 text.toggle.color=white
 frame.expansion=0
@@ -279,7 +279,7 @@ indicator.size=5
 text.margin=0
 interior.element=menubar
 frame.element=menubar
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.focus.color=#02a4fc
 frame.bottom=0
 frame.expansion=0
@@ -303,7 +303,7 @@ inherits=PanelButtonCommand
 frame.element=progress
 interior.element=progress
 text.margin=0
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.focus.color=#02a4fc
 text.press.color=white
 text.toggle.color=#02a4fc
@@ -329,9 +329,9 @@ text.margin.top=2
 text.margin.bottom=2
 text.margin.left=4
 text.margin.right=4
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.focus.color=#02a4fc
-text.press.color=#d6e5fb
+text.press.color=#afc4dc
 text.toggle.color=#02a4fc
 frame.expansion=0
 
@@ -366,7 +366,7 @@ frame=true
 frame.element=menuitem
 interior.element=menuitem
 indicator.element=menuitem
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.focus.color=#02a4fc
 text.margin.top=0
 text.margin.bottom=0
@@ -398,7 +398,7 @@ text.margin.left=4
 text.margin.right=4
 text.margin.top=0
 text.margin.bottom=0
-text.normal.color=#d6e5fb
+text.normal.color=#afc4dc
 text.focus.color=#02a4fc
 frame.expansion=0
 
@@ -418,7 +418,7 @@ frame.expansion=0
 inherits=PanelButtonCommand
 interior.element=combo
 frame.element=combo
-text.press.color=#d6e5fbc8
+text.press.color=#afc4dcc8
 indicator.element=carrow
 
 [Menu]
@@ -429,7 +429,7 @@ frame.left=0
 frame.right=0
 frame.element=menu
 interior.element=menu
-text.normal.color=#d6e5fbc8
+text.normal.color=#afc4dcc8
 text.shadow=false
 frame.expansion=0
 
@@ -438,7 +438,7 @@ inherits=GenericFrame
 frame=false
 text.shadow=0
 text.margin=0
-text.normal.color=#d6e5fb96
+text.normal.color=#afc4dc96
 text.focus.color=#02a4fc
 text.bold=true
 frame.expansion=0

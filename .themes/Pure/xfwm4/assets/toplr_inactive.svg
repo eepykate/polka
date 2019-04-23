@@ -8,8 +8,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="5"
-   height="22"
-   viewBox="0 0 5 12.571429"
+   height="5"
+   viewBox="0 0 5 5"
    version="1.1"
    id="svg6"
    sodipodi:docname="toplr.svg"
@@ -50,9 +50,9 @@
      inkscape:current-layer="svg6" />
   <rect
      style="fill:#12151a;fill-opacity:1;stroke-width:0.99103123"
-     y="-4.7142854"
+     y="0"
      x="0"
      id="rect822"
-     height="22"
+     height="5"
      width="5" />
 </svg>
