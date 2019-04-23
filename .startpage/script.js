@@ -34,15 +34,6 @@ function checkTime(i) {
   return i;
 }
 
-var n = document.getElementById("notes");
-// retrieve (only on page load) 
-if(window.localStorage){ n.value = localStorage.getItem("notes");}
-// save 
-var s = function(){localStorage.setItem("notes", n.value);}
-// autosave onchange and every 500ms and when you close the window 
-n.onchange = s();
-setInterval( s, 500);
-window.onunload = s();
 
 var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
@@ -80,5 +71,67 @@ function fixSectionHeight() {
 
 fixSectionHeight()
 window.addEventListener('resize', fixSectionHeight)
+
+/* First page of notes */
+var n1 = document.getElementById("notes1");
+// retrieve (only on page load) 
+if(window.localStorage){ n1.value = localStorage.getItem("notes1");}
+// save 
+var s = function(){localStorage.setItem("notes1", n1.value);}
+// autosave onchange and every 500ms and when you close the window 
+n1.onchange = s();
+setInterval( s, 500);
+window.onunload = s();
+
+/* Second page of notes */
+var n2 = document.getElementById("notes2");
+// retrieve (only on page load) 
+if(window.localStorage){ n2.value = localStorage.getItem("notes2");}
+// save 
+var s = function(){localStorage.setItem("notes2", n2.value);}
+// autosave onchange and every 500ms and when you close the window 
+n2.onchange = s();
+setInterval( s, 500);
+window.onunload = s();
+
+function toggleSidebar(){
+	document.getElementById("sidebar").classList.toggle('active');
+}
+
+// Detect all clicks on the document
+document.addEventListener("click", function(event) {
+// If user clicks inside the element, do nothing
+if (event.target.closest("#sidebar")) return;
+if (event.target.closest(".sidebar-toggle")) return;
+
+// If user clicks outside the element, hide it!
+document.getElementById("sidebar").classList.remove('active');
+});
+
+
+/* Sidebar Tabs */
+function changeTab(tabName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "selected"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" selected", "");
+  }
+
+  // Show the current tab, and add a "selected" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  event.currentTarget.className += " selected";
+} 
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
 // @license-end
