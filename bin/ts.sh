@@ -26,7 +26,7 @@ if [[ $theme = Pure ]]; then
 	disabled="#696969"
 	accent="#02a4fc"
 	button="#cbe3f122"
-	border="#1a1b26"
+	border="#1e2130"
 	red="#f0185a"
 
 elif [[ $theme = Berry ]]; then 
@@ -106,6 +106,8 @@ $HOME/.startpage/style.css" | \
 	tint &>/dev/null &! 
 
 	rc
+
+	sed --follow-symlinks -i "s/color: #.*;/color: $accent;/g" ~/.config/gtk-3.0/gtk.css
 
 	[[ -n $wallpaper ]] &&
 		[[ -f ~/Wallpapers/$wallpaper-$theme.png ]] &&
