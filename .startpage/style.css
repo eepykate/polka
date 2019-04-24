@@ -91,17 +91,18 @@ main {
 	position: relative;
 	top: -2px;
 	display: block;
-	margin: 0 auto;
 	max-width: 0px;
+	margin: 0 auto;
 	height: 2px;
-	background-color: var(--accent);
-	transition: all 200ms;
+	background-color: var(--border);
+	transition: all 150ms;
 	transition-timing-function: ease-out;
 }
 
 .search-box:focus-within > .search-underline,
 .search-box:hover > .search-underline {
 	max-width: 500px;
+	background-color: var(--accent);
 }
 
 /*.search-box input[type="text"]:focus,
