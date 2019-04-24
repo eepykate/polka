@@ -77,15 +77,15 @@ light.color=#555555
 mid.light.color=#313131
 dark.color=black
 mid.color=#29303d
-highlight.color=#ecb789
-inactive.highlight.color=#ecb789
+highlight.color=#ecac87
+inactive.highlight.color=#ecac87
 text.color=#92a1ae
 window.text.color=#92a1ae
 button.text.color=#92a1ae
 disabled.text.color=#696969
 tooltip.text.color=#92a1ae
 highlight.text.color=#000000aa
-link.color=#ecb789
+link.color=#ecac87
 link.visited.color=#9cbc81
 progress.indicator.text.color=#92a1ae
 
@@ -122,9 +122,9 @@ interior=true
 interior.element=button
 indicator.size=9
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.press.color=#92a1ae
-text.toggle.color=#ecb789
+text.toggle.color=#ecac87
 text.shadow=0
 text.margin=1
 text.iconspacing=3
@@ -155,7 +155,7 @@ inherits=PanelButtonCommand
 frame=false
 interior=false
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.bold=true
 
 [IndicatorSpinBox]
@@ -172,14 +172,14 @@ inherits=PanelButtonCommand
 frame=false
 interior.element=radio
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 
 [CheckBox]
 inherits=PanelButtonCommand
 frame=false
 interior.element=checkbox
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 
 [Focus]
 inherits=PanelButtonCommand
@@ -221,7 +221,7 @@ indicator.size=9
 inherits=PanelButtonCommand
 text.normal.color=#92a1ae
 text.press.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 
 [Tab]
 inherits=PanelButtonCommand
@@ -237,8 +237,8 @@ frame.bottom=3
 frame.left=2
 frame.right=2
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
-text.toggle.color=#ecb789
+text.focus.color=#ecac87
+text.toggle.color=#ecac87
 frame.expansion=0
 
 [TabFrame]
@@ -265,8 +265,8 @@ frame.left=1
 frame.right=1
 text.bold=true
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
-text.toggle.color=#ecb789
+text.focus.color=#ecac87
+text.toggle.color=#ecac87
 frame.expansion=0
 
 [SizeGrip]
@@ -280,7 +280,7 @@ text.margin=0
 interior.element=menubar
 frame.element=menubar
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 frame.bottom=0
 frame.expansion=0
 
@@ -304,9 +304,9 @@ frame.element=progress
 interior.element=progress
 text.margin=0
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.press.color=#92a1ae
-text.toggle.color=#ecb789
+text.toggle.color=#ecac87
 text.bold=false
 frame.expansion=8
 
@@ -330,7 +330,7 @@ text.margin.bottom=2
 text.margin.left=4
 text.margin.right=4
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.press.color=#92a1ae
 text.toggle.color=#000000
 frame.expansion=0
@@ -367,7 +367,7 @@ frame.element=menuitem
 interior.element=menuitem
 indicator.element=menuitem
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.margin.top=0
 text.margin.bottom=0
 text.margin.left=3
@@ -399,7 +399,7 @@ text.margin.right=4
 text.margin.top=0
 text.margin.bottom=0
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 frame.expansion=0
 
 [TitleBar]
@@ -409,7 +409,7 @@ interior.element=titlebar
 indicator.size=12
 indicator.element=mdi
 text.normal.color=#92a1ae
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.bold=true
 text.italic=true
 frame.expansion=0
@@ -439,7 +439,7 @@ frame=false
 text.shadow=0
 text.margin=0
 text.normal.color=#92a1ae96
-text.focus.color=#ecb789
+text.focus.color=#ecac87
 text.bold=true
 frame.expansion=0
 

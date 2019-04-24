@@ -9,9 +9,9 @@
   purple:     #ef2ca5;
   cyan:       #27b1d9;
   emphasis:   #284a65;
-  text:       #ffffff;
-  text-alt:   #aaaaaa;
-  fg:         #cbe3f1;
+  text:       #afc4dc;
+  text-alt:   #afc4dc;
+  fg:         #afc4dc;
   sel:        #cbe3f122;
   bg-alt:     #303442;
   bg:         #15171d;

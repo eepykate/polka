@@ -10,6 +10,7 @@ d   h          ~/
 d   suck       ~/Stuff/git/suckless/
 d   gkgl       ~/Stuff/git/gaugek.gitlab.io/
 d   gi         ~/Stuff/git/
+d   sp         ~/.startpage/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
 f   bashrc     ~/.bashrc
@@ -27,4 +28,5 @@ f   sb         ~/bin/slight.bash
 f   Xb         ~/.config/Xres.Berry
 f   Xp         ~/.config/Xres.Pure
 f   Xf         ~/.config/Xres.Frost
+f   Xfp        ~/.config/Xres.Frost-Purple
 f   drc        ~/.config/dunst/dunstrc

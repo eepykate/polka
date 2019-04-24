@@ -11,7 +11,7 @@ while true; do
 done
 
 time="$(date "+%Y-%m-%d_%H:%M:%S")"
-themes="Berry\nPure\nFrost"
+themes="Pure\nFrost\nFrost-Purple\nBerry"
 [[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -i -p "What theme would you like to use?")"
 
 if [[ $theme = Pure ]]; then 
@@ -20,8 +20,8 @@ if [[ $theme = Pure ]]; then
 	bglight="#171a24"
 	bglighter="#222631"
 
-	fgdark="#9aafc4"
-	fglight="#a5b8d0"
+	fgdark="#808fa1"
+	fglight="#afc4dc"
 
 	disabled="#696969"
 	accent="#02a4fc"
@@ -57,9 +57,25 @@ elif [[ $theme = Frost ]]; then
 	disabled="#696969"
 	accent="#ecac87"
 	button="#7790a722"
-	border="#29303d"
+	border="#303848"
 	red="#c05863"
+
+elif [[ $theme = Frost-Purple ]]; then
 	
+	accentn="5"
+	bgdark="#232a35"
+	bglight="#29303d"
+	bglighter="#343a48"
+
+	fgdark="#92a1ae"
+	fglight="#92a1ae"
+	
+	disabled="#696969"
+	accent="#a469b4"
+	button="#7790a722"
+	border="#303848"
+	red="#c05863"
+		
 fi
 
 if [[ -n "$theme" ]]; then

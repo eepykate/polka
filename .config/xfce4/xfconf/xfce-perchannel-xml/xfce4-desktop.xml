@@ -107,7 +107,7 @@
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/gauge/Wallpapers/Flat_Earth_Moon.png"/>
+          <property name="last-image" type="string" value="/home/gauge/Wallpapers/Wallpaper.png"/>
         </property>
         <property name="workspace2" type="empty">
           <property name="color-style" type="int" value="0"/>

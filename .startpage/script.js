@@ -17,7 +17,7 @@ function startTime() {
 
 	var dow = DAYS[today.getDay()]
 	var dd = ('0' + today.getDate()).slice(-2)
-	var mm = ('0' + today.getMonth()).slice(-2)
+	var mm = ('0' + (today.getMonth() + 1 )).slice(-2)
 	var yy = today.getFullYear()
 
 	document.getElementById('date').innerHTML = dow + ' ' + yy + '-' + mm + '-' + dd
@@ -34,19 +34,7 @@ function checkTime(i) {
   return i;
 }
 
-
-var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-
 var dateElem = document.getElementById('date')
-
-function DateComp(elem, date) {
-	var dow = DAYS[date.getDay()]
-	var dd = padNumber(2, date.getDate())
-	var mm = padNumber(2, date.getMonth() + 1)
-	var yy = padNumber(4, date.getFullYear())
-
-	dateElem.innerHTML = dow + ' ' + yy + '-' + mm + '-' + dd
-}
 
 var vpwidth = document.documentElement.clientWidth
 var sections = document.querySelectorAll('.box')
@@ -77,44 +65,33 @@ var n1 = document.getElementById("notes1");
 // retrieve (only on page load) 
 if(window.localStorage){ n1.value = localStorage.getItem("notes1");}
 // save 
-var s = function(){localStorage.setItem("notes1", n1.value);}
+var s1 = function(){localStorage.setItem("notes1", n1.value);}
 // autosave onchange and every 500ms and when you close the window 
-n1.onchange = s();
-setInterval( s, 500);
-window.onunload = s();
+n1.onchange = s1();
+setInterval( s1, 500);
+window.onunload = s1();
 
 /* Second page of notes */
 var n2 = document.getElementById("notes2");
 // retrieve (only on page load) 
 if(window.localStorage){ n2.value = localStorage.getItem("notes2");}
 // save 
-var s = function(){localStorage.setItem("notes2", n2.value);}
+var s2 = function(){localStorage.setItem("notes2", n2.value);}
 // autosave onchange and every 500ms and when you close the window 
-n2.onchange = s();
-setInterval( s, 500);
-window.onunload = s();
-
-/* First page of notes */
-var n1 = document.getElementById("notes1");
-// retrieve (only on page load) 
-if(window.localStorage){ n1.value = localStorage.getItem("notes1");}
-// save 
-var s = function(){localStorage.setItem("notes1", n1.value);}
-// autosave onchange and every 500ms and when you close the window 
-n1.onchange = s();
-setInterval( s, 500);
-window.onunload = s();
+n2.onchange = s2();
+setInterval( s2, 500);
+window.onunload = s2();
 
 /* Third page of notes */
-var n2 = document.getElementById("notes3");
+var n3 = document.getElementById("notes3");
 // retrieve (only on page load) 
-if(window.localStorage){ n2.value = localStorage.getItem("notes3");}
+if(window.localStorage){ n3.value = localStorage.getItem("notes3");}
 // save 
-var s = function(){localStorage.setItem("notes3", n2.value);}
+var s3 = function(){localStorage.setItem("notes3", n3.value);}
 // autosave onchange and every 500ms and when you close the window 
-n2.onchange = s();
-setInterval( s, 500);
-window.onunload = s();
+n3.onchange = s3();
+setInterval( s3, 500);
+window.onunload = s3();
 
 function toggleSidebar(){
 	document.getElementById("sidebar").classList.toggle('active');

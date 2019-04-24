@@ -1,15 +1,15 @@
 :root {
---bgdark: #12151a;
---bglight: #171a24;
---bglighter: #222631;
+--bgdark: #232a35;
+--bglight: #29303d;
+--bglighter: #343a48;
 
---fgdark: #808fa1;
---fglight: #afc4dc;
+--fgdark: #92a1ae;
+--fglight: #92a1ae;
 	
---accent: #02a4fc;
---border: #1e2130;
+--accent: #a469b4;
+--border: #303848;
 --disabled: #696969;
---fgdark: #808fa1;
+--fgdark: #92a1ae;
 }
 
 body {
@@ -116,7 +116,7 @@ main {
 	width: auto;
 	text-align: center;
 	border: 2px solid var(--bglight);
-	transition: all 300ms ease 0s;
+	transition: all 200ms ease 0s;
 	margin: 15px;
 	box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);   
 }
@@ -135,7 +135,7 @@ main {
 .title {
 	color: var(--fglight);
 	font-size: 18px;
-	transition: all 300ms ease 0s;
+	transition: all 200ms ease 0s;
 	display: block;
 	text-align: center;
 	background-color: var(--bglight);
