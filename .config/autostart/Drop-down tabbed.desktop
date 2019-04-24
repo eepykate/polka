@@ -2,11 +2,11 @@
 Encoding=UTF-8
 Version=0.9.4
 Type=Application
-Name=Yakuake
+Name=Drop-down tabbed
 Comment=
-Exec=yakuake
+Exec=tabbed -r 2 -n "drop-down-st" st -w ''
 OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
-Hidden=true
+Hidden=false
 

@@ -129,3 +129,14 @@ rc() {
 	done
 }
 
+
+function cgif() {
+	rm /tmp/palette.png /tmp/recording.mp4 /tmp/encoded.gif
+	local video="$(ls -1t $HOME/Videos/recordings | head -1)"
+	cp $HOME/Videos/recordings/$video /tmp/recording.mp4
+	
+	local frames="$(ffmpeg -i /tmp/recording.mp4 2>&1 | grep -o ".. fps" | grep -o "^..")"
+
+  ffmpeg -loglevel "quiet" -i "/tmp/recording.mp4" -vf palettegen "/tmp/palette.png"
+  ffmpeg -loglevel "quiet" -i "/tmp/recording.mp4" -i "/tmp/palette.png" -filter_complex paletteuse -r $frames "/tmp/encoded.gif"
+}
