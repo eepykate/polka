@@ -40,8 +40,12 @@ alias ga="git add"               # git - Add <file(s)>
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
 
-se() { du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR; }
-cf() { cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; }
+se() { 
+	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR; 
+}
+cf() {
+	cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; 
+}
 
 # ls on cd
 #preexec() { LS_USED=$(echo $1|cut -d' ' -f1) }
@@ -54,7 +58,9 @@ hextorgb() {
 	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
 }
 
-rgbtohex() { printf "%02X%02X%02X\n" $@ }
+rgbtohex() { 
+	printf "%02X%02X%02X\n" $@ 
+}
 
 
 function cli() {
@@ -140,3 +146,9 @@ function cgif() {
   ffmpeg -loglevel "quiet" -i "/tmp/recording.mp4" -vf palettegen "/tmp/palette.png"
   ffmpeg -loglevel "quiet" -i "/tmp/recording.mp4" -i "/tmp/palette.png" -filter_complex paletteuse -r $frames "/tmp/encoded.gif"
 }
+
+colours() { 
+	for c in {1..7}; do printf "\e[4${c}m  "; done
+	printf "\n"
+}
+

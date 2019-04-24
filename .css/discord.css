@@ -1,0 +1,163 @@
+:root {
+--bgdark: #232a35;
+--bglight: #29303d;
+--bglighter: #343a48;
+
+--fgdark: #92a1ae;
+--fglight: #cfe3ff;
+	
+--accent: #a469b4;
+--selected: #343a48;
+--border: #303848;
+--disabled: #696969;
+--normalsidebar: #7b8792;
+}
+
+
+/*.size-JLvFeT,                /* ?? */
+/*.container-16j22k,           /* ?? */
+/*.searchBar-6Kv8R2,           /* ?? */
+.container-2Thooq,             /* Bottom left user info */
+.scroller-2TZvBN,              /* Server Sidebar */
+.scroller-2wx7Hm,              /* Channel Sidebar */
+.header-2o-2hj,                /* Top-Left Server name */
+.title-3qD0b-,                 /* Top bar */
+.container-1r6BKw,             /* Top bar */
+.resultsGroup-r_nuzN,          /* Top-Right search popup */
+.innerNoAutocomplete-1WpcVO,   /* Bottom User message box */
+.innerAutocomplete-1PN280,     /* Bottom User message box */
+.pad-29zQak,                   /* Padding on the left of scroll bars */
+.userPopout-3XzG_A > *,        /* User Popup */
+.privateChannels-1nO12o,       /* Sidebar in the home page */
+code,                          /* Code blocks */
+.searchResultsWrap-2DKFzt,     /* Search sidebar */
+.channelSeparator-1X1FuH > *,  /* Search sidebar channel name */
+.searchHeader-1l-wpR,          /* Top of search sidebar */
+.searchResultMessage-2VxO12,   /* Search Result */
+.members-1998pB,               /* Members sidebar */
+.header-SsaQ8X,                /* Pinned message header */
+.footer-1kmXd4,                /* Pinned message footer */
+.messageGroupWrapperOffsetCorrection-phOU-k, /* Pinned messages popup messages */
+.emojiPicker-3m1S-j,           /* Emoji picker */
+.category-2U57w6,              /* Emoji picker frequently used */
+.autocomplete-1vrmpx           /* Emoji autocomplete box */
+{
+	background-color: var(--bgdark) !important;
+}
+
+.searchResultMessage-2VxO12 { /* Remove shadow from search results */
+	box-shadow: none !important; 
+} 
+
+/*.menu-Sp6bN1,            /* ?? */
+/*.inner-3ErfOT,           /* ?? */
+/*.layout-1cQCv2,          /* ?? */
+/*.headerTop-3C2Zn0,       /* ?? */
+/*.queryContainer-RKFJW-,  /* ?? */
+.messagesWrapper-3lZDfY,   /* Main messages box */
+.searchBar-3dMhjb,         /* Top-Right search box */
+.spacer-1fA9zc > form,     /* Stuff around bottom message box */
+.spacer-1fA9zc,            /* Stuff around bottom message box */
+.typing-2GQL18,            /* Typing dialog box at the bottom */
+.quickMessage-2XpSaN,      /* Message box in user popup */
+.note-3HfJZ5,              /* Notes for user in popup */
+.messagesPopout-24nkyi,    /* Pinned Messages popup inner */
+.lightTheme-3LGLQs         /* Search box in emoji popup */
+{
+	background-color: var(--bglight) !important;
+}
+
+.modeSelected-1zApJ_ .content-3at_AU,  /* Selected channel */
+.selected-rZcOL-,    /* Selected element in the search popup */
+[class*="autocompleteRow"] > [class*="selectable"]:hover,  /* Selected emoji in the autocomplete popup */
+[class*="autocompleteRow"] > [class*="selectorSelected"]   /* Selected emoji in the autocomplete popup */
+{
+	background-color: var(--selected) !important;
+}
+
+.content-3at_AU:hover { /* Hover over a channel in the channel sidebar */
+	background-color: var(--bglighter) !important;
+}
+
+
+/* Hide ugly gradient coming from the right on some elements */
+.children-19S4PO::after, .resultsGroup-r_nuzN::after, 
+.option-96V44q::after, .searchResult-3pzFAB::before, .searchResult-3pzFAB::after {
+	color: transparent !important;
+	background: none !important;
+}
+
+*:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg)  { /* Set the font colour everywhere except usernames and code blocks */
+	color: var(--fgdark) !important;
+}
+
+.newMessagesBar-mujexs > *,   /* New messages dialog */
+.botTag-2BhDSU,               /* Tag next to username bots have */
+.filename-ovv3c5,             /* Filename in upload popup */
+.label-3aiqT2 > span          /* "Add a comment" text in upload popup */
+{
+	color: var(--bgdark) !important;
+}
+
+.name-3_Dsmg {  /* Normal channel sidebar text colour */
+	color: var(--normalsidebar) !important; 
+}
+
+ /*base-gE7OpD stop-animation */
+
+.modeUnread-1zpFdA * .name-3_Dsmg,     /* Unread channels */
+.modeSelected-1zApJ_ * .name-3_Dsmg    /* Active channel */
+{
+	color: var(--fglight) !important;
+}
+
+.mention   /* User mention text */
+{
+	color: var(--accent) !important;
+}
+
+*:not(code) {
+	font-family: Sans-Serif !important;
+}
+
+
+code, .inline {
+	font-family: Monospace !important;
+}
+
+/***   Scrollbar Colours   ***/
+/*.scrollbar-2rkZSL {
+	background-color: var(--bgdark) !important;
+}
+
+.thumb-2JwNFC {
+	background-color: var(--accent) !important;
+	border-radius: 0 !important;
+}
+
+.scrollerThemed-2oenus.themedWithTrack-q8E3vB .scroller-2FKFPG::-webkit-scrollbar-thumb {
+    background-color: var(--bgdark);
+    border-color: var(--accent);
+}
+
+.scrollerThemed-2oenus.themedWithTrack-q8E3vB .scroller-2FKFPG::-webkit-scrollbar-track-piece {
+    background-color: var(--bgdark);
+    border: 3px solid var(--bgdark);
+    border-radius: 7px;
+}
+
+.theme-dark .scrollerThemed-2oenus.themedWithTrack-q8E3vB .scrollbar-2rkZSL .track-1JN30G {
+    background-color: var(--bglighter);
+    border: 3px solid var(--bglight);
+    border-radius: 7px;
+}
+
+.theme-dark .scrollerThemed-2oenus.themedWithTrack-q8E3vB .scrollbar-2rkZSL .thumb-2JwNFC {
+    background-color: var(--accent);
+    border: 3px solid var(--bglight);
+    border-radius: 7px;
+}*/
+
+.scrollbar-2rkZSL {
+	display: none !important;
+}
