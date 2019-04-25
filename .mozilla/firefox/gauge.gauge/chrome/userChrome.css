@@ -10,8 +10,8 @@
 --fgdark: #92a1ae;
 --fglight: #92a1ae;
 	
---accent: #ecac87;
---border: #29303d;
+--accent: #a469b4;
+--border: #303848;
 --disabled: #696969;
 --fgdark: #92a1ae;
 }
@@ -587,7 +587,12 @@ toolbarspring {
 }
 
 /* One Liner */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 700px) {
+
+	.tabbrowser-tab[fadein]:not([pinned]) {
+		max-width: 140px !important;
+	}
+
 	#tabbrowser-tabs {
 		margin-top: 0 !important;
 		margin-bottom: 0px !important;
@@ -610,12 +615,12 @@ toolbarspring {
 	}
 	
 	#TabsToolbar {
-		margin-left: 30vw !important;
+		margin-left: 42vw !important;
 	}
 	
 	#nav-bar {
 		margin-top: -32px !important;
-		margin-right: 70vw !important;
+		margin-right: 58vw !important;
 		z-index: 69;
 		transition: all 200ms ease 0.1s;
 	}
@@ -637,10 +642,6 @@ toolbarspring {
 		margin-bottom: -2px;
 	}
 	
-	#page-action-buttons {
-		display: none !important;
-	}
-	
 	#urlbar,
 		.searchbar-textbox {
 		box-shadow: none !important;
@@ -654,5 +655,20 @@ toolbarspring {
 	#urlbar {
 		background-color: transparent !important;  /* Transparent URL Bar */
 	}
+
+	@media only screen and (min-width: 1000px) { 
+		.tabbrowser-tab[fadein]:not([pinned]) {
+			max-width: 200px !important;
+		}
+
+		#TabsToolbar {
+			margin-left: 30vw !important;
+		}
+	
+		#nav-bar {
+			margin-right: 70vw !important;
+		}
+	}
+
 }
 
