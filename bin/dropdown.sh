@@ -23,24 +23,16 @@ height=$(xdotool getactivewindow getwindowgeometry --shell | head -5 | tail -1 |
 # Get the middle of the primary screen
 xrandr -q --current | grep -i 'primary' &>/dev/null || xd="single"
 if [[ $xd = single ]]; then
-	newPosX=$((screenWidth/2-width/2+$offsetX))
-	newPosY=$((screenHeight/2-height/2+$offsetY))
-
-	newPosX=$((screenWidth/2-width/2+))
-	newPosY=$((screenHeight/2-height/2+))
+	newPosX=$((screenWidth/2-width/2))
+	newPosY=$((screenHeight/2-height/2))
 else
 	primary="$(xrandr -q --current | grep -i 'primary' | awk '{print $4}')"
 	primary="$(echo $primary | awk '{gsub("x", " "); gsub("+", " "); print}')"
 	offsetX="$(($(echo $primary | awk '{print $3}') / 2 ))"
 	offsetY="$(($(echo $primary | awk '{print $4}') / 2 ))"
 
-
 	newPosX=$((screenWidth/2-width/2+$offsetX))
 	newPosY=$((screenHeight/2-height/2+$offsetY))
-
 fi
-
-
-# xrandr -q --current | grep -v "primary" | grep -v dis | awk '/connected/ {gsub("x", " ");print $3}'
 
 xdotool search --classname "drop-down-st" windowmove "$newPosX" "$newPosY"
