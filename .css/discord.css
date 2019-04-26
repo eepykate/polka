@@ -61,14 +61,24 @@ code,                          /* Code blocks */
 .typing-2GQL18,            /* Typing dialog box at the bottom */
 .quickMessage-2XpSaN,      /* Message box in user popup */
 .note-3HfJZ5,              /* Notes for user in popup */
+.header-2BwW8b,            /* User Popout top */
 .messagesPopout-24nkyi,    /* Pinned Messages popup inner */
-.lightTheme-3LGLQs         /* Search box in emoji popup */
+.lightTheme-3LGLQs,        /* Search box in emoji popup */
+.friendsTable-133bsv,      /* Friends section */
+.container-3gCOGc,         /* Friends section */
+.darkTheme-3uETC4.container-2XeR5Z /* Search box in discord homepage */
 {
 	background-color: var(--bglight) !important;
 }
 
 .modeSelected-1zApJ_ .content-3at_AU,  /* Selected channel */
-.selected-rZcOL-,    /* Selected element in the search popup */
+.selected-rZcOL-,          /* Selected element in the search popup */
+.selected-3s45Ha,          /* Selected tab in homepage top bar */
+.item-3HpYcP:hover,        /* Selected tab in homepage top bar hover */
+.channel-2QD9_O:hover,     /* Selected tab in homepage sidebar hover */
+.channel-2QD9_O a:hover,   /* Selected tab in homepage sidebar hover */
+.selected-1HYmZZ,          /* Selected tab in homepage sidebar */
+.selected-1HYmZZ a,        /* Selected tab in homepage sidebar */
 [class*="autocompleteRow"] > [class*="selectable"]:hover,  /* Selected emoji in the autocomplete popup */
 [class*="autocompleteRow"] > [class*="selectorSelected"]   /* Selected emoji in the autocomplete popup */
 {
@@ -87,14 +97,15 @@ code,                          /* Code blocks */
 	background: none !important;
 }
 
-*:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg)  { /* Set the font colour everywhere except usernames and code blocks */
+*:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg):not(button):not(a):not(.primary-3j8BhM):not(.mention):not(em)  { /* Set the font colour almost everywhere */
 	color: var(--fgdark) !important;
 }
 
 .newMessagesBar-mujexs > *,   /* New messages dialog */
 .botTag-2BhDSU,               /* Tag next to username bots have */
 .filename-ovv3c5,             /* Filename in upload popup */
-.label-3aiqT2 > span          /* "Add a comment" text in upload popup */
+.label-3aiqT2 > span,         /* "Add a comment" text in upload popup */
+.tabBar-1E2ExX .primary-3j8BhM  /* "Add Friend" button */
 {
 	color: var(--bgdark) !important;
 }
