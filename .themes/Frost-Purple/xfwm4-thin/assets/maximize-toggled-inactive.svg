@@ -12,7 +12,7 @@
    viewBox="0 0 18 5"
    version="1.1"
    id="svg12"
-   sodipodi:docname="maximize-inactive.svg"
+   sodipodi:docname="maximize-toggled-inactive.svg"
    inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <metadata
      id="metadata18">
@@ -41,9 +41,9 @@
      inkscape:window-height="1055"
      id="namedview14"
      showgrid="false"
-     inkscape:zoom="45.254834"
-     inkscape:cx="2.1035007"
-     inkscape:cy="6.8610742"
+     inkscape:zoom="16"
+     inkscape:cx="-31.885965"
+     inkscape:cy="2.0371833"
      inkscape:window-x="1440"
      inkscape:window-y="20"
      inkscape:window-maximized="1"
@@ -54,5 +54,5 @@
      id="rect2"
      x="0"
      y="0"
-     style="fill:#282e3c;fill-opacity:1;stroke-width:0.68741727" />
+     style="fill:#222834;fill-opacity:1;stroke-width:0.68741727" />
 </svg>

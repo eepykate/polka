@@ -148,7 +148,7 @@ function cgif() {
 }
 
 colours() { 
-	for c in {1..7}; do printf "\e[4${c}m  "; done
+	for c in {1..7}; do printf "\e[3${c}m\e[4${c}m  "; done
 	printf "\n"
 }
 
