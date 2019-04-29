@@ -26,6 +26,18 @@ git_info() {
 	echo "${(j: :)GIT_INFO}"
 }
 
+lastcommit() {
+	lastcommit="$(git show -s --format=%at HEAD)"
+
+	current_epoch="$(date +%s)"
+	[[ -n $lastcommit ]] || return
+	ts="$(( $current_epoch - $lastcommit ))" && tp="$(( $tp / 1000 ))" 
+	[[ $ts -ge 5 ]] || return
+	local H=$(($ts/60/60%24));   local M=$(($ts/60%60));   local S=$(($ts%60))
+	if [[ $H -ne 0 ]]; then; timesincelastcommit="${H}h ${M}m ${S}s"; elif [[ $M -ne 0 ]]; then; timesincelastcommit="${M}m ${S}s"; else; timesincelastcommit="${S}s"; fi
+	echo "$timesincelastcommit"
+}
+
 time_since_last_command() {
 	unset time_passed tp 
 	new_epoch="$(date +%s%3N)"
@@ -44,7 +56,7 @@ chpwd() { title "$(dirs)" }
 precmd() { title "$(dirs)"; time_since_last_command; unset epoch }
 preexec() { title "$2"; epoch="$(date +%s%3N)" }
 
-color="5"
+color="95"
 
-PS1=$'%(?.%{\e[3${color};1m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
+PS1=$'%(?.%{\e[${color};1m%}.%{\e[31;1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
 RPS1=$'$(git_info)%{\e[0m%} %{\e[33m%}${time_passed}%{\e[0m%}'

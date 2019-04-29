@@ -36,7 +36,7 @@ ${b}CLI Arguments:  ${n}
 
 [[ -d $dir ]] || mkdir -p $dir
 
-opts=$(getopt -o d:smhnc --long display:,slop,manual,help,no-nvenc,noconfirm -- "$@")
+opts=$(getopt -o d:smhncg --long display:,slop,manual,help,no-nvenc,noconfirm,gif -- "$@")
 eval set -- "$opts"
 
 while true; do
@@ -47,6 +47,7 @@ while true; do
 		-h|--help) echo -e "$help"; exit ;;
 		-n|--no-nvenc) nvenc=" "; shift 1;;
 		-c|--noconfirm) RtR="Yes"; shift 1;;
+		-g|--gif) gif="yes"; shift;;
 		--) shift; break;;
 	esac
 done
@@ -90,7 +91,7 @@ elif [[ ${DoM} = Manual ]]; then
 fi
 
 if [[ $audio = yes ]]; then 
-	audio="-f pulse -i `pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g'`"
+	audio="-f pulse -i $(pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
 else
 	audio=""
 fi
@@ -98,6 +99,13 @@ fi
 [[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
 
 [[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
+
+function convert_gif() {
+	rm -f /tmp/palette.png
+	ffmpeg -i "$dir/$name.mp4" -vf palettegen "/tmp/palette.png"
+	
+	ffmpeg -i "$dir/$name.mp4" -i "/tmp/palette.png" -filter_complex paletteuse -r "$rate" "$dir/$name.gif"
+}
 
 if [[ $RtR = Yes ]]; then 
 	notify-send -t 2000 "recording started"
@@ -107,4 +115,6 @@ if [[ $RtR = Yes ]]; then
 		-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
 		-qscale 0 $(printf " $nvenc") \
 		"${dir}/${name}".mp4 
+
+	[[ $gif = yes ]] && convert_gif
 fi
