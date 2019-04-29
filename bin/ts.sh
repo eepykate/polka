@@ -11,8 +11,8 @@ while true; do
 done
 
 time="$(date "+%Y-%m-%d_%H:%M:%S")"
-themes="Pure\nPure-Purple\nPure-Pink\nFrost\nFrost-Purple\nBerry"
-[[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -l 6 -i -p "What theme would you like to use?")"
+themes="Pure\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry"
+[[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -i -p "What theme would you like to use?")"
 
 if [[ $theme = Pure ]]; then 
 	accentn="34"
@@ -29,21 +29,6 @@ if [[ $theme = Pure ]]; then
 	border="#1e2130"
 	red="#f0185a"
 
-elif [[ $theme = Pure-Purple ]]; then 
-	accentn="35"
-	bgdark="#12151a"
-	bglight="#171a24"
-	bglighter="#222631"
-
-	fgdark="#808fa1"
-	fglight="#afc4dc"
-
-	disabled="#696969"
-	accent="#b82bf0"
-	button="#cbe3f122"
-	border="#1e2130"
-	red="#f0185a"
-
 elif [[ $theme = Pure-Pink ]]; then 
 	accentn="95"
 	bgdark="#12151a"
@@ -55,6 +40,21 @@ elif [[ $theme = Pure-Pink ]]; then
 
 	disabled="#696969"
 	accent="#ef57e8"
+	button="#cbe3f122"
+	border="#1e2130"
+	red="#f0185a"
+
+elif [[ $theme = Pure-Pink-1 ]]; then 
+	accentn="95"
+	bgdark="#12151a"
+	bglight="#171a24"
+	bglighter="#222631"
+
+	fgdark="#808fa1"
+	fglight="#afc4dc"
+
+	disabled="#696969"
+	accent="#db7ff9"
 	button="#cbe3f122"
 	border="#1e2130"
 	red="#f0185a"
