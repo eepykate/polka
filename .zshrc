@@ -5,7 +5,7 @@ export SUDO_PROMPT=$'\e[34m[sudo]\e[33m password for %p:\e[0m '   # Colourful su
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
 stty -ixon            # Disable Ctrl-S && Ctrl-Q
-export EDITOR="nvim"  # Needs to be here or sc.sh won't work as root (I cp these there) 
+export EDITOR="nvim"
 
 #     Stuff that makes zsh usable     #
 bindkey '^?' backward-delete-char     # [Backspace] - Delete backward

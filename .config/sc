@@ -27,6 +27,7 @@ f   sz         ~/bin/slight.zsh
 f   sb         ~/bin/slight.bash
 f   Xb         ~/.config/Xres.Berry
 f   Xp         ~/.config/Xres.Pure
+f   Xp1        ~/.config/Xres.Pure-1
 f   Xf         ~/.config/Xres.Frost
 f   Xfp        ~/.config/Xres.Frost-Purple
 f   drc        ~/.config/dunst/dunstrc
