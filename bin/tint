@@ -2,7 +2,7 @@
 
 pkill -9 tint2
 
-theme="Pure-Pink-1"
+theme="Pure-Pink"
 
 tint2 -c $HOME/.config/tint2/$theme.tint2rc &>/dev/null &!
 sleep 2; pgrep nm-applet &>/dev/null || nm-applet &>/dev/null &!
