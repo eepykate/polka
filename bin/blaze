@@ -20,11 +20,11 @@ Gauge Krahe's recording script
 
 Options:
   -s / --save:             Save normal recording
-  -b / --blaze:            Use blaze
+	-b / --blaze:            Use blaze ( Record in background, only keep the last <X> minutes )
   -S / --save-blaze:       Save blaze recording
   -c / --noconfirm:        Don't ask if you want to start the recording
   -h / --help:             Print this
-  -n / --no-nvenc:         Don't use nvenc (Auto-detected, only do this if your nvidia card doesn't support it)
+  -n / --no-nvenc:         Don't use nvenc ( Auto-detected, only do this if your nvidia card doesn't support it )
   -p / --preset:           Use recording preset <X> ( Stored in ~/.config/blaze-preset-<X> )
 
 Examples:
@@ -154,8 +154,8 @@ fi
 
 
 if [[ $RtR = Yes ]]; then 
+	notify-send -t 2000 "recording started"
 	if [[ $blaze = blaze ]]; then
-		notify-send -t 2000 "recording started"
 		while true; do
 			curname="snippet-$(date '+%Y-%m-%d_%H-%M-%S')"
 
@@ -183,6 +183,8 @@ if [[ $RtR = Yes ]]; then
 		done
 
 	else
+
+		command -V counting &>/dev/null && counting &
 
 		# The actual command
 		ffmpeg -y $(printf " $audio") \
