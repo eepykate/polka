@@ -512,7 +512,7 @@ body {
 .arrow.up,
 .arrow.down,
 .expando-button {
- background:url("//b.thumbs.redditmedia.com/6J5BYyLsg0stSAVjm--jJVN6s3sOnddKwvs37nSRKOk.png")!important;
+ background:url("https://i.imgur.com/ICMUM3s.png")!important;
  background-size:50px 502px!important
 }
 #mail.nohavemail {
@@ -3599,11 +3599,109 @@ html[lang="dm"] .RES-keyNav-activeElement .md-container {
 	color: #ccc !important;
 }
 
+
+
+
+
+
+
+
+
+
 #header-bottom-right {
 	margin-top: -165px !important;
 }
 
 
+body,
+.content,
+ul.tabmenu > li > a,
+#header-bottom-right,
+#sr-header-area,
+#RESShortcutsEditContainer,
+.side,
+.entry {
+	background-color: var(--bgdark) !important;
+}
+
+.thing div.entry.res-selected,
+.title > span.flairrichtext[title],
+.linkflairlabel
+{
+	background-color: var(--bglighter) !important;
+}
+
+.sitetable div.thing.comment,
+.sitetable div.thing.comment .entry,
+.sitetable div.thing.comment div.thing.comment,
+.sitetable div.thing.comment div.thing.comment div.thing.comment,
+.sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
+.sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
+.sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
+.sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
+.sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
+.linkinfo, .shortlink > input,
+.titlebox,
+.listing-chooser > .grippy::before,
+.listing-chooser > .grippy,
+.listing-chooser > .grippy::after,
+.crosspost-preview-header,
+.titlebox > *
+{
+	background-color: var(--bglight) !important
+}
+
+.entry, 
+.side,
+.sitetable div.thing.comment,
+div.content,
+.crosspost-preview,
+textarea {
+	border-color: var(--bglightest) !important;
+}
+
+
+div.entry.res-selected {
+	border-left: 5px solid var(--accent) !important;
+}
+
+.sidebox .morelink,
+textarea
+{
+	background-color: var(--bglight) !important;
+}
+#search input {
+	border: none !important;
+	background-color: var(--bglight) !important;
+}
+
+a.title:visited {
+	color: var(--fgdark) !important
+}
+
+
+
+.premium-banner-outer { display: none !important;}
+
+
+*:not(a),
+.flat-list > li > a,
+.flat-list > li > form > span > a,
+.title:not(:visited),
+.res-nightmode .entry.res-selected .md-container > .md p
+{
+	color: var(--fglight) !important;
+}
+
+.sitetable > div.thing.comment.res-selected > .entry,
+.sitetable > div.thing.comment.res-selected > .entry .md-container
+{
+	background-color: var(--bglighter) !important;
+}
+
+.shortlink > input {
+	border: none !important;
+}
 
 
 

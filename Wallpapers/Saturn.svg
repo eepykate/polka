@@ -15,8 +15,8 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="Saturn-1.svg"
-   inkscape:export-filename="/home/gauge/Wallpapers/Saturn-1.png"
+   sodipodi:docname="Saturn.svg"
+   inkscape:export-filename="/home/gauge/Wallpapers/Saturn.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0653042"
-     inkscape:cx="556.58043"
-     inkscape:cy="754.19495"
+     inkscape:zoom="0.26632605"
+     inkscape:cx="-45.118356"
+     inkscape:cy="1036.9704"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -97,7 +97,7 @@
     </g>
     <g
        id="g922"
-       transform="rotate(-8.1276494,680.22755,-631.11442)">
+       transform="rotate(-9.6868669,602.74652,-509.75974)">
       <circle
          transform="rotate(-0.00617706)"
          r="26.458332"
