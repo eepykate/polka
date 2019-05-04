@@ -4,113 +4,192 @@
 #   https://gitlab.com/GaugeK/dots/
 #
 
-# set -x
 tempdir="/tmp/blaze"
-dir="$HOME/Videos/blaze"
-name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')" # Needs .mp4 after this is listed in the actual recording part
+dir="$HOME/Videos/recordings"
+name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after this is listed in the actual recording part
 
 [[   -d $dir   ]] || mkdir -p $dir
 [[ -d $tempdir ]] || mkdir -p $tempdir
 
-opts=$(getopt -o sr --long save,record -- "$@")
+opts=$(getopt -o d:sncp:bSh --long display:,save,no-nvenc,noconfirm,preset:,blaze,save-blaze,help -- "$@")
 eval set -- "$opts"
+
+help="
+Gauge Krahe's recording script 
+  https://gitlab.com/GaugeK/dots/
+
+Options:
+  -s / --save:             Save normal recording
+  -b / --blaze:            Use blaze
+  -S / --save-blaze:       Save blaze recording
+  -c / --noconfirm:        Don't ask if you want to start the recording
+  -h / --help:             Print this
+  -n / --no-nvenc:         Don't use nvenc (Auto-detected, only do this if your nvidia card doesn't support it)
+  -p / --preset:           Use recording preset <X> ( Stored in ~/.config/blaze-preset-<X> )
+
+Examples:
+   \e[37m# Start normal recording and save to / load from preset 1\e[0m
+  $ blaze -p 1
+   \e[37m# Same as last one, but don't ask if you want to start\e[0m
+  $ blaze -c -p 1
+   \e[37m# Start normal recording, but ask for every option\e[0m
+  $ blaze
+   \e[37m# Save normal recording\e[0m
+  $ blaze -s
+   \e[37m# Start blaze recording and save to / load from preset b\e[0m
+  $ blaze -b -p b
+   \e[37m# Save blaze recording\e[0m
+  $ blaze -S
+"
 
 while true; do
 	case "$1" in
+		-d|--display) [[ -n $2 ]] && DoM="Display" && display_select="$2"; shift 2;;
+		-h|--help) echo -e "$help"; exit ;;
+		-n|--no-nvenc) nvenc=" "; shift 1;;
+		-c|--noconfirm) RtR="Yes"; shift 1;;
+		-h|--help) echo -e "$help"; shift;;
 		-s|--save) SoR="save"; shift;;
-		-r|--record) SoR="record"; shift;;
+		-S|--save-blaze) SoR="save"; blaze="blaze"; shift;;
+		-b|--blaze) blaze="blaze"; shift;;
+		-p|--preset) preset="$2"; shift 2;;
 		--) shift; break;;
 	esac
 done
 
-# Remember settings from last time
-[[ -f ~/.config/blaze ]] || touch ~/.config/blaze
-. ~/.config/blaze
+# Save the recording
+if [[ $SoR = save ]]; then
+	if [[ $blaze = blaze ]]; then
+		pkill ffmpeg 
+		name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
+		ls -R1t $tempdir/*.mp4 | head -2 | sed -e "s/^/file \'/g" -e "s/$/\'/g" > /tmp/blaze_inputs.txt
 
-# Get the dimensions and offset of the display
-displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
+		ffmpeg -f concat -safe 0 -i /tmp/blaze_inputs.txt -c copy $dir/$name.mp4 -loglevel error
 
-[[ $display_select = "" ]] && display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
+		notify-send -t 4000 "Recording saved, you might want to run the script again"
+		exit
+	else
+		pkill ffmpeg
+		notify-send -t 2000 "recording stopped"
+		exit
+	fi
+fi
 
-display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
 
-width="$(echo   $display_res | awk '{print $1}' )"
-height="$(echo  $display_res | awk '{print $2}' )"
-offsetX="$(echo $display_res | awk '{print $3}' )"
-offsetY="$(echo $display_res | awk '{print $4}' )"
+# Load the preset if ran with -p <number>
+[[ -n $preset ]] && 
+	[[ -f ~/.config/blaze-preset-$preset ]] &&
+	. ~/.config/blaze-preset-$preset
 
-[[ -z $rate ]] && rate="$(echo -e "30\n60"   | dmenu -i -p "Framerate")"
+if [[ -z $DoM ]]; then
+	unset presets
+	# Find presets
+	for x in $(ls ~/.config/blaze-preset-*); do 
+		presets+="\npreset-${x##*-}";
+	done
+	DoM="$(echo -e "Display\nSlop$presets" | dmenu -i -p "Automatic dimensions from display, or select a region?")"
+	# If a preset is chosen, load that
+	[[ $DoM = preset* ]] && preset="${DoM##*-}"
+	[[ $DoM = preset* ]] && . $HOME/.config/blaze-$DoM
+fi
+
+if [[ ${DoM} = Display ]]; then
+	# Get display list
+	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
+	if [[ -z $display_select ]]; then 
+		# Choose a display
+		display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
+	fi
+
+	# Get resolution and offset of the chosen display
+	display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
+	width="$(echo   $display_res | awk '{print $1}' )"
+	height="$(echo  $display_res | awk '{print $2}' )"
+	offsetX="$(echo $display_res | awk '{print $3}' )"
+	offsetY="$(echo $display_res | awk '{print $4}' )"
+elif [[ ${DoM} = Slop ]]; then
+	# Select an area with slop
+	slop="$(slop -l -c 0.64314,0.41176,0.70588,0.2 -b 1)"
+
+	# get the size and offset of the selection
+	slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
+	width="$(echo   $slop1 | awk '{print $1}' )"
+	height="$(echo  $slop1 | awk '{print $2}' )"
+	offsetX="$(echo $slop1 | awk '{print $3}' )"
+	offsetY="$(echo $slop1 | awk '{print $4}' )"
+fi
+
+# Ask the user if they want desktop audio and what framerate
 [[ -z $audio ]] && audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
+[[ -z $rate ]] && rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
+# Get the amount to save if running in blaze mode
+[[ $blaze = blaze ]] && 
+	[[ -z $trim ]] && 
+	trim="$(echo -e "2\n5" | dmenu -i -p "Min amount of minutes to save")"
 
-[[ -z $trim ]] && trim="$(echo -e "2\n5" | dmenu -i -p "Min amount of minutes to save")"
-
-echo -e \
-"display_select=\"$display_select\"
+# Save preset
+[[ -n $preset ]] && [[ $DoM = Display ]] &&
+echo -e "
+DoM=\"$DoM\"
+display_select=\"$display_select\"
+rate=\"$rate\"
 audio=\"$audio\"
-trim=\"$trim\"
-rate=\"$rate\"" > ~/.config/blaze
+" > ~/.config/blaze-preset-$preset &&
+[[ $blaze = blaze ]] && echo -e "trim=\"$trim\"\nblaze=\"$blaze\"" >> ~/.config/blaze-preset-$preset
 
-trimm="$(( $trim * 60 ))"
+# Convert the seconds of trim to minutes 
+[[ -n $trim ]] && trimm="$(( $trim * 60 ))"
 
+# add actual audio command to $audio if yes
 if [[ $audio = yes ]]; then 
 	audio="-f pulse -i $(pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
 else
-	unset audio
+	audio=""
 fi
 
+[[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
+
+# if user has a nvidia card use nvenc
 [[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
 
 
-if [[ $SoR = record ]]; then
+if [[ $RtR = Yes ]]; then 
+	if [[ $blaze = blaze ]]; then
+		notify-send -t 2000 "recording started"
+		while true; do
+			curname="snippet-$(date '+%Y-%m-%d_%H-%M-%S')"
 
-	notify-send -t 4000 "Blaze started"
+			# Record X minutes
+			ffmpeg -y $(printf " $audio") \
+				-f x11grab -draw_mouse 1 \
+				-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+				-t $trimm \
+				-qscale 0 $(printf " $nvenc") \
+				/tmp/blaze/$curname.mp4 -loglevel error
 
-	while true; do
-		
-		curname="snippet-$(date '+%Y-%m-%d_%H-%M-%S')"
+			# Stop recording if you press ^c
+			[[ $? -gt 128 ]] && break;
 
-		# Record X minutes
+			latest="$(ls -R1t $tempdir/*.mp4 | head -2)"
+			lastone="$(echo $latest | sed '1!d')"
+			lasttwo="$(echo $latest | sed '2!d')"
+
+			# Delete every file in $tempdir but the 2 most recent ones
+			for file in "$(printf $tempdir/*.mp4)"; do
+				if [[ $file != $lastone ]] && [[ $file != $laattwo ]]; then
+					rm $file
+				fi
+			done
+		done
+
+	else
+
+		# The actual command
 		ffmpeg -y $(printf " $audio") \
 			-f x11grab -draw_mouse 1 \
 			-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
-			-t $trimm \
 			-qscale 0 $(printf " $nvenc") \
-			/tmp/blaze/$curname.mp4
-			[[ $? -gt 128 ]] && break;
-		
-		latest="$(ls -R1t $tempdir/*.mp4 | head -2)"
-		lastone="$(echo $latest | sed '1!d')"
-		lasttwo="$(echo $latest | sed '2!d')"
-
-		# Delete every file in $tempdir but the 2 most recent ones
-		for file in "$(printf $tempdir/*.mp4)"; do
-			if [[ $file != $lastone ]] && [[ $file != $laattwo ]]; then
-				rm $file
-			fi
-		done
-
-	done
-
-elif [[ $SoR = save ]]; then
-
-	pkill ffmpeg 
-	name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
-	ls -R1t $tempdir/*.mp4 | head -2 | sed -e "s/^/file \'/g" -e "s/$/\'/g" > /tmp/blaze_inputs.txt
-
-	ffmpeg -f concat -safe 0 -i /tmp/blaze_inputs.txt -c copy $dir/$name.mp4
-
-	notify-send -t 4000 "Recording saved, you might want to run the script again"
+			"${dir}/${name}".mp4 -loglevel error
+	fi
 
 fi
-
-
-#	${INSTALL} -f pulse -i 0 -f x11grab \
-#		-framerate 30 -s 2560x1440 -i :0.0 -c:v h264_nvenc \
-#		-preset:v llhq -profile:v high -pix_fmt nv12 -b:v 15M -acodec aac /tmp/out.mp4 &&
-#
-#	DATE=$(date +%Y-%d-%m-%H:%M:%S)
-#	FILE="${HOME}/Videos/gloom-${DATE}.mp4"
-#
-#	ffmpeg -sseof -00:03:00 -i /tmp/out.mp4 -vcodec copy -acodec copy "$FILE" -loglevel quiet &&
-#
-#echo -e "\nSaved file ${FILE} successfully!\n"
