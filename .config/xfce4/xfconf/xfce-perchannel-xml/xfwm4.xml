@@ -32,7 +32,7 @@
     <property name="mousewheel_rollup" type="bool" value="true"/>
     <property name="move_opacity" type="int" value="47"/>
     <property name="placement_mode" type="string" value="mouse"/>
-    <property name="placement_ratio" type="int" value="20"/>
+    <property name="placement_ratio" type="int" value="100"/>
     <property name="popup_opacity" type="int" value="83"/>
     <property name="prevent_focus_stealing" type="bool" value="false"/>
     <property name="raise_delay" type="int" value="245"/>
@@ -54,9 +54,9 @@
     <property name="snap_resist" type="bool" value="false"/>
     <property name="snap_to_border" type="bool" value="false"/>
     <property name="snap_to_windows" type="bool" value="true"/>
-    <property name="snap_width" type="int" value="10"/>
+    <property name="snap_width" type="int" value="8"/>
     <property name="sync_to_vblank" type="bool" value="false"/>
-    <property name="theme" type="string" value="Frost-Purple"/>
+    <property name="theme" type="string" value="Pure-Pink"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="center"/>
     <property name="title_font" type="string" value="Roboto Condensed, Bold 10"/>
@@ -73,7 +73,7 @@
     <property name="workspace_count" type="int" value="5"/>
     <property name="wrap_cycle" type="bool" value="true"/>
     <property name="wrap_layout" type="bool" value="true"/>
-    <property name="wrap_resistance" type="int" value="7"/>
+    <property name="wrap_resistance" type="int" value="13"/>
     <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="zoom_desktop" type="bool" value="true"/>
@@ -84,5 +84,9 @@
       <value type="string" value="Workspace 4"/>
       <value type="string" value="Workspace 5"/>
     </property>
+    <property name="margin_top" type="int" value="0"/>
+    <property name="margin_left" type="int" value="0"/>
+    <property name="margin_right" type="int" value="0"/>
+    <property name="margin_bottom" type="int" value="0"/>
   </property>
 </channel>

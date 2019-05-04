@@ -63,6 +63,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="ts.sh --wallpaper Flat_Moon"/>
       <property name="&lt;Super&gt;v" type="string" value="select_link.sh"/>
       <property name="&lt;Alt&gt;grave" type="string" value="dropdown.sh"/>
+      <property name="&lt;Alt&gt;d" type="string" value="xfdashboard"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
