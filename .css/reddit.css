@@ -1,4 +1,3 @@
-
 span.pagename.redditname a {
  color:transparent;
  display:block;
@@ -512,7 +511,7 @@ body {
 .arrow.up,
 .arrow.down,
 .expando-button {
- background:url("https://i.imgur.com/ICMUM3s.png")!important;
+ background:url("https://i.imgur.com/6IjTyC5.png")!important;
  background-size:50px 502px!important
 }
 #mail.nohavemail {
@@ -1444,8 +1443,7 @@ body:not(.comments-page) div.content .entry {
 .res .entry {
  transition:all 0.10s ease
 }
-.RES-keyNav-activeElement,
-.RES-keyNav-activeElement .md-container {
+.RES-keyNav-activeElement {
  padding-left:15px!important;
  border-left:3px solid
 }
@@ -1749,9 +1747,9 @@ span.totalvotes {
  font-size:0px
 }
 .comment .collapsed {
- padding-left:24px;
- padding-bottom:10px;
- padding-top:2px
+ padding-left:0px;
+ padding-bottom: 0px;
+ padding-top:0px
 }
 .comment .midcol {
  width:20px!important
@@ -3582,13 +3580,13 @@ html[lang="dm"] .RES-keyNav-activeElement .md-container {
  display:none
 }
 .subscribers .number::after {
- content:" Boomers"
+ content:" Subscribers"
 }
 .users-online .word {
  display:none
 }
 .users-online .number::after {
- content:" babysquids living the dream here now"
+ content:" Online"
 }
 
 #sr-header-area, #RESShortcutsEditContainer {
@@ -3626,6 +3624,8 @@ ul.tabmenu > li > a,
 
 .thing div.entry.res-selected,
 .title > span.flairrichtext[title],
+.thing.res-selected .entry .expando .usertext .usertext-body,
+#siteTable .thing .res-selected .md-container,
 .linkflairlabel
 {
 	background-color: var(--bglighter) !important;
@@ -3642,6 +3642,8 @@ ul.tabmenu > li > a,
 .sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
 .linkinfo, .shortlink > input,
 .titlebox,
+/*div.thing,
+div.thing .entry, */
 .listing-chooser > .grippy::before,
 .listing-chooser > .grippy,
 .listing-chooser > .grippy::after,
@@ -3662,10 +3664,11 @@ textarea {
 
 
 div.entry.res-selected {
-	border-left: 5px solid var(--accent) !important;
+	border-left: 3px solid var(--accent) !important;
 }
 
 .sidebox .morelink,
+.usertext-body,
 textarea
 {
 	background-color: var(--bglight) !important;
@@ -3684,7 +3687,7 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
-*:not(a),
+*:not(a):not(em),
 .flat-list > li > a,
 .flat-list > li > form > span > a,
 .title:not(:visited),
@@ -3703,9 +3706,25 @@ a.title:visited {
 	border: none !important;
 }
 
+a em {
+	color: var(--accent) !important
+}
+
+a:visited em {
+	color: var(--yellow) !important
+}
 
 
+.usertext {
+	position: relative !important;
+}
 
+.res .commentarea > .usertext {
+	margin-top: -30px !important;
+}
 
+.expando-button::after {
+	content: none !important;
+}
 
-
+.title a:visited { color: var(--fgdark) !important; }

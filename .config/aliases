@@ -62,6 +62,16 @@ rgbtohex() {
 	printf "%02X%02X%02X\n" $@ 
 }
 
+function uli() {
+	local dir="$HOME/Stuff/Screenshots/maim"
+	local image="$(ls -1t $dir --ignore old | head -1)"
+	#xclip -selection clipboard -t image/png $dir/$image
+	local link="$(curl -s -F"file=@$dir/$image" 0x0.st)"
+	[[ -z $link ]] && notify-send "Upload failed" && return 1
+	echo "$link" | xclip -selection clipboard
+	echo "$link"
+	notify-send "Image uploaded to 0x0.st" "$link copied to clipboard"
+}
 
 function cli() {
 	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
