@@ -163,7 +163,7 @@ if [[ $RtR = Yes ]]; then
 			ffmpeg -y $(printf " $audio") \
 				-f x11grab -draw_mouse 1 \
 				-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
-				-t $trimm \
+				-pix_fmt yuv444 p-t $trimm \
 				-qscale 0 $(printf " $nvenc") \
 				/tmp/blaze/$curname.mp4 -loglevel error
 
@@ -184,12 +184,13 @@ if [[ $RtR = Yes ]]; then
 
 	else
 
-		command -V counting &>/dev/null && counting &
+		#command -V counting &>/dev/null && counting &
 
 		# The actual command
 		ffmpeg -y $(printf " $audio") \
 			-f x11grab -draw_mouse 1 \
 			-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+			-pix_fmt yuv420p \
 			-qscale 0 $(printf " $nvenc") \
 			"${dir}/${name}".mp4 -loglevel error
 	fi
