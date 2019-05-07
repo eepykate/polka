@@ -33,8 +33,6 @@
       <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Super&gt;space" type="string" value="rofi -show run"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;Insert" type="string" value="record"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;End" type="string" value="stop"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;m" type="string" value="dmenumount"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;u" type="string" value="dmenuumount"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="synclient TouchpadOff=1"/>
@@ -54,7 +52,6 @@
       <property name="XF86AudioPrev" type="string" value="vol prev"/>
       <property name="XF86AudioStop" type="string" value="vol stop"/>
       <property name="XF86AudioMute" type="string" value="vol m"/>
-      <property name="&lt;Super&gt;f" type="string" value="firefox"/>
       <property name="&lt;Super&gt;c" type="string" value="dolphin"/>
       <property name="XF86AudioPlay" type="string" value="vol p"/>
       <property name="&lt;Super&gt;u" type="string" value="rofi-emoji"/>
@@ -64,6 +61,11 @@
       <property name="&lt;Super&gt;v" type="string" value="select_link.sh"/>
       <property name="&lt;Alt&gt;grave" type="string" value="dropdown.sh"/>
       <property name="&lt;Alt&gt;d" type="string" value="xfdashboard"/>
+      <property name="&lt;Super&gt;f" type="string" value="firefox-developer-edition"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Insert" type="string" value="blaze"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;End" type="string" value="blaze -s"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Home" type="string" value="blaze -c -p k"/>
+      <property name="&lt;Super&gt;w" type="string" value="rofi -show windowcd"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
