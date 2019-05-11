@@ -1069,7 +1069,6 @@ body.comments-page .sitetable {
 }
 .commentarea .thing {
  border-radius:2px;
- background-color:#fff;
  box-shadow:0 1px 5px rgba(0,0,0,0.08);
  margin:0 0 8px;
  padding:16px 16px 1px 16px
@@ -1091,7 +1090,7 @@ body.comments-page .sitetable {
  padding:4px;
  margin-left:2px!important;
  margin-top:15px;
- border:1px solid #fff!important
+ border:1px solid var(--bglighter) !important
 }
 body.comments-page div.content {
  border:none!important
@@ -2349,9 +2348,6 @@ body.res .RESshortcutside:active,
  width:276px;
  margin:1.5em 0;
  display:block
-}
-.titlebox .bottom {
- display:none
 }
 .sidecontentbox .collapse-button {
  display:inline-block;
@@ -3615,6 +3611,7 @@ body,
 .content,
 ul.tabmenu > li > a,
 #header-bottom-right,
+.expando .usertext-body,
 #sr-header-area,
 #RESShortcutsEditContainer,
 .side,
@@ -3728,3 +3725,40 @@ a:visited em {
 }
 
 .title a:visited { color: var(--fgdark) !important; }
+
+.md-spoiler-text {
+	background-color: #666666 !important;
+	color: #666666 !important;
+	transition: all 200ms !important;
+}
+
+.md-spoiler-text.revealed {
+	background-color: #66666699 !important;
+	color: var(--fglight) !important;
+}
+
+.md blockquote {
+	background-color: var(--bgdark) !important;
+	border-left: 2px solid var(--fgdark) !important;
+}
+.tagline > .flair {
+	max-width: 200px; 
+	overflow-y: auto;
+}
+
+.bottom .access-required,
+.age {
+	font-size: 11px !important;
+}
+
+.bottom {
+	padding-top: 8px !important;
+}
+
+.bottom .spacer {
+	display: none !important;
+}
+
+.profile-page .side {
+	margin-top: 10px !important;
+}
