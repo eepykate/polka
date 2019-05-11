@@ -1,3 +1,6 @@
+:root {
+	--accent-darker: #097fce;
+}
 span.pagename.redditname a {
  color:transparent;
  display:block;
@@ -83,11 +86,10 @@ a {
 }
 #header-img {
  position:relative;
- height:30px!important;
  width:30px;
- margin-top:163px;
+ margin-top:153px;
  margin-left:35px;
- background-size:contain!important;
+ filter: invert(100%) hue-rotate(180deg) !important;
  background-repeat:no-repeat!important;
  z-index:1
 }
@@ -1342,7 +1344,7 @@ div .thing .tagline .author.submitter {
  font-size:10px
 }
 div .thing .tagline .author.submitter:before {
- background:RoyalBlue;
+ background:var(--accent);
  padding:0 7px 0 10px;
  border-radius:20px 0px 0px 20px;
  font-size:10px;
@@ -1350,13 +1352,13 @@ div .thing .tagline .author.submitter:before {
  margin-right:7px
 }
 div .thing .tagline .author.submitter {
- background:#27408b!important;
+ background:var(--accent-darker) !important;
  padding:0px 10px 0px 0px;
  border-radius:20px;
  transition:300ms
 }
 div .thing .tagline .author.submitter:hover {
- background:RoyalBlue!important;
+ background:var(--accent)!important;
  text-decoration:none
 }
 div .thing .tagline .author.moderator:before,
@@ -1442,7 +1444,7 @@ body:not(.comments-page) div.content .entry {
 .res .entry {
  transition:all 0.10s ease
 }
-.RES-keyNav-activeElement {
+body:not(.comments-page) * .RES-keyNav-activeElement {
  padding-left:15px!important;
  border-left:3px solid
 }
@@ -2033,7 +2035,6 @@ body:not(.search-page) #search input[type=text]:hover {
 body:not(.search-page) #search input[type=text]:focus {
  border-color:#aaa;
  text-align:left;
- padding-left:8px;
  outline:0;
  padding-left:6px;
  animation-name:search;
@@ -2193,7 +2194,7 @@ div.midcol.likes,
 div.midcol.dislikes,
 div.midcol.unvoted,
 div.reddit-entry {
- padding:0px 10px
+ padding:0px 4px
 }
 #header-img.default-header:hover,
 #header-img:hover {
@@ -2358,10 +2359,10 @@ body.res .RESshortcutside:active,
  font-size:10px;
  margin:1px 8px;
  background-color:transparent;
- color:RoyalBlue;
+ color:var(--accent);
  vertical-align:middle;
  border-radius:2px;
- border:1px solid RoyalBlue
+ border:1px solid var(--accent)
 }
 .sidecontentbox .collapse-button:hover {
  background-color:transparent;
@@ -2398,7 +2399,7 @@ body.res .RESshortcutside:active,
  background:#E16941
 }
 .flair-blueflair[title]:hover {
- background:RoyalBlue
+ background:var(--accent)
 }
 .flair-redflair[title],
 .flair-purpleflair[title],
@@ -2454,7 +2455,7 @@ body.res .RESshortcutside:active,
  background:#E16941
 }
 .flair-blueflair[title]:before {
- background:RoyalBlue
+ background:var(--accent)
 }
 .titlebox form.toggle {
  background:none
@@ -2467,7 +2468,7 @@ body.res .RESshortcutside:active,
  color:transparent
 }
 .linkflairlabel {
- background:RoyalBlue;
+ background:var(--accent);
  color:#FFF;
  font-weight:bold;
  padding:2px 10px;
@@ -2501,7 +2502,7 @@ body.res .RESshortcutside:active,
  background:#228b22
 }
 .linkflair-blue .linkflairlabel {
- background:RoyalBlue
+ background:var(--accent)
 }
 .linkflair-red .linkflairlabel:hover {
  background:#b1384d
@@ -2973,7 +2974,7 @@ form#image-upload.image-upload {
 .sidecontentbox a.helplink,
 button,
 .commentarea .comment a.expand:hover {
- background:RoyalBlue
+ background:var(--accent)
 }
 .commentarea span.score,
 .comment .flat-list li a:hover,
@@ -2991,7 +2992,7 @@ button,
 .deepthread a,
 .deepthread::after,
 .linefield .title {
- color:RoyalBlue
+ color:var(--accent)
 }
 .roundfield input[type=url]:focus,
 .roundfield input[type=text]:focus,
@@ -3002,7 +3003,7 @@ button,
 .flairlist .flair-jump input[type="text"]:focus,
 .RES-keyNav-activeElement,
 .RES-keyNav-activeElement .md-container {
- border-color:RoyalBlue
+ border-color:var(--accent)
 }
 .RESDashboardToggle.remove:hover,
 .comments-page .RESSubscriptionButton:hover,
@@ -3659,8 +3660,12 @@ textarea {
 	border-color: var(--bglightest) !important;
 }
 
-
 div.entry.res-selected {
+	border-left: 3px solid var(--accent) !important;
+}
+
+body.comments-page * div.entry.res-selected {
+	padding-left: 6px !important;
 	border-left: 3px solid var(--accent) !important;
 }
 
@@ -3755,10 +3760,35 @@ a:visited em {
 	padding-top: 8px !important;
 }
 
-.bottom .spacer {
+body.profile-page * .bottom .spacer,
+body.profile-page * .bottom img {
 	display: none !important;
 }
 
 .profile-page .side {
 	margin-top: 10px !important;
+}
+
+.bottom .access-required[data-event-action="compose"] {
+	background-color: var(--accent) !important;
+	color: var(--bgdark);
+	padding: 5px !important;
+	border-radius: 0.5em !important;
+	display: block !important;
+	width: 150px !important;
+	margin: 0 auto;
+}
+
+.fancy-toggle-button .add {
+	background-color: var(--accent) !important;
+	color: var(--bgdark) !important;
+}
+.entry .tagline a.submitter,
+.entry .tagline a.submitter::before,
+.sidecontentbox a.helplink {
+	color: var(--bgdark) !important;
+}
+.res-nightmode .usertext-edit textarea:focus {
+	border-color: var(--accent) !important;
+	border-width: 1px !important;
 }
