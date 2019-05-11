@@ -1,22 +1,21 @@
 :root {
---bgdark: #232a35;
---bglight: #29303d;
---bglighter: #343a48;
+--bgdark: #191d2a;
+--bglight: #1e2232;
+--bglighter: #2c334c;
 	--bglightest:  #41485c;
 	
---fgdark: #92a1ae;
---fglight: #92a1ae;
+--fgdark: #aaaac8;
+--fglight: #ccccee;
 		
---accent: #a469b4;
+--accent: #0088ee;
 	--blue:        #02a4fc;
 	--green:       #12e689;
 	--yellow:      #f0d35c;
 	--red:         #f0185a;
---border: #303848;
+--border: #262c42;
 	--border1:     #223344;
 	--border2:     #334455;
 --disabled: #696969;
-	--bglightest:  #cbe3f122;
 }
 
 :root{
@@ -105,7 +104,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
 coloring part, go to the common part for all firefox pages (if you use a global userstyle,
 you don't even need these, so just comment it all out).*/
-1@-moz-document url-prefix(file://) {
+@-moz-document url-prefix(file://) {
 :root {background-color: var(--bgdark) !important; color: #ccc !important}
 
 /* COMMENT OUT THIS SECTION IF BROWSING LOCAL HTML PAGES */
@@ -1290,4 +1289,11 @@ textarea {
 .questions #filter-section {background: linear-gradient(to bottom, var(--bglight),rgba(70,70,70,0.01)) !important}
 
 footer {background: #111 !important}
+}
+
+#ublock0-epicker * textarea {
+
+	background-color: var(--bglight) !important;
+	color: black !important;
+
 }

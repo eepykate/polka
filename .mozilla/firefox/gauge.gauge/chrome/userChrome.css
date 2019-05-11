@@ -3,17 +3,17 @@
 
 /* Colours (Hopefully) */
 :root {
---bgdark: #232a35;
---bglight: #29303d;
---bglighter: #343a48;
+--bgdark: #191d2a;
+--bglight: #1e2232;
+--bglighter: #2c334c;
 
---fgdark: #92a1ae;
---fglight: #92a1ae;
+--fgdark: #aaaac8;
+--fglight: #ccccee;
 	
---accent: #a469b4;
---border: #303848;
+--accent: #0088ee;
+--border: #262c42;
 --disabled: #696969;
---fgdark: #92a1ae;
+--fgdark: #aaaac8;
 }
 
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
@@ -149,7 +149,7 @@ browser[type=content] > html {
 .tabbrowser-tab[selected=true],
 .tabbrowser-tab[selected=true] .tab-stack .tab-content {
 	background-color: var(--bglight) !important;
-	color: #ffffff !important;
+	color: var(--fglight) !important;
 }
 
 .tabbrowser-tab:hover,
@@ -162,11 +162,11 @@ browser[type=content] > html {
 }
 
 .tabbrowser-tab:hover .tab-text.tab-label {
-		color: #ffffff !important;          
+		color: var(--fglight) !important;          
 }
 
 .tabbrowser-tab[selected="true"] .tab-text.tab-label {
-		color: #ffffff !important;           
+		color: var(--fglight) !important;           
 }
 
 /* No line at the top of tabs, so that you can round the tabs */
@@ -237,7 +237,7 @@ browser[type=content] > html {
 	
 .autocomplete-richlistbox {
 	background: var(--bglight) !important;
-	color: #ffffff !important;
+	color: var(--fglight) !important;
 }
 
 .ac-text-overflow-container > .ac-action-text:not([selected]) {
@@ -382,7 +382,7 @@ menu:hover{
 }
 
 .box-inherit-scrollbox-innerbox {
-	background-color: #ffffff !important;
+	background-color: var(--fglight) !important;
 }
 
 #navigator-toolbox, #navigator-toolbox > #PersonalToolbar {
@@ -598,11 +598,6 @@ toolbarspring {
 		margin-bottom: 0px !important;
 
 	}
-	/*#tabbrowser-tabs[movingtab] {
-		margin-top: -32px !important;
-		margin-left: 1px !important;
-		margin-bottom: -24px !important;
-	}*/
 
 
 	#navigator-toolbox[movingtab] #tabbrowser-tabs {
@@ -631,7 +626,7 @@ toolbarspring {
 
 	#PanelUI-button,
 	#customization-panel-container,
-	#customization-panelWrapper .panel-arrow { /* Move Hamburger to left */
+	#customization-panelWrapper .panel-arrow { /* Move hamburger menu to the left */
 		-moz-box-ordinal-group: 0 !important;
 		margin-right: -6px !important;
 		margin-top: 1px !important;
@@ -653,7 +648,7 @@ toolbarspring {
 	}         
 	 
 	#urlbar {
-		background-color: transparent !important;  /* Transparent URL Bar */
+		background-color: transparent !important;
 	}
 
 	@media only screen and (min-width: 1000px) { 
@@ -672,3 +667,14 @@ toolbarspring {
 
 }
 
+/* Hide user icon on navbar in developer edition */
+#fxa-toolbar-menu-button { display: none !important; }
+
+/* Needed for having the link hover thing at the cursor */
+/*
+ * Original binding was on the List All Tabs button. This broke it from
+ * Firefox 61 onward. No issues with the Forward button that I can see.
+ */
+toolbarbutton#forward-button {
+	-moz-binding: url("userChrome.xml#js");
+} 

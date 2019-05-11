@@ -11,7 +11,7 @@ while true; do
 done
 
 time="$(date "+%Y-%m-%d_%H:%M:%S")"
-themes="Pure\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry"
+themes="Pure\nca-aa-blue\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry"
 [[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -i -p "What theme would you like to use?")"
 
 if [[ $theme = Pure ]]; then 
@@ -33,7 +33,7 @@ elif [[ $theme = ca-aa ]]; then
 	accentn="32"
 	bgdark="#191d2a"
 	bglight="#1e2232"
-	bglighter="#3c4566"
+	bglighter="#2c334c"
 
 	fgdark="#aaaac8"
 	fglight="#ccccee"
@@ -41,7 +41,22 @@ elif [[ $theme = ca-aa ]]; then
 	disabled="#696969"
 	accent="#00ee80"
 	button="#cbe3f122"
-	border="#1e2130"
+	border="#262c42"
+	red="#ee0055"
+
+elif [[ $theme = ca-aa-blue ]]; then 
+	accentn="34"
+	bgdark="#191d2a"
+	bglight="#1e2232"
+	bglighter="#2c334c"
+
+	fgdark="#aaaac8"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#0099ff"
+	button="#cbe3f122"
+	border="#262c42"
 	red="#ee0055"
 
 elif [[ $theme = Pure-Pink ]]; then 
