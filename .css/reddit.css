@@ -89,7 +89,6 @@ a {
  width:30px;
  margin-top:153px;
  margin-left:35px;
- filter: invert(100%) hue-rotate(180deg) !important;
  background-repeat:no-repeat!important;
  z-index:1
 }
@@ -1111,7 +1110,6 @@ div.child {
  text-transform:none!important
 }
 .wiki-page .wikititle {
- background-color:#fff;
  padding:12px 16px 10px;
  border-radius:5px;
  box-shadow:0 1px 5px rgba(0,0,0,0.08);
@@ -1125,7 +1123,6 @@ div.child {
  font-weight:bold
 }
 .wiki-page .pageactions {
- background-color:#fff;
  margin-left:16px;
  border-radius:5px;
  padding:8px 16px;
@@ -1138,7 +1135,6 @@ div.child {
  margin:0;
  background-color:transparent;
  border-radius:0;
- color:#B3B3B3
 }
 .wiki-page .pageactions .wikiaction-current {
  color:#444;
@@ -1152,7 +1148,6 @@ div.child {
 }
 .wiki-page .wiki-page-content {
  margin:16px 0px 16px 0;
- background-color:#fff;
  padding:16px;
  border-radius:2px;
  box-shadow:0 1px 5px rgba(0,0,0,0.08)
@@ -3671,6 +3666,7 @@ body.comments-page * div.entry.res-selected {
 
 .sidebox .morelink,
 .usertext-body,
+.wiki .toc ul,
 textarea
 {
 	background-color: var(--bglight) !important;
@@ -3791,4 +3787,31 @@ body.profile-page * .bottom img {
 .res-nightmode .usertext-edit textarea:focus {
 	border-color: var(--accent) !important;
 	border-width: 1px !important;
+}
+
+.flair {
+	margin-left: 4px;
+	height: 12px;
+	margin-bottom: -5px;
+	padding: 1px 6px;
+	border-radius: 1em;
+	background-color: var(--bgdark) !important;
+	border-color: var(--bglighter) !important;
+	overflow-y: hidden !important;
+}
+#header-img {
+	background-image: url("https://i.imgur.com/XG2sRvX.png") !important;
+	background-position: 0px 0px !important;
+	width: 32px !important;
+	height: 32px !important;
+	background-size: 32px !important;
+	margin-top: 160px !important;
+}
+
+#header-bottom-left {
+	background-color: var(--bglight) !important;
+}
+
+.tabmenu {
+	background-color: var(--bglight) !important;
 }
