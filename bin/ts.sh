@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
 
-opts="$(getopt -o t:w: --long theme:,wallpaper: -- "$@")"
+# set -x
+
+opts="$(getopt -o t:w --long theme:,wallpaper -- "$@")"
 eval set -- "$opts"
 while true; do
 	case $1 in
 		-t|--theme) theme="$2"; shift 2;;
-		-w|--wallpaper) wallpaper="$2"; shift 2;;
+		-w|--wallpaper) wallpaper="sure"; shift;;
 		--) shift; break;;
 	esac
 done
 
 time="$(date "+%Y-%m-%d_%H:%M:%S")"
 themes="Pure\nca-aa-blue\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry"
-[[ -z $theme ]] && theme="$(echo -e "$themes" | dmenu -i -p "What theme would you like to use?")"
+[[ -z $theme ]] && theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" || exit
+[[ -n $wallpaper ]] && wallpaper="$(ls $HOME/Wallpapers/*.png | sed 's/.*\///' | rofi -dmenu -i -p "Which Wallpaper?")"
 
 if [[ $theme = Pure ]]; then 
 	accentn="34"
@@ -135,8 +138,22 @@ elif [[ $theme = Frost-Purple ]]; then
 	button="#7790a722"
 	border="#303848"
 	red="#c05863"
-		
+
+else 
+	echo "Invalid theme; exiting"; exit
 fi
+
+# Remove the # from the variables so it doesn't completely fuck up the colours in the css files 
+bgdark="${bgdark//#}"
+bglight="${bglight//#}"
+bglighter="${bglighter//#}"
+fgdark="${fgdark//#}"
+fglight="${fglight//#}"
+disabled="${disabled//#}"
+accent="${accent//#}"
+button="${button//#}"
+border="${border//#}"
+red="${red//#}"
 
 if [[ -n "$theme" ]]; then
 	xfconf-query -c xsettings -p /Net/ThemeName -s "$theme"
@@ -159,35 +176,40 @@ if [[ -n "$theme" ]]; then
 $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 $HOME/.startpage/style.css" | \
 		xargs sed --follow-symlinks -i \
-		-e "s/.*--bgdark:.*#.*\;/--bgdark: $bgdark\;/" \
-		-e "s/.*--bglight:.*#.*\;/--bglight: $bglight\;/" \
-		-e "s/.*--bglighter:.*#.*\;/--bglighter: $bglighter\;/" \
-		-e "s/.*--fgdark:.*#.*\;/--fgdark: $fgdark\;/" \
-		-e "s/.*--fglight:.*#.*\;/--fglight: $fglight\;/" \
-		-e "s/.*--accent:.*#.*\;/--accent: $accent\;/" \
-		-e "s/.*--border:.*#.*\;/--border: $border\;/" \
-		-e "s/.*--button:.*#.*\;/--fgdark: $button\;/" \
-		-e "s/.*--disabled:.*#.*\;/--disabled: $disabled\;/" 
+		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
+		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \
+		-e "s/.*--bglighter:.*#.*\;/--bglighter: #$bglighter\;/" \
+		-e "s/.*--fgdark:.*#.*\;/--fgdark: #$fgdark\;/" \
+		-e "s/.*--fglight:.*#.*\;/--fglight: #$fglight\;/" \
+		-e "s/.*--accent:.*#.*\;/--accent: #$accent\;/" \
+		-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
+		-e "s/.*--button:.*#.*\;/--fgdark: #$button\;/" \
+		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/" 
 
 	#sed -E 's/(.*):/\1-/'
-	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"$accent\"/" ~/.config/dunst/dunstrc
-	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"$bgdark\"/"   ~/.config/dunst/dunstrc
-	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"$fglight\"/"  ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"#$accent\"/" ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"#$bgdark\"/"   ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"#$fglight\"/"  ~/.config/dunst/dunstrc
 	dunst_red_last_linenum="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 3 ))"
-	sed --follow-symlinks -i "${dunst_red_last_linenum}s/    frame_color = \".*\"/    frame_color = \"$red\"/" ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "${dunst_red_last_linenum}s/    frame_color = \".*\"/    frame_color = \"#$red\"/" ~/.config/dunst/dunstrc
 	killall -9 dunst &> /dev/null;
 	dunst &>/dev/null &!
 
 	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
 	tint &>/dev/null &! 
 
+	sed --follow-symlinks -i -e "s/.*bg:.*#.*;/bg:         #${bgdark}bb;/g" \
+		-e "s/.*fg:.*#.*;/  fg:         #$fglight;/" \
+		-e "s/.*accent:.*#.*;/  accent:     #$accent;/"\
+		~/.config/rofi/theme.rasi
+
 	rc
 
-	sed --follow-symlinks -i "s/color: #.*;/color: $accent;/g" ~/.config/gtk-3.0/gtk.css
+	sed --follow-symlinks -i "s/color: #.*;/color: #$accent;/g" ~/.config/gtk-3.0/gtk.css
 
 	[[ -n $wallpaper ]] &&
-		[[ -f ~/Wallpapers/$wallpaper-$theme.png ]] &&
-			cp ~/Wallpapers/$wallpaper-$theme.png ~/Wallpapers/Wallpaper.png
+		[[ -f ~/Wallpapers/$wallpaper ]] &&
+			cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
 	true
 fi

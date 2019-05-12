@@ -1,6 +1,10 @@
 /* RASI Theme */
 
 * {
+bg:         #191d2abb;
+  sel:        #cbe3f116;
+  fg:         #ccccee;
+  accent:     #0099ff;
   black:      #1c202a;
   red:        #f0185a;
   green:      #12e689;
@@ -11,10 +15,7 @@
   emphasis:   #284a65;
   text:       #afc4dc;
   text-alt:   #afc4dc;
-  fg:         #afc4dc;
-  sel:        #cbe3f116;
   bg-alt:     #303442;
-  bg:         #15171d;
   
   spacing: 0;
   background-color: transparent;
@@ -25,7 +26,7 @@
 }
 
 * {
-  border-color: @blue;
+  border-color: @accent;
   background-color: transparent;
 }
 
@@ -34,7 +35,7 @@ window {
   fullscreen: true;
   background-color: @bg;
   width: 400px;
-  border-color: @blue;
+  border-color: @accent;
   border: 0px;
 	padding: 30%; 
 }
@@ -65,7 +66,7 @@ inputbar {
 }
 
 prompt {
-  text-color: @blue;
+  text-color: @accent;
 }
 
 textbox-prompt-colon {
@@ -105,7 +106,7 @@ element.normal {
 }
 element.selected {
     background-color: @sel;
-    border-color: @blue;
+    border-color: @accent;
 }
 
 
@@ -141,5 +142,5 @@ element.selected {
   spacing: 0;
   border: 0;
   border-radius: 0;
-  text-color: @blue;
+  text-color: @accent;
 }

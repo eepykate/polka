@@ -3625,6 +3625,11 @@ ul.tabmenu > li > a,
 }
 
 .sitetable div.thing.comment,
+.flairoptionpane,
+.flairselector,
+.flairselector > form,
+.flairselector > h2,
+.flairselector .flairoptionpane ul li,
 .sitetable div.thing.comment .entry,
 .sitetable div.thing.comment div.thing.comment,
 .sitetable div.thing.comment div.thing.comment div.thing.comment,
@@ -3635,6 +3640,8 @@ ul.tabmenu > li > a,
 .sitetable div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment div.thing.comment,
 .linkinfo, .shortlink > input,
 .titlebox,
+.footer-parent,
+.debuginfo,
 /*div.thing,
 div.thing .entry, */
 .listing-chooser > .grippy::before,
@@ -3741,9 +3748,9 @@ a:visited em {
 .md blockquote {
 	background-color: var(--bgdark) !important;
 	border-left: 2px solid var(--fgdark) !important;
+	margin-top: 2px !important;
 }
 .tagline > .flair {
-	max-width: 200px; 
 	overflow-y: auto;
 }
 
@@ -3779,12 +3786,7 @@ body.profile-page * .bottom img {
 	background-color: var(--accent) !important;
 	color: var(--bgdark) !important;
 }
-.entry .tagline a.submitter,
-.entry .tagline a.submitter::before,
-.sidecontentbox a.helplink {
-	color: var(--bgdark) !important;
-}
-.res-nightmode .usertext-edit textarea:focus {
+ertext-edit textarea:focus {
 	border-color: var(--accent) !important;
 	border-width: 1px !important;
 }
@@ -3814,4 +3816,24 @@ body.profile-page * .bottom img {
 
 .tabmenu {
 	background-color: var(--bglight) !important;
+}
+
+.flairselector::before {
+	background-color: #00000000 !important;
+}
+
+.md ul li, .md ul {
+	border: none !important;
+	margin-top: -3px !important;
+	margin-bottom: -3px !important;
+}
+.md ul li::before {
+	content: "•";
+	font-size: 20px !important;
+	margin-left: -14px !important;
+	margin-right: 8px !important;
+}
+
+.RESshortcut, .RESDashboardToggle {
+	color: var(--bgdark) !important;
 }
