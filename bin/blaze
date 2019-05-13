@@ -5,8 +5,9 @@
 #
 
 tempdir="/tmp/blaze"
-dir="$HOME/Videos/recordings"
-name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after this is listed in the actual recording part
+dir="$HOME/Videos/Recordings"
+#name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after this is listed in the actual recording part
+name="Video-$(( $(ls $dir/Video* | wc -l) + 1 ))"
 
 [[   -d $dir   ]] || mkdir -p $dir
 [[ -d $tempdir ]] || mkdir -p $tempdir
