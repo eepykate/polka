@@ -1680,9 +1680,6 @@ div.score {
 .md h1 {
  line-height:20px
 }
-.md ul {
- line-height:20px
-}
 h2 {
  color:#252525;
  font-size:18px;
@@ -2294,10 +2291,6 @@ div.leavemoderator {
  border-top:0;
  padding:10px 10px 10px 26px;
  margin:0 0px 20px 0px
-}
-.side .md h2+ul li {
- margin-bottom:10px;
- font-size:95%
 }
 .side .usertext {
  margin-top:20px
@@ -3040,8 +3033,6 @@ button:active {
 #siteTable .thing .md blockquote,
 .wiki-page-content .md blockquote,
 .commentarea .md blockquote,
-#siteTable .thing .md ul,
-.commentarea .md ul,
 #siteTable .thing .md ol,
 .commentarea .thing .md ol,
 #siteTable .thing .md table,
@@ -3059,8 +3050,6 @@ button:active {
  line-height:20px;
  font-size:14px
 }
-#siteTable .thing .md ul,
-.commentarea .md ul,
 .commentarea .thing .md ol,
 #siteTable .thing .md ol {
  border-right:solid 1px #eaeaea;
@@ -3070,18 +3059,12 @@ button:active {
  font-size:14px;
  padding:0
 }
-#siteTable .thing .md ul li,
-.commentarea .md ul li,
 .commentarea .thing .md ol li,
 #siteTable .thing .md ol li {
  border-bottom:solid 1px #eaeaea;
  padding:5px
 }
 
-#siteTable .thing .md ul,
-.commentarea .md ul {
- list-style:none
-}
 #siteTable .thing .md ol,
 .commentarea .thing .md ol {
  list-style-position:inside
@@ -3131,15 +3114,11 @@ html[lang="dm"] .wiki-page-content .md table tbody tr {
 html[lang="dm"] .md hr {
  color:#888
 }
-html[lang="dm"] #siteTable .thing .md ul li:nth-child(odd),
-html[lang="dm"] .commentarea .md ul li:nth-child(odd),
 html[lang="dm"] #siteTable .thing .md ol li:nth-child(odd),
 html[lang="dm"] .commentarea .thing .md ol li:nth-child(odd),
 html[lang="dm"] .wiki-page-content .md ol li:nth-child(odd) {
  background-color:#333
 }
-html[lang="dm"] #siteTable .thing .md ul li,
-html[lang="dm"] .commentarea .md ul li,
 html[lang="dm"] #siteTable .thing .md ol li,
 html[lang="dm"] .commentarea .thing .md ol li,
 html[lang="dm"] .wiki-page-content .md ol li {
@@ -3629,7 +3608,6 @@ ul.tabmenu > li > a,
 .flairselector,
 .flairselector > form,
 .flairselector > h2,
-.flairselector .flairoptionpane ul li,
 .sitetable div.thing.comment .entry,
 .sitetable div.thing.comment div.thing.comment,
 .sitetable div.thing.comment div.thing.comment div.thing.comment,
@@ -3794,8 +3772,8 @@ ertext-edit textarea:focus {
 .flair {
 	margin-left: 4px;
 	height: 12px;
-	margin-bottom: -5px;
-	padding: 1px 6px;
+	margin-bottom: -2px;
+	padding: 1px 6px !important;
 	border-radius: 1em;
 	background-color: var(--bgdark) !important;
 	border-color: var(--bglighter) !important;
@@ -3822,18 +3800,18 @@ ertext-edit textarea:focus {
 	background-color: #00000000 !important;
 }
 
-.md ul li, .md ul {
-	border: none !important;
-	margin-top: -3px !important;
-	margin-bottom: -3px !important;
-}
-.md ul li::before {
-	content: "•";
-	font-size: 20px !important;
-	margin-left: -14px !important;
-	margin-right: 8px !important;
-}
 
 .RESshortcut, .RESDashboardToggle {
 	color: var(--bgdark) !important;
 }
+.usertext-edit .md textarea {
+	border: 2px solid var(--bglighter) !important;
+}
+.usertext-edit .md textarea:focus,
+.usertext-edit .md textarea:hover{
+	border: 2px solid var(--accent) !important;
+}
+* { outline: none !important; }
+
+.tagline .flair { max-width: 200px !important; }
+div.pinnable-content.pinned { display: none !important; }
