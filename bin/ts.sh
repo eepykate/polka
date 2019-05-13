@@ -6,19 +6,22 @@ opts="$(getopt -o t:w --long theme:,wallpaper -- "$@")"
 eval set -- "$opts"
 while true; do
 	case $1 in
-		-t|--theme) theme="$2"; shift 2;;
-		-w|--wallpaper) wallpaper="sure"; shift;;
+		-t|--theme) theme="$2"; shift 2;;   # Select theme without using rofi
+		-w|--wallpaper) wallpaper="sure"; shift;;   # use rofi to select a wallpaper
 		--) shift; break;;
 	esac
 done
 
-time="$(date "+%Y-%m-%d_%H:%M:%S")"
-themes="Pure\nca-aa-blue\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry"
-[[ -z $theme ]] && theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" || exit
-[[ -n $wallpaper ]] && wallpaper="$(ls $HOME/Wallpapers/*.png | sed 's/.*\///' | rofi -dmenu -i -p "Which Wallpaper?")"
+themes="Pure\nca-aa-blue\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+if [[ -z $theme ]]; then
+	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
+		|| exit
+fi
+[[ -n $wallpaper ]] && wallpaper="$(ls $HOME/Wallpapers/*.png | sed 's/.*\///' | rofi -dmenu -i -p "Which Wallpaper?")" # Find png wallpapers in ~/Wallpapers
 
+# Define the colours in the theme (for rofi, startpage, firefox, dunst, etc)
 if [[ $theme = Pure ]]; then 
-	accentn="34"
+	accentn="4"
 	bgdark="#12151a"
 	bglight="#171a24"
 	bglighter="#222631"
@@ -33,12 +36,12 @@ if [[ $theme = Pure ]]; then
 	red="#f0185a"
 
 elif [[ $theme = ca-aa ]]; then 
-	accentn="32"
+	accentn="2"
 	bgdark="#191d2a"
 	bglight="#1e2232"
 	bglighter="#2c334c"
 
-	fgdark="#aaaac8"
+	fgdark="#8888a0"
 	fglight="#ccccee"
 
 	disabled="#696969"
@@ -48,12 +51,12 @@ elif [[ $theme = ca-aa ]]; then
 	red="#ee0055"
 
 elif [[ $theme = ca-aa-blue ]]; then 
-	accentn="34"
+	accentn="4"
 	bgdark="#191d2a"
 	bglight="#1e2232"
 	bglighter="#2c334c"
 
-	fgdark="#aaaac8"
+	fgdark="#8888a0"
 	fglight="#ccccee"
 
 	disabled="#696969"
@@ -63,7 +66,7 @@ elif [[ $theme = ca-aa-blue ]]; then
 	red="#ee0055"
 
 elif [[ $theme = Pure-Pink ]]; then 
-	accentn="95"
+	accentn="5"
 	bgdark="#12151a"
 	bglight="#171a24"
 	bglighter="#222631"
@@ -78,7 +81,7 @@ elif [[ $theme = Pure-Pink ]]; then
 	red="#f0185a"
 
 elif [[ $theme = Pure-Pink-1 ]]; then 
-	accentn="95"
+	accentn="5"
 	bgdark="#12151a"
 	bglight="#171a24"
 	bglighter="#222631"
@@ -93,7 +96,7 @@ elif [[ $theme = Pure-Pink-1 ]]; then
 	red="#f0185a"
 
 elif [[ $theme = Berry ]]; then 
-	accentn="35"
+	accentn="5"
 	bgdark="#141117"
 	bglight="#19141e"
 	bglighter="#342036"
@@ -109,7 +112,7 @@ elif [[ $theme = Berry ]]; then
 
 elif [[ $theme = Frost ]]; then
 	
-	accentn="33"
+	accentn="3"
 	bgdark="#232a35"
 	bglight="#29303d"
 	bglighter="#343a48"
@@ -125,7 +128,7 @@ elif [[ $theme = Frost ]]; then
 
 elif [[ $theme = Frost-Purple ]]; then
 	
-	accentn="35"
+	accentn="5"
 	bgdark="#232a35"
 	bglight="#29303d"
 	bglighter="#343a48"
@@ -143,7 +146,7 @@ else
 	echo "Invalid theme; exiting"; exit
 fi
 
-# Remove the # from the variables so it doesn't completely fuck up the colours in the css files 
+# Remove the `#` from the variables so it doesn't completely fuck up the colours in the css files in case of missing colour
 bgdark="${bgdark//#}"
 bglight="${bglight//#}"
 bglighter="${bglighter//#}"
@@ -156,22 +159,30 @@ border="${border//#}"
 red="${red//#}"
 
 if [[ -n "$theme" ]]; then
-	xfconf-query -c xsettings -p /Net/ThemeName -s "$theme"
+	xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
 	xfconf-query -c xfwm4 -p /general/theme -s "$theme"
-	kvantummanager --set "$theme" &>/dev/null
-	[[ -f ~/.config/Xres.$theme ]] && 
-		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources &&
-		xrdb $HOME/.Xresources
 
+	kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
+
+	# if ~/.config/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
+	[[ -f ~/.config/Xres.$theme ]] &&
+		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources
+
+	# Reload Xresources
+	xrdb $HOME/.Xresources 
+	rc
+
+	# Replace the accent colour in slight.zsh
 	[[ -n $accentn ]] && 
 		sed --follow-symlinks -i "s/color=\"..\"/color=\"$accentn\"/" -i ~/bin/slight.zsh
-	#[[ -f $HOME/Wallpapers/Midnight-${theme}.png ]] && 
-		#cp $HOME/Wallpapers/Midnight-${theme}.png $HOME/Wallpapers/Wallpaper.png
 
-	[[ -f ~/.conkyrc ]] && [[ -n $fglight ]] && sed "s/\${color ......}/\${color $fglight}/" -i ~/.conkyrc &&
-		pkill -9 conky && 
-		conky &>/dev/null &!
+	# Change foreground colour in conky
+	[[ -f ~/.conkyrc ]] && [[ -n $fglight ]] && sed "s/\${color ......}/\${color $fglight}/" -i ~/.conkyrc
+	# Reload conky
+	pkill -9 conky && 
+	conky &>/dev/null &! 
 
+	# Change the colour variables in firefox and my startpage
 	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 $HOME/.startpage/style.css" | \
@@ -186,30 +197,34 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--button:.*#.*\;/--fgdark: #$button\;/" \
 		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/" 
 
-	#sed -E 's/(.*):/\1-/'
+	# Replace colours in dunst
 	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"#$accent\"/" ~/.config/dunst/dunstrc
 	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"#$bgdark\"/"   ~/.config/dunst/dunstrc
 	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"#$fglight\"/"  ~/.config/dunst/dunstrc
+	# Make urgent notifications in dunst have a red border
 	dunst_red_last_linenum="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 3 ))"
 	sed --follow-symlinks -i "${dunst_red_last_linenum}s/    frame_color = \".*\"/    frame_color = \"#$red\"/" ~/.config/dunst/dunstrc
+	# Reload dunst
 	killall -9 dunst &> /dev/null;
 	dunst &>/dev/null &!
 
+	# Change theme name in tint (Wrapper script) then run it again, replacing the panel
 	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
 	tint &>/dev/null &! 
 
+	# Change the theme in rofi
 	sed --follow-symlinks -i -e "s/.*bg:.*#.*;/bg:         #${bgdark}bb;/g" \
 		-e "s/.*fg:.*#.*;/  fg:         #$fglight;/" \
 		-e "s/.*accent:.*#.*;/  accent:     #$accent;/"\
 		~/.config/rofi/theme.rasi
 
-	rc
-
+	# Change accent colour in gtk.css 
 	sed --follow-symlinks -i "s/color: #.*;/color: #$accent;/g" ~/.config/gtk-3.0/gtk.css
 
+	# Change the wallpaper
 	[[ -n $wallpaper ]] &&
 		[[ -f ~/Wallpapers/$wallpaper ]] &&
-			cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
+		cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
 	true
 fi
