@@ -2,13 +2,9 @@
 	--accent-darker: #097fce;
 }
 span.pagename.redditname a {
- color:transparent;
  display:block;
  width:100%;
  height:120px;
- background-size:contain;
- background-position:center center;
- background-repeat:no-repeat;
  position:absolute;
  top:40px
 }
@@ -1815,14 +1811,9 @@ span.totalvotes {
  height:100px;
  width:200px;
  display:inline-block;
- text-indent:-99999px;
- background-repeat:no-repeat
 }
 span.pagename.redditname a:hover {
  opacity:0.8
-}
-.pagename {
- font-size:0px
 }
 .subtitle,
 .sidebox .spacer,
@@ -3674,6 +3665,7 @@ a.title:visited {
 .flat-list > li > a,
 .flat-list > li > form > span > a,
 .title:not(:visited),
+.pagename a,
 .res-nightmode .entry.res-selected .md-container > .md p
 {
 	color: var(--fglight) !important;
@@ -3815,3 +3807,13 @@ ertext-edit textarea:focus {
 
 .tagline .flair { max-width: 200px !important; }
 div.pinnable-content.pinned { display: none !important; }
+
+.pagename > a {
+	text-align: center;
+	font-variant: normal;
+	padding-top: 45px;
+	font-size: 30px;
+}
+.pagename > a::before {
+	content: "r/";
+}
