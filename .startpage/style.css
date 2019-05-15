@@ -18,10 +18,7 @@ body {
 }
 
 #page {
-	/*width: 90vw;
-	height: 90%;*/
 	max-width: 700px;
-	max-height: 600px;
 	  	
 	margin: 0 auto;
 	margin-top: 20px;
@@ -31,7 +28,6 @@ main {
 	max-width: 700px;
 	margin-top: auto;
 	display: flex;
-	margin: 2vh auto;
 	overflow-y: auto;
 	flex-flow: row wrap;
 }
@@ -82,11 +78,6 @@ main {
 	/*box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);*/
 }
 
-/*.search-box input[type="text"]:focus,
-.search-box input[type="text"]:hover {
-	border-color: transparent;
-}*/
-
 .search-underline {
 	position: relative;
 	top: -2px;
@@ -105,32 +96,13 @@ main {
 	background-color: var(--accent);
 }
 
-/*.search-box input[type="text"]:focus,
-.search-box input[type="text"]:hover {
-	border-bottom: 2px solid var(--accent);   
-	max-width: 500px;
-}*/
-
-.box {
+.title {
 	display: block;
 	width: auto;
 	text-align: center;
-	border: 2px solid var(--bglight);
 	transition: all 200ms ease 0s;
-	margin: 15px;
-	box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);   
+	box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);
 }
-
-.box:hover {
-	border: 2px solid var(--accent);
-}
-
-.box:hover > .title,
-.box:hover > * > .title {
-	background-color: var(--accent);
-	color: var(--bgdark)
-}
-
 
 .title {
 	color: var(--fglight);
@@ -144,10 +116,9 @@ main {
 
 .links {
 	font-size: 14px;
-	padding: 6px 0;
-	width: 70px;
-	width: 100%;
-	display: block;
+	padding: 5px 10px;
+	width: auto;
+	display: inline-block;
 }
 
 
@@ -169,27 +140,7 @@ a:hover {	color: var(--accent);}
 	border-color: var(--accent);
 }
 
-.pen {
-	position: fixed;
-	top: 68px;
-	left: 0px;
-	width: 20px;
-	transition: all 300ms ease 0s; 
-	z-index: 69;
-	pointer-events: none;
-	margin-left: 8px;
-}
-
-#notes:focus ~ .pen {
-	opacity: 0;
-	display: none;
-}
-
-#notes:not(:hover) ~ .pen {
-	margin-left: -6px;
-}
-
-#notes1, #notes2, #notes3  {
+#notes1, #notes2, #notes3 {
 	width: 250px;
 	background-color: var(--bglight);
 	color: var(--fglight);
@@ -280,18 +231,35 @@ a:hover {	color: var(--accent);}
 .tablinks.selected { color: var(--accent); }
 
 main section {
-	flex: 1 1 100%;
+	flex: 1 1 25%;
 	box-sizing: border-box;
 }
 
-@media only screen and (min-width: 480px) {
-	main section {
-		flex: 1 1 50%;
-	}
+.content {
+	display: none; 
 }
 
-@media only screen and (min-width: 768px) {
-	main section {
-		flex: 1 1 25%;
-	}
+main section {
+	margin-top: 20px;
+}
+
+
+.box:hover .content {
+	display: block;
+}
+
+.content {
+	position: absolute;
+	background-color: var(--bglight);
+	max-width: 680px;
+	width: 95vw;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	padding: 10px;
+}
+
+.box:hover .title {
+	background-color: var(--accent);
 }

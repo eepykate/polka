@@ -57,8 +57,8 @@ function fixSectionHeight() {
 	}
 }
 
-fixSectionHeight()
-window.addEventListener('resize', fixSectionHeight)
+//fixSectionHeight()
+//window.addEventListener('resize', fixSectionHeight)
 
 /* First page of notes */
 var n1 = document.getElementById("notes1");
