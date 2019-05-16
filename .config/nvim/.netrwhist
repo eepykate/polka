@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/gauge/git/.config/Kvantum/Frost'
 let g:netrw_dirhist_2='/home/gauge/bin'
 let g:netrw_dirhist_3='/home/gauge/.startpage'
 let g:netrw_dirhist_4='/home/gauge/.config/transmission/blocklists'
 let g:netrw_dirhist_5='/home/gauge/.config/transmission'
 let g:netrw_dirhist_6='/home/gauge/Stuff/git/gaugek.gitlab.io/blog'
+let g:netrw_dirhist_7='/home/gauge/bin/citra'

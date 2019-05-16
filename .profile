@@ -1,13 +1,13 @@
 #     ~/.profile     #
-export QT_QPA_PLATFORMTHEME="qt5ct"  # Qt themes for non-Qt DEs/WMs
-#[[ $TERM != linux ]] && xset r rate 200 60                   # Faster keyboard repeat rate
-# Default programs                   # Default programs
-export EDITOR="nvim"                 # Terminal text editor
-export VISUAL="$EDITOR"              # Graphical text editor 
-export TERMINAL="st"                 # Terminal
-export BROWSER="firefox"             # Web Browser
-export FILE="dolphin"                # File manager
+export QT_QPA_PLATFORMTHEME="qt5ct"     # Qt themes for non-Qt DEs/WMs
+# Default programs                      # Default programs
+export EDITOR="nvim"                    # Terminal text editor
+export VISUAL="$EDITOR"                 # Graphical text editor 
+export TERMINAL="st"                    # Terminal
+export BROWSER="firefox"                # Web Browser
+export FILE="dolphin"                   # File manager
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
+
 
 # Custom ls colours
 eval "$(dircolors ~/.config/dircolors)" 

@@ -25,7 +25,7 @@
     <glob pattern="*.cxarchive"/>
   </mime-type>
   <mime-type type="application/x-crossover-exe">
-    <!-- X-Created-By=application_x-crossover-exe::run;application_x-crossover-exe::install -->
+    <!-- X-Created-By=application_x-crossover-exe::install;application_x-crossover-exe::run -->
     <generic-icon name="cxoffice-0_application_x-crossover-exe"/>
     <comment>Windows Application</comment>
     <comment xml:lang="cs">Windows Aplikace</comment>
