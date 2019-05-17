@@ -57,7 +57,6 @@
       <property name="&lt;Super&gt;u" type="string" value="rofi-emoji"/>
       <property name="&lt;Super&gt;t" type="string" value="tp.sh"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;F1" type="string" value="tp.sh"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="ts.sh --wallpaper Flat_Moon"/>
       <property name="&lt;Super&gt;v" type="string" value="select_link.sh"/>
       <property name="&lt;Alt&gt;grave" type="string" value="dropdown.sh"/>
       <property name="&lt;Alt&gt;d" type="string" value="xfdashboard"/>
@@ -66,6 +65,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;End" type="string" value="blaze -s"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Home" type="string" value="blaze -c -p k"/>
       <property name="&lt;Super&gt;w" type="string" value="rofi -show windowcd"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="ts.sh"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">

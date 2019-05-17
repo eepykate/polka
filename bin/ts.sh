@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nca-aa-blue\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -61,6 +61,21 @@ elif [[ $theme = ca-aa-blue ]]; then
 
 	disabled="#696969"
 	accent="#0099ff"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#ee0055"
+
+elif [[ $theme = ca-aa-pink ]]; then 
+	accentn="5"
+	bgdark="#191d2a"
+	bglight="#1e2232"
+	bglighter="#2c334c"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#ee99ff"
 	button="#cbe3f122"
 	border="#262c42"
 	red="#ee0055"
@@ -228,7 +243,7 @@ $HOME/.startpage/style.css" | \
 
 
 	# Convert Xresources to tty colours scheme
-	ttything.sh
+	# ttything.sh
 
 	true
 fi

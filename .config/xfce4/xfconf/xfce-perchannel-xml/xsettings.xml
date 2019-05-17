@@ -2,7 +2,7 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="ca-aa"/>
+    <property name="ThemeName" type="string" value="ca-aa-blue"/>
     <property name="IconThemeName" type="string" value="Papirus-Dark"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
@@ -34,7 +34,7 @@
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="Bibata_Ice"/>
     <property name="CursorThemeSize" type="int" value="16"/>
-    <property name="DecorationLayout" type="string" value="close,minimize,maximize:"/>
+    <property name="DecorationLayout" type="string" value="close:minimize"/>
   </property>
   <property name="Xfce" type="empty">
     <property name="LastCustomDPI" type="int" value="95"/>
