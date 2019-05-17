@@ -38,22 +38,7 @@ shortcuts &!
 echo "$HOME/.config/sc" | entr shortcuts &!
 
 if [[ "$TERM" = "linux" ]]; then
-	echo -en "\e]P012151a" #black
-	echo -en "\e]P81f212e" #darkgrey
-	echo -en "\e]P1f0185a" #darkred
-	echo -en "\e]P9ff4551" #red
-	echo -en "\e]P212e689" #darkgreen
-	echo -en "\e]PA3aff93" #green
-	echo -en "\e]P3ffa463" #brown
-	echo -en "\e]PBffdd74" #yellow
-	echo -en "\e]P402a4fc" #darkblue
-	echo -en "\e]PC34b0fd" #blue
-	echo -en "\e]P5ef2ca5" #darkmagenta
-	echo -en "\e]PDef5ad7" #magenta
-	echo -en "\e]P626c5ff" #darkcyan
-	echo -en "\e]PE26c5ff" #cyan
-	echo -en "\e]P7aab5c6" #lightgrey
-	echo -en "\e]PFd6e5fb" #white
+	source ~/.config/tty-colours.sh
 	sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null
 	#clear #for background artifacting
 fi

@@ -226,5 +226,9 @@ $HOME/.startpage/style.css" | \
 		[[ -f ~/Wallpapers/$wallpaper ]] &&
 		cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
+
+	# Convert Xresources to tty colours scheme
+	ttything.sh
+
 	true
 fi

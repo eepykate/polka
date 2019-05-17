@@ -11,6 +11,7 @@ d   suck       ~/Stuff/git/suckless/
 d   gkgl       ~/Stuff/git/gaugek.gitlab.io/
 d   gi         ~/Stuff/git/
 d   sp         ~/.startpage/
+d   mu         ~/Music/
 f   zshrc      ~/.zshrc
 f   vimrc      ~/.config/nvim/init.vim
 f   bashrc     ~/.bashrc

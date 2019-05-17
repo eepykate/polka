@@ -58,10 +58,11 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*:*:*:*' menu select
 
+set -k                   # Allow comments in shell
 setopt auto_menu         # show completion menu on successive tab press
 unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt complete_in_word
 setopt always_to_end
 
-set -k     # Allow comments in shell
+
