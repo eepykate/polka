@@ -41,6 +41,8 @@ code,                          /* Code blocks */
 .header-1R_AjF,                /* Header on the channel description popup */
 .size-JLvFeT,                  /* Channel description popup */
 .category-2U57w6,              /* Emoji picker frequently used */
+.sizeSmall-Sf4iOi,             /* Delete message popup */
+.footer-2yfCgX,                /* Delete message popup footer */
 .autocomplete-1vrmpx           /* Emoji autocomplete box */
 {
 	background-color: var(--bgdark) !important;
@@ -69,6 +71,7 @@ code,                          /* Code blocks */
 .friendsTable-133bsv,      /* Friends section */
 .menu-Sp6bN1,              /* Top left server popup */
 .container-1UB9sr,         /* Voice connected area */
+.message-2qRu38,           /* Delete message popup message preview */
 .container-3gCOGc,         /* Friends section */
 div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search popup */
 .darkTheme-3uETC4.container-2XeR5Z /* Search box in discord homepage */
@@ -173,41 +176,8 @@ div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::after
 	color: var(--red) !important;
 }
 
-/***   Scrollbar Colours   ***/
-/*.scrollbar-2rkZSL {
-	background-color: var(--bgdark) !important;
-}
-
-.thumb-2JwNFC {
-	background-color: var(--accent) !important;
-	border-radius: 0 !important;
-}
-
-.scrollerThemed-2oenus.themedWithTrack-q8E3vB .scroller-2FKFPG::-webkit-scrollbar-thumb {
-    background-color: var(--bgdark);
-    border-color: var(--accent);
-}
-
-.scrollerThemed-2oenus.themedWithTrack-q8E3vB .scroller-2FKFPG::-webkit-scrollbar-track-piece {
-    background-color: var(--bgdark);
-    border: 3px solid var(--bgdark);
-    border-radius: 7px;
-}
-
-.theme-dark .scrollerThemed-2oenus.themedWithTrack-q8E3vB .scrollbar-2rkZSL .track-1JN30G {
-    background-color: var(--bglighter);
-    border: 3px solid var(--bglight);
-    border-radius: 7px;
-}
-
-.theme-dark .scrollerThemed-2oenus.themedWithTrack-q8E3vB .scrollbar-2rkZSL .thumb-2JwNFC {
-    background-color: var(--accent);
-    border: 3px solid var(--bglight);
-    border-radius: 7px;
-}*/
-
-
-.scroller-2wx7Hm {
+.scroller-2wx7Hm,
+.scroller-2FKFPG{
 	overflow-y: auto;
 }
 
