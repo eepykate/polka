@@ -64,5 +64,3 @@ unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt complete_in_word
 setopt always_to_end
-
-
