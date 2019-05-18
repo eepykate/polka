@@ -1,16 +1,12 @@
+.messageGroupBlocked, .da-messageGroupBlocked {display:none;}
+code:not(.inline)::before {
+    content: attr(class) "\A" !important;
+    font-size: 0.75em;
+    opacity: 0.5;
+}
 :root {
---bgdark: #232a35;
---bglight: #29303d;
---bglighter: #343a48;
-
---fgdark: #92a1ae;
---fglight: #cfe3ff;
-	
---accent: #a469b4;
---selected: #343a48;
---border: #303848;
---disabled: #696969;
---normalsidebar: #7b8792;
+--fglight: #cbe3ff;
+--selected: var(--bglighter);
 }
 
 
@@ -39,6 +35,11 @@ code,                          /* Code blocks */
 .footer-1kmXd4,                /* Pinned message footer */
 .messageGroupWrapperOffsetCorrection-phOU-k, /* Pinned messages popup messages */
 .emojiPicker-3m1S-j,           /* Emoji picker */
+.markup-2BOw-j:hover,          /* Hover on messages */
+.buttonContainer-KtQ8wc:hover ~ .markup-2BOw-j, /* Hover on message option/react buttons */
+.content-3dzVd8:hover,         /* Images */
+.header-1R_AjF,                /* Header on the channel description popup */
+.size-JLvFeT,                  /* Channel description popup */
 .category-2U57w6,              /* Emoji picker frequently used */
 .autocomplete-1vrmpx           /* Emoji autocomplete box */
 {
@@ -62,10 +63,14 @@ code,                          /* Code blocks */
 .quickMessage-2XpSaN,      /* Message box in user popup */
 .note-3HfJZ5,              /* Notes for user in popup */
 .header-2BwW8b,            /* User Popout top */
+.gatedContent-3-B7qB,      /* NSFW channel thing */
 .messagesPopout-24nkyi,    /* Pinned Messages popup inner */
 .lightTheme-3LGLQs,        /* Search box in emoji popup */
 .friendsTable-133bsv,      /* Friends section */
+.menu-Sp6bN1,              /* Top left server popup */
+.container-1UB9sr,         /* Voice connected area */
 .container-3gCOGc,         /* Friends section */
+div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search popup */
 .darkTheme-3uETC4.container-2XeR5Z /* Search box in discord homepage */
 {
 	background-color: var(--bglight) !important;
@@ -79,13 +84,14 @@ code,                          /* Code blocks */
 .channel-2QD9_O a:hover,   /* Selected tab in homepage sidebar hover */
 .selected-1HYmZZ,          /* Selected tab in homepage sidebar */
 .selected-1HYmZZ a,        /* Selected tab in homepage sidebar */
+.item-1GzJrl:hover,        /* Top left popup hover */
 [class*="autocompleteRow"] > [class*="selectable"]:hover,  /* Selected emoji in the autocomplete popup */
 [class*="autocompleteRow"] > [class*="selectorSelected"]   /* Selected emoji in the autocomplete popup */
 {
 	background-color: var(--selected) !important;
 }
 
-.content-3at_AU:hover { /* Hover over a channel in the channel sidebar */
+.containerDefault-1ZnADq:hover * .content-3at_AU { /* Hover over a channel in the channel sidebar */
 	background-color: var(--bglighter) !important;
 }
 
@@ -97,9 +103,6 @@ code,                          /* Code blocks */
 	background: none !important;
 }
 
-*:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg):not(button):not(a):not(.primary-3j8BhM):not(.mention):not(em)  { /* Set the font colour almost everywhere */
-	color: var(--fgdark) !important;
-}
 
 .newMessagesBar-mujexs > *,   /* New messages dialog */
 .botTag-2BhDSU,               /* Tag next to username bots have */
@@ -117,6 +120,8 @@ code,                          /* Code blocks */
  /*base-gE7OpD stop-animation */
 
 .modeUnread-1zpFdA * .name-3_Dsmg,     /* Unread channels */
+.markup-2BOw-j,                        /* Main messages */
+.markup-2BOw-j > strong,               /* Bold text */
 .modeSelected-1zApJ_ * .name-3_Dsmg    /* Active channel */
 {
 	color: var(--fglight) !important;
@@ -134,6 +139,38 @@ code,                          /* Code blocks */
 
 code, .inline {
 	font-family: Monospace !important;
+}
+
+*:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg):not(button):not(a):not(.primary-3j8BhM):not(.mention):not(em):not(.filename-ovv3c5):not(.markup-2BOw-j)  { /* Set the font colour almost everywhere */
+	color: var(--fgdark);
+}
+
+hr.divider-32i8lo,            /* hr between messages */
+.scrollbar-2rkZSL,            /* Scroll bar - makes it use your native ones */
+.messageGroupBlocked-3wrQQX   /* X blocked messages */
+{
+	display: none !important;
+}
+
+.reactionMe-23mbRf /* React toggled */
+{
+	background-color: #434c6d !important;
+}
+
+div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::before, 
+div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::after 
+{
+	border-color: var(--bglighter) !important;
+}
+
+.dividerRed-MKoLlr > dividerContent-2L12VI::before,
+.dividerRed-MKoLlr > dividerContent-2L12VI::after
+{
+	border-color: var(--red) !important	
+}
+
+.dividerRed-MKoLlr > .dividerContent-2L12VI {
+	color: var(--red) !important;
 }
 
 /***   Scrollbar Colours   ***/
@@ -169,6 +206,11 @@ code, .inline {
     border-radius: 7px;
 }*/
 
-.scrollbar-2rkZSL {
-	display: none !important;
+
+.scroller-2wx7Hm {
+	overflow-y: auto;
+}
+
+a svg.homeIcon-tEMBK1 path {
+	color: #eee !important;
 }

@@ -1,7 +1,7 @@
 #     ~/.zshrc     #
 # Syntax highlighting
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-export SUDO_PROMPT=$'\e[34m[sudo]\e[33m password for %p:\e[0m '   # Colourful sudo prompt
+export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 source ~/.config/aliases    # Aliases
 source slight.zsh     # Shell theme
 stty -ixon            # Disable Ctrl-S && Ctrl-Q
