@@ -3,6 +3,7 @@
 # Source:
 #   https://gitlab.com/GaugeK/dots/
 #
+set -x
 
 tempdir="/tmp/blaze"
 dir="$HOME/Videos/Recordings"
@@ -110,14 +111,13 @@ if [[ ${DoM} = Display ]]; then
 	offsetY="$(echo $display_res | awk '{print $4}' )"
 elif [[ ${DoM} = Slop ]]; then
 	# Select an area with slop
-	slop="$(slop -l -c 0.64314,0.41176,0.70588,0.2 -b 1)"
+	slop="$(slop -l -c 0.64314,0.41176,0.70588,0.2 -b 1 -f '%w %h %x %y')"
 
 	# get the size and offset of the selection
-	slop1="$(echo $slop | awk '{ gsub("x", " "); gsub("+", " "); print}')"
-	width="$(echo   $slop1 | awk '{print $1}' )"
-	height="$(echo  $slop1 | awk '{print $2}' )"
-	offsetX="$(echo $slop1 | awk '{print $3}' )"
-	offsetY="$(echo $slop1 | awk '{print $4}' )"
+	width="$(echo   $slop | awk '{print $1}' )"
+	height="$(echo  $slop | awk '{print $2}' )"
+	offsetX="$(echo $slop | awk '{print $3}' )"
+	offsetY="$(echo $slop | awk '{print $4}' )"
 fi
 
 # Ask the user if they want desktop audio and what framerate
