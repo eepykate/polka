@@ -587,85 +587,77 @@ toolbarspring {
 	}
 }
 
-/* One Liner */
-@media only screen and (min-width: 700px) {
+#tabbrowser-tabs[movingtab] {
+	margin-bottom: -2px !important;
+}
 
-	.tabbrowser-tab[fadein]:not([pinned]) {
-		max-width: 140px !important;
-	}
-
-	#tabbrowser-tabs {
-		margin-top: 0 !important;
-		margin-bottom: 0px !important;
-
-	}
-
-
-	#navigator-toolbox[movingtab] #tabbrowser-tabs {
-		margin-bottom: -1px !important;
-		margin-left: 1px !important;
-	}
+#TabsToolbar, #nav-bar, #titlebar, #tabbrowser-tabs, .tabbrowser-tab { 
+	height: 32px !important;
+}
 	
-	#TabsToolbar, #nav-bar, #titlebar, #tabbrowser-tabs, .tabbrowser-tab { 
-		height: 32px !important;
-	}
+/*#TabsToolbar {
+	margin-left: 42vw !important;
+}
 	
-	#TabsToolbar {
-		margin-left: 42vw !important;
-	}
-	
-	#nav-bar {
-		margin-top: -32px !important;
-		margin-right: 58vw !important;
-		z-index: 69;
-		transition: all 200ms ease 0.1s;
-	}
+#nav-bar {
+	margin-top: -32px !important;
+	margin-right: 58vw !important;
+	z-index: 69;
+	transition: all 200ms ease 0.1s;
+}*/
 
-	#nav-bar:focus-within {
-		margin-right: 20vw !important;
-	}
+/*#nav-bar:focus-within {
+	margin-right: 20vw !important;
+}*/
 
-	#PanelUI-button,
-	#customization-panel-container,
-	#customization-panelWrapper .panel-arrow { /* Move hamburger menu to the left */
-		-moz-box-ordinal-group: 0 !important;
-		margin-right: -6px !important;
-		margin-top: 1px !important;
-	}
+#PanelUI-button,
+#customization-panel-container,
+#customization-panelWrapper .panel-arrow { /* Move hamburger menu to the left */
+	-moz-box-ordinal-group: 0 !important;
+	margin-right: -6px !important;
+	margin-top: 1px !important;
+}
 	
-	#PlacesToolbar {
-		margin-top: 2px;
-		margin-bottom: -2px;
-	}
-	
-	#urlbar,
-		.searchbar-textbox {
-		box-shadow: none !important;
-	}
-	
-	#urlbar:hover,
-		.searchbar-textbox:hover {
-		box-shadow: none !important;
-	}         
-	 
-	#urlbar {
-		background-color: transparent !important;
-	}
+#PlacesToolbar {
+	margin-top: 2px;
+	margin-bottom: -2px;
+}
 
-	@media only screen and (min-width: 1000px) { 
-		.tabbrowser-tab[fadein]:not([pinned]) {
-			max-width: 200px !important;
-		}
-
-		#TabsToolbar {
-			margin-left: 30vw !important;
-		}
+#urlbar,
+.searchbar-textbox {
+	box-shadow: none !important;
+}
 	
-		#nav-bar {
-			margin-right: 70vw !important;
-		}
-	}
+#urlbar:hover,
+.searchbar-textbox:hover {
+	box-shadow: none !important;
+}         
 
+/* Transparent url bar */
+#urlbar {
+	background-color: transparent !important;
+}
+
+/* Hide navbar and move it up into the same line as the tab bar */
+#nav-bar:not([customizing]) {
+	margin-left: 100vw !important;
+	margin-top: -32px !important;
+	z-index: 6969 !important;
+}
+
+/* When navbar is focused, bring it into view */
+#navigator-toolbox:not([customizing]) #nav-bar:focus-within,
+#navigator-toolbox:not([customizing]) #nav-bar:hover:focus-within {
+	margin-left: 0vw !important;
+}
+
+#navigator-toolbox:not([customizing]) * #TabsToolbar {
+	margin-right: 0vw !important;
+}
+
+/* Tab width */
+.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: 170px !important;
 }
 
 /* Hide user icon on navbar in developer edition */

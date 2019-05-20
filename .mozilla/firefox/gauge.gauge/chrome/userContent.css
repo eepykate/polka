@@ -2,22 +2,22 @@
 --bgdark: #191d2a;
 --bglight: #1e2232;
 --bglighter: #2c334c;
-	--bglightest:  #41485c;
-	
---fgdark: #aaaac8;
---fglight: #ccccee;
+		--bglightest:  #41485c;
 		
---accent: #0088ee;
-	--blue:        #02a4fc;
-	--green:       #12e689;
-	--yellow:      #f0d35c;
-	--red:         #f0185a;
+--fgdark: #8888a0;
+--fglight: #ccccee;
+			
+--accent: #ee99ff;
+		--blue:        #02a4fc;
+		--green:       #12e689;
+		--yellow:      #f0d35c;
+		--red:         #f0185a;
 --border: #262c42;
-	--border1:     #223344;
-	--border2:     #334455;
+		--border1:     #223344;
+		--border2:     #334455;
 --disabled: #696969;
-}
-
+	}
+	
 :root{
 	scrollbar-color: var(--accent) var(--bgdark) !important;
 	scrollbar-width: thin !important;
