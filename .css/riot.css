@@ -1,0 +1,78 @@
+.mx_RoomHeader_wrapper,        /* Header at the top of the page */
+.mx_LeftPanel,                    /* Left sidebar */
+.mx_TagPanelButtons,              /* Bottom left buttons */
+.mx_TagPanel_tagTileContainer,    /* Left community sidebar */
+.mx_MemberList,                   /* Members panel */
+.mx_FilePanel,                    /* File panel */
+.mx_MessageComposer,              /* Message input box */
+.mx_EventTile_pre_container > pre,
+.mx_EventTile_pre_container * code,
+.mx_EventTile_pre_container,
+.mx_NotificationPanel,            /* Notification panel */
+.mx_TopLeftMenuButton,            /* Name at the top left */
+.mx_RoomHeader_buttons 
+{
+	background-color: var(--bgdark) !important;
+}
+
+.dark-panel .mx_SearchBox,
+.mx_RoomView {
+	background-color: var(--bglight) !important;
+}
+
+.mx_EventTile:hover > .mx_EventTile_line,
+.mx_RoomTile:hover,
+.mx_RoomTile_selected {
+	background-color: var(--bglighter);
+}
+
+body { font-family: Roboto Condensed; }
+.markdown-body code { font-family: Iosevka Term; }
+
+*:not(.mx_SenderProfile_name > span) {
+	color: var(--fglight);
+}
+
+.mx_Pill {
+	color: var(--bgdark) !important;
+}
+
+.mx_Pill {
+	background-color: var(--accent) !important;
+}
+
+.mx_EventTile_highlight, .mx_EventTile_highlight .markdown-body {
+	color: var(--accent) !important;
+}
+
+
+/*.mx_EventTile_content .markdown-body code {
+    background-color: #EDEAE5 !important ;
+    color: #120c00 !important ;
+}
+
+.mx_EventTile_pre_container * { background-color : #EDEAE5 !important ; }*/
+
+pre code:not(span) {
+	color: #fff !important;
+}
+
+.hljs-selector-class {
+	color: #f00 !important;
+}
+
+.mx_EventTile_pre_container,
+code > span, 
+code 
+{
+	filter: invert(100%)
+}
+
+code > span , pre {
+	background-color: transparent !important;
+}
+
+pre {
+	border-radius: 0 !important;
+}
+
