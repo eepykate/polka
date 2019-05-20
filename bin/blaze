@@ -3,12 +3,11 @@
 # Source:
 #   https://gitlab.com/GaugeK/dots/
 #
-set -x
 
 tempdir="/tmp/blaze"
 dir="$HOME/Videos/Recordings"
-#name="$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after this is listed in the actual recording part
-name="Video-$(( $(ls $dir/Video* | wc -l) + 1 ))"
+name="blaze-$(date '+%Y-%m-%d.%H:%M:%S')" # Needs .mp4 after this is listed in the actual recording part
+#name="Video-$(( $(ls $dir/Video* | wc -l) + 1 ))"
 
 [[   -d $dir   ]] || mkdir -p $dir
 [[ -d $tempdir ]] || mkdir -p $tempdir
@@ -116,6 +115,8 @@ elif [[ ${DoM} = Slop ]]; then
 	# get the size and offset of the selection
 	width="$(echo   $slop | awk '{print $1}' )"
 	height="$(echo  $slop | awk '{print $2}' )"
+	(( $width % 2 )) && width="$(( $width + 1))"
+	(( $height % 2 )) && height="$(( $height + 1))"
 	offsetX="$(echo $slop | awk '{print $3}' )"
 	offsetY="$(echo $slop | awk '{print $4}' )"
 fi
@@ -185,15 +186,12 @@ if [[ $RtR = Yes ]]; then
 
 	else
 
-		#command -V counting &>/dev/null && counting &
-
 		# The actual command
 		ffmpeg -y $(printf " $audio") \
 			-f x11grab -draw_mouse 1 \
 			-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
 			-pix_fmt yuv420p \
-			-qscale 0 $(printf " $nvenc") \
+			-q:v 0 $(printf " $nvenc") \
 			"${dir}/${name}".mp4 -loglevel error
 	fi
-
 fi
