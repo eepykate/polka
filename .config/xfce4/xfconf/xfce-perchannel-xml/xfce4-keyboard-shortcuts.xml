@@ -59,13 +59,15 @@
       <property name="&lt;Shift&gt;&lt;Super&gt;F1" type="string" value="tp.sh"/>
       <property name="&lt;Super&gt;v" type="string" value="select_link.sh"/>
       <property name="&lt;Alt&gt;grave" type="string" value="dropdown.sh"/>
-      <property name="&lt;Alt&gt;d" type="string" value="xfdashboard"/>
       <property name="&lt;Super&gt;f" type="string" value="firefox-developer-edition"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Insert" type="string" value="blaze"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;End" type="string" value="blaze -s"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Home" type="string" value="blaze -c -p k"/>
       <property name="&lt;Super&gt;w" type="string" value="rofi -show windowcd"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="ts.sh"/>
+      <property name="&lt;Super&gt;q" type="string" value="xdotool getwindowfocus windowkill"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;F2" type="string" value="xdotool key ctrl+l"/>
+      <property name="Alt_L" type="string" value="thunar"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -135,11 +137,9 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;KP_7" type="string" value="move_window_workspace_7_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;Right" type="string" value="move_window_right_key"/>
       <property name="&lt;Primary&gt;F7" type="string" value="workspace_7_key"/>
-      <property name="&lt;Alt&gt;F4" type="string" value="close_window_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;Left" type="string" value="move_window_left_key"/>
       <property name="&lt;Alt&gt;F6" type="string" value="stick_window_key"/>
       <property name="&lt;Alt&gt;F12" type="string" value="above_key"/>
-      <property name="&lt;Alt&gt;F9" type="string" value="hide_window_key"/>
       <property name="&lt;Alt&gt;F8" type="string" value="resize_window_key"/>
       <property name="&lt;Super&gt;Tab" type="string" value="switch_window_key"/>
       <property name="Escape" type="string" value="cancel_key"/>
@@ -171,10 +171,11 @@
       <property name="&lt;Alt&gt;F3" type="string" value="popup_menu_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;Right" type="string" value="move_window_next_workspace_key"/>
       <property name="&lt;Shift&gt;&lt;Alt&gt;Left" type="string" value="move_window_prev_workspace_key"/>
-      <property name="&lt;Alt&gt;F10" type="string" value="maximize_window_key"/>
-      <property name="&lt;Super&gt;d" type="string" value="show_desktop_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Left" type="string" value="prev_workspace_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Right" type="string" value="next_workspace_key"/>
+      <property name="&lt;Super&gt;d" type="string" value="maximize_window_key"/>
+      <property name="&lt;Super&gt;x" type="string" value="hide_window_key"/>
+      <property name="&lt;Alt&gt;q" type="string" value="close_window_key"/>
     </property>
   </property>
   <property name="providers" type="array">

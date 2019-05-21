@@ -5,8 +5,8 @@
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="last-location-bar" type="string" value="ThunarLocationButtons"/>
   <property name="last-icon-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_100_PERCENT"/>
-  <property name="last-window-width" type="int" value="942"/>
-  <property name="last-window-height" type="int" value="625"/>
+  <property name="last-window-width" type="int" value="800"/>
+  <property name="last-window-height" type="int" value="548"/>
   <property name="last-window-maximized" type="bool" value="false"/>
   <property name="last-separator-position" type="int" value="149"/>
   <property name="last-show-hidden" type="bool" value="true"/>
@@ -20,5 +20,9 @@
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="network:///"/>
   </property>
-  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_24"/>
+  <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
+  <property name="last-menubar-visible" type="bool" value="true"/>
+  <property name="tree-icon-size" type="string" value="THUNAR_ICON_SIZE_16"/>
+  <property name="shortcuts-icon-emblems" type="bool" value="true"/>
+  <property name="misc-date-style" type="string" value="THUNAR_DATE_STYLE_SHORT"/>
 </channel>
