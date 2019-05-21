@@ -610,13 +610,13 @@ toolbarspring {
 	margin-right: 20vw !important;
 }*/
 
-#PanelUI-button,
+/*#PanelUI-button,
 #customization-panel-container,
 #customization-panelWrapper .panel-arrow { /* Move hamburger menu to the left */
-	-moz-box-ordinal-group: 0 !important;
+/*	-moz-box-ordinal-group: 0 !important;
 	margin-right: -6px !important;
 	margin-top: 1px !important;
-}
+}*/
 	
 #PlacesToolbar {
 	margin-top: 2px;
@@ -638,17 +638,38 @@ toolbarspring {
 	background-color: transparent !important;
 }
 
+/* Make the tab bar go above the hidden navbar */
+#navigator-toolbo, #titlebar {
+	z-index: 42069 !important;
+}
+#titlebar {
+	z-index: 440 !important;
+}
+
+.tabbrowser-arrowscrollbox {
+	z-index: 20 !important;
+}
+
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
-	margin-left: 100vw !important;
+	/*margin-left: 100vw !important;*/
 	margin-top: -32px !important;
-	z-index: 6969 !important;
+	z-index: -250 !important;
+	transition: opacity 200ms;
+  overflow-y: hidden;
+  max-height:0;
+  min-height:0 !important;
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+  opacity: 0;
 }
 
 /* When navbar is focused, bring it into view */
-#navigator-toolbox:not([customizing]) #nav-bar:focus-within,
-#navigator-toolbox:not([customizing]) #nav-bar:hover:focus-within {
-	margin-left: 0vw !important;
+#navigator-toolbox:not([customizing]):focus-within #nav-bar {
+	/*margin-left: 0vw !important;*/
+	opacity: 1 !important;
+	z-index: 69420 !important;
+	max-height: 32px;
 }
 
 #navigator-toolbox:not([customizing]) * #TabsToolbar {

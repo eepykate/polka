@@ -33,7 +33,7 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #fi
 
 #xrdb ~/.Xresources &!
-python3 -m http.server --directory ~/.startpage 8200 &!
+nohup python3 -m http.server --directory ~/.startpage 8200 &!
 shortcuts &!
 echo "$HOME/.config/sc" | entr shortcuts &!
 
