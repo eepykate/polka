@@ -1,7 +1,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 
-/* Colours (Hopefully) */
+/* Colours */
 :root {
 --bgdark: #191d2a;
 --bglight: #1e2232;
@@ -14,7 +14,7 @@
 --border: #262c42;
 --disabled: #696969;
 --fgdark: #8888a0;
-	}
+}
 	
 	
 :root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
@@ -37,6 +37,8 @@
 	--color-overflow: var(--fglight);                                  /* >> button color */
 	--lwt-toolbar-field-color: var(--fglight) !important;
 	--lwt-text-color: var(--fglight) !important;
+	--toolbarbutton-hover-background: var(--bglighter) !important;
+	--button-radius: 0.5em !important;
 
 }
 
@@ -129,17 +131,21 @@ browser[type=content] > html {
 	background-color: transparent !important;
 }
 
-/* Round buttons */
+/* Rounded buttons */
+.toolbarbutton-1 {
+	border-radius: var(--button-radius) !important;
+}
+
 .close-icon {
-	border-radius: 0.5em !important;
+	border-radius: var(--button-radius) !important;
 }
 
 .tabs-newtab-button > #new-tab-button > #alltabs-button {
-	border-radius: 0.5em !important;
+	border-radius: var(--button-radius) !important;
 }
 
 :root{
-	--toolbarbutton-border-radius: 0.5em !important;
+	--toolbarbutton-border-radius: var(--button-radius) !important;
 }
 
 /* Round tabs & change colour*/
@@ -147,15 +153,20 @@ browser[type=content] > html {
 		background-color: transparent !important;
 }
 
-.tabbrowser-tab[selected=true],
+/*.tabbrowser-tab[selected=true],
 .tabbrowser-tab[selected=true] .tab-stack .tab-content {
 	background-color: var(--bglight) !important;
 	color: var(--fglight) !important;
-}
+}*/
 
-.tabbrowser-tab:hover,
+/*.tabbrowser-tab:hover,
 .tabbrowser-tab:hover .tab-stack .tab-content {
 		background-color: var(--bglight) !important;
+}*/
+
+
+.tabbrowser-tab[selected="true"] .tab-background {
+	background: var(--bglight) !important;
 }
 
 .tabbrowser-tab .tab-text.tab-label {
@@ -175,29 +186,28 @@ browser[type=content] > html {
 		display: none !important;
 }
 
-/* Change the cursor when hovering over a tab */
-/*.tabbrowser-tab:hover,
-.tabbrowser-tab .tab-text.tab-label:hover {
-		cursor: pointer !important; 
+/* Remove 2px gap left by tab-line if hidden */
+.tabbrowser-tab {
+	margin-top: -2px !important;
+}
+
+.toolbarbutton-icon {
+	--toolbarbutton-hover-background: #c5d3eb1c !important;
+	--toolbarbutton-active-background: #c5d3eb21 !important;
+}
+
+/* Show tab-line */
+/*.tab-line[selected="true"] {
+	background-color: var(--accent) !important;
+	z-index: 2 !important;
 }*/
 
-/* Small padding between tabs */
-/*.tabbrowser-tab {
-	margin-left: 2px !important;
-	margin-right: 2px !important;
-}*/
+/*
+#tabbrowser-tabs:-moz-window-inactive {
+	--tab-line-color: var(--bglight) !important;
+}
+*/
 
-/* No border on tabs i guess? frankly idk */
-/* [tabsintitlebar]:root:not([extradragspace]) .tabbrowser-tab::after,
-.tabbrowser-tab:hover::after,
-#tabbrowser-tabs:not([movingtab])>.tabbrowser-tab[beforehovered]::after {
-		border: none !important;              
-} */
-
-/*#tabbrowser-tabs[movingtab=true] > *, #TabsToolbar > * {
-		padding: 0 !important;
-		margin: 0 !important;
-}*/
 
 /* Hide a few buttons on the navbar */
 #pageActionSeparator, #pocket-button {
@@ -205,6 +215,7 @@ browser[type=content] > html {
 }
 
 
+/***   Center urlbar and popup items   ***/
 /* Center text on the URL bar */
 /*#urlbar {
 	text-align: center;
@@ -228,14 +239,15 @@ browser[type=content] > html {
 	text-align: center !important;
 	padding: 0px 0px !important;
 	border-radius: 0.5em !important;
-		padding-left: 14px !important;
+	padding-left: 14px !important;
 }*/
 
+/* Change the colour of search popup */
 .search-panel-one-offs, .search-panel-one-offs > *, .search-one-offs,
 .search-panel-searchforwith, .search-panel-current-input, .searchbar-oneoffheader-search {
 	background-color: var(--bglight) !important;
 }
-	
+
 .autocomplete-richlistbox {
 	background: var(--bglight) !important;
 	color: var(--fglight) !important;
@@ -322,12 +334,11 @@ browser[type=content] > html {
 	* { background: var(--bgdark) !important; }
 }
 
-@-moz-document url(chrome://browser/content/browser.xul){
+@-moz-document url(chrome://browser/content/browser.xul) {
 	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important} 
 }
 
-@-moz-document url(chrome://browser/content/browser.xul)
-{
+@-moz-document url(chrome://browser/content/browser.xul) {
 	 #main-window,
 	 browser[type="content-primary"],
 	 browser[type="content"],
@@ -362,10 +373,11 @@ menu[disabled="true"]{
 }
 
 menuitem:hover,
-menu:hover{
+menu:hover {
 	background-color:#2e323f !important;
 }
 
+/* Make things dark */
 #nav-bar {
 	background-color: var(--bglight) !important;
 }
@@ -375,7 +387,7 @@ menu:hover{
 }
 
 #urlbar, .searchbar-textbox{
-		background-color: var(--bgdark) !important;
+	background-color: var(--bgdark) !important;
 }
 
 #PersonalToolbar {
@@ -405,7 +417,7 @@ menu:hover{
 	background: var(--bglight) !important;
 }   
 
-/* Disable small ugly grey border on the bookmarks bar because "my" gtk theme sucks */
+/* Disable small ugly grey border on the bookmarks bar because oomox themes are weird with firefox */
 #PersonalToolbar {
 	padding: 0px !important;
 }
@@ -514,7 +526,7 @@ toolbarbutton.bookmark-item:hover {
 }
 
 #tabbrowser-tabs {
-	--tab-loading-fill: #1d8a99 !important; /* Colour of fill animation when tab has finished loading */
+	--tab-loading-fill: var(--accent) !important; /* Colour of fill animation when tab has finished loading */
 	box-shadow: none !important;
 }
 
@@ -541,24 +553,6 @@ toolbarspring {
 .tabbrowser-tab[fadein]:not([pinned]) {
 	max-width: 200px !important;
 }
-
-/*.tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 100px !important;
-} */
-
-
-/*
-.tab-line {
-	background-color: var(--accent) !important;
-	height: 2px !important;
-}  
-
-#tabbrowser-tabs:-moz-window-inactive {
-	--tab-line-color: var(--bglight) !important;
-}
-*/
-
-
 
 .findbar-closebutton {
 	background-color: var(--bgdark) !important;
@@ -640,21 +634,14 @@ toolbarspring {
 
 /* Make the tab bar go above the hidden navbar */
 #navigator-toolbo, #titlebar {
-	z-index: 42069 !important;
-}
-#titlebar {
-	z-index: 440 !important;
-}
-
-.tabbrowser-arrowscrollbox {
-	z-index: 20 !important;
+	z-index: 1 !important;
 }
 
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
 	/*margin-left: 100vw !important;*/
 	margin-top: -32px !important;
-	z-index: -250 !important;
+	z-index: -1 !important;
 	transition: opacity 200ms;
   overflow-y: hidden;
   max-height:0;
@@ -668,7 +655,7 @@ toolbarspring {
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
 	/*margin-left: 0vw !important;*/
 	opacity: 1 !important;
-	z-index: 69420 !important;
+	z-index: 2 !important;
 	max-height: 32px;
 }
 
