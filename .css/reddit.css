@@ -1,3 +1,6 @@
+:root {
+	--accent-darker: #097fce;
+}
 span.pagename.redditname a {
  display:block;
  width:100%;
@@ -719,7 +722,6 @@ body:not(.search-page) .menuarea {
  font-size:12px;
  font-weight:bold;
  text-transform:uppercase;
- margin-top: 0px!important
 }
 .comments-page .menuarea {
  font-size:12px;
@@ -3059,10 +3061,6 @@ button:active {
  padding:5px
 }
 
-#siteTable .thing .md ol,
-.commentarea .thing .md ol {
- list-style-position:inside
-}
 #siteTable .thing .md table thead tr th,
 .commentarea .thing .md table thead tr th {
  font-weight:normal;
@@ -3568,8 +3566,6 @@ html[lang="dm"] .RES-keyNav-activeElement .md-container {
 
 
 
-
-
 #header-bottom-right {
 	margin-top: -165px !important;
 }
@@ -3584,6 +3580,7 @@ ul.tabmenu > li > a,
 #RESShortcutsEditContainer,
 .side,
 .md pre,
+.link,
 .md pre code,
 .entry {
 	background-color: var(--bgdark) !important;
@@ -3796,7 +3793,6 @@ ertext-edit textarea:focus {
 	background-color: #00000000 !important;
 }
 
-
 .RESshortcut, .RESDashboardToggle {
 	color: var(--bgdark) !important;
 }
@@ -3839,3 +3835,24 @@ div.pinnable-content.pinned { display: none !important; }
 body.multi-page * .pagename a::before {
 	content: "m/" !important;
 }
+ol, ol li {
+	border: none !important;
+}
+ol {
+	margin-left: 20px !important;
+}
+.res-image-media {
+    z-index:99999;
+}
+
+#redesign-beta-optin-btn {
+	display : none !important;
+}
+
+body {
+	overflow-x: hidden !important;
+}
+.menuarea {
+	margin-top: 25px !important;
+}
+
