@@ -18,36 +18,40 @@
 }
 	
 	
-:root:-moz-lwtheme-brighttext {                                       /* minor color changes to the default dark theme */
+:root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
 	--color-overflow: #222;                                         /* >> button color */
-	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
-	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
 	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
 	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
 	--lwt-text-color: var(--fglight) !important;
+	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
+	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
 }
 	
 :root {
-	--tabs-border: transparent !important;                             /* active tab left & right borders - not working in 58?*/
-	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
-	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
+	text-shadow: none !important;                                      /* Remove shadow from text */
+	--color-overflow: var(--fglight);                                  /* button color */
+	--button-radius: 0.5em !important;                                 /* Border-radius of buttons */
+	--tabs-border: transparent !important;                             /* Hide tab border */
 	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
-	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
-	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
 	background-color: var(--bglight) !important;                       /* top border of out of focus window */
-	--color-overflow: var(--fglight);                                  /* >> button color */
+	--lwt-text-color: var(--fglight) !important;                       /* Text colour */
+	--lwt-sidebar-text-color: var(--fglight) !important;               /* Sidebar text colour */
+	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
 	--lwt-toolbar-field-color: var(--fglight) !important;
-	--lwt-text-color: var(--fglight) !important;
-	--button-radius: 0.5em !important;
+	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
+	--lwt-toolbarbutton-icon-fill: var(--fgdark) !important;           /* Button fill color */
+	--toolbarbutton-border-radius: var(--button-radius) !important;    /* border-radius of buttons */
+	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
+	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
 	--autocomplete-popup-highlight-background: var(--selected) !important;
-
 }
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
 
+/* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
-		-moz-box-ordinal-group: 0 !important;
-		margin: 0px 4px 0px -2px !important;
+	-moz-box-ordinal-group: 0 !important;
+	margin: 0px 4px 0px -2px !important;
 }
 
 .tabbrowser-tab .tab-close-button {
@@ -68,6 +72,7 @@
 }*/
 
 
+
 /* Stop white flash on opening a new tab */
 #browser vbox#appcontent tabbrowser,
 #content,
@@ -76,22 +81,48 @@ browser[type=content-primary],
 browser[type=content] > html {
 	background: var(--bgdark)!important
 }
-
 #tabbrowser-tabpanels {
-  background: var(--bgdark) !important;
+	background: var(--bgdark) !important;
 }
+
+
+
+/*Prevents White pre-load flash*/ 
+.tabbrowser-tabbox {
+	background-color:  var(--bgdark) !important;
+}
+
+@-moz-document url(about:blank) {
+	* { background: var(--bgdark) !important; }
+}
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important} 
+}
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+	#main-window,
+	browser[type="content-primary"],
+	browser[type="content"],
+	tabbrowser#content,
+	#content,
+	browser[type="content"] > html
+	{
+		background: var(--bgdark) !important;
+	}
+}
+
+
 
 /* Tabs are de-saturated and transparent when inactive */
 .tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
-		filter: grayscale(50%) !important;
+	filter: grayscale(50%) !important;
 }
-
 /*
 .tabbrowser-tab[selected=true] > .tab-stack > .tab-content > *,
 .tabbrowser-tab:hover > .tab-stack > .tab-content > *{
-		filter: grayscale(0%) !important;
+	filter: grayscale(0%) !important;
 }*/
-
 .tabbrowser-tab{ 
 	opacity: 0.33 !important;
 }
@@ -102,35 +133,30 @@ browser[type=content] > html {
 	opacity: 1 !important;
 }
 
+
+
 /* Round URL bar */
 #urlbar, .searchbar-textbox{
-		border-radius: 0.5em !important;
+	border-radius: 0.5em !important;
 }
+
 
 
 /* Hide bookmarks bar until hover */
 /*#PersonalToolbar {
-		opacity:0 !important;
-		margin-top: -26px !important;
-		transition: all 0.2s ease 0s !important;
+	1opacity:0 !important;
+	margin-top: -26px !important;
+	transition: all 0.2s ease 0s !important;
 }
 
 #navigator-toolbox:hover > #PersonalToolbar {
-		visibility: visible !important;
-		margin-top: 0px !important;
-		transition: all 0.2s ease 0s !important;
-		opacity: 1 !important;
+	visibility: visible !important;
+	margin-top: 0px !important;
+	transition: all 0.2s ease 0s !important;
+	opacity: 1 !important;
 }*/
 
-/* Change colour of new tab button */
-.tabs-newtab-button > #new-tab-button > #alltabs-button {
-	color: var(--fglight) !important;
-}
 
-.tabs-newtab-button:hover > #new-tab-button > #alltabs-button {
-	color: var(--accent) !important;
-	background-color: transparent !important;
-}
 
 /* Rounded buttons */
 .toolbarbutton-1 {
@@ -145,28 +171,18 @@ browser[type=content] > html {
 	border-radius: var(--button-radius) !important;
 }
 
-:root{
-	--toolbarbutton-border-radius: var(--button-radius) !important;
-}
 
-/* Round tabs & change colour*/
-.tabbrowser-tab, .tab-content, .tab-background {
-		background-color: transparent !important;
-}
 
-/*.tabbrowser-tab[selected=true],
-.tabbrowser-tab[selected=true] .tab-stack .tab-content {
-	background-color: var(--bglight) !important;
-	color: var(--fglight) !important;
-}*/
-
-/*.tabbrowser-tab:hover,
-.tabbrowser-tab:hover .tab-stack .tab-content {
-		background-color: var(--bglight) !important;
-}*/
 /* Remove 2px border from the bottom of the titlebar */
 #navigator-toolbox {
 	border: none !important;
+}
+
+
+
+/* Round tabs & change colour*/
+.tabbrowser-tab, .tab-content, .tab-background {
+	background-color: transparent !important;
 }
 
 .tabbrowser-tab[selected="true"] .tab-background {
@@ -174,31 +190,32 @@ browser[type=content] > html {
 }
 
 .tabbrowser-tab .tab-text.tab-label {
-		color: var(--fglight) !important;          
+	color: var(--fglight) !important;          
 }
 
 .tabbrowser-tab:hover .tab-text.tab-label {
-		color: var(--fglight) !important;          
+	color: var(--fglight) !important;          
 }
 
 .tabbrowser-tab[selected="true"] .tab-text.tab-label {
-		color: var(--fglight) !important;           
+	color: var(--fglight) !important;           
 }
 
-/* No line at the top of tabs, so that you can round the tabs */
-.tab-line {                            
-		display: none !important;
+
+
+/* Hide tab line */
+.tab-line {
+	display: none !important;
 }
+
+
 
 /* Remove 2px gap left by tab-line if hidden */
-/*.tabbrowser-tab {
+.tabbrowser-tab {
 	margin-top: -2px !important;
-}*/
-
-.toolbarbutton-icon, .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: #c5d3eb1c !important;
-	--toolbarbutton-active-background: #c5d3eb21 !important;
 }
+
+
 
 /* Show tab-line */
 /*.tab-line[selected="true"] {
@@ -206,16 +223,23 @@ browser[type=content] > html {
 	z-index: 2 !important;
 }
 
-
 #tabbrowser-tabs:-moz-window-inactive {
 	--tab-line-color: var(--bglight) !important;
+}*/
+
+
+
+/* Change toobbarbutton hover and presscolour */
+.toolbarbutton-icon, .toolbarbutton-badge-stack {
+	--toolbarbutton-hover-background: #c5d3eb1c !important;
+	--toolbarbutton-active-background: #c5d3eb21 !important;
 }
-*/
+
 
 
 /* Hide a few buttons on the navbar */
 #pageActionSeparator, #pocket-button {
-		display: none !important;
+	display: none !important;
 }
 
 
@@ -225,7 +249,7 @@ browser[type=content] > html {
 	text-align: center;
 } */
 
-/* Clean up (hide) a few items on the search popup */
+/* hide a few items on the search popup */
 /*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
 #PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
@@ -237,7 +261,6 @@ browser[type=content] > html {
 	display: none !important;
 }*/
 
-/* restyle popup items */
 /*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
 	-moz-box-orient: vertical !important;
 	text-align: center !important;
@@ -246,10 +269,21 @@ browser[type=content] > html {
 	padding-left: 14px !important;
 }*/
 
+
+
 /* Change the colour of search popup */
 .search-panel-one-offs, .search-panel-one-offs > *, .search-one-offs,
 .search-panel-searchforwith, .search-panel-current-input, .searchbar-oneoffheader-search {
 	background-color: var(--bglight) !important;
+}
+
+#urlbar-results,
+.urlbarView-row {
+	background: var(--bglight) !important;
+}
+
+.urlbarView-row {
+	--autocomplete-popup-highlight-background: var(--selected) !important;
 }
 
 .autocomplete-richlistbox {
@@ -293,82 +327,32 @@ browser[type=content] > html {
 
 
 
-/* Add a border and rounding to the urlbar/search popup */
+/* Remove border and rounding from the search popup */
 .search-panel-one-offs-header, .search-panel-header, .search-panel-current-input, #PopupAutoCompleteRichResult, .autocomplete-richlistitem, .box-inherit, .scrollbox-innerbox, .autocomplete-richlistbox {
 	border: none !important;
 }
 
 #PopupAutoCompleteRichResult .autocomplete-richlistitem {
-	border-top-right-radius: 0 !important;
-	border-top-left-radius: 0 !important;
-	border-bottom-right-radius: 0 !important;
-	border-bottom-left-radius: 0 !important;
-	
+	border-radius: 0 !important;
 }
 
-/*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem .ac-action[actiontype=searchengine]:not([selected]) {
-	display: block !important;
-}
 
-#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
-	border-inline-end: 0px solid transparent !important;
-}
-
-#PopupAutoCompleteRichResult {
-	margin-left: 10% !important;
-	margin-right: 10% !important;
-	border-radius: 0 0 0.6em 0.6em !important;
-	border-left: 2px var(--border) solid !important;
-	border-right: 2px var(--border) solid !important;
-	border-bottom: 2px var(--border) solid !important;
-}
-*/
 
 /* Padding around the sides of the urlbar/search popup */
 .autocomplete-richlistitem {
 	max-width: 90% !important;
 }
 
-/*Prevents White pre-load flash*/ 
-.tabbrowser-tabbox {
-	background-color:  var(--bgdark) !important;
-}
-
-@-moz-document url(about:blank) {
-	* { background: var(--bgdark) !important; }
-}
-
-@-moz-document url(chrome://browser/content/browser.xul) {
-	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important} 
-}
-
-@-moz-document url(chrome://browser/content/browser.xul) {
-	 #main-window,
-	 browser[type="content-primary"],
-	 browser[type="content"],
-	 tabbrowser#content,
-	 #content,
-	 browser[type="content"] > html
-	 {
-			background: var(--bgdark) !important;
-	 }
-}
 
 
-/* Makes popups, menus and context menus dark */
+/***   Make things dark   ***/
 .panel-arrowcontent,
 #alltabs-popup .arrowscrollbox-scrollbox,
 menupopup:not(#BMB_bookmarksPopup),
-.textbox-contextmenu{
+.textbox-contextmenu {
 	border: none !important;
 	background: var(--bgdark) !important;
 	color: var(--fglight) !important;
-}
-
-/* Dark navbar */
-#navigator-toolbox,
-#TabsToolbar {
-	background: var(--bgdark) !important;
 }
 
 menuitem[disabled="true"],
@@ -381,82 +365,85 @@ menu:hover {
 	background-color:#2e323f !important;
 }
 
-/* Make things dark */
-#nav-bar {
-	background-color: var(--bglight) !important;
-}
-
-#tabbrowser-tabs {
+#urlbar, 
+#TabsToolbar,
+#sidebar-header,
+#tabbrowser-tabs,
+.findbar-textbox, 
+.searchbar-textbox,
+#navigator-toolbox, 
+.downloadsFooterButtons, 
+.downloadsPanelFooterButton,
+#identity-popup-clear-sitedata-footer 
+{
 	background-color: var(--bgdark) !important;
 }
 
-#urlbar, .searchbar-textbox{
-	background-color: var(--bgdark) !important;
-}
-
-#PersonalToolbar {
-	background-color: var(--bgdark) !important;
-}
-
-.box-inherit-scrollbox-innerbox {
-	background-color: var(--fglight) !important;
-}
-
-#navigator-toolbox, #navigator-toolbox > #PersonalToolbar {
+#nav-bar, 
+#mainPopupSet, 
+#identity-popup,
+.download-state, 
+.browser-toolbar, 
+.downloadMainArea, 
+#downloadsListBox,
+#appMenu-mainView,
+.downloadContainer,
+.findbar-container,
+#personal-bookmarks,
+#navigator-toolbox #nav-bar,
+.identity-popup-security-content, 
+#navigator-toolbox > #PersonalToolbar,
+#toolbar-menubar.browser-toolbar.chromeclass-menubar 
+{
 	background-color: var(--bglight) !important;
 }
 
-#navigator-toolbox, #TabsToolbar, #nav-bar, #PersonalToolbar, 
-.browser-toolbar, #personal-bookmarks, 
-#toolbar-menubar.browser-toolbar.chromeclass-menubar {
-	background-color: var(--bglight) !important;
-}
 
-#navigator-toolbox,
-#TabsToolbar {
-	background: var(--bglight) !important;
-}
-
-#navigator-toolbox #nav-bar {      
-	background: var(--bglight) !important;
-}   
 
 /* Disable small ugly grey border on the bookmarks bar because oomox themes are weird with firefox */
 #PersonalToolbar {
 	padding: 0px !important;
 }
 
-/* Hide tab border */
-:root {
-	--tabs-border: transparent !important;
-}
 
+
+/* Hide tab seperator line */
 .tabbrowser-tab::after, .tabbrowser-tab::before {
-	 border-left: none !important;
+	border-left: none !important;
 }
 
+
+
+/* Hide urlbar border and shadow + change height */
 #urlbar, .searchbar-textbox {
 	border: none !important;
 	box-shadow: none !important;
+	height: 20px !important;
 }
 
+
+
+/* Remove shadow from navbar */
 #nav-bar {
 	margin-top: 0px !important;
 	border-top: 0px !important;
 	box-shadow: none !important;
 }
 
-#urlbar, .searchbar-textbox {
-	border: 0px !important;
-	height: 20px !important;
-}
 
+
+/* Small padding on urlbar */
 #urlbar {
 	margin-left: 1px !important;
 	margin-right: 1px !important;
 }
 
-window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled], :not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class], #main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {
+
+
+/* Remove shadow and border from a few elements */
+window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-any([disabled],
+:not([open]):not([disabled]):not(:active)) > .toolbarbutton-icon[class],
+#main-window:not([customizing]) #back-button[disabled] > .toolbarbutton-icon[class] {
 	box-shadow: none !important;
 	border: 0px !important;
 }
@@ -473,8 +460,9 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 	background-image: none !important;
 }
 
-/* bookmarks toolbar edge style */
 
+
+/* Bookmarks toolbar edge style */
 toolbarbutton.bookmark-item {
 	border: 1px rgba(0, 0, 0, 0) solid !important;
 }
@@ -484,80 +472,72 @@ toolbarbutton.bookmark-item:hover {
 	border: 1px var(--disabled) solid !important;
 }
 
-.titlebar-placeholder[type="post-tabs"] {
-	width: 50px !important;
-}
 
-#TabsToolbar {
-	margin-bottom: 0px !important;
-}
-#navigator-toolbox::after {
-	border-bottom: 0px !important;
-}
 
-#TabsToolbar .tab-background {
-	border-right: 0px !important;
-	border-left: 0px !important;
-}
-.scrollbutton-up, .scrollbutton-down {
-	margin-bottom: 0px !important;
-}
-.scrollbutton-up:hover, .scrollbutton-down:hover {
-	background: var(--accent) ;
-}
-.scrollbutton-up:hover:active, .scrollbutton-down:hover:active {
-	background: var(--accent);
-}
-.tabs-newtab-button .toolbarbutton-icon {
-	background: transparent ;
-}
-#urlbar, .searchbar-textbox {
-	box-shadow: none !important;
-}
+/* Fix some moving tab problems */
 #TabsToolbar[movingtab] {
 	padding-bottom: 0px !important;
 }
+
 #TabsToolbar[movingtab] > .tabbrowser-tabs {
 	padding-bottom: 0px !important;
 	margin-bottom: 0px !important;
 }
-#new-tab-button > .toolbarbutton-icon, #alltabs-button > .toolbarbutton-icon {
-	background-color: transparent;
+
+#tabbrowser-tabs[movingtab] {
+	margin-bottom: -2px !important;
 }
 
-#context-back > .menu-iconic-left, #context-forward > .menu-iconic-left, #context-reload > .menu-iconic-left, #context-stop > .menu-iconic-left, #context-bookmarkpage > .menu-iconic-left {
+
+
+/* Remove padding from some items */
+#context-back > .menu-iconic-left, 
+#context-stop > .menu-iconic-left, 
+#context-reload > .menu-iconic-left, 
+#context-forward > .menu-iconic-left, 
+#context-bookmarkpage > .menu-iconic-left {
 	padding: 0px !important;
 }
 
+
+
+/* Change colour of fill animation when tab has finished loading */
 #tabbrowser-tabs {
-	--tab-loading-fill: var(--accent) !important; /* Colour of fill animation when tab has finished loading */
+	--tab-loading-fill: var(--accent) !important;   
 	box-shadow: none !important;
 }
 
+
+
+/* Desaturate extension icons */
 .webextension-browser-action {
 	filter: saturate(0%);
 }
 
 
-:root[lwtheme-image]:-moz-lwtheme-brighttext {
-		text-shadow: none !important;
-}
 
+/* Desaturate and italic pending tabs */
 .tabbrowser-tab[pending] {
 	font-style: italic;
 	filter: grayscale(100%) !important;
 }
 
+
+
+/* Not sure, but it looks important */
 toolbarspring {
-		min-width: 8px;
-		max-width: 8px;
+	min-width: 8px;
+	max-width: 8px;
 }
 
-/* Change tab max width */
-.tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 200px !important;
+#PlacesToolbar {
+	margin-top: 2px;
+	margin-bottom: -2px;
 }
+	
 
+
+/* Find popup */
 .findbar-closebutton {
 	background-color: var(--bgdark) !important;
 	border-radius: 0 !important;
@@ -567,32 +547,27 @@ toolbarspring {
 	background-color: var(--button) !important;
 }
 
-.downloadMainArea, .download-state, .downloadContainer,
-.identity-popup-security-content, .findbar-container,
-#downloadsListBox, #mainPopupSet, #identity-popup {
-	background-color: var(--bglight) !important;
-}
 
-.downloadsFooterButtons, .downloadsPanelFooterButton,
-.findbar-textbox, #identity-popup-clear-sitedata-footer {	
-	background-color: var(--bgdark) !important; 
-}
 
-/* Hide the fullscreen warning popup */
-@-moz-document url(chrome://browser/content/browser.xul) {
-	#fullscreen-warning {
-		display: none !important;
-	}
-}
-
-#tabbrowser-tabs[movingtab] {
-	margin-bottom: -2px !important;
-}
-
-#TabsToolbar, #nav-bar, #titlebar, #tabbrowser-tabs, .tabbrowser-tab { 
+/* Change height of a few items */
+#TabsToolbar, 
+#nav-bar, 
+#titlebar, 
+.tabbrowser-tab,  
+#tabbrowser-tabs { 
 	height: 32px !important;
 }
-	
+
+
+
+/* Transparent url bar */
+#urlbar {
+	background-color: transparent !important;
+}
+
+
+
+/***   OneLiner   ***/
 /*#TabsToolbar {
 	margin-left: 42vw !important;
 }
@@ -615,27 +590,10 @@ toolbarspring {
 	margin-right: -6px !important;
 	margin-top: 1px !important;
 }*/
-	
-#PlacesToolbar {
-	margin-top: 2px;
-	margin-bottom: -2px;
-}
 
-#urlbar,
-.searchbar-textbox {
-	box-shadow: none !important;
-}
-	
-#urlbar:hover,
-.searchbar-textbox:hover {
-	box-shadow: none !important;
-}         
 
-/* Transparent url bar */
-#urlbar {
-	background-color: transparent !important;
-}
 
+/***   Tabs-only OneLiner   ***?
 /* Make the tab bar go above the hidden navbar */
 #navigator-toolbo, #titlebar {
 	z-index: 1 !important;
@@ -643,53 +601,42 @@ toolbarspring {
 
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
-	/*margin-left: 100vw !important;*/
 	margin-top: -32px !important;
 	z-index: -1 !important;
-	transition: opacity 200ms;
-  overflow-y: hidden;
-  max-height:0;
-  min-height:0 !important;
-  padding-top:0 !important;
-  padding-bottom:0 !important;
-  opacity: 0;
+	transition: opacity 200ms !important;
+	overflow-y: hidden;
+	max-height:0;
+	min-height:0 !important;
+	padding-top:0 !important;
+	padding-bottom:0 !important;
+	opacity: 0;
 }
 
 /* When navbar is focused, bring it into view */
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
-	/*margin-left: 0vw !important;*/
 	opacity: 1 !important;
 	z-index: 2 !important;
 	max-height: 32px;
 }
 
-#navigator-toolbox:not([customizing]) * #TabsToolbar {
-	margin-right: 0vw !important;
-}
+
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
 	max-width: 170px !important;
 }
 
+
+
 /* Hide user icon on navbar in developer edition */
 #fxa-toolbar-menu-button { display: none !important; }
 
-/* Sidebar header */
-#sidebar-header {
-	background-color: var(--bgdark) !important;
-}
 
-/* urlbar popup */
-#urlbar-results,
-.urlbarView-row {
-	background: var(--bglight) !important;
-}
 
-.urlbarView-row {
-	--autocomplete-popup-highlight-background: var(--selected) !important;
+/* Hide toolbox when fullscreen */
+#navigator-toolbox[inFullscreen="true"] {
+	display: none !important;
 }
-
 
 /* Needed for having the link hover thing at the cursor */
 /*
