@@ -14,6 +14,7 @@
 --border: #262c42;
 --disabled: #696969;
 --fgdark: #8888a0;
+--selected: #c5d3eb1c;
 }
 	
 	
@@ -37,8 +38,8 @@
 	--color-overflow: var(--fglight);                                  /* >> button color */
 	--lwt-toolbar-field-color: var(--fglight) !important;
 	--lwt-text-color: var(--fglight) !important;
-	--toolbarbutton-hover-background: var(--bglighter) !important;
 	--button-radius: 0.5em !important;
+	--autocomplete-popup-highlight-background: var(--selected) !important;
 
 }
 
@@ -163,7 +164,10 @@ browser[type=content] > html {
 .tabbrowser-tab:hover .tab-stack .tab-content {
 		background-color: var(--bglight) !important;
 }*/
-
+/* Remove 2px border from the bottom of the titlebar */
+#navigator-toolbox {
+	border: none !important;
+}
 
 .tabbrowser-tab[selected="true"] .tab-background {
 	background: var(--bglight) !important;
@@ -187,11 +191,11 @@ browser[type=content] > html {
 }
 
 /* Remove 2px gap left by tab-line if hidden */
-.tabbrowser-tab {
+/*.tabbrowser-tab {
 	margin-top: -2px !important;
-}
+}*/
 
-.toolbarbutton-icon {
+.toolbarbutton-icon, .toolbarbutton-badge-stack {
 	--toolbarbutton-hover-background: #c5d3eb1c !important;
 	--toolbarbutton-active-background: #c5d3eb21 !important;
 }
@@ -200,9 +204,9 @@ browser[type=content] > html {
 /*.tab-line[selected="true"] {
 	background-color: var(--accent) !important;
 	z-index: 2 !important;
-}*/
+}
 
-/*
+
 #tabbrowser-tabs:-moz-window-inactive {
 	--tab-line-color: var(--bglight) !important;
 }
@@ -670,6 +674,22 @@ toolbarspring {
 
 /* Hide user icon on navbar in developer edition */
 #fxa-toolbar-menu-button { display: none !important; }
+
+/* Sidebar header */
+#sidebar-header {
+	background-color: var(--bgdark) !important;
+}
+
+/* urlbar popup */
+#urlbar-results,
+.urlbarView-row {
+	background: var(--bglight) !important;
+}
+
+.urlbarView-row {
+	--autocomplete-popup-highlight-background: var(--selected) !important;
+}
+
 
 /* Needed for having the link hover thing at the cursor */
 /*
