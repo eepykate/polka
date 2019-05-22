@@ -9,7 +9,6 @@
 --accent: #ee99ff;
 --border: #262c42;
 --disabled: #696969;
---fgdark: #8888a0;
 }
 
 body {
@@ -68,7 +67,7 @@ main {
 	border: none;
 	border-bottom: 2px solid var(--border);   
 	color: var(--fgdark);
-	transition: all 200ms;
+	transition: all 00ms;
 	width: 100%;
 	max-width: 500px;
 	height: 30px;
@@ -86,7 +85,7 @@ main {
 	margin: 0 auto;
 	height: 2px;
 	background-color: var(--border);
-	transition: all 200ms;
+	transition: all 00ms;
 	transition-timing-function: ease-out;
 }
 
@@ -100,14 +99,14 @@ main {
 	display: block;
 	width: auto;
 	text-align: center;
-	transition: all 200ms ease 0s;
+	transition: all 00ms ease 0s;
 	box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);
 }
 
 .title {
 	color: var(--fglight);
 	font-size: 18px;
-	transition: all 200ms ease 0s;
+	transition: all 00ms ease 0s;
 	display: block;
 	text-align: center;
 	background-color: var(--bglight);
@@ -132,7 +131,7 @@ a:visited, a {
 	text-decoration: none;
 	outline: none;
 }
-a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 200ms ease 0s; }
+a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 00ms ease 0s; }
 a:hover {	color: var(--accent);}
 
 #notes:hover:not(:focus) {
@@ -262,4 +261,6 @@ main section {
 
 .box:hover .title {
 	background-color: var(--accent);
+	color: var(--bgdark);
 }
+
