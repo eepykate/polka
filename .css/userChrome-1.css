@@ -35,6 +35,7 @@
 	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
 	background-color: var(--bglight) !important;                       /* top border of out of focus window */
 	--lwt-text-color: var(--fglight) !important;                       /* Text colour */
+	--toolbarbutton-icon-fill-opacity: 100% !important;
 	--lwt-sidebar-text-color: var(--fglight) !important;               /* Sidebar text colour */
 	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
 	--lwt-toolbar-field-color: var(--fglight) !important;
@@ -384,6 +385,7 @@ menu:hover {
 #identity-popup,
 .download-state, 
 .browser-toolbar, 
+#downloadsPanel-mainView,
 .downloadMainArea, 
 #downloadsListBox,
 #appMenu-mainView,
@@ -636,6 +638,18 @@ toolbarspring {
 /* Hide toolbox when fullscreen */
 #navigator-toolbox[inFullscreen="true"] {
 	display: none !important;
+}
+
+toolbarseparator {
+	background-color: var(--bglighter) !important;
+}
+
+.download-state,
+#downloadsHistory,
+.search-panel-one-offs,
+.searchbar-engine-one-off-item,
+.searchbar-engine-one-off-item .button-box {
+	border-color: var(--bglighter) !important;
 }
 
 /* Needed for having the link hover thing at the cursor */
