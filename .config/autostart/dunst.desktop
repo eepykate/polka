@@ -5,7 +5,6 @@ Type=Application
 Name=dunst
 Comment=
 Exec=dunst
-OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Hidden=false

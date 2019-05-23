@@ -1,0 +1,65 @@
+alt + super + t
+    synclient TouchpadOff=1
+
+alt + ctrl + t
+    synclient TouchpadOff=0
+
+super + Return
+    st
+
+super + f
+    firefox-developer-edition
+
+super + c 
+    dolphin
+
+super + space 
+    rofi -show run
+
+alt + ctrl + space 
+    dmenu_run
+
+Print
+    maim_fullscreen
+
+super + Print
+    maim_focused
+
+shift + Print 
+    maim_selection
+
+ctrl + alt + m 
+    dmenumount
+
+ctrl + alt + u 
+    dmenuumount
+
+XF86AudioPlay
+    pulseaudio-ctl play-pause
+
+XF86AudioRaiseVolume
+    pulseaudio-ctl up
+
+XF86AudioLowerVolume
+    pulseaudio-ctl down
+
+ctrl + alt + w 
+    wifi 
+
+XF86AudioMute 
+    pulseaudio-ctl mute 
+
+super + l 
+    lock 
+
+super + t
+    tp.sh
+
+shift + super + F1
+    tp.sh
+
+ctrl + alt + s 
+    ts.sh
+
+alt + grave
+    dropdown.sh

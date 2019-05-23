@@ -5,7 +5,6 @@ Type=Application
 Name=Drop-down tabbed
 Comment=
 Exec=tabbed -r 2 -n "drop-down-st" st -w ''
-OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Hidden=false

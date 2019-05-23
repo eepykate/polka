@@ -5,7 +5,6 @@ Type=Application
 Name=Lock screen
 Comment=
 Exec=xautolock -time 10 -locker ~/bin/lock
-OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Hidden=false
