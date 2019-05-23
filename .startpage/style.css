@@ -85,7 +85,7 @@ main {
 	margin: 0 auto;
 	height: 2px;
 	background-color: var(--border);
-	transition: all 00ms;
+	transition: all 200ms;
 	transition-timing-function: ease-out;
 }
 
