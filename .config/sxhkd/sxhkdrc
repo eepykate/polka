@@ -34,20 +34,31 @@ ctrl + alt + m
 ctrl + alt + u 
     dmenuumount
 
+
+
+XF86AudioPrev
+   vol prev
+
+XF86AudioNext
+   vol next
+
 XF86AudioPlay
-    pulseaudio-ctl play-pause
+   vol p
 
 XF86AudioRaiseVolume
-    pulseaudio-ctl up
+   vol up 
 
 XF86AudioLowerVolume
-    pulseaudio-ctl down
+    vol down
+
+XF86AudioStop
+	vol stop
+
+XF86AudioMute 
+    vol m
 
 ctrl + alt + w 
     wifi 
-
-XF86AudioMute 
-    pulseaudio-ctl mute 
 
 super + l 
     lock 
@@ -63,3 +74,9 @@ ctrl + alt + s
 
 alt + grave
     dropdown.sh
+
+alt + q
+    xdotool getwindowfocus windowclose
+
+super + q
+    xdotool getwindowfocus windowkill
