@@ -44,6 +44,8 @@ function notify() {
 		$1 "" "$2" "$3" "[]" "{}" 5000 >/dev/null
 }
 
+. /tmp/player
+
 muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
 
 if [[ $muted = on ]]; then
@@ -61,12 +63,12 @@ case $1 in
 	m)      amixer -D pulse sset Master $mute >/dev/null;;
 	mute)   amixer -D pulse sset Master mute >/dev/null;;
 	unmute) amixer -D pulse sset Master unmute >/dev/null;;
-	pause)  playerctl pause 2>/dev/null;;
-	play)   playerctl play 2>/dev/null;;
-	p)      playerctl play-pause 2>/dev/null;;
-	next)   playerctl next 2>/dev/null;;
-	prev)   playerctl previous 2>/dev/null;;
-	stop)   playerctl stop 2>/dev/null;;
+	pause)  playerctl -p $player pause 2>/dev/null;;
+	play)   playerctl -p $player play 2>/dev/null;;
+	p)      playerctl -p $player play-pause 2>/dev/null;;
+	next)   playerctl -p $player next 2>/dev/null;;
+	prev)   playerctl -p $player previous 2>/dev/null;;
+	stop)   playerctl -p $player stop 2>/dev/null;;
 	previous) playerctl previous 2>/dev/null;;
 esac
 
@@ -132,8 +134,8 @@ case $1 in
 	stop)   printf "Media stopped\n"; notify 420 "Media stopped";;
 	previous) printf "$song\n"; notify 420  "$output_prev" "$SpA";;
 	status) case $2 in 
-				vol)  printf "%s\n" "$output";;
-				song) printf "%s\n" "$song";;
-				*) printf "%s  /  %s\n" "$song" "$output";;
-			esac;;
+		vol)  printf "%s\n" "$output";;
+		song) printf "%s\n" "$song";;
+		*) printf "%s  /  %s\n" "$song" "$output";;
+	esac;;
 esac

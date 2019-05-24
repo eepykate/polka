@@ -80,3 +80,6 @@ alt + q
 
 super + q
     xdotool getwindowfocus windowkill
+
+super + s
+    players.sh
