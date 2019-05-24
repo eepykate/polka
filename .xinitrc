@@ -1,6 +1,12 @@
-xrdb ~/.Xresources
+xrdb ~/.Xresources &
+
 dunst &
-compton &
+compton & 
 /usr/bin/xset r rate 200 60 &
 /usr/bin/sxhkd &
+if [ ! "$DBUS_SESSION_BUS_ADDRESS" ] && have dbus-launch; then
+	exec dbus-launch --exit-with-session ~/.xinitrc "$@" || exit
+fi
+~/.fehbg
+xsetroot -cursor_name left_ptr
 exec /usr/bin/bspwm

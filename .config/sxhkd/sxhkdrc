@@ -82,11 +82,11 @@ ctrl + alt + s
 alt + grave
 	dropdown.sh
 
-alt + q
-	xdotool getwindowfocus windowclose
+#alt + q
+#	xdotool getwindowfocus windowclose
 
-super + q
-	xdotool getwindowfocus windowkill
+#super + q
+#	xdotool getwindowfocus windowkill
 
 super + s
 	players.sh
@@ -94,6 +94,12 @@ super + s
 ###       ###
 ##  bspwm  ##
 ###       ###
+
+super + q
+	bspc node -k
+
+alt + q
+	bspc node -c
 
 alt + c
 	bspc node -p cancel
@@ -115,3 +121,13 @@ ctrl + alt + {Left,Right}
 
 shift + alt + {Left,Right}
 	desktop.sh move {previous,next}
+
+shift + alt + {Right,Left}
+	DIR={next,prev}; \
+	bspc node -d "$DIR"; \
+	bspc desktop -f "$DIR"
+
+ctrl + alt + {Right,Left}
+	bspc desktop -f {next,prev}
+
+

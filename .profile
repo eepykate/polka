@@ -33,10 +33,9 @@ export LESS_TERMCAP_ue=$'\E[0m' # reset underline
 #fi
 
 #xrdb ~/.Xresources &!
-nohup python3 -m http.server --directory ~/.startpage 8200 &>/dev/null &
-shortcuts &
-echo "$HOME/.config/sc" | entr shortcuts &
-echo "$HOME/.config/sc" | entr shortcuts &
+nohup python3 -m http.server --directory ~/.startpage 8200 &>/dev/null
+shortcuts
+echo "$HOME/.config/sc" | entr shortcuts
 
 if [[ "$TERM" = "linux" ]]; then
 	source ~/.config/tty-colours.sh

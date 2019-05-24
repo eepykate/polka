@@ -9,300 +9,111 @@
 ;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 ;
 ;
-;   Modified By Aditya Shakya.
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
 ;
 ;==========================================================
 
-[color]
-
-trans = #00000000
-white = #FFFFFF
-black = #000000
-
-bg = #15171d
-fg = #FFFFFF
-fg-alt = #A9ABB0
-
-acolor = #4d9de0
-curgent = #ed254e
-coccupied = #29c583
-
-##  Colors
-
-red = #ed254e
-green = #29c583
-yellow = #ffd97d
-blue = #4d9de0
-magenta = #dd55ba
-cyan = #23a6c1
-grey = #757575
-
-;==========================================================
+[colors]
+bg = #1e2232
+fg = #ccccee
+accent = #ee99ff
+alert = #bd2c40
 
 [bar/main]
 monitor = HDMI-0
-width = 460
-height = 18
-offset-x = 70%
-offset-y = 2
-bottom = false
+;monitor = ${env:MONITOR:HDMI-1}
+width = 98%
+height = 28
+offset-x = 5px
+offset-y = 4px
+radius = 0
 fixed-center = false
+
+bg = ${colors.bg}
+fg = ${colors.fg}
+
 line-size = 2
+line-color = #f00
 
-background = ${color.bg}
-foreground = ${color.fg}
+border-size = 0
+border-color = #00000000
 
-border-size = 1
-border-color = ${color.bg}
+padding-left = 0
+padding-right = 2
+padding-top = 3
 
 module-margin-left = 1
-module-margin-right = 1
-override-redirect = true
+module-margin-right = 2
 
-;==========================================================
+font-0 = Iosevka Term:pixelsize=12;1
+font-1 = FontAwesomesize=10
 
-font-0 = "Iosevka Nerd Font Mono:pixelsize=12;2"
-font-1 = "Material Icons:size=13;4"
-font-2 = "FontAwesome:size=13;4"
-
-;==========================================================
-
-cursor-click = pointer
-cursor-scroll = ns-resize
+modules-left = bspwm
+modules-center = xwindow
+modules-right =  battery vol date
 
 tray-position = right
-tray-padding = 4
-tray-maxsize = 16
+tray-padding = 2
+;tray-bg = #0063ff
+
+wm-restack = bspwm
+;wm-restack = i3
+
+override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
-;== Module Location ========================================================
+cursor-click = pointer
+cursor-scroll = ns-resize
 
-modules-left = 
-modules-right = cpu memory volume battery time 
- 
-;== Modules ========================================================
-
-[module/time]
+[module/vol]
 type = custom/script
-interval = 0.5
-exec = p_time.sh
-label = %output%
-enable-click = true
-click-left = cal.sh
+exec = vol status vol
+click-left = vol m
+scroll-up = vol up
+scroll-down = vol down
+interval = 0
 
-[module/cpu]
-type = custom/script
-interval = 2
-exec = p_cpu.sh
-label = %output%
-enable-click = true
-format-underline = ${color.blue}
-click-left = cpu.sh
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
 
-[module/memory]
-type = custom/script
-interval = 2
-exec = p_mem.sh
-label = %output%
-enable-click = true
-format-underline = ${color.magenta}
-click-left = mem.sh
+[module/bspwm]
+type = internal/bspwm
 
-;[module/cpu]
-;type = internal/cpu
-;interval = 2
-;format-prefix = 
-;format-underline = ${color.blue}
-;format-prefix-foreground = ${color.bg}
-;label = %percentage:2%%
-;enable-click = true
-;click-left = cpu
-;
-;[module/memory]
-;type = internal/memory
-;interval = 2
-;format-prefix = 
-;format-underline = ${color.magenta}
-;format-prefix-foreground = ${color.fg}
-;label = %percentage_used%%
+label-focused = %index%
+label-focused-bg = ${colors.bg}
+label-focused-underline= ${colors.accent}
+label-focused-padding = 2
 
-
-[module/arch]
-type = custom/text
-content = 
-;alt-icon = 
-content-padding = 2
-content-background = ${color.acolor}
-content-foreground = ${color.fg}
-click-left = rmenu_g
-click-middle = rfull
-click-right = rmenu_wi_g
-
-[module/workspaces]
-type = internal/xworkspaces
-pin-workspaces = false
-enable-click = true
-enable-scroll = true
-format-padding = 0
-
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-;icon-4 = 5;
-icon-default = 
-
-format = <label-state>
-label-active = %icon%
-label-occupied = %icon%
-label-urgent = %icon%
-label-empty = %icon%
-
+label-occupied = %index%
 label-occupied-padding = 2
-label-empty-padding = 2
+
+label-urgent = %index%!
+label-urgent-bg = ${colors.alert}
 label-urgent-padding = 2
-label-active-padding = 2
 
-label-active-foreground = ${color.acolor}
-label-urgent-foreground = ${color.curgent}
-label-empty-foreground = ${color.fg}
-label-occupied-foreground = ${color.coccupied}
+label-empty = %index%
+label-empty-fg = ${colors.fg}
+label-empty-padding = 2
 
-label-active-underline = ${color.acolor}
-label-urgent-underline = ${color.curgent}
-label-occupied-underline = ${color.coccupied}
+; Separator in between workspaces
+; label-separator = |
 
-[module/term]
-type = custom/text
-content = 
-content-foreground = ${color.fg-alt}
-click-left = termite &
-click-middle = urxvt &
-click-right = xfce4-terminal &
+[module/date]
+type = custom/script
+exec = date "+%a %d %b - %H:%M %p"
+interval = 1
 
-[module/files]
-type = custom/text
-content = 
-content-padding = 1
-content-foreground = ${color.fg-alt}
-click-left = thunar &
-click-right = ranger &
+[global/wm]
+margin-top = 5
+margin-bottom = 5
 
-[module/browser]
-type = custom/text
-content = 
-content-padding = 1
-content-foreground = ${color.fg-alt}
-click-left = chromium &
-click-right = firefox &
-
-[module/settings]
-type = custom/text
-content = 
-content-padding = 1
-content-foreground = ${color.fg-alt}
-click-left = xfce4-settings &
-click-right = lxappearance &
-
-;==========================================================
-
-[module/mpd]
-type = internal/mpd
-;format-online = <toggle> <label-song> 
-format-online =  <label-song> 
-
-icon-play = 
-icon-pause = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-;==========================================================
-
-;[module/pkg]
-;type = custom/script
-;exec = updates.sh
-;exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-;label = %{A1:termite -e "aurman -Syyu" & disown:} %{A3:termite -e "aurman -Syyu" & disown:}%output%%{A} %{A}
-;tail = true
-
-[module/battery]
-type = internal/battery
-full-at = 99
-time-format = %H:%M
-battery = BAT1
-adapter = AC
-format-charging = <animation-charging> <label-charging>
-;label-charging = %percentage%% (%time%)
-label-charging = %percentage%%
-format-discharging = <ramp-capacity> <label-discharging>
-;label-discharging = %percentage%% (%time%)
-label-discharging = %percentage%%
-format-full = <label-full>
-
-format-full-prefix = " "
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-ramp-capacity-0-foreground = ${color.red}
-ramp-capacity-foreground   = ${color.fg}
-bar-capacity-width = 10
-
-animation-charging-0 = ""
-animation-charging-1 = ""
-animation-charging-2 = ""
-animation-charging-3 = ""
-animation-charging-4 = ""
-
-animation-charging-framerate = 750
-
-[module/volume]
-type = internal/alsa
-;speaker-mixer = Speaker
-;headphone-mixer = Headphone
-;headphone-id = 16
-;mapped = true
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-format-muted-prefix = " "
-label-muted = MUTE
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-ramp-volume-4 = 
-ramp-volume-5 = 
-ramp-volume-6 = 
-
-;[module/network]
-;type = custom/script
-;exec = check-network
-;click-left = networkmanager_dmenu &
-;click-right = networkmanager_dmenu &
-;tail = true
-
-;[module/date]
-;type = internal/date
-;interval = 30
-;time =  %H:%M %p
-;date =  %Y-%m-%d
-;label = %date% %time%
-;enable-click = true
-;click-left = cal.sh
-
-[module/powermenu]
-type = custom/text
-content = 
-content-padding = 2
-content-background = ${color.acolor}
-content-foreground = ${color.fg}
-click-left = pmenu_g
-click-right = pmenu_g
-
-;== EOF ========================================================
+; vim:ft=dosini

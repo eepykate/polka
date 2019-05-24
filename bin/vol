@@ -84,14 +84,14 @@ elif [ $pc_mute = on ]; then
 	output="♪ ${pc_vol}"
 fi
 
-media="$(playerctl metadata xesam:title 2>/dev/null)"
-artist="$(playerctl metadata xesam:artist 2>/dev/null)"
-file="$(playerctl metadata xesam:url | sed 's|^.*/||')"
+media="$(playerctl metadata xesam:title 2>/dev/null)" 2>/dev/null
+artist="$(playerctl metadata xesam:artist 2>/dev/null)" 2>/dev/null
+file="$(playerctl metadata xesam:url 2>/dev/null | sed 's|^.*/||')" 
 file="$(echo $file | sed -e 's/%20/ /g' -e 's/%28/(/' -e 's/%29/)/' -e 's/%5D/\]/' -e 's/%5B/\[/' )"
 
 [[ -n $artist ]] && SpA="$artist - $media" || [[ -n $media ]] && SpA="$media" || SpA="$file"
 
-playing="$(playerctl status 2>/dev/null)"
+playing="$(playerctl status 2>/dev/null)" 2>/dev/null
 
 if [[ $playing == "Paused" ]]; then
 	song="⏸  $SpA"
