@@ -1,38 +1,38 @@
 alt + super + t
-    synclient TouchpadOff=1
+	synclient TouchpadOff=1
 
 alt + ctrl + t
-    synclient TouchpadOff=0
+	synclient TouchpadOff=0
 
 super + Return
-    st
+	st
 
 super + f
-    firefox-developer-edition
+	firefox-developer-edition
 
 super + c 
-    dolphin
+	dolphin
 
 super + space 
-    rofi -show run
+	rofi -show run
 
 alt + ctrl + space 
-    dmenu_run
+	dmenu_run
 
 Print
-    maim_fullscreen
+	maim_fullscreen
 
 super + Print
-    maim_focused
+	maim_focused
 
 shift + Print 
-    maim_selection
+	maim_selection
 
 ctrl + alt + m 
-    dmenumount
+	dmenumount
 
 ctrl + alt + u 
-    dmenuumount
+	dmenuumount
 
 
 
@@ -49,37 +49,37 @@ XF86AudioRaiseVolume
    vol up 
 
 XF86AudioLowerVolume
-    vol down
+	vol down
 
 XF86AudioStop
 	vol stop
 
 XF86AudioMute 
-    vol m
+	vol m
 
 ctrl + alt + w 
-    wifi 
+	wifi 
 
 super + l 
-    lock 
+	lock 
 
 super + t
-    tp.sh
+	tp.sh
 
 shift + super + F1
-    tp.sh
+	tp.sh
 
 ctrl + alt + s 
-    ts.sh
+	ts.sh
 
 alt + grave
-    dropdown.sh
+	dropdown.sh
 
 alt + q
-    xdotool getwindowfocus windowclose
+	xdotool getwindowfocus windowclose
 
 super + q
-    xdotool getwindowfocus windowkill
+	xdotool getwindowfocus windowkill
 
 super + s
-    players.sh
+	players.sh
