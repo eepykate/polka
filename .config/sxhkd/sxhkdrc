@@ -34,19 +34,26 @@ ctrl + alt + m
 ctrl + alt + u 
 	dmenuumount
 
+ctrl + alt + Home
+	blaze -c -p k
 
+ctrl + alt + Insert
+	blaze
+
+ctrl + alt + End
+	blaze -s
 
 XF86AudioPrev
-   vol prev
+	vol prev
 
 XF86AudioNext
-   vol next
+	vol next
 
 XF86AudioPlay
-   vol p
+	vol p
 
 XF86AudioRaiseVolume
-   vol up 
+	vol up 
 
 XF86AudioLowerVolume
 	vol down
@@ -60,8 +67,8 @@ XF86AudioMute
 ctrl + alt + w 
 	wifi 
 
-super + l 
-	lock 
+#ctrl + alt + l 
+#	lock 
 
 super + t
 	tp.sh
@@ -83,3 +90,28 @@ super + q
 
 super + s
 	players.sh
+
+###       ###
+##  bspwm  ##
+###       ###
+
+alt + c
+	bspc node -p cancel
+
+#super + r
+#	bspc node -n last.!automatic -t tiled
+
+super + {_,shift} + Escape
+	wm {restart,quit}
+
+super + {t,d,a}
+	bspc node -t "~{tiled,floating,fullscreen}"
+
+super + {_,ctrl,alt,shift} + {Left,Down,Up,Right}
+    {focus,move,resize,bspc node -p} {west,south,north,east}
+
+ctrl + alt + {Left,Right}
+	desktop.sh switch {previous,next}
+
+shift + alt + {Left,Right}
+	desktop.sh move {previous,next}

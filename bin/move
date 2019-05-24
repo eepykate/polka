@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# move window
+
+dir=$1
+
+case $dir in
+    west)  fdim=width;  tdim=height; sign=-;;
+    east)  fdim=width;  tdim=height; sign=+;;
+    north) fdim=height; tdim=width;  sign=-;;
+    south) fdim=height; tdim=width;  sign=+
+esac
+
+floating() {
+    percent=5
+
+    # get a percentage of the monitor resolution
+    var=$((`bspc query -T -m | jshon -e rectangle -e "$fdim"` * percent / 100))
+
+    [ "$fdim" = width  ] && { x=$sign$var; y=0; }
+    [ "$fdim" = height ] && { y=$sign$var; x=0; }
+
+    bspc node -v "$x" "$y"
+}
+
+tiled() {
+    # attempt to replace preselection
+    # or to move the window normally
+    { bspc node -n "$dir.!automatic" || bspc node -s "$dir"; } && return
+
+    node=$(bspc query -N -n)
+
+    while parent=$(bspc query -N -n "$node#@parent"); do
+        # compare height or width to parent
+        cur_dim=$(bspc query -T -n "$node"         | jshon -e rectangle -e "$tdim")
+        par_dim=$(bspc query -T -n "$node#@parent" | jshon -e rectangle -e "$tdim")
+
+        if [ "$par_dim" -gt "$cur_dim" ]; then
+            # climb up the tree using a receptacle
+            bspc node "$node#@parent" -p "$dir" -i
+
+            recept=$(bspc query -N "$node#@parent#@parent" -n .descendant_of.leaf.!window)
+
+            bspc node "$node" -n "$recept"
+            bspc node "$node#@parent" -B
+
+            return
+        fi
+
+        node=$parent
+    done
+}
+
+state=$(bspc query -T -n | jshon -e client -e state -u)
+
+case $state in
+    tiled|floating)
+        "$state"; cursor
+esac

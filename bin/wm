@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# quit / reload wm
+
+# clean up utilities
+for bin in borders panel; do
+    pkill -x "$bin"
+done
+
+case $1 in
+    quit)    bspc quit;;
+    restart) bspc wm -r
+esac

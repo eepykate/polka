@@ -16,7 +16,7 @@ eval "$(dircolors ~/.config/dircolors)"
 #export DEFAULT_USER="gauge" 
 
 # Places where binaries/scripts go so you dont have to type the whole path to run them
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # less/man colors
 export LESS=-R
