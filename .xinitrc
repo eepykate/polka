@@ -10,4 +10,5 @@ fi
 ~/.fehbg
 xsetroot -cursor_name left_ptr
 tint &
+xautolock -time 10 -locker ~/bin/lock &
 exec /usr/bin/bspwm

@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-bg = #1e2232
+bg = #191d2a
 fg = #ccccee
 accent = #ee99ff
 alert = #bd2c40
@@ -41,19 +41,19 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
-padding-right = 2
-padding-top = 3
+padding-left = 1
+padding-right = 1
+padding-top = 0
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = Iosevka Term:pixelsize=12;1
-font-1 = FontAwesomesize=10
+font-1 = FontAwesomesize=12
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right =  battery vol date
+modules-right =  battery date 
 
 tray-position = right
 tray-padding = 2
@@ -91,25 +91,25 @@ type = internal/bspwm
 label-focused = %index%
 label-focused-bg = ${colors.bg}
 label-focused-underline= ${colors.accent}
-label-focused-padding = 2
+label-focused-padding = 1.8
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1.8
 
 label-urgent = %index%!
 label-urgent-bg = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1.8
 
 label-empty = %index%
 label-empty-fg = ${colors.fg}
-label-empty-padding = 2
+label-empty-padding = 1.8
 
 ; Separator in between workspaces
 ; label-separator = |
 
 [module/date]
 type = custom/script
-exec = date "+%a %d %b - %H:%M %p"
+exec = date "+%I:%M %p"
 interval = 1
 
 [global/wm]
