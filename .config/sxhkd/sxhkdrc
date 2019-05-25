@@ -130,4 +130,3 @@ shift + alt + {Right,Left}
 ctrl + alt + {Right,Left}
 	bspc desktop -f {next,prev}
 
-

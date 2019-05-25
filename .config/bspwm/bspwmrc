@@ -19,7 +19,7 @@ gapless_monocle true
 single_monocle true
 
 presel_feedback_color #EEEEEE
-focused_border_color #ffffff
+focused_border_color #ee99ff
 normal_border_color #252c3f
 
 border_width 3
@@ -33,3 +33,5 @@ EOF
 #for bin in panel borders; do
 #    pgrep -x "$bin" > /dev/null || "$bin" &
 #done
+
+bspc rule -a tabbed state=floating
