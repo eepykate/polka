@@ -52,10 +52,19 @@ XF86AudioNext
 XF86AudioPlay
 	vol p
 
+super + p
+	vol p
+
 XF86AudioRaiseVolume
 	vol up 
 
 XF86AudioLowerVolume
+	vol down
+
+super + u
+	vol up 
+
+super + j
 	vol down
 
 XF86AudioStop
@@ -67,8 +76,8 @@ XF86AudioMute
 ctrl + alt + w 
 	wifi 
 
-#ctrl + alt + l 
-#	lock 
+super + l 
+	lock 
 
 super + t
 	tp.sh
@@ -130,3 +139,8 @@ shift + alt + {Right,Left}
 ctrl + alt + {Right,Left}
 	bspc desktop -f {next,prev}
 
+ctrl + super + {F1,F2,F3,F4,F5,F12}
+	bspc node -d {1,2,3,4,5,0}
+
+super + {F1,F2,F3,F4,F5,F12}
+	bspc desktop -f {1,2,3,4,5,0}

@@ -34,3 +34,4 @@ f   Xfp        ~/.config/Xres.Frost-Purple
 f   Xc         ~/.config/Xres.ca-aa
 f   drc        ~/.config/dunst/dunstrc
 f   sx         ~/.config/sxhkd/sxhkdrc
+f   bs         ~/.config/bspwm/bspwmrc
