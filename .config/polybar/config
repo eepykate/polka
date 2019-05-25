@@ -32,8 +32,8 @@ offset-y = 4px
 radius = 0
 fixed-center = false
 
-bg = ${colors.bg}
-fg = ${colors.fg}
+background = ${colors.bg}
+foreground = ${colors.fg}
 
 line-size = 2
 line-color = #f00
