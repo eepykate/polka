@@ -242,6 +242,11 @@ $HOME/.startpage/style.css" | \
 		cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
 
+	# Change bspwm colours
+	sed --follow-symlinks -i \
+		-e "s/focused_border_color #.*/focused_border_color #$accent/g'" \
+		-e "s/normal_border_color #.*/normal_border_color #$bglighter/g'" \
+
 	# Convert Xresources to tty colours scheme
 	# ttything.sh
 

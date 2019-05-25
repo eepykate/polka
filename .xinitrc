@@ -9,4 +9,5 @@ if [ ! "$DBUS_SESSION_BUS_ADDRESS" ] && have dbus-launch; then
 fi
 ~/.fehbg
 xsetroot -cursor_name left_ptr
+tint &
 exec /usr/bin/bspwm
