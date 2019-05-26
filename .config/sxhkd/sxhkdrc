@@ -116,11 +116,14 @@ alt + c
 #super + r
 #	bspc node -n last.!automatic -t tiled
 
+super + {r,m}
+	bspc desktop -l {tiled,monocle}
+
 super + {_,shift} + Escape
 	wm {restart,quit}
 
-super + {t,d,a}
-	bspc node -t "~{tiled,floating,fullscreen}"
+super + {d,a}
+	bspc node -t "~{floating,fullscreen}"
 
 super + {_,ctrl,alt,shift} + {Left,Down,Up,Right}
     {focus,move,resize,bspc node -p} {west,south,north,east}
@@ -144,3 +147,9 @@ ctrl + super + {F1,F2,F3,F4,F5,F12}
 
 super + {F1,F2,F3,F4,F5,F12}
 	bspc desktop -f {1,2,3,4,5,0}
+
+super + Tab
+	bspc node -f next
+
+super + shift + Tab
+	bspc node -f prev
