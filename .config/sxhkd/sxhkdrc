@@ -20,13 +20,13 @@ alt + ctrl + space
 	dmenu_run
 
 Print
-	maim_fullscreen
+	scr
 
 super + Print
-	maim_focused
+	scr -f
 
 shift + Print 
-	maim_selection
+	scr -s
 
 ctrl + alt + m 
 	dmenumount

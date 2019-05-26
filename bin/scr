@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+dir=~/Stuff/Screenshots/maim
+name="maim-$(date +%F_%H:%M:%S)"
+
+mkdir -p "$dir" || exit 1
+
+newname() {
+	name1="${name}-$(file ${dir}/${name}.png | awk '{gsub(",","")} {print $5 "x" $7}')" &&
+	mv ${dir}/${name}.png ${dir}/${name1}.png
+}
+
+focused() {
+	maim -ui $(xdotool getactivewindow) "${dir}/${name}.png" &&
+		newname &&
+		notify-send "Screenshot of focused window taken"
+}
+
+fullscreen() {
+	maim -u "${dir}/${name}.png" &&
+		newname &&
+		notify-send "Fullscreen screenshot taken"
+}
+
+selection() {
+	maim -su -l -c 0.64314,0.41176,0.70588,0.2 -b 1 "${dir}/${name}.png" &&
+		newname &&
+		notify-send "Screenshot of selection taken"
+}
+
+opts=$(getopt -o fs --long focused,selection -- "$@")
+eval set -- "$opts"
+
+while true; do
+	case $1 in
+		-f|--focused) focused; exit;;
+		-s|--selection) selection; exit;;
+		*) fullscreen; exit;;
+		--) shift; break;;
+	esac
+done
