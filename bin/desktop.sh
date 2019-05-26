@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
 desktop="$(xdotool get_desktop)"
 
 switch() {
@@ -45,6 +44,6 @@ move() {
 }
 
 case $1 in 
-	move) move $2; shift;;
-	switch) switch $2; shift;;
+	move) move $2; switch $2; shift;;
+	switch) switch $2;  shift;;
 esac
