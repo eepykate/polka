@@ -38,3 +38,4 @@ bspc rule -a tabbed state=floating
 bspc rule -a dolphin state=floating
 bspc rule -a qview state=floating
 bspc rule -a ksysguard state=floating
+bspc config pointer_modifier mod1
