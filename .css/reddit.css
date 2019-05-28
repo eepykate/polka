@@ -72,10 +72,6 @@ a {
 .listing-page .tabmenu li a[href*="/controversial"]*/ {
  display:none
 }
-#header .tabmenu li:nth-of-type(9) {
- display:none;
- visibility:hidden
-}
 #header-img {
  position:relative;
  width:30px;
@@ -1440,15 +1436,8 @@ body:not(.comments-page) div.content .entry {
 }
 .res .RES-keyNav-activeElement {
  outline:0px dashed #EEEEEE!important;
- transition:all 0.15s ease
 }
-.res .entry {
- transition:all 0.10s ease
-}
-body:not(.comments-page) * .RES-keyNav-activeElement {
- padding-left:15px!important;
- border-left:3px solid
-}
+.res .entry 
 div.commentarea div.RES-keyNav-activeElement .md {
  background-color:transparent!important
 }
@@ -1915,7 +1904,6 @@ button {
  border-radius:4px;
  color:#FFF;
  cursor:pointer;
- font-size:14px;
  line-height:2.16;
  text-align:center;
  white-space:nowrap;
@@ -3483,7 +3471,6 @@ html[lang="dm"] .roundfield input[type="url"] {
  background-color:#222!important;
  color:#fff!important;
  transition:300ms;
- transition:300ms;
  border:1px solid #666
 }
 html[lang="dm"] .usertext-edit textarea:focus,
@@ -3717,7 +3704,7 @@ a:visited em {
 }
 
 .md blockquote {
-	background-color: var(--bgdark) !important;
+	background-color: rgba(0, 0, 0, 0.2) !important;
 	border-left: 2px solid var(--fgdark) !important;
 	margin-top: 2px !important;
 }
@@ -3855,4 +3842,7 @@ body {
 .menuarea {
 	margin-top: 25px !important;
 }
-
+.thing .entry,
+.thing .entry .usertext .usertext-body {
+	transition: all 150ms !important;
+}
