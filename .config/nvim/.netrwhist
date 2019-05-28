@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/gauge/.config/awesome'
 let g:netrw_dirhist_2='/home/gauge/.config/sxhkd'
 let g:netrw_dirhist_3='/home/gauge/dotfiles/sxhkd/.config/sxhkd'
 let g:netrw_dirhist_4='/home/gauge/.config/sxhkd'
 let g:netrw_dirhist_5='/home/gauge/.config/bspwm'
 let g:netrw_dirhist_6='/home/gauge/.config/polybar'
+let g:netrw_dirhist_7='/home/gauge/.config/sxhkd'

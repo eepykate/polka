@@ -1,8 +1,8 @@
-alt + super + t
-	synclient TouchpadOff=1
-
-alt + ctrl + t
+super + a;t + t
 	synclient TouchpadOff=0
+
+ctrl + alt + t
+	synclient TouchpadOff=1
 
 super + Return
 	st
