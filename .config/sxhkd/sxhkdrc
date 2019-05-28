@@ -1,4 +1,4 @@
-super + a;t + t
+super + alt + t
 	synclient TouchpadOff=0
 
 ctrl + alt + t
@@ -148,8 +148,8 @@ ctrl + super + {F1,F2,F3,F4,F5,F12}
 super + {F1,F2,F3,F4,F5,F12}
 	bspc desktop -f {1,2,3,4,5,0}
 
-super + Tab
+alt + Tab
 	bspc node -f next
 
-super + shift + Tab
+alt + shift + Tab
 	bspc node -f prev
