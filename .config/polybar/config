@@ -23,14 +23,14 @@ accent = #ee99ff
 alert = #bd2c40
 
 [bar/main]
-monitor = HDMI-0
+monitor = ${env:MONITOR:HDMI-0}
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 98%
 height = 28
-offset-x = 5px
+offset-x = 1%
 offset-y = 4px
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.bg}
 foreground = ${colors.fg}
@@ -57,7 +57,7 @@ modules-right =  battery date
 
 tray-position = right
 tray-padding = 2
-;tray-bg = #0063ff
+;tray-bg = 12151a
 
 wm-restack = bspwm
 ;wm-restack = i3
@@ -76,7 +76,7 @@ cursor-scroll = ns-resize
 [module/thing]
 type = custom/script
 exec = asda
-interval = 0
+interval = 0.2
 
 [module/vol]
 type = custom/script
@@ -84,7 +84,7 @@ exec = vol status vol
 click-left = vol m
 scroll-up = vol up
 scroll-down = vol down
-interval = 0
+interval = 0.2
 
 [module/xwindow]
 type = internal/xwindow
@@ -109,6 +109,8 @@ label-empty = %index%
 label-empty-fg = ${colors.fg}
 label-empty-padding = 1.8
 
+
+interval = 0.2
 ; Separator in between workspaces
 ; label-separator = |
 

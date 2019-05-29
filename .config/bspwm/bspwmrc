@@ -20,7 +20,7 @@ single_monocle true
 
 presel_feedback_color #EEEEEE
 focused_border_color #ee99ff
-normal_border_color #252c3f
+normal_border_color #2c334c
 
 border_width 3
 window_gap 6
@@ -36,6 +36,6 @@ EOF
 
 bspc rule -a tabbed state=floating
 bspc rule -a dolphin state=floating
-bspc rule -a qview state=floating
+bspc rule -a qView state=floating
 bspc rule -a ksysguard state=floating
 bspc config pointer_modifier mod1

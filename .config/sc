@@ -35,3 +35,4 @@ f   Xc         ~/.config/Xres.ca-aa
 f   drc        ~/.config/dunst/dunstrc
 f   sx         ~/.config/sxhkd/sxhkdrc
 f   bs         ~/.config/bspwm/bspwmrc
+f   po         ~/.config/polybar/config
