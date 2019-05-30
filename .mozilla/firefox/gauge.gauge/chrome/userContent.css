@@ -104,14 +104,14 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
 coloring part, go to the common part for all firefox pages (if you use a global userstyle,
 you don't even need these, so just comment it all out).*/
-@-moz-document url-prefix(file://) {
+/*@-moz-document url-prefix(file://) {
 :root {background-color: var(--bgdark) !important; color: #ccc !important}
 
 /* COMMENT OUT THIS SECTION IF BROWSING LOCAL HTML PAGES */
 /* body:not([style="margin-bottom: 8px !important;"]) {
 	background: var(--bglight) !important;
 	border: none !important} */
-
+/*
 pre {padding: 1em !important}
 
 @-moz-document:not(url-prefix(file://)) { h1 {color: #fff !important; border-bottom: none !important} }
@@ -124,7 +124,7 @@ tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: var(--blue) !important}
 
 th {color: #ddd !important}
-td {color: #aaa !important}} 
+td {color: #aaa !important}} */
 
 /*------ INPUT BOXES TEXT ------*/
 

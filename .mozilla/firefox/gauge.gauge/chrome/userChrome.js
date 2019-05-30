@@ -7,3 +7,16 @@
 XPCOMUtils.defineLazyGetter(FullScreen, "useLionFullScreen", function() {
 	return false;
 });
+
+var classname = document.getElementsByClassName("tabbrowser-tab");
+var addressBar= document.getElementById('urlbar');
+
+var myFunction = function() {
+  document.getElementById('urlbar').focus();
+};
+
+for (var i = 0; i < classname.length; i++) {
+    classname[i].addEventListener('click', myFunction);
+}
+
+
