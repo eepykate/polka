@@ -64,5 +64,3 @@ unsetopt menu_complete   # do not autoselect the first completion entry
 unsetopt flowcontrol
 setopt complete_in_word
 setopt always_to_end
-
-#echo -ne "\033]4;16;$(xrdb -query | grep color16 | awk '{print $2}')\007"   # Get colour 16 from xresources and actually apply that as st is rarted

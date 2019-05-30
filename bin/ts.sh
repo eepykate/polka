@@ -172,7 +172,6 @@ accent="${accent//#}"
 button="${button//#}"
 border="${border//#}"
 red="${red//#}"
-}"}"}"}"}"}"}"}"}"}"
 
 if [[ -n "$theme" ]]; then
 	xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
@@ -257,13 +256,6 @@ $HOME/.startpage/style.css" | \
 		-e "s/accent = #.*/accent = #$accent/" \
 		~/.config/polybar/config
 	polybar.sh &!
-
-	# Change colour 16 in zshrc
-	if grep "4;60" ~/.zshrc; then
-		sed "s/4;60;#.*\007/4;60;#$accent\007/g'
-	else
-		echo -e "echo -ne \"\\\\033]4;60;#$accent\007\"" >> ~/.zshrc
-	fi
 
 	true
 fi
