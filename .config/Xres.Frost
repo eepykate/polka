@@ -35,5 +35,7 @@
 
 !! white
 *color7:       #92a1ae
-*color15:      #92a1ae
+*color15:      #a9b9d0
 
+!! Accent
+*color16:      #ecac87
