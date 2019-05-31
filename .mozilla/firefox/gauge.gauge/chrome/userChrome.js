@@ -8,25 +8,11 @@ XPCOMUtils.defineLazyGetter(FullScreen, "useLionFullScreen", function() {
 	return false;
 });
 
-/*
-function tabClick() {
-	var classname = document.getElementsByClassName("tabbrowser-tab");
-	var addressBar= document.getElementById('urlbar');
-
-	var myFunction = function() {
+var myFunction = function(e) {
+	const lmb = e.button === 0;
+	if (lmb) {
 		document.getElementById('urlbar').focus();
-	};
-	
-	for (var i = 0; i < classname.length; i++) {
-		classname[i].addEventListener('click', myFunction);
 	}
-};
-
-setInterval(tabClick, 2000);
-*/
-
-var myFunction = function() {
-	document.getElementById('urlbar').focus();
 };
 
 function tabClick() {
