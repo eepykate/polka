@@ -3055,7 +3055,7 @@ button:active {
  padding:10px 20px;
  font-size:14px;
  color:white;
- border:none
+ border-width: 2px;
 }
 #siteTable .thing .md table tbody tr,
 .commentarea .thing .md table thead tr th {
@@ -3846,3 +3846,9 @@ body {
 .thing .entry .usertext .usertext-body {
 	transition: all 150ms !important;
 }
+
+table tbody tr td,
+table thead tr th {
+	border: 1px solid lightgrey !important;
+}
+ 
