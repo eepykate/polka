@@ -27,5 +27,5 @@ function tabClick() {
 
 };
 
-setInterval(tabClick, 800);
+setInterval(tabClick, 500);
 
