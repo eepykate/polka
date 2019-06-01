@@ -12,7 +12,7 @@ name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')" # Needs .mp4 after this is listed in t
 [[   -d $dir   ]] || mkdir -p $dir
 [[ -d $tempdir ]] || mkdir -p $tempdir
 
-opts=$(getopt -o d:sncp:bSh --long display:,save,no-nvenc,noconfirm,preset:,blaze,save-blaze,help -- "$@")
+opts=$(getopt -o d:sncp:bShB: --long display:,save,no-nvenc,noconfirm,preset:,blaze,save-blaze,help,bitrate: -- "$@")
 eval set -- "$opts"
 
 help="
@@ -24,6 +24,7 @@ Options:
 	-b / --blaze:            Use blaze ( Record in background, only keep the last <X> minutes )
   -S / --save-blaze:       Save blaze recording
   -c / --noconfirm:        Don't ask if you want to start the recording
+	-B / --bitrate:          Force bitrate (In megabytes)
   -h / --help:             Print this
   -n / --no-nvenc:         Don't use nvenc ( Auto-detected, only do this if your nvidia card doesn't support it )
   -p / --preset:           Use recording preset <X> ( Stored in ~/.config/blaze-preset-<X> )
@@ -51,6 +52,7 @@ while true; do
 		-c|--noconfirm) RtR="Yes"; shift 1;;
 		-h|--help) echo -e "$help"; shift;;
 		-s|--save) SoR="save"; shift;;
+		-B|--bitrate) bitrate="-b:v ${2}M"; shift 2;;
 		-S|--save-blaze) SoR="save"; blaze="blaze"; shift;;
 		-b|--blaze) blaze="blaze"; shift;;
 		-p|--preset) preset="$2"; shift 2;;
@@ -191,6 +193,7 @@ if [[ $RtR = Yes ]]; then
 			-f x11grab -draw_mouse 1 \
 			-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
 			-pix_fmt yuv420p \
+			$(printf " $bitrate")\
 			-q:v 0 $(printf " $nvenc") \
 			"${dir}/${name}".mp4 -loglevel error
 	fi
