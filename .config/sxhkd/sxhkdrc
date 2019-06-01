@@ -34,6 +34,9 @@ ctrl + alt + m
 ctrl + alt + u 
 	dmenuumount
 
+ctrl + alt + Prior
+	blaze -c -p k -B 8
+
 ctrl + alt + Home
 	blaze -c -p k
 
@@ -142,11 +145,11 @@ shift + alt + {Right,Left}
 ctrl + alt + {Right,Left}
 	bspc desktop -f {next,prev}
 
-ctrl + super + {F1,F2,F3,F4,F5,F12}
-	bspc node -d {1,2,3,4,5,0}
+ctrl + super + {F1,F2,F3,F4,F5,F6,F7}
+	bspc node -d {1,2,3,4,5,6,7}
 
-super + {F1,F2,F3,F4,F5,F12}
-	bspc desktop -f {1,2,3,4,5,0}
+super + {F1,F2,F3,F4,F5,F6,F7}
+	bspc desktop -f {1,2,3,4,5,6,7}
 
 alt + Tab
 	bspc node -f next
