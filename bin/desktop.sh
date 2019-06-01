@@ -3,7 +3,7 @@
 desktop="$(xdotool get_desktop)"
 
 switch() {
-	if [[ $((${desktop} -1)) = 0 ]]; then
+	if [[ $((${desktop} -1)) = -1 ]]; then
 	    desktops="$(($(xdotool get_num_desktops) -1))"
 	    case $1 in 
 	        next) xdotool set_desktop $((${desktop} +1));;
@@ -11,7 +11,7 @@ switch() {
 	    esac
 	elif [[ $((${desktop} +1)) = $(xdotool get_num_desktops) ]]; then
 	    case $1 in 
-	        next) xdotool set_desktop 1;;
+	        next) xdotool set_desktop 0;;
 	        previous) xdotool set_desktop $((${desktop} -1));;
 	    esac
 	else
