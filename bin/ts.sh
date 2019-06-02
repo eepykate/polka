@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -34,6 +34,39 @@ if [[ $theme = Pure ]]; then
 	button="#cbe3f122"
 	border="#1e2130"
 	red="#f0185a"
+	hover="$bgdark"
+
+elif [[ $theme = aa-blue ]]; then 
+	accentn="4"
+	bgdark="#1a1f2e"
+	bglight="#1d2232"
+	bglighter="#2c334c"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#447bbe"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#ee0055"
+	hover="#ffffff"
+
+elif [[ $theme = aa ]]; then 
+	accentn="5"
+	bgdark="#1a1f2e"
+	bglight="#1d2232"
+	bglighter="#2c334c"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#d682ff"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#ee0055"
+	hover="$bgdark"
 
 elif [[ $theme = ca-aa ]]; then 
 	accentn="2"
@@ -49,6 +82,7 @@ elif [[ $theme = ca-aa ]]; then
 	button="#cbe3f122"
 	border="#262c42"
 	red="#ee0055"
+	hover="$bgdark"
 
 elif [[ $theme = ca-aa-blue ]]; then 
 	accentn="4"
@@ -64,6 +98,7 @@ elif [[ $theme = ca-aa-blue ]]; then
 	button="#cbe3f122"
 	border="#262c42"
 	red="#ee0055"
+	hover="$bgdark"
 
 elif [[ $theme = ca-aa-pink ]]; then 
 	accentn="5"
@@ -79,6 +114,7 @@ elif [[ $theme = ca-aa-pink ]]; then
 	button="#cbe3f122"
 	border="#262c42"
 	red="#ee0055"
+	hover="$bgdark"
 
 elif [[ $theme = Pure-Pink ]]; then 
 	accentn="5"
@@ -94,6 +130,7 @@ elif [[ $theme = Pure-Pink ]]; then
 	button="#cbe3f122"
 	border="#1e2130"
 	red="#f0185a"
+	hover="$bgdark"
 
 elif [[ $theme = Pure-Pink-1 ]]; then 
 	accentn="5"
@@ -109,6 +146,7 @@ elif [[ $theme = Pure-Pink-1 ]]; then
 	button="#cbe3f122"
 	border="#1e2130"
 	red="#f0185a"
+	hover="$bgdark"
 
 elif [[ $theme = Berry ]]; then 
 	accentn="5"
@@ -124,6 +162,7 @@ elif [[ $theme = Berry ]]; then
 	button="#f3d6fb22"
 	border="#342036"
 	red="#cb1f62"
+	hover="$bgdark"
 
 elif [[ $theme = Frost ]]; then
 	
@@ -140,6 +179,7 @@ elif [[ $theme = Frost ]]; then
 	button="#7790a722"
 	border="#303848"
 	red="#c05863"
+	hover="$bgdark"
 
 elif [[ $theme = Frost-Purple ]]; then
 	
@@ -156,6 +196,7 @@ elif [[ $theme = Frost-Purple ]]; then
 	button="#7790a722"
 	border="#303848"
 	red="#c05863"
+	hover="$bgdark"
 
 else 
 	echo "Invalid theme; exiting"; exit
@@ -171,6 +212,7 @@ disabled="${disabled//#}"
 accent="${accent//#}"
 button="${button//#}"
 border="${border//#}"
+hover="${hover//#}"
 red="${red//#}"
 
 if [[ -n "$theme" ]]; then
@@ -189,7 +231,7 @@ if [[ -n "$theme" ]]; then
 
 	# Replace the accent colour in slight.zsh
 	[[ -n $accentn ]] && 
-		sed --follow-symlinks -i "s/color=\"..\"/color=\"$accentn\"/" -i ~/bin/slight.zsh
+		sed --follow-symlinks -i "s/color=\".*\"/color=\"$accentn\"/" ~/bin/slight.zsh
 
 	# Change foreground colour in conky
 	[[ -f ~/.conkyrc ]] && [[ -n $fglight ]] && sed "s/\${color ......}/\${color $fglight}/" -i ~/.conkyrc
@@ -209,7 +251,8 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--fglight:.*#.*\;/--fglight: #$fglight\;/" \
 		-e "s/.*--accent:.*#.*\;/--accent: #$accent\;/" \
 		-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
-		-e "s/.*--button:.*#.*\;/--fgdark: #$button\;/" \
+		-e "s/.*--button:.*#.*\;/--button: #$button\;/" \
+		-e "s/.*--hover:.*#.*\;/--hover: #$hover\;/" \
 		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/" 
 
 	# Replace colours in dunst
@@ -245,7 +288,7 @@ $HOME/.startpage/style.css" | \
 	# Change bspwm colours
 	sed --follow-symlinks -i \
 		-e "s/focused_border_color #.*/focused_border_color #$accent/g" \
-		-e "s/normal_border_color #.*/normal_border_color #$bglighter/g" \
+		-e "s/normal_border_color #.*/normal_border_color #$bgdark/g" \
 		~/.config/bspwm/bspwmrc
 	bspc wm -r
 
@@ -256,6 +299,12 @@ $HOME/.startpage/style.css" | \
 		-e "s/accent = #.*/accent = #$accent/" \
 		~/.config/polybar/config
 	polybar.sh &!
+
+	sed --follow-symlinks -i \
+		-e "s/accent=\"#.*\"/accent=\"#$accent\"/g" \
+		-e "s/fg=\"#.*\"/fglight=\"#$fglight\"/g" \
+		~/bin/asda
+
 
 	true
 fi

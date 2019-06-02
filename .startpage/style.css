@@ -1,14 +1,15 @@
 :root {
---bgdark: #191d2a;
---bglight: #1e2232;
+--bgdark: #1a1f2e;
+--bglight: #1d2232;
 --bglighter: #2c334c;
 
 --fgdark: #8888a0;
 --fglight: #ccccee;
 	
---accent: #ee99ff;
+--accent: #447bbe;
 --border: #262c42;
 --disabled: #696969;
+--hover: #ccccee;
 }
 
 body {
@@ -261,6 +262,6 @@ main section {
 
 .box:hover .title {
 	background-color: var(--accent);
-	color: var(--bgdark);
+	color: var(--hover);
 }
 
