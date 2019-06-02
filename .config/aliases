@@ -1,6 +1,8 @@
 #     Aliases     # 
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
+# alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
+alias neofetch="neofetch --ascii ~/.config/cat.txt"
 alias ci="xclip -selection clipboard -t image/png"  # Copy Image
 alias cv="xclip -selection clipboard -t video/mp4"  # Copy video
 # ls, group directories, and human readable sizes
@@ -19,7 +21,6 @@ alias SU="sudo zsh"        # open zsh as root user
 alias v="nvim"             # short neovim
 alias t="tmux"             # tmux
 alias f="fff"              # terminal file manager
-alias neofetch="neofetch --ascii ~/.config/cat.txt"
 
 # pacman/yay
 alias upd="sudo pacman -Syu"        # Update the system
@@ -85,9 +86,6 @@ function clv() {
 }
 
 [[ -f ~/.config/sc.sh ]] && source ~/.config/sc.sh  # Add directory / file shortcuts to shell
-
-alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
-
 
 e() {
 	if [ -f $1 ] ; then
