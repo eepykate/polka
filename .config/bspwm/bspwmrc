@@ -17,11 +17,11 @@ gapless_monocle true
 single_monocle true
 
 presel_feedback_color #EEEEEE
-focused_border_color #ee99ff
-normal_border_color #2c334c
+focused_border_color #447bbe
+normal_border_color #1a1f2e
 
 border_width 3
-window_gap 6
+window_gap 15
 
 pointer_modifier mod1
 EOF
