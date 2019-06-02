@@ -23,6 +23,18 @@
   <defs
      id="defs2">
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient890">
+      <stop
+         style="stop-color:#ee99ff;stop-opacity:1"
+         offset="0"
+         id="stop886" />
+      <stop
+         style="stop-color:#0099ff;stop-opacity:1"
+         offset="1"
+         id="stop888" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient1020"
        inkscape:collect="always">
       <stop
@@ -214,6 +226,44 @@
        x2="170.11801"
        y2="177.52362"
        gradientTransform="matrix(0.3661352,-0.63374723,0.6353599,0.36529675,89.69076,218.92683)" />
+    <meshgradient
+       inkscape:collect="always"
+       id="meshgradient864"
+       gradientUnits="userSpaceOnUse"
+       x="19.797476"
+       y="24.189737">
+      <meshrow
+         id="meshrow866">
+        <meshpatch
+           id="meshpatch868">
+          <stop
+             path="c 155.295,0  310.591,0  465.886,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop870" />
+          <stop
+             path="c 0,87.3536  0,174.707  0,262.061"
+             style="stop-color:#2d374b;stop-opacity:1"
+             id="stop872" />
+          <stop
+             path="c -155.295,0  -310.591,0  -465.886,0"
+             style="stop-color:#ffffff;stop-opacity:1"
+             id="stop874" />
+          <stop
+             path="c 0,-87.3536  0,-174.707  0,-262.061"
+             style="stop-color:#2d374b;stop-opacity:1"
+             id="stop876" />
+        </meshpatch>
+      </meshrow>
+    </meshgradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient890"
+       id="linearGradient892"
+       x1="171.69566"
+       y1="62.042976"
+       x2="331.96512"
+       y2="256.77945"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -222,16 +272,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="841.23762"
-     inkscape:cy="483.85447"
+     inkscape:zoom="0.5"
+     inkscape:cx="506.9485"
+     inkscape:cy="625.66077"
      inkscape:document-units="px"
      inkscape:current-layer="g828"
      showgrid="false"
-     inkscape:window-width="945"
-     inkscape:window-height="1024"
-     inkscape:window-x="2403"
-     inkscape:window-y="44"
+     inkscape:window-width="1920"
+     inkscape:window-height="1042"
+     inkscape:window-x="1440"
+     inkscape:window-y="38"
      inkscape:window-maximized="1"
      units="px"
      showguides="true"
@@ -247,7 +297,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -266,6 +316,13 @@
        id="g828"
        transform="matrix(1.0903958,0,0,1.0903958,-21.587069,-15.126417)"
        style="stroke-width:0.91709816;fill:#252d3f;fill-opacity:1">
+      <rect
+         style="opacity:0.1;fill:url(#linearGradient892);fill-opacity:1;fill-rule:evenodd;stroke:url(#meshgradient864);stroke-width:0.97059554;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:100;stroke-opacity:0.99645386;paint-order:normal"
+         id="rect854"
+         width="465.88589"
+         height="262.06079"
+         x="19.797476"
+         y="24.189737" />
       <g
          id="g3308">
         <path
