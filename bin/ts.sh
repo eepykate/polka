@@ -277,7 +277,7 @@ $HOME/.startpage/style.css" | \
 		~/.config/rofi/theme.rasi
 
 	# Change accent colour in gtk.css 
-	sed --follow-symlinks -i "s/color: #.*;/color: #$accent;/g" ~/.config/gtk-3.0/gtk.css
+	#sed --follow-symlinks -i "s/background-color: #.*;/background-color: #$bglight;/g" ~/.config/gtk-3.0/gtk.css
 
 	# Change the wallpaper
 	[[ -n $wallpaper ]] &&
