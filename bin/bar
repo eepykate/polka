@@ -32,8 +32,12 @@ thing() {
 
 bspc config -m $monitorName top_padding 46
 
+curdate() {
+	notify-send \"$(date "+%a %d %b - %I:%M %p")\"
+}
+
 while true; do 
-	time="$(date "+%I:%M %p")"
+	time="%{A:nottime:}$(date "+%I:%M %p")%{A}"
 	name="$(xdotool getwindowfocus getwindowname)"
 	asda="$(thing)"
 	desktop="$(bspc query -D -d focused --names)"
