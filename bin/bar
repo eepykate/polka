@@ -37,7 +37,7 @@ while true; do
 	name="$(xdotool getwindowfocus getwindowname)"
 	asda="$(thing)"
 	desktop="$(bspc query -D -d focused --names)"
-	echo -e "%{B#ff${bg}}%{F#ff${fg}}     $desktop     $asda %{c} $name %{r} $wifi     $time    "
+	echo -e "    $desktop     $asda %{c} $name %{r} $wifi     $time    "
 	sleep 0.2
 done |
-lemonbar  -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash
+lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash
