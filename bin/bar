@@ -40,4 +40,5 @@ while true; do
 	echo -e "    $desktop     $asda %{c} $name %{r} $wifi     $time    "
 	sleep 0.2
 done |
-lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash
+lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash &
+sleep 0.5; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)
