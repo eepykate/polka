@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
@@ -28,7 +28,7 @@ thing() {
 	echo "%{F#ff$fg}"
 }
 
-bspc config -m $monitorName top_padding 40
+bspc config -m $monitorName top_padding 46
 
 while true; do 
 	time="$(date "+%I:%M %p")"
@@ -38,4 +38,4 @@ while true; do
 	echo -e "%{B#ff${bg}}%{F#ff${fg}}     $desktop     $asda %{c} $name %{r} $wifi     $time    "
 	sleep 0.2
 done |
-lemonbar -f "Font Awesome:size=14" -f "Iosevka Term:size=14" -g "${width}x28+$offX+$offY" | bash
+lemonbar -f "Font Awesome:size=14" -f "Iosevka Term:size=14" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash

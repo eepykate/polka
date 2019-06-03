@@ -1,16 +1,16 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 if [[ $(command cat /tmp/panelstatus) = windowunmap ]]; then
 	thing="windowmap" &&
 	echo "windowmap" > /tmp/panelstatus
-	bspc config -m HDMI-0 top_padding 38
+	bspc config -m HDMI-0 top_padding 46
 else
 	thing="windowunmap" &&
 	echo "windowunmap" > /tmp/panelstatus
 	bspc config -m HDMI-0 top_padding 0
 fi
 
-ids=$(xdotool search --name "polybar")
+IFS=$'\n' ids=( $(xdotool search --name "lemonbar") )
 for aaa in ${ids[@]}; do
 	xdotool $(printf $thing) $aaa
 done
