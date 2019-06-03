@@ -21,7 +21,7 @@ focused_border_color #447bbe
 normal_border_color #1a1f2e
 
 border_width 3
-window_gap 15
+window_gap 20
 
 pointer_modifier mod1
 EOF
@@ -34,3 +34,4 @@ bspc rule -a tabbed state=floating
 bspc rule -a dolphin state=floating
 bspc rule -a qView state=floating
 bspc rule -a ksysguard state=floating
+bspc rule -a floating state=floating

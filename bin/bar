@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+pkill bar
+
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
 width="$(( $(awk '{print $1}' <<< $monitor ) - 40 ))"
@@ -10,7 +12,7 @@ fg="ccccee"
 bg="1a1f2e"
 ac="447bbe"
 
-wifi="%{A:st -e nmtui-connect:}\uf1eb%{A}"
+wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
 thing() {
 
@@ -38,4 +40,4 @@ while true; do
 	echo -e "%{B#ff${bg}}%{F#ff${fg}}     $desktop     $asda %{c} $name %{r} $wifi     $time    "
 	sleep 0.2
 done |
-lemonbar -f "Font Awesome:size=14" -f "Iosevka Term:size=14" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash
+lemonbar  -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash
