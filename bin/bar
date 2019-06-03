@@ -1,0 +1,41 @@
+#!/bin/bash
+
+monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
+monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
+width="$(( $(awk '{print $1}' <<< $monitor ) - 40 ))"
+offX="$(( $(awk '{print $3}' <<< $monitor) + 20 ))"
+offY="$(( $(awk '{print $4}' <<< $monitor) + 8 ))"
+
+fg="ccccee"
+bg="1a1f2e"
+ac="447bbe"
+
+wifi="%{A:st -e nmtui-connect:}\uf1eb%{A}"
+
+thing() {
+
+	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) = 1 ]]; then
+		echo ""; return
+	fi
+	curname="$(bspc query -N -n)"
+	for i in $(bspc query -N -n .window -d focused); do
+		if [[ $curname = $i ]]; then
+			echo -en "%{F#ff$ac}●  " 
+		else
+			echo -en "%{F#ff$fg}●  "
+		fi
+	done
+	echo "%{F#ff$fg}"
+}
+
+bspc config -m $monitorName top_padding 40
+
+while true; do 
+	time="$(date "+%I:%M %p")"
+	name="$(xdotool getwindowfocus getwindowname)"
+	asda="$(thing)"
+	desktop="$(bspc query -D -d focused --names)"
+	echo -e "%{B#ff${bg}}%{F#ff${fg}}     $desktop     $asda %{c} $name %{r} $wifi     $time    "
+	sleep 0.2
+done |
+lemonbar -f "Font Awesome:size=14" -f "Iosevka Term:size=14" -g "${width}x28+$offX+$offY" | bash
