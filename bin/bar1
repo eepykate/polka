@@ -59,7 +59,6 @@ testtime() {
 	echo "$out%{B-}"
 }
 
-
 thing() {
 
 	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) = 1 ]]; then
@@ -68,28 +67,24 @@ thing() {
 	curname="$(bspc query -N -n)"
 	for i in $(bspc query -N -n .window -d focused); do
 		if [[ $curname = $i ]]; then
-			echo -en "%{F#ff$ac}●  " 
+			echo -en "%{B#ff$ac}%{O25}%{B-}%{O2}" 
 		else
-			echo -en "%{F#ff$fg}●  "
+			echo -en "%{B#ff$fg}%{O25}%{B-}%{O2}"
 		fi
 	done
-	echo "%{F#ff$fg}"
+	echo "%{B-}"
 }
 
 (sleep 0.5; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while true; do 
-	name; volume
+	volume
 
 	DT=($(date "+%-I %-M"))
 	tod="%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))"
 
-	time="%{A:nottime:}$(date "+%I:%M %p")%{A}"
-	asda="$(thing)"
-	desktop="$(bspc query -D -d focused --names)"
-
-	echo -e "$tod %{c}$(workspaces) %{r}${vol}"
+	echo -e "$tod %{c}$(workspaces) %{r}$(thing)%{O40}${vol}"
 
 	sleep 0.2
 done |
-lemonbar -B "#00$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x3+$offX+$offY" -n "lemonbar" | bash
+lemonbar -B "#00$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x3+$offX+$offY" -n "lemonbar"
