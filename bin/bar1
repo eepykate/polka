@@ -24,7 +24,7 @@ volume() {
 	amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
 	volume="$(echo ${amix}  | awk '{gsub("%", ""); print $5}')"
 	notvol="$(( 100 - $volume ))"
-	vol="%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}"
+	vol="%{A4:vol up:}%{A5:vol down:}%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}%{A}%{A}"
 }
 
 workspaces() {
@@ -82,10 +82,10 @@ while true; do
 	volume
 
 	DT=($(date "+%-I %-M"))
-	tod="%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))"
+	tod="%{A:nottime:}%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))%{A}"
 
 	echo -e "$tod %{c}$(workspaces) %{r}$(thing)%{O40}${vol}"
 
 	sleep 0.2
 done |
-lemonbar -B "#00$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x3+$offX+$offY" -n "lemonbar"
+lemonbar -B "#00$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x3+$offX+$offY" -n "lemonbar" | bash
