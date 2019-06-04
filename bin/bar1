@@ -14,14 +14,27 @@ ac="447bbe"
 
 wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
+volume() {
+	muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+
+	if [[ $muted = off ]]; then
+		vol="%{B#ffbe405d}%{O300}%{B-}"; return
+	fi
+
+	amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
+	volume="$(echo ${amix}  | awk '{gsub("%", ""); print $5}')"
+	notvol="$(( 100 - $volume ))"
+	vol="%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}"
+}
+
 workspaces() {
 	local xda="$(bspc query -D --names | sort -n)"
 	local active="$(bspc query -D -d focused --names)"
 	for i in $(sed 's/\n/ /g' <<< $xda); do
 		if [[ $i = $active ]]; then
-			echo -en "%{B#ff$ac}%{O25}%{B-}"
+			echo -en "%{B#ff$ac}%{O25}%{B-%{O2}}"
 		else
-			echo -en "%{B#ff$fg}%{O25}%{B-}"
+			echo -en "%{B#ff$fg}%{O25}%{B-}%{O2}"
 		fi
 	done
 }
@@ -76,8 +89,10 @@ name() {
 
 ( sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar) ) &
 
+bspc config -m HDMI-0 top_padding 3
+bspc config top_monocle_padding 3
 while true; do 
-	name
+	name; volume
 
 	DT=($(date "+%-I %-M"))
 	tod="%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))"
@@ -86,7 +101,7 @@ while true; do
 	asda="$(thing)"
 	desktop="$(bspc query -D -d focused --names)"
 
-	echo -e "$tod %{c}$(workspaces)"
+	echo -e "$tod %{c}$(workspaces) %{r}${vol}"
 
 	sleep 0.2
 done |
