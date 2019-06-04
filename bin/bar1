@@ -32,7 +32,7 @@ workspaces() {
 	local active="$(bspc query -D -d focused --names)"
 	for i in $(sed 's/\n/ /g' <<< $xda); do
 		if [[ $i = $active ]]; then
-			echo -en "%{B#ff$ac}%{O25}%{B-%{O2}}"
+			echo -en "%{B#ff$ac}%{O25}%{B-}%{O2}"
 		else
 			echo -en "%{B#ff$fg}%{O25}%{B-}%{O2}"
 		fi
