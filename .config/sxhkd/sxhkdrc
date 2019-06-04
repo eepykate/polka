@@ -103,9 +103,12 @@ alt + grave
 super + s
 	players.sh
 
-###       ###
-##  bspwm  ##
-###       ###
+super + x 
+	select_st
+
+#    ---
+#   bspwm
+#    ---
 
 super + q
 	bspc node -k
