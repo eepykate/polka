@@ -76,21 +76,8 @@ thing() {
 	echo "%{F#ff$fg}"
 }
 
-# bspc config -m $monitorName top_padding 46
+(sleep 0.5; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
-curdate() {
-	notify-send \"$(date "+%a %d %b - %I:%M %p")\"
-}
-
-name() {
-	name="$(xdotool getwindowfocus getwindowname | cut -c -40)"
-	[[ $(wc -m <<<$name) = 41 ]] && name="$name..."
-}
-
-( sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar) ) &
-
-bspc config -m HDMI-0 top_padding 3
-bspc config top_monocle_padding 3
 while true; do 
 	name; volume
 
