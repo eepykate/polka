@@ -9,7 +9,7 @@ if [ ! "$DBUS_SESSION_BUS_ADDRESS" ] && have dbus-launch; then
 fi
 ~/.fehbg
 xsetroot -cursor_name left_ptr
-bar &
+bar1 &
 start-dropdown.sh &
 xautolock -time 10 -locker ~/bin/lock &
 exec /usr/bin/bspwm

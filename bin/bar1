@@ -77,6 +77,7 @@ thing() {
 
 (sleep 0.5; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
+bspc config -m HDMI-0 top_padding 3
 while true; do 
 	volume
 
