@@ -30,8 +30,6 @@ thing() {
 	echo "%{F#ff$fg}"
 }
 
-bspc config -m $monitorName top_padding 46
-
 curdate() {
 	notify-send \"$(date "+%a %d %b - %I:%M %p")\"
 }
@@ -40,6 +38,8 @@ name() {
 	name="$(xdotool getwindowfocus getwindowname | cut -c -40)"
 	[[ $(wc -m <<<$name) = 41 ]] && name="$name..."
 }
+
+bspc config -m $monitorName top_padding 44
 
 (sleep 0.5; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
