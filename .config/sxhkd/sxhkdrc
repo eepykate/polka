@@ -103,7 +103,7 @@ alt + grave
 super + s
 	players.sh
 
-super + x 
+alt + x 
 	select_st
 
 #    ---

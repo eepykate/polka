@@ -26,9 +26,9 @@ window_gap 20
 pointer_modifier mod1
 EOF
 
-#      -----
+#       ----
 #   Window Rules
-#      -----
+#       ----
 
 bspc rule -a tabbed state=floating
 bspc rule -a dolphin state=floating
