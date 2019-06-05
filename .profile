@@ -12,30 +12,20 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 # Custom ls colours
 eval "$(dircolors ~/.config/dircolors)" 
 
-# Default user - mainly to hide the user@hostname with agnoster zsh theme
-#export DEFAULT_USER="gauge" 
-
 # Places where binaries/scripts go so you dont have to type the whole path to run them
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # less/man colors
 export LESS=-R
-export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
-export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
-export LESS_TERMCAP_ue=$'\E[0m' # reset underline
+export LESS_TERMCAP_mb=$'\E[1;31m'       # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'       # begin blink
+export LESS_TERMCAP_me=$'\E[0m'          # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m'   # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'          # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'       # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'          # reset underline
 
-#if [ "$TTY" = "/dev/tty1" ]; then
-#	pgrep -x openbox || exec startx
-#fi
-
-#xrdb ~/.Xresources &!
-nohup python3 -m http.server --directory ~/.startpage 8200 &>/dev/null &
-shortcuts &
-echo "$HOME/.config/sc" | entr shortcuts &
+shortcuts
 
 if [[ "$TERM" = "linux" ]]; then
 	source ~/.config/tty-colours.sh
