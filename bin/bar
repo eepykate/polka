@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+desktop() {
+	echo "desktop=\"$(bspc query -D -d focused --names)\"" > /tmp/desktop
+}
+
+case $1 in
+	-d) desktop; shift; exit;;
+esac
+
 pkill bar
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
@@ -41,14 +49,18 @@ name() {
 
 bspc config -m $monitorName top_padding 44
 
-(sleep 0.5; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
+(sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
+
+while true; do
+	echo "time=\"%{A:nottime:}$(date "+%I:%M %p")%{A}\"" > /tmp/time
+	sleep 5;
+done &
 
 while true; do 
+	. /tmp/desktop
+	. /tmp/time
 	name
-	time="%{A:nottime:}$(date "+%I:%M %p")%{A}"
 	asda="$(thing)"
-	desktop="$(bspc query -D -d focused --names)"
 	echo -e "    $desktop     $asda %{c} $name %{r} $wifi     $time    "
-	sleep 0.2
 done |
 lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash &
