@@ -294,6 +294,11 @@ unzip -o /tmp/Roboto.zip -d /usr/share/fonts/TTF/ &>/dev/null
 curl -Ls https://fonts.google.com/download?family=Roboto%20Condensed -o /tmp/Roboto-Condensed.zip
 unzip -o /tmp/Roboto-Condensed.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
+# Nerd font
+rm /tmp/Regular.zip
+curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Regular.zip -o /tmp/Regular.zip
+unzip -o /tmp/Regular.zip -d /usr/share/fonts/TTF/ &>/dev/null
+
 #Fira code font
 #curl -Ls https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf > "/usr/share/fonts/OTF/Fira Code Mono.otf"
 
