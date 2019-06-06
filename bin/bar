@@ -74,6 +74,6 @@ while true; do
 	. /tmp/volume
 	name
 	asda="$(thing)"
-	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$vol%{O20}$wifi%{O15}"
+	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$vol%{O14}$wifi%{O15}"
 done |
 lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Hack Nerd Font:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash &
