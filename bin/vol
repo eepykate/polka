@@ -3,6 +3,8 @@
 n="\e[0m"
 b="\e[1m"
 
+[[ -f /tmp/player ]] || touch /tmp/player
+
 help="Amixer and playerctl wrapper script
 
 All options send a notification, with the exceptions of status
@@ -26,16 +28,9 @@ ${b}Options: ${n}
   ${b}pause${n}          Pause media
   ${b}p${n}              Toggle play/pause"
 
-opts=`getopt -o h --long help -- "$@"`
-eval set -- "$opts"
-
-while true ; do
-	case "$1" in
-		-h|--help) echo -e "$help"; exit ;;
-		--) shift; break;;
-	esac
-done
-
+function print() {
+	printf $@
+}
 
 function notify() {
 	gdbus call -e -d "org.freedesktop.Notifications" \
@@ -43,6 +38,23 @@ function notify() {
 		-m org.freedesktop.Notifications.Notify "" \
 		$1 "" "$2" "$3" "[]" "{}" 5000 >/dev/null
 }
+
+
+opts=`getopt -o hpn --long help,print,notify -- "$@"`
+eval set -- "$opts"
+
+while true ; do
+	case "$1" in
+		-p|--print) function print() {
+			printf "" &>/dev/null
+		}; shift;;
+		-n|--notify) function notify() {
+			printf "" &>/dev/null
+		}; shift;;
+		-h|--help) echo -e "$help"; exit ;;
+		--) shift; break;;
+	esac
+done
 
 . /tmp/player
 
@@ -71,8 +83,6 @@ case $1 in
 	stop)   playerctl -p $player stop 2>/dev/null;;
 	previous) playerctl previous 2>/dev/null;;
 esac
-
-
 
 pc_amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
 pc_vol="$(echo ${pc_amix}  | awk '{print $5}')"
@@ -120,22 +130,22 @@ fi
 
 
 case $1 in 
-	up)     printf "%s\n" "$output"; notify 69 "$up";;
-	down)   printf "%s\n" "$output"; notify 69 "$down";;
-	set)    printf "%s\n" "$output"; notify 69 "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
-	m)      printf "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
-	mute)   printf "%s\n" "$output"; notify 69 "$(printf "Volume muted\n")";;
-	unmute) printf "%s\n" "$output"; notify 69 "$(printf "Volume unmuted\n%s" "$song")";;
-	pause)  printf "$song\n"; notify 420 "$output_pp" "$SpA";;
-	play)   printf "$song\n"; notify 420 "$output_pp" "$SpA";;
-	p)      printf "$song\n"; notify 420 "$output_pp" "$SpA";;
-	next)   printf "$song\n"; notify 420 "$output_next" "$SpA";;
-	prev)   printf "$song\n"; notify 420 "$output_prev" "$SpA";;
-	stop)   printf "Media stopped\n"; notify 420 "Media stopped";;
-	previous) printf "$song\n"; notify 420  "$output_prev" "$SpA";;
+	up)     print "%s\n" "$output"; notify 69 "$up";;
+	down)   print "%s\n" "$output"; notify 69 "$down";;
+	set)    print "%s\n" "$output"; notify 69 "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
+	m)      print "%s\n" "$output"; notify 69 "$(printf "Volume %s" "${mute}d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
+	mute)   print "%s\n" "$output"; notify 69 "$(printf "Volume muted\n")";;
+	unmute) print "%s\n" "$output"; notify 69 "$(printf "Volume unmuted\n%s" "$song")";;
+	pause)  print "$song\n"; notify 420 "$output_pp" "$SpA";;
+	play)   print "$song\n"; notify 420 "$output_pp" "$SpA";;
+	p)      print "$song\n"; notify 420 "$output_pp" "$SpA";;
+	next)   print "$song\n"; notify 420 "$output_next" "$SpA";;
+	prev)   print "$song\n"; notify 420 "$output_prev" "$SpA";;
+	stop)   print "Media stopped\n"; notify 420 "Media stopped";;
+	previous) print "$song\n"; notify 420  "$output_prev" "$SpA";;
 	status) case $2 in 
-		vol)  printf "%s\n" "$output";;
-		song) printf "%s\n" "$song";;
-		*) printf "%s  /  %s\n" "$song" "$output";;
+		vol)  print "%s\n" "$output"; notify 69 "$output";;
+		song) print "%s\n" "$song"; notify 69 "$song";;
+		*) print "%s  /  %s\n" "$song" "$output"; notify 75 "$output" "$song";;
 	esac;;
 esac
