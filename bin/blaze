@@ -105,22 +105,15 @@ if [[ ${DoM} = Display ]]; then
 	fi
 
 	# Get resolution and offset of the chosen display
-	display_res="$(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )"
-	width="$(echo   $display_res | awk '{print $1}' )"
-	height="$(echo  $display_res | awk '{print $2}' )"
-	offsetX="$(echo $display_res | awk '{print $3}' )"
-	offsetY="$(echo $display_res | awk '{print $4}' )"
+	read -r width height offsetX offsetY < <(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )
 elif [[ ${DoM} = Slop ]]; then
 	# Select an area with slop
 	slop="$(slop -l -c 0.64314,0.41176,0.70588,0.2 -b 1 -f '%w %h %x %y')"
 
 	# get the size and offset of the selection
-	width="$(echo   $slop | awk '{print $1}' )"
-	height="$(echo  $slop | awk '{print $2}' )"
+	read -r width height offsetX offsetY < <(echo -e "$slop")
 	(( $width % 2 )) && width="$(( $width + 1))"
 	(( $height % 2 )) && height="$(( $height + 1))"
-	offsetX="$(echo $slop | awk '{print $3}' )"
-	offsetY="$(echo $slop | awk '{print $4}' )"
 fi
 
 # Ask the user if they want desktop audio and what framerate
