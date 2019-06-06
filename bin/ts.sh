@@ -296,12 +296,20 @@ $HOME/.startpage/style.css" | \
 	bspc wm -r
 
 	# Change polybar colours
+	#sed --follow-symlinks -i \
+	#	-e "s/bg = #.*/bg = #$bgdark/" \
+	#		-e "s/fg = #.*/fg = #$fglight/" \
+	#		-e "s/accent = #.*/accent = #$accent/" \
+	#		~/.config/polybar/config
+	#	polybar.sh &!
+
+	# Change lemonbar colours
 	sed --follow-symlinks -i \
-		-e "s/bg = #.*/bg = #$bgdark/" \
-		-e "s/fg = #.*/fg = #$fglight/" \
-		-e "s/accent = #.*/accent = #$accent/" \
-		~/.config/polybar/config
-	polybar.sh &!
+		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
+		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
+		-e "s/ac=\".*\"/ac=\"$accent\"/" \
+		~/bin/bar
+	bar &!
 
 	sed --follow-symlinks -i \
 		-e "s/accent=\"#.*\"/accent=\"#$accent\"/g" \
