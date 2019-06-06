@@ -149,3 +149,5 @@ case $1 in
 		*) print "%s  /  %s\n" "$song" "$output"; notify 75 "$output" "$song";;
 	esac;;
 esac
+
+bar -v

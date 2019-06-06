@@ -4,8 +4,22 @@ desktop() {
 	echo "desktop=\"$(bspc query -D -d focused --names)\"" > /tmp/desktop
 }
 
+volume() {
+	muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+
+	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
+	local a="%{A}%{A}%{A}%{A}"
+	if [[ $muted = off ]]; then
+		echo -e "vol=\"${b}\ufa80${a}\"" > /tmp/volume; return
+	fi
+
+	echo -e "vol=\"${b}\ufa7d${a}\"" > /tmp/volume
+}
+
+
 case $1 in
 	-d) desktop; shift; exit;;
+	-v) volume; shift; exit;;
 esac
 
 pkill bar
@@ -38,10 +52,6 @@ thing() {
 	echo "%{F#ff$fg}"
 }
 
-curdate() {
-	notify-send \"$(date "+%a %d %b - %I:%M %p")\"
-}
-
 name() {
 	name="$(xdotool getwindowfocus getwindowname | cut -c -40)"
 	[[ $(wc -m <<<$name) = 41 ]] && name="$name..."
@@ -52,15 +62,18 @@ bspc config -m $monitorName top_padding 44
 (sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while true; do
-	echo "time=\"%{A:nottime:}$(date "+%I:%M %p")%{A}\"" > /tmp/time
+	echo "time=\"%{A:nottime:}$(date "+%I:%M")%{A}\"" > /tmp/time
 	sleep 5;
 done &
 
+volume
+
 while true; do 
-	. /tmp/desktop
-	. /tmp/time
+	. /tmp/desktop 
+	. /tmp/time 
+	. /tmp/volume
 	name
 	asda="$(thing)"
-	echo -e "    $desktop     $asda %{c} $name %{r} $wifi     $time    "
+	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$vol%{O20}$wifi%{O15}"
 done |
-lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash &
+lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Hack Nerd Font:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash &
