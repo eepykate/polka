@@ -6,14 +6,17 @@ ffmpeg -y -i /tmp/lock.png \
 	/tmp/lock_blur.png -loglevel quiet
 
 i3lock \
+	--clock \
+	--timecolor=cccceeff \
+	--datecolor=cccceeff \
 	--ringcolor=2f3341ff \
 	--verifcolor=ccccccff \
 	--wrongcolor=ccccccff \
-	--keyhlcolor=4d9de0ff \
+	--keyhlcolor=447bbeff \
 	--insidecolor=15171d00 \
-	--ringvercolor=4d9de0ff \
-	--insidevercolor=15171dff \
-	--ringwrongcolor=ed254eff \
+	--ringvercolor=447bbeff \
+	--insidevercolor=15171d00 \
+	--ringwrongcolor=be405dff \
 	--image=/tmp/lock_blur.png \
 	--insidewrongcolor=15171d00 \
 	--bshlcolor=ed254eff &
