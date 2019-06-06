@@ -260,22 +260,24 @@ systembeepoff
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm, /usr/bin/kbdrate -d 200 -r 30"
 
-#--------------My stuff--------------
+#     ---
+#   My Stuff
+#     ---
 
 mystuff
 
 mkdir -p /usr/share/fonts/TTF
 mkdir -p /usr/share/fonts/OTF
 
-#Agnoster ZSH theme
+# Agnoster ZSH theme
 curl https://gitlab.com/GaugeK/dots/raw/master/bin/agnoster.zsh-theme -o /usr/share/oh-my-zsh/themes/agnoster.zsh-theme &>/dev/null
 
-#Sauce Code Pro font
+# Sauce Code Pro font
 rm -f /tmp/SauceCodePro.zip &>/dev/null
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip >> /tmp/SauceCodePro.zip 
 unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-#Iosevka font
+# Iosevka font
 rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
@@ -301,27 +303,27 @@ fc-cache -f
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-#ls with icons and colours
+# ls with icons and colours
 if [ ! -f /usr/bin/ls_extended ]; then
 curl -L "https://gitlab.com/GaugeK/dots/raw/master/bin/ls_extended?inline=false" -o "/usr/bin/ls_extended"
 chmod a+x "/usr/bin/ls_extended"
 fi
 
-#Hibernate (for rofi)
+# Hibernate (for rofi)
 if [ ! -f /usr/bin/hibernate ]; then
 echo "#\!/usr/bin/bash
 
 systemctl hibernate" >> /usr/bin/hibernate
 fi
 
-#Hibernate and lock
+# Hibernate and lock
 if [ ! -f /usr/bin/hib ]; then
 echo "#\!/usr/bin/bash
 
 systemctl hibernate && lock" >> /usr/bin/hib
 fi
 
-#Disable mouse acceleration
+# Disable mouse acceleration
 if [ ! -f /etc/X11/xorg.conf.d/50-mouse-acceleration.conf ]; then
 echo 'Section "InputClass"
     Identifier "My Mouse"
@@ -332,7 +334,7 @@ echo 'Section "InputClass"
 EndSection' >> /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 fi
 
-#Touchpad stuff
+# Touchpad stuff
 if [ ! -f /etc/X11/xorg.conf.d/70-synaptics.conf ]; then
 echo 'Section "InputClass"
     Identifier "touchpad"
@@ -360,15 +362,15 @@ EndSection
 ' >> /etc/X11/xorg.conf.d/70-synaptics.conf
 fi
 
-#Make sudo as normal user request the root user's password instead of that user's
+# Make sudo as normal user request the root user's password instead of that user's
 if [[ -z $(grep "Defaults rootpw" "/etc/sudoers") ]]; then
 	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
 fi
 
-#One line per pkg pacman
+# One line per pkg pacman
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
-#Pacman-like loading bar in pacman
+# Pacman-like loading bar in pacman
 if [[ -z $(grep ILoveCandy "/etc/pacman.conf") ]]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
@@ -376,53 +378,38 @@ fi
 # Make pacman and yay colorful because why not.
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
 
-#Make wifi faster on my card
+# Make wifi faster on my card
 if [ -n /etc/modprobe.d/iwlwifi.conf ]; then
 	sh -c 'echo "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" > /etc/modprobe.d/iwlwifi.conf'
 fi
 
-#Shorter timeout for systemd init
+# Shorter timeout for systemd init
 sed -i "s/^#DefaultTimeoutStartSec=90s/DefaultTimeoutStartSec=15s/g" /etc/systemd/system.conf
 sed -i "s/^#DefaultTimeoutstopSec=90s/DefaultTimeoutstopSec=10s/g" /etc/systemd/system.conf
 systemctl daemon-reload
 
-#Show details about boot while booting up
+# Show details about boot while booting up
 sed -i "s/quiet//" /etc/default/grub
 
-#Enable hibernation (Probably won't work lmao)
+# Enable hibernation (Probably won't work lmao)
 if [[ -n $(grep swap /etc/fstab) ]]; then
-
-	#swap="$(lsblk | awk '/SWAP/ {print $1}' | tr -d '─├└')" 
-
-	#swap="$(echo /dev/$swap)"
-
-	#uswap="$(blkid | grep ${swap} | tr -d '\"' | awk '{print $2}')" 
-
-	#uswap="$(/usr/bin/ls -lha /dev/disk/by-uuid | grep ${swap} | awk '{print $9}')"
-
 	uswap="$(grep swap /etc/fstab | awk '{print $1}')"
-
 fi
 
 if [[ -n $(grep swap /etc/fstab) ]] && [[ -z $(grep "resume" "/etc/default/grub") ]]; then 
-
 	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/ $//" /etc/default/grub 
 	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/\"$//" /etc/default/grub 
 	sed -i "/GRUB_CMDLINE_LINUX_DEFAULT=/s/$/ resume=${uswap} \"/" /etc/default/grub 
 
 	grub-mkconfig -o /boot/grub/grub.cfg &>/dev/null
-
 fi
 
 if [[ -n $(grep swap /etc/fstab) ]] && [[ -z $(grep "resume" "/etc/mkinitcpio.conf") ]]; then 
-
 	sed -i '/HOOKS=/s/\<filesystems\>/resume &/' /etc/mkinitcpio.conf
-
 	mkinitcpio -p linux &>/dev/null
-
 fi
 
-#Enable Multilib repo if not already enabled
+# Enable Multilib repo if not already enabled
 if [[ -n $(grep "\#\[multilib\]" /etc/pacman.conf) ]]; then
 
 	multiline="$(grep -n "\[multilib\]" /etc/pacman.conf |  tr -dc '0-9')"
@@ -435,34 +422,45 @@ if [[ -n $(grep "\#\[multilib\]" /etc/pacman.conf) ]]; then
 
 fi
 
-#Install the nvidia drivers
+# Install the nvidia drivers
 if [[ -n $(lspci | grep -i NVIDIA) ]]; then
 	pacman -S --noconfirm nvidia nvidia-utils lib32-nvidia-utils nvidia-settings
 fi
 
-
-#Generate the openbox menu
-sudo -u $name obmenu-generator -s -i &>/dev/null
-
-#Syntax highlighting in zsh 
+# Syntax highlighting in zsh 
 git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
 
-#Change default shell to zsh
+# Change default shell to zsh
 if [[ -n $(grep $name /etc/passwd | grep bash) ]]; then
 	sed -i "/$name/s/\/bin\/bash/\/usr\/bin\/zsh/" /etc/passwd
 fi
 
 
-#(re)install ST
+# (re)install ST
 git clone https://gitlab.com/gaugek/st.git /tmp/st &&
 cd /tmp/st &&
-make &&
-make install;
+sudo make clean install
 cd /tmp;
+
+# (re)install tabbed
+git clone https://gitlab.com/gaugek/tabbed.git /tmp/tabbed &&
+cd /tmp/tabbed &&
+sudo make clean install
+cd /tmp
+
+# (re)install dmenu
+git clone https://gitlab.com/gaugek/dmenu.git /tmp/dmenu &&
+cd /tmp/dmenu &&
+sudo make clean install
+cd /tmp
+
+# install wmutils
+git clone https://github.com/wmutils/core /tmp/wmutils;
+	cd /tmp/wmutils; make clean install
 
 mkdir -p /home/$name/Stuff/Screenshots/scrot/
 
-#Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
+# Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
 mkdir -p /usr/local/bin /usr/local/sounds;
 curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove -o /usr/local/bin/usb-remove;
 curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-insert -o /usr/local/bin/usb-insert;
@@ -474,15 +472,12 @@ curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove.wav -o /usr/loc
 udevadm control --reload-rules && udevadm trigger;
 
 
-#Minimal zsh prompt theme
-curl -L "https://gitlab.com/gaugek/dots/raw/master/bin/async.zsh" -o /usr/share/zsh/site-functions/async
-curl -L "https://gitlab.com/gaugek/dots/raw/master/bin/pure.zsh" -o /usr/share/zsh/site-functions/prompt_pure_setup
-
-
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-#--------------End My stuff--------------
+#       ---
+#   End My Stuff
+#       ---
 
 # Last message! Install complete!
 finalize

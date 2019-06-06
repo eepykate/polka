@@ -2,6 +2,8 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,base-devel,is a group package with sudo and compilation software
 ,git,is a version control system
 ,openbox,is the main graphical user interface and window manager
+,bspwm,
+,sxhkd,
 ,lxqt,is a modular desktop environment
 ,xclip,
 ,util-linux,
@@ -29,8 +31,7 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,papirus-icon-theme,
 ,rofi,is an application launcher that uses binaries/scripts instead of .desktop files
 ,dolphin,is a Qt/KDE file manager
-,konsole,is a Qt/KDE terminal emulator
-,yakuake,is a Qt/KDE drop-down terminal
+,ksysguard,
 ,zsh,is my shell of choice
 ,arandr,is a UI for screen adjustment
 ,dosfstools,allows your computer to access dos-like filesystems
@@ -57,9 +58,6 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,xdotool,provides window action utilities on the command line.
 ,xssstate,times out the screen if locked
 ,youtube-dl,can download any YouTube video (or playlist or channel) when given the link
-,youtube-viewer,is a terminal interface for watching YouTube videos without a browser
-,mediainfo,shows audio and video information and is used by ranger as well
-,atool,manages and gives information about archives
 ,source-highlight,
 ,syntax-highlighting,
 ,vlc,is an application for watching movies
@@ -69,11 +67,8 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,conky,
 ,xf86-input-synaptics,
 ,dunst, is a minimal notification daemon
-,gvim, is an advanced text editor
 ,python,
-,gtk2-perl,
 ,xautolock, locks the screen after a select amount of time
-,dmenu,
 ,playerctl,
 ,gst-plugins-good, allows clementine to work (bloat)
 ,rsync,
@@ -84,32 +79,18 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,acpi,
 ,xfce4, is a desktop environment
 ,xfce4-goodies, is plugins for xfce
-,appmenu-gtk-module,
-,appmenu-qt4,
 ,imagemagick,
-,xorg-xgamma, allows for changing brightness back to default after playing a wine game
+,xorg-xgamma,
 ,neovim,
-,fff, is a terminal file manager
 ,maim,is an alternative to scrot
 ,zsh-completions,
-,breeze, 
-,zsh-autosuggestions,
-A,vala-panel-appmenu-common-git,
-A,vala-panel-appmenu-registrar-git,
-A,vala-panel-appmenu-xfce-git,
-A,vala-panel-appmenu-xfce-git, is a global menu for xfce4-panel
-A,obmenu-generator,
 A,pnmixer,
-A,breeze-hacked-cursor-theme,is my choice of cursor theme
 A,i3lock-color-git, is the lock screen
 A,qview,is an image viewer
 A,compton-tryone-git,
-A,oh-my-zsh-git,allows for more themes on ZSH
-A,ccp4m,is a dependency for ls_extended
 A,python-instant-music-git,is used for downloading music through the terminal from youtube
 A,gtk3-mushrooms,is gtk3 without CSD, and a few other improvements.
-A,skippy-xd-git, 
 A,pulseaudio-ctl,
 A,light-git,
-a,bibata-cursor-theme,
-
+A,bibata-cursor-theme,
+A,lemonbar-xft-git,
