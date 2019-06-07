@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
 desktop() {
 	echo "desktop=\"$(bspc query -D -d focused --names)\"" > /tmp/desktop
 }
