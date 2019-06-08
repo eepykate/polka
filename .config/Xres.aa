@@ -6,7 +6,7 @@
 *cursorColor:  #ccccee
 
 !! black
-*color0:       #000000
+*color0:       #22283c
 *color8:       #474a6a
 
 !! red
@@ -26,8 +26,8 @@
 *color12:      #447bbe
 
 !! magenta
-*color5:       #d682ff
-*color13:      #d682ff
+*color5:       #8866cc
+*color13:      #8866cc
 
 !! cyan
 *color6:       #528cbe
