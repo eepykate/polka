@@ -46,9 +46,9 @@ thing() {
 	curname="$(bspc query -N -n)"
 	for i in $(bspc query -N -n .window -d focused); do
 		if [[ $curname = $i ]]; then
-			echo -en "%{F#ff$ac}●  " 
+			echo -en "%{F#ff$ac}━  " 
 		else
-			echo -en "%{F#ff$fg}●  "
+			echo -en "%{F#ff$fg}━  "
 		fi
 	done
 	echo "%{F#ff$fg}"
