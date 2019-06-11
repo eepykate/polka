@@ -28,8 +28,8 @@ pkill bar
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$(( $(awk '{print $1}' <<< $monitor ) - 40 ))"
-offX="$(( $(awk '{print $3}' <<< $monitor) + 20 ))"
+width="$(( $(awk '{print $1}' <<< $monitor ) - 80 ))"
+offX="$(( $(awk '{print $3}' <<< $monitor) + 40 ))"
 offY="$(( $(awk '{print $4}' <<< $monitor) + 8 ))"
 
 fg="ccccee"
