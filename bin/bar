@@ -28,9 +28,9 @@ pkill bar
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$(( $(awk '{print $1}' <<< $monitor ) - 80 ))"
-offX="$(( $(awk '{print $3}' <<< $monitor) + 40 ))"
-offY="$(( $(awk '{print $4}' <<< $monitor) + 8 ))"
+width="$(awk '{print $1}' <<< $monitor )"
+offX="$(awk '{print $3}' <<< $monitor)"
+offY="$(awk '{print $4}' <<< $monitor)"
 
 fg="ccccee"
 bg="1a1f2e"
@@ -59,7 +59,7 @@ name() {
 	[[ $(wc -m <<<$name) = 41 ]] && name="$name..."
 }
 
-bspc config -m $monitorName top_padding 44
+bspc config -m $monitorName top_padding 30
 
 (sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
@@ -79,4 +79,4 @@ while true; do
 	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$vol%{O14}$wifi%{O15}"
 	sleep 0.05
 done |
-lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Hack Nerd Font:size=12" -g "${width}x28+$offX+$offY" -n "lemonbar" | bash
+lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Hack Nerd Font:size=12" -g "${width}x30+$offX+$offY" -n "lemonbar" | bash
