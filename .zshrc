@@ -2,7 +2,6 @@
 export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 source ~/.config/aliases   # Aliases
 source slight.zsh          # Shell theme
-stty -ixon                 # Disable Ctrl-S && Ctrl-Q
 
 #        -----
 #   Make zsh usable
@@ -21,9 +20,20 @@ bindkey '^[[6~' down-line-or-history  # [PageDown] - Down a line of history
 bindkey '^[[Z' reverse-menu-complete  # [Shift-Tab] - move through the completion menu backwards
 bindkey '^r' history-incremental-search-backward  # [Ctrl-r] - Search backward incrementally for a string.
 
-#             ---
+#     ---
+#   History
+#     ---
+HISTSIZE=999999
+SAVEHIST=999999
+HISTFILE="$HOME/.config/zsh_history"
+setopt hist_verify             # Show command with history expansion to user before running it
+setopt share_history           # Share command history data
+setopt extended_history        # Record timestamp of command in HISTFILE
+setopt hist_ignore_dups        # Ignore duplicated commands history list
+setopt inc_append_history      # Add commands to HISTFILE in order of execution
+setopt hist_expire_dups_first  # Delete duplicates first when HISTFILE size exceeds HISTSIZE
+
 #   Arrow keys search history
-#             ---
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -31,39 +41,26 @@ zle -N down-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
-#     ---
-#   History
-#     ---
-HISTFILE="$HOME/.config/zsh_history"
-HISTSIZE=690420
-SAVEHIST=690420
-setopt extended_history        # record timestamp of command in HISTFILE
-setopt hist_expire_dups_first  # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_dups        # ignore duplicated commands history list
-setopt hist_verify             # show command with history expansion to user before running it
-setopt inc_append_history      # add commands to HISTFILE in order of execution
-setopt share_history           # share command history data
-
 #        ---
 #   Autocompletion
 #        ---
-autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+setopt auto_menu         # Show completion menu on successive tab press
+setopt always_to_end     # Move cursor to end of word if completed in-word
+setopt complete_in_word
 ZSH_CACHE_DIR=$HOME/.cache/zsh
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 #        ---
 #   Miscellaneous
 #        ---
-set -k                   # Allow comments in shell
-setopt auto_cd           # cd by just typing the directory name
-setopt auto_menu         # show completion menu on successive tab press
-unsetopt menu_complete   # do not autoselect the first completion entry
-unsetopt flowcontrol
-setopt complete_in_word
-setopt always_to_end
+set -k                     # Allow comments in shell
+setopt auto_cd             # cd by just typing the directory name
+unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
+unsetopt menu_complete     # Do not autoselect the first completion entry
