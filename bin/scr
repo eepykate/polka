@@ -10,32 +10,17 @@ newname() {
 	mv ${dir}/${name}.png ${dir}/${name1}.png
 }
 
-focused() {
-	maim -ui $(xdotool getactivewindow) "${dir}/${name}.png" &&
+case $1 in
+	-f) 
+		maim -ui $(xdotool getactivewindow) "${dir}/${name}.png" &&
 		newname &&
-		notify-send "Screenshot of focused window taken"
-}
-
-fullscreen() {
-	maim -u "${dir}/${name}.png" &&
+		notify-send "Screenshot of focused window taken";;
+	-s)
+		maim -su -l -c 0.64314,0.41176,0.70588,0.2 -b 1 "${dir}/${name}.png" &&
 		newname &&
-		notify-send "Fullscreen screenshot taken"
-}
-
-selection() {
-	maim -su -l -c 0.64314,0.41176,0.70588,0.2 -b 1 "${dir}/${name}.png" &&
+		notify-send "Screenshot of selection taken";;
+	*)	
+		maim -u "${dir}/${name}.png" &&
 		newname &&
-		notify-send "Screenshot of selection taken"
-}
-
-opts=$(getopt -o fs --long focused,selection -- "$@")
-eval set -- "$opts"
-
-while true; do
-	case $1 in
-		-f|--focused) focused; exit;;
-		-s|--selection) selection; exit;;
-		*) fullscreen; exit;;
-		--) shift; break;;
-	esac
-done
+		notify-send "Fullscreen screenshot taken";;
+esac
