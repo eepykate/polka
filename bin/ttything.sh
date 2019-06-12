@@ -7,5 +7,5 @@ sort -n | \
 awk '{print $2}'))
 
 for i in {1..16}; do
-	sed -e "${i}\!d" -e "s/xd/${colours[${i}]}/" <$HOME/.config/tty-colours-template.sh
+	sed -e "${i}!d" -e "s/xd/${colours[${i}]}/" <$HOME/.config/tty-colours-template.sh
 done  >$HOME/.config/tty-colours.sh
