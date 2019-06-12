@@ -21,7 +21,7 @@ bspc config normal_border_color "#1a1f2e"
 bspc config border_width 3
 bspc config window_gap 20
 
-pointer_modifier mod1
+bspc config pointer_modifier mod1
 
 #       ----
 #   Window Rules

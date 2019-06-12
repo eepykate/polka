@@ -1,0 +1,10 @@
+[Unit]
+Description=Change tty colours
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/tty-colours-activate.sh
+
+[Install]
+WantedBy=multi-user.target
