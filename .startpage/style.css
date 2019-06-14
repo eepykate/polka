@@ -100,7 +100,7 @@ main {
 	width: auto;
 	text-align: center;
 	transition: all 00ms ease 0s;
-	box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);
+	/* box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);*/
 }
 
 .title {
@@ -139,27 +139,27 @@ main section {
 	box-sizing: border-box;
 }
 
-.content {
-	display: none; 
-}
-
 main section {
+	margin: 0 3px;
 	margin-top: 20px;
 }
 
 
 .box:hover .content {
-	display: block;
+	padding: 5px 0;
+	opacity: 1;
+	visibility: visible;
 }
 
 .content {
-	position: absolute;
+	visibility: hidden;
+	position: relative;
+	left: 0;
+	right: 0;
 	background-color: var(--bglight);
-	margin-left: auto;
-	margin-right: auto;
-	width: 33%;
-	max-width: 233px;
-	padding: 5px 0;
+	transition: all 200ms;
+	opacity: 0;
+	box-shadow: 8px 2px 6px 3px rgba(0,0,0,0.08);
 }
 
 .box:hover .title {
@@ -167,3 +167,14 @@ main section {
 	color: var(--hover);
 }
 
+.box:hover * .links {
+	display: block;
+}
+
+.links {
+	display: none;
+}
+
+main {
+	padding-bottom: 10px;
+}
