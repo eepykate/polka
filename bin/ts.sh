@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -35,6 +35,22 @@ if [[ $theme = Pure ]]; then
 	border="#1e2130"
 	red="#f0185a"
 	hover="$bgdark"
+
+elif [[ $theme = aa-purple ]]; then 
+	accentn="5"
+	bgdark="#1a1f2e"
+	bglight="#1d2232"
+	bglighter="#2c334c"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#8866cc"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#ee0055"
+	hover="#ffffff"
 
 elif [[ $theme = aa-blue ]]; then 
 	accentn="4"
@@ -62,7 +78,7 @@ elif [[ $theme = aa ]]; then
 	fglight="#ccccee"
 
 	disabled="#696969"
-	accent="#d682ff"
+	accent="#8866cc"
 	button="#cbe3f122"
 	border="#262c42"
 	red="#ee0055"
@@ -220,7 +236,7 @@ if [[ -n "$theme" ]]; then
 	#xfconf-query -c xfwm4 -p /general/theme -s "$theme"
 	# Manually change gtk theme
 	sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.gtkrc-2.0
-	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ~/.gtkrc-2.0
+	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ~/.config/gtk-3.0/settings.ini
 
 	kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
 
