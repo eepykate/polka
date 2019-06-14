@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Pure\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\naa-red\naa-white\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -35,6 +35,38 @@ if [[ $theme = Pure ]]; then
 	border="#1e2130"
 	red="#f0185a"
 	hover="$bgdark"
+
+elif [[ $theme = aa-red ]]; then 
+	accentn="1"
+	bgdark="#1a1f2e"
+	bglight="#1d2232"
+	bglighter="#2c334c"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#be405d"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#ee0055"
+	hover="#ffffff"
+
+elif [[ $theme = aa-white ]]; then 
+	accentn="7"
+	bgdark="#1a1f2e"
+	bglight="#1d2232"
+	bglighter="#2c334c"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#eeeeee"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#ee0055"
+	hover="#000000"
 
 elif [[ $theme = aa-purple ]]; then 
 	accentn="5"
@@ -306,8 +338,8 @@ $HOME/.startpage/style.css" | \
 
 	# Change bspwm colours
 	sed --follow-symlinks -i \
-		-e "s/focused_border_color #.*/focused_border_color #$accent/g" \
-		-e "s/normal_border_color #.*/normal_border_color #$bgdark/g" \
+		-e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
+		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bgdark\"/g" \
 		~/.config/bspwm/bspwmrc
 	bspc wm -r
 
