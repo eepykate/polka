@@ -6,15 +6,14 @@
 --fgdark: #8888a0;
 --fglight: #ccccee;
 	
---accent: #447bbe;
+--accent: #be405d;
 --border: #262c42;
 --disabled: #696969;
---hover: #ccccee;
+--hover: #ffffff;
 }
 
-body {
+body, html {
 	background-color: var(--bgdark);
-	overflow-x: hidden;
 }
 
 #page {
@@ -133,102 +132,7 @@ a:visited, a {
 	outline: none;
 }
 a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 00ms ease 0s; }
-a:hover {	color: var(--accent);}
-
-#notes:hover:not(:focus) {
-	margin-left: -25px;
-	border-color: var(--accent);
-}
-
-#notes1, #notes2, #notes3 {
-	width: 250px;
-	background-color: var(--bglight);
-	color: var(--fglight);
-	margin: 0 auto;
-	height: 100%;
-	min-height: content;
-	border: none;
-}
-
-.notearea {
-	position: absolute;
-	top: 66px; 
-	bottom: 20px; 
-	width: 100%;
-}
-
-.sidebar-top {
-	display: block;
-}
-
-#sidebar:not(.active) {
-	visibility: hidden;
-	right: -250px;
-}
-
-#sidebar {
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 280px;
-	height: 100%;
-	background-color: var(--bglight);
-	transition: all 200ms;
-	box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.24);
-}
-
-.sidebar-toggle {
-	position: fixed;
-	right: 25px;
-	top: 0;
-	z-index: 25;
-}
-
-
-.sidebar-toggle span {
-	display: block;
-	width: 20px;
-	height: 3px;
-	background: var(--fgdark);
-	margin: 5px 0px;
-	transition: move 400ms ease 0s;
-}
-
-.sidebar-toggle:hover span {
-	background: var(--accent);
-}
-
-
-.tabs {
-	width: 160px;
-	margin: 0 auto;
-	margin-top: 30px;
-}
-
-.tabs > hr {
-	color: var(--accent);
-	width: 40px;
-	transition: margin-left 200ms;
-}
-
-.tablink1.selected ~ hr {	margin-left: 2%;}
-.tablink2.selected ~ hr {	margin-left: 35%;}
-.tablink3.selected ~ hr {	margin-left: 68%;}
-
-.tablinks {
-	background-color: transparent;
-	color: var(--fgdark);
-	border: none;
-	width: 50px;
-	margin: 0px;
-	border: none;
-	text-align: center;
-	display: inline-block;
-}
-
-.tablinks:hover { color: var(--accent); }
-
-.tablinks.selected { color: var(--accent); }
+a:hover {	color: var(--fglight); }
 
 main section {
 	flex: 1 1 25%;
