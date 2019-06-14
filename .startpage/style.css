@@ -115,9 +115,9 @@ main {
 
 .links {
 	font-size: 14px;
-	padding: 5px 10px;
+	padding: 6px 15px;
 	width: auto;
-	display: inline-block;
+	display: block;
 }
 
 
@@ -155,13 +155,11 @@ main section {
 .content {
 	position: absolute;
 	background-color: var(--bglight);
-	max-width: 680px;
-	width: 95vw;
 	margin-left: auto;
 	margin-right: auto;
-	left: 0;
-	right: 0;
-	padding: 10px;
+	width: 33%;
+	max-width: 233px;
+	padding: 5px 0;
 }
 
 .box:hover .title {
