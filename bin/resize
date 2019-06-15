@@ -2,7 +2,7 @@
 #
 # resize window
 
-percent=10
+percent=5
 
 # set a smaller percentage when floating
 bspc query -N -n focused.floating > /dev/null && percent=5
