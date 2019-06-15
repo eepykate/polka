@@ -48,24 +48,39 @@ offY="$(awk '{print $4}' <<< $monitor)"
 wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
 testtime() {
-	val=$1
+	DT=($(date "+%-I %-M"))
+	# echo "time=\"%{A:nottime:}%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))%{A}\"" > /tmp/time
+	#val=$1
+	val0="${DT[0]}0"
+	val1="$((${DT[1]} * 2))"
 	secs=4
-	local time=""
 
-	while [[ $secs -gt 0 ]]; do
-		if [[ $val -gt 30 ]]; then
-			local time+="%{B#ff$ac}%{O30}%{B-}%{O2}"
-		elif [[ $val -le 0 ]]; then
-			local time+="%{B#ff$fg}%{O30}%{B-}%{O2}"
-		else
-			r=$((30 - $val))
-			local time+="%{B#ff$ac}%{O$val}%{B#ff$fg}%{O$r}%{B-}%{O2}"
+
+	for i in {0..1}; do 
+		out=""
+		if [[ $i = 0 ]]; then
+			val="$val0"
+			secs=4
+		elif [[ $i = 1 ]]; then
+			val="$val1"
+			secs=4
 		fi
-		val=$(($val - 30))
-		secs=$(($secs - 1))
+		while [[ $secs -gt 0 ]]; do
+			if [[ $val -gt 30 ]]; then
+				out+="%{B#ff$ac}%{O30}%{B-}%{O2}"
+			elif [[ $val -le 0 ]]; then
+				out+="%{B#ff$fg}%{O30}%{B-}%{O2}"
+			else
+				r=$((30 - $val))
+				out+="%{B#ff$ac}%{O$val}%{B#ff$fg}%{O$r}%{B-}%{O2}"
+			fi
+			val=$(($val - 30))
+			secs=$(($secs - 1))
+		done
+		echo -en "$out%{B-}%{O15}"
 	done
 	
-	echo "$time%{B-}"
+
 }
 
 thing() {
@@ -89,7 +104,8 @@ thing() {
 while true; do 
 
 	DT=($(date "+%-I %-M"))
-	echo "time=\"%{A:nottime:}%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))%{A}\"" > /tmp/time
+	#echo "time=\"%{A:nottime:}%{O20}$(testtime ${DT[0]}0)%{O18}$(testtime $((${DT[1]} * 2)))%{A}\"" > /tmp/time
+	echo "time=\"%{A:nottime:}%{O20}$(testtime)%{A}\"" > /tmp/time
 
 	sleep 5
 done &
@@ -99,6 +115,7 @@ bspc config -m HDMI-0 top_padding 3
 desktop
 volume
 
+#testtime
 
 while true; do 
 	. /tmp/desktop 
@@ -108,6 +125,6 @@ while true; do
 
 	echo -e "$time%{c}$desktop%{r}$(thing)%{O40}$vol"
 
-	sleep 0.05
+	sleep 0.06
 done |
 lemonbar -B "#00$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Font Awesome:size=12" -g "${width}x3+$offX+$offY" -n "lemonbar" | bash
