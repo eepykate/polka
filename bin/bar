@@ -55,7 +55,7 @@ bat() {
 		*)                 bat="" ;;
 	esac
 	#echo "bat=\"%{A:notify-send \\\"\$(acpi)\\\":}${bat}%{A}%{O15}\"" > /tmp/bat
-	echo "bat=\"%{A:battery:}${bat}%{A}%{O15}\"" > /tmp/bat
+	echo "bat=\"%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O15}\"" > /tmp/bat
 }
 
 thing() {
