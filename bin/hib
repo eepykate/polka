@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
 lock &
-sleep 4;
+sleep 1.5;
 systemctl hibernate;
 exit
