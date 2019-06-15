@@ -16,7 +16,7 @@ volume() {
 	amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
 	volume="$(echo ${amix}  | awk '{gsub("%", ""); print $5}')"
 	notvol="$(( 100 - $volume ))"
-	echo "vol=\"%{A4:vol up:}%{A5:vol down:}%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}%{A}%{A}\"" > /tmp/volume
+	echo "vol=\"%{A4:vol up:}%{A5:vol down:}%{A:vol status vol:}%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}%{A}%{A}%{A}\"" > /tmp/volume
 }
 
 desktop() {
@@ -29,7 +29,7 @@ desktop() {
 			desktop+="%{B#ff$fg}%{O25}%{B-}%{O2}"
 		fi
 	done
-	echo "desktop=\"$desktop\"" > /tmp/desktop
+	echo "desktop=\"%{A5:desktop.sh switch previous:}%{A4:desktop.sh switch next:}$desktop%{A}%{A}\"" > /tmp/desktop
 }
 
 case $1 in

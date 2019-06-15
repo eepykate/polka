@@ -6,7 +6,7 @@ if [[ $(command cat /tmp/panelstatus) = windowunmap ]]; then
 	thing="windowmap" &&
 	echo "windowmap" > /tmp/panelstatus
 	#bspc config -m HDMI-0 top_padding 3
-	bspc config -m $monitor top_padding 30
+	bspc config -m $monitor top_padding 3
 else
 	thing="windowunmap" &&
 	echo "windowunmap" > /tmp/panelstatus
