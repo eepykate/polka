@@ -20,7 +20,6 @@ switch() {
 			previous) xdotool set_desktop $((${desktop} -1));;
 		esac
 	fi
-	bar -d
 }
 
 
@@ -48,3 +47,5 @@ case $1 in
 	move) move $2; switch $2; shift;;
 	switch) switch $2;  shift;;
 esac
+
+bar -d

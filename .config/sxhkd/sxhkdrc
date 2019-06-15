@@ -1,3 +1,6 @@
+XF86MonBrightness{Down,Up}
+	light -{U,A} 10
+
 super + alt + t
 	synclient TouchpadOff=0
 

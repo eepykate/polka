@@ -54,7 +54,8 @@ bat() {
 		9[0-9])            bat="" ;;
 		*)                 bat="" ;;
 	esac
-	echo "bat=\"${bat}\"%{O15}" > /tmp/bat
+	#echo "bat=\"%{A:notify-send \\\"\$(acpi)\\\":}${bat}%{A}%{O15}\"" > /tmp/bat
+	echo "bat=\"%{A:battery:}${bat}%{A}%{O15}\"" > /tmp/bat
 }
 
 thing() {
@@ -84,10 +85,13 @@ bspc config -m $monitorName top_padding 30
 
 while true; do
 	echo "time=\"%{A:nottime:}$(date "+%I:%M")%{A}\"" > /tmp/time
+	bat
 	sleep 5;
 done &
 
 volume
+bat
+desktop 
 
 while true; do 
 	. /tmp/desktop 
