@@ -189,6 +189,6 @@ if [[ $RtR = Yes ]]; then
 			-pix_fmt yuv420p \
 			$(printf " $bitrate")\
 			-q:v 0 $(printf " $nvenc") \
-			"${dir}/${name}".webm -loglevel error
+			"${dir}/${name}".mp4 -loglevel error
 	fi
 fi
