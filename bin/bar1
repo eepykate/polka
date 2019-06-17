@@ -10,13 +10,17 @@ volume() {
 	muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
 
 	if [[ $muted = off ]]; then
-		vol="%{B#ffbe405d}%{O300}%{B-}"; return
+		vol="%{B#ff$fg}%{O100}%{B-}"
+		echo "vol=\"%{A3:vol m:}%{A4:vol up:}%{A5:vol down:}%{A:vol status vol:}$vol%{O20}%{A}%{A}%{A}%{A}\"" > /tmp/volume
+	else
+		amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
+		volume="$(echo ${amix}  | awk '{gsub("%", ""); print $5}')"
+		notvol="$(( 100 - $volume ))"
+		echo "vol=\"%{A3:vol m:}%{A4:vol up:}%{A5:vol down:}%{A:vol status vol:}%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}%{A}%{A}%{A}%{A}\"" > /tmp/volume
 	fi
 
-	amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
-	volume="$(echo ${amix}  | awk '{gsub("%", ""); print $5}')"
-	notvol="$(( 100 - $volume ))"
-	echo "vol=\"%{A4:vol up:}%{A5:vol down:}%{A:vol status vol:}%{B#ff$ac}%{O$volume}%{B#ff$fg}%{O$notvol}%{B-}%{O20}%{A}%{A}%{A}\"" > /tmp/volume
+
+
 }
 
 desktop() {
