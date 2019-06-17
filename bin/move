@@ -5,22 +5,22 @@
 dir=$1
 
 case $dir in
-	left)   fdim=width;  tdim=height; sign=-;;
-	right)  fdim=width;  tdim=height; sign=+;;
-	up) f   dim=height; tdim=width;  sign=-;;
-	down)   fdim=height; tdim=width;  sign=+
+    west)  fdim=width;  tdim=height; sign=-;;
+    east)  fdim=width;  tdim=height; sign=+;;
+    north) fdim=height; tdim=width;  sign=-;;
+    south) fdim=height; tdim=width;  sign=+
 esac
 
 floating() {
-percent=5
+    percent=5
 
-# get a percentage of the monitor resolution
-var=$((`bspc query -T -m | jshon -e rectangle -e "$fdim"` * percent / 100))
+    # get a percentage of the monitor resolution
+    var=$((`bspc query -T -m | jshon -e rectangle -e "$fdim"` * percent / 100))
 
-[ "$fdim" = width  ] && { x=$sign$var; y=0; }
-[ "$fdim" = height ] && { y=$sign$var; x=0; }
+    [ "$fdim" = width  ] && { x=$sign$var; y=0; }
+    [ "$fdim" = height ] && { y=$sign$var; x=0; }
 
-bspc node -v "$x" "$y"
+    bspc node -v "$x" "$y"
 }
 
 tiled() {

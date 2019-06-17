@@ -1,7 +1,7 @@
 " Line number on the side
 set number relativenumber 
 
-cmap ft filetype detect
+"cmap ft filetype detect
 
 "map h <insert>
 "map i <Up>

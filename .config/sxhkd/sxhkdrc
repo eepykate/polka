@@ -131,11 +131,8 @@ super + {_,shift} + Escape
 super + {d,a}
 	bspc node -t "~{floating,fullscreen}"
 
-super + {_,ctrl,alt} + {Left,Down,Up,Right}
-    {focus,move,resize} {left,down,up,right}
-
-super + shift + {Left,Down,Up,Right}
-    bspc node -p {west,south,north,east}
+super + {_,ctrl,alt,shift} + {Left,Down,Up,Right}
+	{focus,move,resize,bspc node -p} {west,south,north,east}
 
 ctrl + alt + {Left,Right}
 	desktop.sh switch {previous,next}
