@@ -14,13 +14,13 @@ case $1 in
 	-f) 
 		maim -ui $(xdotool getactivewindow) "${dir}/${name}.png" &&
 		newname &&
-		notify-send "Screenshot of focused window taken";;
+		notify-send -t 2000 "Screenshot of focused window taken";;
 	-s)
 		maim -su -l -c 0.64314,0.41176,0.70588,0.2 -b 1 "${dir}/${name}.png" &&
 		newname &&
-		notify-send "Screenshot of selection taken";;
+		notify-send -t 2000 "Screenshot of selection taken";;
 	*)	
 		maim -u "${dir}/${name}.png" &&
 		newname &&
-		notify-send "Fullscreen screenshot taken";;
+		notify-send -t 2000 "Fullscreen screenshot taken";;
 esac

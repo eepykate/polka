@@ -39,7 +39,9 @@ ac="be405d"
 wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
 bat() {
-	local capacity=$(cat /sys/class/power_supply/*/capacity 2>/dev/null) || return
+	cat /sys/class/power_supply/*/capacity &>/dev/null || return
+
+	local capacity=$(cat /sys/class/power_supply/*/capacity 2>/dev/null)
 	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
 	case "$capacity" in
@@ -97,7 +99,7 @@ while true; do
 	. /tmp/desktop 
 	. /tmp/time 
 	. /tmp/volume
-	. /tmp/bat
+	[[ -f /tmp/bat ]] && . /tmp/bat
 	name
 	asda="$(thing)"
 	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$bat$vol%{O15}$wifi%{O15}"
