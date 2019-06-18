@@ -1,0 +1,126 @@
+#!/usr/bin/env bash
+
+fifo="/tmp/barfifo"
+
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
+desktop() {
+	echo "d$(bspc query -D -d focused --names)" > $fifo
+}
+
+volume() {
+	muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+
+	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
+	local a="%{A}%{A}%{A}%{A}"
+	if [[ $muted = off ]]; then
+		echo -e "vol=\"${b}\ufa80${a}\"" > $fifo; return
+	fi
+
+	echo -e "v${b}\ufa7d${a}" > $fifo
+}
+
+
+case $1 in
+	-d) desktop; shift; exit;;
+	-v) volume; shift; exit;;
+esac
+
+[[ -e $fifo ]] && rm $fifo
+mkfifo $fifo
+
+pkill bar
+
+monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
+monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
+width="$(awk '{print $1}' <<< $monitor )"
+offX="$(awk '{print $3}' <<< $monitor)"
+offY="$(awk '{print $4}' <<< $monitor)"
+
+fg="ccccee"
+bg="1a1f2e"
+ac="be405d"
+
+wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
+
+bat() {
+	cat /sys/class/power_supply/*/capacity &>/dev/null || return
+
+	local capacity=$(cat /sys/class/power_supply/*/capacity 2>/dev/null)
+	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
+
+	case "$capacity" in
+		[0-9]|1[0-9])      bat="" ;;
+		2[0-9])					   bat="" ;;
+		3[0-9])            bat="" ;;
+		4[0-9])            bat="" ;;
+		5[0-9])            bat="" ;;
+		6[0-9])            bat="" ;;
+		7[0-9])            bat="" ;;
+		8[0-9])            bat="" ;;
+		9[0-9])            bat="" ;;
+		*)                 bat="" ;;
+	esac
+	#echo "bat=\"%{A:notify-send \\\"\$(acpi)\\\":}${bat}%{A}%{O15}\"" > /tmp/bat
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O15}" > $fifo
+}
+
+thing() {
+	thing=""
+
+	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) = 1 ]]; then
+		echo ""; return
+	fi
+	curname="$(bspc query -N -n)"
+	for i in $(bspc query -N -n .window -d focused); do
+		if [[ $curname = $i ]]; then
+			thing+="%{F#ff$ac}━  " 
+		else
+			thing+="%{F#ff$fg}━  "
+		fi
+	done
+	thing+="%{F#ff$fg}"
+	echo "a$thing" > $fifo
+}
+
+name() {
+	name="$(xdotool getwindowfocus getwindowname | cut -c -40)"
+	[[ $(wc -m <<<$name) = 41 ]] && name="$name..."
+}
+
+bspc config -m $monitorName top_padding 30
+
+(sleep 1; xdo lower $(xdo id -n lemonbar)) &
+
+while true; do
+	echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
+	bat
+	sleep 5;
+done &
+
+(sleep 0.1; 
+bat;
+volume;
+desktop;
+echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo 
+) &
+
+while read -r line < "$fifo" ; do 
+	case $line in
+		v*) vol="${line#?}";;
+		a*) asda="${line#?}";;
+		b*) bat="${line#?}";;
+		t*) time="${line#?}";;
+		d*) desktop="${line#?}";;
+	esac
+	#. /tmp/desktop 
+	#. /tmp/time 
+	#. /tmp/volume
+	#[[ -f /tmp/bat ]] && . /tmp/bat
+	#name
+	#asda="$(thing)"
+	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$bat$vol%{O15}$wifi%{O15}"
+	sleep 0.05
+done | \
+lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Hack Nerd Font:size=12" -g "${width}x30+$offX+$offY" -n "lemonbar" | bash
+
