@@ -48,7 +48,7 @@ hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 
 " language syntax
-hi Comment      ctermbg=NONE   ctermfg=6    cterm=italic
+hi Comment      ctermbg=NONE   ctermfg=8    cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=1    cterm=NONE
