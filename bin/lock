@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pgrep i3lock &>/dev/null && exit
+
 scrot "/tmp/lock.png"
 ffmpeg -y -i /tmp/lock.png \
 	-filter_complex "boxblur=15" -vframes 1 \
