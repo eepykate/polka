@@ -53,15 +53,15 @@ listdirs() {  dirs | grep -o "\(^~/\)\?\(^/\)\?[^/]*/[^/]*/[^/]*$" || dirs  }
 ssh_info="$([[ "$SSH_CONNECTION" != '' ]] && echo "${USER}@$(hostname)   ")"
 title() {  print -n -r $'\e]0;'$ssh_info$1$'\a'  }
 title "$(dirs)"
-slight_chpwd() { title "$(dirs)" }
-slight_precmd() { title "$(dirs)"; time_since_last_command; unset epoch }
-slight_preexec() { title "$2"; epoch="$(date +%s%3N)" }
-add-zsh-hook chpwd slight_chpwd
-add-zsh-hook precmd slight_precmd
-add-zsh-hook preexec slight_preexec
+# slight_chpwd() { title "$(dirs)" }
+# slight_precmd() { title "$(dirs)"; time_since_last_command; unset epoch }
+# slight_preexec() { title "$2"; epoch="$(date +%s%3N)" }
+# add-zsh-hook chpwd slight_chpwd
+# add-zsh-hook precmd slight_precmd
+# add-zsh-hook preexec slight_preexec
 
 color="1"
 [[ $color = 1 ]] && false="3" || false="1"
 
 PS1=$'%(?.%{\e[3${color};1m%}.%{\e[3${false};1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
-RPS1=$'$(git_info)%{\e[0m%} %{\e[33m%}${time_passed}%{\e[0m%}'
+#RPS1=$'$(git_info)%{\e[0m%} %{\e[33m%}${time_passed}%{\e[0m%}'
