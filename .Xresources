@@ -13,4 +13,4 @@ st.cwscale:       1.0
 st.chscale:       1.0
 st.blinktimeout:  0.5
 
-#include ".config/Xres.aa-red"
+#include ".config/Xres.xd"

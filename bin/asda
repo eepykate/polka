@@ -2,7 +2,7 @@
 
 #set -x
 
-accent="#be405d"
+accent="#91a8ec"
 fglight="#ccccee"
 
 if [[ $(bspc query -T -d | jq -r .layout) != monocle ]]; then

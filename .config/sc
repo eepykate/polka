@@ -26,13 +26,13 @@ f   scsh       ~/.config/sc.sh
 f   xin        ~/.xinitrc
 f   sz         ~/bin/slight.zsh
 f   sb         ~/bin/slight.bash
-f   xb         ~/.config/Xres.Berry
 f   xp         ~/.config/Xres.Pure
 f   xp1        ~/.config/Xres.Pure-1
 f   xf         ~/.config/Xres.Frost
 f   xfp        ~/.config/Xres.Frost-Purple
 f   xa         ~/.config/Xres.aa
 f   xc         ~/.config/Xres.ca-aa
+f   xx         ~/.config/Xres.xd
 f   drc        ~/.config/dunst/dunstrc
 f   sx         ~/.config/sxhkd/sxhkdrc
 f   bs         ~/.config/bspwm/bspwmrc

@@ -60,7 +60,7 @@ title "$(dirs)"
 # add-zsh-hook precmd slight_precmd
 # add-zsh-hook preexec slight_preexec
 
-color="1"
+color="4"
 [[ $color = 1 ]] && false="3" || false="1"
 
 PS1=$'%(?.%{\e[3${color};1m%}.%{\e[3${false};1m%})$(listdirs)%{\e[0m%} %(!.%{\e[33m%}%}.%{\e[0m%})❯%{\e[0m%} '
