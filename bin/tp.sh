@@ -23,7 +23,7 @@ else
 fi
 echo "$thing" > /tmp/panelstatus
 
-IFS=$'\n' ids=( $(xdotool search --name "lemonbar") )
+IFS=$'\n' ids=( $(xdotool search --classname "Bar") )
 for aaa in ${ids[@]}; do
 	xdotool $(printf $thing) $aaa
 done
