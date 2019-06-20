@@ -66,9 +66,30 @@ bat() {
 
 	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O15}" > $fifo
 }
-bspc config -m $monitorName top_padding 30
 
-(sleep 1; xdo lower $(xdo id -n lemonbar)) &
+thing() {
+	thing=""
+	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) = 1 ]]; then
+		:
+	else
+		curname="$(bspc query -N -n)"
+		thing+="%{O15}"
+		for i in $(bspc query -N -n .window -d focused); do
+			if [[ $curname = $i ]]; then
+				thing+="%{F#ff$ac}━  " 
+			else
+				thing+="%{F#ff$fg}━  "
+			fi
+		done
+	fi
+	echo -e "a$thing%{F-}" > $fifo
+}
+
+
+while true; do
+	thing
+	sleep 0.1;
+done &
 
 while true; do
 	echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
@@ -83,6 +104,9 @@ desktop;
 echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
+bspc config -m $monitorName top_padding 30
+(sleep 1; xdo lower $(xdo id -n lemonbar)) &
+
 while read -r line < "$fifo"; do
 	case $line in
 		v*) vol="${line#?}";;
@@ -91,7 +115,7 @@ while read -r line < "$fifo"; do
 		t*) time="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{B#ff$bl}%{O15}$time%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O20}$bat$vol%{O15}$wifi%{O15}%{B-}"
+	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O20}$bat$vol%{O15}$wifi%{O15}%{B-}"
 	sleep 0.05
 done | \
 lemonbar \
