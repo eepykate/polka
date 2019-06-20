@@ -11,7 +11,7 @@ if [[ $stat = windowunmap ]]; then
 	if [[ $cur -ge 1 ]]; then
 		bspc config -m $monitor top_padding $(( $height + $cur ))
 	else
-		bspc config -m $monitor top_padding 30
+		bspc config -m $monitor top_padding 24
 	fi
 else
 	thing="windowunmap" &&
