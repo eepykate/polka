@@ -62,7 +62,7 @@ autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 setopt prompt_subst
 color="4"
 [[ $color = 1 ]] && false="3" || false="1"
-PROMPT=$'%(?.%{\e[3${color};1m%}.%{\e[3${false};1m%})%(!.#.❯)%{\e[0m%} '
+PROMPT=$'%(?.%{\e[3${color};1m%}.%{\e[3${false};1m%})%(!.#.>)%{\e[0m%} '
 
 #        ---
 #   Miscellaneous

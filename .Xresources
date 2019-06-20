@@ -3,7 +3,8 @@ URxvt.font:       xft:Iosevka Term:style=Regular:pixelsize=12
 *shell:           /bin/zsh
 st.alpha:         255
 st.termname:      st-256color
-st.font:          Iosevka Term:pixelsize=12:antialias=true:autohint=true
+!st.font:          Iosevka Term:pixelsize=12:antialias=true:autohint=true
+st.font:          t kiwi Wide
 st.borderpx:      15
 st.tabspaces:     4
 st.xfps:          60
