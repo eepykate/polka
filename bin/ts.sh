@@ -298,7 +298,7 @@ if [[ -n "$theme" ]]; then
 
 	# Replace the accent colour in slight.zsh
 	[[ -n $accentn ]] && 
-		sed --follow-symlinks -i "s/color=\".*\"/color=\"$accentn\"/" ~/bin/slight.zsh
+		sed --follow-symlinks -i "s/color=\".*\"/color=\"$accentn\"/" ~/.zshrc
 
 	# Change foreground colour in conky
 	[[ -f ~/.conkyrc ]] && [[ -n $fglight ]] && sed "s/\${color ......}/\${color $fglight}/" -i ~/.conkyrc

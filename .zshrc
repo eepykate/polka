@@ -1,7 +1,6 @@
 #     ~/.zshrc     #
 export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 source ~/.config/aliases   # Aliases
-source slight.zsh          # Shell theme
 
 #        -----
 #   Make zsh usable
@@ -57,6 +56,14 @@ zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
+#       ---
+#   Shell Theme
+#       ---
+setopt prompt_subst
+color="4"
+[[ $color = 1 ]] && false="3" || false="1"
+PROMPT=$'%(?.%{\e[3${color};1m%}.%{\e[3${false};1m%})%(!.#.❯)%{\e[0m%} '
+
 #        ---
 #   Miscellaneous
 #        ---
@@ -64,3 +71,4 @@ set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 unsetopt menu_complete     # Do not autoselect the first completion entry
+

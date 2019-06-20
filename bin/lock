@@ -2,12 +2,13 @@
 
 pgrep i3lock &>/dev/null && exit
 
-scrot "/tmp/lock.png"
-ffmpeg -y -i /tmp/lock.png \
-	-filter_complex "boxblur=15" -vframes 1 \
-	/tmp/lock_blur.png -loglevel quiet
+#scrot "/tmp/lock.png"
+#ffmpeg -y -i /tmp/lock.png \
+#	-filter_complex "boxblur=15" -vframes 1 \
+#	/tmp/lock_blur.png -loglevel quiet
 
 i3lock \
+	--tiling \
 	--clock \
 	--timecolor=cccceeff \
 	--datecolor=cccceeff \
@@ -19,9 +20,9 @@ i3lock \
 	--ringvercolor=447bbeff \
 	--insidevercolor=15171d00 \
 	--ringwrongcolor=be405dff \
-	--image=/tmp/lock_blur.png \
 	--insidewrongcolor=15171d00 \
-	--bshlcolor=ed254eff &
+	--bshlcolor=ed254eff \
+	--image=$HOME/Wallpapers/Wallpaper_lock.png &
 
 while pgrep -x i3lock; do
 	[[ 10000 -lt $(xssstate -i) ]] && xset dpms force off;

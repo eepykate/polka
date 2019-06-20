@@ -20,6 +20,7 @@ alias fak="sudo !!"        # run last command with sudo
 alias SU="sudo zsh"        # open zsh as root user
 alias v="nvim"             # short neovim
 alias t="tmux"             # tmux
+alias s="dirs"
 alias f="fff"              # terminal file manager
 
 # pacman/yay
