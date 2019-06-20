@@ -39,7 +39,8 @@ offY="$(awk '{print $4}' <<< $monitor)"
 
 fg="ccccee"
 bg="1a1f2e"
-ac="be405d"
+bl="1d2232"
+ac="91a8ec"
 
 wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
@@ -80,7 +81,7 @@ thing() {
 		fi
 	done
 	thing+="%{F#ff$fg}"
-	echo "a$thing" > $fifo
+	echo "a%{O15}$thing" > $fifo
 }
 
 name() {
@@ -119,7 +120,7 @@ while read -r line < "$fifo" ; do
 	#[[ -f /tmp/bat ]] && . /tmp/bat
 	#name
 	#asda="$(thing)"
-	echo -e "%{O15}$time%{O20}$asda%{c}$name%{r}$desktop%{O20}$bat$vol%{O15}$wifi%{O15}"
+	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{c}$name%{r}%{B#ff$bl}%{O15}$desktop%{O20}$bat$vol%{O15}$wifi%{O15}%{B-}"
 	sleep 0.05
 done | \
 lemonbar -B "#ff$bg" -F "#ff$fg" -f "Roboto Condensed:size=13" -f "Hack Nerd Font:size=12" -g "${width}x30+$offX+$offY" -n "lemonbar" | bash
