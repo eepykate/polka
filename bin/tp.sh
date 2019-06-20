@@ -1,18 +1,27 @@
 #!/usr/bin/env zsh
 
 monitor="$(xrandr -q | grep primary | awk '{print $1}')"
+height="30"
+cur="$(bspc config -m $monitor top_padding)"
 
-if [[ $(command cat /tmp/panelstatus) = windowunmap ]]; then
+[[ -z $stat ]] && stat="$(cat /tmp/panelstatus)"
+
+if [[ $stat = windowunmap ]]; then
 	thing="windowmap" &&
-	echo "windowmap" > /tmp/panelstatus
-	#bspc config -m HDMI-0 top_padding 3
-	bspc config -m $monitor top_padding 30
+	if [[ $cur -ge 1 ]]; then
+		bspc config -m $monitor top_padding $(( $height + $cur ))
+	else
+		bspc config -m $monitor top_padding 30
+	fi
 else
 	thing="windowunmap" &&
-	echo "windowunmap" > /tmp/panelstatus
-	#bspc config -m HDMI-0 top_monocle_padding 0
-	bspc config -m $monitor top_padding 0
+	if [[ $cur -gt $height ]]; then
+		bspc config -m $monitor top_padding $(( $cur - $height ))
+	else
+		bspc config -m $monitor top_padding 0
+	fi
 fi
+echo "$thing" > /tmp/panelstatus
 
 IFS=$'\n' ids=( $(xdotool search --name "lemonbar") )
 for aaa in ${ids[@]}; do
