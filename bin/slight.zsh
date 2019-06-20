@@ -32,7 +32,7 @@ lastcommit() {
 
 	current_epoch="$(date +%s)"
 	[[ -n $lastcommit ]] || return
-	ts="$(( $current_epoch - $lastcommit ))" && tp="$(( $tp / 1000 ))" 
+	ts="$(( $current_epoch - $lastcommit ))" && tp="$(( $ts / 1000 ))" 
 	[[ $ts -ge 5 ]] || return
 	local H=$(($ts/60/60%24));   local M=$(($ts/60%60));   local S=$(($ts%60))
 	if [[ $H -ne 0 ]]; then; timesincelastcommit="${H}h ${M}m ${S}s"; elif [[ $M -ne 0 ]]; then; timesincelastcommit="${M}m ${S}s"; else; timesincelastcommit="${S}s"; fi
