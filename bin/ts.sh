@@ -370,7 +370,7 @@ $HOME/.startpage/style.css" | \
 	# Change lemonbar colours
 	sed --follow-symlinks -i \
 		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
-		-e "s/bl=\".*\"/bg=\"$bglight\"/" \
+		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
 		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
 		-e "s/ac=\".*\"/ac=\"$accent\"/" \
 		~/bin/bar

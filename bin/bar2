@@ -103,7 +103,7 @@ while true; do
 	sleep 1.2
 done &
 
-(sleep 0.1;
+(sleep 0.2;
 bat;
 volume;
 desktop;
