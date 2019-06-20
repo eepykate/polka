@@ -6,10 +6,10 @@
 --fgdark: #8888a0;
 --fglight: #ccccee;
 	
---accent: #be405d;
+--accent: #85acff;
 --border: #262c42;
 --disabled: #696969;
---hover: #ffffff;
+--hover: #000000;
 }
 
 body, html {
@@ -105,16 +105,14 @@ main {
 
 .title {
 	color: var(--fglight);
-	font-size: 18px;
 	transition: all 00ms ease 0s;
 	display: block;
 	text-align: center;
 	background-color: var(--bglight);
-	padding: 5px;
+	padding: 8px;
 }
 
 .links {
-	font-size: 14px;
 	padding: 6px 15px;
 	width: auto;
 	display: block;
