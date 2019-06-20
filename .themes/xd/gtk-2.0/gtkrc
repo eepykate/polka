@@ -16,13 +16,13 @@ gtk-color-scheme = "text_color:#ccccee\nbase_color:#1a1f2e"
 # Foreground/background
 gtk-color-scheme = "fg_color:#ccccee\nbg_color:#1d2232"
 # Selected foreground/background
-gtk-color-scheme = "selected_fg_color:#ccccee\nselected_bg_color:#91a8ec"
+gtk-color-scheme = "selected_fg_color:#ccccee\nselected_bg_color:#85acff"
 # Titlebar foreground/background
 gtk-color-scheme = "titlebar_fg_color:#ccccee\ntitlebar_bg_color:#1a1f2e"
 # Tooltips foreground/background
 gtk-color-scheme = "tooltip_fg_color:#ccccee\ntooltip_bg_color:#616161"
 # Links
-gtk-color-scheme = "link_color:#91a8ec\nvisited_link_color:#E040FB"
+gtk-color-scheme = "link_color:#85acff\nvisited_link_color:#E040FB"
 
 # Set GTK settings
 gtk-auto-mnemonics              = 1

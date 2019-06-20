@@ -77,15 +77,15 @@ light.color=#404754
 mid.light.color=#313131
 dark.color=black
 mid.color=#191919
-highlight.color=#91a8ec
-inactive.highlight.color=#91a8ec
+highlight.color=#85acff
+inactive.highlight.color=#85acff
 text.color=#cccceeff
 window.text.color=#cccceeff
 button.text.color=#cccceeff
 disabled.text.color=#696969
 tooltip.text.color=#ccccee
 highlight.text.color=#000000
-link.color=#91a8ec
+link.color=#85acff
 link.visited.color=#00aaff
 progress.indicator.text.color=white
 
@@ -172,14 +172,14 @@ inherits=PanelButtonCommand
 frame=false
 interior.element=radio
 text.normal.color=#cccceec8
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 
 [CheckBox]
 inherits=PanelButtonCommand
 frame=false
 interior.element=checkbox
 text.normal.color=#cccceec8
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 
 [Focus]
 inherits=PanelButtonCommand
@@ -221,7 +221,7 @@ indicator.size=9
 inherits=PanelButtonCommand
 text.normal.color=#cccceec8
 text.press.color=#ccccee96
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 
 [Tab]
 inherits=PanelButtonCommand
@@ -237,8 +237,8 @@ frame.bottom=3
 frame.left=2
 frame.right=2
 text.normal.color=#ccccee78
-text.focus.color=#91a8ec
-text.toggle.color=#91a8ec
+text.focus.color=#85acff
+text.toggle.color=#85acff
 frame.expansion=0
 
 [TabFrame]
@@ -265,7 +265,7 @@ frame.left=1
 frame.right=1
 text.bold=true
 text.normal.color=#ccccee96
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 text.toggle.color=white
 frame.expansion=0
 
@@ -280,7 +280,7 @@ text.margin=0
 interior.element=menubar
 frame.element=menubar
 text.normal.color=#cccceec8
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 frame.bottom=0
 frame.expansion=0
 
@@ -304,9 +304,9 @@ frame.element=progress
 interior.element=progress
 text.margin=0
 text.normal.color=#cccceec8
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 text.press.color=white
-text.toggle.color=#91a8ec
+text.toggle.color=#85acff
 text.bold=false
 frame.expansion=8
 
@@ -330,9 +330,9 @@ text.margin.bottom=2
 text.margin.left=4
 text.margin.right=4
 text.normal.color=#cccceec8
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 text.press.color=#ccccee
-text.toggle.color=#91a8ec
+text.toggle.color=#85acff
 frame.expansion=0
 
 [Splitter]
@@ -367,7 +367,7 @@ frame.element=menuitem
 interior.element=menuitem
 indicator.element=menuitem
 text.normal.color=#cccceec8
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 text.margin.top=0
 text.margin.bottom=0
 text.margin.left=3
@@ -399,7 +399,7 @@ text.margin.right=4
 text.margin.top=0
 text.margin.bottom=0
 text.normal.color=#ccccee
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 frame.expansion=0
 
 [TitleBar]
@@ -439,7 +439,7 @@ frame=false
 text.shadow=0
 text.margin=0
 text.normal.color=#ccccee96
-text.focus.color=#91a8ec
+text.focus.color=#85acff
 text.bold=true
 frame.expansion=0
 

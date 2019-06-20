@@ -2,8 +2,6 @@
 
 xrdb ~/.Xresources
 
-
-
 colours="$(xrdb -query | \
 	grep \*color | \
 	sed -e 's/\*//' -e 's/color//' -e 's/\://' -e 's/#//' | \
@@ -22,13 +20,11 @@ xrdb -query | grep \*background | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;256;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
 
-
 xrdb -query | grep \*foreground | \
 	sed -e 's/#//' | \
 	awk '{print $2}' | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;257;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
-
 
 
 for tty in /dev/pts/[0-9]*; do

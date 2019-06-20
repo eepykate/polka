@@ -46,7 +46,7 @@ elif [[ $theme = xd ]]; then
 	fglight="#ccccee"
 
 	disabled="#696969"
-	accent="#91a8ec"
+	accent="#85acff"
 	button="#cbe3f122"
 	border="#262c42"
 	red="#f75e6f"
