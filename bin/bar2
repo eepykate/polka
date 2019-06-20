@@ -92,9 +92,15 @@ while true; do
 done &
 
 while true; do
-	echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 	bat
-	sleep 5;
+	if [[ $blink = ":" ]]; then
+		blink=" "
+	else
+		blink=":"
+	fi
+
+	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
+	sleep 1.2
 done &
 
 (sleep 0.1;
