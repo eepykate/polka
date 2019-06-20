@@ -69,7 +69,7 @@ bat() {
 
 thing() {
 	thing=""
-	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) = 1 ]]; then
+	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) -le 1 ]]; then
 		:
 	else
 		curname="$(bspc query -N -n)"
