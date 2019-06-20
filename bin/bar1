@@ -100,7 +100,7 @@ while true; do
 	sleep 5
 done &
 
-bspc config -m HDMI-0 top_padding 3
+bspc config -m $monitorName top_padding 3
 
 desktop
 volume
