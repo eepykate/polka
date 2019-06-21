@@ -57,7 +57,7 @@ bat() {
 	*) bat=;;
 	esac
 
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O15}" > $fifo
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O8}" > $fifo
 }
 
 
