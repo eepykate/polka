@@ -29,7 +29,7 @@
 }
 	
 :root {
-	--ui-height: 26px;                                                 /* Used only in this script but currently commented out */
+	--ui-height: 26px;                                                 /* Used only in this script */
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
 	--button-radius: 0.5em !important;                                 /* Border-radius of buttons */
@@ -575,31 +575,41 @@ toolbarspring {
 	max-height: var(--ui-height);
 }
 
+#downloads-button,
+.toolbarbutton-badge-stack,
+#downloads-indicator-anchor,
+#downloads-indicator-progress-outer,
+#downloads-indicator-progress-inner,
+#downloads-indicator-icon,
 .urlbar-icon,
+#downloads-button,
+.webextension-browser-action,
 .toolbarbutton-1:not(.webextension-browser-action),
 .toolbarbutton-1:not(.webextension-browser-action) .toolbarbutton-icon {
-	width: 24px !important;
-	height: 24px !important;
+	width: calc(var(--ui-height) * 0.90 ) !important;
+	height: calc(var(--ui-height) * 0.90 ) !important;
 }
 
 #downloads-button,
 .webextension-browser-action {
-	transform: scale(0.8) !important;
+	transform: scale(0.90) !important;
 }
 
 .tab-close-button {
 	margin-right: 2px !important;
 }
 
+
+#identity-box > *,
 .tab-throbber,
 .tab-icon-image {
-	width: 14px !important;
-	height: 14px !important;
+	width: calc(var(--ui-height) * 0.50 ) !important;
+	height: calc(var(--ui-height) * 0.50 ) !important;
 }
 
 .tab-close-button {
-	width: 16px !important;
-	height: 16px !important;
+	width: calc(var(--ui-height) * 0.60 ) !important;
+	height: calc(var(--ui-height) * 0.60 ) !important;
 }
 
 
@@ -667,7 +677,7 @@ toolbarspring {
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 150px !important;
+	max-width: 130px !important;
 }
 
 
