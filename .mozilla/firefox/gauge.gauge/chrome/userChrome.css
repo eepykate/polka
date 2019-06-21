@@ -667,7 +667,7 @@ toolbarspring {
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 170px !important;
+	max-width: 150px !important;
 }
 
 
