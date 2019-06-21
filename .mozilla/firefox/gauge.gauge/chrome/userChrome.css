@@ -29,6 +29,7 @@
 }
 	
 :root {
+	--ui-height: 32px;                                                 /* Used only in this script but currently commented out */
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
 	--button-radius: 0.5em !important;                                 /* Border-radius of buttons */
@@ -554,13 +555,43 @@ toolbarspring {
 
 /* Change height of a few items */
 #TabsToolbar, 
-#nav-bar, 
+#nav-bar,
 #titlebar, 
 .tabbrowser-tab,  
 #tabbrowser-tabs { 
-	height: 32px !important;
+	height: var(--ui-height) !important;
 }
 
+/*#urlbar {
+	min-height: 90% !important;
+}
+
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+	--tab-min-height: var(--ui-height);
+	height: var(--ui-height);
+	min-height: var(--ui-height);
+	max-height: var(--ui-height);
+}
+
+toolbarbutton,
+.urlbar-icon,
+.toolbarbutton-1,
+.toolbarbutton-icon {
+	transform: scale(0.9) !important;
+	width: 24px !important;
+	height: 24px !important;
+}
+
+.tab-throbber,
+.tab-icon-image {
+	width: 14px !important;
+	height: 14px !important;
+}
+
+.tab-close-button {
+	width: 16px !important;
+	height: 16px !important;
+}*/
 
 
 /* Transparent url bar */
@@ -604,7 +635,7 @@ toolbarspring {
 
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
-	margin-top: -48px !important;
+	margin-top: calc(var(--ui-height) * -1 - 16px) !important;
 	z-index: 2 !important;
 	pointer-events: none;
 	transition: all 200ms, z-index 0ms !important;
@@ -618,7 +649,7 @@ toolbarspring {
 /* When navbar is focused, bring it into view */
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
 	pointer-events: auto;
-	margin-top: -32px !important;
+	margin-top: calc(var(--ui-height) * -1) !important;
 	margin-bottom: 0px !important;
 	opacity: 1 !important;
 	z-index: 2 !important;
@@ -654,7 +685,10 @@ toolbarseparator {
 	border-color: var(--bglighter) !important;
 }
 
-/* Needed for having the link hover thing at the cursor */
+
+
+
+/* userChrome.js support */
 /*
  * Original binding was on the List All Tabs button. This broke it from
  * Firefox 61 onward. No issues with the Forward button that I can see.
