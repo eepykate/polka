@@ -29,7 +29,7 @@
 }
 	
 :root {
-	--ui-height: 32px;                                                 /* Used only in this script but currently commented out */
+	--ui-height: 26px;                                                 /* Used only in this script but currently commented out */
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
 	--button-radius: 0.5em !important;                                 /* Border-radius of buttons */
@@ -54,7 +54,7 @@
 /* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
 	-moz-box-ordinal-group: 0 !important;
-	margin: 0px 4px 0px -2px !important;
+	margin: 0px 6px 0px -2px !important;
 }
 
 .tabbrowser-tab .tab-close-button {
@@ -553,7 +553,7 @@ toolbarspring {
 
 
 
-/* Change height of a few items */
+/* Change size of a few items */
 #TabsToolbar, 
 #nav-bar,
 #titlebar, 
@@ -561,25 +561,34 @@ toolbarspring {
 #tabbrowser-tabs { 
 	height: var(--ui-height) !important;
 }
+#tabbrowser-tabs {
+	--tab-min-height: var(--ui-height);
+}
 
-/*#urlbar {
+#urlbar {
 	min-height: 90% !important;
 }
 
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
-	--tab-min-height: var(--ui-height);
 	height: var(--ui-height);
 	min-height: var(--ui-height);
 	max-height: var(--ui-height);
 }
 
-toolbarbutton,
 .urlbar-icon,
-.toolbarbutton-1,
-.toolbarbutton-icon {
-	transform: scale(0.9) !important;
+.toolbarbutton-1:not(.webextension-browser-action),
+.toolbarbutton-1:not(.webextension-browser-action) .toolbarbutton-icon {
 	width: 24px !important;
 	height: 24px !important;
+}
+
+#downloads-button,
+.webextension-browser-action {
+	transform: scale(0.8) !important;
+}
+
+.tab-close-button {
+	margin-right: 2px !important;
 }
 
 .tab-throbber,
@@ -591,7 +600,7 @@ toolbarbutton,
 .tab-close-button {
 	width: 16px !important;
 	height: 16px !important;
-}*/
+}
 
 
 /* Transparent url bar */
