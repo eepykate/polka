@@ -57,6 +57,8 @@ bat() {
 	*) bat=;;
 	esac
 
+	[[ $status = Charging ]] && bat=
+
 	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O8}" > $fifo
 }
 
@@ -70,9 +72,9 @@ thing() {
 		thing+="%{O15}"
 		for i in $(bspc query -N -n .window -d focused); do
 			if [[ $curname = $i ]]; then
-				thing+="%{F#ff$ac}━  " 
+				thing+="%{F#ff$ac} " 
 			else
-				thing+="%{F#ff$fg}━  "
+				thing+="%{F#ff$fg} "
 			fi
 		done
 	fi

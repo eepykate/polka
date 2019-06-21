@@ -135,17 +135,6 @@ mc() {
 	mkdir -p "$1"; cd "$1";
 } 
 
-rc() {
-	xrdb ~/.Xresources
-	xresthing.sh
-	
-	for tty in /dev/pts/[0-9]*; do
-		[[ -w $tty ]] &&
-			eval /tmp/colours.sh > "$tty"
-	done
-}
-
-
 function cgif() {
 	rm -f /tmp/palette.png /tmp/recording.mp4 /tmp/encoded.gif
 	#local video="$(ls -1t $HOME/Videos/recordings | head -1)"
@@ -160,7 +149,9 @@ function cgif() {
 }
 
 colours() { 
-	for c in {1..7}; do printf "\e[3${c}m\e[4${c}m  "; done
+	for c in {0..7}; do printf "\e[3${c}m\e[4${c}m  \e[0m"; done
+	printf "\n"
+	for c in {0..7}; do printf "\e[9${c}m\e[10${c}m  \e[0m"; done
 	printf "\n"
 }
 
