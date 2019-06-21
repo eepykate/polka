@@ -1,10 +1,6 @@
-#     ~/.zshrc     #
-export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
-source ~/.config/aliases   # Aliases
-
-#        -----
-#   Make zsh usable
-#        -----
+#             -----
+#   Operation make zsh usable
+#             -----
 bindkey '^E' end-of-line              # [Ctrl-E] - Jump to the end of the line
 bindkey '^[[P' delete-char            # [Delete] - Delete character under cursor
 bindkey '^[[4~' end-of-line           # [End] - Go to end of line
@@ -32,7 +28,7 @@ setopt hist_ignore_dups        # Ignore duplicated commands history list
 setopt inc_append_history      # Add commands to HISTFILE in order of execution
 setopt hist_expire_dups_first  # Delete duplicates first when HISTFILE size exceeds HISTSIZE
 
-#   Arrow keys search history
+# Arrow keys search history
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -63,6 +59,7 @@ setopt prompt_subst
 color="4"
 [[ $color = 1 ]] && false="3" || false="1"
 PROMPT=$'%(?.%{\e[3${color};1m%}.%{\e[3${false};1m%})%(!.#.>)%{\e[0m%} '
+export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 
 #        ---
 #   Miscellaneous
@@ -71,4 +68,4 @@ set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 unsetopt menu_complete     # Do not autoselect the first completion entry
-
+source ~/.config/aliases   # Aliases
