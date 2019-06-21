@@ -8,8 +8,8 @@ pgrep i3lock &>/dev/null && exit
 #	/tmp/lock_blur.png -loglevel quiet
 
 i3lock \
-	--tiling \
 	--clock \
+	--bshlcolor=ed254eff \
 	--timecolor=cccceeff \
 	--datecolor=cccceeff \
 	--ringcolor=2f3341ff \
@@ -21,7 +21,6 @@ i3lock \
 	--insidevercolor=15171d00 \
 	--ringwrongcolor=be405dff \
 	--insidewrongcolor=15171d00 \
-	--bshlcolor=ed254eff \
 	--image=$HOME/Wallpapers/Wallpaper_lock.png &
 
 while pgrep -x i3lock; do
