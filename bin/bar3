@@ -50,14 +50,12 @@ bat() {
 	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
 	case "$capacity" in
-	0) icon=;;
-	1) icon=;;
-	2) icon=;;
-	3) icon=;;
-	*) icon=;;
+	0) bat=;;
+	1) bat=;;
+	2) bat=;;
+	3) bat=;;
+	*) bat=;;
 	esac
-
-	[[ $status = Charging ]] && bat=""
 
 	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O15}" > $fifo
 }
