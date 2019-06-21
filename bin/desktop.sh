@@ -48,4 +48,6 @@ case $1 in
 	switch) switch $2;  shift;;
 esac
 
-bar -d
+(sleep 0.3; exit) &
+
+pgrep bar && bar -d

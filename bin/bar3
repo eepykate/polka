@@ -2,7 +2,7 @@
 
 fifo="/tmp/barfifo"
 
-trap "trap - SIGTERM && kill -- -$$" SIGINT SIGKILL SIGTERM EXIT
+trap 'pkill -P $$' EXIT SIGINT SIGKILL SIGTERM
 
 desktop() {
 	echo "d$(bspc query -D -d focused --names)" > $fifo
