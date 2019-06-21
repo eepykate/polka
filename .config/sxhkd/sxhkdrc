@@ -46,6 +46,9 @@ ctrl + alt + Insert
 ctrl + alt + End
 	blaze -s
 
+super + i
+	rofi-emoji
+
 XF86AudioPrev
 	vol prev
 
