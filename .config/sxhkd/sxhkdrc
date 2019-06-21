@@ -151,11 +151,11 @@ shift + alt + {Right,Left}
 ctrl + alt + {Right,Left}
 	bspc desktop -f {next,prev}
 
-ctrl + super + {F1,F2,F3,F4,F5,F6,F7}
+ctrl + super + {1,2,3,4,5,6,7}
 	bspc node -d {1,2,3,4,5,6,7}; \
 	bar -d
 
-super + {F1,F2,F3,F4,F5,F6,F7}
+super + {1,2,3,4,5,6,7}
 	bspc desktop -f {1,2,3,4,5,6,7}; \
 	bar -d
 
