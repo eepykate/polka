@@ -7,7 +7,7 @@
 --fgdark: #8888a0;
 --fglight: #ccccee;
 			
---accent: #447bbe;
+--accent: #85acff;
 --blue:        #02a4fc;
 --green:       #12e689;
 --yellow:      #f0d35c;
@@ -16,7 +16,7 @@
 --border1:     #223344;
 --border2:     #334455;
 --disabled: #696969;
---hover: #ccccee;
+--hover: #000000;
 }
 	
 :root{

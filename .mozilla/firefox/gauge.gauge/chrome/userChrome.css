@@ -10,12 +10,12 @@
 --fgdark: #8888a0;
 --fglight: #ccccee;
 		
---accent: #447bbe;
+--accent: #85acff;
 --border: #262c42;
 --disabled: #696969;
 --fgdark: #8888a0;
 --selected: #c5d3eb1c;
---hover: #ccccee;
+--hover: #000000;
 }
 	
 	
@@ -604,26 +604,24 @@ toolbarspring {
 
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
-	margin-top: -32px !important;
+	margin-top: -48px !important;
 	z-index: -1 !important;
-	transition: opacity 200ms !important;
+	transition: all 200ms, z-index 0ms !important;
 	overflow-y: hidden;
-	max-height:0;
-	min-height:0 !important;
 	padding-top:0 !important;
-	padding-bottom:0 !important;
+	margin-bottom:16px !important;
 	opacity: 0;
 }
 
 
 /* When navbar is focused, bring it into view */
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
+	margin-top: -32px !important;
+	margin-bottom: 0px !important;
 	opacity: 1 !important;
 	z-index: 2 !important;
 	max-height: 32px;
 }
-
-
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
@@ -638,9 +636,9 @@ toolbarspring {
 
 
 /* Hide toolbox when fullscreen */
-#navigator-toolbox[inFullscreen="true"] {
+/*#navigator-toolbox[inFullscreen="true"] {
 	display: none !important;
-}
+}*/
 
 toolbarseparator {
 	background-color: var(--bglighter) !important;
