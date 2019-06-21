@@ -605,7 +605,8 @@ toolbarspring {
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
 	margin-top: -48px !important;
-	z-index: -1 !important;
+	z-index: 2 !important;
+	pointer-events: none;
 	transition: all 200ms, z-index 0ms !important;
 	overflow-y: hidden;
 	padding-top:0 !important;
@@ -616,6 +617,7 @@ toolbarspring {
 
 /* When navbar is focused, bring it into view */
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
+	pointer-events: auto;
 	margin-top: -32px !important;
 	margin-bottom: 0px !important;
 	opacity: 1 !important;
