@@ -20,10 +20,10 @@ volume() {
 	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
 	local a="%{A}%{A}%{A}%{A}"
 	if [[ $muted = off ]]; then
-		echo -e "v${b}%{B#ff$bl}%{O6}%{O6}%{B#ff$blr}Muted%{O6}%{B-}${a}" > $fifo; return
+		echo -e "v${b}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}Muted%{O6}%{B-}${a}" > $fifo; return
 	fi
 
-	echo -e "v${b}%{B#ff$bl}%{O6}%{O6}%{B#ff$blr}%{O6}$volume%{O6}%{B-}${a}" > $fifo
+	echo -e "v${b}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}%{O6}$volume%{O6}%{B-}${a}" > $fifo
 }
 
 case $1 in
@@ -72,7 +72,7 @@ thing() {
 	else
 		curname="$(bspc query -N -n)"
 		thing+="%{O6}"
-		thing+="%{B#ff$blr}%{O6}"
+		thing+="%{B#ff$bl}%{O6}"
 		for i in $(bspc query -N -n .window -d focused); do
 			if [[ $curname = $i ]]; then
 				thing+="%{F#ff$ac} " 
@@ -91,7 +91,7 @@ tim() {
 	else
 		blink=":"
 	fi
-	echo "t%{A:nottime:}%{B#ff$bl}%{O6}%{O6}%{B#ff$blr}%{O6}$(date "+%I$blink%M")%{O6}%{B-}%{A}" > $fifo
+	echo "t%{A:nottime:}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}%{O6}$(date "+%I$blink%M")%{O6}%{B-}%{A}" > $fifo
 }
 
 while true; do
@@ -123,7 +123,7 @@ while read -r line < "$fifo"; do
 		t*) time="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O10}%{+u}%{+o}$time$asda%{B-}%{r}%{B#ff$bl}%{O6}%{O6}%{B#ff$blr}%{O6}$desk%{O6}%{B-}%{O6}$vol%{B-}%{-o}%{-u}%{O10}"
+	echo -e "%{O10}%{+u}%{+o}$time$asda%{B-}%{r}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}%{O6}$desk%{O6}%{B-}%{O6}$vol%{B-}%{-o}%{-u}%{O10}"
 	sleep 0.05
 done | lemonbar \
 	-a 25 \
