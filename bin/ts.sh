@@ -39,8 +39,8 @@ if [[ $theme = Pure ]]; then
 elif [[ $theme = xd ]]; then 
 	accentn="4"
 	bgdark="#1a1f2e"
-	bglight="#1d2232"
-	bglighter="#2c334c"
+	bglight="#202537"
+	bglighter="#272e44"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -55,8 +55,8 @@ elif [[ $theme = xd ]]; then
 elif [[ $theme = aa-red ]]; then 
 	accentn="1"
 	bgdark="#1a1f2e"
-	bglight="#1d2232"
-	bglighter="#2c334c"
+	bglight="#202537"
+	bglighter="#272e44"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -71,8 +71,8 @@ elif [[ $theme = aa-red ]]; then
 elif [[ $theme = aa-white ]]; then 
 	accentn="7"
 	bgdark="#1a1f2e"
-	bglight="#1d2232"
-	bglighter="#2c334c"
+	bglight="#202537"
+	bglighter="#272e44"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -87,8 +87,8 @@ elif [[ $theme = aa-white ]]; then
 elif [[ $theme = aa-purple ]]; then 
 	accentn="5"
 	bgdark="#1a1f2e"
-	bglight="#1d2232"
-	bglighter="#2c334c"
+	bglight="#202537"
+	bglighter="#272e44"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -103,8 +103,8 @@ elif [[ $theme = aa-purple ]]; then
 elif [[ $theme = aa-blue ]]; then 
 	accentn="4"
 	bgdark="#1a1f2e"
-	bglight="#1d2232"
-	bglighter="#2c334c"
+	bglight="#202537"
+	bglighter="#272e44"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -119,8 +119,8 @@ elif [[ $theme = aa-blue ]]; then
 elif [[ $theme = aa ]]; then 
 	accentn="5"
 	bgdark="#1a1f2e"
-	bglight="#1d2232"
-	bglighter="#2c334c"
+	bglight="#202537"
+	bglighter="#272e44"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -370,6 +370,7 @@ $HOME/.startpage/style.css" | \
 	# Change lemonbar colours
 	sed --follow-symlinks -i \
 		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
+		-e "s/blr=\".*\"/blr=\"$bglighter\"/" \
 		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
 		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
 		-e "s/ac=\".*\"/ac=\"$accent\"/" \
