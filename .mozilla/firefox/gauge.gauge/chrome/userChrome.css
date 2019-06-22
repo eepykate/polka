@@ -20,7 +20,7 @@
 	
 	
 :root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
-	--color-overflow: #222;                                         /* >> button color */
+	--color-overflow: #222;                                           /* >> button color */
 	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
 	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
 	--lwt-text-color: var(--fglight) !important;
@@ -54,7 +54,7 @@
 /* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
 	-moz-box-ordinal-group: 0 !important;
-	margin: 0px 6px 0px -2px !important;
+	margin: 0px 5px 0px -2px !important;
 }
 
 .tabbrowser-tab .tab-close-button {
@@ -590,6 +590,7 @@ toolbarspring {
 	height: calc(var(--ui-height) * 0.90 ) !important;
 }
 
+#identity-box > *,
 #downloads-button,
 .webextension-browser-action {
 	transform: scale(0.90) !important;
@@ -600,7 +601,6 @@ toolbarspring {
 }
 
 
-#identity-box > *,
 .tab-throbber,
 .tab-icon-image {
 	width: calc(var(--ui-height) * 0.50 ) !important;
@@ -617,7 +617,6 @@ toolbarspring {
 #urlbar {
 	background-color: transparent !important;
 }
-
 
 
 /***   OneLiner   ***/

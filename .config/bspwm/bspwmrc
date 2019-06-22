@@ -4,7 +4,7 @@
 #   Settings 
 #     ---
 
-bspc config window_gap 20
+bspc config window_gap 10
 bspc config border_width 3
 
 bspc monitor -d 1 2 3 4 5
