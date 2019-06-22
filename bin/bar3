@@ -128,4 +128,4 @@ lemonbar \
 	-f "t kiwi Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
 	-g "${width}x24+$offX+$offY" \
-	| bash || exit
+	| bash
