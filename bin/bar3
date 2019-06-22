@@ -107,7 +107,7 @@ echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
 bspc config -m $monitorName top_padding 24
-(sleep 1; xdo lower $(xdo id -n lemonbar)) &
+(sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while read -r line < "$fifo"; do
 	case $line in
