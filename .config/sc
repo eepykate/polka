@@ -36,6 +36,7 @@ f   po         ~/.config/polybar/config
 f   b1         ~/bin/bar1
 f   b2         ~/bin/bar2
 f   b3         ~/bin/bar3
+f   b4         ~/bin/bar4
 
 
 # Xresources
