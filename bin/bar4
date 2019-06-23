@@ -20,7 +20,7 @@ volume() {
 	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
 	local a="%{A}%{A}%{A}%{A}"
 	if [[ $muted = off ]]; then
-		echo -e "v${b}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}Muted%{O6}%{B-}${a}" > $fifo; return
+		echo -e "v${b}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}%{O6}Muted%{O6}%{B-}${a}" > $fifo; return
 	fi
 
 	echo -e "v${b}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}%{O6}$volume%{O6}%{B-}${a}" > $fifo
