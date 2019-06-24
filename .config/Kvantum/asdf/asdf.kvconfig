@@ -69,10 +69,10 @@ intensity=1.00
 saturation=1.00
 
 [GeneralColors]
-window.color=#282d39
-base.color=#232731
-alt.base.color=#282d39
-button.color=#232731
+window.color=#232731
+base.color=#282d39
+alt.base.color=#232731
+button.color=#282d39
 light.color=#404754
 mid.light.color=#313131
 dark.color=black
