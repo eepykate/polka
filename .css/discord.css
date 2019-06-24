@@ -9,6 +9,9 @@ code:not(.inline)::before {
 }
 
 
+html,
+#app-mount,
+.container-16j22k,
 /*.size-JLvFeT,                /* ?? */
 /*.container-16j22k,           /* ?? */
 /*.searchBar-6Kv8R2,           /* ?? */
@@ -130,17 +133,21 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 {
 	color: var(--fglight) !important;
 }
-
 .wrapper-3WhCwL,   /* Channel thing text */
 .mention   /* User mention text */
 {
 	color: var(--accent) !important;
 }
 
-*:not(code) {
-	font-family: Sans-Serif !important;
+*:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
+ {
+	font-family: Roboto Condensed !important;
+	font-size: 12px !important;
 }
 
+.name-3_Dsmg {
+	font-size: 14px !important;	
+}
 
 code, .inline {
 	font-family: Monospace !important;
@@ -156,7 +163,7 @@ hr.divider-32i8lo,            /* hr between messages */
 .messageGroupBlocked-3wrQQX   /* X blocked messages */
 {
 	display: none !important;
-}
+}waiot 
 
 .reactionMe-23mbRf /* React toggled */
 {
@@ -187,3 +194,20 @@ div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::after
 a svg.homeIcon-tEMBK1 path {
 	color: #eee !important;
 }
+/*
+.name-3_Dsmg {
+	font-size: 10px !important;	
+}
+
+.content-3at_AU, .wrapper-1ucjTd {
+	height: 22px !important;
+}
+ .channels-Ie2l6A {
+	max-width: 160px !important;
+}
+
+* {
+	font-size: 10px !important;
+}
+*/
+
