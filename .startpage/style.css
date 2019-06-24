@@ -1,12 +1,12 @@
 :root {
---bgdark: #1a1f2e;
---bglight: #1d2232;
---bglighter: #2c334c;
+--bgdark: #232731;
+--bglight: #292c35;
+--bglighter: #2d303e;
 
 --fgdark: #8888a0;
 --fglight: #ccccee;
 	
---accent: #85acff;
+--accent: #9ab2dc;
 --border: #262c42;
 --disabled: #696969;
 --hover: #000000;
@@ -65,7 +65,7 @@ main {
 .search-box input[type="text"] {
 	background-color: transparent;
 	border: none;
-	border-bottom: 2px solid var(--border);   
+	border-bottom: 2px solid var(--bglighter);
 	color: var(--fgdark);
 	transition: all 00ms;
 	width: 100%;
@@ -84,7 +84,7 @@ main {
 	max-width: 0px;
 	margin: 0 auto;
 	height: 2px;
-	background-color: var(--border);
+	background-color: var(--bglighter);
 	transition: all 200ms;
 	transition-timing-function: ease-out;
 }

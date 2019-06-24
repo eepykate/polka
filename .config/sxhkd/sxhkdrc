@@ -166,3 +166,12 @@ alt + Tab
 alt + shift + Tab
 	bspc node -f prev; \
 	bar -d
+
+super + alt + 0
+	gaps r
+
+super + alt + equal
+	gaps up
+
+super + alt + minus
+	gaps down

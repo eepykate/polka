@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nxd\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\naa-red\naa-white\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Pure\nasdf\nxd\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\naa-red\naa-white\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -35,6 +35,22 @@ if [[ $theme = Pure ]]; then
 	border="#1e2130"
 	red="#f0185a"
 	hover="$bgdark"
+
+elif [[ $theme = asdf ]]; then 
+	accentn="4"
+	bgdark="#232731"
+	bglight="#282d39"
+	bglighter="#303644"
+
+	fgdark="#8888a0"
+	fglight="#ccccee"
+
+	disabled="#696969"
+	accent="#9ab2dc"
+	button="#cbe3f122"
+	border="#262c42"
+	red="#dc8189"
+	hover="#000000"
 
 elif [[ $theme = xd ]]; then 
 	accentn="4"

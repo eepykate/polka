@@ -37,9 +37,9 @@ offX="$(awk '{print $3}' <<< $monitor)"
 offY="$(awk '{print $4}' <<< $monitor)"
 
 fg="ccccee"
-bg="1a1f2e"
-bl="202537"
-ac="85acff"
+bg="232731"
+bl="282d39"
+ac="9ab2dc"
 
 #wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
