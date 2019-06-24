@@ -89,14 +89,14 @@ done &
 
 while true; do
 	bat
-	if [[ $blink = ":" ]]; then
-		blink=" "
-	else
+#	if [[ $blink = ":" ]]; then
+#		blink=" "
+#	else
 		blink=":"
-	fi
+#	fi
 
 	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
-	sleep 1.2
+	sleep 5
 done &
 
 (sleep 0.2;

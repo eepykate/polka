@@ -86,11 +86,11 @@ thing() {
 }
 
 tim() {
-	if [[ $blink = ":" ]]; then
-		blink=" "
-	else
+#	if [[ $blink = ":" ]]; then
+#		blink=" "
+#	else
 		blink=":"
-	fi
+#	fi
 	echo "t%{A:nottime:}%{B#ff$blr}%{O6}%{O6}%{B#ff$bl}%{O6}$(date "+%I$blink%M")%{O6}%{B-}%{A}" > $fifo
 }
 
@@ -102,7 +102,7 @@ done &
 while true; do
 	bat
 	tim
-	sleep 1.2
+	sleep 5
 done &
 
 (sleep 0.2;
