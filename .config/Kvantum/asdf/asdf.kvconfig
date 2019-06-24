@@ -70,9 +70,9 @@ saturation=1.00
 
 [GeneralColors]
 window.color=#282d39
-base.color=#202537
+base.color=#232731
 alt.base.color=#282d39
-button.color=#202537
+button.color=#232731
 light.color=#404754
 mid.light.color=#313131
 dark.color=black
