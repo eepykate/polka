@@ -37,9 +37,9 @@ offX="$(awk '{print $3}' <<< $monitor)"
 offY="$(awk '{print $4}' <<< $monitor)"
 
 fg="ccccee"
-bg="1a1f2e"
-bl="1d2232"
-ac="85acff"
+bg="232731"
+bl="282d39"
+ac="9ab2dc"
 
 #wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
@@ -93,14 +93,14 @@ done &
 
 while true; do
 	bat
-	if [[ $blink = ":" ]]; then
-		blink=" "
-	else
+#	if [[ $blink = ":" ]]; then
+#		blink=" "
+#	else
 		blink=":"
-	fi
+#	fi
 
 	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
-	sleep 1.2
+	sleep 5
 done &
 
 (sleep 0.2;
@@ -110,7 +110,7 @@ desktop;
 echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
-bspc config -m $monitorName top_padding 30
+bspc config -m $monitorName top_padding 24
 (sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while read -r line < "$fifo"; do
@@ -121,14 +121,14 @@ while read -r line < "$fifo"; do
 		t*) time="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O20}$bat$vol%{O15}%{B-}"
+	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
 	sleep 0.05
 done | \
 lemonbar \
 	-a 25 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
-	-f "Roboto Condensed:size=13" \
-	-f "Hack Nerd Font:size=12" \
-	-g "${width}x30+$offX+$offY" \
+	-f "Roboto Condensed:size=10" \
+	-f "Hack Nerd Font:size=9" \
+	-g "${width}x24+$offX+$offY" \
 	| bash

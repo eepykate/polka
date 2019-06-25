@@ -14,5 +14,13 @@ st.cwscale:       1.0
 st.chscale:       1.0
 st.blinktimeout:  0.5
 
+Xft.dpi: 96
+Xft.antialias: true      
+Xft.hinting: true
+Xft.rgba: rgb 
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
 #include ".config/Xres.asdf"
 !#include ".config/Xres.asdf"
