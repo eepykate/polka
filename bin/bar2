@@ -86,6 +86,20 @@ thing() {
 }
 
 
+tim() {
+	bash -c '
+	while true; do
+		if [[ $blink = ":" ]]; then
+			blink=" "
+		else
+			blink=":"
+		fi
+
+		echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}"
+		sleep 1.2
+	done' > $fifo
+}
+
 while true; do
 	thing
 	sleep 0.1;
@@ -93,15 +107,9 @@ done &
 
 while true; do
 	bat
-#	if [[ $blink = ":" ]]; then
-#		blink=" "
-#	else
-		blink=":"
-#	fi
-
-	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
 	sleep 5
 done &
+tim > $fifo &
 
 (sleep 0.2;
 bat;
