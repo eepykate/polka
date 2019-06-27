@@ -130,7 +130,6 @@ while read -r line < "$fifo"; do
 		d*) desk="${line#?}";;
 	esac
 	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
-	sleep 0.05
 done | \
 lemonbar \
 	-a 25 \

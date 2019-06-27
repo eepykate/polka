@@ -34,6 +34,7 @@ f   sx         ~/.config/sxhkd/sxhkdrc
 f   com        ~/.config/compton.conf
 f   bs         ~/.config/bspwm/bspwmrc
 f   po         ~/.config/polybar/config
+f   mo         ~/.movie.txt
 f   b1         ~/bin/bar1
 f   b2         ~/bin/bar2
 f   b3         ~/bin/bar3
