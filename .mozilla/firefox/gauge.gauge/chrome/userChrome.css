@@ -3,14 +3,14 @@
 
 /* Colours */
 :root {
---bgdark: #1a1f2e;
---bglight: #1d2232;
---bglighter: #2c334c;
+--bgdark: #232731;
+--bglight: #282d39;
+--bglighter: #303644;
 	
 --fgdark: #8888a0;
 --fglight: #ccccee;
 		
---accent: #85acff;
+--accent: #9ab2dc;
 --border: #262c42;
 --disabled: #696969;
 --fgdark: #8888a0;
