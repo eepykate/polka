@@ -15,6 +15,7 @@ alias song="instantmusic -s "       # Download songs from terminals (https://git
 alias grep="grep --color=auto"
 alias mat="cmatrix -C blue"         # blue cmatrix
 alias kills="kill -9 -1"   # Kill current session
+alias n="nmtui-connect"
 alias fuck="pkill -9"      # kill window
 alias fak="sudo !!"        # run last command with sudo
 alias SU="sudo zsh"        # open zsh as root user

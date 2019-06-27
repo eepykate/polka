@@ -89,14 +89,14 @@ done &
 
 while true; do
 	bat
-#	if [[ $blink = ":" ]]; then
-#		blink=" "
-#	else
+	if [[ $blink = ":" ]]; then
+		blink=" "
+	else
 		blink=":"
-#	fi
+	fi
 
 	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
-	sleep 5
+	sleep 1.2
 done &
 
 (sleep 0.2;
@@ -118,10 +118,11 @@ while read -r line < "$fifo"; do
 		d*) desk="${line#?}";;
 	esac
 	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
-	sleep 0.05
+	sleep 0.01
 done | \
 lemonbar \
 	-a 25 \
+	-o -1 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
 	-f "t mango Wide:size=10" \
