@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#set -x
 
 fifo="/tmp/barfifo"
 
@@ -28,7 +29,11 @@ esac
 [[ -e $fifo ]] && rm $fifo
 mkfifo $fifo
 
-pkill bar
+#pkill -9 bar
+
+kill -TERM -$(cat /tmp/barpid)
+echo "$$" > /tmp/barpid
+
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
