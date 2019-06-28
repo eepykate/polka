@@ -1,7 +1,7 @@
 :root {
 --bgdark: #232731;
---bglight: #292c35;
---bglighter: #2d303e;
+--bglight: #282d39;
+--bglighter: #303644;
 
 --fgdark: #8888a0;
 --fglight: #ccccee;
@@ -12,12 +12,17 @@
 --hover: #000000;
 }
 
+* {
+	font-family: t kiwi Wide;
+	font-size: 10px;
+}
+
 body, html {
 	background-color: var(--bgdark);
 }
 
 #page {
-	max-width: 500px;
+	max-width: 400px;
 	  	
 	margin: 0 auto;
 	margin-top: 20px;
@@ -58,7 +63,7 @@ main {
 }
 
 .search-box {
-	max-width: 500px;
+	max-width: 300px;
 	margin: 0 auto;
 	width: 90%;
 }
@@ -69,8 +74,8 @@ main {
 	color: var(--fgdark);
 	transition: all 00ms;
 	width: 100%;
-	max-width: 400px;
-	height: 30px;
+	max-width: 300px;
+	height: 24px;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
@@ -91,7 +96,7 @@ main {
 
 .search-box:focus-within > .search-underline,
 .search-box:hover > .search-underline {
-	max-width: 400px;
+	max-width: 300px;
 	background-color: var(--accent);
 }
 
@@ -100,7 +105,6 @@ main {
 	width: auto;
 	text-align: center;
 	transition: all 00ms ease 0s;
-	/* box-shadow: 6px 7px 9px 3px rgba(0,0,0,0.24);*/
 }
 
 .title {
@@ -109,11 +113,11 @@ main {
 	display: block;
 	text-align: center;
 	background-color: var(--bglight);
-	padding: 8px;
+	padding: 6px;
 }
 
 .links {
-	padding: 6px 15px;
+	padding: 5px 15px;
 	width: auto;
 	display: block;
 }
