@@ -35,6 +35,7 @@ f   com        ~/.config/compton.conf
 f   bs         ~/.config/bspwm/bspwmrc
 f   po         ~/.config/polybar/config
 f   mo         ~/.movie.txt
+f   b0         ~/bin/bar0
 f   b1         ~/bin/bar1
 f   b2         ~/bin/bar2
 f   b3         ~/bin/bar3

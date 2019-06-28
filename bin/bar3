@@ -89,6 +89,7 @@ done &
 
 while true; do
 	bat
+
 	if [[ $blink = ":" ]]; then
 		blink=" "
 	else
@@ -96,10 +97,10 @@ while true; do
 	fi
 
 	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
-	sleep 1.2
+	sleep 1
 done &
 
-(sleep 0.2;
+(sleep 0.4;
 bat;
 volume;
 desktop;

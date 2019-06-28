@@ -96,7 +96,7 @@ tim() {
 		fi
 
 		echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}"
-		sleep 1.2
+		sleep 1
 	done' > $fifo
 }
 
