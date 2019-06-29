@@ -3,7 +3,7 @@
 
 fifo="/tmp/barfifo"
 
-trap 'pkill -P $$' EXIT SIGINT SIGKILL SIGTERM
+trap 'pkill -P $$' SIGINT
 
 desktop() {
 	echo "d$(bspc query -D -d focused --names)" > $fifo
@@ -29,11 +29,8 @@ esac
 [[ -e $fifo ]] && rm $fifo
 mkfifo $fifo
 
-#pkill -9 bar
-
-kill -TERM -$(cat /tmp/barpid)
-echo "$$" > /tmp/barpid
-
+pkill bar
+sleep 0.1
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
@@ -55,11 +52,11 @@ bat() {
 	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
 	case "$capacity" in
-	0) bat=;;
-	1) bat=;;
-	2) bat=;;
-	3) bat=;;
-	*) bat=;;
+		0) bat=;;
+		1) bat=;;
+		2) bat=;;
+		3) bat=;;
+		*) bat=;;
 	esac
 
 	[[ $status = Charging ]] && bat=
@@ -91,6 +88,7 @@ while true; do
 	thing
 	sleep 0.1;
 done &
+
 
 while true; do
 	bat
@@ -125,14 +123,16 @@ while read -r line < "$fifo"; do
 	esac
 	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
 	sleep 0.01
-done | \
-lemonbar \
+done | ( lemonbar \
 	-a 25 \
 	-o -1 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
-	-f "t mango Wide:size=10" \
 	-f "t kiwi Wide:size=10" \
+	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
 	-g "${width}x24+$offX+$offY" \
-	| bash
+	| bash; echo ";" > $fifo )
+pkill -P $$
+
+

@@ -283,17 +283,17 @@ else
 fi
 
 # Remove the `#` from the variables so it doesn't completely fuck up the colours in the css files in case of missing colour
-bgdark="${bgdark//#}"
-bglight="${bglight//#}"
-bglighter="${bglighter//#}"
-fgdark="${fgdark//#}"
-fglight="${fglight//#}"
-disabled="${disabled//#}"
-accent="${accent//#}"
-button="${button//#}"
-border="${border//#}"
-hover="${hover//#}"
-red="${red//#}"
+bgdark="${bgdark#?}"
+bglight="${bglight#?}"
+bglighter="${bglighter#?}"
+fgdark="${fgdark#?}"
+fglight="${fglight#?}"
+disabled="${disabled#?}"
+accent="${accent#?}"
+button="${button#?}"
+border="${border#?}"
+hover="${hover#?}"
+red="${red#?}"
 
 if [[ -n "$theme" ]]; then
 	#xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
