@@ -3,7 +3,6 @@ URxvt.font:       xft:Iosevka Term:style=Regular:pixelsize=12
 *shell:           /bin/zsh
 st.alpha:         255
 st.termname:      st-256color
-!st.font:          Iosevka Term:pixelsize=12:antialias=true:autohint=true
 st.font:          t kiwi Wide:pixelsize=10
 st.borderpx:      15
 st.tabspaces:     4
@@ -15,12 +14,11 @@ st.chscale:       1.0
 st.blinktimeout:  0.5
 
 Xft.dpi: 96
-Xft.antialias: true      
+Xft.antialias: true
 Xft.hinting: true
-Xft.rgba: rgb 
+Xft.rgba: rgb
 Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 #include ".config/Xres.asdf"
-!#include ".config/Xres.asdf"
