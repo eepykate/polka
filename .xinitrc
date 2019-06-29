@@ -1,6 +1,6 @@
 xrdb ~/.Xresources &
 dunst &
-compton & 
+compton &
 /usr/bin/xset r rate 200 60 &
 /usr/bin/sxhkd &
 if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
