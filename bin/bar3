@@ -86,7 +86,7 @@ thing() {
 
 while true; do
 	thing
-	sleep 0.1;
+	sleep 1;
 done &
 
 
@@ -132,8 +132,8 @@ done | ( lemonbar \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
 	-g "${width}x24+$offX+$offY" \
-	| bash; echo ";" > $fifo )
-#pkill -P $$
-kill -9 -$$
+	| bash; kill -9 -$$)
+pkill -P $$
+#kill -9 -$$
 
 
