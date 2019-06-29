@@ -339,15 +339,15 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/" 
 
 	# Replace colours in dunst
-	sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"#$accent\"/" ~/.config/dunst/dunstrc
-	sed --follow-symlinks -i "s/    background = \".*\"/    background = \"#$bgdark\"/"   ~/.config/dunst/dunstrc
-	sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"#$fglight\"/"  ~/.config/dunst/dunstrc
+	#sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"#$accent\"/" ~/.config/dunst/dunstrc
+	#sed --follow-symlinks -i "s/    background = \".*\"/    background = \"#$bgdark\"/"   ~/.config/dunst/dunstrc
+	#sed --follow-symlinks -i "s/    foreground = \".*\"/    foreground = \"#$fglight\"/"  ~/.config/dunst/dunstrc
 	# Make urgent notifications in dunst have a red border
-	dunst_red_last_linenum="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 3 ))"
-	sed --follow-symlinks -i "${dunst_red_last_linenum}s/    frame_color = \".*\"/    frame_color = \"#$red\"/" ~/.config/dunst/dunstrc
-	# Reload dunst
-	killall -9 dunst &> /dev/null;
-	dunst &>/dev/null &!
+	#dunst_red_last_linenum="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 3 ))"
+	#sed --follow-symlinks -i "${dunst_red_last_linenum}s/    frame_color = \".*\"/    frame_color = \"#$red\"/" ~/.config/dunst/dunstrc
+	## Reload dunst
+	#killall -9 dunst &> /dev/null;
+	#dunst &>/dev/null &!
 
 	# Change theme name in tint (Wrapper script) then run it again, replacing the panel
 	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
