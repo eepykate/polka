@@ -381,9 +381,9 @@ menu:hover {
 	background-color:#2e323f !important;
 }
 
-menuitem {
+/*menuitem {
 	color: var(--fgdark) !important;
-}
+}*/
 
 #urlbar, 
 #TabsToolbar,

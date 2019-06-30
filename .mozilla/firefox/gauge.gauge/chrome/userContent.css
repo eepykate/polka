@@ -1,13 +1,13 @@
 :root {
---bgdark: #f3f3f3;
---bglight: #cfcfcf;
---bglighter: #bdbdbd;
+--bgdark: #232731;
+--bglight: #282d39;
+--bglighter: #303644;
 --bglightest:  #41485c;
-		
---fgdark: #444444;
---fglight: #000000;
-			
---accent: #4169E1;
+
+--fgdark: #8888a0;
+--fglight: #cfcff9;
+
+--accent: #9ab2dc;
 --blue:        #02a4fc;
 --green:       #12e689;
 --yellow:      #f0d35c;
