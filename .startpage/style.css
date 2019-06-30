@@ -1,15 +1,15 @@
 :root {
---bgdark: #232731;
---bglight: #282d39;
---bglighter: #303644;
+--bgdark: #00000000;
+--bglight: #00000022;
+--bglighter: #00000044;
 
---fgdark: #8888a0;
---fglight: #ccccee;
-	
---accent: #9ab2dc;
---border: #262c42;
---disabled: #696969;
---hover: #000000;
+--fgdark: #444444;
+--fglight: #000000;
+
+--accent: #4169E1;
+--border: #b0b4bb;
+--disabled: #595959;
+--hover: #ffffff;
 }
 
 * {
@@ -17,13 +17,17 @@
 	font-size: 10px;
 }
 
-body, html {
+/*body, html {
 	background-color: var(--bgdark);
+}*/
+
+html {
+	background: url(Blur.png);
 }
 
 #page {
 	max-width: 400px;
-	  	
+
 	margin: 0 auto;
 	margin-top: 20px;
 }

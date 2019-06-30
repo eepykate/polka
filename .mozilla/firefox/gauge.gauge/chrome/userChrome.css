@@ -3,22 +3,21 @@
 
 /* Colours */
 :root {
---bgdark: #232731;
---bglight: #282d39;
---bglighter: #303644;
-	
---fgdark: #8888a0;
---fglight: #ccccee;
-		
---accent: #9ab2dc;
---border: #262c42;
---disabled: #696969;
---fgdark: #8888a0;
+--bgdark: #00000000;
+--bglight: #00000022;
+--bglighter: #00000044;
+
+--fgdark: #444444;
+--fglight: #ffffff;
+
+--accent: #4169E1;
+--border: #b0b4bb;
+--disabled: #9c9c9c;
 --selected: #c5d3eb1c;
---hover: #000000;
+--hover: #ffffff;
+--bgimage: url(Blur.png) !important;
 }
-	
-	
+
 :root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
 	--color-overflow: #222;                                           /* >> button color */
 	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
@@ -27,8 +26,10 @@
 	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
 	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
 }
-	
+
 :root {
+	--toolbar-color: var(--fglight) !important;
+	/*--lwt-additional-images: url(https://i.imgur.com/BQnSooK.png) !important;*/
 	--ui-height: 26px;                                                 /* Used only in this script */
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
@@ -50,6 +51,19 @@
 }
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
+
+.toolbarbutton-1 {
+	color: var(--fgdark) !important;
+	fill: var(--fgdark) !important;
+}
+
+#navigator-toolbox,
+#titlebar,
+#nav-bar
+{
+	background-image: var(--bgimage) !important;
+
+}
 
 /* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
@@ -90,7 +104,7 @@ browser[type=content] > html {
 
 
 
-/*Prevents White pre-load flash*/ 
+/*Prevents White pre-load flash*/
 .tabbrowser-tabbox {
 	background-color:  var(--bgdark) !important;
 }
@@ -100,8 +114,7 @@ browser[type=content] > html {
 }
 
 @-moz-document url(chrome://browser/content/browser.xul) {
-	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important} 
-}
+	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important}}
 
 @-moz-document url(chrome://browser/content/browser.xul) {
 	#main-window,
@@ -126,13 +139,13 @@ browser[type=content] > html {
 .tabbrowser-tab:hover > .tab-stack > .tab-content > *{
 	filter: grayscale(0%) !important;
 }*/
-.tabbrowser-tab{ 
-	opacity: 0.33 !important;
+.tabbrowser-tab{
+	opacity: 0.70 !important;
 }
-.tabbrowser-tab:hover{ 
-	opacity: 0.66 !important;
+.tabbrowser-tab:hover{
+	opacity: 0.80 !important;
 }
-.tabbrowser-tab[selected]{ 
+.tabbrowser-tab[selected]{
 	opacity: 1 !important;
 }
 
@@ -193,15 +206,15 @@ browser[type=content] > html {
 }
 
 .tabbrowser-tab .tab-text.tab-label {
-	color: var(--fglight) !important;          
+	color: var(--fgdark) !important;
 }
 
-.tabbrowser-tab:hover .tab-text.tab-label {
-	color: var(--fglight) !important;          
-}
+/*.tabbrowser-tab:hover .tab-text.tab-label {
+	color: var(--fglight) !important;
+}*/
 
 .tabbrowser-tab[selected="true"] .tab-text.tab-label {
-	color: var(--fglight) !important;           
+	color: var(--fglight) !important;
 }
 
 
@@ -368,6 +381,10 @@ menu:hover {
 	background-color:#2e323f !important;
 }
 
+menuitem {
+	color: var(--fgdark) !important;
+}
+
 #urlbar, 
 #TabsToolbar,
 #sidebar-header,
@@ -507,7 +524,7 @@ toolbarbutton.bookmark-item:hover {
 
 /* Change colour of fill animation when tab has finished loading */
 #tabbrowser-tabs {
-	--tab-loading-fill: var(--accent) !important;   
+	--tab-loading-fill: var(--accent) !important;
 	box-shadow: none !important;
 }
 
@@ -538,7 +555,7 @@ toolbarspring {
 	margin-top: 2px;
 	margin-bottom: -2px;
 }
-	
+
 
 
 /* Find popup */
@@ -554,11 +571,11 @@ toolbarspring {
 
 
 /* Change size of a few items */
-#TabsToolbar, 
+#TabsToolbar,
 #nav-bar,
-#titlebar, 
-.tabbrowser-tab,  
-#tabbrowser-tabs { 
+#titlebar,
+.tabbrowser-tab,
+#tabbrowser-tabs {
 	height: var(--ui-height) !important;
 }
 #tabbrowser-tabs {
@@ -590,6 +607,7 @@ toolbarspring {
 	height: calc(var(--ui-height) * 0.90 ) !important;
 }
 
+.tab-throbber,
 #identity-box > *,
 #downloads-button,
 .webextension-browser-action {
@@ -600,8 +618,6 @@ toolbarspring {
 	margin-right: 2px !important;
 }
 
-
-.tab-throbber,
 .tab-icon-image {
 	width: calc(var(--ui-height) * 0.50 ) !important;
 	height: calc(var(--ui-height) * 0.50 ) !important;
@@ -615,7 +631,7 @@ toolbarspring {
 
 /* Transparent url bar */
 #urlbar {
-	background-color: transparent !important;
+	background-color: var(--bglight) !important;
 }
 
 

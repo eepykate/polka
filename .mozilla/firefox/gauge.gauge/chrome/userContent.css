@@ -1,22 +1,22 @@
 :root {
---bgdark: #232731;
---bglight: #282d39;
---bglighter: #303644;
+--bgdark: #f3f3f3;
+--bglight: #cfcfcf;
+--bglighter: #bdbdbd;
 --bglightest:  #41485c;
 		
---fgdark: #8888a0;
---fglight: #ccccee;
+--fgdark: #444444;
+--fglight: #000000;
 			
---accent: #9ab2dc;
+--accent: #4169E1;
 --blue:        #02a4fc;
 --green:       #12e689;
 --yellow:      #f0d35c;
 --red:         #f0185a;
---border: #262c42;
+--border: #b0b4bb;
 --border1:     #223344;
 --border2:     #334455;
---disabled: #696969;
---hover: #000000;
+--disabled: #595959;
+--hover: #ffffff;
 }
 	
 :root{
@@ -56,9 +56,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--home-background-image: none;
 
 /* These change some Firefox pages colors (Mainly used for the 404 error page) */
-	--in-content-page-color: #ccc !important;
+	--in-content-page-color: var(--fgdark) !important;
 	--in-content-page-background: var(--bglight) !important;
-	--in-content-text-color: #ccc !important;
+	--in-content-text-color: var(--fgdark) !important;
 	--in-content-box-background: var(--bgdark) !important;
 	--in-content-box-background-hover: var(--bglighter) !important;
 	--in-content-box-background-active: var(--bglight) !important;
@@ -106,7 +106,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 coloring part, go to the common part for all firefox pages (if you use a global userstyle,
 you don't even need these, so just comment it all out).*/
 /*@-moz-document url-prefix(file://) {
-:root {background-color: var(--bgdark) !important; color: #ccc !important}
+:root {background-color: var(--bgdark) !important; color: var(--fgdark) !important}
 
 /* COMMENT OUT THIS SECTION IF BROWSING LOCAL HTML PAGES */
 /* body:not([style="margin-bottom: 8px !important;"]) {
@@ -148,7 +148,7 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 /* Ublock Origin element picker window */
 #ublock0-epicker aside {
 	background: var(--bglight) !important;
-	color: #ccc !important;
+	color: var(--fgdark) !important;
 	border: 1px solid var(--bglighter) !important}
 
 #ublock0-epicker #resultsetCount {background-color: var(--bglighter) !important; color: #ddd !important}
@@ -196,7 +196,7 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 dialog, window, .prefpane, 
 .prefwindow, .windowDialog {
  	background-color: var(--bgdark) !important;
- 	color: #ccc !important}
+ 	color: var(--fgdark) !important}
  	
 /* This changes the "add certificate exception" dialog background color */
 #badCertAdvancedPanel {background-color: var(--bglight) !important}
@@ -266,7 +266,7 @@ td {color: #aaa !important}}
 @-moz-document url-prefix(view-source:){
 html {
 	background: var(--bgdark) !important;
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 .attribute-name {color: var(--green) !important}
 .start-tag, .end-tag {color: var(--yellow) !important}
@@ -284,7 +284,7 @@ body {
 /* Context menus of the web area */
 .context-menu {
 	background-color: var(--bglighter) !important;
-	color: #ccc}
+	color: var(--fgdark)}
 
 .context-menu > ul > li > a:hover, .context-menu > ul > li > a:focus {
 	background-color: var(--in-content-context-highlight) !important}
@@ -355,7 +355,7 @@ body {
 
 .contentSearchSuggestionsList {
 	background-color: var(--bglighter) !important;
-		color: #ccc !important}
+		color: var(--fgdark) !important}
 
 .contentSearchOneOffsTable {border-top: 1px solid #000 !important}
 
@@ -404,7 +404,7 @@ body {
 	font-weight: 900 !important;
 	color: var(--home-text) !important}
 
-.monthly-checkbox-label {color: #ccc !important}
+.monthly-checkbox-label {color: var(--fgdark) !important}
 
 .block-snippet-button {
 	filter: invert(50%) !important}
@@ -452,7 +452,7 @@ input[type=text] {color: #aaa !important}
 	background-color: var(--bglighter) !important}
 
 .section-title span, .title span, .card-details p, .form-input-container label span,
-.modal-message span, .modal-message p {color: #ccc !important}
+.modal-message span, .modal-message p {color: var(--fgdark) !important}
 
 .modal-message .icon {fill: #fff !important}
 
@@ -606,7 +606,7 @@ tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}}
 menuitem, menu {
 	-moz-appearance: none !important;
 	background-color: var(--in-content-context-background) !important;
-	color: #ccc !important;
+	color: var(--fgdark) !important;
 	padding-top: 3px !important;
 	padding-bottom: 3px !important}
 
@@ -939,7 +939,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 	background: var(--bgdark) !important;
 }
 
-.addon:hover .description {color: #ccc !important}
+.addon:hover .description {color: var(--fgdark) !important}
 
 .content-inner-container .basicinfo-container {color: var(--addons-addon-name) !important}
 .addon.addon-view[selected="true"] .basicinfo-container {color: var(--addons-addon-name-active) !important}
@@ -968,7 +968,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 	color: #Fff !important}
 
 /* Description of the addons/themes */
-.detail-view-container {color: #ccc !important}
+.detail-view-container {color: var(--fgdark) !important}
 
 #detail-contributions {
 	background-color: rgba(0,0,0,0.15) !important; 
@@ -1050,7 +1050,7 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-header,
 .highlight, .AutoSearchInput-query, .Search .SearchResults-message  {
 	background-color: var(--bglight) !important;
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 .HeroSection-content {color: #fff !important}
 
@@ -1092,7 +1092,7 @@ button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
 ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
 ul.TooltipMenu-list li.ListItem, tr.LanguageTools-table-row:nth-child(odd) {
 	background-color: var(--bgdark) !important;
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li, .highlight 
 {border: none !important}
@@ -1108,7 +1108,7 @@ th.LanguageTools-header-cell {background-color: #101010 !important}
 
 a.SearchResult-link h2, span, label *, 
 p, a, h4, h2, blockquote, li, .num-results 
-{color: #ccc !important}
+{color: var(--fgdark) !important}
 
 .header-bg {
 		background-color: #000 !important;
@@ -1164,11 +1164,11 @@ html, body {background-color: var(--bgdark) !important}
 
 #stage.fade-in-forward .sign-in #main-content.card, #stage #main-content.panel {
 	background-color: var(--bglight) !important;
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 form input, .show-password-label {
 	background-color: var(--bglight) !important;
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 }
 
 /*------ MOZILLA SUPPORT PAGE (https://support.mozilla.org) ------*/
@@ -1179,7 +1179,7 @@ html, body {background-color: var(--bgdark) !important}
 
 h1, h2 {color: #fff !important}
 h3 {color: #ddd !important}
-p:not(.main-content) {color: #ccc !important}
+p:not(.main-content) {color: var(--fgdark) !important}
 
 a:link {color: var(--in-content-link-color) !important}
 a:visited {color: var(--in-content-link-color) !important}
@@ -1193,7 +1193,7 @@ body > header {
 	background: var(--bglighter) !important;
 	border-top: none !important;
 	border-bottom: 1px solid #aaa !important;
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 a.btn, a.volunteer-button {color: #fff !important}
 
@@ -1202,24 +1202,24 @@ a.btn, a.volunteer-button {color: #fff !important}
 
 #aux-nav li a, .question-meta li, .asked-on, .asked-by,
 .footnote, #selected-product, .inner-wrap .legend li, #tagged,
-div {color: #ccc !important}
+div {color: var(--fgdark) !important}
 #aux-nav li a:hover {background-color: rgba(0,0,0,0.5) !important}
 
 #main-breadcrumbs {background: var(--bglight) !important}
 #main-breadcrumbs li:not(a), .card-grid > li > a,
-.product-list .product a, .sidebar-header {color: #ccc !important}
+.product-list .product a, .sidebar-header {color: var(--fgdark) !important}
 
 .answers .notice, .karma-titles li, .warning, #toc, #doc-content .note, 
 .tag-list a, .wiki-doc .vote-wrap {
 	background-color: var(--bglight) !important; 
-	color: #ccc !important;
+	color: var(--fgdark) !important;
 	border: 1px solid var(--bglighter) !important}
 
 .main-content, #try-an-article, .grid_6 article, #pw-reset,
 #retrieve-username, .hero-bar, .row .content-box, .highlight-box, .wiki-doc {
 	background-color: var(--bglight) !important; 
 	border-radius: 6px !important; 
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 #doc-content tr:nth-child(2n+1) {background: var(--bglight) !important}
 
@@ -1228,7 +1228,7 @@ div {color: #ccc !important}
 .sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 
 .sidebar-nav .sidebar-nav > li > a, .sidebar-nav .sidebox, .sidebar-nav > li > a,
 #email-subscribe-kbox, #showfor-panel,
-#register-form, .subtopics > li > a {background-color: var(--bglight) !important; color: #ccc !important}
+#register-form, .subtopics > li > a {background-color: var(--bglight) !important; color: var(--fgdark) !important}
 .sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
 
 .button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
@@ -1263,14 +1263,14 @@ div {color: #ccc !important}
 input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], 
 textarea {
 	background: var(--bglight) !important; 
-	color: #ccc !important}
+	color: var(--fgdark) !important}
 
 #search-q {border: 2px solid var(--bglight) !important}
 
 .simple-search-form .searchbox {
 	background: var(--bglight) !important}
 
-.simple-search-form input {color: #ccc !important}
+.simple-search-form input {color: var(--fgdark) !important}
 
 #email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
 #pw-reset input[type="submit"], .btn, span.button, .volunteer-button {

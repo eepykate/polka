@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nasdf\nxd\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\naa-red\naa-white\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Pure\nasdf\nxd\naaaaa1_\ntrans\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\naa-red\naa-white\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -35,6 +35,39 @@ if [[ $theme = Pure ]]; then
 	border="#1e2130"
 	red="#f0185a"
 	hover="$bgdark"
+
+elif [[ $theme = trans ]]; then 
+
+	accentn="4"
+	bgdark="#000000"
+	bglight="#000000"
+	bglighter="#000000"
+
+	fgdark="#444444"
+	fglight="#000000"
+
+	disabled="#595959"
+	accent="#4169E1"
+	button="#00000022"
+	border="#b0b4bb"
+	red="#df1a45"
+	hover="#ffffff"
+
+elif [[ $theme = aaaaa1_ ]]; then 
+	accentn="4"
+	bgdark="#f3f3f3"
+	bglight="#cfcfcf"
+	bglighter="#aeaeae"
+
+	fgdark="#444444"
+	fglight="#000000"
+
+	disabled="#595959"
+	accent="#4169E1"
+	button="#00000022"
+	border="#b0b4bb"
+	red="#df1a45"
+	hover="#ffffff"
 
 elif [[ $theme = asdf ]]; then 
 	accentn="4"
@@ -323,20 +356,20 @@ if [[ -n "$theme" ]]; then
 	conky &>/dev/null &! 
 
 	# Change the colour variables in firefox and my startpage
-	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
-$HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-$HOME/.startpage/style.css" | \
-		xargs sed --follow-symlinks -i \
-		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
-		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \
-		-e "s/.*--bglighter:.*#.*\;/--bglighter: #$bglighter\;/" \
-		-e "s/.*--fgdark:.*#.*\;/--fgdark: #$fgdark\;/" \
-		-e "s/.*--fglight:.*#.*\;/--fglight: #$fglight\;/" \
-		-e "s/.*--accent:.*#.*\;/--accent: #$accent\;/" \
-		-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
-		-e "s/.*--button:.*#.*\;/--button: #$button\;/" \
-		-e "s/.*--hover:.*#.*\;/--hover: #$hover\;/" \
-		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/" 
+	#echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
+#$HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
+#$HOME/.startpage/style.css" | \
+#		xargs sed --follow-symlinks -i \
+#		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
+#		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \
+#		-e "s/.*--bglighter:.*#.*\;/--bglighter: #$bglighter\;/" \
+#		-e "s/.*--fgdark:.*#.*\;/--fgdark: #$fgdark\;/" \
+#		-e "s/.*--fglight:.*#.*\;/--fglight: #$fglight\;/" \
+#		-e "s/.*--accent:.*#.*\;/--accent: #$accent\;/" \
+#		-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
+#		-e "s/.*--button:.*#.*\;/--button: #$button\;/" \
+#		-e "s/.*--hover:.*#.*\;/--hover: #$hover\;/" \
+#		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/"
 
 	# Replace colours in dunst
 	#sed --follow-symlinks -i "s/    frame_color = \".*\"/    frame_color = \"#$accent\"/" ~/.config/dunst/dunstrc
@@ -354,9 +387,10 @@ $HOME/.startpage/style.css" | \
 	#tint &>/dev/null &! 
 
 	# Change the theme in rofi
-	sed --follow-symlinks -i -e "s/.*bg:.*#.*;/bg:         #${bgdark}bb;/g" \
-		-e "s/.*fg:.*#.*;/  fg:         #$fglight;/" \
-		-e "s/.*accent:.*#.*;/  accent:     #$accent;/"\
+	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bgdark}bb;/g" \
+		-e "s/fg:.*#.*;/fg:         #$fglight;/" \
+		-e "s/accent:.*#.*;/accent:     #$accent;/"\
+		-e "s/sel:.*#.*;/sel:     #$button;/"\
 		~/.config/rofi/theme.rasi
 
 	# Change accent colour in gtk.css 
@@ -384,14 +418,14 @@ $HOME/.startpage/style.css" | \
 	#	polybar.sh &!
 
 	# Change lemonbar colours
-	sed --follow-symlinks -i \
-		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
-		-e "s/blr=\".*\"/blr=\"$bglighter\"/" \
-		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
-		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
-		-e "s/ac=\".*\"/ac=\"$accent\"/" \
-		~/bin/bar
-	bar &!
+#	sed --follow-symlinks -i \
+#		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
+#		-e "s/blr=\".*\"/blr=\"$bglighter\"/" \
+#		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
+#		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
+#		-e "s/ac=\".*\"/ac=\"$accent\"/" \
+#		~/bin/bar
+#	bar &!
 
 	sed --follow-symlinks -i \
 		-e "s/accent=\"#.*\"/accent=\"#$accent\"/g" \

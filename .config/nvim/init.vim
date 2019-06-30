@@ -31,8 +31,8 @@ vmap <C-x> "+c
 vmap <C-v> <ESC>"+pi
 imap <C-v> <ESC>"+pi
 
-" Ctrl +n twice in normal mode toggles number sidebar 
-nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>  
+" Ctrl +n twice in normal mode toggles number sidebar
+nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 
 " Use Terminal's colour scheme (Requires that file in ~/.config/nvim/colors (If you're using nvim))
 color term
@@ -57,7 +57,7 @@ set smartcase          " Ignore case when only lower case is typed
 "inoremap ' ''<Esc>i
 
 " .rasi files use css syntax highlighting
-au BufReadPost *.rasi set syntax=css       
+au BufReadPost *.rasi set syntax=css
 
 
 call plug#begin()
@@ -78,3 +78,4 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
