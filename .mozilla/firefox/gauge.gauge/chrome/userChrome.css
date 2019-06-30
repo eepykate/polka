@@ -1,6 +1,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 
+
+/*  #232731  */
 /* Colours */
 :root {
 --bgdark: #00000000;
@@ -21,10 +23,10 @@
 :root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
 	--color-overflow: #222;                                           /* >> button color */
 	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
-	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
+	background-color: #232731 !important;                       /* top border of out of focus window */
 	--lwt-text-color: var(--fglight) !important;
-	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
-	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
+	--chrome-background-color: #232731 !important;              /* tab strip background & inactive tabs */
+	--chrome-secondary-background-color: #232731 !important;   /* nav bar & active tab */
 }
 
 :root {
@@ -40,17 +42,26 @@
 	--lwt-text-color: var(--fglight) !important;                       /* Text colour */
 	--toolbarbutton-icon-fill-opacity: 100% !important;
 	--lwt-sidebar-text-color: var(--fglight) !important;               /* Sidebar text colour */
-	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
+	--chrome-background-color: #232731 !important;               /* tab strip background & inactive tabs */
 	--lwt-toolbar-field-color: var(--fglight) !important;
 	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
 	--lwt-toolbarbutton-icon-fill: var(--fgdark) !important;           /* Button fill color */
 	--toolbarbutton-border-radius: var(--button-radius) !important;    /* border-radius of buttons */
-	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
+	--chrome-secondary-background-color: #232731 !important;    /* nav bar & active tab */
 	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
 	--autocomplete-popup-highlight-background: var(--selected) !important;
 }
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
+
+
+#appMenu-mainView,
+#urlbar-results,
+.panel-arrowcontent,
+.urlbarView-row {
+	background: #232731 !important;
+}
+
 
 .toolbarbutton-1 {
 	color: var(--fgdark) !important;
@@ -293,11 +304,6 @@ browser[type=content] > html {
 	background-color: var(--bglight) !important;
 }
 
-#urlbar-results,
-.urlbarView-row {
-	background: var(--bglight) !important;
-}
-
 .urlbarView-row {
 	--autocomplete-popup-highlight-background: var(--selected) !important;
 }
@@ -400,14 +406,14 @@ menu:hover {
 }
 
 #nav-bar, 
-#mainPopupSet, 
+/*#mainPopupSet, */
 #identity-popup,
 .download-state, 
 .browser-toolbar, 
 #downloadsPanel-mainView,
 .downloadMainArea, 
 #downloadsListBox,
-#appMenu-mainView,
+
 .downloadContainer,
 .findbar-container,
 #personal-bookmarks,
