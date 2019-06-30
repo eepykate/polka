@@ -53,25 +53,25 @@ a {
  transition:150ms;
  -webkit-transition:150ms;
  font-weight:normal;
- color:#e5e5e5!important;
+ color:var(--fglight)!important;
  text-shadow:0px 1px 8px rgba(0,0,0,0.5)
 }
 .tabmenu li:hover a {
  background-color:rgba(255,255,255,0.08);
- color:#FFF!important;
+ color:var(--fglight)!important;
  font-weight:bold!important
 }
 .tabmenu li.selected a {
- color:#FFF!important;
+ color:var(--fglight)!important;
  background-color:rgba(255,255,255,0.15);
  font-weight:bold!important;
  border:none!important
 }
-.listing-page .tabmenu li a[href*="/gilded"]/*
+/*.listing-page .tabmenu li a[href*="/gilded"]
 .listing-page .tabmenu li a[href*="/rising"],
-.listing-page .tabmenu li a[href*="/controversial"]*/ {
+.listing-page .tabmenu li a[href*="/controversial"] {
  display:none
-}
+}*/
 #header-img {
  position:relative;
  width:30px;
@@ -164,7 +164,7 @@ div#RESStyleSheetTipPane-header {
  border:none!important
 }
 .toc ul {
- background:#fff
+ background:var(--fglight)
 }
 .commentNavSortType:hover,
 .commentarea .menuarea .toggle a:hover {
@@ -647,7 +647,7 @@ body.res #header-bottom-right #mail.havemail {
 #header-bottom-right a,
 #header-bottom-right .user,
 #header-bottom-right .user .userkarma {
- color:#FFF;
+ color:var(--fglight);
  font-size:11px;
  font-weight:bold;
  text-transform:uppercase
@@ -932,12 +932,12 @@ body:not(.search-page) .menuarea {
 .commentarea .comment a.expand:hover {
  opacity:1;
  color:white;
- border-radius:4px;
+ border-radius:3px;
  text-decoration:none;
  font-weight:bold
 }
 .res .commentarea .comment a.expand:hover {
- border-radius:4px 0px 0px 4px
+ border-radius:3px 0px 0px 3px
 }
 .commentarea .thing,
 .midcol {
@@ -1320,7 +1320,7 @@ div .thing .tagline .author.submitter:before,
 div .thing .tagline .author.submitter {
  font-weight:Bold;
  line-height:20px;
- color:#000;
+ color: var(--hover) !important;
  display:inline-block;
  font-size:10px
 }
@@ -1338,7 +1338,7 @@ div .thing .tagline .author.submitter {
  border-radius:20px;
  transition:300ms;
  position: relative;
- color: #000 !important;
+ color: var(--hover) !important;
 }
 div .thing .tagline .author.submitter::after {
  background: #00000022 !important;
@@ -2077,7 +2077,7 @@ body:not(.search-page) #search input[type=text]:focus {
 .morelink a,
 .morelink a:hover,
 .morelink a:visited {
- color:#fff
+ color:var(--fglight)
 }
 .disabled .morelink,
 .disabled .morelink:hover {
@@ -3557,7 +3557,9 @@ html[lang="dm"] .RES-keyNav-activeElement .md-container {
 	margin-top: -165px !important;
 }
 
-
+#keyHelp,
+.RESNotification > *,
+.RESNotification > * > *,
 body,
 .content,
 ul.tabmenu > li > a,
@@ -3766,6 +3768,7 @@ ertext-edit textarea:focus {
 	height: 32px !important;
 	background-size: 32px !important;
 	margin-top: 160px !important;
+	object-position: -99999px 99999px;
 }
 
 #header-bottom-left {
@@ -3799,7 +3802,6 @@ div.pinnable-content.pinned { display: none !important; }
 	text-align: center;
 	font-variant: normal;
 	padding-top: 45px;
-	font-size: 30px;
 	text-decoration: none !important;
 }
 .pagename > a::before {
@@ -3851,4 +3853,24 @@ table tbody tr td,
 table thead tr th {
 	border: 1px solid lightgrey !important;
 }
- 
+*:not(code):not(.subbarlink):not(.res-icon) { 
+	font-size: 12px !important;
+	font-family: Roboto Condensed !important;
+}
+
+.title .title:not(.pagename) {
+	font-size: 15px !important;
+}
+
+#RESStaticShortcuts .subbarlink {
+	font-size: 10px !important;
+}
+
+#header-bottom-left .pagename a {
+	font-size: 30px !important;
+}
+
+a > strong {
+	color: rgb(140, 179, 217) !important;
+}
+

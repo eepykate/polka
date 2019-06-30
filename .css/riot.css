@@ -6,6 +6,7 @@
 .mx_FilePanel,                    /* File panel */
 .mx_MessageComposer,              /* Message input box */
 .mx_EventTile_pre_container > pre,
+.gm-scroll-view,
 .mx_EventTile_pre_container * code,
 .mx_EventTile_pre_container,
 .mx_NotificationPanel,            /* Notification panel */
@@ -15,10 +16,12 @@
 	background-color: var(--bgdark) !important;
 }
 
+.mx_BaseAvatar_image,
 .dark-panel .mx_SearchBox,
 .mx_RoomView {
 	background-color: var(--bglight) !important;
 }
+
 
 .mx_EventTile:hover > .mx_EventTile_line,
 .mx_RoomTile:hover,
@@ -61,12 +64,12 @@ pre code:not(span) {
 	color: #f00 !important;
 }
 
-.mx_EventTile_pre_container,
+/*.mx_EventTile_pre_container,
 code > span, 
 code 
 {
 	filter: invert(100%)
-}
+}*/
 
 code > span , pre {
 	background-color: transparent !important;
@@ -76,3 +79,15 @@ pre {
 	border-radius: 0 !important;
 }
 
+.mx_MImageBody {
+	max-width: 66% !important;
+}
+
+
+.mx_ReplyThread * .mx_DateSeparator {
+	max-width: 200px
+}
+
+.mx_MessageTimestamp {
+	color: var(--fglight) !important;
+}

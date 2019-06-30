@@ -109,6 +109,8 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 }
 
 
+.premiumGuildIconGem-C4yUDR,
+.premiumGuildIconGem-C4yUDR > path,
 .newMessagesBar-mujexs > *,   /* New messages dialog */
 .botTag-2BhDSU,               /* Tag next to username bots have */
 .filename-ovv3c5,             /* Filename in upload popup */
@@ -124,6 +126,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 
  /*base-gE7OpD stop-animation */
 
+s,
 .modeUnread-1zpFdA * .name-3_Dsmg,       /* Unread channels */
 .modeUnread-1zpFdA * .icon-1_QxNX path,  /* Unread channels icon */
 .markup-2BOw-j,                          /* Main messages */
@@ -157,8 +160,9 @@ code, .inline {
 	color: var(--fgdark);
 }
 
+/*.unread-3zKkbm,               /* Unread channel arrow */
+
 hr.divider-32i8lo,            /* hr between messages */
-.unread-3zKkbm,               /* Unread channel arrow */
 .scrollbar-2rkZSL,            /* Scroll bar - makes it use your native ones */
 .messageGroupBlocked-3wrQQX   /* X blocked messages */
 {
@@ -211,3 +215,6 @@ a svg.homeIcon-tEMBK1 path {
 }
 */
 
+.pill-31IEus .item-2hkk8m {
+	background-color: var(--fgdark) !important;
+}
