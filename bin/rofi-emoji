@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-xclip -h >/dev/null || exit
-
 chosen=$(grep -v "#" ~/.config/emoji | rofi -dmenu \
                  -location 1 -width 100 \
 		 -lines 2 -line-margin 0 -line-padding 1 \
