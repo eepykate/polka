@@ -84,24 +84,19 @@ thing() {
 }
 
 
+exec -a bar bash -c "blink=\":\";
 while true; do
-	thing
-	sleep 1;
-done &
-
-
-while true; do
-	bat
-
-	if [[ $blink = ":" ]]; then
-		blink=" "
+	if [[ \$blink = \":\" ]]; then
+		blink=\" \"
+		time=\"$(date "+%I %M")\";
 	else
-		blink=":"
+		blink=\":\"
+		time=\"$(date "+%I:%M")\";
 	fi
 
-	echo "t%{A:nottime:}$(date "+%I$blink%M")%{A}" > $fifo
+	echo \"t%{A:nottime:}\$time%{A}\";
 	sleep 1
-done &
+done" > $fifo &
 
 (sleep 0.4;
 bat;
