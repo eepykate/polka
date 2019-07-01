@@ -3,13 +3,13 @@
 --bglight: #00000022;
 --bglighter: #00000044;
 
---fgdark: #444444;
---fglight: #000000;
+--fgdark: #cccccc;
+--fglight: #ffffff;
 
---accent: #4169E1;
+--accent: #9ab2dc;
 --border: #b0b4bb;
 --disabled: #595959;
---hover: #ffffff;
+--hover: #000000;
 }
 
 * {
@@ -58,7 +58,7 @@ main {
 	text-align: left;
 }
 
-#date { 
+#date {
 	text-align: right;
 }
 
@@ -83,6 +83,8 @@ main {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
 	/*box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);*/
 }
 
@@ -90,7 +92,7 @@ main {
 	position: relative;
 	top: -2px;
 	display: block;
-	max-width: 0px;
+	width: 0px;
 	margin: 0 auto;
 	height: 2px;
 	background-color: var(--bglighter);
@@ -100,7 +102,7 @@ main {
 
 .search-box:focus-within > .search-underline,
 .search-box:hover > .search-underline {
-	max-width: 300px;
+	width: 300px;
 	background-color: var(--accent);
 }
 
