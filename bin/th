@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+case $1 in
+	l) sed -i --follow-symlinks 's|\.config/Xres.*|.config/Xres.aaaaa1_\"|' ~/.Xresources;;
+	d) sed -i --follow-symlinks 's|\.config/Xres.*|.config/Xres.asdf\"|' ~/.Xresources;;
+esac
+rc
