@@ -59,9 +59,18 @@
 
 
 /***   Transparent Blurry UI   ***/
-.toolbarbutton-1 {
+.toolbarbutton-1,
+.tab-close-button:not([selected="true"]) {
 	color: #444 !important;
 	fill: #444 !important;
+}
+
+.tabs-newtab-button:hover,
+.tab-close-button:hover {
+	background-color: #44444411 !important;
+}
+.tab-close-button:active {
+	background-color: #44444433 !important;
 }
 
 #navigator-toolbox * #tabbrowser-tabs,
@@ -93,6 +102,19 @@
 	background-color: #00000022 !important;
 }
 
+#navigator-toolbox * .toolbarbutton-icon,
+#navigator-toolbox * .toolbarbutton-badge-stack {
+	--toolbarbutton-hover-background: #44444411 !important;
+	--toolbarbutton-active-background: #44444433 !important;
+}
+
+#navigator-toolbox * .tab-close-button:hover[selected="true"] {
+	background-color: #ffffff0a !important;
+}
+
+#navigator-toolbox * .tab-close-button:active[selected="true"] {
+	background-color: #ffffff22 !important;
+}
 
 
 
