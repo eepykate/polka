@@ -21,9 +21,30 @@ volume() {
 	echo -e "v${b}${a}" > $fifo
 }
 
+bat() {
+	cat /sys/class/power_supply/*/capacity &>/dev/null || return
+
+	local capacity="$(($(cat /sys/class/power_supply/*/capacity 3>/dev/null) / 4))"
+	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
+
+	case "$capacity" in
+		0) bat=;;
+		1) bat=;;
+		2) bat=;;
+		3) bat=;;
+		*) bat=;;
+	esac
+
+	[[ $status = Charging ]] && bat=
+
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O8}" > $fifo
+}
+
+
 case $1 in
-	-d) desktop; exit;;
+	-b) bat; exit;;
 	-v) volume; exit;;
+	-d) desktop; exit;;
 esac
 
 [[ -e $fifo ]] && rm $fifo
@@ -44,26 +65,6 @@ bl="cfcfcf"
 ac="4169E1"
 
 #wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
-
-bat() {
-	cat /sys/class/power_supply/*/capacity &>/dev/null || return
-
-	local capacity="$(($(cat /sys/class/power_supply/*/capacity 3>/dev/null) / 4))"
-	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
-
-	case "$capacity" in
-		0) bat=;;
-		1) bat=;;
-		2) bat=;;
-		3) bat=;;
-		*) bat=;;
-	esac
-
-	[[ $status = Charging ]] && bat=
-
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O8}" > $fifo
-}
-
 
 thing() {
 	thing=""
@@ -95,6 +96,7 @@ while true; do
 	fi
 
 	echo \"t%{A:nottime:}\$time%{A}\";
+	bar -b;
 	sleep 1
 done" > $fifo &
 
