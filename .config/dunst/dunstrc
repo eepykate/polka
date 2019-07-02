@@ -29,7 +29,7 @@
 	hide_duplicate_count = false
 	show_indicators = no
 	icon_position = left
-	max_icon_size = 64
+	max_icon_size = 128
 	icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/
 	sticky_history = yes
 	history_length = 20

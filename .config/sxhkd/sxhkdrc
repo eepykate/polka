@@ -1,3 +1,6 @@
+ctrl + Escape
+	xkill
+
 XF86MonBrightness{Down,Up}
 	light -{U,A} 10
 
@@ -10,13 +13,13 @@ super + Return
 super + f
 	firefox-developer-edition
 
-super + c 
+super + c
 	dolphin
 
-super + space 
+super + space
 	rofi -show run
 
-alt + ctrl + space 
+alt + ctrl + space
 	dmenu_run
 
 Print
@@ -25,13 +28,13 @@ Print
 super + Print
 	scr -f
 
-shift + Print 
+shift + Print
 	scr -s
 
-ctrl + alt + m 
+ctrl + alt + m
 	dmenumount
 
-ctrl + alt + u 
+ctrl + alt + u
 	dmenuumount
 
 ctrl + alt + Prior
@@ -62,13 +65,13 @@ super + p
 	vol p
 
 XF86AudioRaiseVolume
-	vol up 
+	vol up
 
 XF86AudioLowerVolume
 	vol down
 
 super + u
-	vol up 
+	vol up
 
 super + j
 	vol down
@@ -76,14 +79,14 @@ super + j
 XF86AudioStop
 	vol stop
 
-XF86AudioMute 
+XF86AudioMute
 	vol m
 
-ctrl + alt + w 
-	wifi 
+ctrl + alt + w
+	wifi
 
-super + l 
-	lock 
+super + l
+	lock
 
 super + t
 	tp.sh
@@ -91,7 +94,7 @@ super + t
 shift + super + F1
 	tp.sh
 
-ctrl + alt + s 
+ctrl + alt + s
 	ts.sh
 
 alt + grave
@@ -106,7 +109,7 @@ alt + grave
 super + s
 	players.sh
 
-alt + x 
+alt + x
 	select_st
 
 #    ---
