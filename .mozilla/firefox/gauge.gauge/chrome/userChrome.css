@@ -737,9 +737,12 @@ toolbarspring {
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 130px !important;
+	max-width: 140px !important;
 }
 
+.tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
+	max-width: 100px !important;
+}
 
 
 /* Hide user icon on navbar in developer edition */
