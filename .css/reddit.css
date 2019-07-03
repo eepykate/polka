@@ -24,14 +24,9 @@ span.pagename.redditname a {
  right:0px;
  top:155px
 }
-.tabmenu {
- margin-top:22px
-}
 .tabmenu li {
  background-color:transparent;
  margin:0!important;
- height:36px;
- width:102px
 }
 .selected,
 .choice.primary {
@@ -53,7 +48,7 @@ a {
  transition:150ms;
  -webkit-transition:150ms;
  font-weight:normal;
- color:var(--fglight)!important;
+ color:var(--fgdark)!important;
  text-shadow:0px 1px 8px rgba(0,0,0,0.5)
 }
 .tabmenu li:hover a {
@@ -3873,4 +3868,29 @@ table thead tr th {
 a > strong {
 	color: rgb(140, 179, 217) !important;
 }
+
+.tabmenu  {
+	text-align: left !important;
+	margin-left: 100px !important;
+	margin-top: 34px;
+}
+
+.tabmenu li a {
+	height: 20px !important;
+	line-height: 20px !important;
+	padding: 8px !important;
+	font-weight: 600 !important;
+}
+
+.tabmenu .selected {
+	color: var(--fglight) !important;
+}
+.res-toggle-filterline-visibility {
+	width: 20 !important;
+}
+
+
+
+
+
 
