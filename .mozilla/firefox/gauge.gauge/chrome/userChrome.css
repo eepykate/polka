@@ -38,7 +38,7 @@
 	--ui-height: 26px;                                                 /* Used only in this script */
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
-	--button-radius: 0.5em !important;                                 /* Border-radius of buttons */
+	--button-radius: 0.2em !important;                                 /* Border-radius of buttons */
 	--tabs-border: transparent !important;                             /* Hide tab border */
 	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
 	background-color: var(--bglight) !important;                       /* top border of out of focus window */
@@ -86,7 +86,7 @@
 	background-color: transparent !important;
 }
 
-#navigator-toolbox * .tabbrowser-tab[selected="true"] .tab-background {
+#navigator-toolbox * .tabbrowser-tab .tab-background[selected="true"] {
 	background: #00000022 !important;
 }
 
@@ -255,7 +255,7 @@ browser[type=content] > html {
 	background-color: transparent !important;
 }
 
-.tabbrowser-tab[selected="true"] .tab-background {
+.tabbrowser-tab .tab-background[selected="true"]{
 	background: var(--bglight) !important;
 }
 
