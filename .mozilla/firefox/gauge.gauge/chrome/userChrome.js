@@ -1,7 +1,12 @@
+var thing = 0;
 var myFunction = function(e) {
-	const lmb = e.button === 0;
-	if (lmb) {
-		document.getElementById('urlbar').focus();
+	if (thing === 1) {
+		const lmb = e.button === 0;
+		if (lmb) {
+			document.getElementById('urlbar').focus();
+		}
+	} else {
+		thing = 1;
 	}
 };
 
@@ -9,13 +14,14 @@ function tabClick() {
 	var classname = document.getElementsByClassName("tabbrowser-tab");
 
 	for (var i = 0; i < classname.length; i++) {
-		classname[i].removeEventListener('dblclick', myFunction);
+		classname[i].removeEventListener('click', myFunction);
 	}
+	thing = 0;
 
-	document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', myFunction);
-};
+	document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('click', myFunction);
+}
 
-gBrowser.tabContainer.addEventListener("TabSelect", tabClick)
+gBrowser.tabContainer.addEventListener("TabSelect", tabClick);
 
 
 // ==UserScript==
