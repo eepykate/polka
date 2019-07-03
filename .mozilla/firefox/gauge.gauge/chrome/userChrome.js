@@ -6,19 +6,16 @@ var myFunction = function(e) {
 };
 
 function tabClick() {
-
 	var classname = document.getElementsByClassName("tabbrowser-tab");
 
 	for (var i = 0; i < classname.length; i++) {
-		classname[i].removeEventListener('click', myFunction);
+		classname[i].removeEventListener('dblclick', myFunction);
 	}
 
-	document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('click', myFunction);
-
+	document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', myFunction);
 };
 
-setInterval(tabClick, 500);
-
+gBrowser.tabContainer.addEventListener("TabSelect", tabClick)
 
 
 // ==UserScript==
