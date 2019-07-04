@@ -83,6 +83,8 @@ A,kvantum-qt4-git,is a Qt theming engine
 ,xorg-xgamma,
 ,neovim,
 ,maim,is an alternative to scrot
+,cmus, is a terminal music player
+,mpv,is a media player
 ,zsh-completions,
 A,pnmixer,
 A,i3lock-color-git, is the lock screen

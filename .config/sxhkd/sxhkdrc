@@ -1,3 +1,6 @@
+super + e
+	st -e cmus
+
 ctrl + Escape
 	xkill
 

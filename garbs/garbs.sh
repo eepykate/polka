@@ -465,6 +465,14 @@ git clone https://github.com/wmutils/core /tmp/wmutils;
 
 mkdir -p /home/$name/Stuff/Screenshots/scrot/
 
+# mpris support in mpv
+mkdir -p /etc/mpv/scripts
+cd /tmp
+git clone https://github.com/hoyon/mpv-mpris
+cd /tmp/mpv-mpris
+make &>/dev/null
+cp mpris.so /etc/mpv/scripts/
+
 # Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
 mkdir -p /usr/local/bin /usr/local/sounds;
 curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove -o /usr/local/bin/usb-remove;
