@@ -1,5 +1,3 @@
-" viking -- vim color scheme
-
 set background=dark
 hi clear
 if exists('syntax_on')
@@ -52,7 +50,7 @@ hi Comment      ctermbg=NONE   ctermfg=8    cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=1    cterm=NONE
-hi Number       ctermbg=NONE   ctermfg=4    cterm=NONE
+hi Number       ctermbg=NONE   ctermfg=3    cterm=NONE
 hi Boolean      ctermbg=NONE   ctermfg=11   cterm=NONE
 hi Float        ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Identifier   ctermbg=NONE   ctermfg=4    cterm=NONE
@@ -68,13 +66,26 @@ hi Define       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Macro        ctermbg=NONE   ctermfg=1    cterm=NONE
 hi PreCondit    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Type         ctermbg=NONE   ctermfg=1    cterm=NONE
-hi StorageClass ctermbg=NONE   ctermfg=1    cterm=NONE
+hi StorageClass ctermbg=NONE   ctermfg=15    cterm=NONE
 hi PreProc      ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Structure    ctermbg=NONE   ctermfg=5    cterm=NONE
 hi Special      ctermbg=NONE   ctermfg=13   cterm=NONE
-hi SpecialChar  ctermbg=NONE   ctermfg=3    cterm=NONE
+hi SpecialChar  ctermbg=NONE   ctermfg=5    cterm=NONE
 hi Delimiter    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Underliend   ctermbg=NONE   ctermfg=1    cterm=underline
 hi Ignore       ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Error        ctermbg=NONE   ctermfg=1    cterm=bold
 hi Todo         ctermbg=NONE   ctermfg=3    cterm=bold
+hi Statemen     ctermbg=NONE   ctermfg=3    cterm=bold
+
+
+" Css syntax adjustments
+hi cssUrl              ctermbg=NONE   ctermfg=1    cterm=italic
+hi cssBraces           ctermbg=NONE   ctermfg=15   cterm=NONE
+hi cssTagName          ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssIdentifier       ctermbg=NONE   ctermfg=4    cterm=NONE
+hi cssClassName        ctermbg=NONE   ctermfg=3    cterm=NONE
+hi cssClassNameDot     ctermbg=NONE   ctermfg=3    cterm=NONE
+hi cssFunctionName     ctermbg=NONE   ctermfg=4    cterm=NONE
+hi cssBackgroundProp   ctermbg=NONE   ctermfg=15NONE cterm=NONE
+
