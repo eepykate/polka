@@ -85,21 +85,6 @@ thing() {
 }
 
 
-exec -a bar bash -c "blink=\":\";
-while true; do
-	if [[ \$blink = \":\" ]]; then
-		blink=\" \"
-		time=\"\$(date \"+%I %M\")\";
-	else
-		blink=\":\"
-		time=\"\$(date \"+%I:%M\")\";
-	fi
-
-	echo \"t%{A:nottime:}\$time%{A}\";
-	bar -b;
-	sleep 1
-done" > $fifo &
-
 (sleep 0.4;
 bat;
 volume;
@@ -129,8 +114,21 @@ done | ( lemonbar \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
 	-g "${width}x24+$offX+$offY" \
-	| bash; kill -9 -$$)
+	| bash; kill -9 -$$) &
+
+while true; do
+	if [[ $blink = ":" ]]; then
+		blink=" "
+		time="$(date "+%I %M")";
+	else
+		blink=":"
+		time="$(date "+%I:%M")";
+	fi
+
+	echo "t%{A:nottime:}$time%{A}";
+	bar -b;
+	sleep 1
+done > $fifo
+
 pkill -P $$
 #kill -9 -$$
-
-
