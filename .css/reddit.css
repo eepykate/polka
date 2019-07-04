@@ -3904,3 +3904,8 @@ body.profile-page * #header-bottom-left span.pagename {
 	margin-top: -120px !important;
 }
 
+.pagename.redditname a {
+	position: absolute !important;
+	left: 0;
+	right: 0;
+}
