@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 read -r X Y W H < <(slop -f "%x %y %w %h" -b 1 -t 0 -q)
-[[ -n $W ]] && [[ $W -gt 0 ]] && W="$(( $W - 6 ))" || exit
-[[ -n $H ]] && [[ $H -gt 0 ]] && H="$(( $H - 6 ))" || exit
+[[ -n $W ]] && [[ $W -gt 0 ]] && W="$(( $W - 0 ))" || exit
+[[ -n $H ]] && [[ $H -gt 0 ]] && H="$(( $H - 0 ))" || exit
 g=${W}x${H}+${X}+${Y}
 tabbed -r 2 -c -g $g st -w ''
