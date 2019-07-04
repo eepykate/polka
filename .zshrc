@@ -50,7 +50,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion::complete:*' use-cache 1
 zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
-autoload -U compinit && compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+autoload -U compinit && compinit -u -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 #       ---
 #   Shell Theme
