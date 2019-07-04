@@ -69,3 +69,5 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 unsetopt menu_complete     # Do not autoselect the first completion entry
 source ~/.config/aliases   # Aliases
+
+# vim: ft=sh

@@ -69,7 +69,7 @@ hi Type         ctermbg=NONE   ctermfg=1    cterm=NONE
 hi StorageClass ctermbg=NONE   ctermfg=15    cterm=NONE
 hi PreProc      ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Structure    ctermbg=NONE   ctermfg=5    cterm=NONE
-hi Special      ctermbg=NONE   ctermfg=13   cterm=NONE
+hi Special      ctermbg=NONE   ctermfg=15   cterm=NONE
 hi SpecialChar  ctermbg=NONE   ctermfg=5    cterm=NONE
 hi Delimiter    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Underliend   ctermbg=NONE   ctermfg=1    cterm=underline
@@ -89,3 +89,13 @@ hi cssClassNameDot     ctermbg=NONE   ctermfg=3    cterm=NONE
 hi cssFunctionName     ctermbg=NONE   ctermfg=4    cterm=NONE
 hi cssBackgroundProp   ctermbg=NONE   ctermfg=15NONE cterm=NONE
 
+
+" sh syntax adjustments
+hi shFunction          ctermbg=NONE   ctermfg=4     cterm=NONE
+hi shConditional       ctermbg=NONE   ctermfg=4     cterm=NONE
+hi shDerefSimple       ctermbg=NONE   ctermfg=1     cterm=NONE
+hi Delimiter           ctermbg=NONE   ctermfg=15    cterm=NONE
+hi shVariable          ctermbg=NONE   ctermfg=15    cterm=NONE
+hi shStatement         ctermbg=NONE   ctermfg=5     cterm=NONE
+hi shQuote             ctermbg=NONE   ctermfg=2     cterm=NONE
+hi shFunction          ctermbg=NONE   ctermfg=4     cterm=NONE
