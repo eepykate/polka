@@ -1,4 +1,5 @@
 xrdb ~/.Xresources &
+synclient TouchpadOff=1
 dunst &
 compton &
 /usr/bin/xset r rate 200 60 &
