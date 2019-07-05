@@ -1,6 +1,9 @@
 super + e
 	st -e cmus
 
+super + y
+	st -e transmission-remote-cli
+
 ctrl + Escape
 	xkill
 

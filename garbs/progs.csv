@@ -10,6 +10,8 @@ TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right wh
 ,sddm,is a display manager (login screen)
 A,kvantum-qt4-git,is a Qt theming engine
 ,transmission-qt,is a torrent client
+,transmission-cli,is a torrent client
+A,transmission-remote-cli-git,is a torrent client
 ,neofetch,is a system information tool, used normally for showing off in r/unixporn
 ,cmatrix,is a useless but fun matrix-like thing for terminal
 ,clementine,is a graphical music player

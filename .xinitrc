@@ -1,4 +1,5 @@
 xrdb ~/.Xresources &
+transmission-daemon
 synclient TouchpadOff=1
 dunst &
 compton &
