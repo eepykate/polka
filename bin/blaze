@@ -160,7 +160,7 @@ if [[ $RtR = Yes ]]; then
 			# Record X minutes
 			ffmpeg -y $(printf " $audio") \
 				-f x11grab -draw_mouse 1 \
-				-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+				-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
 				-pix_fmt yuv444 p-t $trimm \
 				-qscale 0 $(printf " $nvenc") \
 				/tmp/blaze/$curname.mp4 -loglevel error
@@ -185,7 +185,7 @@ if [[ $RtR = Yes ]]; then
 		# The actual command
 		ffmpeg -y $(printf " $audio") \
 			-f x11grab -draw_mouse 1 \
-			-s ${width}x${height} -r ${rate} -i :0.0+${offsetX},${offsetY} \
+			-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
 			-pix_fmt yuv420p \
 			$(printf " $bitrate")\
 			-q:v 0 $(printf " $nvenc") \
