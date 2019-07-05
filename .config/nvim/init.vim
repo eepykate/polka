@@ -6,11 +6,11 @@ map j gj
 map <Up> gk
 map <Down> gj
 
-vmap <C-c> "+yi
-imap <C-c> "+yi
+vmap <C-c> "+ya
+imap <C-c> "+ya
 vmap <C-x> "+c
-vmap <C-v> <ESC>"+pi
-imap <C-v> <ESC>"+pi
+vmap <C-v> <ESC>"+pa
+imap <C-v> <ESC>"+pa
 
 nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 
