@@ -773,6 +773,13 @@ toolbarseparator {
 }
 
 
+#navigator-toolbox[movingtab],
+#tabbrowser-tabs[movingtab]
+{
+
+	margin: 0 !important;
+}
+
 
 toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");

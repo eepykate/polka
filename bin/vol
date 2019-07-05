@@ -39,6 +39,14 @@ function notify() {
 		$1 "" "$2" "$3" "[]" "{}" 5000 >/dev/null
 }
 
+function media() {
+	if [[ -n $player ]] && playerctl -p $player status &>/dev/null; then
+		playerctl -p $player $@
+	else
+		playerctl $@
+	fi
+}
+
 
 opts=`getopt -o hpn --long help,print,notify -- "$@"`
 eval set -- "$opts"
@@ -75,13 +83,13 @@ case $1 in
 	m)      amixer -D pulse sset Master $mute >/dev/null;;
 	mute)   amixer -D pulse sset Master mute >/dev/null;;
 	unmute) amixer -D pulse sset Master unmute >/dev/null;;
-	pause)  playerctl -p $player pause 2>/dev/null;;
-	play)   playerctl -p $player play 2>/dev/null;;
-	p)      playerctl -p $player play-pause 2>/dev/null;;
-	next)   playerctl -p $player next 2>/dev/null;;
-	prev)   playerctl -p $player previous 2>/dev/null;;
-	stop)   playerctl -p $player stop 2>/dev/null;;
-	previous) playerctl previous 2>/dev/null;;
+	pause)  media pause 2>/dev/null;;
+	play)   media play 2>/dev/null;;
+	p)      media play-pause 2>/dev/null;;
+	next)   media next 2>/dev/null;;
+	prev)   media previous 2>/dev/null;;
+	stop)   media stop 2>/dev/null;;
+	previous) media previous 2>/dev/null;;
 esac
 
 pc_amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
