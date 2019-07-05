@@ -28,16 +28,16 @@ bat() {
 	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
 	case "$capacity" in
-		0) bat=\uf244;;
-		1) bat=\uf243;;
-		2) bat=\uf242;;
-		3) bat=\uf241;;
-		*) bat=\uf240;;
+		0) bat=;;
+		1) bat=;;
+		2) bat=;;
+		3) bat=;;
+		*) bat=;;
 	esac
 
 	[[ $status = Charging ]] && bat=
 
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O8}" > $fifo
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O15}" > $fifo
 }
 
 
