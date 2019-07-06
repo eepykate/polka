@@ -1,6 +1,7 @@
-#             -----
-#   Operation make zsh usable
-#             -----
+#           ---
+#     GaugeK's zshrc
+#  gitlab.com/GaugeK/dots
+#           ---
 bindkey '^E' end-of-line              # [Ctrl-E] - Jump to the end of the line
 bindkey '^[[P' delete-char            # [Delete] - Delete character under cursor
 bindkey '^[[4~' end-of-line           # [End] - Go to end of line
