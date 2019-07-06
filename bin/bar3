@@ -1,9 +1,25 @@
 #!/usr/bin/env bash
 #set -x
 
+fg="ccccee"
+bg="232731"
+bl="282d39"
+ac="9ab2dc"
 fifo="/tmp/barfifo"
 
 trap 'pkill -P $$' SIGINT
+
+tim() {
+	if [[ $(cat /tmp/barblink) = ":" ]]; then
+		echo " " > /tmp/barblink
+		time="$(date "+%I %M")";
+	else
+		echo ":" > /tmp/barblink
+		time="$(date "+%I:%M")";
+	fi
+
+	echo "t%{A:nottime:}$time%{A}" > $fifo
+}
 
 desktop() {
 	echo "d$(bspc query -D -d focused --names)" > $fifo
@@ -43,6 +59,7 @@ bat() {
 
 case $1 in
 	-b) bat; exit;;
+	-t) tim; exit;;
 	-v) volume; exit;;
 	-d) desktop; exit;;
 esac
@@ -58,32 +75,6 @@ monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
 width="$(awk '{print $1}' <<< $monitor )"
 offX="$(awk '{print $3}' <<< $monitor)"
 offY="$(awk '{print $4}' <<< $monitor)"
-
-fg="ccccee"
-bg="232731"
-bl="282d39"
-ac="9ab2dc"
-
-#wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
-
-thing() {
-	thing=""
-	if [[ $(bspc query -T -d | jq -r .layout) != monocle ]] || [[ $(bspc query -N -n .window -d focused | wc -l) -le 1 ]]; then
-		:
-	else
-		curname="$(bspc query -N -n)"
-		thing+="%{O15}"
-		for i in $(bspc query -N -n .window -d focused); do
-			if [[ $curname = $i ]]; then
-				thing+="%{F#ff$ac} " 
-			else
-				thing+="%{F#ff$fg} "
-			fi
-		done
-	fi
-	echo -e "a$thing%{F-}" > $fifo
-}
-
 
 (sleep 0.4;
 bat;
@@ -117,16 +108,8 @@ done | ( lemonbar \
 	| bash; kill -9 -$$) &
 
 while true; do
-	if [[ $blink = ":" ]]; then
-		blink=" "
-		time="$(date "+%I %M")";
-	else
-		blink=":"
-		time="$(date "+%I:%M")";
-	fi
-
-	echo "t%{A:nottime:}$time%{A}";
 	bar -b;
+	bar -t;
 	sleep 1
 done > $fifo
 
