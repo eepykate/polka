@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Pure\nWinter\nCoral\nxd\naaaaa1_\ntrans\nca-aa-blue\nca-aa-pink\nca-aa\naa\naa-blue\naa-purple\naa-red\naa-white\nPure-Pink\nPure-Pink-1\nFrost\nFrost-Purple\nBerry" # List of themes
+themes="Winter\nCoral\nxd\nDawn" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -20,23 +20,7 @@ fi
 [[ -n $wallpaper ]] && wallpaper="$(ls $HOME/Wallpapers/*.png | sed 's/.*\///' | rofi -dmenu -i -p "Which Wallpaper?")" # Find png wallpapers in ~/Wallpapers
 
 # Define the colours in the theme (for rofi, startpage, firefox, dunst, etc)
-if [[ $theme = Pure ]]; then
-	accentn="4"
-	bgdark="#12151a"
-	bglight="#171a24"
-	bglighter="#222631"
-
-	fgdark="#808fa1"
-	fglight="#afc4dc"
-
-	disabled="#696969"
-	accent="#02a4fc"
-	button="#cbe3f122"
-	border="#1e2130"
-	red="#f0185a"
-	hover="$bgdark"
-
-elif [[ $theme = Coral ]]; then
+if [[ $theme = Coral ]]; then
 
 	accentn="5"
 	bgdark="#141d23"
@@ -53,7 +37,7 @@ elif [[ $theme = Coral ]]; then
 	red="#d48398"
 	hover="#000000"
 
-elif [[ $theme = aaaaa1_ ]]; then
+elif [[ $theme = Dawn ]]; then
 	accentn="4"
 	bgdark="#f3f3f3"
 	bglight="#cfcfcf"
@@ -100,216 +84,6 @@ elif [[ $theme = xd ]]; then
 	border="#262c42"
 	red="#f75e6f"
 	hover="#000000"
-
-elif [[ $theme = aa-red ]]; then
-	accentn="1"
-	bgdark="#1a1f2e"
-	bglight="#202537"
-	bglighter="#272e44"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#be405d"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="#ffffff"
-
-elif [[ $theme = aa-white ]]; then
-	accentn="7"
-	bgdark="#1a1f2e"
-	bglight="#202537"
-	bglighter="#272e44"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#eeeeee"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="#000000"
-
-elif [[ $theme = aa-purple ]]; then
-	accentn="5"
-	bgdark="#1a1f2e"
-	bglight="#202537"
-	bglighter="#272e44"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#8866cc"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="#ffffff"
-
-elif [[ $theme = aa-blue ]]; then
-	accentn="4"
-	bgdark="#1a1f2e"
-	bglight="#202537"
-	bglighter="#272e44"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#447bbe"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="#ffffff"
-
-elif [[ $theme = aa ]]; then
-	accentn="5"
-	bgdark="#1a1f2e"
-	bglight="#202537"
-	bglighter="#272e44"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#8866cc"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="$bgdark"
-
-elif [[ $theme = ca-aa ]]; then
-	accentn="2"
-	bgdark="#191d2a"
-	bglight="#1e2232"
-	bglighter="#2c334c"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#00ee80"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="$bgdark"
-
-elif [[ $theme = ca-aa-blue ]]; then
-	accentn="4"
-	bgdark="#191d2a"
-	bglight="#1e2232"
-	bglighter="#2c334c"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#0099ff"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="$bgdark"
-
-elif [[ $theme = ca-aa-pink ]]; then
-	accentn="5"
-	bgdark="#191d2a"
-	bglight="#1e2232"
-	bglighter="#2c334c"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#ee99ff"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#ee0055"
-	hover="$bgdark"
-
-elif [[ $theme = Pure-Pink ]]; then
-	accentn="5"
-	bgdark="#12151a"
-	bglight="#171a24"
-	bglighter="#222631"
-
-	fgdark="#808fa1"
-	fglight="#afc4dc"
-
-	disabled="#696969"
-	accent="#ef57e8"
-	button="#cbe3f122"
-	border="#1e2130"
-	red="#f0185a"
-	hover="$bgdark"
-
-elif [[ $theme = Pure-Pink-1 ]]; then
-	accentn="5"
-	bgdark="#12151a"
-	bglight="#171a24"
-	bglighter="#222631"
-
-	fgdark="#808fa1"
-	fglight="#afc4dc"
-
-	disabled="#696969"
-	accent="#db7ff9"
-	button="#cbe3f122"
-	border="#1e2130"
-	red="#f0185a"
-	hover="$bgdark"
-
-elif [[ $theme = Berry ]]; then
-	accentn="5"
-	bgdark="#141117"
-	bglight="#19141e"
-	bglighter="#342036"
-
-	fgdark="#987ea2"
-	fglight="#f3d6fb"
-
-	disabled="#696969"
-	accent="#ab32c1"
-	button="#f3d6fb22"
-	border="#342036"
-	red="#cb1f62"
-	hover="$bgdark"
-
-elif [[ $theme = Frost ]]; then
-
-	accentn="3"
-	bgdark="#232a35"
-	bglight="#29303d"
-	bglighter="#343a48"
-
-	fgdark="#92a1ae"
-	fglight="#92a1ae"
-
-	disabled="#696969"
-	accent="#ecac87"
-	button="#7790a722"
-	border="#303848"
-	red="#c05863"
-	hover="$bgdark"
-
-elif [[ $theme = Frost-Purple ]]; then
-
-	accentn="5"
-	bgdark="#232a35"
-	bglight="#29303d"
-	bglighter="#343a48"
-
-	fgdark="#92a1ae"
-	fglight="#92a1ae"
-
-	disabled="#696969"
-	accent="#a469b4"
-	button="#7790a722"
-	border="#303848"
-	red="#c05863"
-	hover="$bgdark"
 
 else
 	echo "Invalid theme; exiting"; exit
