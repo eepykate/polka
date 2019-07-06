@@ -16,7 +16,6 @@ html,
 /*.container-16j22k,           /* ?? */
 /*.searchBar-6Kv8R2,           /* ?? */
 .container-2Thooq,             /* Bottom left user info */
-.scroller-2TZvBN,              /* Server Sidebar */
 .scroller-2wx7Hm,              /* Channel Sidebar */
 .header-2o-2hj,                /* Top-Left Server name */
 .title-3qD0b-,                 /* Top bar */
@@ -51,6 +50,8 @@ code,                          /* Code blocks */
 	box-shadow: none !important; 
 } 
 
+.containerDefault-1ZnADq:active * .content-3at_AU,
+.containerDefault-1ZnADq:hover:active * .content-3at_AU,
 /*.menu-Sp6bN1,            /* ?? */
 /*.inner-3ErfOT,           /* ?? */
 /*.layout-1cQCv2,          /* ?? */
@@ -82,9 +83,9 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 .selected-rZcOL-,          /* Selected element in the search popup */
 .selected-3s45Ha,          /* Selected tab in homepage top bar */
 .item-3HpYcP:hover,        /* Selected tab in homepage top bar hover */
-.channel-2QD9_O:hover,     /* Selected tab in homepage sidebar hover */
+.channel-2QD9_O:hover a,     /* Selected tab in homepage sidebar hover */
 .channel-2QD9_O a:hover,   /* Selected tab in homepage sidebar hover */
-.selected-1HYmZZ,          /* Selected tab in homepage sidebar */
+.selected-1HYmZZ a,          /* Selected tab in homepage sidebar */
 .selected-1HYmZZ a,        /* Selected tab in homepage sidebar */
 .item-1GzJrl:hover,        /* Top left popup hover */
 .markup-2BOw-j:hover,     /* Hover on messages */
@@ -111,6 +112,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 
 .premiumGuildIconGem-C4yUDR,
 .premiumGuildIconGem-C4yUDR > path,
+.newMessagesBar-mujexs > * > *,   /* New messages dialog */
 .newMessagesBar-mujexs > *,   /* New messages dialog */
 .botTag-2BhDSU,               /* Tag next to username bots have */
 .filename-ovv3c5,             /* Filename in upload popup */
@@ -218,3 +220,94 @@ a svg.homeIcon-tEMBK1 path {
 .pill-31IEus .item-2hkk8m {
 	background-color: var(--fgdark) !important;
 }
+
+
+
+.wrapper-1Rf91z {
+	margin-left: -60px;
+	transition: all 200ms;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 50;
+	background-color: var(--bglight) !important;
+}
+
+.wrapper-1Rf91z:hover * .pill-31IEus,
+.wrapper-1Rf91z:hover {
+	margin-left: 0px;
+}
+.wrapper-1Rf91z * .pill-31IEus {
+	margin-left: 60px;
+}
+
+.channels-Ie2l6A {
+	margin-left: 12px;
+}
+
+
+
+
+
+
+.channels-Ie2l6A {
+	transition: all 200ms;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -195px;
+	z-index: 2;
+	background-color: var(--bglight) !important;
+}
+
+.channels-Ie2l6A:hover {
+	left: 0;
+}
+.container-1r6BKw,
+.content-yTz4x3 {
+	margin-left: 50px;
+}
+
+
+.channels-Ie2l6A:not(:hover) * .children-Bmpf2Q,
+.channels-Ie2l6A:not(:hover) * .name-IbjUBS
+{
+	display: none;
+}
+
+.channels-Ie2l6A:not(:hover) * .content-3at_AU > *:not(.icon-1_QxNX) {
+	display: none;
+}
+
+.channels-Ie2l6A:not(:hover) * .content-3at_AU {
+	max-width: 35px;
+	
+}
+
+.channels-Ie2l6A:not(:hover) * .containerDefault-1ZnADq {
+	position: relative;
+	left: 190px;
+}
+
+.scroller-2FKFPG:not(:hover) {
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+}
+
+
+
+/*.channels-Ie2l6A:not(:hover) * .icon-1_QxNX,
+.channels-Ie2l6A:not(:hover) * .icon-WnO6o2 {
+	position: relative;
+	left: 190px;
+}
+*/
+.channels-Ie2l6A:not(:hover) * .icon-WnO6o2 {
+	position: relative;
+	left: 180px;
+}
+
+
+
+
+
