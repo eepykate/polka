@@ -1,4 +1,4 @@
-#     Aliases     # 
+#     Aliases     #
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 # alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
@@ -27,7 +27,7 @@ alias f="fff"              # terminal file manager
 
 # pacman/yay
 alias upd="sudo pacman -Syu"        # Update the system
-alias rems="sudo pacman -Rs"        # Remove <package> and dependencies that aren't used anywhere else 
+alias rems="sudo pacman -Rs"        # Remove <package> and dependencies that aren't used anywhere else
 alias rem="sudo pacman -R"          # Remove <package>
 alias ins="sudo pacman -S"          # install package from official repos
 alias p="sudo pacman"      # quicker way to type sudo pacman
@@ -40,16 +40,16 @@ alias gca="git commit --amend"   # git - Commit all staged files in the last com
 alias gcm="git commit -m"        # git - commit with message in quotes
 alias gpf="git push -f"          # git - Push and overwrite remote repository
 alias gp="git push"              # git - Push
-alias gaa="git add -A"           # git - Add all unstaged files to staging area 
+alias gaa="git add -A"           # git - Add all unstaged files to staging area
 alias ga="git add"               # git - Add <file(s)>
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
 
-se() { 
-	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR; 
+se() {
+	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR;
 }
 cf() {
-	cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")"; 
+	cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")";
 }
 
 # ls on cd
@@ -63,8 +63,8 @@ hextorgb() {
 	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
 }
 
-rgbtohex() { 
-	printf "%02X%02X%02X\n" $@ 
+rgbtohex() {
+	printf "%02X%02X%02X\n" $@
 }
 
 function uli() {
@@ -133,9 +133,9 @@ bk() {
 	cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
 }
 
-mc() { 
+mc() {
 	mkdir -p "$1"; cd "$1";
-} 
+}
 
 function cgif() {
 	rm -f /tmp/palette.png /tmp/recording.mp4 /tmp/encoded.gif
@@ -143,14 +143,14 @@ function cgif() {
 	video="$1"
 	cp $video /tmp/recording.mp4
 	#cp $HOME/Videos/recordings/$video /tmp/recording.mp4
-	
+
 	local frames="$(ffmpeg -i /tmp/recording.mp4 2>&1 | grep -o ".. fps" | grep -o "^..")"
 
   ffmpeg -i "/tmp/recording.mp4" -vf palettegen "/tmp/palette.png"
   ffmpeg -i "/tmp/recording.mp4" -i "/tmp/palette.png" -filter_complex paletteuse -r $frames "/tmp/encoded.gif"
 }
 
-colours() { 
+colours() {
 	echo
 	for c in {0..7}; do printf "\e[3${c}m\e[4${c}m  \e[0m "; done
 	printf "\n"
@@ -159,3 +159,4 @@ colours() {
 	echo
 }
 
+# vim: ft=sh
