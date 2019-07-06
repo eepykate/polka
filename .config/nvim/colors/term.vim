@@ -47,7 +47,7 @@ hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 
 " language syntax
 hi Comment      ctermbg=NONE   ctermfg=8    cterm=italic
-hi Constant     ctermbg=NONE   ctermfg=4    cterm=NONE
+hi Constant     ctermbg=NONE   ctermfg=3    cterm=NONE
 hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Number       ctermbg=NONE   ctermfg=3    cterm=NONE
@@ -80,14 +80,20 @@ hi Statemen     ctermbg=NONE   ctermfg=3    cterm=bold
 
 
 " Css syntax adjustments
-hi cssUrl              ctermbg=NONE   ctermfg=1    cterm=italic
-hi cssBraces           ctermbg=NONE   ctermfg=15   cterm=NONE
-hi cssTagName          ctermbg=NONE   ctermfg=1    cterm=NONE
-hi cssIdentifier       ctermbg=NONE   ctermfg=4    cterm=NONE
-hi cssClassName        ctermbg=NONE   ctermfg=3    cterm=NONE
-hi cssClassNameDot     ctermbg=NONE   ctermfg=3    cterm=NONE
-hi cssFunctionName     ctermbg=NONE   ctermfg=4    cterm=NONE
-hi cssBackgroundProp   ctermbg=NONE   ctermfg=15NONE cterm=NONE
+hi cssUrl                ctermbg=NONE   ctermfg=1    cterm=italic
+hi cssBraces             ctermbg=NONE   ctermfg=15   cterm=NONE
+hi cssTagName            ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssClassName          ctermbg=NONE   ctermfg=3    cterm=NONE
+hi cssAttrRegion         ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssIdentifier         ctermbg=NONE   ctermfg=4    cterm=NONE
+hi cssDefinition         ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssClassNameDot       ctermbg=NONE   ctermfg=3    cterm=NONE
+hi cssFunctionName       ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssUnitDecorators     ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssBackgroundProp     ctermbg=NONE   ctermfg=15   cterm=NONE
+hi cssAttributeSelector  ctermbg=NONE   ctermfg=3    cterm=NONE
+hi cssAttributeSelector  ctermbg=NONE   ctermfg=3    cterm=NONE
+hi cssAttributeSelector  ctermbg=NONE   ctermfg=3    cterm=NONE
 
 
 " sh syntax adjustments

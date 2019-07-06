@@ -59,10 +59,10 @@ width="$(awk '{print $1}' <<< $monitor )"
 offX="$(awk '{print $3}' <<< $monitor)"
 offY="$(awk '{print $4}' <<< $monitor)"
 
-fg="edeef0"
-bg="141d23"
-bl="1b252c"
-ac="f6b2b6"
+fg="ccccee"
+bg="232731"
+bl="282d39"
+ac="9ab2dc"
 
 #wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
