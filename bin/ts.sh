@@ -20,7 +20,7 @@ fi
 [[ -n $wallpaper ]] && wallpaper="$(ls $HOME/Wallpapers/*.png | sed 's/.*\///' | rofi -dmenu -i -p "Which Wallpaper?")" # Find png wallpapers in ~/Wallpapers
 
 # Define the colours in the theme (for rofi, startpage, firefox, dunst, etc)
-if [[ $theme = Pure ]]; then 
+if [[ $theme = Pure ]]; then
 	accentn="4"
 	bgdark="#12151a"
 	bglight="#171a24"
@@ -36,7 +36,7 @@ if [[ $theme = Pure ]]; then
 	red="#f0185a"
 	hover="$bgdark"
 
-elif [[ $theme = Coral ]]; then 
+elif [[ $theme = Coral ]]; then
 
 	accentn="5"
 	bgdark="#141d23"
@@ -53,7 +53,7 @@ elif [[ $theme = Coral ]]; then
 	red="#d48398"
 	hover="#000000"
 
-elif [[ $theme = aaaaa1_ ]]; then 
+elif [[ $theme = aaaaa1_ ]]; then
 	accentn="4"
 	bgdark="#f3f3f3"
 	bglight="#cfcfcf"
@@ -69,7 +69,7 @@ elif [[ $theme = aaaaa1_ ]]; then
 	red="#df1a45"
 	hover="#ffffff"
 
-elif [[ $theme = Winter ]]; then 
+elif [[ $theme = Winter ]]; then
 	accentn="4"
 	bgdark="#232731"
 	bglight="#282d39"
@@ -85,7 +85,7 @@ elif [[ $theme = Winter ]]; then
 	red="#dc8189"
 	hover="#000000"
 
-elif [[ $theme = xd ]]; then 
+elif [[ $theme = xd ]]; then
 	accentn="4"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -101,7 +101,7 @@ elif [[ $theme = xd ]]; then
 	red="#f75e6f"
 	hover="#000000"
 
-elif [[ $theme = aa-red ]]; then 
+elif [[ $theme = aa-red ]]; then
 	accentn="1"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -117,7 +117,7 @@ elif [[ $theme = aa-red ]]; then
 	red="#ee0055"
 	hover="#ffffff"
 
-elif [[ $theme = aa-white ]]; then 
+elif [[ $theme = aa-white ]]; then
 	accentn="7"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -133,7 +133,7 @@ elif [[ $theme = aa-white ]]; then
 	red="#ee0055"
 	hover="#000000"
 
-elif [[ $theme = aa-purple ]]; then 
+elif [[ $theme = aa-purple ]]; then
 	accentn="5"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -149,7 +149,7 @@ elif [[ $theme = aa-purple ]]; then
 	red="#ee0055"
 	hover="#ffffff"
 
-elif [[ $theme = aa-blue ]]; then 
+elif [[ $theme = aa-blue ]]; then
 	accentn="4"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -165,7 +165,7 @@ elif [[ $theme = aa-blue ]]; then
 	red="#ee0055"
 	hover="#ffffff"
 
-elif [[ $theme = aa ]]; then 
+elif [[ $theme = aa ]]; then
 	accentn="5"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -181,7 +181,7 @@ elif [[ $theme = aa ]]; then
 	red="#ee0055"
 	hover="$bgdark"
 
-elif [[ $theme = ca-aa ]]; then 
+elif [[ $theme = ca-aa ]]; then
 	accentn="2"
 	bgdark="#191d2a"
 	bglight="#1e2232"
@@ -197,7 +197,7 @@ elif [[ $theme = ca-aa ]]; then
 	red="#ee0055"
 	hover="$bgdark"
 
-elif [[ $theme = ca-aa-blue ]]; then 
+elif [[ $theme = ca-aa-blue ]]; then
 	accentn="4"
 	bgdark="#191d2a"
 	bglight="#1e2232"
@@ -213,7 +213,7 @@ elif [[ $theme = ca-aa-blue ]]; then
 	red="#ee0055"
 	hover="$bgdark"
 
-elif [[ $theme = ca-aa-pink ]]; then 
+elif [[ $theme = ca-aa-pink ]]; then
 	accentn="5"
 	bgdark="#191d2a"
 	bglight="#1e2232"
@@ -229,7 +229,7 @@ elif [[ $theme = ca-aa-pink ]]; then
 	red="#ee0055"
 	hover="$bgdark"
 
-elif [[ $theme = Pure-Pink ]]; then 
+elif [[ $theme = Pure-Pink ]]; then
 	accentn="5"
 	bgdark="#12151a"
 	bglight="#171a24"
@@ -245,7 +245,7 @@ elif [[ $theme = Pure-Pink ]]; then
 	red="#f0185a"
 	hover="$bgdark"
 
-elif [[ $theme = Pure-Pink-1 ]]; then 
+elif [[ $theme = Pure-Pink-1 ]]; then
 	accentn="5"
 	bgdark="#12151a"
 	bglight="#171a24"
@@ -261,7 +261,7 @@ elif [[ $theme = Pure-Pink-1 ]]; then
 	red="#f0185a"
 	hover="$bgdark"
 
-elif [[ $theme = Berry ]]; then 
+elif [[ $theme = Berry ]]; then
 	accentn="5"
 	bgdark="#141117"
 	bglight="#19141e"
@@ -269,7 +269,7 @@ elif [[ $theme = Berry ]]; then
 
 	fgdark="#987ea2"
 	fglight="#f3d6fb"
-	
+
 	disabled="#696969"
 	accent="#ab32c1"
 	button="#f3d6fb22"
@@ -278,7 +278,7 @@ elif [[ $theme = Berry ]]; then
 	hover="$bgdark"
 
 elif [[ $theme = Frost ]]; then
-	
+
 	accentn="3"
 	bgdark="#232a35"
 	bglight="#29303d"
@@ -286,7 +286,7 @@ elif [[ $theme = Frost ]]; then
 
 	fgdark="#92a1ae"
 	fglight="#92a1ae"
-	
+
 	disabled="#696969"
 	accent="#ecac87"
 	button="#7790a722"
@@ -295,7 +295,7 @@ elif [[ $theme = Frost ]]; then
 	hover="$bgdark"
 
 elif [[ $theme = Frost-Purple ]]; then
-	
+
 	accentn="5"
 	bgdark="#232a35"
 	bglight="#29303d"
@@ -303,7 +303,7 @@ elif [[ $theme = Frost-Purple ]]; then
 
 	fgdark="#92a1ae"
 	fglight="#92a1ae"
-	
+
 	disabled="#696969"
 	accent="#a469b4"
 	button="#7790a722"
@@ -311,7 +311,7 @@ elif [[ $theme = Frost-Purple ]]; then
 	red="#c05863"
 	hover="$bgdark"
 
-else 
+else
 	echo "Invalid theme; exiting"; exit
 fi
 
@@ -341,19 +341,12 @@ if [[ -n "$theme" ]]; then
 	[[ -f ~/.config/Xres.$theme ]] &&
 		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources
 
-	# Reload Xresources
-	xrdb $HOME/.Xresources 
+	# Reload terminal colours using Xresources
 	rc
 
-	# Replace the accent colour in slight.zsh
-	[[ -n $accentn ]] && 
+	# Replace the accent colour in my zsh prompt
+	[[ -n $accentn ]] &&
 		sed --follow-symlinks -i "s/color=\".*\"/color=\"$accentn\"/" ~/.zshrc
-
-	# Change foreground colour in conky
-	[[ -f ~/.conkyrc ]] && [[ -n $fglight ]] && sed "s/\${color ......}/\${color $fglight}/" -i ~/.conkyrc
-	# Reload conky
-	pkill -9 conky && 
-	conky &>/dev/null &! 
 
 	# Change the colour variables in firefox and my startpage
 	# $HOME/.startpage/style.css
@@ -373,19 +366,18 @@ $HOME/.startpage/style.css" | \
 		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/"
 
 	# Replace colours in dunst
-	#sed --follow-symlinks -i "s/frame_color = \".*\"/frame_color = \"#$accent\"/" ~/.config/dunst/dunstrc
-	#sed --follow-symlinks -i "s/background = \".*\"/background = \"#$bgdark\"/"   ~/.config/dunst/dunstrc
-	#sed --follow-symlinks -i "s/foreground = \".*\"/foreground = \"#$fglight\"/"  ~/.config/dunst/dunstrc
-	# Make urgent notifications in dunst have a red border
-	#dunst_red_last_linenum="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 3 ))"
-	#sed --follow-symlinks -i "${dunst_red_last_linenum}s/frame_color = \".*\"/frame_color = \"#$red\"/" ~/.config/dunst/dunstrc
-	## Reload dunst
-	#killall -9 dunst &> /dev/null;
-	#dunst &>/dev/null &!
+	sed --follow-symlinks -i \
+		-e "s/frame_color = \".*\"/frame_color = \"#$accent\"/" \
+		-e "s/background = \".*\"/background = \"#$fglight\"/" \
+		-e "s/foreground = \".*\"/foreground = \"#$bglight\"/"  \
+		~/.config/dunst/dunstrc
 
-	# Change theme name in tint (Wrapper script) then run it again, replacing the panel
-	sed --follow-symlinks -i "s/theme=\".*\"/theme=\"$theme\"/" ~/bin/tint; 
-	#tint &>/dev/null &! 
+	# Make urgent notifications have a different colour
+	dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 1 ))"
+	sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$bglighter\"/" ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$fglight\"/" ~/.config/dunst/dunstrc
+
+	pkill -9 dunst; dunst &>/dev/null &!
 
 	# Change the theme in rofi
 	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bgdark}bb;/g" \
@@ -393,9 +385,6 @@ $HOME/.startpage/style.css" | \
 		-e "s/accent:.*#.*;/accent:     #$accent;/"\
 		-e "s/sel:.*#.*;/sel:     #$button;/"\
 		~/.config/rofi/theme.rasi
-
-	# Change accent colour in gtk.css 
-	#sed --follow-symlinks -i "s/background-color: #.*;/background-color: #$bglight;/g" ~/.config/gtk-3.0/gtk.css
 
 	# Change the wallpaper
 	[[ -n $wallpaper ]] &&
@@ -410,14 +399,6 @@ $HOME/.startpage/style.css" | \
 		~/.config/bspwm/bspwmrc
 	bspc wm -r
 
-	# Change polybar colours
-	#sed --follow-symlinks -i \
-	#	-e "s/bg = #.*/bg = #$bgdark/" \
-	#		-e "s/fg = #.*/fg = #$fglight/" \
-	#		-e "s/accent = #.*/accent = #$accent/" \
-	#		~/.config/polybar/config
-	#	polybar.sh &!
-
 	# Change lemonbar colours
 	sed --follow-symlinks -i \
 		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
@@ -428,11 +409,7 @@ $HOME/.startpage/style.css" | \
 		~/bin/bar
 	bar &!
 
-	sed --follow-symlinks -i \
-		-e "s/accent=\"#.*\"/accent=\"#$accent\"/g" \
-		-e "s/fg=\"#.*\"/fglight=\"#$fglight\"/g" \
-		~/bin/asda
+	sleep 0.1
+	notify-send "Theme changed to $theme"
 
-
-	true
 fi
