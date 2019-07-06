@@ -27,7 +27,7 @@ html {
 }
 
 #page {
-	max-width: 400px;
+	max-width: 300px;
 
 	margin: 0 auto;
 	margin-top: 20px;
@@ -42,7 +42,7 @@ main {
 }
 
 #clock {
-	display: block;
+	display: flex;
 	margin: 0 auto;
 	text-align: center;
 	padding: 10px;
@@ -52,7 +52,8 @@ main {
 	color: var(--fglight);
 	display: inline-block;
 	margin: 0 5px;
-	width: 90px;
+	flex-grow: 1;
+	width: 0;
 }
 
 #time {
