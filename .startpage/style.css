@@ -1,19 +1,19 @@
 :root {
---bgdark: #00000000;
---bglight: #00000022;
---bglighter: #00000044;
+--bgdark: #141d23;
+--bglight: #1b252c;
+--bglighter: #242e35;
 
---fgdark: #cccccc;
---fglight: #ffffff;
+--fgdark: #999ba0;
+--fglight: #edeef0;
 
---accent: #9ab2dc;
---border: #b0b4bb;
+--accent: #f6b2b6;
+--border: #242e35;
 --disabled: #595959;
 --hover: #000000;
 }
 
 * {
-	font-family: t kiwi Wide;
+	font-family: "t kiwi Wide";
 	font-size: 10px;
 }
 
@@ -22,7 +22,7 @@
 }*/
 
 html {
-	background: url(Blur.png);
+	background: var(--bgdark);
 	background-position: top -24px left 0;
 }
 
@@ -76,7 +76,7 @@ main {
 	background-color: transparent;
 	border: none;
 	border-bottom: 2px solid var(--bglighter);
-	color: var(--fgdark);
+	color: var(--fglight);
 	transition: all 00ms;
 	width: 100%;
 	max-width: 300px;

@@ -59,10 +59,10 @@ width="$(awk '{print $1}' <<< $monitor )"
 offX="$(awk '{print $3}' <<< $monitor)"
 offY="$(awk '{print $4}' <<< $monitor)"
 
-fg="ffffff"
-bg="000000"
-bl="cfcfcf"
-ac="4169E1"
+fg="edeef0"
+bg="141d23"
+bl="1b252c"
+ac="f6b2b6"
 
 #wifi="%{A:st -c floating -e nmtui-connect:}\uf1eb%{A}"
 
@@ -103,12 +103,12 @@ while read -r line < "$fifo"; do
 		t*) time="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{B#22$bg}%{O15}$time$asda%{O15}%{B-}%{r}%{B#22$bg}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
+	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
 	sleep 0.01
 done | ( lemonbar \
 	-a 25 \
 	-o -1 \
-	-B "#00$bg" \
+	-B "#ff$bg" \
 	-F "#ff$fg" \
 	-f "t kiwi Wide:size=10" \
 	-f "t mango Wide:size=10" \

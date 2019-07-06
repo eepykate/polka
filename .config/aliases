@@ -151,9 +151,11 @@ function cgif() {
 }
 
 colours() { 
-	for c in {0..7}; do printf "\e[3${c}m\e[4${c}m  \e[0m"; done
+	echo
+	for c in {0..7}; do printf "\e[3${c}m\e[4${c}m  \e[0m "; done
 	printf "\n"
-	for c in {0..7}; do printf "\e[9${c}m\e[10${c}m  \e[0m"; done
+	for c in {0..7}; do printf "\e[9${c}m\e[10${c}m  \e[0m "; done
 	printf "\n"
+	echo
 }
 
