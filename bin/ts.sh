@@ -23,9 +23,9 @@ fi
 if [[ $theme = Coral ]]; then
 
 	accentn="5"
-	bgdark="#141d23"
-	bglight="#1b252c"
-	bglighter="#242e35"
+	bgdark="#111c23"
+	bglight="#17242c"
+	bglighter="#1c2d37"
 
 	fgdark="#999ba0"
 	fglight="#edeef0"

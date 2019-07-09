@@ -2,8 +2,8 @@
 #set -x
 
 fg="edeef0"
-bg="141d23"
-bl="1b252c"
+bg="111c23"
+bl="17242c"
 ac="f6b2b6"
 fifo="/tmp/barfifo"
 
