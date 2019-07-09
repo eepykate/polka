@@ -159,4 +159,10 @@ colours() {
 	echo
 }
 
+
+lines() {
+	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -ne "\e[3$(( $RANDOM % 8 ))m╱" || echo -ne "\e[3$(( $RANDOM % 8 ))m╲"; }
+}
+
 # vim: ft=sh
+
