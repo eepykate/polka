@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-#set -x
+set -x
 
-fg="edeef0"
-bg="111c23"
-bl="17242c"
-ac="f6b2b6"
+fg="ccccee"
+bg="232731"
+bl="282d39"
+ac="9ab2dc"
 fifo="/tmp/barfifo"
 
-trap 'pkill -P $$' SIGINT
+#trap 'pkill -P $$' SIGINT
 
 tim() {
 	if [[ $(cat /tmp/barblink) = ":" ]]; then
@@ -96,7 +96,7 @@ while read -r line < "$fifo"; do
 	esac
 	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
 	sleep 0.01
-done | ( lemonbar \
+done | lemonbar \
 	-a 25 \
 	-o -1 \
 	-B "#ff$bg" \
@@ -104,14 +104,15 @@ done | ( lemonbar \
 	-f "t kiwi Wide:size=10" \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
-	-g "${width}x24+$offX+$offY" \
-	| bash; kill -9 -$$) &
+	-g "${width}x24+$offX+$offY" &
 
 while true; do
 	bar -b;
 	bar -t;
 	sleep 1
-done > $fifo
+done > $fifo &
 
-pkill -P $$
-#kill -9 -$$
+lemonbar -g "0x0"
+
+kill -- -0
+
