@@ -1,6 +1,9 @@
 super + e
 	st -e cmus
 
+super + w
+	st -c floating -e nmtui-connect
+
 super + y
 	st -e transmission-remote-cli
 
