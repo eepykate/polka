@@ -5,7 +5,7 @@
 fg="edeef0"
 bg="111c23"
 bl="17242c"
-ac="f6b2b6"
+#ac="f6b2b6"
 fifo="/tmp/barfifo"
 
 #trap 'pkill -P $$' SIGINT
@@ -40,9 +40,10 @@ volume() {
 
 bat() {
 	cat /sys/class/power_supply/*/capacity &>/dev/null || return
+	declare -i capacity status
 
-	local capacity="$(($(cat /sys/class/power_supply/*/capacity 3>/dev/null) / 4))"
-	local status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
+	capacity="$(($(cat /sys/class/power_supply/*/capacity 3>/dev/null) / 4))"
+	status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
 	case "$capacity" in
 		0) bat=;;
@@ -73,9 +74,9 @@ sleep 0.1
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$(awk '{print $1}' <<< $monitor )"
-offX="$(awk '{print $3}' <<< $monitor)"
-offY="$(awk '{print $4}' <<< $monitor)"
+width="$(awk '{print $1}' <<< "$monitor" )"
+offX="$(awk '{print $3}' <<< "$monitor")"
+offY="$(awk '{print $4}' <<< "$monitor")"
 
 (sleep 0.4;
 bat;
@@ -84,8 +85,8 @@ desktop;
 echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
-bspc config -m $monitorName top_padding 24
-(sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
+bspc config -m "$monitorName" top_padding 24
+(sleep 1; xdo above -t "$(xdo id -n root)" "$(xdo id -n lemonbar)") &
 
 while read -r line < "$fifo"; do
 	case $line in
