@@ -142,14 +142,14 @@ $HOME/.startpage/style.css" | \
 	# Replace colours in dunst
 	sed --follow-symlinks -i \
 		-e "s/frame_color = \".*\"/frame_color = \"#$accent\"/" \
-		-e "s/background = \".*\"/background = \"#$fglight\"/" \
-		-e "s/foreground = \".*\"/foreground = \"#$bglight\"/"  \
+		-e "s/background = \".*\"/background = \"#$bglighter\"/" \
+		-e "s/foreground = \".*\"/foreground = \"#$fglight\"/"  \
 		~/.config/dunst/dunstrc
 
 	# Make urgent notifications have a different colour
 	dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 1 ))"
-	sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$bglighter\"/" ~/.config/dunst/dunstrc
-	sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$fglight\"/" ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fglight\"/" ~/.config/dunst/dunstrc
+	sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bglight\"/" ~/.config/dunst/dunstrc
 
 	pkill -9 dunst; dunst &>/dev/null &!
 
