@@ -5,19 +5,19 @@
 /*  #232731  */
 /* Colours */
 :root {
---bgdark: #232731;
---bglight: #282d39;
---bglighter: #2d303e;
+--bgdark: #111c23;
+--bglight: #17242c;
+--bglighter: #1c2d37;
 
-/*--fgdark: #444444;
---fglight: #ffffff;*/
+--fgdark: #999ba0;
+--fglight: #edeef0;*/
 
---fgdark: #8888a0;
---fglight: #ccccee;
+--fgdark: #999ba0;
+--fglight: #edeef0;
 
---accent: #9ab2dc;
---border: #b0b4bb;
---disabled: #9c9c9c;
+--accent: #f6b2b6;
+--border: #242e35;
+--disabled: #595959;
 --selected: #c5d3eb1c;
 --hover: #000000;
 --bgimage: url(Blur.png) !important;
@@ -59,7 +59,7 @@
 
 
 /***   Transparent Blurry UI   ***/
-.toolbarbutton-1,
+/*.toolbarbutton-1,
 .tab-close-button:not([selected="true"]) {
 	color: #444 !important;
 	fill: #444 !important;
@@ -114,7 +114,7 @@
 
 #navigator-toolbox * .tab-close-button:active[selected="true"] {
 	background-color: #ffffff22 !important;
-}
+}*/
 
 
 

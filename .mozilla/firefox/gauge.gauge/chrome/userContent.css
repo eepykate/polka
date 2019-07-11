@@ -1,18 +1,18 @@
 :root {
---bgdark: #232731;
---bglight: #282d39;
---bglighter: #303644;
+--bgdark: #111c23;
+--bglight: #17242c;
+--bglighter: #1c2d37;
 --bglightest:  #41485c;
 
---fgdark: #8888a0;
---fglight: #cfcff9;
+--fgdark: #999ba0;
+--fglight: #edeef0;
 
---accent: #9ab2dc;
+--accent: #f6b2b6;
 --blue:        #02a4fc;
 --green:       #12e689;
 --yellow:      #f0d35c;
 --red:         #f0185a;
---border: #b0b4bb;
+--border: #242e35;
 --border1:     #223344;
 --border2:     #334455;
 --disabled: #595959;
