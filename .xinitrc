@@ -1,13 +1,13 @@
 xrdb ~/.Xresources &
 transmission-daemon
 synclient TouchpadOff=1
-dunst &
 compton &
 /usr/bin/xset r rate 200 60 &
 /usr/bin/sxhkd &
 if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
 	exec dbus-launch --exit-with-session ~/.xinitrc "$@" &
 fi
+dunst &
 ~/.fehbg
 xsetroot -cursor_name left_ptr
 bar &
