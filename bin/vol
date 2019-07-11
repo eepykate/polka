@@ -93,6 +93,8 @@ case $1 in
 	status) ctl="nonzero";;
 esac
 
+bar -v
+
 pc_amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | sed -e '1!d' -e 's/\[//g' -e 's/\]//g')"
 pc_vol="$(echo ${pc_amix}  | awk '{print $5}')"
 pc_mute="$(echo ${pc_amix} | awk '{print $6}')"
@@ -163,5 +165,3 @@ case $1 in
 		*) print "$song / $output"; notify 75 "$output" "$song";;
 	esac;;
 esac
-
-bar -v
