@@ -1,13 +1,33 @@
-#!/bin/sh
-
+#!/bin/bash
 pgrep i3lock &>/dev/null && exit
 
-#scrot "/tmp/lock.png"
-#ffmpeg -y -i /tmp/lock.png \
-#	-filter_complex "boxblur=15" -vframes 1 \
-#	/tmp/lock_blur.png -loglevel quiet
+scrot "/tmp/lock.png"
+ffmpeg -y -i /tmp/lock.png \
+	-filter_complex "boxblur=15" -vframes 1 \
+	/tmp/lock_blur.png -loglevel quiet
+
+SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
+
+for RES in $SR; do
+	SRA=(${RES//[x+]/ })
+	CX=$((SRA[2] + 25))
+	CY=$((SRA[1] - 30))
+	rectangles+="rectangle $CX,$CY $((CX+280)),$((CY-100)) "
+done
+
+convert "/tmp/lock_blur.png" -draw "fill #00000044 $rectangles" "/tmp/lock.png"
 
 i3lock \
+	\
+	--ring-width=4 \
+	--line-uses-inside \
+	--radius=20 \
+	--timepos='x+130:h-80' \
+	--datepos='x+130:h-55' \
+	--indpos='x+260:h-80' \
+	--veriftext='' \
+	--wrongtext='' \
+	\
 	--clock \
 	--bshlcolor=ed254eff \
 	--timecolor=cccceeff \
@@ -21,7 +41,7 @@ i3lock \
 	--insidevercolor=15171d00 \
 	--ringwrongcolor=be405dff \
 	--insidewrongcolor=15171d00 \
-	--image=$HOME/Wallpapers/Wallpaper_lock.png &
+	--image=/tmp/lock.png &
 
 while pgrep -x i3lock; do
 	[[ 10000 -lt $(xssstate -i) ]] && xset dpms force off;
