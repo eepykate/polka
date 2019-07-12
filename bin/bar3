@@ -86,7 +86,7 @@ echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
 bspc config -m "$monitorName" top_padding 24
-(sleep 1; xdo above -t "$(xdo id -n root)" "$(xdo id -n lemonbar)") &
+(sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while read -r line < "$fifo"; do
 	case $line in
@@ -106,7 +106,7 @@ done | lemonbar \
 	-f "t kiwi Wide:size=10" \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
-	-g "${width}x24+$offX+$offY" &
+	-g "${width}x24+$offX+$offY" | bash &
 
 while true; do
 	bar -b;
