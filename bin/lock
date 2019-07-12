@@ -27,6 +27,7 @@ i3lock \
 	--indpos='x+260:h-80' \
 	--veriftext='' \
 	--wrongtext='' \
+	--indicator \
 	\
 	--clock \
 	--bshlcolor=ed254eff \
