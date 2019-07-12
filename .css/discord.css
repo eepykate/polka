@@ -263,6 +263,7 @@ a svg.homeIcon-tEMBK1 path {
 .channels-Ie2l6A:hover {
 	left: 0;
 }
+.container-3gCOGc,
 .container-1r6BKw,
 .content-yTz4x3 {
 	margin-left: 50px;
@@ -308,6 +309,9 @@ a svg.homeIcon-tEMBK1 path {
 }
 
 
+.channels-Ie2l6A {
+	z-index: 10 !important;
+}
 
 
 
