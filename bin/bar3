@@ -2,10 +2,10 @@
 
 #set -x
 
-fg="edeef0"
-bg="111c23"
-bl="17242c"
-#ac="f6b2b6"
+fg="ccccee"
+bg="232731"
+bl="282d39"
+#ac="9ab2dc"
 fifo="/tmp/barfifo"
 
 #trap 'pkill -P $$' SIGINT
@@ -114,7 +114,7 @@ while true; do
 	sleep 1
 done > $fifo &
 
-lemonbar -g "100x1+$offX+$offY" -p
+echo "a" | lemonbar -g "1x1+$offX+$offY" -p
 
 kill -- -0
 
