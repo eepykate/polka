@@ -1,8 +1,10 @@
 bind -f common n player-next
 bind -f common b player-prev
-view sorted
 bind -f common space player-pause
 bind -f common c win-toggle
 colorscheme theme
-clear
-add ~/Music
+#clear
+#add ~/Music
+set start_view=1
+set format_current= %a - %t (%y)%= %d 
+#set mouse=true
