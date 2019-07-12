@@ -1,0 +1,34 @@
+.search__input,
+.getting-started,
+.getting-started__wrapper > *,
+.scrollable {
+	background-color: var(--bglight) !important;
+}
+
+.column-back-button,
+.column-header,
+.column-header__button,
+ul li,
+.getting-started__footer,
+.tabs-bar,
+.detailed-status__action-bar,
+.detailed-status,
+.drawer__header,
+.drawer__inner,
+.drawer__inner__mastodon,
+.status:active {
+	background-color: var(--bglighter) !important;
+}
+
+.account__section-headline > *,
+dl dt,
+.column-header__back-button,
+.columns-area ,
+.notification__filter-bar button {
+	background-color: var(--bgdark) !important;
+}
+
+* {
+	border-color: var(--bglighter) !important;
+	font-family: "mastodon-font-sans-serif" !important;
+}
