@@ -1,10 +1,10 @@
 #!/bin/bash
 pgrep i3lock &>/dev/null && exit
 
-scrot "/tmp/lock.png"
-ffmpeg -y -i /tmp/lock.png \
-	-filter_complex "boxblur=15" -vframes 1 \
-	/tmp/lock_blur.png -loglevel quiet
+#scrot "/tmp/lock.png"
+#ffmpeg -y -i /tmp/lock.png \
+#	-filter_complex "boxblur=15" -vframes 1 \
+#	/tmp/lock_blur.png -loglevel quiet
 
 SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
 
@@ -15,7 +15,7 @@ for RES in $SR; do
 	rectangles+="rectangle $CX,$CY $((CX+280)),$((CY-100)) "
 done
 
-convert "/tmp/lock_blur.png" -draw "fill #00000044 $rectangles" "/tmp/lock.png"
+convert "$HOME/Wallpapers/Wallpaper_lock.png" -draw "fill #00000044 $rectangles" "/tmp/lock.png"
 
 i3lock \
 	\
