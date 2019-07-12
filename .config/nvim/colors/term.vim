@@ -83,6 +83,7 @@ hi Statemen     ctermbg=NONE   ctermfg=3    cterm=bold
 hi cssUrl                ctermbg=NONE   ctermfg=1    cterm=italic
 hi cssBraces             ctermbg=NONE   ctermfg=15   cterm=NONE
 hi cssTagName            ctermbg=NONE   ctermfg=1    cterm=NONE
+hi cssImportant          ctermbg=NONE   ctermfg=5    cterm=NONE
 hi cssClassName          ctermbg=NONE   ctermfg=3    cterm=NONE
 hi cssAttrRegion         ctermbg=NONE   ctermfg=1    cterm=NONE
 hi cssIdentifier         ctermbg=NONE   ctermfg=4    cterm=NONE
