@@ -7,4 +7,4 @@ colorscheme theme
 #add ~/Music
 set start_view=1
 set format_current= %a - %t (%y)%= %d 
-#set mouse=true
+set mouse=true
