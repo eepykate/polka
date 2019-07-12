@@ -6,6 +6,8 @@ wp="$HOME/Wallpapers/Wallpaper_lock.png"
 
 case $1 in
 	-r) rm ~/.cache/lock.png;;
+	-w) rm ~/.cache/lock.png;
+		wp="$2";;
 esac
 
 
