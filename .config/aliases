@@ -20,6 +20,7 @@ alias n="nmtui-connect"
 alias fuck="pkill -9"      # kill window
 alias fak="sudo !!"        # run last command with sudo
 alias SU="sudo zsh"        # open zsh as root user
+alias rm="rm -i"
 alias v="nvim"             # short neovim
 alias t="tmux"             # tmux
 alias s="dirs"
