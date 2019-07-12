@@ -4,7 +4,6 @@
 .scrollable {
 	background-color: var(--bglight) !important;
 }
-
 .column-back-button,
 .column-header,
 .column-header__button,
@@ -20,12 +19,17 @@ ul li,
 	background-color: var(--bglighter) !important;
 }
 
+.column-header__back-button ~ .column-header__buttons .column-header__button,
 .account__section-headline > *,
 dl dt,
 .column-header__back-button,
 .columns-area ,
 .notification__filter-bar button {
 	background-color: var(--bgdark) !important;
+}
+
+.attachment-list__list li {
+	background-color: transparent !important;
 }
 
 * {
