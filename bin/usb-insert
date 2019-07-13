@@ -9,7 +9,7 @@ dar() {
 }
 
 out="$(printf "Brand:"
-printf "%40s" "$ID_VENDOR_ENC\n​"
+printf "%40s" "$ID_VENDOR_ENC​\n"
 printf "Product:"
 printf "%36s" "$ID_MODEL_ENC​"
 )"
