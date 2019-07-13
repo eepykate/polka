@@ -43,11 +43,11 @@ elif [[ $theme = Dawn ]]; then
 	bglight="#cfcfcf"
 	bglighter="#aeaeae"
 
-	fgdark="#444444"
-	fglight="#000000"
+	fgdark="#7c8899"
+	fglight="#43566f"
 
 	disabled="#595959"
-	accent="#4169E1"
+	accent="#4a80d6"
 	button="#00000022"
 	border="#b0b4bb"
 	red="#df1a45"
@@ -182,6 +182,7 @@ $HOME/.startpage/style.css" | \
 		-e "s/ac=\".*\"/ac=\"$accent\"/" \
 		~/bin/bar
 	bar &!
+	echo "$fglight - $fgdark"
 
 	sleep 0.1
 	notify-send "Theme changed to $theme"

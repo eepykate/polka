@@ -1,3 +1,4 @@
+.account__header__bar,
 .search__input,
 .getting-started,
 .getting-started__wrapper > *,
@@ -5,9 +6,10 @@
 	background-color: var(--bglight) !important;
 }
 
+.focusable:focus,
 .column-header__back-button,
 .column-header__back-button ~ .column-header__buttons .column-header__button,
-.account__section-headline > *,.column-back-button,
+.column-back-button,
 .column-header,
 .column-header__button,
 ul li,
@@ -17,11 +19,11 @@ ul li,
 .detailed-status,
 .drawer__header,
 .drawer__inner,
-.drawer__inner__mastodon,
-article:active {
+.drawer__inner__mastodon {
 	background-color: var(--bglighter) !important;
 }
 
+.account__section-headline > *,
 dl dt,
 .columns-area ,
 .notification__filter-bar button {
