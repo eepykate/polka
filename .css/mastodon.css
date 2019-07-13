@@ -4,7 +4,10 @@
 .scrollable {
 	background-color: var(--bglight) !important;
 }
-.column-back-button,
+
+.column-header__back-button,
+.column-header__back-button ~ .column-header__buttons .column-header__button,
+.account__section-headline > *,.column-back-button,
 .column-header,
 .column-header__button,
 ul li,
@@ -15,14 +18,11 @@ ul li,
 .drawer__header,
 .drawer__inner,
 .drawer__inner__mastodon,
-.status:active {
+article:active {
 	background-color: var(--bglighter) !important;
 }
 
-.column-header__back-button ~ .column-header__buttons .column-header__button,
-.account__section-headline > *,
 dl dt,
-.column-header__back-button,
 .columns-area ,
 .notification__filter-bar button {
 	background-color: var(--bgdark) !important;
@@ -34,5 +34,32 @@ dl dt,
 
 * {
 	border-color: var(--bglighter) !important;
-	font-family: "mastodon-font-sans-serif" !important;
+}
+
+.display-name__html,
+.status__content,
+.status__content > * {
+	color: var(--fglight) !important;
+}
+
+.notification-favourite * .status__content,
+.notification-favourite * .status__content > *,
+.display-name__account {
+	color: var(--fgdark) !important;
+}
+
+.notification-reblog,
+.notification-favourite {
+	opacity: 0.75;
+}
+
+.mention {
+	color: var(--accent) !important;
+}
+
+* {
+	font-family: "FontAwesome", "Roboto Condensed" !important;
+}
+.status__wrapper--filtered {
+	display: none !important;
 }
