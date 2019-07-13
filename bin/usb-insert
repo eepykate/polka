@@ -8,13 +8,10 @@ dar() {
 	sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
 }
 
-product="$(echo -e $ID_MODEL_ENC)"
-brand="$(echo -e $ID_VENDOR_ENC)"
-
 out="$(printf "Brand:"
-printf "%20s" "$brand\n​"
+printf "%40s" "$ID_VENDOR_ENC\n​"
 printf "Product:"
-printf "%16s" "$product​"
+printf "%36s" "$ID_MODEL_ENC​"
 )"
 
 dar /usr/bin/notify-send "New device detected" "$out"

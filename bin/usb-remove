@@ -8,7 +8,7 @@ dar() {
 	sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
 }
 
-dar /usr/bin/notify-send "Device removed" 
+dar /usr/bin/notify-send "Device removed"
 
 dar /usr/bin/paplay /usr/local/sounds/usb-remove.wav
 

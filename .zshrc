@@ -57,7 +57,7 @@ autoload -U compinit && compinit -u -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 #   Shell Theme
 #       ---
 setopt prompt_subst
-color="4"
+color="5"
 #[[ $color = 1 ]] && false="3" || false="1"
 false="1"
 [[ $TTY = /dev/tty* ]] && char="♥" || char="♥ "
