@@ -3581,6 +3581,7 @@ ul.tabmenu > li > a,
 	background-color: var(--bglighter) !important;
 }
 
+#header,
 .sitetable div.thing.comment,
 .flairoptionpane,
 .flairselector,
@@ -3867,7 +3868,7 @@ table thead tr th {
 
 #header-bottom-left .pagename a,
 #header-bottom-left span.pagename {
-	font-size: 30px !important;
+	font-size: 25px !important;
 }
 body.profile-page * .pagename::before {
 	content: "u/";
@@ -3904,8 +3905,26 @@ body.profile-page * #header-bottom-left span.pagename {
 	margin-top: -120px !important;
 }
 
-.pagename.redditname a {
+.pagename.redditname {
 	position: absolute !important;
 	left: 0;
 	right: 0;
 }
+.pagename.redditname a {
+	position: absolute;
+	left: 0; 
+	right: 0;
+	width: 100vw !important;
+	text-align: center !important;
+}
+#header-bottom-left span.redditname.pagename {
+	font-size: 0 !important;
+}
+.submit-page * .pagename.redditname a::after {
+	content: ": Submit";
+}
+
+* {
+	box-shadow: none !important;
+}
+
