@@ -32,12 +32,12 @@ bg:         #111c23bb;
 
 window {
   transparency: "real";
-  fullscreen: true;
+  fullscreen: false;
   background-color: @bg;
-  width: 400px;
+  width: 600px;
   border-color: @accent;
   border: 0px;
-	padding: 30%; 
+  padding: 25px;
 }
 
 #mainbox {
@@ -80,7 +80,7 @@ entry {
 }
 
 #listview {
-  lines: 4;
+  lines: 5;
   spacing: 4;
   padding: 4;
 }
