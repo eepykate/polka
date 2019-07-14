@@ -1,5 +1,4 @@
 xrdb ~/.Xresources &
-transmission-daemon
 synclient TouchpadOff=1
 compton &
 /usr/bin/xset r rate 200 60 &
