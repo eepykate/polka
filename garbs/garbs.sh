@@ -488,6 +488,14 @@ udevadm control --reload-rules && udevadm trigger;
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+
+# Changes to systemd journald to speed up boot time
+sed -i \
+	-e 's/^#Storage=.*/Storage=auto/' \
+	-e 's/^#SystemMaxFiles=.*/SystemMaxFiles=5/' \
+	-e 's/^#SystemMaxFileSize=.*/SystemMaxFileSize=1G/' \
+	/etc/systemd/journald.conf
+
 #       ---
 #   End My Stuff
 #       ---
