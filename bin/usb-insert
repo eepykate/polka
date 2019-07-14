@@ -8,13 +8,13 @@ dar() {
 	sudo -u $user DISPLAY=$display XDG_RUNTIME_DIR=/run/user/$uid DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
 }
 
-#out="$(printf "Brand:"
-#printf "%40s" "$ID_VENDOR_ENC​\n"
-#printf "Product:"
-#printf "%38s" "$ID_MODEL_ENC​"
-#)"
+out="$(printf "Brand:"
+printf "%40s" "${ID_VENDOR_ENC//x20/ }​\n"
+printf "Product:"
+printf "%38s" "${ID_MODEL_ENC//x20/ }​"
+)"
 
-#dar /usr/bin/notify-send "New device detected" "$out"
-dar /usr/bin/notify-send "Device inserted"
+dar /usr/bin/notify-send "New device detected" "$out"
+#dar /usr/bin/notify-send "Device inserted"
 dar /usr/bin/paplay /usr/local/sounds/usb-insert.wav
 
