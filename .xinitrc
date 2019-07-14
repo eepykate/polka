@@ -8,6 +8,7 @@ if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
 	exec dbus-launch --exit-with-session ~/.xinitrc "$@" &
 fi
 dunst &
+thunar --daemon &
 ~/.fehbg
 xsetroot -cursor_name left_ptr
 bar &

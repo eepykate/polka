@@ -23,7 +23,7 @@ super + f
 	firefox-developer-edition
 
 super + c
-	dolphin
+	thunar
 
 super + space
 	rofi -show run
