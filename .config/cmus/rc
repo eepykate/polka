@@ -7,4 +7,5 @@ colorscheme theme
 #add ~/Music
 set start_view=1
 set format_current= %a - %t (%y)%= %d 
+set format_statusline= %{status} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }}  %= [%{?volume>=0?%{?lvolume!=rvolume?%{lvolume},%{rvolume} ?%{volume}}}]  | %1{continue}%1{follow}%1{repeat}%1{shuffle} 
 set mouse=true
