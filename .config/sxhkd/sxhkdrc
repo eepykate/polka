@@ -31,65 +31,14 @@ super + space
 alt + ctrl + space
 	dmenu_run
 
-Print
-	scr
-
-super + Print
-	scr -f
-
-shift + Print
-	scr -s
-
 ctrl + alt + m
 	dmenumount
 
 ctrl + alt + u
 	dmenuumount
 
-ctrl + alt + Prior
-	blaze -c -p k -B 8
-
-ctrl + alt + Home
-	blaze -c -p k
-
-ctrl + alt + Insert
-	blaze
-
-ctrl + alt + End
-	blaze -s
-
 super + i
 	rofi-emoji
-
-XF86AudioPrev
-	vol prev
-
-XF86AudioNext
-	vol next
-
-XF86AudioPlay
-	vol p
-
-super + p
-	vol p
-
-XF86AudioRaiseVolume
-	vol up
-
-XF86AudioLowerVolume
-	vol down
-
-super + u
-	vol up
-
-super + j
-	vol down
-
-XF86AudioStop
-	vol stop
-
-XF86AudioMute
-	vol m
 
 ctrl + alt + w
 	wifi
@@ -120,6 +69,12 @@ super + s
 
 alt + x
 	select_st
+
+{_,super, shift} + Print
+	scr {_,-f,-s}
+
+ctrl + alt + {Prior, Home, Insert, End}
+	blaze {-c -p k -B 8, -c -p k,_,-s}
 
 #    ---
 #   bspwm
@@ -187,3 +142,31 @@ super + alt + equal
 
 super + alt + minus
 	gaps down
+
+
+
+
+#    ---
+#   Media
+#    ---
+
+{XF86AudioPrev, super + comma}
+	vol prev
+
+{XF86AudioNext, super + period}
+	vol next
+
+{XF86AudioPlay, super + p}
+	vol p
+
+{XF86AudioRaiseVolume, super + u}
+	vol up
+
+{XF86AudioLowerVolume, super + j}
+	vol down
+
+XF86AudioStop
+	vol stop
+
+XF86AudioMute
+	vol m
