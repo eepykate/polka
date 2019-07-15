@@ -29,6 +29,7 @@ bspc config presel_feedback_color "#eeeeee"
 
 bspc rule -a qView state=floating
 bspc rule -a tabbed state=floating
+bspc rule -a Thunar state=floating
 bspc rule -a dolphin state=floating
 bspc rule -a floating state=floating
 bspc rule -a ksysguard state=floating
