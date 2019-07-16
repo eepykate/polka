@@ -14,8 +14,8 @@ bspc monitor DVI-D-0 -d 6 7
 bspc config pointer_modifier mod1
 
 bspc config single_monocle true
-bspc config gapless_monocle false
-bspc config borderless_monocle false
+bspc config gapless_monocle true
+bspc config borderless_monocle true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
 
