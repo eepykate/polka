@@ -165,10 +165,9 @@ $HOME/.startpage/style.css" | \
 		[[ -f ~/Wallpapers/$wallpaper ]] &&
 		cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
-
+# -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 	# Change bspwm colours
 	sed --follow-symlinks -i \
-		-e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bgdark\"/g" \
 		~/.config/bspwm/bspwmrc
 	bspc wm -r
