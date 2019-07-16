@@ -27,6 +27,7 @@ alias s="dirs"
 alias f="fff"              # terminal file manager
 alias td="transmission-daemon"
 alias tc="transmission-remote-cli"
+alias SS="sudo systemctl"
 
 # pacman/yay
 alias upd="sudo pacman -Syu"        # Update the system

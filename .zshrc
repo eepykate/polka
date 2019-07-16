@@ -60,8 +60,7 @@ setopt prompt_subst
 color="5"
 #[[ $color = 1 ]] && false="3" || false="1"
 false="1"
-[[ $TTY = /dev/tty* ]] && char="♥" || char="♥ "
-PROMPT=$'%(?.%{\e[3${color}m%}.%{\e[3${false}m%})%(!.#.$char)%{\e[0m%} '
+PROMPT=$'%(?.%{\e[3${color}m%}.%{\e[3${false}m%})%(!.#.>)%{\e[0m%} '
 export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 
 #        ---
