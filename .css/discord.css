@@ -50,6 +50,7 @@ code,                          /* Code blocks */
 	box-shadow: none !important; 
 } 
 
+.container-3baos1,
 .containerDefault-1ZnADq:active * .content-3at_AU,
 .containerDefault-1ZnADq:hover:active * .content-3at_AU,
 /*.menu-Sp6bN1,            /* ?? */
@@ -133,6 +134,8 @@ s,
 .modeUnread-1zpFdA * .icon-1_QxNX path,  /* Unread channels icon */
 .markup-2BOw-j,                          /* Main messages */
 .markup-2BOw-j > strong,                 /* Bold text */
+.markup-2BOw-j strong,
+.markup-2BOw-j * strong,
 .modeSelected-1zApJ_ * .icon-1_QxNX path,
 .modeSelected-1zApJ_ * .name-3_Dsmg      /* Active channel */
 {
