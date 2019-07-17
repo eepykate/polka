@@ -649,15 +649,12 @@ toolbarspring {
 #downloads-indicator-icon,
 .urlbar-icon,
 #downloads-button,
+#stop-button,
+#stop-button .toolbarbutton-icon,
 .webextension-browser-action,
 .toolbarbutton-1:not(.webextension-browser-action),
 .toolbarbutton-1:not(.webextension-browser-action) .toolbarbutton-icon {
-	width: var(--ui-height)  !important;
-	height: var(--ui-height) !important;
-}
-#stop-button,
-#stop-button .toolbarbutton-icon {
-	width: var(--ui-height) !important;
+	width: calc(var(--ui-height) * 0.9) !important;
 	height: calc(var(--ui-height) * 0.9) !important;
 }
 
