@@ -784,6 +784,9 @@ toolbarseparator {
 toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");
 }
+.toolbarbutton-animatable-image {
+	animation-duration: 0ms !important;
+}
 
 #home-button .toolbarbutton-icon,
 #back-button .toolbarbutton-icon,
