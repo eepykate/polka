@@ -652,8 +652,13 @@ toolbarspring {
 .webextension-browser-action,
 .toolbarbutton-1:not(.webextension-browser-action),
 .toolbarbutton-1:not(.webextension-browser-action) .toolbarbutton-icon {
-	width: calc(var(--ui-height) * 0.90 ) !important;
-	height: calc(var(--ui-height) * 0.90 ) !important;
+	width: var(--ui-height)  !important;
+	height: var(--ui-height) !important;
+}
+#stop-button,
+#stop-button .toolbarbutton-icon {
+	width: var(--ui-height) !important;
+	height: calc(var(--ui-height) * 0.9) !important;
 }
 
 .tab-throbber,
