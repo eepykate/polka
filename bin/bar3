@@ -120,5 +120,5 @@ done > $fifo &
 
 echo "a" | lemonbar -f "#00000000" -b "#00000000" -g "1x1+$offX+$offY" -p
 
-kill -- -$$
+kill -- -0
 
