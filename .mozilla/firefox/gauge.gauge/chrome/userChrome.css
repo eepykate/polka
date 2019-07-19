@@ -1,5 +1,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
+/*
+ *     GaugeK's userChrome.css
+ *     gitlab.com/GaugeK/dots
+ */
 
 
 /*  #232731  */
@@ -784,6 +787,10 @@ toolbarseparator {
 toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");
 }
+
+
+
+/***   Enable `svg.context-properties.content.enabled` in about:config   ***/
 .toolbarbutton-animatable-image {
 	animation-duration: 0ms !important;
 }
