@@ -168,7 +168,7 @@ $HOME/.startpage/style.css" | \
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 	# Change bspwm colours
 	sed --follow-symlinks -i \
-		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bgdark\"/g" \
+		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bglighter\"/g" \
 		~/.config/bspwm/bspwmrc
 	bspc wm -r
 
