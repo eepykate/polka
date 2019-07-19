@@ -38,3 +38,6 @@ bspc rule -a Thunar state=floating
 bspc rule -a dolphin state=floating
 bspc rule -a floating state=floating
 bspc rule -a ksysguard state=floating
+
+
+bar &
