@@ -59,9 +59,7 @@
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
 
 #tabbrowser-tabs {
-	
 	--tab-min-height: 26px !important;
-	
 }
 
 /***   Transparent Blurry UI   ***/
@@ -130,7 +128,7 @@
 /* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
 	-moz-box-ordinal-group: 0 !important;
-	margin: 0px 5px 0px -2px !important;
+	margin: 0px 4px 0px -2px !important;
 }
 
 .tabbrowser-tab .tab-close-button {
@@ -589,13 +587,6 @@ toolbarbutton.bookmark-item:hover {
 
 
 
-/* Desaturate extension icons */
-.webextension-browser-action {
-	filter: saturate(0%);
-}
-
-
-
 /* Desaturate and italic pending tabs */
 .tabbrowser-tab[pending] {
 	font-style: italic;
@@ -630,7 +621,6 @@ toolbarspring {
 
 
 /* Change size of a few items */
-
 toolbarbutton,
 toolbarbutton image,
 toolbarbutton stack {
@@ -640,16 +630,18 @@ toolbarbutton stack {
   max-width: var(--tab-min-height) !important;	
 }
 
+.tab-close-button,
+.tab-icon-image {
+	height: var(--tab-min-height) * 0.6 ) !important;
+	width: calc(var(--tab-min-height) * 0.6 ) !important;
+}
+
 #TabsToolbar,
 #nav-bar,
 #titlebar,
 .tabbrowser-tab,
 #tabbrowser-tabs {
 	height: var(--tab-min-height) !important;
-}
-
-#tabbrowser-tabs {
-	--tab-min-height: var(--tab-min-height);
 }
 
 #urlbar {
@@ -664,43 +656,25 @@ toolbarbutton stack {
 
 
 
-/*#downloads-button,
-.toolbarbutton-badge-stack,
-#downloads-indicator-anchor,
-#downloads-indicator-progress-outer,
-#downloads-indicator-progress-inner,
-#downloads-indicator-icon,
-.urlbar-icon,
-#downloads-button,
-#stop-button,
-#stop-button .toolbarbutton-icon,
-.webextension-browser-action,
-.toolbarbutton-1:not(.webextension-browser-action),
-.toolbarbutton-1:not(.webextension-browser-action) .toolbarbutton-icon {
-	width: calc(var(--tab-min-height) * 0.9) !important;
-	height: calc(var(--tab-min-height) * 0.9) !important;
+/* Make tab close buttons appear on tab hover, replacing the tab icon */
+.tabbrowser-tab .tab-close-button {
+	-moz-box-ordinal-group: 0 !important;
+	margin: 2px 6px 0px 0px !important;
 }
 
-.tab-throbber,
-#identity-box > *,
-#downloads-button,
-.webextension-browser-action {
-	transform: scale(0.90) !important;
+.tabbrowser-tab .tab-close-button {
+	display: none !important;
 }
 
-.tab-close-button {
-	margin-right: 2px !important;
+.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image,
+.tabbrowser-tab:not([pinned="true"]):hover .tab-throbber {
+	display: none;
 }
 
-.tab-icon-image {
-	width: calc(var(--tab-min-height) * 0.50 ) !important;
-	height: calc(var(--tab-min-height) * 0.50 ) !important;
+.tabbrowser-tab:not([pinned="true"]):hover .tab-close-button {
+	display: -moz-box !important;
 }
 
-.tab-close-button {
-	width: calc(var(--tab-min-height) * 0.60 ) !important;
-	height: calc(var(--tab-min-height) * 0.60 ) !important;
-}
 
 
 /***   OneLiner   ***/
@@ -752,6 +726,8 @@ toolbarbutton stack {
 	opacity: 1 !important;
 	max-height: 32px;
 }
+
+
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
