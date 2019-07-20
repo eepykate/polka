@@ -125,8 +125,7 @@ if [[ -n "$theme" ]]; then
 	# Change the colour variables in firefox and my startpage
 	# $HOME/.startpage/style.css
 	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
-$HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-$HOME/.startpage/style.css" | \
+$HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css" | \
 		xargs sed --follow-symlinks -i \
 		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
 		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \

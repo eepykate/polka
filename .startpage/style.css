@@ -1,13 +1,13 @@
 :root {
---bgdark: #111c23;
---bglight: #17242c;
---bglighter: #1c2d37;
+--bgdark: #00000000;
+--bglight: #00000022;
+--bglighter: #00000044;
 
---fgdark: #999ba0;
---fglight: #edeef0;
+--fgdark: #cccccc;
+--fglight: #ffffff;
 
---accent: #f6b2b6;
---border: #242e35;
+--accent: #ffffff;
+--border: #b0b4bb;
 --disabled: #595959;
 --hover: #000000;
 }
@@ -22,7 +22,7 @@
 }*/
 
 html {
-	background: var(--bgdark);
+	background: url(Blur.png);
 	background-position: top -24px left 0;
 }
 
