@@ -118,7 +118,7 @@ while true; do
 	sleep 1
 done > $fifo &
 
-echo "a" | lemonbar -f "#00000000" -b "#00000000" -g "1x1+$offX+$offY" -p
+echo "a" | lemonbar -f "#00000000" -b "#00000000" -g "1x1+1+1" -p
 
 kill -- -0
 
