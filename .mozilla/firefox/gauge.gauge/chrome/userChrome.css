@@ -594,15 +594,15 @@ toolbarspring {
 
 
 /* Change size of a few items */
-toolbarbutton {
+#navigator-toolbox * toolbarbutton {
 	height: var(--tab-min-height) !important;
 	max-height: var(--tab-min-height) !important;
 	width: var(--tab-min-height) !important;
 	max-width: var(--tab-min-height) !important;
 }
 
-toolbarbutton image,
-toolbarbutton stack {
+#navigator-toolbox * toolbarbutton image,
+#navigator-toolbox * toolbarbutton stack {
 	height: calc(var(--tab-min-height) * 0.9) !important;
 	max-height: calc(var(--tab-min-height) * 0.9) !important;
 	width: calc(var(--tab-min-height) * 0.9) !important;
