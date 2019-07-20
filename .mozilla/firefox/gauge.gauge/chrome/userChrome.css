@@ -33,6 +33,7 @@
 }
 
 :root {
+	--lwt-toolbar-field-background-color: var(--bgdark) !important;
 	--theme-toolbar-background: var(--bglight) !important;
 	--toolbar-color: var(--fglight) !important;
 	--autocomplete-popup-color: var(--fglight) !important;
@@ -759,6 +760,15 @@ toolbarseparator {
 toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");
 }
+
+
+#sidebar-switcher-target > *,
+#sidebar-close {
+	color: var(--fglight) !important;
+}
+
+
+
 
 
 
