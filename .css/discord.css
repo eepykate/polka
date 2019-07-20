@@ -39,6 +39,7 @@ code,                          /* Code blocks */
 .header-1R_AjF,                /* Header on the channel description popup */
 .size-JLvFeT,                  /* Channel description popup */
 .category-2U57w6,              /* Emoji picker frequently used */
+[class*="autocompleteRow"],
 .sizeSmall-Sf4iOi,             /* Delete message popup */
 .footer-2yfCgX,                /* Delete message popup footer */
 .autocomplete-1vrmpx           /* Emoji autocomplete box */
@@ -321,4 +322,4 @@ a svg.homeIcon-tEMBK1 path {
 
 .markup-2BOw-j {
     font-family: t cherry Wide;
-}'
+}

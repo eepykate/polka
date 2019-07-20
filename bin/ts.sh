@@ -180,7 +180,11 @@ $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css" | \
 #		-e "s/ac=\".*\"/ac=\"$accent\"/" \
 #		~/bin/bar
 #	bar &!
-	echo "$fglight - $fgdark"
+
+	# Change qview colours
+	sed --follow-symlinks -i \
+		-e "s/bgcolor=.*/bgcolor=#$bgdark/" \
+		~/.config/qView/qView.conf
 
 	sleep 0.1
 	notify-send "Theme changed to $theme"
