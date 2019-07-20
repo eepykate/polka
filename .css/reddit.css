@@ -1,6 +1,17 @@
 :root {
 	--accent-darker: #097fce;
 }
+
+body.res-nightmode {
+	--button-image: url("https://i.imgur.com/6IjTyC5.png");
+	--reddit-image: url("https://i.imgur.com/XG2sRvX.png");
+}
+
+body:not(.res-nightmode) {
+	--button-image: url("https://i.imgur.com/gorNz1l.png");
+	--reddit-image: url("https://i.imgur.com/Yi4htRJ.png");
+}
+
 span.pagename.redditname a,
 body.profile-page * span.pagename {
  display:block;
@@ -496,7 +507,7 @@ body {
 .arrow.up,
 .arrow.down,
 .expando-button {
- background:url("https://i.imgur.com/6IjTyC5.png")!important;
+ background:var(--button-image)!important;
  background-size:50px 502px!important
 }
 #mail.nohavemail {
@@ -3649,6 +3660,9 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
+body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
+#srDropdownContainer a,
+#srLeftContainer > * > *,
 *:not(a):not(em),
 .flat-list > li > a,
 .flat-list > li > form > span > a,
@@ -3760,7 +3774,7 @@ ertext-edit textarea:focus {
 	overflow-y: hidden !important;
 }
 #header-img {
-	background-image: url("https://i.imgur.com/XG2sRvX.png") !important;
+	background-image: var(--reddit-image) !important;
 	background-position: 0px 0px !important;
 	width: 32px !important;
 	height: 32px !important;
@@ -3926,5 +3940,6 @@ body.profile-page * #header-bottom-left span.pagename {
 
 * {
 	box-shadow: none !important;
+	text-shadow: none !important;
 }
 

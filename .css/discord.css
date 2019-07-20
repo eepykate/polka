@@ -50,6 +50,7 @@ code,                          /* Code blocks */
 	box-shadow: none !important; 
 } 
 
+.divider-3gKybi,
 .container-3baos1,
 .containerDefault-1ZnADq:active * .content-3at_AU,
 .containerDefault-1ZnADq:hover:active * .content-3at_AU,
@@ -98,6 +99,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 	background-color: var(--selected) !important;
 }
 
+.circleIconButton-jET_ig,
 .containerDefault-1ZnADq:hover * .content-3at_AU { /* Hover over a channel in the channel sidebar */
 	background-color: var(--bglighter) !important;
 }
@@ -317,4 +319,6 @@ a svg.homeIcon-tEMBK1 path {
 }
 
 
-
+.markup-2BOw-j {
+    font-family: t cherry Wide;
+}'

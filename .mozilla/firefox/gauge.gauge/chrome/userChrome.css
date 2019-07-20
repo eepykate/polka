@@ -8,18 +8,18 @@
 /*  #232731  */
 /* Colours */
 :root {
---bgdark: #111c23;
---bglight: #17242c;
---bglighter: #1c2d37;
+--bgdark: #fafdff;
+--bglight: #f1f4f5;
+--bglighter: #e7eaeb;
 
---fgdark: #999ba0;
---fglight: #edeef0;
+--fgdark: #7c8899;
+--fglight: #43566f;
 
---accent: #f6b2b6;
---border: #242e35;
+--accent: #6796e1;
+--border: #b0b4bb;
 --disabled: #595959;
 --selected: #c5d3eb1c;
---hover: #000000;
+--hover: #ffffff;
 --bgimage: url(Blur.png) !important;
 }
 
@@ -35,6 +35,7 @@
 :root {
 	--theme-toolbar-background: var(--bglight) !important;
 	--toolbar-color: var(--fglight) !important;
+	--autocomplete-popup-color: var(--fglight) !important;
 	/*--lwt-additional-images: url(https://i.imgur.com/BQnSooK.png) !important;*/
 	--tab-min-height: 26px  !important;
 	text-shadow: none !important;                                      /* Remove shadow from text */
@@ -100,6 +101,7 @@
 	color: #43566f !important;
 }
 
+#navigator-toolbox * .tab-close-button[selected="true"],
 #navigator-toolbox * .tabbrowser-tab[selected="true"] .tab-text.tab-label {
 	color: #fff !important;
 }
@@ -114,11 +116,11 @@
 	--toolbarbutton-active-background: #43566f33 !important;
 }
 
-#navigator-toolbox * .tab-close-button:hover[selected="true"] {
+#navigator-toolbox * .tab-close-button[selected="true"]:hover {
 	background-color: #ffffff0a !important;
 }
 
-#navigator-toolbox * .tab-close-button:active[selected="true"] {
+#navigator-toolbox * .tab-close-button[selected="true"]:active {
 	background-color: #ffffff22 !important;
 }
 

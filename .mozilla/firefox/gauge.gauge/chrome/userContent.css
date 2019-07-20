@@ -1,22 +1,22 @@
 :root {
---bgdark: #111c23;
---bglight: #17242c;
---bglighter: #1c2d37;
+--bgdark: #fafdff;
+--bglight: #f1f4f5;
+--bglighter: #e7eaeb;
 --bglightest:  #41485c;
 
---fgdark: #999ba0;
---fglight: #edeef0;
+--fgdark: #7c8899;
+--fglight: #43566f;
 
---accent: #f6b2b6;
+--accent: #6796e1;
 --blue:        #02a4fc;
 --green:       #12e689;
 --yellow:      #f0d35c;
 --red:         #f0185a;
---border: #242e35;
+--border: #b0b4bb;
 --border1:     #223344;
 --border2:     #334455;
 --disabled: #595959;
---hover: #000000;
+--hover: #ffffff;
 }
 	
 :root{
@@ -115,7 +115,7 @@ you don't even need these, so just comment it all out).*/
 /*
 pre {padding: 1em !important}
 
-@-moz-document:not(url-prefix(file://)) { h1 {color: #fff !important; border-bottom: none !important} }
+@-moz-document:not(url-prefix(file://)) { h1 {color: var(--fglight) !important; border-bottom: none !important} }
 tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}
 .ellipsis tr:hover {outline: none !important}
 
@@ -125,7 +125,7 @@ tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: var(--blue) !important}
 
 th {color: #ddd !important}
-td {color: #aaa !important}} */
+td {color: var(--fgdark) !important}} */
 
 /*------ INPUT BOXES TEXT ------*/
 
@@ -190,7 +190,7 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 .update-name {color: var(--green) !important}
 .update-type {color: var(--yellow) !important}
 
-.tab-middle, .treecol-text {color: #FFF !important}
+.tab-middle, .treecol-text {color: var(--fglight) !important}
 
 /* This part covers all the dialog boxes backgrounds */
 dialog, window, .prefpane, 
@@ -242,7 +242,7 @@ only the images */
 
 #startPrivateBrowsing:hover {
 	background: var(--bglight) !important;
-	color: #fff !important}
+	color: var(--fglight) !important}
 
 /*------ LOG BROWSING PAGE (about:sync-log) ------*/
 @-moz-document url-prefix(about:sync-log) {
@@ -250,7 +250,7 @@ html {background-color: var(--bgdark) !important}
 
 body {background: var(--bglight) !important; border: 1px solid #111 !important}
 
-h1 {color: #fff !important; border-bottom: none !important}
+h1 {color: var(--fglight) !important; border-bottom: none !important}
 tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}
 .ellipsis tr:hover {outline: none !important}
 
@@ -260,7 +260,7 @@ tbody > tr:hover {outline: 1px dotted var(--bglighter) !important}
 #UI_goUp a.up:active, .ellipsis a.file:active, .ellipsis a.dir:active {color: var(--blue) !important}
 
 th {color: #ddd !important}
-td {color: #aaa !important}}
+td {color: var(--fgdark) !important}}
 
 /*------ VIEW SOURCE ------*/
 @-moz-document url-prefix(view-source:){
@@ -329,7 +329,7 @@ body {
 .actions button {
 		background: var(--bglighter) !important;
 		border: none !important;
-	color: #fff !important}
+	color: var(--fglight) !important}
 
 .actions button:hover {box-shadow: 0 0 0 5px var(--bglighter) !important}
 .actions button.done:hover {box-shadow: 0 0 0 5px var(--blue) !important}
@@ -363,7 +363,7 @@ body {
 	background: var(--home-search-engine-choices) !important}
 
 .contentSearchSuggestionsList .contentSearchSuggestionRow:hover,
-.contentSearchSuggestionsList .contentSearchSuggestionRow.formHistory.selected {background: rgba(255,255,255,0.1) !important; color: #fff !important}
+.contentSearchSuggestionsList .contentSearchSuggestionRow.formHistory.selected {background: rgba(255,255,255,0.1) !important; color: var(--fglight) !important}
 
 .contentSearchSuggestionTable .contentSearchHeader, .contentSearchSuggestionTable .contentSearchSettingsButton {border-color: #000 !important}
 
@@ -411,23 +411,23 @@ body {
 
 .button-link {
 	background-color: var(--green) !important;
-	color: #FFF !important;
+	color: var(--fglight) !important;
 	border: 1px solid var(--green) !important}
 
 .button-link:hover {
 	background-color: var(--green) !important;
-	color: #FFF !important;
+	color: var(--fglight) !important;
 	border: 1px solid var(--green) !important}
 
 .button-link:active {
 	background-color: var(--green) !important;
-	color: #FFF !important;
+	color: var(--fglight) !important;
 	border: 1px solid var(--green) !important}
 
 .button.donation-amount.donation-amount-first, .button.donation-amount.donation-amount-second,
 .button.donation-amount.donation-amount-third, .button.donation-amount.donation-amount-fourth {
 	background-color: var(--bglight) !important;
-	color: #fff !important;
+	color: var(--fglight) !important;
 	border: 1px solid var(--bglight) !important}
 
 #snippets-container .button-selected {
@@ -435,7 +435,7 @@ body {
 	border: 1px solid var(--blue) !important}
 
 /* Edit top sites */
-input[type=text] {color: #aaa !important}
+input[type=text] {color: var(--fgdark) !important}
 
 .edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin, 
 .edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
@@ -454,7 +454,7 @@ input[type=text] {color: #aaa !important}
 .section-title span, .title span, .card-details p, .form-input-container label span,
 .modal-message span, .modal-message p {color: var(--fgdark) !important}
 
-.modal-message .icon {fill: #fff !important}
+.modal-message .icon {fill: var(--fglight) !important}
 
 .card-details h4 {color: #ddd}
 
@@ -471,9 +471,9 @@ input[type=text] {color: #aaa !important}
 	border: 1px solid rgba(0, 0, 0, 0.2)}
 
 #onboarding-overlay p, #onboarding-overlay li.onboarding-tour-item-container span:not(.onboarding-active) {
-	color: #aaa !important}
+	color: var(--fgdark) !important}
 
-#onboarding-overlay header, #onboarding-overlay h1 {color: #FFF !important}
+#onboarding-overlay header, #onboarding-overlay h1 {color: var(--fglight) !important}
 
 #onboarding-skip-tour-button {
 	background: var(--bgdark) !important;
@@ -498,7 +498,7 @@ body {
 .collapsible-section.section.animation-enabled.active {
 	background: rgba(0,0,0,0.6) !important}
 
-.context-menu-button.icon {fill: #aaa !important}
+.context-menu-button.icon {fill: var(--fgdark) !important}
 
 .top-site-outer .top-site-icon.rich-icon, 
 .top-site-outer .screenshot {background-color: transparent !important}
@@ -515,7 +515,7 @@ url(about:rights), url(about:robots), url-prefix(about:studies),
 url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
 url(about:devtools), url(about:serviceworkers) {
 
-p, pre, li, label {color: #AAA !important}
+p, pre, li, label {color: var(--fgdark) !important}
 h1 {color: var(--fglight) !important; font-weight: 700 !important;}
 h2 {color: #ddd !important}
 h3 {color: #ddd !important}
@@ -530,7 +530,7 @@ button {
 
 button:hover {
 	background: var(--button-background-hover) !important;
-		color: #FFF !important}
+		color: var(--fglight) !important}
 
 textarea {
 	-moz-appearance: none !important;
@@ -555,7 +555,7 @@ url-prefix(about:buildconfig), url-prefix(about:networking),
 url-prefix(about:telemetry) {
 
 th {background: var(--bglight) !important; 
-	color: #fff !important;
+	color: var(--fglight) !important;
 	outline: 1px solid #000 !important;
 	padding-left: 4px !important}
 
@@ -649,7 +649,7 @@ menuseparator {
 url-prefix(about:studies), url(about:webrtc) {
 #stage, #errorPageContainer, .warningMessage,
 .info-box-content, .stats, .log {background: var(--bglight) !important; border: 1px solid #111 !important}
-.fold-trigger {color: #fff !important}
+.fold-trigger {color: var(--fglight) !important}
 }
 
 /*------ SERVICE WORKERS PAGE (about:serviceworkers) ------*/
@@ -663,7 +663,7 @@ url-prefix(about:studies), url(about:webrtc) {
 #submit {
 	-moz-appearance: none !important;
 	background: var(--bglightest) !important;
-		color: #FFF !important;
+		color: var(--fglight) !important;
 		padding: 0.5em;
 	border: 1px solid var(--blue) !important}
 
@@ -682,7 +682,7 @@ table#entries tr:nth-child(even) {background-color: var(--bgdark) !important}
 
 /*------ CHECKERBOARD PAGE (about:checkerboard) ------*/
 @-moz-document url-prefix(about:checkerboard) {
-#raw {color: #aaa !important}
+#raw {color: var(--fgdark) !important}
 
 th {background: var(--bglight) !important}
 td {background: var(--bglighter) !important}
@@ -717,7 +717,7 @@ select {border: 1px solid #111 !important}
 
 #categories button {
 	background-color: var(--bglight) !important;
-	color: #fff !important}
+	color: var(--fglight) !important}
 
 #categories button:hover {background-color: var(--bglighter) !important}
 
@@ -735,7 +735,7 @@ select {border: 1px solid #111 !important}
 
 .main-content button:hover {
 	background: var(--button-background-hover) !important;
-		color: #FFF !important;
+		color: var(--fglight) !important;
 	text-decoration: none !important}
 
 .addons-tip-icon {filter: invert(100%) !important}
@@ -752,7 +752,7 @@ span.target-status {background-color: var(--bgdark) !important}
 /*------ CONFIGURATION PAGE (about:config) ------*/
 @-moz-document url(about:config) {
 :root {
-	--in-content-page-color: #aaa !important;
+	--in-content-page-color: var(--fgdark) !important;
 	--in-content-page-background: var(--bglight) !important;
 	--in-content-primary-button-background: var(--red) !important;
 	--in-content-primary-button-background-hover: var(--red) !important;
@@ -767,7 +767,7 @@ span.target-status {background-color: var(--bgdark) !important}
 	background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
 
 /* Warning pre-title before the actual config page (D'uh) */
-#warningTitle {color: #FFF !important}}
+#warningTitle {color: var(--fglight) !important}}
 
 /*------ PLUGINS PAGE (about:plugins) ------*/
 @-moz-document url-prefix(about:plugins), url-prefix(about:buildconfig) {
@@ -783,7 +783,7 @@ dl {color: #ddd !important}}
 @-moz-document url-prefix(about:memory){
 .opsRow {
 	background-color: var(--bglight) !important;
-	color: #AAA !important;
+	color: var(--fgdark) !important;
 	border: 1px solid #111 !important}
 }
 
@@ -791,7 +791,7 @@ dl {color: #ddd !important}}
 @-moz-document url(about:downloads){
 :root {
 	--in-content-page-background: var(--bgdark) !important;
-	--in-content-text-color: #aaa !important;
+	--in-content-text-color: var(--fgdark) !important;
 	--in-content-box-background: #404040 !important;
 	--in-content-box-border-color: var(--bglighter) !important}}
 
@@ -804,7 +804,7 @@ url(about:performance), url(about:url-classifier) {
 	--aboutSupport-table-background: var(--bglighter) !important;
 	--aboutProfiles-table-background: var(--bglighter) !important;
 	--in-content-link-color-hover: var(--blue) !important;
-	--in-content-box-border-color: #aaa !important;
+	--in-content-box-border-color: var(--fgdark) !important;
 	--in-content-table-border-dark-color: #000 !important;
 	--in-content-border-color: #000 !important}
 
@@ -821,8 +821,8 @@ td {background: var(--bglighter) !important}
 /* Sidebar */
 :root {
 	--in-content-page-background: var(--bglight) !important;
-	--in-content-category-text: #fff !important;
-	--in-content-text-color: #fff !important;
+	--in-content-category-text: var(--fglight) !important;
+	--in-content-text-color: var(--fglight) !important;
 	--in-content-selected-text: #000 !important;
 	--in-content-item-selected: var(--in-content-category-text-selected) !important;
 	--in-content-item-hover: rgba(0,90,170,0.25) !important;
@@ -831,7 +831,7 @@ td {background: var(--bglighter) !important}
 /* Main Content */
 .main-content {
  	background-color: var(--bglight) !important;
-		color: #AAA !important}
+		color: var(--fgdark) !important}
 
 .navigation {
 	background-color: var(--bgdark) !important;
@@ -847,14 +847,14 @@ td {background: var(--bglighter) !important}
 
 /* These last two apply to some general panel labels in the preferences page (if 
 it's updated and if its the default browser) */
-#isDefaultLabel, #updateBox {color: #FFF !important}
+#isDefaultLabel, #updateBox {color: var(--fglight) !important}
 
 /* Search Panel, Dialog boxes and inputs in general */
 #engineList, .dialogBox > .groupbox-title, #browserHomePage,
 #searchInput {background-color: var(--bglight) !important}
 
 .dialogTitleBar {background: var(--bglight) !important; border-bottom: 1px solid var(--bglighter) !important}
-.dialogTitleBar label {color: #fff !important}
+.dialogTitleBar label {color: var(--fglight) !important}
 }
 
 /*------ SETTINGS PAGE (about:preferences) ------*/
@@ -880,11 +880,11 @@ image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 
 .accessory-button:hover, button:hover {
 	background: var(--button-background-hover) !important;
-		color: #FFF !important}
+		color: var(--fglight) !important}
 
 treecol {
 	background-color: var(--bglighter) !important;
-	color: #FFF !important}
+	color: var(--fglight) !important}
 
 treecol:hover {background-color: var(--bglighter) !important}
 
@@ -923,13 +923,13 @@ treecol:hover {background-color: var(--bglighter) !important}
 .accessory-button:hover, button:hover, 
 #header-utils-btn:hover {
 	background: var(--bglight) !important;
-		color: #FFF !important}
+		color: var(--fglight) !important}
 
 /* These change the addons background colors */
 .card {
 	max-width: 800px !important}
 
-.addon .description {color: #aaa !important}
+.addon .description {color: var(--fgdark) !important}
 
 .addon:hover {
 	background-color: var(--bglightest) !important;
@@ -948,7 +948,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .addon.addon-view[active="false"] .basicinfo-container, 
 .addon.addon-view[active="false"] .description {color: #888 !important}
 
-.addon.addon-view[selected="true"] .description {color: #FFF !important}
+.addon.addon-view[selected="true"] .description {color: var(--fglight) !important}
 
 /* This changes the background highlight color of uninstalled extensions */
 .addon-view[pending="disable"], .addon-view[pending="uninstall"] {
@@ -965,7 +965,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .alert, .message-bar {
 	border: 1px solid var(--bglight) !important;
 	background-color: rgba(255,255,255,0.10) !important;
-	color: #Fff !important}
+	color: var(--fglight) !important}
 
 /* Description of the addons/themes */
 .detail-view-container {color: var(--fgdark) !important}
@@ -976,19 +976,19 @@ treecol:hover {background-color: var(--bglighter) !important}
 
 #detail-rows * {text-shadow: none !important}
 
-#detail-rows .detail-row-label {color: #fff !important}
+#detail-rows .detail-row-label {color: var(--fglight) !important}
 
-#detail-contrib-description {color: #aaa !important}
+#detail-contrib-description {color: var(--fgdark) !important}
 }
 
 /* This is still in the addons page, it's the "discover" page thing */
 @-moz-document url-prefix(https://addons-discovery.cdn.mozilla.net), url-prefix(https://discovery.addons.mozilla.org) {
 
 .disco-content h1, .content h2,
-.DiscoPane-header-intro h1 {color: #FFF !important}
+.DiscoPane-header-intro h1 {color: var(--fglight) !important}
 
 .disco-content p, .content p, .content blockquote,
-.DiscoPane-header-intro p {color: #AAA !important}
+.DiscoPane-header-intro p {color: var(--fgdark) !important}
 
 #react-view {background-color: var(--bglight) !important}
 
@@ -1012,7 +1012,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 
 li {color: #ddd !important}
 
-span, .statsBoxSection-header {color: #fff !important}
+span, .statsBoxSection-header {color: var(--fglight) !important}
 
 .tipBox-header {
 	background: var(--bglight) !important;
@@ -1052,7 +1052,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 	background-color: var(--bglight) !important;
 	color: var(--fgdark) !important}
 
-.HeroSection-content {color: #fff !important}
+.HeroSection-content {color: var(--fglight) !important}
 
 .Search .AddonsCard-list .SearchResult {border-bottom: 1px solid #000 !important}
 
@@ -1070,7 +1070,7 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
 .PermissionCard-learn-more, .AddAddonToCollection-select, #CollectionSort-select {
 	background-color: var(--bglighter) !important;
-	color: #FFF !important}
+	color: var(--fglight) !important}
 
 button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):hover, 
 .PermissionCard-learn-more:hover, .AddAddonToCollection-select:hover {
@@ -1113,7 +1113,7 @@ p, a, h4, h2, blockquote, li, .num-results
 .header-bg {
 		background-color: #000 !important;
 		background-image: linear-gradient(to bottom,transparent 0,transparent 100px),
-		linear-gradient(to bottom,rgba(90,90,90,0) 0,var(--bglighter) 500px,#fff 0),
+		linear-gradient(to bottom,rgba(90,90,90,0) 0,var(--bglighter) 500px,var(--fglight) 0),
 		repeating-linear-gradient(118deg,rgba(12,153,213,0) 0,var(--bglight) 550px,rgba(90,90,90,0) 550px,var(--bglight) 800px,
 		rgba(90,90,90,0) 800px,var(--bglight) 950px) !important}
 
@@ -1132,20 +1132,20 @@ a.SearchResult-link:hover h2, span:not(.Addon-author):hover, a:hover {color: var
 
 h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
 h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
-{color: #FFF !important}
+{color: var(--fglight) !important}
 
 .install a.caution {text-shadow: 1px 1px var(--red) !important}
 
 .install strong {color: var(--yellow) !important}
 
 .AMInstallButton-button--uninstall {background-color: var(--red) !important}
-.AMInstallButton-button--uninstall:hover {background-color: var(--red) !important; color: #fff !important}
+.AMInstallButton-button--uninstall:hover {background-color: var(--red) !important; color: var(--fglight) !important}
 
 input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
 select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
 input#search-q {
 	background-color: var(--bgdark) !important;
-	color: #FFF !important}
+	color: var(--fglight) !important}
 
 #site-search-suggestions .wrap, ul.other-apps {
 		background: var(--bgdark) !important;
@@ -1177,7 +1177,7 @@ form input, .show-password-label {
 
 html, body {background-color: var(--bgdark) !important}
 
-h1, h2 {color: #fff !important}
+h1, h2 {color: var(--fglight) !important}
 h3 {color: #ddd !important}
 p:not(.main-content) {color: var(--fgdark) !important}
 
@@ -1192,10 +1192,10 @@ a:active {color: var(--in-content-link-color-hover) !important}
 body > header {
 	background: var(--bglighter) !important;
 	border-top: none !important;
-	border-bottom: 1px solid #aaa !important;
+	border-bottom: 1px solid var(--fgdark) !important;
 	color: var(--fgdark) !important}
 
-a.btn, a.volunteer-button {color: #fff !important}
+a.btn, a.volunteer-button {color: var(--fglight) !important}
 
 .logo {filter: invert(100%) !important}
 .footer-logo {fill: #ddd !important}
@@ -1231,7 +1231,7 @@ div {color: var(--fgdark) !important}
 #register-form, .subtopics > li > a {background-color: var(--bglight) !important; color: var(--fgdark) !important}
 .sidebar-nav > li > span:hover, .sidebar-nav .sidebar-nav > li > a:hover {color: var(--in-content-link-color) !important}
 
-.button-wrapper .btn, .button-wrapper .btn {color: #fff !important}
+.button-wrapper .btn, .button-wrapper .btn {color: var(--fglight) !important}
 
 .sidebar-nav a {border-color: var(--bglighter) !important}
 
@@ -1275,7 +1275,7 @@ textarea {
 #email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
 #pw-reset input[type="submit"], .btn, span.button, .volunteer-button {
 	background: linear-gradient(#2050AA, #203050) !important;
-		color: #FFF !important;
+		color: var(--fglight) !important;
 		padding: 0.5em;
 	border: 1px solid var(--blue) !important;
 	box-shadow: none !important}
