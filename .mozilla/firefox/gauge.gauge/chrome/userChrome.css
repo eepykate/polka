@@ -36,7 +36,7 @@
 	--theme-toolbar-background: var(--bglight) !important;
 	--toolbar-color: var(--fglight) !important;
 	/*--lwt-additional-images: url(https://i.imgur.com/BQnSooK.png) !important;*/
-	--ui-height: 26px;                                                 /* Used only in this script */
+	--tab-min-height: 26px  !important;
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
 	--button-radius: 0.2em !important;                                 /* Border-radius of buttons */
@@ -58,12 +58,19 @@
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
 
+#tabbrowser-tabs {
+	
+	--tab-min-height: 26px !important;
+	
+}
 
 /***   Transparent Blurry UI   ***/
-/*.toolbarbutton-1,
+:root {
+	--lwt-toolbarbutton-icon-fill: #444 !important;
+}
+.toolbarbutton-1,
 .tab-close-button:not([selected="true"]) {
 	color: #444 !important;
-	fill: #444 !important;
 }
 
 .tabs-newtab-button:hover,
@@ -115,7 +122,7 @@
 
 #navigator-toolbox * .tab-close-button:active[selected="true"] {
 	background-color: #ffffff22 !important;
-}*/
+}
 
 
 
@@ -623,15 +630,26 @@ toolbarspring {
 
 
 /* Change size of a few items */
+
+toolbarbutton,
+toolbarbutton image,
+toolbarbutton stack {
+	height: var(--tab-min-height) !important;
+	max-height: var(--tab-min-height) !important;
+	width: var(--tab-min-height) !important;
+  max-width: var(--tab-min-height) !important;	
+}
+
 #TabsToolbar,
 #nav-bar,
 #titlebar,
 .tabbrowser-tab,
 #tabbrowser-tabs {
-	height: var(--ui-height) !important;
+	height: var(--tab-min-height) !important;
 }
+
 #tabbrowser-tabs {
-	--tab-min-height: var(--ui-height);
+	--tab-min-height: var(--tab-min-height);
 }
 
 #urlbar {
@@ -639,12 +657,14 @@ toolbarspring {
 }
 
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
-	height: var(--ui-height);
-	min-height: var(--ui-height);
-	max-height: var(--ui-height);
+	height: var(--tab-min-height);
+	min-height: var(--tab-min-height);
+	max-height: var(--tab-min-height);
 }
 
-#downloads-button,
+
+
+/*#downloads-button,
 .toolbarbutton-badge-stack,
 #downloads-indicator-anchor,
 #downloads-indicator-progress-outer,
@@ -657,8 +677,8 @@ toolbarspring {
 .webextension-browser-action,
 .toolbarbutton-1:not(.webextension-browser-action),
 .toolbarbutton-1:not(.webextension-browser-action) .toolbarbutton-icon {
-	width: calc(var(--ui-height) * 0.9) !important;
-	height: calc(var(--ui-height) * 0.9) !important;
+	width: calc(var(--tab-min-height) * 0.9) !important;
+	height: calc(var(--tab-min-height) * 0.9) !important;
 }
 
 .tab-throbber,
@@ -673,13 +693,13 @@ toolbarspring {
 }
 
 .tab-icon-image {
-	width: calc(var(--ui-height) * 0.50 ) !important;
-	height: calc(var(--ui-height) * 0.50 ) !important;
+	width: calc(var(--tab-min-height) * 0.50 ) !important;
+	height: calc(var(--tab-min-height) * 0.50 ) !important;
 }
 
 .tab-close-button {
-	width: calc(var(--ui-height) * 0.60 ) !important;
-	height: calc(var(--ui-height) * 0.60 ) !important;
+	width: calc(var(--tab-min-height) * 0.60 ) !important;
+	height: calc(var(--tab-min-height) * 0.60 ) !important;
 }
 
 
@@ -711,13 +731,9 @@ toolbarspring {
 
 /***   Tabs-only OneLiner   ***?
 /* Make the tab bar go above the hidden navbar */
-#navigator-toolbo, #titlebar {
-	z-index: 1 !important;
-}
-
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
-	margin-top: calc(var(--ui-height) * -1 - 16px) !important;
+	margin-top: calc(var(--tab-min-height) * -1 - 16px) !important;
 	z-index: 2 !important;
 	pointer-events: none;
 	transition: all 200ms, z-index 0ms !important;
@@ -731,10 +747,9 @@ toolbarspring {
 /* When navbar is focused, bring it into view */
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
 	pointer-events: auto;
-	margin-top: calc(var(--ui-height) * -1) !important;
+	margin-top: calc(var(--tab-min-height) * -1) !important;
 	margin-bottom: 0px !important;
 	opacity: 1 !important;
-	z-index: 2 !important;
 	max-height: 32px;
 }
 
