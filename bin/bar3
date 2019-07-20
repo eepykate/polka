@@ -6,7 +6,7 @@
 
 #set -x
 
-fg="edeef0"
+fg="ffffff"
 bg="111c23"
 bl="000000"
 #ac="f6b2b6"
