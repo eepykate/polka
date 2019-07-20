@@ -3,10 +3,10 @@
 # or
 # /usr/share/xfwm4/defaults
 
-active_text_color=#4d4d4c
-active_text_shadow_color=#4d4d4c
-inactive_text_color=#747473
-inactive_text_shadow_color=#747473
+active_text_color=#43566f
+active_text_shadow_color=#43566f
+inactive_text_color=#6e7d90
+inactive_text_shadow_color=#6e7d90
 title_shadow_active=false
 title_shadow_inactive=false
 full_width_title=true

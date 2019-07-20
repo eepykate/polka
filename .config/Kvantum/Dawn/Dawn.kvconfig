@@ -69,16 +69,16 @@ intensity=1.00
 saturation=1.00
 
 [GeneralColors]
-window.color=#f3f3f3
-base.color=#ebebeb
-alt.base.color=#f3f3f3
-button.color=#ebebeb
+window.color=#fafdff
+base.color=#f1f4f5
+alt.base.color=#fafdff
+button.color=#f1f4f5
 light.color=#555555
 mid.light.color=#313131
 dark.color=black
-mid.color=#f3f3f3
-highlight.color=#4c6fd6
-inactive.highlight.color=#4c6fd6
+mid.color=#fafdff
+highlight.color=#6796e1
+inactive.highlight.color=#6796e1
 text.color=#4d4d4c
 window.text.color=#4d4d4c
 button.text.color=#4d4d4c
@@ -265,7 +265,7 @@ frame.left=1
 frame.right=1
 text.bold=true
 text.normal.color=#4d4d4c
-text.focus.color=#4c6fd6
+text.focus.color=#6796e1
 text.toggle.color=#4d4d4c
 frame.expansion=0
 

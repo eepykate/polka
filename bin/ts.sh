@@ -39,16 +39,16 @@ if [[ $theme = Coral ]]; then
 
 elif [[ $theme = Dawn ]]; then
 	accentn="4"
-	bgdark="#f3f3f3"
-	bglight="#cfcfcf"
-	bglighter="#aeaeae"
+	bgdark="#fafdff"
+	bglight="#f1f4f5"
+	bglighter="#e7eaeb"
 
 	fgdark="#7c8899"
 	fglight="#43566f"
 
 	disabled="#595959"
 	accent="#6796e1"
-	button="#00000022"
+	button="#43566f1a"
 	border="#b0b4bb"
 	red="#cd5e6f"
 	hover="#ffffff"
@@ -179,7 +179,7 @@ $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css" | \
 #		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
 #		-e "s/ac=\".*\"/ac=\"$accent\"/" \
 #		~/bin/bar
-	bar &!
+#	bar &!
 	echo "$fglight - $fgdark"
 
 	sleep 0.1

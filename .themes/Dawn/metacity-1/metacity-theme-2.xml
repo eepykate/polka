@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-  <name>oomox-aaaaa1_</name>
+  <name>oomox-Dawn</name>
   <author>nana-4</author>
   <copyright>GPL</copyright>
   <date>2018</date>
-  <description>oomox-aaaaa1_ Metacity theme</description>
+  <description>oomox-Dawn Metacity theme</description>
 </info>
 
 
 <!-- meaningful constants -->
 
-<constant name="C_titlebar" value="#f3f3f3"/>
-<constant name="C_highlight" value="blend/#f3f3f3/#ebebeb/0.4"/>
-<constant name="C_title_focused" value="#4d4d4c"/>
-<constant name="C_title_unfocused" value="blend/#f3f3f3/#4d4d4c/0.7"/>
+<constant name="C_titlebar" value="#fafdff"/>
+<constant name="C_highlight" value="blend/#fafdff/#fafdff/0.4"/>
+<constant name="C_title_focused" value="#43566f"/>
+<constant name="C_title_unfocused" value="blend/#fafdff/#43566f/0.7"/>
 
 
 <!-- geometries -->
