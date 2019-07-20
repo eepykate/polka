@@ -47,10 +47,10 @@ elif [[ $theme = Dawn ]]; then
 	fglight="#43566f"
 
 	disabled="#595959"
-	accent="#4a80d6"
+	accent="#6796e1"
 	button="#00000022"
 	border="#b0b4bb"
-	red="#df1a45"
+	red="#cd5e6f"
 	hover="#ffffff"
 
 elif [[ $theme = Winter ]]; then
