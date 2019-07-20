@@ -64,19 +64,19 @@
 
 /***   Transparent Blurry UI   ***/
 :root {
-	--lwt-toolbarbutton-icon-fill: #444 !important;
+	--lwt-toolbarbutton-icon-fill: #43566f !important;
 }
 .toolbarbutton-1,
 .tab-close-button:not([selected="true"]) {
-	color: #444 !important;
+	color: #43566f !important;
 }
 
 .tabs-newtab-button:hover,
 .tab-close-button:hover {
-	background-color: #44444411 !important;
+	background-color: #43566f11 !important;
 }
 .tab-close-button:active {
-	background-color: #44444433 !important;
+	background-color: #43566f33 !important;
 }
 
 #navigator-toolbox * #tabbrowser-tabs,
@@ -97,7 +97,7 @@
 }
 
 #navigator-toolbox * .tabbrowser-tab .tab-text.tab-label {
-	color: #444 !important;
+	color: #43566f !important;
 }
 
 #navigator-toolbox * .tabbrowser-tab[selected="true"] .tab-text.tab-label {
@@ -110,8 +110,8 @@
 
 #navigator-toolbox * .toolbarbutton-icon,
 #navigator-toolbox * .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: #44444411 !important;
-	--toolbarbutton-active-background: #44444433 !important;
+	--toolbarbutton-hover-background: #43566f11 !important;
+	--toolbarbutton-active-background: #43566f33 !important;
 }
 
 #navigator-toolbox * .tab-close-button:hover[selected="true"] {
@@ -317,33 +317,6 @@ browser[type=content] > html {
 #pageActionSeparator, #pocket-button {
 	display: none !important;
 }
-
-
-/***   Center urlbar and popup items   ***/
-/* Center text on the URL bar */
-/*#urlbar {
-	text-align: center;
-} */
-
-/* hide a few items on the search popup */
-/*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .search-one-offs,
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-type-icon,
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-site-icon,
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-tags:not([empty]),
-#PopupAutoCompleteRichResult > richlistbox > richlistitem > .ac-separator:not([type=keyword]),
-#PopupAutoCompleteRichResult > richlistbox > richlistitem[selected] > .ac-url[actiontype=remotetab],
-#PopupAutoCompleteRichResult > richlistbox > richlistitem:hover > .ac-url[actiontype=remotetab]
-{
-	display: none !important;
-}*/
-
-/*#PopupAutoCompleteRichResult[autocompleteinput="urlbar"] .autocomplete-richlistitem {
-	-moz-box-orient: vertical !important;
-	text-align: center !important;
-	padding: 0px 0px !important;
-	border-radius: 0.5em !important;
-	padding-left: 14px !important;
-}*/
 
 
 
@@ -621,13 +594,19 @@ toolbarspring {
 
 
 /* Change size of a few items */
-toolbarbutton,
-toolbarbutton image,
-toolbarbutton stack {
+toolbarbutton {
 	height: var(--tab-min-height) !important;
 	max-height: var(--tab-min-height) !important;
 	width: var(--tab-min-height) !important;
-  max-width: var(--tab-min-height) !important;	
+	max-width: var(--tab-min-height) !important;
+}
+
+toolbarbutton image,
+toolbarbutton stack {
+	height: calc(var(--tab-min-height) * 0.9) !important;
+	max-height: calc(var(--tab-min-height) * 0.9) !important;
+	width: calc(var(--tab-min-height) * 0.9) !important;
+	max-width: calc(var(--tab-min-height) * 0.9) !important;
 }
 
 .tab-close-button,
