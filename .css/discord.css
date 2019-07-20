@@ -323,3 +323,5 @@ a svg.homeIcon-tEMBK1 path {
 .markup-2BOw-j {
     font-family: t cherry Wide;
 }
+
+.listItem-2P_4kh:nth-last-child(-n+4) {display: none;}
