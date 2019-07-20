@@ -93,7 +93,7 @@
 }
 
 #navigator-toolbox * .tabbrowser-tab .tab-background[selected="true"] {
-	background: #00000022 !important;
+	background: #00000033 !important;
 }
 
 #navigator-toolbox * .tabbrowser-tab .tab-text.tab-label {
@@ -105,7 +105,7 @@
 }
 
 #navigator-toolbox * #urlbar {
-	background-color: #00000022 !important;
+	background-color: #00000033 !important;
 }
 
 #navigator-toolbox * .toolbarbutton-icon,
