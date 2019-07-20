@@ -172,13 +172,13 @@ $HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css" | \
 	bspc wm -r
 
 	# Change lemonbar colours
-	sed --follow-symlinks -i \
-		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
-		-e "s/blr=\".*\"/blr=\"$bglighter\"/" \
-		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
-		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
-		-e "s/ac=\".*\"/ac=\"$accent\"/" \
-		~/bin/bar
+#	sed --follow-symlinks -i \
+#		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
+#		-e "s/blr=\".*\"/blr=\"$bglighter\"/" \
+#		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
+#		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
+#		-e "s/ac=\".*\"/ac=\"$accent\"/" \
+#		~/bin/bar
 	bar &!
 	echo "$fglight - $fgdark"
 
