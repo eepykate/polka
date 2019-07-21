@@ -18,7 +18,8 @@
 --accent: #6796e1;
 --border: #b0b4bb;
 --disabled: #595959;
---selected: #c5d3eb1c;
+--selected: var(--button);
+--button: #43566f1a;
 --hover: #ffffff;
 --bgimage: url(Blur.png) !important;
 }
@@ -39,6 +40,7 @@
 	--autocomplete-popup-color: var(--fglight) !important;
 	/*--lwt-additional-images: url(https://i.imgur.com/BQnSooK.png) !important;*/
 	--tab-min-height: 26px  !important;
+	--arrowpanel-dimmed: var(--button) !important;
 	text-shadow: none !important;                                      /* Remove shadow from text */
 	--color-overflow: var(--fglight);                                  /* button color */
 	--button-radius: 0.2em !important;                                 /* Border-radius of buttons */
