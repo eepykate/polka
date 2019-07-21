@@ -1,15 +1,15 @@
 :root {
---bgdark: #00000000;
---bglight: #00000022;
---bglighter: #00000044;
+--bgdark: #fafdff;
+--bglight: #f1f4f5;
+--bglighter: #e7eaeb;
 
---fgdark: #e6e6e6;
---fglight: #ffffff;
+--fgdark: #7c8899;
+--fglight: #43566f;
 
---accent: #ffffff;
+--accent: #6796e1;
 --border: #b0b4bb;
 --disabled: #595959;
---hover: #000000;
+--hover: #ffffff;
 }
 
 * {
@@ -22,7 +22,7 @@
 }*/
 
 html {
-	background: url(Blur.png);
+	background: var(--bgdark);
 	background-position: top -24px left 0;
 }
 
@@ -187,4 +187,36 @@ main section {
 
 main {
 	padding-bottom: 10px;
+}
+
+
+/* Transparent blyrry UI */
+html {
+	background: url(Blur.png);
+}
+
+.box .title,
+.box .content {
+	background: #00000022;
+}
+
+.box:hover .title {
+	background: #fff;
+	color: #43566f;
+}
+
+#date, #time {
+	color: #43566f;
+}
+
+.box .title {
+	color: #fff;
+}
+
+a, a:visited {
+	color: #43566f
+}
+
+a:hover, a:visited:hover {
+	color: #000;
 }
