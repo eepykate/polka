@@ -2,7 +2,7 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"     # Qt themes for non-Qt DEs/WMs
 # Default programs                      # Default programs
 export EDITOR="nvim"                    # Terminal text editor
-export VISUAL="$EDITOR"                 # Graphical text editor 
+export VISUAL="$EDITOR"                 # Graphical text editor
 export TERMINAL="st"                    # Terminal
 export BROWSER="firefox"                # Web Browser
 export FILE="dolphin"                   # File manager
@@ -10,7 +10,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
 
 # Custom ls colours
-eval "$(dircolors ~/.config/dircolors)" 
+( eval "$(dircolors ~/.config/dircolors)" & )
 
 # Places where binaries/scripts go so you dont have to type the whole path to run them
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
@@ -28,7 +28,7 @@ export LESS_TERMCAP_ue=$'\E[0m'          # reset underline
 shortcuts
 
 if [[ "$TERM" = "linux" ]]; then
-	source ~/.config/tty-colours.sh
-	sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null
+	( source ~/.config/tty-colours.sh & )
+	( sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null & )
 	#clear #for background artifacting
 fi
