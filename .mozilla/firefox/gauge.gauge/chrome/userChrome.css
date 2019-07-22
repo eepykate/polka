@@ -21,7 +21,6 @@
 --selected: var(--button);
 --button: #43566f1a;
 --hover: #ffffff;
---bgimage: url(Blur.png) !important;
 }
 
 :root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
@@ -66,6 +65,7 @@
 	--tab-min-height: 26px !important;
 }
 
+
 /***   Transparent Blurry UI   ***/
 :root {
 	--lwt-toolbarbutton-icon-fill: #43566f !important;
@@ -88,7 +88,7 @@
 #titlebar,
 #nav-bar
 {
-	background-image: var(--bgimage) !important;
+	background-image: url(Blur.png) !important;
 	background-color: transparent !important;
 }
 
@@ -266,7 +266,7 @@ browser[type=content] > html {
 	background-color: transparent !important;
 }
 
-.tabbrowser-tab .tab-background[selected="true"]{
+.tabbrowser-tab .tab-background[selected="true"] {
 	background: var(--bglight) !important;
 }
 
