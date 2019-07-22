@@ -1,15 +1,15 @@
 :root {
---bgdark: #fafdff;
---bglight: #f1f4f5;
---bglighter: #e7eaeb;
+--bgdark: #232731;
+--bglight: #282d39;
+--bglighter: #303644;
 
---fgdark: #7c8899;
---fglight: #43566f;
+--fgdark: #8888a0;
+--fglight: #ccccee;
 
---accent: #6796e1;
---border: #b0b4bb;
---disabled: #595959;
---hover: #ffffff;
+--accent: #9ab2dc;
+--border: #262c42;
+--disabled: #696969;
+--hover: #000000;
 }
 
 * {
@@ -191,6 +191,7 @@ main {
 
 
 /* Transparent blyrry UI */
+/*
 html {
 	background: url(Blur.png);
 }
