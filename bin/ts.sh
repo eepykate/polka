@@ -32,7 +32,7 @@ if [[ $theme = Coral ]]; then
 
 	disabled="#595959"
 	accent="#f6b2b6"
-	button="#edeef011"
+	button="#edeef01a"
 	border="#242e35"
 	red="#d48398"
 	hover="#000000"
@@ -64,7 +64,7 @@ elif [[ $theme = Winter ]]; then
 
 	disabled="#696969"
 	accent="#9ab2dc"
-	button="#cbe3f122"
+	button="#ccccee1a"
 	border="#262c42"
 	red="#dc8189"
 	hover="#000000"
