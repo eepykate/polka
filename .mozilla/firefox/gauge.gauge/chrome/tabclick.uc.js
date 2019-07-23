@@ -23,3 +23,20 @@ function tabClick() {
 }
 
 gBrowser.tabContainer.addEventListener("TabSelect", tabClick);
+
+
+var should_open = false;
+var openUrlBar = function(e) {
+    if (should_open) {
+        if (!e.button) {
+            var urlbar = document.getElementById('urlbar');
+            urlbar.focus();
+            urlbar.select();
+        }
+    } else {
+        should_open = true;
+    }
+};
+// add openUrlBar function to the initial tab
+document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', myFunction);
+gBrowser.selectedBrowser.focus();
