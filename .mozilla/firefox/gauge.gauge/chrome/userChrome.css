@@ -131,25 +131,6 @@
 
 
 
-/* Make tab close buttons appear on tab hover, replacing the tab icon */
-.tabbrowser-tab .tab-close-button {
-	-moz-box-ordinal-group: 0 !important;
-	margin: 0px 4px 0px -2px !important;
-}
-
-.tabbrowser-tab .tab-close-button {
-	display: none !important;
-}
-
-.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image,
-.tabbrowser-tab:not([pinned="true"]):hover .tab-throbber {
-	display: none;
-}
-
-.tabbrowser-tab:not([pinned="true"]):hover .tab-close-button {
-	display: -moz-box !important;
-}
-
 /*.tabbrowser-tab:not([selected]):not([pinned]):hover .tab-close-button {
 	display: -moz-box !important;
 }*/
@@ -410,11 +391,6 @@ menu[disabled="true"]{
 	color: var(--disabled) !important;
 }
 
-menuitem:hover,
-menu:hover {
-	background-color:#2e323f !important;
-}
-
 /*menuitem {
 	color: var(--fgdark) !important;
 }*/
@@ -515,18 +491,6 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 #back-button[disabled] {
 	color: var(--disabled) !important;
 	background-image: none !important;
-}
-
-
-
-/* Bookmarks toolbar edge style */
-toolbarbutton.bookmark-item {
-	border: 1px rgba(0, 0, 0, 0) solid !important;
-}
-
-toolbarbutton.bookmark-item:hover {
-	background-color: var(--disabled);
-	border: 1px var(--disabled) solid !important;
 }
 
 
