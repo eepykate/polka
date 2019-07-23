@@ -688,7 +688,7 @@ toolbarspring {
 
 
 
-/***   Tabs-only OneLiner   ***?
+/***   Tabs-only OneLiner   ***
 /* Make the tab bar go above the hidden navbar */
 /* Hide navbar and move it up into the same line as the tab bar */
 #nav-bar:not([customizing]) {
@@ -805,9 +805,10 @@ toolbarbutton#alltabs-button {
 }
 
 #back-button .toolbarbutton-icon {
-  list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath d='M6.334 1.058c-.268.026-.47.229-.699.351-1.28.798-2.563 1.59-3.84 2.39-.307.218-.254.734.083.893C3.29 5.58 4.7 6.472 6.115 7.354c.343.19.804-.119.764-.508-.002-1.77.003-3.54-.003-5.311a.531.531 0 0 0-.542-.477zm-.514 1.48v3.384L3.115 4.22 5.82 2.539z' fill='context-fill' /%3E%3C/svg%3E");
+  list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='context-fill' d='M5.763.484c-.318.016-.482.32-.696.511-.937.97-1.879 1.935-2.812 2.908-.203.24-.114.6.119.782C3.396 5.74 4.416 6.796 5.439 7.85c.28.276.811.1.872-.288.077-.304-.177-.515-.365-.707L3.407 4.23c.93-.961 1.863-1.92 2.79-2.883.262-.293.062-.815-.33-.857L5.816.484z'/%3E%3C/svg%3E");
 }
 
 #forward-button .toolbarbutton-icon {
-  list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath d='M2.094 1.058c-.32.004-.548.324-.506.629.002 1.748-.003 3.497.002 5.245.021.392.528.62.836.378 1.416-.892 2.835-1.778 4.248-2.675.313-.223.245-.747-.101-.9C5.165 2.86 3.76 1.981 2.35 1.112a.53.53 0 0 0-.256-.055zm.552 1.48l2.706 1.683-2.706 1.7V2.54z' fill='context-fill' /%3E%3C/svg%3E");
+  list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='context-fill' d='M2.704.484c.318.016.482.32.696.511.937.97 1.879 1.935 2.812 2.908.203.24.114.6-.119.782C5.071 5.74 4.051 6.796 3.028 7.85c-.28.276-.811.1-.872-.288-.077-.304.177-.515.365-.707L5.06 4.23c-.93-.961-1.863-1.92-2.79-2.883-.262-.293-.062-.815.33-.857l.052-.006z'/%3E%3C/svg%3E");
 }
+
