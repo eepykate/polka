@@ -294,8 +294,8 @@ browser[type=content] > html {
 
 /* Change toobbarbutton hover and presscolour */
 .toolbarbutton-icon, .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: #c5d3eb1c !important;
-	--toolbarbutton-active-background: #c5d3eb21 !important;
+	--toolbarbutton-hover-background: var(--button) !important;
+	--toolbarbutton-active-background: var(--button) !important;
 }
 
 
