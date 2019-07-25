@@ -564,6 +564,10 @@ toolbarspring {
 
 
 /* Change size of a few items */
+#navigator-toolbox * #urlbar-zoom-button {
+	width: auto !important;
+	max-width: 100px !important;
+}
 #navigator-toolbox * toolbarbutton {
 	height: var(--tab-min-height) !important;
 	max-height: var(--tab-min-height) !important;
