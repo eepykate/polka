@@ -672,7 +672,7 @@ toolbarspring {
 
 
 /* When navbar is focused, bring it into view */
-#navigator-toolbox:not([customizing]):focus-within #nav-bar {
+#navigator-toolbox:not([customizing]):not([customizing-movingItem])focus-within #nav-bar {
 	pointer-events: auto;
 	margin-top: calc(var(--tab-min-height) * -1) !important;
 	margin-bottom: 0px !important;
@@ -779,4 +779,3 @@ toolbarbutton#alltabs-button {
 #forward-button .toolbarbutton-icon {
 	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='context-fill' d='M2.704.484c.318.016.482.32.696.511.937.97 1.879 1.935 2.812 2.908.203.24.114.6-.119.782C5.071 5.74 4.051 6.796 3.028 7.85c-.28.276-.811.1-.872-.288-.077-.304.177-.515.365-.707L5.06 4.23c-.93-.961-1.863-1.92-2.79-2.883-.262-.293-.062-.815.33-.857l.052-.006z'/%3E%3C/svg%3E");
 }
-
