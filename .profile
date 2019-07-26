@@ -10,7 +10,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
 
 # Custom ls colours
-( eval "$(dircolors ~/.config/dircolors)" & )
+eval "$(dircolors ~/.config/dircolors)"
 
 # Places where binaries/scripts go so you dont have to type the whole path to run them
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"

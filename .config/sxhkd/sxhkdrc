@@ -1,6 +1,9 @@
 super + e
 	st -e cmus
 
+super + g
+	tasks
+
 super + w
 	st -c floating -e nmtui-connect
 
