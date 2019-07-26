@@ -672,7 +672,7 @@ toolbarspring {
 
 
 /* When navbar is focused, bring it into view */
-#navigator-toolbox:not([customizing]):not([customizing-movingItem])focus-within #nav-bar {
+#navigator-toolbox:not([customizing]):focus-within #nav-bar {
 	pointer-events: auto;
 	margin-top: calc(var(--tab-min-height) * -1) !important;
 	margin-bottom: 0px !important;
