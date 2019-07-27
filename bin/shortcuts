@@ -8,6 +8,6 @@
 echo -n "" > ~/.config/sc.sh
 sed '/^#/d' ~/.config/sc | tee \
   >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3 " " $4 " " $5"\""}' >> ~/.config/sc.sh) \
-  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"nvim "$3 " " $4 " " $5"\" "}' >> ~/.config/sc.sh) &>/dev/null
+  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3 " " $4 " "$5" ; reset_cursor\""}' >> ~/.config/sc.sh) &>/dev/null
 
 # >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3 " " $4 " " $5"\""}' >> ~/.sc.sh) \

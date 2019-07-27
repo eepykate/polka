@@ -21,12 +21,10 @@ alias fuck="pkill -9"      # kill window
 alias fak="sudo !!"        # run last command with sudo
 alias SU="sudo zsh"        # open zsh as root user
 alias rm="rm -i"
-alias v="nvim"             # short neovim
 alias t="tmux"             # tmux
 alias s="dirs"
 alias f="fff"              # terminal file manager
 alias td="transmission-daemon"
-alias tc="transmission-remote-cli"
 alias SS="sudo systemctl"
 
 # pacman/yay
@@ -48,6 +46,10 @@ alias gaa="git add -A"           # git - Add all unstaged files to staging area
 alias ga="git add"               # git - Add <file(s)>
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
+
+reset_cursor() { echo -en "\e[4 q" }
+tc() { transmission-remote-cli; reset_cursor }
+v() { nvim $@; reset_cursor }
 
 se() {
 	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR;
