@@ -165,13 +165,6 @@ $HOME/.startpage/style.css" | \
 		[[ -f ~/Wallpapers/$wallpaper ]] &&
 		cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
-# -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
-	# Change bspwm colours
-	sed --follow-symlinks -i \
-		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bglighter\"/g" \
-		~/.config/bspwm/bspwmrc
-	bspc wm -r
-
 	# Change lemonbar colours
 	sed --follow-symlinks -i \
 		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
@@ -180,7 +173,14 @@ $HOME/.startpage/style.css" | \
 		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
 		-e "s/ac=\".*\"/ac=\"$accent\"/" \
 		~/bin/bar
-	bar &!
+	# bar &!         # This is now in my bspwmrc
+
+# -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
+	# Change bspwm colours
+	sed --follow-symlinks -i \
+		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bglighter\"/g" \
+		~/.config/bspwm/bspwmrc
+	wm restart
 
 	# Change qview colours
 	sed --follow-symlinks -i \
