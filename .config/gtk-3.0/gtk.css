@@ -6,6 +6,11 @@ menuitem:hover {
 
 
 /*  Custom Thunar theme  */
+@keyframes scale_ripple_effect {
+  to {
+    background-size: auto, 1000% 1000%;
+  }
+}
 
 .thunar * scrollbar * slider {
 	background-color: rgba(0, 0, 0, 0.08);
@@ -16,9 +21,26 @@ menuitem:hover {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-.thunar * scrollbar * slider:active,
-.thunar * button:active {
+.thunar * scrollbar * slider:active/*,
+.thunar * button:active*/ {
 	background-color: rgba(0, 0, 0, 0.15);
+}
+.thunar * button {
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
+  background-color: #f7f9ff;
+  background-image: radial-gradient(circle farthest-corner at center, transparent 10%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000% 1000%;
+  color: #43566f;
+}
+
+.thunar * button:active {
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
+  animation: ripple_effect 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  background-size: 0% 0%;
+  color: #43566f;
 }
 
 .thunar * button image,
