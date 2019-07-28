@@ -21,4 +21,4 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#include ".config/Xres.Winter"
+#include ".config/Xres.Silver"

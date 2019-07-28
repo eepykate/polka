@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Winter\nCoral\nxd\nDawn" # List of themes
+themes="Winter\nCoral\nxd\nSilver" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -37,11 +37,12 @@ if [[ $theme = Coral ]]; then
 	red="#d48398"
 	hover="#000000"
 
-elif [[ $theme = Dawn ]]; then
+elif [[ $theme = Silver ]]; then
+
 	accentn="4"
-	bgdark="#fafdff"
-	bglight="#f1f4f5"
-	bglighter="#e7eaeb"
+	bgdark="#f7f9ff"
+	bglight="#eef0f5"
+	bglighter="#e4e8ee"
 
 	fgdark="#7c8899"
 	fglight="#43566f"
@@ -54,6 +55,7 @@ elif [[ $theme = Dawn ]]; then
 	hover="#ffffff"
 
 elif [[ $theme = Winter ]]; then
+
 	accentn="4"
 	bgdark="#232731"
 	bglight="#282d39"
@@ -70,6 +72,7 @@ elif [[ $theme = Winter ]]; then
 	hover="#000000"
 
 elif [[ $theme = xd ]]; then
+
 	accentn="4"
 	bgdark="#1a1f2e"
 	bglight="#202537"
@@ -154,7 +157,7 @@ $HOME/.startpage/style.css" | \
 	pkill -9 dunst; dunst &>/dev/null &!
 
 	# Change the theme in rofi
-	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bgdark}bb;/g" \
+	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bgdark}aa;/g" \
 		-e "s/fg:.*#.*;/fg:         #$fglight;/" \
 		-e "s/accent:.*#.*;/accent:     #$accent;/"\
 		-e "s/sel:.*#.*;/sel:     #$button;/"\
