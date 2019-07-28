@@ -1,3 +1,77 @@
 menuitem:hover {
 	background-color: #c5d3eb12;
 }
+
+
+
+
+/*  Custom Thunar theme  */
+
+.thunar * scrollbar * slider {
+	background-color: rgba(0, 0, 0, 0.08);
+}
+
+.thunar * scrollbar * slider:hover,
+.thunar * button:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.thunar * scrollbar * slider:active,
+.thunar * button:active {
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.thunar * button image,
+.thunar * button box,
+.thunar * button box label {
+	background-color: transparent;
+}
+
+.thunar * treeview,
+.thunar * scrollbar,
+.thunar * label,
+.thunar * image,
+.thunar * toolbar,
+.thunar * scrolledwindow widget,
+.thunar * statusbar {
+	border: none;
+}
+
+.thunar,
+.thunar * label,
+.thunar * image,
+.thunar * toolbar,
+.thunar * scrolledwindow widget,
+.thunar * statusbar {
+	background-color: #f7f9ff;
+	color: #43566f;
+}
+
+.thunar * scrollbar {
+	background-color: #f7f9ff;
+}
+
+.thunar * treeview {
+	background-color: #cd5e6f;
+	color: #fff;
+}
+
+.thunar * .view:selected {
+	background-color: rgba(205, 94, 111, 100);
+	color: #fff;
+}
+
+.thunar * .rubberband  {
+	border: 1px solid #cd5e6f;
+	background-color: rgba(205, 94, 111, 0.3);
+}
+
+.thunar * .view:selected {
+	background-color: transparent;
+	background-image: image(#f06c82);
+}
+
+.thuanr * .view:hover {
+	background-image: image(#e6687d);
+
+}
