@@ -37,8 +37,9 @@ menuitem:hover {
 	border: none;
 }
 
+notebook header,
+notebook header * tab,
 .thunar,
-.thunar * label,
 .thunar * image,
 .thunar * toolbar,
 .thunar * scrolledwindow widget,
@@ -73,5 +74,31 @@ menuitem:hover {
 
 .thuanr * .view:hover {
 	background-image: image(#e6687d);
+}
 
+.thunar * .path-bar-button:checked {
+	border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #cd5e6f 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+notebook-header {
+	background-color: transparent;
+}
+
+.thunar * toolbar {
+	margin-top: -40px;
+}
+/*
+
+.thunar * toolbar {
+	margin-top: 0px;
+margin-left: -135px;
+}
+
+.thunar * toolbar {
+	margin-bottom: -40px;
+}
+
+
+.thunar * paned {
+	margin-top: 40px;
 }
