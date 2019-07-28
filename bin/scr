@@ -16,8 +16,9 @@ fehstuff() {
 	offX="$(( ${thing[0]} + ${thing[2]} - 320 - 50 ))"
 	offY="$(( ${thing[3]} + 50 ))"
 
-	feh -g 320x200+$offX+$offY -. -B "#000000" -^ "fehpreview" "$dir/$name1.png" &
+	feh -g 320x200+$offX+$offY -. -B "#000000" "$dir/$name1.png" &
 	feh="$!"
+	( sleep 0.1; xdotool key 'w' ) &
 	(sleep 2; kill -- $feh)
 }
 
