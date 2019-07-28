@@ -7,4 +7,4 @@ stty -ixon               # Disable Ctrl-S && Ctrl-Q
 export SUDO_PROMPT="$(tput setaf 4)[sudo]$(tput setaf 3) password for %p:$(tput setaf 7) "
 
 # Bash prompt theme
-source slight.bash
+PS1='> '

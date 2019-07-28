@@ -25,4 +25,4 @@ awk '{print $2}'))
 
 for i in {1..16}; do
 	sed -e "${i}!d" -e "s/xd/${colours[${i}]}/" <<< $template
-done  >$HOME/.config/tty-colours.sh
+done  >$HOME/bin/tty-colours.sh

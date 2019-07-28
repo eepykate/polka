@@ -47,9 +47,15 @@ alias ga="git add"               # git - Add <file(s)>
 alias gs="git status"            # git - status
 alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
 
-reset_cursor() { echo -en "\e[4 q" }
-tc() { transmission-remote-cli; reset_cursor }
-v() { nvim $@; reset_cursor }
+reset_cursor() {
+	echo -en "\e[4 q"
+}
+tc() {
+	transmission-remote-cli; reset_cursor
+}
+v() {
+	nvim $@; reset_cursor
+}
 
 se() {
 	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR;
