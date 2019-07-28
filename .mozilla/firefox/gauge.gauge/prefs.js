@@ -263,5 +263,6 @@ user_pref("toolkit.telemetry.previousBuildID", "20190709185230");
 user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
 user_pref("ui.allow_platform_file_picker", "true");
 user_pref("ui.key.menuAccessKey", 0);
+user_pref("ui.systemUsesDarkTheme", 1);
 user_pref("widget.content.gtk-theme-override", "Vertex-Maia");
 user_pref("xpinstall.signatures.required", false);
