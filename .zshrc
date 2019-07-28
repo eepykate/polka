@@ -57,7 +57,7 @@ autoload -U compinit && compinit -u -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 #   Shell Theme
 #       ---
 setopt prompt_subst
-color="4"
+color="1"
 [[ $color = 1 ]] && false="3" || false="1"
 PROMPT=$'%(?.%{\e[3${color}m%}.%{\e[3${false}m%})%(!.#.>)%{\e[0m%} '
 export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt

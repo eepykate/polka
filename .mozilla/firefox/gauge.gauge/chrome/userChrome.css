@@ -8,19 +8,19 @@
 /*  #232731  */
 /* Colours */
 :root {
---bgdark: #232731;
---bglight: #282d39;
---bglighter: #303644;
+--bgdark: #f7f9ff;
+--bglight: #eef0f5;
+--bglighter: #e4e8ee;
 
---fgdark: #8888a0;
---fglight: #ccccee;
+--fgdark: #7c8899;
+--fglight: #43566f;
 
---accent: #9ab2dc;
---border: #262c42;
---disabled: #696969;
+--accent: #6796e1;
+--border: #b0b4bb;
+--disabled: #595959;
 --selected: var(--button);
---button: #ccccee1a;
---hover: #000000;
+--button: #43566f1a;
+--hover: #ffffff;
 }
 
 :root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */

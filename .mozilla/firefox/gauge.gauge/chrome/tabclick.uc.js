@@ -6,24 +6,6 @@
 // @license              https://creativecommons.org/share-your-work/public-domain/cc0/
 // @compatibility        Created 2019-07-04. Tested on Firefox 69.0b1
 // ==/UserScript==
-var myFunction = function(e) {
-	const lmb = e.button === 0;
-	if (lmb) {
-		document.getElementById('urlbar').focus();
-	}
-};
-
-function tabClick() {
-	var classname = document.getElementsByClassName("tabbrowser-tab");
-
-	for (var i = 0; i < classname.length; i++) {
-		classname[i].removeEventListener('dblclick', myFunction);
-	}
-	document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', myFunction);
-}
-
-gBrowser.tabContainer.addEventListener("TabSelect", tabClick);
-
 
 var should_open = false;
 var openUrlBar = function(e) {
@@ -37,6 +19,20 @@ var openUrlBar = function(e) {
         should_open = true;
     }
 };
+
+function tabClick() {
+	var classname = document.getElementsByClassName("tabbrowser-tab");
+
+	for (var i = 0; i < classname.length; i++) {
+		classname[i].removeEventListener('dblclick', openUrlBar);
+	}
+	document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', openUrlBar);
+}
+
+gBrowser.tabContainer.addEventListener("TabSelect", tabClick);
+
+
+
 // add openUrlBar function to the initial tab
-document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', myFunction);
+document.querySelector(".tabbrowser-tab[selected=\"true\"]").addEventListener('dblclick', openUrlBar);
 gBrowser.selectedBrowser.focus();

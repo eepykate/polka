@@ -39,7 +39,7 @@ if [[ $theme = Coral ]]; then
 
 elif [[ $theme = Silver ]]; then
 
-	accentn="4"
+	accentn="1"
 	bgdark="#f7f9ff"
 	bglight="#eef0f5"
 	bglighter="#e4e8ee"
@@ -48,10 +48,10 @@ elif [[ $theme = Silver ]]; then
 	fglight="#43566f"
 
 	disabled="#595959"
-	accent="#6796e1"
+	accent="#cd5e6f"
 	button="#43566f1a"
 	border="#b0b4bb"
-	red="#cd5e6f"
+	red="#e09b70"
 	hover="#ffffff"
 
 elif [[ $theme = Winter ]]; then
