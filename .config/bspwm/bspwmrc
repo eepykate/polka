@@ -32,6 +32,7 @@ bspc config presel_feedback_color "#eeeeee"
 #   Window Rules
 #       ----
 
+bspc rule -a feh state=floating
 bspc rule -a qView state=floating
 bspc rule -a tabbed state=floating
 bspc rule -a Thunar state=floating
