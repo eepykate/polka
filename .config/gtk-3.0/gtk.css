@@ -35,6 +35,10 @@ menuitem:hover {
   color: #43566f;
 }
 
+.thunar * button:disabled {
+	opacity: 0.6;
+}
+
 .thunar * button:active {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   animation: ripple_effect 225ms cubic-bezier(0, 0, 0.2, 1) forwards;

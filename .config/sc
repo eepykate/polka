@@ -38,6 +38,7 @@ f   mo         ~/.movie.txt
 f   cm         ~/.config/cmus/rc
 f   uc         ~/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 f   ucc        ~/.mozilla/firefox/gauge.gauge/chrome/userContent.css
+f   gcs        ~/.config/gtk-3.0/gtk.css
 f   b0         ~/bin/bar0
 f   b1         ~/bin/bar1
 f   b2         ~/bin/bar2
