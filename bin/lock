@@ -40,17 +40,17 @@ i3lock \
 	--indicator \
 	\
 	--clock \
-	--bshlcolor=ed254eff \
+	--bshlcolor=e09b70ff \
 	--timecolor=cccceeff \
 	--datecolor=cccceeff \
-	--ringcolor=2f3341ff \
+	--ringcolor=ffffffff \
 	--verifcolor=ccccccff \
 	--wrongcolor=ccccccff \
-	--keyhlcolor=447bbeff \
+	--keyhlcolor=99aaddff \
 	--insidecolor=15171d00 \
-	--ringvercolor=447bbeff \
+	--ringvercolor=99aaddff \
 	--insidevercolor=15171d00 \
-	--ringwrongcolor=be405dff \
+	--ringwrongcolor=dc8195ff \
 	--insidewrongcolor=15171d00 \
 	--image=$HOME/.cache/lock.png &
 
