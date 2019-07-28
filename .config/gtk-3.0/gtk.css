@@ -26,6 +26,9 @@ menuitem:hover {
 .thunar * button box label {
 	background-color: transparent;
 }
+.thunar * label {
+	color: #43566f;
+}
 
 .thunar * treeview,
 .thunar * scrollbar,
@@ -84,7 +87,7 @@ notebook-header {
 	background-color: transparent;
 }
 
-.thunar * toolbar {
+/*.thunar * toolbar {
 	margin-top: -40px;
 }
 /*
