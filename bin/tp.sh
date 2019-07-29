@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 monitor="$(xrandr -q | grep primary | awk '{print $1}')"
-height="30"
+height="40"
 cur="$(bspc config -m $monitor top_padding)"
 
 [[ -z $stat ]] && stat="$(cat /tmp/panelstatus)"
@@ -11,7 +11,7 @@ if [[ $stat = windowunmap ]]; then
 	if [[ $cur -ge 1 ]]; then
 		bspc config -m $monitor top_padding $(( $height + $cur ))
 	else
-		bspc config -m $monitor top_padding 24
+		bspc config -m $monitor top_padding $height
 	fi
 else
 	thing="windowunmap" &&

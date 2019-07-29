@@ -26,6 +26,10 @@ tim() {
 	echo "t%{A:nottime:}$time%{A}" > $fifo
 }
 
+nam() {
+	echo "n$(xdotool getwindowfocus getwindowname)" > $fifo
+}
+
 desktop() {
 	echo "d$(bspc query -D -d focused --names)" > $fifo
 }
@@ -66,6 +70,7 @@ bat() {
 case $1 in
 	-b) bat; exit;;
 	-t) tim; exit;;
+	-n) nam; exit;;
 	-v) volume; exit;;
 	-d) desktop; exit;;
 esac
@@ -78,9 +83,9 @@ sleep 0.1
 
 monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$(awk '{print $1}' <<< "$monitor" )"
-offX="$(awk '{print $3}' <<< "$monitor")"
-offY="$(awk '{print $4}' <<< "$monitor")"
+width="$(($(awk '{print $1}' <<< "$monitor" ) - 16))"
+offX="$(($(awk '{print $3}' <<< "$monitor") + 8))"
+offY="$(($(awk '{print $4}' <<< "$monitor") + 8))"
 
 (sleep 0.4;
 bat;
@@ -89,7 +94,7 @@ desktop;
 echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
-bspc config -m "$monitorName" top_padding 24
+bspc config -m "$monitorName" top_padding 40
 (sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while read -r line < "$fifo"; do
@@ -98,9 +103,10 @@ while read -r line < "$fifo"; do
 		b*) bat="${line#?}";;
 		a*) asda="${line#?}";;
 		t*) time="${line#?}";;
+		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
+	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{c}$name%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
 	sleep 0.01
 done | (lemonbar \
 	-a 25 \
@@ -111,6 +117,11 @@ done | (lemonbar \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
 	-g "${width}x24+$offX+$offY"; kill -- -0)| bash &
+
+#while true; do
+#	bar -n;
+#	sleep 0.1
+#done
 
 while true; do
 	bar -b;
