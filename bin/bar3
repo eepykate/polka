@@ -102,7 +102,7 @@ while read -r line < "$fifo"; do
 	esac
 	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
 	sleep 0.01
-done | lemonbar \
+done | (lemonbar \
 	-a 25 \
 	-o -1 \
 	-B "#ff$bg" \
@@ -110,15 +110,10 @@ done | lemonbar \
 	-f "t kiwi Wide:size=10" \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
-	-g "${width}x24+$offX+$offY" | bash &
+	-g "${width}x24+$offX+$offY"; kill -- -0)| bash &
 
 while true; do
 	bar -b;
 	bar -t;
 	sleep 1
 done > $fifo &
-
-echo "a" | lemonbar -f "#00000000" -b "#00000000" -g "1x1+1+1" -p
-
-kill -- -0
-
