@@ -43,7 +43,7 @@ i3lock \
 	--bshlcolor=e09b70ff \
 	--timecolor=cccceeff \
 	--datecolor=cccceeff \
-	--ringcolor=ffffffff \
+	--ringcolor=cccceeff \
 	--verifcolor=ccccccff \
 	--wrongcolor=ccccccff \
 	--keyhlcolor=99aaddff \
