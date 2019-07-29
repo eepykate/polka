@@ -220,7 +220,6 @@ div#RESStyleSheetTipPane-header {
 }
 .RESDropdownList li {
  background-color:transparent;
- color:#fff!important;
  border:none!important;
  transition:all 0.15s ease;
  text-transform:uppercase
@@ -444,7 +443,6 @@ ul#image-preview-list {
  padding-top:0px
 }
 ul#image-preview-list li {
- background:#fff;
  padding:8px 8px;
  margin:0 0 5px 5px;
  border-radius:10px;
@@ -485,9 +483,6 @@ body {
  font-weight:bold;
  margin-top:2px;
  color:rgb(255,255,255)!important
-}
-.drop-choices a.choice {
- color:#FFF
 }
 .drop-choices a.choice:hover {
  background:rgba(80,80,80,0.6)
@@ -677,7 +672,6 @@ body.res #header-bottom-right #mail.havemail {
  background-color:transparent;
  border:medium none;
  line-height:47px;
- color:#FFF;
  padding-left:5px;
  padding-right:8px;
  margin-left:-6px;
@@ -767,7 +761,6 @@ body:not(.search-page) .menuarea {
 }
 .combined-search-page #search input[type="text"] {
  max-width:none;
- color:#fff!important
 }
 .combined-search-page .search-icon {
  background-size:30px 30px;
@@ -952,7 +945,6 @@ body:not(.search-page) .menuarea {
 }
 .comments-page .content .infobar {
  border:0px none;
- background:#fff;
  max-width:300px;
  padding:10px 20px;
  text-transform:uppercase;
@@ -974,7 +966,6 @@ body:not(.search-page) .menuarea {
  text-transform:uppercase;
  font-weight:bold;
  font-size:9px;
- color:#fff;
  border:none;
  border-radius:3px
 }
@@ -1007,7 +998,6 @@ body:not(.search-page) .menuarea {
  text-align:center;
  cursor:pointer;
  color:#fff!important;
- border:0 solid #CCC!important;
  border-radius:2px;
  transition:.25s ease
 }
@@ -1152,7 +1142,7 @@ div.child {
  color:#4D5763
 }
 .wiki-page .wiki-page-content .wiki.md h2 {
- color:#444
+ color: var(--fglight)
 }
 .wiki-page .wiki-page-content .wiki.md p {
  font-size:14px;
@@ -1347,23 +1337,9 @@ div .thing .tagline .author.submitter {
  position: relative;
  color: var(--hover) !important;
 }
-div .thing .tagline .author.submitter::after {
- background: #00000022 !important;
- position: absolute;
- top: 0;
- border-radius:0 20px 20px 0;
- left: 32px;
- right: 0;
- bottom: 0;
- content: "";
- transition: all 300ms;
-}
 div .thing .tagline .author.submitter:hover {
  background:var(--accent)!important;
  text-decoration:none
-}
-div .thing .tagline .author.submitter:hover::after {
- background: #00000000 !important;
 }
 div .thing .tagline .author.moderator:before,
 div .thing .tagline .author.moderator,
@@ -1664,7 +1640,6 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub {
 }
 #sr-header-area a:hover {
  font-weight:bold;
- color:#fff!important
 }
 .sr-bar a {
  color:#fff
@@ -2251,12 +2226,12 @@ div.leavemoderator {
 .side .md h2 {
  position:relative;
  color:#fff;
- height:30px;
+ height:auto;
  line-height:30px;
  margin:0 0px;
  font-size:13px!important;
  font-weight:bold;
- background:#444;
+ background:var(--button);
  text-align:center;
  border-radius:5px 5px 0 0
 }
@@ -3718,7 +3693,7 @@ a:visited em {
 }
 
 .md blockquote {
-	background-color: rgba(0, 0, 0, 0.2) !important;
+	background-color: transparent !important;
 	border-left: 2px solid var(--fgdark) !important;
 	margin-top: 2px !important;
 }
@@ -3941,5 +3916,10 @@ body.profile-page * #header-bottom-left span.pagename {
 * {
 	box-shadow: none !important;
 	text-shadow: none !important;
+}
+
+html body * button {
+	background-color: var(--button) !important;
+	border: none !important;
 }
 

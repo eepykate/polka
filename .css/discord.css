@@ -9,6 +9,7 @@ code:not(.inline)::before {
 }
 
 
+pre,
 html,
 #app-mount,
 .container-16j22k,
@@ -100,6 +101,9 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 	background-color: var(--selected) !important;
 }
 
+.attachment-33OFj0,
+.embedInner-1-fpTo,
+.wrapper-35wsBm,
 .circleIconButton-jET_ig,
 .containerDefault-1ZnADq:hover * .content-3at_AU { /* Hover over a channel in the channel sidebar */
 	background-color: var(--bglighter) !important;
@@ -132,6 +136,11 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 
  /*base-gE7OpD stop-animation */
 
+.theme-dark .embedAuthorName-3mnTWj,
+.cooldownWrapper-3joyFc,
+.content-2M3n_H .anchor-3Z-8Bb,
+.textArea-2Spzkt::placeholder,
+.username-_4ZSMR:not([style]),
 s,
 .modeUnread-1zpFdA * .name-3_Dsmg,       /* Unread channels */
 .modeUnread-1zpFdA * .icon-1_QxNX path,  /* Unread channels icon */
@@ -325,3 +334,14 @@ a svg.homeIcon-tEMBK1 path {
 }
 
 .listItem-2P_4kh:nth-last-child(-n+4) {display: none;}
+
+.attachButtonPlus-rUdX-B {
+	fill: var(--fgdark) !important;
+}
+
+.attachment-33OFj0,
+.embedInner-1-fpTo,
+pre,
+.wrapper-35wsBm {
+	border: none !important;
+}

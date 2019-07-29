@@ -6,6 +6,7 @@
 	background-color: var(--bglight) !important;
 }
 
+.status__content__spoiler-link,
 .focusable:focus,
 .column-header__back-button,
 .column-header__back-button ~ .column-header__buttons .column-header__button,
@@ -38,6 +39,12 @@ dl dt,
 	border-color: var(--bglighter) !important;
 }
 
+.drawer__tab i,
+.notification__message,
+.fa,
+.notification__filter-bar * span,
+.column-header button,
+.column-header * .fa,
 .display-name__html,
 .status__content,
 .status__content > * {
@@ -55,8 +62,17 @@ dl dt,
 	opacity: 0.75;
 }
 
+.icon-button.active,
+.icon-button.active i,
+.status__content a,
+.status__content a span,
 .mention {
 	color: var(--accent) !important;
+}
+
+.compose-form__publish-button-wrapper button,
+.account__header__tabs__buttons button {
+	color: #fff !important;
 }
 
 * {
