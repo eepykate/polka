@@ -18,7 +18,7 @@ fehstuff() {
 
 	feh -g 320x200+$offX+$offY -. -B "#000000" "$dir/$name1.png" &
 	feh="$!"
-	( sleep 0.1; xdotool key 'w' ) &
+	#( sleep 0.1; xdotool key 'w' ) &
 	(sleep 2; kill -- $feh)
 }
 
