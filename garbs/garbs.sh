@@ -107,7 +107,7 @@ sudo -u $name yay -S --noconfirm --needed \
 	i3lock-color-git qview gtk3-mushrooms \
 	pulseaudio-ctl light-git bibata-cursor-theme \
 	lemonbar-xft-git kvantum-qt4-git \
-	transmission-remote-cli-git
+	transmission-remote-cli-git flashfocus-git
 
 echo -e "installing dotfiles"
 
