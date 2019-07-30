@@ -184,5 +184,12 @@ lines2() {
 	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -n ╱ || echo -n ╲; }
 }
 
-# vim: ft=sh
 
+it() {
+        cp ~/git/.themes/* ~/.themes/ -rn
+        ln -s ~/git/.config/* ~/.config/ -f
+        cp ~/git/.mozilla/firefox/gauge.gauge/chrome/* ~/.mozilla/firefox/gauge.gauge/chrome/ -f
+        ln -s ~/git/bin/* ~/bin/ -f
+}
+
+# vim: ft=sh
