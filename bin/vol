@@ -66,14 +66,12 @@ done
 
 . /tmp/player
 
-getmute() {
-	muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
-	if [[ $muted = on ]]; then
-		echo "mute"
-	elif [[ $muted = off ]]; then
-		echo "unmute"
-	fi
-}
+muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+if [[ $muted = on ]]; then
+	mute="mute"
+elif [[ $muted = off ]]; then
+	mute="unmute"
+fi
 
 [[ -n $2 ]] && p="$2" || p="5"
 
@@ -81,7 +79,7 @@ case $1 in
 	up)     amixer -D pulse sset Master $p%+ >/dev/null;   vol="nonzero";;
 	down)   amixer -D pulse sset Master $p%- >/dev/null;   vol="nonzero";;
 	set)    amixer -D pulse sset Master $2%  >/dev/null;   vol="nonzero";;
-	m)      amixer -D pulse sset Master $(getmute) >/dev/null;  vol="nonzero";;
+	m)      amixer -D pulse sset Master $mute >/dev/null;  vol="nonzero";;
 	mute)   amixer -D pulse sset Master mute >/dev/null;   vol="nonzero";;
 	unmute) amixer -D pulse sset Master unmute >/dev/null; vol="nonzero";;
 	pause)  media pause 2>/dev/null;      ctl="nonzero" ;;
@@ -153,7 +151,7 @@ case $1 in
 	up)     print "$output"; notify 69 "$up";;
 	down)   print "$output"; notify 69 "$down";;
 	set)    print "$output"; notify 69 "Volume set to $(printf "%s" "$output" | sed 's/♪ //')";;
-	m)      print "$output"; notify 69 "$(printf "Volume %s" "$(getmute)d" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
+	m)      print "$output"; notify 69 "$(printf "Volume %s" "$([[ $pc_mute = on ]] && echo "unmuted" || echo "muted")" | sed 's/♪ //'; [[ $mute == unmute ]] && printf "\n%s" "$output" | sed 's/♪ //')";;
 	mute)   print "$output"; notify 69 "$(printf "Volume muted\n")";;
 	unmute) print "$output"; notify 69 "$(printf "Volume unmuted\n%s" "$song")";;
 	pause)  print "$song"; notify 420 "$output_pp" "$SpA";;
