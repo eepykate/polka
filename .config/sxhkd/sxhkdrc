@@ -76,6 +76,12 @@ alt + x
 {_,super, shift} + Print
 	scr {_,-f,-s}
 
+ctrl + alt + {a,x,c}
+	scr {_,-s,-f}
+
+super + z
+	cli
+
 ctrl + alt + {Prior, Home, Insert, End}
 	blaze {-c -p k -B 8, -c -p k,_,-s}
 

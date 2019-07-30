@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
+xclip -selection clipboard -t image/png $HOME/Stuff/Screenshots/maim/$image
