@@ -27,7 +27,7 @@ menuitem:hover {
 }
 .thunar * button {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: #f7f9ff;
+  background-color: #232731;
   background-image: radial-gradient(circle farthest-corner at center, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
@@ -53,7 +53,7 @@ menuitem:hover {
 	background-color: transparent;
 }
 .thunar * label {
-	color: #43566f;
+	color: #ccccfa;
 }
 
 .thunar * treeview,
@@ -73,12 +73,12 @@ notebook header * tab,
 .thunar * toolbar,
 .thunar * scrolledwindow widget,
 .thunar * statusbar {
-	background-color: #f7f9ff;
-	color: #43566f;
+	background-color: #232731;
+	color: #ccccfa;
 }
 
 .thunar * scrollbar {
-	background-color: #f7f9ff;
+	background-color: #232731;
 }
 
 .thunar * treeview {
