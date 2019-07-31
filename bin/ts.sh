@@ -42,7 +42,7 @@ elif [[ $theme = Snow ]]; then
 	accentn="1"
 	bgdark="#f7f9ff"
 	bglight="#eef0f5"
-	bglighter="#e4e8ee"
+	bglighter="#e1e4ea"
 
 	fgdark="#7c8899"
 	fglight="#43566f"
@@ -189,6 +189,8 @@ $HOME/.startpage/style.css" | \
 	sed --follow-symlinks -i \
 		-e "s/bgcolor=.*/bgcolor=#$bgdark/" \
 		~/.config/qView/qView.conf
+
+	walgen "#$bglighter"
 
 	sleep 0.1
 	notify-send "Theme changed to $theme"
