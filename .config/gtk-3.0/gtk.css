@@ -13,26 +13,25 @@ menuitem:hover {
 }
 
 .thunar * scrollbar * slider {
-	background-color: rgba(0, 0, 0, 0.08);
+	background-color: rgba(204, 204, 250, 0.08);
 }
 
-.thunar * scrollbar * slider:hover,
-.thunar * button:hover {
-	background-color: rgba(0, 0, 0, 0.1);
+.thunar * scrollbar * slider:hover/*,
+.thunar * button:hover*/ {
+	background-color: rgba(204, 204, 250, 0.1);
 }
 
-.thunar * scrollbar * slider:active/*,
-.thunar * button:active*/ {
-	background-color: rgba(0, 0, 0, 0.15);
+.thunar * scrollbar * slider:active,
+.thunar * button:active {
+	background-color: rgba(204, 204, 250, 0.15);
 }
 .thunar * button {
-  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 1200ms cubic-bezier(0, 0, 0.2, 1);
   background-color: #232731;
   background-image: radial-gradient(circle farthest-corner at center, transparent 10%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 1000% 1000%;
-  color: #43566f;
+  color: #ccccfa;
 }
 
 .thunar * button:disabled {
@@ -40,11 +39,11 @@ menuitem:hover {
 }
 
 .thunar * button:active {
-  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
-  animation: ripple_effect 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.12) 10%, transparent 0%);
+  transition: all 250ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
+  animation: ripple_effect 300ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  background-image: radial-gradient(circle farthest-corner at center, alpha(currentColor, 0.13) 10%, transparent 0%);
   background-size: 0% 0%;
-  color: #43566f;
+  color: #ccccfa;
 }
 
 .thunar * button image,
@@ -82,31 +81,31 @@ notebook header * tab,
 }
 
 .thunar * treeview {
-	background-color: #cd5e6f;
+	background-color: #99aadd;
 	color: #fff;
 }
 
 .thunar * .view:selected {
-	background-color: rgba(205, 94, 111, 100);
+	background-color: rgba(153, 170, 221, 100);
 	color: #fff;
 }
 
 .thunar * .rubberband  {
-	border: 1px solid #cd5e6f;
-	background-color: rgba(205, 94, 111, 0.3);
+	border: 1px solid #99aadd;
+	background-color: rgba(153, 170, 221, 0.3);
 }
 
 .thunar * .view:selected {
 	background-color: transparent;
-	background-image: image(#f06c82);
+	background-image: image(#8091c4);
 }
 
 .thuanr * .view:hover {
-	background-image: image(#e6687d);
+	background-image: image(#99aadd);
 }
 
 .thunar * .path-bar-button:checked {
-	border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #cd5e6f 100%, transparent 0%) 0 0 2/0 0 2px;
+	border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #99aadd 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 notebook-header {
