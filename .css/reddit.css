@@ -3550,7 +3550,6 @@ ul.tabmenu > li > a,
 .expando .usertext-body,
 #sr-header-area,
 #RESShortcutsEditContainer,
-.side,
 .md pre,
 .link,
 .md pre code,
@@ -3567,6 +3566,10 @@ ul.tabmenu > li > a,
 	background-color: var(--bglighter) !important;
 }
 
+.side,
+.res-nightmode .side .usertext-body .md ol,
+body.res-nightmode .side .usertext-body .md ol li,
+.res-nightmode .side .md ul,
 #header,
 .sitetable div.thing.comment,
 .flairoptionpane,
@@ -3635,6 +3638,7 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
+html body .side h1.redditname a,
 body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 #srDropdownContainer a,
 #srLeftContainer > * > *,
@@ -3921,5 +3925,9 @@ body.profile-page * #header-bottom-left span.pagename {
 html body * button {
 	background-color: var(--button) !important;
 	border: none !important;
+}
+
+.side .redditname a {
+	font-size: 15px !important;
 }
 
