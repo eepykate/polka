@@ -3566,6 +3566,8 @@ ul.tabmenu > li > a,
 	background-color: var(--bglighter) !important;
 }
 
+.side .spacer .sidecontentbox .content,
+.side .spacer .sidecontentbox .content * .reddit-entry,
 .side,
 .res-nightmode .side .usertext-body .md ol,
 body.res-nightmode .side .usertext-body .md ol li,
