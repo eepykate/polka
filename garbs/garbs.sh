@@ -100,14 +100,15 @@ pacman -S --noconfirm --needed \
 	python xautolock playerctl gst-plugins-good \
 	rsync ffmpegthumbnailer ffmpegthumbs \
 	ark acpi imagemagick neovim cmus \
-	zsh-completions compton
+	zsh-completions compton mpd ncmpcpp
 
 
 sudo -u $name yay -S --noconfirm --needed \
 	i3lock-color-git qview gtk3-mushrooms \
 	pulseaudio-ctl light-git bibata-cursor-theme \
 	lemonbar-xft-git kvantum-qt4-git \
-	transmission-remote-cli-git flashfocus-git
+	transmission-remote-cli-git flashfocus-git \
+	mpdris2
 
 echo -e "installing dotfiles"
 

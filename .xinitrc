@@ -12,7 +12,8 @@ xsetroot -cursor_name left_ptr
 start-dropdown.sh &
 xautolock -time 10 -locker ~/bin/lock &
 command -v screen.sh &>/dev/null && screen.sh
-nohup python3 -m http.server --directory ~/.startpage 8200 &>/dev/null &
+mpd
+mpDris2 &
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
   [ -x "$f" ] && . "$f"

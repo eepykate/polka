@@ -1,5 +1,5 @@
 super + e
-	st -e cmus
+	st -e ncmpcpp
 
 super + g
 	tasks
