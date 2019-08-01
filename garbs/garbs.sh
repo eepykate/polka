@@ -387,3 +387,8 @@ sed -i \
 	-e 's/^#SystemMaxFiles=.*/SystemMaxFiles=5/' \
 	-e 's/^#SystemMaxFileSize=.*/SystemMaxFileSize=1G/' \
 	/etc/systemd/journald.conf
+
+
+
+echo "Telling linux to use no more than 10M ram for caching writes"
+echo 10000000 > /proc/sys/vm/dirty_bytes
