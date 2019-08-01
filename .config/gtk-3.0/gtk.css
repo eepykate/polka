@@ -34,7 +34,7 @@ notebook header * tab,
 .thunar * toolbar,
 .thunar * scrolledwindow widget,
 .thunar * statusbar {
-	background-color: #262a36;
+	background-color: #232836;
 	color: #ccccfa;
 }
 
@@ -51,7 +51,7 @@ notebook-header {
 
 /* Scrollbar */
 .thunar * scrollbar {
-	background-color: #262a36;
+	background-color: #232836;
 }
 
 .thunar * scrollbar * slider {
