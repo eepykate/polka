@@ -28,7 +28,7 @@ export LESS_TERMCAP_ue=$'\E[0m'          # reset underline
 shortcuts
 
 if [[ "$TERM" = "linux" ]]; then
-	( source ~/.config/tty-colours.sh & )
+	( source tty-colours.sh & )
 	( sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null & )
 	#clear #for background artifacting
 fi

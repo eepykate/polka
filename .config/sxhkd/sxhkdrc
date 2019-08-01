@@ -76,7 +76,7 @@ alt + x
 {_,super, shift} + Print
 	scr {_,-f,-s}
 
-ctrl + alt + {a,x,c}
+ctrl + alt + {d,x,c}
 	scr {_,-s,-f}
 
 super + z
@@ -165,7 +165,7 @@ super + alt + minus
 {XF86AudioNext, super + period}
 	vol next
 
-{XF86AudioPlay, super + p}
+{XF86AudioPlay, super + p, ctrl + alt + a}
 	vol p
 
 {XF86AudioRaiseVolume, super + u}
