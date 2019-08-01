@@ -69,7 +69,7 @@ elif [[ $theme = la ]]; then
 	button="#ccccfa1a"
 	border="$bglighter"
 	red="#dc8189"
-	hover="#ffffff"
+	hover="#000000"
 
 elif [[ $theme = Winter ]]; then
 
