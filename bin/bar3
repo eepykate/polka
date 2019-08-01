@@ -6,10 +6,10 @@
 
 #set -x
 
-fg="ccccee"
-bg="232731"
-bl="282d39"
-#ac="9ab2dc"
+fg="ccccfa"
+bg="232836"
+bl="282e3f"
+#ac="c68edf"
 fifo="/tmp/barfifo"
 
 #trap 'pkill -P $$' SIGINT

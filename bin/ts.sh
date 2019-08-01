@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Winter\nCoral\nxd\nSnow" # List of themes
+themes="Winter\nCoral\nxd\nSnow\nla" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -52,6 +52,23 @@ elif [[ $theme = Snow ]]; then
 	button="#43566f1a"
 	border="#b0b4bb"
 	red="#e09b70"
+	hover="#ffffff"
+
+elif [[ $theme = la ]]; then
+
+	accentn="5"
+	bgdark="#232836"
+	bglight="#282e3f"
+	bglighter="#2f364a"
+
+	fgdark="#8686a4"
+	fglight="#ccccfa"
+
+	disabled="#696969"
+	accent="#c68edf"
+	button="#ccccfa1a"
+	border="$bglighter"
+	red="#dc8189"
 	hover="#ffffff"
 
 elif [[ $theme = Winter ]]; then
