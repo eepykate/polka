@@ -129,7 +129,7 @@ if [[ -n "$theme" ]]; then
 	sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.gtkrc-2.0
 	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ~/.config/gtk-3.0/settings.ini
 
-	kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
+	#kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
 
 	# if ~/.config/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 	[[ -f ~/.config/Xres.$theme ]] &&

@@ -100,7 +100,8 @@ pacman -S --noconfirm --needed \
 	python xautolock playerctl gst-plugins-good \
 	rsync ffmpegthumbnailer ffmpegthumbs \
 	ark acpi imagemagick neovim cmus \
-	zsh-completions compton mpd ncmpcpp
+	zsh-completions compton mpd ncmpcpp \
+	gcolor3
 
 
 sudo -u $name yay -S --noconfirm --needed \
