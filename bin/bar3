@@ -113,7 +113,7 @@ done | (lemonbar \
 	-o -1 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
-	-f "t kiwi Wide:size=10" \
+	-f "kiwi:size=10" \
 	-f "t mango Wide:size=10" \
 	-f "Hack Nerd Font:size=10" \
 	-g "${width}x24+$offX+$offY"; kill -- -0)| bash &
