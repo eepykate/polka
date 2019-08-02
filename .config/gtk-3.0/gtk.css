@@ -79,13 +79,13 @@ notebook-header {
 
 /* Sidebar */
 .thunar * treeview {
-	background-color: #97aae3;
+	background-color: #2E3444;
 	color: #fff;
 }
 
 .thunar * .view:selected {
 	background-color: transparent;
-	background-image: image(#8899CC);
+	background-image: image(#3C4459);
 }
 
 
