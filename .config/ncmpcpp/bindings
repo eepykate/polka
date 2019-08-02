@@ -25,6 +25,9 @@ def_key "-"
 def_key "delete"
 	delete_playlist_items
 
+def_key "D"
+	delete_playlist_items
+
 def_key "s"
 	shuffle
 
