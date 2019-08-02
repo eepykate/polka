@@ -82,7 +82,7 @@ elif [[ $theme = Winter ]]; then
 	fglight="#ccccee"
 
 	disabled="#696969"
-	accent="#9ab2dc"
+	accent="#97aae3"
 	button="#ccccee1a"
 	border="#262c42"
 	red="#dc8189"

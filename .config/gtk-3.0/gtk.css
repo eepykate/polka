@@ -34,7 +34,7 @@ notebook header * tab,
 .thunar * toolbar,
 .thunar * scrolledwindow widget,
 .thunar * statusbar {
-	background-color: #232836;
+	background-color: #232731;
 	color: #ccccfa;
 }
 
@@ -45,13 +45,13 @@ notebook-header {
 
 /* Active directory underline */
 .thunar * .path-bar-button:checked {
-	border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #c795d3 100%, transparent 0%) 0 0 2/0 0 2px;
+	border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #7080B5 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 
 /* Scrollbar */
 .thunar * scrollbar {
-	background-color: #232836;
+	background-color: #232731;
 }
 
 .thunar * scrollbar * slider {
@@ -71,21 +71,21 @@ notebook-header {
 
 /* Drag selection thing */
 .thunar * .rubberband  {
-	border: 1px solid #c795d3;
-	background-color: rgba(198, 142, 223, 0.3);
+	border: 1px solid #7080B5;
+	background-color: rgba(153, 170, 221, 0.3);
 }
 
 
 
 /* Sidebar */
 .thunar * treeview {
-	background-color: #c795d3;
+	background-color: #7080B5;
 	color: #fff;
 }
 
 .thunar * .view:selected {
 	background-color: transparent;
-	background-image: image(#ba86d2);
+	background-image: image(#7f91cd);
 }
 
 
@@ -112,7 +112,6 @@ notebook-header {
   color: #ccccfa;
 }
 
-.thunar * button,
 .thunar * button image,
 .thunar * button box,
 .thunar * button box label {
