@@ -5,7 +5,7 @@ super + g
 	tasks
 
 super + w
-	st -c floating -e nmtui-connect
+	st -g 100x30 -c floating -e nmtui-connect
 
 super + y
 	st -e transmission-remote-cli
