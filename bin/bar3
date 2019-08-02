@@ -9,7 +9,7 @@
 fg="ccccee"
 bg="232731"
 bl="282d39"
-#ac="9ab2dc"
+#ac="97aae3"
 fifo="/tmp/barfifo"
 
 #trap 'pkill -P $$' SIGINT
