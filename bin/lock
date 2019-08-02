@@ -16,43 +16,60 @@ esac
 #	-filter_complex "boxblur=15" -vframes 1 \
 #	/tmp/lock_blur.png -loglevel quiet
 
-SR=$(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*')
+#xrandr=$(xrandr --query | grep ' connected')
+#SR=$(grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' <<< $xrandr )
 
-for RES in $SR; do
-	SRA=(${RES//[x+]/ })
-	CX=$((SRA[2] + 25))
-	CY=$((SRA[1] - 30))
-	rectangles+="rectangle $CX,$CY $((CX+280)),$((CY-100)) "
-done
+#for RES in $SR; do
+#	SRA=(${RES//[x+]/ })
+#	CX=$((SRA[2] + 25))
+#	CY=$((SRA[1] - 30))
+#	rectangles+="rectangle $CX,$CY $((CX+280)),$((CY-100)) "
+#done
 
-! [[ -e ~/.cache/lock.png ]] && convert "$wp" -draw "fill #00000044 $rectangles" "$HOME/.cache/lock.png"
+#! [[ -e ~/.cache/lock.png ]] && convert "$wp" -draw "fill #00000044 $rectangles" "$HOME/.cache/lock.png"
+cp $wp ~/.cache/lock.png
 
 i3lock \
-	\
+	--datestr="%A, %B %e" \
+	--timestr="%H:%M" \
 	--ring-width=4 \
 	--line-uses-inside \
-	--radius=20 \
-	--timepos='x+130:h-80' \
-	--datepos='x+130:h-55' \
-	--indpos='x+260:h-80' \
+	--radius=30 \
+	--indpos="x+(w/2):y+(h/2+60)" \
+	--datepos="x+(w/2):y+(h/2)" \
+	--timepos="x+(w/2):y+(h/2-50)" \
 	--veriftext='' \
+	--timesize=70 \
+	--datesize=30 \
 	--wrongtext='' \
-	--indicator \
-	\
 	--clock \
-	--bshlcolor=e09b70ff \
+	--indicator \
+	--bshlcolor=d86880ff \
 	--timecolor=cccceeff \
 	--datecolor=cccceeff \
-	--ringcolor=cccceeff \
-	--verifcolor=ccccccff \
-	--wrongcolor=ccccccff \
-	--keyhlcolor=99aaddff \
+	--ringcolor=8888a0ff \
+	--verifcolor=cccceeff \
+	--wrongcolor=d86880ff \
+	--keyhlcolor=cccceeff \
 	--insidecolor=15171d00 \
-	--ringvercolor=99aaddff \
+	--ringvercolor=cccceeff \
 	--insidevercolor=15171d00 \
 	--ringwrongcolor=dc8195ff \
 	--insidewrongcolor=15171d00 \
+	--time-font="Roboto Condensed" \
+	--date-font="Roboto Condensed" \
 	--image=$HOME/.cache/lock.png &
+
+#	--ring-width=4 \
+#	--line-uses-inside \
+#	--radius=20 \
+#	--timepos='x+130:h-80' \
+#	--datepos='x+130:h-55' \
+#	--indpos='x+260:h-80' \
+#	--veriftext='' \
+#	--wrongtext='' \
+#	--indicator \
+
 
 while pgrep -x i3lock; do
 	[[ 10000 -lt $(xssstate -i) ]] && xset dpms force off;
