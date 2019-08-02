@@ -6272,3 +6272,17 @@ read if you used those and something break with a version upgrade you're on your
 FIXME this is really an API */
 @define-color content_view_bg #232731;
 @define-color placeholder_text_color #999bb5;
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
+	background-color: #2E3444;
+	color: #fff;
+}
+
+window.background.thunar,
+.thunar grid.horizontal toolbar#location-toolbar.horizontal {
+	background-color: #232731;
+}
+
+* {
+	border: none;
+}
