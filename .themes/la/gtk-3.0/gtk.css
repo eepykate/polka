@@ -6272,3 +6272,42 @@ read if you used those and something break with a version upgrade you're on your
 FIXME this is really an API */
 @define-color content_view_bg #282e3f;
 @define-color placeholder_text_color #9b9dc2;
+
+
+
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
+	background-color: #2D3447;
+	color: #fff;
+}
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
+	background-color: transparent;
+	background-image: image(#3E4761);
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar,
+window.background.thunar,
+.thunar grid.horizontal toolbar#location-toolbar.horizontal {
+	background-color: #232836;
+}
+
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:selected {
+	background-color: #c68edf;
+	color: #000;
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
+	background-color: rgba(204, 204, 255, 0.1);
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:hover {
+	background-color: rgba(204, 204, 255, 0.15);
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
+	background: rgba(204, 204, 255, 0.20);
+}
+

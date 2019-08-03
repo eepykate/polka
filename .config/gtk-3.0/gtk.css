@@ -3,6 +3,6 @@ menuitem:hover {
 }
 
 
-*:not(.path-bar-button) {
+*:not(.path-bar-button):not(.rubberband) {
 	border: none;
 }

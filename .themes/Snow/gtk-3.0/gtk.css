@@ -6283,3 +6283,8 @@ window.background.thunar,
 .thunar grid.horizontal toolbar#location-toolbar.horizontal {
 	background-color: #f7f9ff;
 }
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:selected {
+	background-color: transparent;
+	background-image: image(#F26F83);
+}
