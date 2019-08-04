@@ -7,11 +7,11 @@
 #set -x
 
 fg="ccccfa"
+fd="8686a4"
 bg="232836"
 bl="282e3f"
-#ac="c68edf"
+ac="c68edf"
 fifo="/tmp/barfifo"
-
 #trap 'pkill -P $$' SIGINT
 
 tim() {
@@ -31,11 +31,23 @@ nam() {
 }
 
 desktop() {
-	echo "d$(bspc query -D -d focused --names)" > $fifo
+	#echo "d$(bspc query -D -d focused --names)" > $fifo
+	out=""
+	f="$(bspc query -D -d focused --names)"
+	for i in $(bspc query -D --names | sort -n); do
+		if [[ $i = $f ]]; then
+			out+="%{F#ff$fg}%{F-}"
+		else
+			out+="%{F#ff$fd}%{F-}"
+		fi
+	done
+	echo -e "d$out" > $fifo
 }
 
 volume() {
-	muted="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]" | awk '{print $6}' | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+	amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]")"
+	muted="$(awk '{print $6}' <<< $amix | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+	vol="$(sed -e '1!d' -e 's/\[//g' -e 's/\]//g'  <<< $amix | grep -oi '[0-9][0-9]*%')"
 
 	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
 	local a="%{A}%{A}%{A}%{A}"
@@ -43,14 +55,15 @@ volume() {
 		echo -e "v${b}${a}" > $fifo; return
 	fi
 
-	echo -e "v${b}${a}" > $fifo
+	echo -e "v${b} $vol${a}" > $fifo
 }
 
 bat() {
 	cat /sys/class/power_supply/*/capacity &>/dev/null || return
 	declare -i capacity status
 
-	capacity="$(($(cat /sys/class/power_supply/*/capacity 3>/dev/null) / 4))"
+	cap="$(cat /sys/class/power_supply/*/capacity 2>/dev/null)"
+	capacity="$(($cap / 4))"
 	status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
 	case "$capacity" in
@@ -63,7 +76,7 @@ bat() {
 
 	[[ $status = Charging ]] && bat=
 
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat}%{A}%{A}%{A}%{O8}" > $fifo
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat} $cap%%{A}%{A}%{A}%{O8}" > $fifo
 }
 
 
@@ -106,7 +119,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{B#ff$bl}%{O15}$time$asda%{O15}%{B-}%{c}$name%{r}%{B#ff$bl}%{O15}$desk%{O15}$bat$vol%{O15}%{B-}"
+	echo -e "%{O15}$time$asda%{O15}%{c}$desk%{r}%{O15}%{O15}$bat$vol%{O15}"
 	sleep 0.01
 done | (lemonbar \
 	-a 25 \
