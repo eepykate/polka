@@ -189,6 +189,7 @@ $HOME/.startpage/style.css" | \
 	sed --follow-symlinks -i \
 		-e "s/bg=\".*\"/bg=\"$bgdark\"/" \
 		-e "s/bl=\".*\"/bl=\"$bglight\"/" \
+		-e "s/blr=\".*\"/blr=\"$bglighter\"/" \
 		-e "s/fg=\".*\"/fg=\"$fglight\"/" \
 		-e "s/fd=\".*\"/fd=\"$fgdark\"/" \
 		-e "s/ac=\".*\"/ac=\"$accent\"/" \

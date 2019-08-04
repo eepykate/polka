@@ -10,6 +10,7 @@ fg="ccccfa"
 fd="8686a4"
 bg="232836"
 bl="282e3f"
+blr="2f364a"
 ac="c68edf"
 fifo="/tmp/barfifo"
 #trap 'pkill -P $$' SIGINT
@@ -17,10 +18,10 @@ fifo="/tmp/barfifo"
 tim() {
 	if [[ $(cat /tmp/barblink) = ":" ]]; then
 		echo " " > /tmp/barblink
-		time="$(date "+%I %M")";
+		time="$(date "+%A %I %M")";
 	else
 		echo ":" > /tmp/barblink
-		time="$(date "+%I:%M")";
+		time="$(date "+%A %I:%M")";
 	fi
 
 	echo "t%{A:nottime:}$time%{A}" > $fifo
@@ -104,7 +105,6 @@ offY="$(($(awk '{print $4}' <<< "$monitor") + 8))"
 bat;
 volume;
 desktop;
-echo "t%{A:nottime:}$(date "+%I:%M")%{A}" > $fifo
 ) &
 
 bspc config -m "$monitorName" top_padding 40
@@ -119,7 +119,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O15}$time$asda%{O15}%{c}$desk%{r}%{O15}%{O15}$bat$vol%{O15}"
+	echo -e "%{O15}$desk%{O15}%{B-}%{c}$time%{r}%{O15}%{O15}$bat$vol%{O15}"
 	sleep 0.01
 done | (lemonbar \
 	-a 25 \
