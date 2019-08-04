@@ -22,7 +22,9 @@ IFS='x' read screenWidth screenHeight < <(xdpyinfo | grep dimensions | grep -o '
 width=$(xdotool getactivewindow getwindowgeometry --shell | head -4 | tail -1 | sed 's/[^0-9]*//')
 height=$(xdotool getactivewindow getwindowgeometry --shell | head -5 | tail -1 | sed 's/[^0-9]*//')
 
-cur=( $(xdotool getmouselocation | grep -o '[0-9][0-9]*' ) )
+#cur=( $(xdotool getmouselocation | grep -o '[0-9][0-9]*' ) )
+
+cur=( $(xdotool getwindowfocus getwindowgeometry | grep -io '[0-9][0-9]*,[0-9][0-9]*' | sed 's/,/ /g') )
 
 #xrandr=( $(xrandr --query | grep ' connected' | grep -o '[0-9][0-9]*x[0-9][0-9]*+[0-9][0-9]*' | sed 's/[x+]/ /g') )
 #xrandr=""
