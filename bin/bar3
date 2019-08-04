@@ -52,7 +52,7 @@ volume() {
 	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
 	local a="%{A}%{A}%{A}%{A}"
 	if [[ $muted = off ]]; then
-		echo -e "v${b}${a}" > $fifo; return
+		echo -e "v${b} Muted${a}" > $fifo; return
 	fi
 
 	echo -e "v${b} $vol${a}" > $fifo
@@ -76,7 +76,7 @@ bat() {
 
 	[[ $status = Charging ]] && bat=
 
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat} $cap%%{A}%{A}%{A}%{O8}" > $fifo
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:battery:}${bat} $cap%%{A}%{A}%{A}%{O15}" > $fifo
 }
 
 
