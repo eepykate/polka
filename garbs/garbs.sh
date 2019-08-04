@@ -87,7 +87,7 @@ pacman -S --noconfirm --needed \
 	xorg-xinit xorg-xkill xorg-xset \
 	xorg-xprop xorg-xrandr xorg-xgamma \
 	curl wget code papirus-icon-theme \
-	rofi dolphin ksysguard zsh \
+	rofi zsh \
 	arandr dosfstools exfat-utils \
 	feh ffmpeg firefox firefox-developer-edition \
 	gnome-keyring gnome-themes-extra ntfs-3g \
@@ -101,7 +101,7 @@ pacman -S --noconfirm --needed \
 	rsync ffmpegthumbnailer ffmpegthumbs \
 	ark acpi imagemagick neovim cmus \
 	zsh-completions compton mpd ncmpcpp \
-	gcolor3
+	gcolor3 gnome-system-monitor
 
 
 sudo -u $name yay -S --noconfirm --needed \
