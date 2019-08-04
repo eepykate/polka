@@ -23,6 +23,7 @@ fi
 if [[ $theme = Coral ]]; then
 
 	accentn="5"
+	false="2"
 	bgdark="#111c23"
 	bglight="#17242c"
 	bglighter="#1c2d37"
@@ -40,6 +41,7 @@ if [[ $theme = Coral ]]; then
 elif [[ $theme = Snow ]]; then
 
 	accentn="1"
+	false="2"
 	bgdark="#f7f9ff"
 	bglight="#eef0f5"
 	bglighter="#e1e4ea"
@@ -56,6 +58,7 @@ elif [[ $theme = Snow ]]; then
 
 elif [[ $theme = la ]]; then
 
+	false="1"
 	accentn="5"
 	bgdark="#232836"
 	bglight="#282e3f"
@@ -73,6 +76,7 @@ elif [[ $theme = la ]]; then
 
 elif [[ $theme = Winter ]]; then
 
+	false="1"
 	accentn="4"
 	bgdark="#232731"
 	bglight="#282d39"
@@ -91,6 +95,7 @@ elif [[ $theme = Winter ]]; then
 elif [[ $theme = xd ]]; then
 
 	accentn="4"
+	false="1"
 	bgdark="#1a1f2e"
 	bglight="#202537"
 	bglighter="#272e44"
@@ -140,7 +145,10 @@ if [[ -n "$theme" ]]; then
 
 	# Replace the accent colour in my zsh prompt
 	[[ -n $accentn ]] &&
-		sed --follow-symlinks -i "s/color=\".*\"/color=\"$accentn\"/" ~/.zshrc
+		sed --follow-symlinks -i \
+			-e "s/color=\".*\"/color=\"$accentn\"/" \
+			-e "s/false=\".*\"/false=\"$false\"/" \
+			~/.zshrc
 
 	# Change the colour variables in firefox and my startpage
 	# $HOME/.startpage/style.css

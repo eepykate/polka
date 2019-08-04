@@ -11,7 +11,7 @@ menuitem:hover {
 	border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #8891A8 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-.thunar grid {
+.thunar > grid {
 	margin-top: -40px;
 }
 

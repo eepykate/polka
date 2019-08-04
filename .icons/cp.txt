@@ -1,3 +1,3 @@
 sudo cp $HOME/git/.icons/*.svg /usr/share/icons/Papirus/22x22/emblems/
-sudo cp $HOME/git/.icons/la/* /usr/share/icons/Papirus-Dark/32x32/places/
+sudo cp $HOME/git/.icons/Coral/* /usr/share/icons/Papirus-Dark/32x32/places/
 
