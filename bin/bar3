@@ -35,7 +35,7 @@ desktop() {
 	#echo "d$(bspc query -D -d focused --names)" > $fifo
 	out=""
 	f="$(bspc query -D -d focused --names)"
-	for i in $(bspc query -D --names | sort -n); do
+	for i in $(bspc query -D --names | sort -n | head -5); do
 		if [[ $i = $f ]]; then
 			out+="%{F#ff$fg}%{F-}"
 		else
