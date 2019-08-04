@@ -218,6 +218,10 @@ $HOME/.startpage/style.css" | \
 
 	walgen "#$bglighter"
 
+	[[ -d ~/git/.icons/$theme/ ]] &&
+		[[ -d ~/.icons/Papirus-Dark ]] &&
+		cp -f ~/git/.icons/$theme/* ~/.icons/Papirus-Dark/32x32/places/
+
 	sleep 0.1
 	notify-send "Theme changed to $theme"
 
