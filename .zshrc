@@ -58,7 +58,7 @@ autoload -U compinit && compinit -u -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 #       ---
 setopt prompt_subst
 lis() { dirs | grep -o "\(^/\)\?\(^~/\)\?[^/]*$" || dirs }
-PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})$(lis)%{\e[0m%} '
+PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.>)%{\e[0m%} '
 export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 
 #        ---
