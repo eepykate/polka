@@ -57,10 +57,8 @@ autoload -U compinit && compinit -u -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 #   Shell Theme
 #       ---
 setopt prompt_subst
-color="5"
-false="2"
 lis() { dirs | grep -o "\(^/\)\?\(^~/\)\?[^/]*$" || dirs }
-PROMPT=$'%(?.%{\e[3${color}m%}.%{\e[3${false}m%})$(lis)%{\e[0m%} '
+PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})$(lis)%{\e[0m%} '
 export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
 
 #        ---
@@ -71,5 +69,9 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 unsetopt menu_complete     # Do not autoselect the first completion entry
 source ~/.config/aliases   # Aliases
+ac="#c68edf"
+fa="#d86880"
+echo -ne "\033]4;16;$ac\007"
+echo -ne "\033]4;17;$fa\007"
 
 # vim: ft=sh

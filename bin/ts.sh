@@ -23,7 +23,7 @@ fi
 if [[ $theme = Coral ]]; then
 
 	accentn="5"
-	false="2"
+	false="#8ac4ba"
 	bgdark="#111c23"
 	bglight="#17242c"
 	bglighter="#1c2d37"
@@ -41,7 +41,7 @@ if [[ $theme = Coral ]]; then
 elif [[ $theme = Snow ]]; then
 
 	accentn="1"
-	false="2"
+	false="#7bb854"
 	bgdark="#f7f9ff"
 	bglight="#eef0f5"
 	bglighter="#e1e4ea"
@@ -58,8 +58,8 @@ elif [[ $theme = Snow ]]; then
 
 elif [[ $theme = la ]]; then
 
-	false="1"
 	accentn="5"
+	false="#d86880"
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
@@ -76,8 +76,8 @@ elif [[ $theme = la ]]; then
 
 elif [[ $theme = Winter ]]; then
 
-	false="1"
 	accentn="4"
+	false="#dc8195"
 	bgdark="#232731"
 	bglight="#282d39"
 	bglighter="#303644"
@@ -95,7 +95,7 @@ elif [[ $theme = Winter ]]; then
 elif [[ $theme = xd ]]; then
 
 	accentn="4"
-	false="1"
+	false="#f75e6f"
 	bgdark="#1a1f2e"
 	bglight="#202537"
 	bglighter="#272e44"
@@ -116,6 +116,7 @@ fi
 
 # Remove the `#` from the variables so it doesn't completely fuck up the colours in the css files in case of missing colour
 bgdark="${bgdark#?}"
+false="${false#?}"
 bglight="${bglight#?}"
 bglighter="${bglighter#?}"
 fgdark="${fgdark#?}"
@@ -139,6 +140,15 @@ if [[ -n "$theme" ]]; then
 	# if ~/.config/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 	[[ -f ~/.config/Xres.$theme ]] &&
 		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources
+
+	sed --follow-symlinks -i \
+		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
+		-e "s/fa=\".*\"/fa=\"#$false\"/" \
+		~/.zshrc
+	sed --follow-symlinks -i \
+		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
+		-e "s/fa=\".*\"/fa=\"#$false\"/" \
+		~/bin/rc
 
 	# Reload terminal colours using Xresources
 	rc

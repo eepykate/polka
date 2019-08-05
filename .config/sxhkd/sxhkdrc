@@ -1,5 +1,5 @@
 super + e
-	st -e ncmpcpp
+	st -e zsh -c 'source ~/.zshrc; ncmpcpp'
 
 super + g
 	tasks

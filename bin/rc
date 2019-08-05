@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 xrdb ~/.Xresources
+xrdb="$(xrdb -query)"
 
-colours="$(xrdb -query | \
-	grep "\*.*color" | \
-	sed -e 's/\*//' -e 's/color//' -e 's/\://' -e 's/#//' | \
+c="[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]*"
+
+colours="$(grep "\*.*color" <<< $xrdb | \
+	sed 's/.*color//' | \
 	sort -n | \
-	awk '{print $2}' | \
+	grep -o "$c" | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//'\
 	-e 's/^/rgb\:/')"
 
@@ -14,17 +16,22 @@ echo "$colours" | sed -e "s/^/echo -en '\\\\033\]4;   /" -e "s/$/\\\\033\\\\\\\\
 	awk '{print $1 " " $2 " " $3 NR-1 ";" $4}' > /tmp/colours.sh 
 chmod a+x /tmp/colours.sh
 
-xrdb -query | grep "\*.*background" | \
+grep "\*.*background" <<< $xrdb  | \
 	sed -e 's/#//' | \
-	awk '{print $2}' | \
+	grep -o "$c" | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;256;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
 
-xrdb -query | grep "\*.*foreground" | \
+grep "\*.*foreground" <<< $xrdb  | \
 	sed -e 's/#//' | \
-	awk '{print $2}' | \
+	grep -o "$c" | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;257;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
+
+ac="#c68edf"
+fa="#d86880"
+echo "echo -ne \"\033]4;16;$ac\007\"" >> /tmp/colours.sh
+echo "echo -ne \"\033]4;17;$fa\007\"" >> /tmp/colours.sh
 
 
 for tty in /dev/pts/[0-9]*; do
