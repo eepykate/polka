@@ -49,9 +49,6 @@ ctrl + alt + w
 super + l
 	lock
 
-super + t
-	tp.sh
-
 shift + super + F1
 	tp.sh
 
@@ -85,7 +82,7 @@ super + z
 ctrl + alt + {Prior, Home, Insert, End}
 	blaze {-c -p k -B 8, -c -p k,_,-s}
 
-super + x
+super + t
 	notify-send \
 	"$(date "+%a %d %b - %I:%M %p")" \
 	"Desktop: $(bspc query -D -d focused --names)\n\
