@@ -120,12 +120,6 @@ super + {d,a}
 super + {_,ctrl,alt,shift} + {Left,Down,Up,Right}
 	{focus,move,resize,bspc node -p} {west,south,north,east}
 
-ctrl + alt + {Left,Right}
-	desktop.sh switch {previous,next}
-
-shift + alt + {Left,Right}
-	desktop.sh move {previous,next}
-
 shift + alt + {Right,Left}
 	DIR={next,prev}; \
 	bspc node -d "$DIR"; \
