@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-sleep 0.125;
-scrot -s -e 'mv $f ~/Stuff/Screenshots/scrot/' &&
-sleep 2 && 
-notify-send "Screenshot of selection taken at ~/Stuff/Screenshots/scrot/$(ls ~/Stuff/Screenshots/scrot/ -t | head -n1)"

@@ -44,7 +44,7 @@ super + i
 	rofi-emoji
 
 ctrl + alt + w
-	wifi
+	nmcli networking off && nmcli networking on
 
 super + l
 	lock
@@ -80,10 +80,17 @@ ctrl + alt + {d,x,c}
 	scr {_,-s,-f}
 
 super + z
-	cli
+	xclip -selection clipboard -t image/png $HOME/Stuff/Screenshots/maim/$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)
 
 ctrl + alt + {Prior, Home, Insert, End}
 	blaze {-c -p k -B 8, -c -p k,_,-s}
+
+super + x
+	notify-send \
+	"$(date "+%a %d %b - %I:%M %p")" \
+	"Desktop: $(bspc query -D -d focused --names)\n\
+	Volume: $(amixer -D pulse get Master | grep -o '[0-9][0-9]*%' | head -1)\n\
+	$(acpi)"
 
 #    ---
 #   bspwm

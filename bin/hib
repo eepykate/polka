@@ -1,6 +1,0 @@
-#!/usr/bin/env bash 
-
-lock &
-sleep 1.5;
-systemctl hibernate;
-exit

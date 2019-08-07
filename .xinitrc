@@ -9,7 +9,7 @@ fi
 dunst &
 ~/.fehbg
 xsetroot -cursor_name left_ptr
-start-dropdown.sh &
+tabbed -r 2 -n "drop-down-st" st -w '' &
 xautolock -time 10 -locker ~/bin/lock &
 command -v screen.sh &>/dev/null && screen.sh
 mpd
