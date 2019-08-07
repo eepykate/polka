@@ -6285,6 +6285,5 @@ window.background.thunar,
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:selected {
-	background-color: transparent;
-	background-image: image(#F26F83);
+	background-image: image(rgba(255, 255, 250, 0.1));
 }
