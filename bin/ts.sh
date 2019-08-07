@@ -46,7 +46,7 @@ elif [[ $theme = Snow ]]; then
 	bglight="#eef0f5"
 	bglighter="#e1e4ea"
 
-	fgdark="#7c8899"
+	fgdark="#909cad"
 	fglight="#43566f"
 
 	disabled="#595959"
@@ -226,7 +226,7 @@ $HOME/.startpage/style.css" | \
 		-e "s/bgcolor=.*/bgcolor=#$bgdark/" \
 		~/.config/qView/qView.conf
 
-	walgen "#$bglighter"
+	#walgen "#$bglighter"
 
 	[[ -d ~/git/.icons/$theme/ ]] &&
 		[[ -d ~/.icons/Papirus-Dark ]] &&

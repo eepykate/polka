@@ -69,8 +69,8 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 unsetopt menu_complete     # Do not autoselect the first completion entry
 source ~/.config/aliases   # Aliases
-ac="#c68edf"
-fa="#d86880"
+ac="#cd5e6f"
+fa="#7bb854"
 echo -ne "\033]4;16;$ac\007"
 echo -ne "\033]4;17;$fa\007"
 
