@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Winter\nCoral\nxd\nSnow\nla" # List of themes
+themes="Winter\nCoral\nSnow\nla" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -231,6 +231,22 @@ $HOME/.startpage/style.css" | \
 	[[ -d ~/git/.icons/$theme/ ]] &&
 		[[ -d ~/.icons/Papirus-Dark ]] &&
 		cp -f ~/git/.icons/$theme/* ~/.icons/Papirus-Dark/32x32/places/
+
+
+	# Reload gtk theme - probably a major hack
+	temp="$(mktemp)"
+	temp2="$(mktemp)"
+	echo "Net/IconThemeName \"Blank\"" > $temp2
+	xsettingsd -c $temp2 &
+	xse2=$!
+	sleep 0.05; kill $xse2
+
+	echo "Net/ThemeName \"$theme\"" > $temp
+	echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
+	xsettingsd -c $temp &
+	xse=$!
+	sleep 0.2; kill $xse
+	rm $temp $temp2
 
 	sleep 0.1
 	notify-send "Theme changed to $theme"

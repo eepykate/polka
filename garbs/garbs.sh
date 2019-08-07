@@ -101,7 +101,8 @@ pacman -S --noconfirm --needed \
 	rsync ffmpegthumbnailer ffmpegthumbs \
 	ark acpi imagemagick neovim cmus \
 	zsh-completions compton mpd ncmpcpp \
-	gcolor3 gnome-system-monitor
+	gcolor3 gnome-system-monitor \
+	xsettingsd lxappearance
 
 
 sudo -u $name yay -S --noconfirm --needed \
