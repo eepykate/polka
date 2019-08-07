@@ -1,23 +1,23 @@
 :root {
---bgdark: #232836;
---bglight: #282e3f;
---bglighter: #2f364a;
+--bgdark: #f7f9ff;
+--bglight: #eef0f5;
+--bglighter: #e1e4ea;
 --bglightest:  #41485c;
 
---fgdark: #8686a4;
---fglight: #ccccfa;
+--fgdark: #909cad;
+--fglight: #43566f;
 
---accent: #c68edf;
+--accent: #cd5e6f;
 --blue:        #02a4fc;
 --green:       #12e689;
 --yellow:      #f0d35c;
 --red:         #f0185a;
---border: #2f364a;
+--border: #b0b4bb;
 --border1:     #223344;
 --border2:     #334455;
---disabled: #696969;
---hover: #000000;
---button: #ccccfa1a;
+--disabled: #595959;
+--hover: #ffffff;
+--button: #43566f1a;
 }
 	
 :root{
@@ -64,9 +64,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-box-background-hover: var(--bglighter) !important;
 	--in-content-box-background-active: var(--bglight) !important;
 	--in-content-box-border-color: var(--bglighter) !important;
-	--in-content-primary-button-background: var(--bglightest) !important;
-	--in-content-primary-button-background-hover: var(--blue) !important;
-	--in-content-primary-button-background-active: var(--blue) !important;
+	--in-content-primary-button-background: var(--bglighter) !important;
+	--in-content-primary-button-background-hover: var(--accent) !important;
+	--in-content-primary-button-background-active: var(--accent) !important;
 
 	/* Variable to change most pages context menu highlights */
 	--in-content-context-highlight: var(--blue);
@@ -86,8 +86,8 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 		--in-content-link-color-visited: var(--blue) !important;
 	
 	/* These change the selected categories color on sidebars on about: pages*/
-	--in-content-category-text-selected: var(--blue) !important;
-	--in-content-category-text-selected-active: var(--blue) !important;
+	--in-content-category-text-selected: var(--accent) !important;
+	--in-content-category-text-selected-active: var(--accent) !important;
 
 	/* These change some colors on about:home */
 	--home-text: var(--fglight);
@@ -98,9 +98,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--in-content-border-focus: var(--blue) !important;
 
 	/* Buttons background colors */
-	--button-background: var(--bglightest);
+	--button-background: var(--bglighter);
 	--button-background-hover: var(--blue);
-	--button-border: var(--bglightest)}
+	--button-border: var(--bglighter)}
 
 /*------ FILE BROWSING PAGE ------*/
 /* This was placed here for bug fixing of styles overriding when testing things, for the 
@@ -663,7 +663,7 @@ url-prefix(about:studies), url(about:webrtc) {
 @-moz-document url-prefix(about:cache){
 #submit {
 	-moz-appearance: none !important;
-	background: var(--bglightest) !important;
+	background: var(--bglighter) !important;
 		color: var(--fglight) !important;
 		padding: 0.5em;
 	border: 1px solid var(--blue) !important}
@@ -765,7 +765,7 @@ span.target-status {background-color: var(--bgdark) !important}
 	--in-content-box-background-active: var(--bglighter) !important}
 
 #configTreeBody::-moz-tree-row(odd) {
-	background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)) !important}
+	background-image: var(--bglighter) !important}
 
 /* Warning pre-title before the actual config page (D'uh) */
 #warningTitle {color: var(--fglight) !important}}
@@ -841,7 +841,7 @@ td {background: var(--bglighter) !important}
 
 .category[selected=true], .category[current="true"] {
 	background-color: var(--bglight) !important;
-	border-left: 4px solid var(--fglight) !important;
+	border-left: 4px solid var(--accent) !important;
 }
 
 .groupbox-title, 
@@ -876,7 +876,7 @@ image.searchBarImage {filter: invert(92%) hue-rotate(180deg)}
 	-moz-appearance: none !important;
 	border-radius: 3px !important;
 	background: var(--button-background) !important;
-	color: #ddd !important;
+	color: var(--fglight) !important;
 	border: 1px solid var(--button-border) !important}
 
 .accessory-button:hover, button:hover {
@@ -933,7 +933,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .addon .description {color: var(--fgdark) !important}
 
 .addon:hover {
-	background-color: var(--bglightest) !important;
+	background-color: var(--bglighter) !important;
 	box-shadow: none !important}
 
 .addon {

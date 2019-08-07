@@ -7,17 +7,9 @@
 // @compatibility        Created 2019-07-04. Tested on Firefox 69.0b1
 // ==/UserScript==
 
-var should_open = false;
 var openUrlBar = function(e) {
-    if (should_open) {
-        if (!e.button) {
-            var urlbar = document.getElementById('urlbar');
-            urlbar.focus();
-            urlbar.select();
-        }
-    } else {
-        should_open = true;
-    }
+	var urlbar = document.getElementById('urlbar');
+	urlbar.focus();
 };
 
 function tabClick() {

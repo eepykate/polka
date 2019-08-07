@@ -4,59 +4,57 @@
  *     gitlab.com/GaugeK/dots
  */
 
-
-/*  #232731  */
-/* Colours */
 :root {
---bgdark: #232836;
---bglight: #282e3f;
---bglighter: #2f364a;
+--bgdark: #f7f9ff;
+--bglight: #eef0f5;
+--bglighter: #e1e4ea;
 
---fgdark: #8686a4;
---fglight: #ccccfa;
+--fgdark: #909cad;
+--fglight: #43566f;
 
---accent: #c68edf;
---border: #2f364a;
---disabled: #696969;
+--accent: #cd5e6f;
+--border: #b0b4bb;
+--disabled: #595959;
 --selected: var(--button);
---button: #ccccfa1a;
---hover: #000000;
+--button: #43566f1a;
+--hover: #ffffff;
+--toolbar-bgimage: none !important;
 }
 
-:root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
-	--color-overflow: #222;                                           /* >> button color */
-	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
-	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
-	--lwt-text-color: var(--fglight) !important;
-	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
-	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
-}
-
+/*:root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
+/*	--color-overflow: #222;                                           /* >> button color */
+/*	--chrome-color: var(--fglight) !important;                        /* url & tab text, close tab & new tab buttons */
+/*	background-color: var(--bgdark) !important;                       /* top border of out of focus window */
+/*	--lwt-text-color: var(--fglight) !important;
+/*	--chrome-background-color: var(--bgdark) !important;              /* tab strip background & inactive tabs */
+/*	--chrome-secondary-background-color: var(--bglight) !important;   /* nav bar & active tab */
+/*}
+*/
 :root {
-	--lwt-toolbar-field-background-color: var(--bgdark) !important;
+/*	--lwt-toolbar-field-background-color: var(--bgdark) !important;
 	--theme-toolbar-background: var(--bglight) !important;
 	--toolbar-color: var(--fglight) !important;
 	--autocomplete-popup-color: var(--fglight) !important;
 	/*--lwt-additional-images: url(https://i.imgur.com/BQnSooK.png) !important;*/
 	--tab-min-height: 26px  !important;
-	--arrowpanel-dimmed: var(--button) !important;
-	text-shadow: none !important;                                      /* Remove shadow from text */
-	--color-overflow: var(--fglight);                                  /* button color */
-	--button-radius: 0.2em !important;                                 /* Border-radius of buttons */
-	--tabs-border: transparent !important;                             /* Hide tab border */
-	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
-	background-color: var(--bglight) !important;                       /* top border of out of focus window */
-	--lwt-text-color: var(--fglight) !important;                       /* Text colour */
-	--toolbarbutton-icon-fill-opacity: 100% !important;
-	--lwt-sidebar-text-color: var(--fglight) !important;               /* Sidebar text colour */
-	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
-	--lwt-toolbar-field-color: var(--fglight) !important;
-	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
-	--lwt-toolbarbutton-icon-fill: var(--fgdark) !important;           /* Button fill color */
-	--toolbarbutton-border-radius: var(--button-radius) !important;    /* border-radius of buttons */
-	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
-	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
-	--autocomplete-popup-highlight-background: var(--selected) !important;
+/*	--arrowpanel-dimmed: var(--button) !important;
+/*	text-shadow: none !important;                                      /* Remove shadow from text */
+/*	--color-overflow: var(--fglight);                                  /* button color */
+/*	--button-radius: 0.2em !important;                                 /* Border-radius of buttons */
+/*	--tabs-border: transparent !important;                             /* Hide tab border */
+/*	--chrome-color: var(--fglight) !important;                         /* url & tab text, close tab & new tab buttons */
+/*	background-color: var(--bglight) !important;                       /* top border of out of focus window */
+/*	--lwt-text-color: var(--fglight) !important;                       /* Text colour */
+/*	--toolbarbutton-icon-fill-opacity: 100% !important;
+/*	--lwt-sidebar-text-color: var(--fglight) !important;               /* Sidebar text colour */
+/*	--chrome-background-color: var(--bgdark) !important;               /* tab strip background & inactive tabs */
+/*	--lwt-toolbar-field-color: var(--fglight) !important;
+/*	--toolbox-border-bottom-color: transparent !important;             /* 1px line under background tabs */
+/*	--lwt-toolbarbutton-icon-fill: var(--fgdark) !important;           /* Button fill color */
+/*	--toolbarbutton-border-radius: var(--button-radius) !important;    /* border-radius of buttons */
+/*	--chrome-secondary-background-color: var(--bglight) !important;    /* nav bar & active tab */
+/*	--chrome-nav-bar-controls-border-color: transparent !important;    /* border around url bar */
+/*	--autocomplete-popup-highlight-background: var(--selected) !important;*/
 }
 
 /*#identity-popup-clear-sitedata-footer {background-color: #000 !important;}*/
@@ -244,15 +242,15 @@ browser[type=content] > html {
 
 
 /* Round tabs & change colour*/
-.tabbrowser-tab, .tab-content, .tab-background {
+.tabbrowser-tab, .tab-content, .tab-background:not([selected]) {
 	background-color: transparent !important;
 }
 
-.tabbrowser-tab .tab-background[selected="true"] {
+/*.tabbrowser-tab .tab-background[selected="true"] {
 	background: var(--bglight) !important;
-}
+}*/
 
-.tabbrowser-tab .tab-text.tab-label {
+/*.tabbrowser-tab .tab-text.tab-label {
 	color: var(--fgdark) !important;
 }
 
@@ -260,7 +258,7 @@ browser[type=content] > html {
 	color: var(--fglight) !important;
 }*/
 
-.tabbrowser-tab[selected="true"] .tab-text.tab-label {
+/*.tabbrowser-tab[selected="true"] .tab-text.tab-label {
 	color: var(--fglight) !important;
 }
 
@@ -293,7 +291,7 @@ browser[type=content] > html {
 
 
 /* Change toobbarbutton hover and presscolour */
-.toolbarbutton-icon, .toolbarbutton-badge-stack {
+/*.toolbarbutton-icon, .toolbarbutton-badge-stack {
 	--toolbarbutton-hover-background: var(--button) !important;
 	--toolbarbutton-active-background: var(--button) !important;
 }
@@ -308,7 +306,7 @@ browser[type=content] > html {
 
 
 /* Change the colour of search popup */
-.search-panel-one-offs, .search-panel-one-offs > *, .search-one-offs,
+/*.search-panel-one-offs, .search-panel-one-offs > *, .search-one-offs,
 .search-panel-searchforwith, .search-panel-current-input, .searchbar-oneoffheader-search {
 	background-color: var(--bglight) !important;
 }
@@ -354,12 +352,12 @@ browser[type=content] > html {
 #PopupAutoCompleteRichResult[autocompleteinput="urlbar"], .ac-url > .ac-text-overflow-container > .ac-url-text[selected=true]{
 	color: var(--fglight) !important;
 	font-weight: 700 !important;
-}  
+}
 
 
 
 /* Remove border and rounding from the search popup */
-.search-panel-one-offs-header, .search-panel-header, .search-panel-current-input, #PopupAutoCompleteRichResult, .autocomplete-richlistitem, .box-inherit, .scrollbox-innerbox, .autocomplete-richlistbox {
+/*.search-panel-one-offs-header, .search-panel-header, .search-panel-current-input, #PopupAutoCompleteRichResult, .autocomplete-richlistitem, .box-inherit, .scrollbox-innerbox, .autocomplete-richlistbox {
 	border: none !important;
 }
 
@@ -377,7 +375,7 @@ browser[type=content] > html {
 
 
 /***   Make things dark   ***/
-.panel-arrowcontent,
+/*.panel-arrowcontent,
 #alltabs-popup .arrowscrollbox-scrollbox,
 menupopup:not(#BMB_bookmarksPopup),
 .textbox-contextmenu {
@@ -395,7 +393,7 @@ menu[disabled="true"]{
 	color: var(--fgdark) !important;
 }*/
 
-#appMenu-mainView,
+/*#appMenu-mainView,
 #urlbar-results,
 .panel-arrowcontent,
 .urlbarView-row,
@@ -414,7 +412,7 @@ menu[disabled="true"]{
 
 #nav-bar,
 /*#mainPopupSet, */
-#identity-popup,
+/*#identity-popup,
 .download-state,
 .browser-toolbar,
 #downloadsPanel-mainView,
@@ -483,7 +481,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 
 
 /* Make the forward / back button a darker colour when disabled */
-#forward-button[disabled] {
+/*#forward-button[disabled] {
 	color: var(--disabled) !important;
 	background-image: none !important;
 }
@@ -512,10 +510,10 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 
 
 /* Remove padding from some items */
-#context-back > .menu-iconic-left, 
-#context-stop > .menu-iconic-left, 
-#context-reload > .menu-iconic-left, 
-#context-forward > .menu-iconic-left, 
+#context-back > .menu-iconic-left,
+#context-stop > .menu-iconic-left,
+#context-reload > .menu-iconic-left,
+#context-forward > .menu-iconic-left,
 #context-bookmarkpage > .menu-iconic-left {
 	padding: 0px !important;
 }
@@ -524,7 +522,7 @@ window:not([chromehidden~="toolbar"]) #urlbar-container > .toolbarbutton-1:-moz-
 
 /* Change colour of fill animation when tab has finished loading */
 #tabbrowser-tabs {
-	--tab-loading-fill: var(--accent) !important;
+/*	--tab-loading-fill: var(--accent) !important;*/
 	box-shadow: none !important;
 }
 
@@ -552,7 +550,7 @@ toolbarspring {
 
 
 /* Find popup */
-.findbar-closebutton {
+/*.findbar-closebutton {
 	background-color: var(--bgdark) !important;
 	border-radius: 0 !important;
 }
@@ -583,10 +581,15 @@ toolbarspring {
 	max-width: calc(var(--tab-min-height) * 0.9) !important;
 }
 
+#identity-icon,
 .tab-close-button,
 .tab-icon-image {
 	height: var(--tab-min-height) * 0.6 ) !important;
 	width: calc(var(--tab-min-height) * 0.6 ) !important;
+}
+
+#identity-icon {
+	padding: 2px;
 }
 
 #TabsToolbar,
@@ -634,7 +637,7 @@ toolbarspring {
 /*#TabsToolbar {
 	margin-left: 42vw !important;
 }
-	
+
 #nav-bar {
 	margin-top: -32px !important;
 	margin-right: 58vw !important;
@@ -702,7 +705,7 @@ toolbarspring {
 	display: none !important;
 }*/
 
-toolbarseparator {
+/*toolbarseparator {
 	background-color: var(--bglighter) !important;
 }
 
@@ -712,7 +715,7 @@ toolbarseparator {
 .searchbar-engine-one-off-item,
 .searchbar-engine-one-off-item .button-box {
 	border-color: var(--bglighter) !important;
-}
+}*/
 
 
 #urlbar {
@@ -733,10 +736,10 @@ toolbarbutton#alltabs-button {
 }
 
 
-#sidebar-switcher-target > *,
+/*#sidebar-switcher-target > *,
 #sidebar-close {
 	color: var(--fglight) !important;
-}
+}*/
 
 
 
@@ -779,4 +782,8 @@ toolbarbutton#alltabs-button {
 
 #forward-button .toolbarbutton-icon {
 	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M2.693.973l3.203 3.202-3.32 3.319'/%3E%3C/svg%3E");
+}
+
+.urlbar-go-button {
+	display: none !important;
 }
