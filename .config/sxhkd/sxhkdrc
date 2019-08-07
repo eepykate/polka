@@ -55,6 +55,9 @@ shift + super + F1
 ctrl + alt + s
 	ts.sh
 
+#super + x
+#	ts.sh; refresh
+
 alt + grave
 	dropdown.sh
 

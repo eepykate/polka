@@ -80,13 +80,11 @@ entry {
 }
 
 #listview {
-  lines: 5;
   spacing: 4;
   padding: 4;
 }
 
 #listview {
-  fixed-height: 0;
   border: 0px solid 0px 0px;
   padding: 2px 0px 0px;
 }

@@ -247,8 +247,9 @@ $HOME/.startpage/style.css" | \
 	xse=$!
 	sleep 0.2; kill $xse
 	rm $temp $temp2
+	#refresh
 
-	sleep 0.1
+
 	notify-send "Theme changed to $theme"
 
 fi
