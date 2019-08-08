@@ -80,6 +80,7 @@ entry {
 }
 
 #listview {
+	lines: 5;
   spacing: 4;
   padding: 4;
 }

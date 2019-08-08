@@ -192,6 +192,12 @@ it() {
         ln -s ~/git/bin/* ~/bin/ -f
 }
 
+hib() {
+	lock &
+	sleep 1.5;
+	systemctl hibernate;
+}
+
 
 rose() {
 	echo -e "\e[31m    _,--._.-,
