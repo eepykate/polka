@@ -1,7 +1,7 @@
 # Directory shortcuts
 d   mn         /mnt/
 d   me         /media/
-d   fchr       ~/.mozilla/firefox/gauge.gauge/chrome/
+d   fchr       ~/.config/.mozilla/firefox/gauge.gauge/chrome/
 d   dots       ~/git/
 d   bin        ~/bin/
 d   pics       ~/Stuff/Screenshots/maim/
@@ -21,7 +21,7 @@ f   bashrc     ~/.bashrc
 f   pro        ~/.profile
 f   xpro       ~/.xprofile
 f   zpro       ~/.zprofile
-f   xres       ~/.Xresources
+f   xres       ~/.config/.Xresources
 f   sc         ~/.config/sc
 f   aliases    ~/.config/aliases
 f   a          ~/.config/aliases
@@ -34,7 +34,7 @@ f   sx         ~/.config/sxhkd/sxhkdrc
 f   com        ~/.config/compton.conf
 f   bs         ~/.config/bspwm/bspwmrc
 f   po         ~/.config/polybar/config
-f   mo         ~/.movie.txt
+f   mo         ~/Stuff/.movie.txt
 f   cm         ~/.config/cmus/rc
 f   uc         ~/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 f   ucc        ~/.mozilla/firefox/gauge.gauge/chrome/userContent.css

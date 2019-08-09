@@ -8,6 +8,8 @@ export BROWSER="firefox"                # Web Browser
 export FILE="dolphin"                   # File manager
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
+export __GL_SHADER_DISK_CACHE_PATH="$HOME/.config/nv"
+
 
 # Custom ls colours
 eval "$(dircolors ~/.config/dircolors)"
