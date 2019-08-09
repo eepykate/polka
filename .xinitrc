@@ -7,7 +7,7 @@ if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
 	dbus-launch --exit-with-session ~/.xinitrc "$@" &
 fi
 dunst &
-~/.fehbg
+pap
 xsetroot -cursor_name left_ptr
 tabbed -r 2 -n "drop-down-st" st -w '' &
 xautolock -time 10 -locker ~/bin/lock &
