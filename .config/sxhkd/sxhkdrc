@@ -23,7 +23,7 @@ super + Return
 	st
 
 super + f
-	firefox-developer-edition
+	firefox
 
 super + c
 	thunar

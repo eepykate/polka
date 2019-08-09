@@ -105,7 +105,7 @@ function clv() {
 	xclip -selection clipboard -t video/mp4 $HOME/Videos/recordings/$video
 }
 
-[[ -f ~/.config/sc.sh ]] && source ~/.config/sc.sh  # Add directory / file shortcuts to shell
+source ~/.config/sc.sh  # Add directory / file shortcuts to shell
 
 e() {
 	if [ -f $1 ] ; then

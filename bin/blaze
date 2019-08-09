@@ -81,19 +81,19 @@ fi
 
 # Load the preset if ran with -p <number>
 [[ -n $preset ]] && 
-	[[ -f ~/.config/blaze-preset-$preset ]] &&
-	. ~/.config/blaze-preset-$preset
+	[[ -f ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset ]] &&
+	. ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset
 
 if [[ -z $DoM ]]; then
 	unset presets
 	# Find presets
-	for x in $(ls ~/.config/blaze-preset-*); do 
+	for x in $(ls ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-*); do 
 		presets+="\npreset-${x##*-}";
 	done
 	DoM="$(echo -e "Display\nSlop$presets" | dmenu -i -p "Automatic dimensions from display, or select a region?")"
 	# If a preset is chosen, load that
 	[[ $DoM = preset* ]] && preset="${DoM##*-}"
-	[[ $DoM = preset* ]] && . $HOME/.config/blaze-$DoM
+	[[ $DoM = preset* ]] && . ${XDG_CONFIG_HOME:-~/.config}/blaze-$DoM
 fi
 
 if [[ ${DoM} = Display ]]; then
@@ -132,8 +132,8 @@ DoM=\"$DoM\"
 display_select=\"$display_select\"
 rate=\"$rate\"
 audio=\"$audio\"
-" > ~/.config/blaze-preset-$preset &&
-[[ $blaze = blaze ]] && echo -e "trim=\"$trim\"\nblaze=\"$blaze\"" >> ~/.config/blaze-preset-$preset
+" > ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset &&
+[[ $blaze = blaze ]] && echo -e "trim=\"$trim\"\nblaze=\"$blaze\"" >> ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset
 
 # Convert the seconds of trim to minutes 
 [[ -n $trim ]] && trimm="$(( $trim * 60 ))"

@@ -13,7 +13,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 eval "$(dircolors ~/.config/dircolors)"
 
 # Places where binaries/scripts go so you dont have to type the whole path to run them
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$(find ~/bin/ -maxdepth 1 -type d | tr '\n' ':')$HOME/.local/bin:$PATH"
 
 # less/man colors
 export LESS=-R
