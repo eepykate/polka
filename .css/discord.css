@@ -101,6 +101,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 	background-color: var(--selected) !important;
 }
 
+.button-OhfaWu,
 .attachment-33OFj0,
 .embedInner-1-fpTo,
 .wrapper-35wsBm,
@@ -136,6 +137,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 
  /*base-gE7OpD stop-animation */
 
+html body * svg.homeIcon-tEMBK1 path,
 .theme-dark .embedAuthorName-3mnTWj,
 .cooldownWrapper-3joyFc,
 .content-2M3n_H .anchor-3Z-8Bb,
@@ -332,8 +334,6 @@ a svg.homeIcon-tEMBK1 path {
 .markup-2BOw-j {
     font-family: t cherry Wide;
 }
-
-.listItem-2P_4kh:nth-last-child(-n+4) {display: none;}
 
 .attachButtonPlus-rUdX-B {
 	fill: var(--fgdark) !important;
