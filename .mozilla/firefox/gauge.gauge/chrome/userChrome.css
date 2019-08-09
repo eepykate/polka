@@ -19,6 +19,7 @@
 --button: #43566f1a;
 --hover: #ffffff;
 --toolbar-bgimage: none !important;
+--arrowpanel-dimmed: transparent !important;
 }
 
 /*:root:-moz-lwtheme-brighttext {                                     /* minor color changes to the default dark theme */
