@@ -180,8 +180,8 @@ $HOME/.startpage/style.css" | \
 	# Replace colours in dunst
 	sed --follow-symlinks -i \
 		-e "s/frame_color = \".*\"/frame_color = \"#$accent\"/" \
-		-e "s/background = \".*\"/background = \"#$bglighter\"/" \
-		-e "s/foreground = \".*\"/foreground = \"#$fglight\"/"  \
+		-e "s/background = \".*\"/background = \"#$accent\"/" \
+		-e "s/foreground = \".*\"/foreground = \"#$hover\"/"  \
 		~/.config/dunst/dunstrc
 
 	# Make urgent notifications have a different colour
