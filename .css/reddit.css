@@ -3849,7 +3849,6 @@ table thead tr th {
 	border: 1px solid lightgrey !important;
 }
 *:not(code):not(.subbarlink):not(.res-icon) { 
-	font-size: 12px !important;
 	font-family: Roboto Condensed !important;
 }
 
@@ -3932,4 +3931,20 @@ html body * button {
 .side .redditname a {
 	font-size: 15px !important;
 }
+a:not(.title):hover {
+	text-decoration: underline !important;
+}
 
+a.author,
+.tagline,
+.sidecontentbox .content,
+.gadget .click-gadget,
+.md p {
+	font-size: 12px !important;
+}
+html body .content * .thing * h1 { font-size: 20px !important; }
+html body .content * .thing * h2 { font-size: 18px !important; }
+html body .content * .thing * h3 { font-size: 16px !important; }
+html body .content * .thing * h4 { font-size: 15px !important; }
+html body .content * .thing * h5 { font-size: 14px !important; }
+html body .content * .thing * h6 { font-size: 13px !important; }
