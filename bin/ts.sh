@@ -192,10 +192,10 @@ $HOME/.startpage/style.css" | \
 	pkill -9 dunst; dunst &>/dev/null &!
 
 	# Change the theme in rofi
-	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bgdark}aa;/g" \
+	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bgdark};/g" \
 		-e "s/fg:.*#.*;/fg:         #$fglight;/" \
 		-e "s/accent:.*#.*;/accent:     #$accent;/"\
-		-e "s/sel:.*#.*;/sel:     #$button;/"\
+		-e "s/sel:.*#.*;/sel:        #$button;/"\
 		~/.config/rofi/theme.rasi
 
 	# Change the wallpaper

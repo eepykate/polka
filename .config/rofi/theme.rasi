@@ -1,8 +1,8 @@
 /* RASI Theme */
 
 * {
-bg:         #f7f9ffaa;
-  sel:     #43566f1a;
+	bg:         #f7f9ff;
+  sel:        #43566f1a;
   fg:         #43566f;
   accent:     #cd5e6f;
   black:      #1c202a;
@@ -16,11 +16,11 @@ bg:         #f7f9ffaa;
   text:       #afc4dc;
   text-alt:   #afc4dc;
   bg-alt:     #303442;
-  
+
   spacing: 0;
   background-color: transparent;
 
-  font: "Iosevka Term 14";
+  font: "Roboto Condensed 11";
 
   text-color: @fg;
 }
@@ -34,10 +34,10 @@ window {
   transparency: "real";
   fullscreen: false;
   background-color: @bg;
-  width: 600px;
+  width: 400px;
   border-color: @accent;
   border: 0px;
-  padding: 25px;
+  padding: 15px;
 }
 
 #mainbox {
