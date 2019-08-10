@@ -144,7 +144,7 @@ if [[ -n "$theme" ]]; then
 	sed --follow-symlinks -i \
 		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
 		-e "s/fa=\".*\"/fa=\"#$false\"/" \
-		~/.zshrc
+		~/.config/zsh/.zshrc
 	sed --follow-symlinks -i \
 		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
 		-e "s/fa=\".*\"/fa=\"#$false\"/" \
@@ -153,18 +153,11 @@ if [[ -n "$theme" ]]; then
 	# Reload terminal colours using Xresources
 	rc
 
-	# Replace the accent colour in my zsh prompt
-	[[ -n $accentn ]] &&
-		sed --follow-symlinks -i \
-			-e "s/color=\".*\"/color=\"$accentn\"/" \
-			-e "s/false=\".*\"/false=\"$false\"/" \
-			~/.zshrc
-
 	# Change the colour variables in firefox and my startpage
 	# $HOME/.startpage/style.css
-	echo "$HOME/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
-$HOME/etc/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-$HOME/usr/startpage/style.css" | \
+	echo "$HOME/.config/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
+$HOME/.config/.mozilla/firefox/gauge.gauge/chrome/userContent.css
+$HOME/.local/startpage/style.css" | \
 		xargs sed --follow-symlinks -i \
 		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
 		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \
