@@ -133,12 +133,12 @@ if [[ -n "$theme" ]]; then
 	#xfconf-query -c xfwm4 -p /general/theme -s "$theme"
 	# Manually change gtk theme
 	sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.gtkrc-2.0
-	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ~/.config/gtk-3.0/settings.ini
+	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
 
 	#kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
 
-	# if ~/.config/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
-	[[ -f ~/.config/Xres.$theme ]] &&
+	# if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
+	[[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
 		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources
 
 	sed --follow-symlinks -i \
@@ -162,9 +162,9 @@ if [[ -n "$theme" ]]; then
 
 	# Change the colour variables in firefox and my startpage
 	# $HOME/.startpage/style.css
-	echo "$HOME/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
-$HOME/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-$HOME/.startpage/style.css" | \
+	echo "$HOME/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
+$HOME/etc/.mozilla/firefox/gauge.gauge/chrome/userContent.css
+$HOME/usr/startpage/style.css" | \
 		xargs sed --follow-symlinks -i \
 		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
 		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \
@@ -182,12 +182,12 @@ $HOME/.startpage/style.css" | \
 		-e "s/frame_color = \".*\"/frame_color = \"#$accent\"/" \
 		-e "s/background = \".*\"/background = \"#$accent\"/" \
 		-e "s/foreground = \".*\"/foreground = \"#$hover\"/"  \
-		~/.config/dunst/dunstrc
+		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 	# Make urgent notifications have a different colour
-	dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ~/.config/dunst/dunstrc) + 1 ))"
-	sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fglight\"/" ~/.config/dunst/dunstrc
-	sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bglight\"/" ~/.config/dunst/dunstrc
+	dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
+	sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fglight\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+	sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bglight\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 	pkill -9 dunst; dunst &>/dev/null &!
 
@@ -196,7 +196,7 @@ $HOME/.startpage/style.css" | \
 		-e "s/fg:.*#.*;/fg:         #$fglight;/" \
 		-e "s/accent:.*#.*;/accent:     #$accent;/"\
 		-e "s/sel:.*#.*;/sel:        #$button;/"\
-		~/.config/rofi/theme.rasi
+		${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
 
 	# Change the wallpaper
 	[[ -n $wallpaper ]] &&
@@ -218,19 +218,19 @@ $HOME/.startpage/style.css" | \
 	# Change bspwm colours
 	sed --follow-symlinks -i \
 		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bglighter\"/g" \
-		~/.config/bspwm/bspwmrc
+		${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 	wm restart
 
 	# Change qview colours
 	sed --follow-symlinks -i \
 		-e "s/bgcolor=.*/bgcolor=#$bgdark/" \
-		~/.config/qView/qView.conf
+		${XDG_CONFIG_HOME:-~/.config}/qView/qView.conf
 
 	#walgen "#$bglighter"
 
-	[[ -d ~/git/.icons/$theme/ ]] &&
-		[[ -d ~/.icons/Papirus-Dark ]] &&
-		cp -f ~/git/.icons/$theme/* ~/.icons/Papirus-Dark/32x32/places/
+	[[ -d ~/git/.local/share/icons/$theme/ ]] &&
+		[[ -d ~/.local/share/icons/Papirus-Dark ]] &&
+		cp -f ~/git/.local/share/icons/$theme/* ~/.local/share/icons/Papirus-Dark/32x32/places/
 
 
 	# Reload gtk theme - probably a major hack
@@ -239,7 +239,7 @@ $HOME/.startpage/style.css" | \
 	echo "Net/IconThemeName \"Blank\"" > $temp2
 	xsettingsd -c $temp2 &
 	xse2=$!
-	sleep 0.05; kill $xse2
+	sleep 0.08; kill $xse2
 
 	echo "Net/ThemeName \"$theme\"" > $temp
 	echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
