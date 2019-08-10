@@ -132,7 +132,7 @@ if [[ -n "$theme" ]]; then
 	#xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
 	#xfconf-query -c xfwm4 -p /general/theme -s "$theme"
 	# Manually change gtk theme
-	sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.gtkrc-2.0
+	sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.config/gtk-2.0/gtkrc-2.0
 	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
 
 	#kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme

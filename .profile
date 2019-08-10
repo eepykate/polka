@@ -9,6 +9,7 @@ export FILE="dolphin"                   # File manager
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
 export __GL_SHADER_DISK_CACHE_PATH="$HOME/.config/nv"
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 
 
 # Custom ls colours

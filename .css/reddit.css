@@ -987,19 +987,20 @@ body:not(.search-page) .menuarea {
  background-image:none;
  margin-left:-12px
 }
-.RESSubscriptionButton {
+html body * .RESSubscriptionButton {
  display:inline-block;
  position:relative;
  z-index:1;
  margin-left:15px;
  padding:5px!important;
- font-size:9px;
  text-transform:uppercase;
  text-align:center;
  cursor:pointer;
- color:#fff!important;
- border-radius:2px;
- transition:.25s ease
+ color:var(--fglight)!important;
+ background-color:var(--bglighter);
+ border-radius:3px;
+ transition:.25s ease;
+ border: none !important;
 }
 body.comments-page div.content {
  background:none!important
@@ -2929,7 +2930,7 @@ form#image-upload.image-upload {
 .sidecontentbox a.helplink,
 button,
 .commentarea .comment a.expand:hover {
- background:var(--accent)
+ background:var(--accent);
 }
 .commentarea span.score,
 .comment .flat-list li a:hover,
@@ -2969,7 +2970,11 @@ button,
 .sidecontentbox a.helplink:hover,
 body.res .side .RESshortcutside.remove:hover,
 button:hover {
- background:#6687e7
+ background:var(--accent);
+ color: var(--hover) !important;
+}
+.comments-page .RESSubscriptionButton:hover > span {
+ color: var(--hover) !important;
 }
 .RESDashboardToggle.remove:active,
 .RESshortcutside.remove:active,
@@ -2980,7 +2985,8 @@ button:hover {
 .side .titlebox .md h4 a:active,
 .sidecontentbox a.helplink:active,
 button:active {
- background:#27408b
+ background:var(--accent);
+ color: var(--hover) !important;
 }
 .thing .md table thead tr th,
 .morelink,
@@ -3931,16 +3937,21 @@ html body * button {
 .side .redditname a {
 	font-size: 15px !important;
 }
-a:not(.title):hover {
+a:not(.title):not(.expand):hover {
 	text-decoration: underline !important;
 }
 
+.panestack-title > a,
+textarea,
 a.author,
 .tagline,
 .sidecontentbox .content,
 .gadget .click-gadget,
 .md p {
 	font-size: 12px !important;
+}
+.panestack-title > a {
+	color: var(--hover) !important;
 }
 html body .content * .thing * h1 { font-size: 20px !important; }
 html body .content * .thing * h2 { font-size: 18px !important; }
