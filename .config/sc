@@ -6,12 +6,12 @@ d   dots       ~/git/
 d   bin        ~/bin/
 d   pics       ~/Stuff/Screenshots/maim/
 d   recs       ~/Videos/recordings/
-d   wp         ~/Wallpapers/
+d   wp         ~/Stuff/Wallpapers/
 d   h          ~/
 d   suck       ~/Stuff/git/suckless/
 d   gkgl       ~/Stuff/git/gaugek.gitlab.io/
 d   gi         ~/Stuff/git/
-d   sp         ~/.startpage/
+d   sp         ~/.local/startpage/
 d   mu         ~/Music/
 
 # File shortcuts
