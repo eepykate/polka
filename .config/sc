@@ -12,7 +12,8 @@ d   suck       ~/Stuff/git/suckless/
 d   gkgl       ~/Stuff/git/gaugek.gitlab.io/
 d   gi         ~/Stuff/git/
 d   sp         ~/.local/startpage/
-d   mu         ~/Music/
+d   mu         ~/Stuff/Music/
+d   oth        ~/Stuff/Linux/Other
 
 # File shortcuts
 f   zshrc      ~/.config/zsh/.zshrc

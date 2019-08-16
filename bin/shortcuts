@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Format of ~/.sc: 
+# Format of ~/.config/sc:
 # $1 = (d)irectory or (f)ile
 # $2 = name of alias
 # $3 = file or folder to edit / cd to
