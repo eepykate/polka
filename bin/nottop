@@ -1,0 +1,5 @@
+#!/bin/sh
+
+gdbus call -e -d "org.freedesktop.Notifications" -o /org/freedesktop/Notifications \
+-m org.freedesktop.Notifications.Notify "" 419 "" "Desktop switched to $(bspc query -D -d focused --names)" \
+"" "[]" "{}" 750
