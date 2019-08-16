@@ -123,7 +123,10 @@ shift + alt + {Right,Left}
 	bspc desktop -f "$DIR"
 
 ctrl + alt + {Right,Left}
-	bspc desktop -f {next,prev}
+	bspc desktop -f {next,prev}; \
+	gdbus call -e -d "org.freedesktop.Notifications" -o /org/freedesktop/Notifications \
+	-m org.freedesktop.Notifications.Notify "" 419 "" "Desktop switched to $(bspc query -D -d focused --names)" \
+	"" "[]" "\{\}" 750
 
 ctrl + super + {1,2,3,4,5,6,7}
 	bspc node -d {1,2,3,4,5,6,7};
