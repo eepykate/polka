@@ -59,7 +59,7 @@ elif [[ $theme = Snow ]]; then
 elif [[ $theme = la ]]; then
 
 	accentn="5"
-	false="#d86880"
+	false="#82a3e7"
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
@@ -68,11 +68,11 @@ elif [[ $theme = la ]]; then
 	fglight="#ccccfa"
 
 	disabled="#696969"
-	accent="#c68edf"
+	accent="#d86880"
 	button="#ccccfa1a"
 	border="$bglighter"
 	red="#dc8189"
-	hover="#000000"
+	hover="#ffffff"
 
 elif [[ $theme = Winter ]]; then
 
@@ -139,7 +139,7 @@ if [[ -n "$theme" ]]; then
 
 	# if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 	[[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
-		sed --follow-symlinks -i "s/#include \".config\/Xres\..*\"/#include \".config\/Xres.$theme\"/" ~/.Xresources
+		sed --follow-symlinks -i "s/#include \"Xres\..*\"/#include \"Xres.$theme\"/" ~/.config/.Xresources
 
 	sed --follow-symlinks -i \
 		-e "s/ac=\".*\"/ac=\"#$accent\"/" \

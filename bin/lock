@@ -27,7 +27,7 @@ esac
 #done
 
 #! [[ -e ~/.cache/lock.png ]] && convert "$wp" -draw "fill #00000044 $rectangles" "$HOME/.cache/lock.png"
-cp $wp ~/.cache/lock.png
+# cp $wp ~/.cache/lock.png
 
 i3lock \
 	--datestr="%A, %B %e" \
