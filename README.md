@@ -1,6 +1,6 @@
 # Gauge Krahe's dotfiles
 
-![Current setup](https://i.imgur.com/iTnq2bh.png) \*Probably out of date
+![Current setup](https://i.imgur.com/WzYQESH.png) \*Probably out of date
 
 **Distribution:** Arch (GNU/Linux)
 
