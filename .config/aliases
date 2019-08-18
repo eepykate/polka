@@ -16,12 +16,12 @@ alias rs="pkill -SIGUSR1 sxhkd"
 alias grep="grep --color=auto"
 alias mat="cmatrix -C blue"         # blue cmatrix
 alias kills="kill -9 -1"   # Kill current session
+alias t="thunar . & disown"   # Kill current session
 alias n="nmtui-connect"
 alias fuck="pkill -9"      # kill window
 alias fak="sudo !!"        # run last command with sudo
 alias SU="sudo zsh"        # open zsh as root user
 alias rm="rm -i"
-alias t="tmux"             # tmux
 alias s="dirs"
 alias f="fff"              # terminal file manager
 alias td="transmission-daemon"
