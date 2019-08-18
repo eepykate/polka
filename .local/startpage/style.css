@@ -113,6 +113,7 @@ main {
 	width: auto;
 	text-align: center;
 	transition: all 00ms ease 0s;
+	border-radius: 3px;
 }
 
 .title {
@@ -170,6 +171,8 @@ main section {
 	transition: all 200ms;
 	opacity: 0;
 	box-shadow: 8px 2px 6px 3px rgba(0,0,0,0.08);
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 
 .box:hover .title {
