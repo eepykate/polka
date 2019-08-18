@@ -492,9 +492,3 @@ toolbarbutton#alltabs-button {
 #forward-button .toolbarbutton-icon {
 	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M2.693.973l3.203 3.202-3.32 3.319'/%3E%3C/svg%3E");
 }
-
-
-
-.tab-background {
-	border-radius: 3px !important;
-}
