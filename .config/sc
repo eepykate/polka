@@ -21,7 +21,7 @@ f   vimrc      ~/.config/nvim/init.vim
 f   bashrc     ~/.bashrc
 f   pro        ~/.profile
 f   xpro       ~/.xprofile
-f   zpro       ~/.zprofile
+f   zpro       ~/.config/zsh/zprofile
 f   xres       ~/.config/.Xresources
 f   sc         ~/.config/sc
 f   aliases    ~/.config/aliases
