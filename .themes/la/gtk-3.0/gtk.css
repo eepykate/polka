@@ -6279,8 +6279,7 @@ FIXME this is really an API */
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-color: transparent;
-	background-image: image(#3E4761);
+	background-image: image(rgba(255, 255, 255, 0.15));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
