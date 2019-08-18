@@ -1,0 +1,223 @@
+:root {
+--bgdark: #232836;
+--bglight: #282e3f;
+--bglighter: #2f364a;
+
+--fgdark: #8686a4;
+--fglight: #ccccfa;
+
+--accent: #d86880;
+--border: #2f364a;
+--disabled: #696969;
+--hover: #ffffff;
+}
+
+* {
+	font-family: "t kiwi Wide";
+	font-size: 10px;
+}
+
+/*body, html {
+	background-color: var(--bgdark);
+}*/
+
+html {
+	background: var(--bgdark);
+	background-position: top -24px left 0;
+}
+
+#page {
+	max-width: 300px;
+
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+main {
+	max-width: 700px;
+	margin-top: auto;
+	display: flex;
+	overflow-y: auto;
+	flex-flow: row wrap;
+}
+
+#clock {
+	display: flex;
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px;
+}
+
+#time, #date {
+	color: var(--fglight);
+	display: inline-block;
+	margin: 0 5px;
+	flex-grow: 1;
+	width: 0;
+}
+
+#time {
+	text-align: left;
+}
+
+#date {
+	text-align: right;
+}
+
+.slash {
+	color: var(--fgdark)
+}
+
+.search-box {
+	max-width: 300px;
+	margin: 0 auto;
+	width: 90%;
+}
+.search-box input[type="text"] {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid var(--bglighter);
+	color: var(--fglight);
+	transition: all 00ms;
+	width: 100%;
+	max-width: 300px;
+	height: 24px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+	/*box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);*/
+}
+
+.search-underline {
+	position: relative;
+	top: -2px;
+	display: block;
+	width: 0px;
+	margin: 0 auto;
+	height: 2px;
+	background-color: var(--bglighter);
+	transition: all 200ms;
+	transition-timing-function: ease-out;
+}
+
+.search-box:focus-within > .search-underline,
+.search-box:hover > .search-underline {
+	width: 300px;
+	background-color: var(--accent);
+}
+
+.title {
+	display: block;
+	width: auto;
+	text-align: center;
+	transition: all 00ms ease 0s;
+}
+
+.title {
+	color: var(--hover);
+	transition: all 00ms ease 0s;
+	display: block;
+	text-align: center;
+	background-color: var(--accent);
+	padding: 6px;
+}
+
+.links {
+	padding: 5px 15px;
+	width: auto;
+	display: block;
+}
+
+
+hr {
+	color: var(--bglighter);
+	margin: 2px;
+}
+
+a:visited, a {
+	color: var(--fgdark);
+	text-decoration: none;
+	outline: none;
+}
+a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 00ms ease 0s; }
+a:hover {	color: var(--fglight); }
+
+main section {
+	flex: 1 1 25%;
+	box-sizing: border-box;
+}
+
+main section {
+	margin: 0 3px;
+	margin-top: 20px;
+}
+
+
+.box:hover .content {
+	padding: 5px 0;
+	opacity: 1;
+	visibility: visible;
+}
+
+.content {
+	visibility: hidden;
+	position: relative;
+	left: 0;
+	right: 0;
+	background-color: var(--bglight);
+	transition: all 200ms;
+	opacity: 0;
+	box-shadow: 8px 2px 6px 3px rgba(0,0,0,0.08);
+}
+
+.box:hover .title {
+	background-color: var(--accent);
+	color: var(--hover);
+}
+
+.box:hover * .links {
+	display: block;
+}
+
+.links {
+	display: none;
+}
+
+main {
+	padding-bottom: 10px;
+}
+
+
+/* Transparent blyrry UI */
+/*
+html {
+	background: url(Blur.png);
+}
+
+.box .title,
+.box .content {
+	background: #00000022;
+}
+
+.box:hover .title {
+	background: #fff;
+	color: #43566f;
+}
+
+#date, #time {
+	color: #43566f;
+}
+
+.box .title {
+	color: #fff;
+}
+
+a, a:visited {
+	color: #43566f
+}
+
+a:hover, a:visited:hover {
+	color: #000;
+}
