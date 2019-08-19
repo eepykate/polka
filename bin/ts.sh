@@ -77,7 +77,7 @@ elif [[ $theme = la ]]; then
 elif [[ $theme = la-1 ]]; then
 
 	accentn="5"
-	false="#82a3e7"
+	false="#d86880"
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
