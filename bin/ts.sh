@@ -239,9 +239,9 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 
 	#walgen "#$bglighter"
 
-	[[ -d ~/git/.local/share/icons/$theme/ ]] &&
-		[[ -d ~/.local/share/icons/Papirus-Dark ]] &&
-		cp -f ~/git/.local/share/icons/$theme/* ~/.local/share/icons/Papirus-Dark/32x32/places/
+	[[ -d ~/git/usr/icons/$theme/ ]] &&
+		[[ -d ~/usr/icons/Papirus-Dark ]] &&
+		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
 
 
 	# Reload gtk theme - probably a major hack
