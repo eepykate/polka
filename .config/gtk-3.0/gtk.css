@@ -18,3 +18,8 @@
 .thunar * statusbar {
 	margin-bottom: -16px
 }
+*/
+
+* {
+	font-weight: normal;
+}
