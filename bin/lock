@@ -1,12 +1,12 @@
 #!/bin/bash
 #set -x
 pgrep i3lock &>/dev/null && exit
-cache="$HOME/.cache/lock.png"
+cache="$HOME/tmp/lock.png"
 wp="$HOME/Wallpapers/Wallpaper_lock.png"
 
 case $1 in
-	-r) rm ~/.cache/lock.png;;
-	-w) rm ~/.cache/lock.png;
+	-r) rm $cache;;
+	-w) rm $cache;
 		wp="$2";;
 esac
 
@@ -58,7 +58,7 @@ i3lock \
 	--insidewrongcolor=15171d00 \
 	--time-font="Roboto Condensed" \
 	--date-font="Roboto Condensed" \
-	--image=$HOME/.cache/lock.png &
+	--image=$cache &
 
 #	--ring-width=4 \
 #	--line-uses-inside \

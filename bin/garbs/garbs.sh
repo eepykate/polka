@@ -398,3 +398,20 @@ sed -i 's/load-module module-esound-protocol-unix/#load-module module-esound-pro
 
 echo "Telling linux to use no more than 10M ram for caching writes"
 echo 10000000 > /proc/sys/vm/dirty_bytes
+
+if ! grep XDG_CONFIG_HOME /etc/environment &>/dev/null; then
+	echo '
+XDG_CONFIG_HOME="$HOME/etc"
+XDG_CACHE_HOME="$HOME/tmp"
+XDG_DATA_HOME="$HOME/usr"' >> /etc/environment
+fi
+
+if ! grep ZDOTDIR /etc/zsh/zshenv &>/dev/null; then
+	echo 'ZDOTDIR="$HOME/etc/zsh"' >> /etc/environment
+fi
+
+
+
+
+
+echo 'finished'

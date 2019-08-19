@@ -1,4 +1,8 @@
 #     ~/.profile     #
+export XDG_CONFIG_HOME="$HOME/etc"
+export XDG_CACHE_HOME="$HOME/tmp"
+export XDG_DATA_HOME="$HOME/usr"
+
 export QT_QPA_PLATFORMTHEME="qt5ct"     # Qt themes for non-Qt DEs/WMs
 # Default programs                      # Default programs
 export EDITOR="nvim"                    # Terminal text editor
@@ -7,10 +11,6 @@ export TERMINAL="st"                    # Terminal
 export BROWSER="firefox"                # Web Browser
 export FILE="dolphin"                   # File manager
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
-
-export XDG_CONFIG_HOME="$HOME/etc"
-export XDG_CACHE_HOME="$HOME/tmp"
-export XDG_DATA_HOME="$HOME/usr"
 
 export __GL_SHADER_DISK_CACHE_PATH="${XDG_CONFIG_HOME:-~/.config}/nv"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0"
