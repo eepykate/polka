@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Menu
+Comment=Open an application launcher
+Exec=rofi -show drun -theme menu -columns 2 -show-icons -location 1 -yoffset 20 -xoffset 100
+Icon=open-menu
+Terminal=false
+Type=Application
+Categories=System

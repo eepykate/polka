@@ -80,7 +80,7 @@ rgbtohex() {
 }
 
 function uli() {
-	local dir="$HOME/Stuff/Screenshots/maim"
+	local dir="$HOME/opt/Screenshots/maim"
 	local image="$(ls -1t $dir --ignore old | head -1)"
 	#xclip -selection clipboard -t image/png $dir/$image
 	local link="$(curl -s -F"file=@$dir/$image" 0x0.st)"
@@ -91,13 +91,13 @@ function uli() {
 }
 
 function cli() {
-	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
-	xclip -selection clipboard -t image/png $HOME/Stuff/Screenshots/maim/$image
+	local image="$(ls -1t $HOME/opt/Screenshots/maim/ --ignore old | head -1)"
+	xclip -selection clipboard -t image/png $HOME/opt/Screenshots/maim/$image
 }
 
 function da() {
-	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
-	cp $HOME/Stuff/Screenshots/maim/$image $HOME/.aaaaa.png
+	local image="$(ls -1t $HOME/opt/Screenshots/maim/ --ignore old | head -1)"
+	cp $HOME/opt/Screenshots/maim/$image $HOME/.aaaaa.png
 }
 
 function clv() {
