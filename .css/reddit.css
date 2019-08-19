@@ -3937,9 +3937,6 @@ html body * button {
 .side .redditname a {
 	font-size: 15px !important;
 }
-a:not(.title):not(.expand):hover {
-	text-decoration: underline !important;
-}
 
 .panestack-title > a,
 textarea,

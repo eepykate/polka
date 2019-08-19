@@ -39,9 +39,13 @@ dl dt,
 	border-color: var(--bglighter) !important;
 }
 
+.getting-started__footer > * > *,
+.getting-started__footer > * > * > *,
+.getting-started__footer > * > * > * > *,
+.column-link,
+.navigation-bar__profile-account
 .drawer__tab i,
 .notification__message,
-.fa,
 .notification__filter-bar * span,
 .column-header button,
 .column-header * .fa,

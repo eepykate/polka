@@ -1,0 +1,219 @@
+#     Aliases     #
+alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
+alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
+# alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
+alias neofetch="neofetch --ascii ~/.config/cat"
+alias ci="xclip -selection clipboard -t image/png"  # Copy Image
+alias cv="xclip -selection clipboard -t video/mp4"  # Copy video
+# ls, group directories, and human readable sizes
+alias ls="ls -h --group-directories-first --color=auto"
+alias lol="lolcat -t -p 0.9 2>/dev/null"   # lolcat with some options
+alias emoji="cat ~/.emoji | grep -i "      # Emojis from ~/.emoji file
+alias obr="openbox --reconfigure"   # Reconfigure openbox
+alias songs="instantmusic -l "      # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
+alias song="instantmusic -s "       # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
+alias rs="pkill -SIGUSR1 sxhkd"
+alias grep="grep --color=auto"
+alias mat="cmatrix -C blue"         # blue cmatrix
+alias kills="kill -9 -1"   # Kill current session
+alias t="thunar . & disown"   # Kill current session
+alias n="nmtui-connect"
+alias fuck="pkill -9"      # kill window
+alias fak="sudo !!"        # run last command with sudo
+alias SU="sudo zsh"        # open zsh as root user
+alias rm="rm -i"
+alias s="dirs"
+alias f="fff"              # terminal file manager
+alias td="transmission-daemon"
+alias SS="sudo systemctl"
+
+# pacman/yay
+alias upd="sudo pacman -Syu"        # Update the system
+alias rems="sudo pacman -Rs"        # Remove <package> and dependencies that aren't used anywhere else
+alias rem="sudo pacman -R"          # Remove <package>
+alias ins="sudo pacman -S"          # install package from official repos
+alias p="sudo pacman"      # quicker way to type sudo pacman
+alias src="yay -Ss"        # Search <keywords> (Includes aur)
+alias insa="yay -S"        # Install <package> fromn the aur
+
+# Git
+alias gl="git log --all --decorate --oneline --graph"   # git - Better git log
+alias gca="git commit --amend"   # git - Commit all staged files in the last commit
+alias gcm="git commit -m"        # git - commit with message in quotes
+alias gpf="git push -f"          # git - Push and overwrite remote repository
+alias gp="git push"              # git - Push
+alias gaa="git add -A"           # git - Add all unstaged files to staging area
+alias ga="git add"               # git - Add <file(s)>
+alias gs="git status"            # git - status
+alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
+
+reset_cursor() {
+	echo -en "\e[4 q"
+}
+tc() {
+	transmission-remote-cli; reset_cursor
+}
+v() {
+	nvim $@; reset_cursor
+}
+
+se() {
+	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR;
+}
+cf() {
+	cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")";
+}
+
+# ls on cd
+#preexec() { LS_USED=$(echo $1|cut -d' ' -f1) }
+#chpwd() {
+#     ls --color=auto --group-directories-first -hF;
+#}
+
+hextorgb() {
+	hex="$1"
+	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
+}
+
+rgbtohex() {
+	printf "%02X%02X%02X\n" $@
+}
+
+function uli() {
+	local dir="$HOME/Stuff/Screenshots/maim"
+	local image="$(ls -1t $dir --ignore old | head -1)"
+	#xclip -selection clipboard -t image/png $dir/$image
+	local link="$(curl -s -F"file=@$dir/$image" 0x0.st)"
+	[[ -z $link ]] && notify-send "Upload failed" && return 1
+	echo "$link" | xclip -selection clipboard
+	echo "$link"
+	notify-send "Image uploaded to 0x0.st" "$link copied to clipboard"
+}
+
+function cli() {
+	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
+	xclip -selection clipboard -t image/png $HOME/Stuff/Screenshots/maim/$image
+}
+
+function da() {
+	local image="$(ls -1t $HOME/Stuff/Screenshots/maim/ --ignore old | head -1)"
+	cp $HOME/Stuff/Screenshots/maim/$image $HOME/.aaaaa.png
+}
+
+function clv() {
+	local video="$(ls -1t $HOME/Videos/recordings | head -1)"
+	xclip -selection clipboard -t video/mp4 $HOME/Videos/recordings/$video
+}
+
+source ${XDG_CONFIG_HOME:-~/.config}/sc.sh  # Add directory / file shortcuts to shell
+
+e() {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   tar xzjf $1 ;;
+			*.tar.gz)    tar xzvf $1 ;;
+			*.bz2)       bunzip2 $1 ;;
+			*.rar)       unrar xv $1 ;;
+			*.gz)        gunzip $1 ;;
+			*.tar)       tar xvf $1 ;;
+			*.tbz2)      tar xzjf $1 ;;
+			*.tgz)       tar xzvf $1 ;;
+			*.zip)       unzip $1 ;;
+			*.7z)        7z $1 ;;
+			*.xz)        xz -d $1 ;;
+			*)           echo "'$1' cannot be extracted via extract()" ;;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
+}
+
+c() {
+
+	unset opts
+	exclude=""
+	opts=`getopt -o x: --long exclude: -- "$@"`
+	eval set -- "$opts"
+
+	while true; do
+		case $1 in
+			-x|--exclude) exclude="--exclude $2"; shift 2;;
+			--) shift; break;;
+		esac
+	done
+	echo $exclude
+
+	tar -czvf "${1##*/}_$(date +%Y-%m-%d_%H-%M-%S).tar.gz" $(printf " $exclude") $1
+}
+
+bk() {
+	cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
+}
+
+mc() {
+	mkdir -p "$1"; cd "$1";
+}
+
+function cgif() {
+	rm -f /tmp/palette.png /tmp/recording.mp4 /tmp/encoded.gif
+	#local video="$(ls -1t $HOME/Videos/recordings | head -1)"
+	video="$1"
+	cp $video /tmp/recording.mp4
+	#cp $HOME/Videos/recordings/$video /tmp/recording.mp4
+
+	local frames="$(ffmpeg -i /tmp/recording.mp4 2>&1 | grep -o ".. fps" | grep -o "^..")"
+
+  ffmpeg -i "/tmp/recording.mp4" -vf palettegen "/tmp/palette.png"
+  ffmpeg -i "/tmp/recording.mp4" -i "/tmp/palette.png" -filter_complex paletteuse -r $frames "/tmp/encoded.gif"
+}
+
+colours() {
+	echo
+	for c in {0..7}; do printf "\e[3${c}m\e[4${c}m  \e[0m "; done
+	printf "\n"
+	for c in {0..7}; do printf "\e[9${c}m\e[10${c}m  \e[0m "; done
+	printf "\n"
+	echo
+}
+
+
+lines() {
+	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -ne "\e[3$(( $RANDOM % 8 ))m╱" || echo -ne "\e[3$(( $RANDOM % 8 ))m╲"; }
+}
+lines2() {
+	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -n ╱ || echo -n ╲; }
+}
+
+
+it() {
+        cp ~/git/.themes/* ~/.themes/ -rn
+        ln -s ~/git/.config/* ~/.config/ -f
+        cp ~/git/.mozilla/firefox/gauge.gauge/chrome/* ~/.mozilla/firefox/gauge.gauge/chrome/ -f
+        ln -s ~/git/bin/* ~/bin/ -f
+}
+
+hib() {
+	lock &
+	sleep 1.5;
+	systemctl hibernate;
+}
+
+
+rose() {
+	echo -e "\e[31m    _,--._.-,
+   /\\_r-,\\_ )
+.-.) _;=\'_/ (.;
+ \\ \\\'     \\/S )
+  L.\'-. _.'|-'
+ <_\`-\'\\'_.'/
+   \`\'-._(\e[0m\e[32m \\
+    ___   \\\\,      ___
+    \\ .\'-. \\\\   .-'_. /
+     \'._' '.\\\\/.-'_.'
+        \'--\`\`\\('--'
+              \\\\
+              \`\\\\,
+                \\|"
+}
+
+# vim: ft=sh

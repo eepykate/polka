@@ -1,0 +1,24 @@
+rofi.font:        Iosevka Term 14
+URxvt.font:       xft:Iosevka Term:style=Regular:pixelsize=12
+*shell:           /bin/zsh
+st.alpha:         1
+st.termname:      st-256color
+st.font:          kiwi:pixelsize=10
+st.borderpx:      15
+st.tabspaces:     4
+st.xfps:          60
+st.actionfps:     60
+st.bellvolume:    0
+st.cwscale:       1.0
+st.chscale:       1.0
+st.blinktimeout:  0.5
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+#include "Xres.la-1"
