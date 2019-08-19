@@ -5,7 +5,7 @@
 # simple dmenu task manager / todo
 #
 
-file="${HOME}/.config/tasks"
+file="${XDG_CONFIG_HOME:-~/.config}/tasks"
 len=$(cat "$file" | wc -l)
 action="cat $file | rofi -dmenu -l $len -p 'Task:' "
 cmd="$(eval $action)"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir=~/Stuff/Screenshots/maim
+dir=~/opt/Screenshots/maim
 name="maim-$(date +%F_%H:%M:%S)"
 
 mkdir -p "$dir" || exit 1

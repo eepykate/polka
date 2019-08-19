@@ -5,7 +5,7 @@
 #
 
 tempdir="/tmp/blaze"
-dir="$HOME/Stuff/1-Recordings"
+dir="$HOME/opt/1-Recordings"
 name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')" # Needs .mp4 after this is listed in the actual recording part
 #name="Video-$(( $(ls $dir/Video* | wc -l) + 1 ))"
 

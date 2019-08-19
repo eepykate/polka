@@ -162,7 +162,7 @@ if [[ -n "$theme" ]]; then
 	sed --follow-symlinks -i \
 		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
 		-e "s/fa=\".*\"/fa=\"#$false\"/" \
-		~/.config/zsh/.zshrc
+		${XDG_CONFIG_HOME:-~/.config}/zsh/.zshrc
 	sed --follow-symlinks -i \
 		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
 		-e "s/fa=\".*\"/fa=\"#$false\"/" \
@@ -173,9 +173,9 @@ if [[ -n "$theme" ]]; then
 
 	# Change the colour variables in firefox and my startpage
 	# $HOME/.startpage/style.css
-	echo "$HOME/.config/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
-$HOME/.config/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-$HOME/.local/startpage/style.css" | \
+	echo "${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
+${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userContent.css
+${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 		xargs sed --follow-symlinks -i \
 		-e "s/.*--bgdark:.*#.*\;/--bgdark: #$bgdark\;/" \
 		-e "s/.*--bglight:.*#.*\;/--bglight: #$bglight\;/" \

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-xrdb ~/.config/.Xresources
+xrdb ${XDG_CONFIG_HOME:-~/.config}/.Xresources
 xrdb="$(xrdb -query)"
 
 c="[0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z][0-9a-zA-Z]*"
