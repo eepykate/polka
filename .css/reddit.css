@@ -3934,6 +3934,11 @@ html body * button {
 	border: none !important;
 }
 
+html body * button:hover {
+	background-color: var(--accent) !important;
+	color: var(--hover) !important;
+}
+
 .side .redditname a {
 	font-size: 15px !important;
 }
