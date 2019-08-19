@@ -31,7 +31,8 @@
 	--lwt-text-color: var(--fgdark) !important;
 	--lwt-toolbarbutton-icon-fill: var(--hover) !important;
 	--lwt-toolbar-field-focus-color: var(--hover) !important;
-	--autocomplete-popup-highlight-background: var(--selected) !important;*/
+	--autocomplete-popup-highlight-background: var(--selected) !important;
+	--autocomplete-popup-color: var(--fglight) !important;
 }
 findbar {
 	--lwt-accent-color: var(--bgdark) !important;
