@@ -1,0 +1,4 @@
+#!/bin/sh
+# startx using xinit
+
+xinit "${XDG_CONFIG_HOME:-~/.config}/xinitrc" -- /usr/bin/X vt1 -keeptty
