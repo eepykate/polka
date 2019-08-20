@@ -1,7 +1,7 @@
 # Files
-mpd_music_dir = "~/Music"
-lyrics_directory  = ~/.config/ncmpcpp/lyrics
-ncmpcpp_directory  = ~/.config/ncmpcpp
+mpd_music_dir = "~/opt/Music"
+lyrics_directory  = ~/etc/ncmpcpp/lyrics
+ncmpcpp_directory  = ~/etc/ncmpcpp
 mpd_host = "localhost"
 mpd_port = "6600"
 mpd_connection_timeout = "5"
@@ -20,7 +20,7 @@ now_playing_prefix = "$(16)"
 now_playing_suffix = "$9"
 playlist_display_mode = classic
 autocenter_mode = yes
-progressbar_look = "━━─"
+progressbar_look = "━━━"  # ━━─
 header_visibility = no
 statusbar_visibility = yes
 titles_visibility = no
