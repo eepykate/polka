@@ -1,5 +1,5 @@
 super + e
-	st -e zsh -c 'source ~/.config/zsh/.zshrc; ncmpcpp'
+	st -e zsh -c 'source ~/etc/zsh/.zshrc; ncmpcpp'
 
 super + g
 	tasks

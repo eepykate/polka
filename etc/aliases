@@ -2,7 +2,7 @@
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 # alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
-alias neofetch="neofetch --ascii ~/.config/cat"
+alias neofetch="neofetch --ascii ~/etc/cat.txt"
 alias ci="xclip -selection clipboard -t image/png"  # Copy Image
 alias cv="xclip -selection clipboard -t video/mp4"  # Copy video
 # ls, group directories, and human readable sizes
