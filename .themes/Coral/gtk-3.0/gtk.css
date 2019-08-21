@@ -6274,11 +6274,16 @@ FIXME this is really an API */
 @define-color placeholder_text_color #acafb3;
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #1c2d37;
+	background-color: #f7b0b4;
 }
 
+/*.thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view:not(widget) * box,
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view:not(widget) {
+	color: #000
+}*/
+
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-image: image(rgba(235, 240, 255, 0.1));
+	background-image: image(rgba(0, 0, 0, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),

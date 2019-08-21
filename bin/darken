@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+set -x
+
+hextorgb() {
+	hex="$1"
+	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
+}
+
+a=( $(hextorgb $1) )
+
+r="$(echo $(( ${a[1]} * 0.8 )) | sed 's/\.$//g')"
+g="$(echo $(( ${a[2]} * 0.8 )) | sed 's/\.$//g')"
+b="$(echo $(( ${a[3]} * 0.8 )) | sed 's/\.$//g')"
+
+
+col="$(printf "%02X%02X%02X\n" $r $g $b)"
+
+fi="$HOME/opt/Wallpapers/tile.png"
+
+convert -size 100x100 canvas:"#$col" $fi
+
+feh --bg-tile --no-fehbg $fi

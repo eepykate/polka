@@ -261,6 +261,9 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	#refresh
 
 
+	darken "$accent"
+
+
 	notify-send "Theme changed to $theme"
 
 fi
