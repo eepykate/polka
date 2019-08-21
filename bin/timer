@@ -8,10 +8,14 @@
 seconds="$(echo "${1}*60" | bc | sed 's/\..*$//')"
 alarm_tone="/usr/share/sounds/freedesktop/stereo/complete.oga"
 
-for i in $( eval echo "{$seconds..1}" ); do
-	printf "\r  $(date -d"0+$i sec" +%H:%M:%S)"
-	sleep 1
-done
+main() {
+	for i in $(eval echo "{$seconds..1}"); do
+		printf "\r  $(date -d"0+$i sec" +%H:%M:%S)"
+		sleep 1
+	done
 
-paplay $alarm_tone 2>/dev/null &
-[[ -n $2 ]] && notify-send -u critical "Timer finished" "$2" || notify-send -u critical "Timer finished"
+	paplay $alarm_tone 2>/dev/null &
+	[[ -n $2 ]] && notify-send -u critical "Timer finished" "$2" || notify-send -u critical "Timer finished"
+}
+
+main &
