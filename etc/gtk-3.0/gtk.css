@@ -23,3 +23,29 @@
 * {
 	font-weight: normal;
 }
+
+/*
+.thunar {
+    background: url("Blur.png");
+    background-size: 100% 100%;
+}
+
+
+.thunar toolbar,
+.thunar .view,
+.thunar widget:not(:selected),
+.thunar .sidebar,
+.thunar .standard-view {
+    background-color: transparent;
+}
+
+.thunar image,
+.thunar widget,
+.thunar label {
+    color: #fff;
+}
+
+.thunar * .path-bar-button:checked {
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fff 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+*/

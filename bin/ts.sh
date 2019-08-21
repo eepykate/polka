@@ -228,7 +228,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 	# Change bspwm colours
 	sed --follow-symlinks -i \
-		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bglighter\"/g" \
+		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$accent\"/g" \
 		${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 	wm restart
 
