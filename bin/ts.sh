@@ -50,7 +50,7 @@ elif [[ $theme = Snow ]]; then
 	fglight="#43566f"
 
 	disabled="#595959"
-	accent="#cd5e6f"
+	accent="#cd5e79"
 	button="#43566f1a"
 	border="#b0b4bb"
 	red="#e09b70"
@@ -108,7 +108,7 @@ elif [[ $theme = Winter ]]; then
 	button="#ccccee1a"
 	border="#262c42"
 	red="#dc8189"
-	hover="#000000"
+	hover="#ffffff"
 
 elif [[ $theme = xd ]]; then
 
@@ -244,6 +244,13 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
 
 
+	for f in devices/drive-harddisk.svg places/folder.svg; do
+	sed -i --follow-symlinks \
+		"s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$hover/" \
+		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/16x16/$f
+	done
+
+
 	# Reload gtk theme - probably a major hack
 	temp="$(mktemp)"
 	temp2="$(mktemp)"
@@ -262,7 +269,6 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 
 
 	darken "$accent"
-
 
 	notify-send "Theme changed to $theme"
 

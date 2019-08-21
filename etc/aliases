@@ -186,10 +186,10 @@ lines2() {
 
 
 it() {
-        cp ~/git/.themes/* ~/.themes/ -rn
-        ln -s ~/git/.config/* ~/.config/ -f
-        cp ~/git/.mozilla/firefox/gauge.gauge/chrome/* ~/.mozilla/firefox/gauge.gauge/chrome/ -f
-        ln -s ~/git/bin/* ~/bin/ -f
+	sudo cp ~/git/.themes/* /usr/share/themes/ -r
+	ln -s ~/git/etc/* ~/etc/ -f
+	cp ~/git/etc/.mozilla/firefox/gauge.gauge/chrome/* ~/etc/.mozilla/firefox/gauge.gauge/chrome/ -f
+	ln -s ~/git/bin/* ~/bin/ -f
 }
 
 hib() {

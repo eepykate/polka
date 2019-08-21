@@ -17,6 +17,7 @@ export GTK2_RC_FILES="${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0"
 export DIALOGRC="${XDG_CONFIG_HOME:-~/.config}/dialogrc"
 export XAUTHORITY="/run/user/$UID/.Xauthority"
 export NVIM_LOG_FILE="$HOME/usr/nvim/nvim.log"
+export LESSHISTFILE="/dev/null"
 
 
 # Custom ls colours

@@ -1979,7 +1979,7 @@ notebook > header.top > tabs > tab {
 }
 
 notebook > header.top > tabs > tab:checked {
-  border-image-source: linear-gradient(to top, #cd5e6f 2px, rgba(0, 0, 0, 0.12) 2px);
+  border-image-source: linear-gradient(to top, #cd5e79 2px, rgba(0, 0, 0, 0.12) 2px);
 }
 
 notebook > header.top > tabs > tab.reorderable-page {
@@ -2019,7 +2019,7 @@ notebook > header.left > tabs > tab {
 }
 
 notebook > header.left > tabs > tab:checked {
-  border-image-source: linear-gradient(to left, #cd5e6f 2px, rgba(0, 0, 0, 0.12) 2px);
+  border-image-source: linear-gradient(to left, #cd5e79 2px, rgba(0, 0, 0, 0.12) 2px);
 }
 
 notebook > header.left > tabs > tab.reorderable-page {
@@ -2039,7 +2039,7 @@ notebook > header.right > tabs > tab {
 }
 
 notebook > header.right > tabs > tab:checked {
-  border-image-source: linear-gradient(to right, #cd5e6f 2px, rgba(0, 0, 0, 0.12) 2px);
+  border-image-source: linear-gradient(to right, #cd5e79 2px, rgba(0, 0, 0, 0.12) 2px);
 }
 
 notebook > header.right > tabs > tab.reorderable-page {
@@ -6275,7 +6275,7 @@ FIXME this is really an API */
 
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #cd5e6f;
+	background-color: #cd5e79;
 	color: #fff;
 }
 

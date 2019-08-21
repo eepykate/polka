@@ -6286,6 +6286,10 @@ FIXME this is really an API */
 	background-image: image(rgba(0, 0, 0, 0.1));
 }
 
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget) {
+	color: #000;
+}
+
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar,
 window.background.thunar,
