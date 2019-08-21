@@ -6284,8 +6284,7 @@ window.background.thunar,
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:selected {
-	background-color: transparent;
-	background-image: image(#40485E);
+	background-image: image(rgba(0, 0, 0, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
