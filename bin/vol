@@ -167,3 +167,5 @@ case $1 in
 		*) print "$song / $output"; notify 75 "$output" "$song";;
 	esac;;
 esac
+
+pgrep bar &>/dev/null && bar -v

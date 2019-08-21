@@ -95,11 +95,15 @@ mkfifo $fifo
 killall lemonbar
 sleep 0.1
 
-monitor="$(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g')"
+bspc subscribe desktop_focus | while read -r des; do
+	bar -d
+done &
+
+monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$(($(awk '{print $1}' <<< "$monitor" ) - 16))"
-offX="$(($(awk '{print $3}' <<< "$monitor") + 8))"
-offY="$(($(awk '{print $4}' <<< "$monitor") + 8))"
+width="$((${monitor[0]} - 1000))"
+offX="$((${monitor[2]} + 500))"
+offY="$((${monitor[3]} + 25))"
 
 (sleep 0.4;
 bat;
@@ -107,7 +111,6 @@ volume;
 desktop;
 ) &
 
-bspc config -m "$monitorName" top_padding 40
 (sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
 
 while read -r line < "$fifo"; do
@@ -127,7 +130,9 @@ done | (lemonbar \
 	-F "#ff$fg" \
 	-f "kiwi:size=10" \
 	-f "t mango Wide:size=10" \
-	-g "${width}x24+$offX+$offY"; kill -- -0)| bash &
+	-g "${width}x32+$offX+$offY"; kill -- -0)| bash &
+
+(sleep 0.4; bspc config -m "$monitorName" top_padding 0) &
 
 #while true; do
 #	bar -n;
