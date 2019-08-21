@@ -16,7 +16,7 @@ export __GL_SHADER_DISK_CACHE_PATH="${XDG_CONFIG_HOME:-~/.config}/nv"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0"
 export DIALOGRC="${XDG_CONFIG_HOME:-~/.config}/dialogrc"
 export XAUTHORITY="/run/user/$UID/.Xauthority"
-export NVIM_LOG_FILE="${XDG_DATA_HOME:-~/.local/share}/nvim/nvim.log"
+export NVIM_LOG_FILE="$HOME/usr/nvim/nvim.log"
 
 
 # Custom ls colours

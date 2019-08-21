@@ -157,7 +157,7 @@ if [[ -n "$theme" ]]; then
 
 	# if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 	[[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
-		sed --follow-symlinks -i "s/#include \"Xres\..*\"/#include \"Xres.$theme\"/" ~/.config/.Xresources
+		sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/.Xresources
 
 	sed --follow-symlinks -i \
 		-e "s/ac=\".*\"/ac=\"#$accent\"/" \

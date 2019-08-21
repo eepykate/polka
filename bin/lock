@@ -2,7 +2,7 @@
 #set -x
 pgrep i3lock &>/dev/null && exit
 cache="$HOME/tmp/lock.png"
-wp="$HOME/Wallpapers/Wallpaper_lock.png"
+wp="$HOME/opt/Wallpapers/Wallpaper_lock.png"
 
 case $1 in
 	-r) rm $cache;;
@@ -16,32 +16,32 @@ esac
 #	-filter_complex "boxblur=15" -vframes 1 \
 #	/tmp/lock_blur.png -loglevel quiet
 
-#xrandr=$(xrandr --query | grep ' connected')
-#SR=$(grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' <<< $xrandr )
+xrandr=$(xrandr --query | grep ' connected')
+SR=$(grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' <<< $xrandr )
 
-#for RES in $SR; do
-#	SRA=(${RES//[x+]/ })
-#	CX=$((SRA[2] + 25))
-#	CY=$((SRA[1] - 30))
-#	rectangles+="rectangle $CX,$CY $((CX+280)),$((CY-100)) "
-#done
+for RES in $SR; do
+	SRA=(${RES//[x+]/ })
+	CX=$((SRA[2] + 25))
+	CY=$((SRA[1] - 30))
+	rectangles+="rectangle $CX,$CY $((CX+280)),$((CY-100)) "
+done
 
-#! [[ -e ~/.cache/lock.png ]] && convert "$wp" -draw "fill #00000044 $rectangles" "$HOME/.cache/lock.png"
-# cp $wp ~/.cache/lock.png
+! [[ -e $cache ]] && convert "$wp" -draw "fill #00000044 $rectangles" "$cache"
+ #cp $wp $cache
+
 
 i3lock \
-	--datestr="%A, %B %e" \
-	--timestr="%H:%M" \
+	\
 	--ring-width=4 \
 	--line-uses-inside \
-	--radius=30 \
-	--indpos="x+(w/2):y+(h/2+60)" \
-	--datepos="x+(w/2):y+(h/2)" \
-	--timepos="x+(w/2):y+(h/2-50)" \
+	--radius=20 \
+	--timepos='x+130:h-80' \
+	--datepos='x+130:h-55' \
+	--indpos='x+260:h-80' \
 	--veriftext='' \
-	--timesize=70 \
-	--datesize=30 \
 	--wrongtext='' \
+	--indicator \
+	\
 	--clock \
 	--indicator \
 	--bshlcolor=d86880ff \
