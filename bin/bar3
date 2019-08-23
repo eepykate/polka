@@ -101,8 +101,8 @@ done &
 
 monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$((${monitor[0]} - 1200))"
-offX="$((${monitor[2]} + 600))"
+width="$(bc <<< "${monitor[0]}*0.4" | sed 's/\..*//')"
+offX="$(( $(( ${monitor[0]} - $width - $(( ${monitor[0]} / 2 )) + $(( $width / 2)) )) + ${monitor[2]} ))"
 offY="$((${monitor[3]} + 25))"
 
 (sleep 0.4;
