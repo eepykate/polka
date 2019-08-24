@@ -9,4 +9,4 @@ fi="$HOME/opt/Wallpapers/tile.png"
 convert -size 128x128 canvas:"$1" -separate -seed 1000 \
 	-attenuate 0.13 +noise gaussian -combine -colorspace sRGB $fi
 
-feh --bg-tile $fi
+feh --no-fehbg --bg-tile $fi

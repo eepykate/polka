@@ -268,7 +268,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	#refresh
 
 
-	darken "$accent"
+	walgen "#$bglighter"
 
 	notify-send "Theme changed to $theme"
 
