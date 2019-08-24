@@ -12,6 +12,163 @@ body:not(.res-nightmode) {
 	--reddit-image: url("https://i.imgur.com/Yi4htRJ.png");
 }
 
+.flair-aix {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/Oy1O2P9YGxRrncCOamQy_bCiycyW4P-Cf04fPWeQ8V0.png") no-repeat
+}
+.flair-android {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/cLep3TY9qq00LZ4G4sty4x_FgepY5VwbcSE662dAFSA.png") no-repeat
+}
+.flair-antergos {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/38u2UUFPNUaYkAjHWGrmiRRW27oU9kx4NghK-aq3LlM.png") no-repeat
+}
+.flair-arch {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/mbp1hQFg9Bq3tOg9EF43Y_436lL4z7Ciclh5K6x43SA.png") no-repeat
+}
+.flair-archbang {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/YGxxOWKHd32yQR7ELaL2eeS0cXd9QrLz2xbixLLzHAA.png") no-repeat
+}
+.flair-bodhi {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/abi-_ygPWE7ndXsjlMG6vvYqh7Tz5TYfW-VcJEmxxcI.png") no-repeat
+}
+.flair-centos {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/2qU00AIFF7lmhle1gM8RXLYo9Fe5nrcvlg5BXWN5FQw.png") no-repeat
+}
+.flair-chakra {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/tGBqPOfUK55uqJ2Z4lDGfIAUg1lUoEObsSirZNiapT4.png") no-repeat
+}
+.flair-crunchbang {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/iGwPbUlEUOFl_qyBgIKGxOHBX9Pz0P354huXRv-LRBg.png") no-repeat
+}
+.flair-debian {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/zAKeh5XpmVZQ91puguqFD3GCjqDLMibYYVAsWnxx0pA.png") no-repeat
+}
+.flair-deepin {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/HlwJrEf4Yio5CKba-eCJQrDeSAK41meFbjCu4rL11zk.png") no-repeat
+}
+.flair-elementary {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/V0ozExTcTSDySAUZk7_1-0mRogI0tF54AjaE2v_IiMQ.png") no-repeat
+}
+.flair-exherbo {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/hhIZLwiW41Ah036W3yqWMZ-UFZ_4tsX4dCi4USByfro.png") no-repeat
+}
+.flair-fedora {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/ENjuhYMsN6Bwy3CrMjV4C1wCMjfH9cnMpxiMNnMXhvU.png") no-repeat
+}
+.flair-freebsd {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/NAjvLAybQCUjoLCm9O6GMXa1bF9MTyi3OM99-rP-pk0.png") no-repeat
+}
+.flair-gentoo {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/Wn8ttynUEeVtsVwHz34L2ExY3DjdyHFlTMx7YvcDjz0.png") no-repeat
+}
+.flair-gnu {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/L_7oEebS_zuxv0Oqq_3ATT5lTQCPFDG3zoxV8ItPZLQ.png") no-repeat
+}
+.flair-korora {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/AwOE81QSCXjAPKGYj9kf7kq3p83-p_fEFcous6RRKKM.png") no-repeat
+}
+.flair-kubuntu {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/7tGywdRd-YfflHuBkWmCrBLtDsWt9Gst_kaOSQcdg5w.png") no-repeat
+}
+.flair-linux {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/7dkOkoLYv1iT9ZKWBkvkQ1FCQEXEusYLXo_LIPDs78M.png") no-repeat
+}
+.flair-lmde {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/SWcaD5I9qfK74n2VccbOOrCGbPKVytbkckJ2zcRYwL8.png") no-repeat
+}
+.flair-lubuntu {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/JgDwh4Fqte_VFpYb_fHHQIziH49WbwznR6N0kP8_jBY.png") no-repeat
+}
+.flair-macos {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/cUtALE41RI-uPEuX7NmjDoJkNWB3RrFvUNmmt646qVQ.png") no-repeat
+}
+.flair-magiea {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/pYBNZ-q9dT0qcuirqlaY93teUClaREPdiwDHbM0P11w.png") no-repeat
+}
+.flair-manjaro {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/WAOR-tNx28fj0LNiuovPVitZNr8H4GlnD2YCWOZiRkk.png") no-repeat
+}
+.flair-mint {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/28355Ao9csGkTs77AlgHEw8UbrQIus--qwPslXo0264.png") no-repeat
+}
+.flair-neon {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/NUw6_7ossY8AFBqM7u1b0H3uKS5N5CLYaoyyjePiYOU.png") no-repeat
+}
+.flair-nixos {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/hMZUwNDQg6ut2lfm2Fg_9K8if0krU2gfhpRlXw8KQgs.png") no-repeat
+}
+.flair-opensuse {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/EwA7Xeeb_zF8R5iHu0aA4t32vN_wRdXiiuGTUQVA9_0.png") no-repeat
+}
+.flair-osx {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/msjL8nE2RDbhGFVx-J7VoQr1afLDZ2E-Rdmq8IDw2nU.png") no-repeat
+}
+.flair-siduction {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/av4E6g1J36jSHXh_qggOmw7OdVMr6uJVhX85nDlKDRk.png") no-repeat
+}
+.flair-solus {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/Qx8VGlREyPuFqV9yJK49Gp4ML9wDkG9-bjLhZQOWUwo.png") no-repeat
+}
+.flair-ubuntu {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/uSLYjw1D9wR4kKCZj43LVrAF_6pqYL24UekWk9U3pmw.png") no-repeat
+}
+.flair-ubuntu-gnome {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/49ZsAURKQpHqpcUV18JRKBQmp4ro2r2d5tnOl0HQfeY.png") no-repeat
+}
+.flair-ubuntu-mate {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/qb6lbZNiBvOucDZ9aC1wBp_kVThtQOXSI6_M155ceOM.png") no-repeat
+}
+.flair-void {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/r2eSYudVeGKaQpu5sZOVQt-tTX0C6XUEHi6FCkEXFJw.png") no-repeat
+}
+.flair-windows {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/JmVEh2La_NY5lieaJ2AmmsvDHJ7JGudtTTe-fAyj7wA.png") no-repeat
+}
+.flair-xubuntu {
+ min-width: 5px;
+ background:url("//a.thumbs.redditmedia.com/PSNQGmOjx6f3bEwoAIxfokNPf0RD70vKiHnMuqhxqH8.png") no-repeat
+}
+.flair-zorin {
+ min-width: 5px;
+ background:url("//b.thumbs.redditmedia.com/dC5rET-j_ti8F4Y12zGEZ7f8sLPt-yBNXQ8KzsvdGdE.png") no-repeat
+}
+
 span.pagename.redditname a,
 body.profile-page * span.pagename {
  display:block;
