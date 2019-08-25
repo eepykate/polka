@@ -3665,7 +3665,7 @@ messagedialog.csd decoration {
 .view selection, .view:selected, flowbox flowboxchild:selected, label selection, spinbutton:not(.vertical) selection,
 entry selection, modelbutton.flat:selected,
 .menuitem.button.flat:selected, popover.background.menu button:checked,
-popover.background button.model:checked, row:selected, calendar:selected, .nautilus-window flowboxchild:selected .icon-item-background, text:selected, box.vertical > widget > widget:selected, .budgie-menu button:checked, XfdesktopIconView.view:active {
+popover.background button.model:checked, row:selected, calendar:selected, .nautilus-window flowboxchild:selected .icon-item-background, box.vertical > widget > widget:selected, .budgie-menu button:checked, XfdesktopIconView.view:active {
   background-color: rgba(130, 163, 231, 0.36);
 }
 
@@ -6306,4 +6306,12 @@ window.background.thunar,
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
 	background: rgba(204, 204, 255, 0.20);
+}
+
+
+
+
+text:selected {
+	background-color: #82a3e7;
+	color: #fff;
 }

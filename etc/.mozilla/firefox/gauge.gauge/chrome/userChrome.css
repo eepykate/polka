@@ -25,15 +25,16 @@
 /*** Change colours of a few items ***/
 :root {
 	--tab-min-height: 26px  !important;
-	--toolbar-bgcolor: var(--accent) !important;
-	--lwt-accent-color: var(--bgdark) !important;
-	--toolbar-color: var(--hover) !important;
-	--lwt-text-color: var(--fgdark) !important;
-	--lwt-toolbarbutton-icon-fill: var(--hover) !important;
-	--lwt-toolbar-field-focus-color: var(--hover) !important;
-	--autocomplete-popup-highlight-background: var(--selected) !important;
-	--autocomplete-popup-color: var(--fglight) !important;
+	--toolbar-bgcolor: highlight !important;
+	--lwt-accent-color: -moz-dialog !important;
+	--toolbar-color: var(--autocomplete-popup-highlight-color) !important;
+	--lwt-text-color: -moz-dialogtext !important;
+	--lwt-toolbarbutton-icon-fill: -moz-dialogtext !important;
+	--lwt-toolbar-field-focus-color: -moz-dialogtext !important;
+	--autocomplete-popup-highlight-background: highlight !important;
+	--autocomplete-popup-color: -moz-fieldtext !important;
 }
+/*
 findbar {
 	--lwt-accent-color: var(--bgdark) !important;
 	--lwt-toolbar-field-background-color: var(--bglighter) !important;
@@ -59,6 +60,11 @@ findbar {
 
 :root:not([lwtheme-image]) .browserContainer > findbar:-moz-lwtheme {
 	background-image: none !important;
+}*/
+
+#urlbar,
+.tab-text[selected] {
+	color: var(--autocomplete-popup-highlight-color) !important;
 }
 
 #urlbar {
@@ -77,19 +83,19 @@ findbar {
 /***   Transparent Blurry UI   ***/
 /*
 :root {
-	--lwt-toolbarbutton-icon-fill: #43566f !important;
+	--lwt-toolbarbutton-icon-fill: #ffffff !important;
 }
 .toolbarbutton-1,
 .tab-close-button:not([selected="true"]) {
-	color: #43566f !important;
+	color: #fff !important;
 }
 
 .tabs-newtab-button:hover,
 .tab-close-button:hover {
-	background-color: #43566f11 !important;
+	background-color: #ffffff11 !important;
 }
 .tab-close-button:active {
-	background-color: #43566f33 !important;
+	background-color: #ffffff33 !important;
 }
 
 #navigator-toolbox * #tabbrowser-tabs,
@@ -99,6 +105,7 @@ findbar {
 {
 	background-image: url(Blur.png) !important;
 	background-color: transparent !important;
+	background-size: 100% 100vh;
 }
 
 #navigator-toolbox * .tabbrowser-tab, .tab-content, .tab-background {
@@ -110,7 +117,7 @@ findbar {
 }
 
 #navigator-toolbox * .tabbrowser-tab .tab-text.tab-label {
-	color: #43566f !important;
+	color: #fff !important;
 }
 
 #navigator-toolbox * .tab-close-button[selected="true"],
@@ -124,8 +131,8 @@ findbar {
 
 #navigator-toolbox * .toolbarbutton-icon,
 #navigator-toolbox * .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: #43566f11 !important;
-	--toolbarbutton-active-background: #43566f33 !important;
+	--toolbarbutton-hover-background: #ffffff11 !important;
+	--toolbarbutton-active-background: #ffffff33 !important;
 }
 
 #navigator-toolbox * .tab-close-button[selected="true"]:hover {
