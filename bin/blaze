@@ -16,7 +16,7 @@ opts=$(getopt -o d:sncp:bShB: --long display:,save,no-nvenc,noconfirm,preset:,bl
 eval set -- "$opts"
 
 help="
-Gauge Krahe's recording script 
+Gauge Krahe's recording script
   https://gitlab.com/GaugeK/dots/
 
 Options:
@@ -63,7 +63,7 @@ done
 # Save the recording
 if [[ $SoR = save ]]; then
 	if [[ $blaze = blaze ]]; then
-		pkill ffmpeg 
+		pkill ffmpeg
 		name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
 		ls -R1t $tempdir/*.mp4 | head -2 | sed -e "s/^/file \'/g" -e "s/$/\'/g" > /tmp/blaze_inputs.txt
 
@@ -72,7 +72,7 @@ if [[ $SoR = save ]]; then
 		notify-send -t 4000 "Recording saved, you might want to run the script again"
 		exit
 	else
-		pkill ffmpeg
+		pkill ffmpeg &&
 		notify-send -t 2000 "recording stopped"
 		exit
 	fi
@@ -80,14 +80,14 @@ fi
 
 
 # Load the preset if ran with -p <number>
-[[ -n $preset ]] && 
+[[ -n $preset ]] &&
 	[[ -f ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset ]] &&
 	. ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset
 
 if [[ -z $DoM ]]; then
 	unset presets
 	# Find presets
-	for x in $(ls ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-*); do 
+	for x in $(ls ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-*); do
 		presets+="\npreset-${x##*-}";
 	done
 	DoM="$(echo -e "Display\nSlop$presets" | dmenu -i -p "Automatic dimensions from display, or select a region?")"
@@ -99,9 +99,9 @@ fi
 if [[ ${DoM} = Display ]]; then
 	# Get display list
 	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
-	if [[ -z $display_select ]]; then 
+	if [[ -z $display_select ]]; then
 		# Choose a display
-		[[ $(wc -l <<< $displays) = 1 ]] && display_select="$(awk '{print $1}' <<< $displays)" || 
+		[[ $(wc -l <<< $displays) = 1 ]] && display_select="$(awk '{print $1}' <<< $displays)" ||
 		display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
 	fi
 
@@ -121,8 +121,8 @@ fi
 [[ -z $audio ]] && audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 [[ -z $rate ]] && rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
 # Get the amount to save if running in blaze mode
-[[ $blaze = blaze ]] && 
-	[[ -z $trim ]] && 
+[[ $blaze = blaze ]] &&
+	[[ -z $trim ]] &&
 	trim="$(echo -e "2\n5" | dmenu -i -p "Min amount of minutes to save")"
 
 # Save preset
@@ -135,11 +135,11 @@ audio=\"$audio\"
 " > ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset &&
 [[ $blaze = blaze ]] && echo -e "trim=\"$trim\"\nblaze=\"$blaze\"" >> ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset
 
-# Convert the seconds of trim to minutes 
+# Convert the seconds of trim to minutes
 [[ -n $trim ]] && trimm="$(( $trim * 60 ))"
 
 # add actual audio command to $audio if yes
-if [[ $audio = yes ]]; then 
+if [[ $audio = yes ]]; then
 	audio="-f pulse -i $(pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
 else
 	audio=""
@@ -151,7 +151,7 @@ fi
 [[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
 
 
-if [[ $RtR = Yes ]]; then 
+if [[ $RtR = Yes ]]; then
 	notify-send -t 2000 "recording started"
 	if [[ $blaze = blaze ]]; then
 		while true; do
