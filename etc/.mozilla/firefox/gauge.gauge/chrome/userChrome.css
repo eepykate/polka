@@ -5,18 +5,18 @@
  */
 
 :root {
---bgdark: #232836;
---bglight: #282e3f;
---bglighter: #2f364a;
+--bgdark: #f7f9ff;
+--bglight: #eef0f5;
+--bglighter: #e1e4ea;
 
---fgdark: #8686a4;
---fglight: #ccccfa;
+--fgdark: #909cad;
+--fglight: #43566f;
 
---accent: #82a3e7;
---border: #2f364a;
---disabled: #696969;
+--accent: #cd5e79;
+--border: #b0b4bb;
+--disabled: #595959;
 --selected: var(--button);
---button: #ccccfa1a;
+--button: #43566f1a;
 --hover: #ffffff;
 --toolbar-bgimage: none !important;
 --arrowpanel-dimmed: transparent !important;
@@ -74,8 +74,42 @@ findbar {
 
 
 
-#tabbrowser-tabs {
-	--tab-min-height: 26px !important;
+/* Stop white flash on opening a new tab */
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+	background: -moz-dialog !important
+}
+#tabbrowser-tabpanels {
+	background: -moz-dialog !important;
+}
+
+
+
+/*Prevents White pre-load flash*/
+.tabbrowser-tabbox {
+	background-color: -moz-dialog !important;
+}
+
+@-moz-document url(about:blank) {
+	* { background: -moz-dialog !important; }
+}
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important}}
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+	#main-window,
+	browser[type="content-primary"],
+	browser[type="content"],
+	tabbrowser#content,
+	#content,
+	browser[type="content"] > html
+	{
+		background: -moz-dialog !important;
+	}
 }
 
 
@@ -141,46 +175,6 @@ findbar {
 
 #navigator-toolbox * .tab-close-button[selected="true"]:active {
 	background-color: #ffffff22 !important;
-}
-
-
-
-/* Stop white flash on opening a new tab */
-#browser vbox#appcontent tabbrowser,
-#content,
-#tabbrowser-tabpanels,
-browser[type=content-primary],
-browser[type=content] > html {
-	background: var(--bgdark)!important
-}
-#tabbrowser-tabpanels {
-	background: var(--bgdark) !important;
-}
-
-
-
-/*Prevents White pre-load flash*/
-.tabbrowser-tabbox {
-	background-color:  var(--bgdark) !important;
-}
-
-@-moz-document url(about:blank) {
-	* { background: var(--bgdark) !important; }
-}
-
-@-moz-document url(chrome://browser/content/browser.xul) {
-	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important}}
-
-@-moz-document url(chrome://browser/content/browser.xul) {
-	#main-window,
-	browser[type="content-primary"],
-	browser[type="content"],
-	tabbrowser#content,
-	#content,
-	browser[type="content"] > html
-	{
-		background: var(--bgdark) !important;
-	}
 }
 
 
