@@ -120,7 +120,7 @@ e() {
 			*.tgz)       tar xzvf $1 ;;
 			*.zip)       unzip $1 ;;
 			*.7z)        7z $1 ;;
-			*.xz)        xz -d $1 ;;
+			*.xz)        xz -vd $1 ;;
 			*)           echo "'$1' cannot be extracted via extract()" ;;
 		esac
 	else
