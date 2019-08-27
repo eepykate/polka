@@ -120,30 +120,30 @@ putgitrepo "$dots" "/home/$name/git"
 #Symlink / copy files from ~/git into ~/
 
 mkdir -p \
-	/home/$name/.mozilla/firefox/gauge.gauge/chrome \
-	/home/$name/.config \
-	/home/$name/.local/share \
+	/home/$name/etc/.mozilla/firefox/gauge.gauge/chrome \
+	/home/$name/usr \
+	/home/$name/opt \
 	/home/$name/bin \
-	/home/$name/.icons/default \
-	/home/$name/.config/backup \
-	/home/$name/.themes
+	/home/$name/etc/backup
 
 
-find /home/$name/git/.config/ -maxdepth 1 > /tmp/config.txt
+find /home/$name/git/etc/ -maxdepth 1 > /tmp/config.txt
 sed -e 's/git\///' -e '1d' < /tmp/config.txt > /tmp/config_1.txt
-while read i; do mv $i /home/$name/.config/backup/; done < /tmp/config_1.txt
-while read i; do ln -sf $i /home/$name/.config/; done < /tmp/config.txt
+while read i; do mv $i /home/$name/etc/backup/; done < /tmp/config_1.txt
+while read i; do ln -sf $i /home/$name/etc/; done < /tmp/config.txt
 
-cp -rf /home/$name/git/.local/share/* /home/$name/.local/share/
-cp -rf /home/$name/git/.themes/* /home/$name/.themes/
+cp -rf /home/$name/git/usr/* /home/$name/usr/
+cp -rf /home/$name/git/.themes/* /usr/share/themes/
 
-cp -f /home/$name/git/.icons/default/index.theme /home/$name/.icons/default/index.theme
+#cp -f /home/$name/git/.icons/ /usr/share/icons/
 
 find /home/$name/git/ -maxdepth 1 | grep -v "local\|config\|bin\|mozilla\|theme\|icon"> /tmp/home.txt
 for i in $(cat /tmp/home.txt); do ln -sf $i /home/$name/; done
 
-ln -sf /home/$name/git/.mozilla/firefox/gauge.gauge/chrome/* /home/$name/.mozilla/firefox/gauge.gauge/chrome/
-cp /home/$name/git/.mozilla/firefox/profiles.ini /home/$name/.mozilla/firefox/profiles.ini
+cp -rf /home/$name/git/Wallpapers/ /home/$name/opt/
+
+ln -sf /home/$name/git/etc/.mozilla/firefox/gauge.gauge/chrome/* /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/
+cp /home/$name/git/etc/.mozilla/firefox/profiles.ini /home/$name/etc/.mozilla/firefox/profiles.ini
 
 ln -sf /home/$name/git/bin/* /home/$name/bin/
 
