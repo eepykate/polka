@@ -39,6 +39,8 @@ dl dt,
 	border-color: var(--bglighter) !important;
 }
 
+.account__header__extra__links > * > *,
+.account__header__content,
 .getting-started__footer > * > *,
 .getting-started__footer > * > * > *,
 .getting-started__footer > * > * > * > *,
