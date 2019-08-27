@@ -105,12 +105,11 @@ pacman -S --noconfirm --needed \
 	xsettingsd lxappearance
 
 
-sudo -u $name yay -S --noconfirm --needed \
-	i3lock-color-git qview gtk3-mushrooms \
-	pulseaudio-ctl light-git bibata-cursor-theme \
-	lemonbar-xft-git kvantum-qt4-git \
-	transmission-remote-cli-git flashfocus-git \
-	mpdris2
+for i in i3lock-color-git qview gtk3-mushrooms pulseaudio-ctl light-git bibata-cursor-theme lemonbar-xft-git kvantum-qt4-git transmission-remote-cli-git flashfocus-git mpdris2; do
+
+	sudo -u $name yay -S --noconfirm --needed $i
+
+done
 
 echo -e "installing dotfiles"
 
@@ -129,7 +128,7 @@ mkdir -p \
 
 find /home/$name/git/etc/ -maxdepth 1 > /tmp/config.txt
 sed -e 's/git\///' -e '1d' < /tmp/config.txt > /tmp/config_1.txt
-while read i; do mv $i /home/$name/etc/backup/; done < /tmp/config_1.txt
+while read i; do [[ -f $i ]] && mv $i /home/$name/etc/backup/; done < /tmp/config_1.txt
 while read i; do ln -sf $i /home/$name/etc/; done < /tmp/config.txt
 
 cp -rf /home/$name/git/usr/* /home/$name/usr/
@@ -142,7 +141,7 @@ for i in $(cat /tmp/home.txt); do ln -sf $i /home/$name/; done
 
 cp -rf /home/$name/git/Wallpapers/ /home/$name/opt/
 
-ln -sf /home/$name/git/etc/.mozilla/firefox/gauge.gauge/chrome/* /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/
+#ln -sf /home/$name/git/etc/.mozilla/firefox/gauge.gauge/chrome/* /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/
 cp /home/$name/git/etc/.mozilla/firefox/profiles.ini /home/$name/etc/.mozilla/firefox/profiles.ini
 
 ln -sf /home/$name/git/bin/* /home/$name/bin/
@@ -165,18 +164,15 @@ mkdir -p /usr/share/fonts/OTF
 
 echo " - Source Code Pro"
 # Sauce Code Pro font
-rm -f /tmp/SauceCodePro.zip &>/dev/null
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip >> /tmp/SauceCodePro.zip 
 unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 echo " - Iosevka"
 # Iosevka font
-rm -f /tmp/02-iosevka-term-2.0.1.zip &>/dev/null
 curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 # Iosevka Nerd Font
-rm /tmp/Iosevka-nerd-font.zip
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -o /tmp/Iosevka-nerd-font.zip
 unzip -o /tmp/Iosevka-nerd-font.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
@@ -190,7 +186,6 @@ unzip -o /tmp/Roboto-Condensed.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 echo " - Normal nerd font"
 # Nerd font
-rm /tmp/Regular.zip
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Regular.zip -o /tmp/Regular.zip
 unzip -o /tmp/Regular.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
