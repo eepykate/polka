@@ -402,9 +402,7 @@ XDG_CACHE_HOME="$HOME/tmp"
 XDG_DATA_HOME="$HOME/usr"' >> /etc/environment
 fi
 
-if ! grep ZDOTDIR /etc/zsh/zshenv &>/dev/null; then
-	echo 'ZDOTDIR="$HOME/etc/zsh"' >> /etc/environment
-fi
+echo 'ZDOTDIR="$HOME/etc/zsh"' >> /etc/environment
 
 
 
