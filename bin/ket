@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# Credit to this guy
+#   https://www.reddit.com/r/minimalcatart/comments/cvqukg/smol_ket/
+#
+
+
+bb="\e[48;05;232m"
+fb="\e[38;05;232m"
+
+bg="\e[48;05;242m"
+fg="\e[38;05;242m"
+
+bw="\e[48;05;252m"
+fw="\e[38;05;252m"
+
+br="\e[48;05;161m"
+fr="\e[38;05;161m"
+
+
+by="\e[48;05;178m"
+
+#fg="\e[37m"
+#bg="\e[47m"
+
+#by="\e[43m"
+
+#br="\e[41m"
+#fr="\e[31m"
+
+#bw="\e[107m"
+#fw="\e[97m"
+
+c="\e[0m"
+
+# █ ▄ ▀
+
+
+printf "
+$bb$fg ▄$c$fb▄▄$bb$fg▄ $c
+$bb$fg $bb▀$fw█$bb$fg▀█$bb $c
+$fb▀$c$bb$fw▀$by▀$br▀$c$fr$bw▀$fg▀$c$fb$bg▀▀▀$c$fb▄$c $fb▄$fg$bb▄$c$fb▄
+ $fb█$fw$bw▀$bb▀$bw▀$bg▀$c$fg███$c$fb$bg▄$c$bg$fb▀▀$c$fg$bb▀$c$fb▀
+ $fb▀$fw▀$fb▀$fw▀$fb▀$fg▀$fb▀$fg▀$fb▀$fb▀▀$c
+
+"
