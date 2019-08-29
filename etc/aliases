@@ -110,8 +110,9 @@ source ${XDG_CONFIG_HOME:-~/.config}/sc.sh  # Add directory / file shortcuts to 
 e() {
 	if [ -f $1 ] ; then
 		case $1 in
-			*.tar.bz2)   tar xzjf $1 ;;
+			*.tar.bz2)   tar xjvf $1 ;;
 			*.tar.gz)    tar xzvf $1 ;;
+			*.tar.xz)    tar xJvf $1 ;;
 			*.bz2)       bunzip2 $1 ;;
 			*.rar)       unrar xv $1 ;;
 			*.gz)        gunzip $1 ;;

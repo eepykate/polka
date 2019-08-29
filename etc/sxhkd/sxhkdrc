@@ -5,7 +5,7 @@ super + g
 	tasks
 
 super + w
-	st -g 100x30 -c floating -e nmtui-connect
+	find /home/gauge/opt/linux/oth | dmenu -l 20 -i | xargs mpv --loop
 
 super + y
 	st -e transmission-remote-cli
