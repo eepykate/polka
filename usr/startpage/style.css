@@ -114,6 +114,7 @@ main {
 	width: auto;
 	text-align: center;
 	transition: all 00ms ease 0s;
+	border-radius: 2px;
 }
 
 .title {
@@ -195,6 +196,8 @@ main {
 /*
 html {
 	background: url(Blur.png);
+	background-size: 100% calc(100vh + 24px);
+	background-position: 0% -24px;
 }
 
 .box .title,
@@ -204,11 +207,11 @@ html {
 
 .box:hover .title {
 	background: #fff;
-	color: #43566f;
+	color: #000;
 }
 
 #date, #time {
-	color: #43566f;
+	color: #fff;
 }
 
 .box .title {
@@ -216,9 +219,9 @@ html {
 }
 
 a, a:visited {
-	color: #43566f
+	color: #ddd;
 }
 
 a:hover, a:visited:hover {
-	color: #000;
+	color: #fff;
 }

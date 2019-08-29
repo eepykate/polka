@@ -5,18 +5,18 @@
  */
 
 :root {
---bgdark: #f7f9ff;
---bglight: #eef0f5;
---bglighter: #e1e4ea;
+--bgdark: #232836;
+--bglight: #282e3f;
+--bglighter: #2f364a;
 
---fgdark: #909cad;
---fglight: #43566f;
+--fgdark: #8686a4;
+--fglight: #ccccfa;
 
---accent: #cd5e79;
---border: #b0b4bb;
---disabled: #595959;
+--accent: #82a3e7;
+--border: #2f364a;
+--disabled: #696969;
 --selected: var(--button);
---button: #43566f1a;
+--button: #ccccfa1a;
 --hover: #ffffff;
 --toolbar-bgimage: none !important;
 --arrowpanel-dimmed: transparent !important;
@@ -71,6 +71,19 @@ findbar {
 	background-color: transparent !important;
 }
 
+
+
+/* Change colour of fill animation when tab has finished loading */
+.tabbrowser-tab {
+	--tab-loading-fill: -moz-dialogtext !important;
+	box-shadow: none !important;
+}
+
+
+
+.tab-background {
+	border-radius: 2px !important;
+}
 
 
 
@@ -287,14 +300,6 @@ browser[type=content] > html {
 #context-forward > .menu-iconic-left,
 #context-bookmarkpage > .menu-iconic-left {
 	padding: 0px !important;
-}
-
-
-
-/* Change colour of fill animation when tab has finished loading */
-.tabbrowser-tab {
-	--tab-loading-fill: var(--accent) !important;
-	box-shadow: none !important;
 }
 
 
