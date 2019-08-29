@@ -12,7 +12,7 @@ export BROWSER="firefox"                # Web Browser
 export FILE="dolphin"                   # File manager
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 
-export __GL_SHADER_DISK_CACHE_PATH="${XDG_CONFIG_HOME:-~/.config}/nv"
+export __GL_SHADER_DISK_CACHE_PATH="${XDG_CACHE_HOME:-~/.cache}/nv"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0"
 export DIALOGRC="${XDG_CONFIG_HOME:-~/.config}/dialogrc"
 export XAUTHORITY="/run/user/$UID/.Xauthority"
