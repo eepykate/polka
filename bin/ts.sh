@@ -27,6 +27,7 @@ if [[ $theme = Coral ]]; then
 	bgdark="#111c23"
 	bglight="#17242c"
 	bglighter="#1c2d37"
+	bglightest="#243A47"
 
 	fgdark="#999ba0"
 	fglight="#edeef0"
@@ -45,6 +46,7 @@ elif [[ $theme = Snow ]]; then
 	bgdark="#f7f9ff"
 	bglight="#eef0f5"
 	bglighter="#e1e4ea"
+	bglightest="#CED1D6"
 
 	fgdark="#909cad"
 	fglight="#43566f"
@@ -63,6 +65,7 @@ elif [[ $theme = la ]]; then
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
+	bglightest="#3E4761"
 
 	fgdark="#8686a4"
 	fglight="#ccccfa"
@@ -81,6 +84,7 @@ elif [[ $theme = la-1 ]]; then
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
+	bglightest="#3E4761"
 
 	fgdark="#8686a4"
 	fglight="#ccccfa"
@@ -99,6 +103,7 @@ elif [[ $theme = Winter ]]; then
 	bgdark="#232731"
 	bglight="#282d39"
 	bglighter="#303644"
+	bglighter="#4D576E"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -117,6 +122,7 @@ elif [[ $theme = xd ]]; then
 	bgdark="#1a1f2e"
 	bglight="#202537"
 	bglighter="#272e44"
+	bglightest="#3B4566"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -137,6 +143,7 @@ bgdark="${bgdark#?}"
 false="${false#?}"
 bglight="${bglight#?}"
 bglighter="${bglighter#?}"
+bglightest="${bglightest#?}"
 fgdark="${fgdark#?}"
 fglight="${fglight#?}"
 disabled="${disabled#?}"
@@ -268,7 +275,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	#refresh
 
 
-	walgen "#$bglighter"
+	walgen "#$bglightest"
 
 	notify-send "Theme changed to $theme"
 
