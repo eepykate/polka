@@ -105,7 +105,7 @@ pacman -S --noconfirm --needed \
 	xsettingsd lxappearance
 
 
-for i in i3lock-color-git qview gtk3-mushrooms pulseaudio-ctl light-git bibata-cursor-theme lemonbar-xft-git kvantum-qt4-git transmission-remote-cli-git flashfocus-git mpdris2; do
+for i in i3lock-color-git qview gtk3-mushrooms pulseaudio-ctl light-git lemonbar-xft-git kvantum-qt4-git transmission-remote-cli-git flashfocus-git mpdris2; do
 
 	sudo -u $name yay -S --noconfirm --needed $i
 
