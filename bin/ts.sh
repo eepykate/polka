@@ -27,7 +27,7 @@ if [[ $theme = Coral ]]; then
 	bgdark="#111c23"
 	bglight="#17242c"
 	bglighter="#1c2d37"
-	bglightest="#243A47"
+	bglightest="#203440"
 
 	fgdark="#999ba0"
 	fglight="#edeef0"
@@ -46,7 +46,7 @@ elif [[ $theme = Snow ]]; then
 	bgdark="#f7f9ff"
 	bglight="#eef0f5"
 	bglighter="#e1e4ea"
-	bglightest="#CED1D6"
+	bglightest="#D8DBE0"
 
 	fgdark="#909cad"
 	fglight="#43566f"
@@ -65,7 +65,7 @@ elif [[ $theme = la ]]; then
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
-	bglightest="#3B4561"
+	bglightest="#343C52"
 
 	fgdark="#8686a4"
 	fglight="#ccccfa"
@@ -84,7 +84,7 @@ elif [[ $theme = la-1 ]]; then
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
-	bglightest="#3B4561"
+	bglightest="#343C52"
 
 	fgdark="#8686a4"
 	fglight="#ccccfa"
@@ -103,7 +103,7 @@ elif [[ $theme = Winter ]]; then
 	bgdark="#232731"
 	bglight="#282d39"
 	bglighter="#303644"
-	bglightest="#4D576E"
+	bglightest="#363D4D"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -114,25 +114,6 @@ elif [[ $theme = Winter ]]; then
 	border="#262c42"
 	red="#dc8189"
 	hover="#ffffff"
-
-elif [[ $theme = xd ]]; then
-
-	accentn="4"
-	false="#f75e6f"
-	bgdark="#1a1f2e"
-	bglight="#202537"
-	bglighter="#272e44"
-	bglightest="#3B4566"
-
-	fgdark="#8888a0"
-	fglight="#ccccee"
-
-	disabled="#696969"
-	accent="#85acff"
-	button="#cbe3f122"
-	border="#262c42"
-	red="#f75e6f"
-	hover="#000000"
 
 else
 	echo "Invalid theme; exiting"; exit
@@ -258,6 +239,15 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	done
 
 
+	cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
+	sed --follow-symlinks -i \
+		-e "s/000000/$bglightest/g" \
+		-e "s/222222/$bglighter/g" \
+		~/opt/Wallpapers/tile.svg
+	inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
+	feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+
+
 	# Reload gtk theme - probably a major hack
 	temp="$(mktemp)"
 	temp2="$(mktemp)"
@@ -275,7 +265,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	#refresh
 
 
-	walgen "#$bglighter"
+	#walgen "#$bglighter"
 
 	notify-send "Theme changed to $theme"
 
