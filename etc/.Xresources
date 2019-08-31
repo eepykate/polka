@@ -4,7 +4,7 @@ URxvt.font:       xft:Iosevka Term:style=Regular:pixelsize=12
 st.alpha:         1
 st.termname:      st-256color
 st.font:          kiwi:pixelsize=10
-st.borderpx:      15
+st.borderpx:      25
 st.tabspaces:     4
 st.xfps:          60
 st.actionfps:     60
