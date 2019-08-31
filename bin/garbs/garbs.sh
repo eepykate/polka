@@ -374,7 +374,7 @@ udevadm control --reload-rules;
 
 echo "Installing vim-plug for neovim"
 # vim-plug for neovim
-curl -fLo /home/$name/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+curl -fLo /home/$name/usr/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
