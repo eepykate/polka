@@ -65,7 +65,7 @@ elif [[ $theme = la ]]; then
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
-	bglightest="#3E4761"
+	bglightest="#3B4561"
 
 	fgdark="#8686a4"
 	fglight="#ccccfa"
@@ -84,7 +84,7 @@ elif [[ $theme = la-1 ]]; then
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
-	bglightest="#3E4761"
+	bglightest="#3B4561"
 
 	fgdark="#8686a4"
 	fglight="#ccccfa"
@@ -103,7 +103,7 @@ elif [[ $theme = Winter ]]; then
 	bgdark="#232731"
 	bglight="#282d39"
 	bglighter="#303644"
-	bglighter="#4D576E"
+	bglightest="#4D576E"
 
 	fgdark="#8888a0"
 	fglight="#ccccee"
@@ -275,7 +275,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	#refresh
 
 
-	walgen "#$bglightest"
+	walgen "#$bglighter"
 
 	notify-send "Theme changed to $theme"
 

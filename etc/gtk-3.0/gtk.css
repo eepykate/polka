@@ -49,3 +49,22 @@
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #fff 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 */
+
+
+/*
+.thunar #location-toolbar {
+	margin-top: -40px;
+}
+
+.thunar .sidebar .view {
+	background-color: transparent;
+}
+
+.thunar > grid paned {
+    margin-left: -36px;
+}
+
+.thunar > grid paned grid {
+    margin-left: 4px;
+}
+*/

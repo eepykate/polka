@@ -5,7 +5,7 @@ super + g
 	tasks
 
 super + w
-	find /home/gauge/opt/linux/oth | dmenu -l 20 -i | xargs mpv --loop
+	mpv --loop "$(find /home/gauge/opt/linux/oth | dmenu -l 20 -i)"
 
 super + y
 	st -e transmission-remote-cli
