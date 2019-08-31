@@ -6,8 +6,16 @@
 	margin-bottom: -16px
 }
 
-.thunar * #location-toolbar {
-	margin-left: -175px;
+.thunar #location-toolbar {
+	margin-right: -50px;
+}
+.thunar #location-toolbar * widget box entry {
+	margin-left: 30px;
+	margin-right: 55px;
+}
+
+.thunar #location-toolbar {
+	margin-left: -200px;
 }
 
 /*
