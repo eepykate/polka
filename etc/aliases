@@ -117,7 +117,7 @@ e() {
 			*.rar)       unrar xv $1 ;;
 			*.gz)        gunzip $1 ;;
 			*.tar)       tar xvf $1 ;;
-			*.tbz2)      tar xzjf $1 ;;
+			*.tbz2)      tar xvjf $1 ;;
 			*.tgz)       tar xzvf $1 ;;
 			*.zip)       unzip $1 ;;
 			*.7z)        7z $1 ;;
