@@ -239,10 +239,10 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	done
 
 
-	cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
+	cp ~/opt/Wallpapers/rectangles.svg ~/opt/Wallpapers/tile.svg
 	sed --follow-symlinks -i \
-		-e "s/000000/$bglightest/g" \
-		-e "s/222222/$bglighter/g" \
+		-e "s/000000/$bglighter/g" \
+		-e "s/222222/$(darken $bglighter 0.95)/g" \
 		~/opt/Wallpapers/tile.svg
 	inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
 	feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
