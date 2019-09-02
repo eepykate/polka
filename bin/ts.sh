@@ -61,7 +61,7 @@ elif [[ $theme = Snow ]]; then
 elif [[ $theme = la ]]; then
 
 	accentn="5"
-	false="#82a3e7"
+	false="#93caae"
 	bgdark="#232836"
 	bglight="#282e3f"
 	bglighter="#2f364a"
@@ -71,7 +71,7 @@ elif [[ $theme = la ]]; then
 	fglight="#ccccfa"
 
 	disabled="#696969"
-	accent="#d86880"
+	accent="#d39ceb"
 	button="#ccccfa1a"
 	border="$bglighter"
 	red="#dc8189"
