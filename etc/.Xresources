@@ -10,7 +10,7 @@ st.xfps:          60
 st.actionfps:     60
 st.bellvolume:    0
 st.cwscale:       1.0
-st.chscale:       1.0
+st.chscale:       1.1
 st.blinktimeout:  0.5
 
 Xft.dpi: 96

@@ -125,6 +125,7 @@ while read -r line < "$fifo"; do
 	echo -e "%{O20}$desk%{O15}%{B-}%{c}$time%{r}%{O15}%{O15}$bat$vol%{O20}"
 	sleep 0.01
 done | (lemonbar \
+	-d \
 	-a 25 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
