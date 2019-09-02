@@ -101,9 +101,9 @@ if [[ -n $vol ]]; then
 	pc_mute="$(echo ${pc_amix} | awk '{print $6}')"
 
 	if [ $pc_mute = off ]; then
-		output="♪ Muted"
+		output="Muted"
 	elif [ $pc_mute = on ]; then
-		output="♪ ${pc_vol}"
+		output="${pc_vol}"
 	fi
 fi
 
@@ -115,17 +115,20 @@ if [[ -n $ctl ]]; then
 
 	playing="$(playerctl status 2>/dev/null)" 2>/dev/null
 
-	[[ -n $artist ]] &&
-		SpA="$artist - $media" ||
-		[[ -n $media ]] &&
-		SpA="$media" ||
+	if [[ -n $artist ]]; then
+		SpA="$artist - $media"
+	elif [[ -n $media ]]; then
+		SpA="$media"
+	else
 		SpA="$file"
+	fi
+
 	if [[ $playing == "Paused" ]]; then
-		song="⏸  $SpA"
+		song="$SpA"
 		play="paused"
 		output_pp="Media $play"
 	elif [[ $playing == "Playing" ]]; then
-		song="▶  $SpA"
+		song="$SpA"
 		play="resumed"
 		output_pp="Media $play"
 		output_next="Skipped to the next in playlist"

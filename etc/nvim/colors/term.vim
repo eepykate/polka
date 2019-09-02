@@ -13,7 +13,7 @@ hi Cursor       ctermbg=NONE   ctermfg=15
 hi Directory    ctermbg=NONE   ctermfg=4
 hi ErrorMsg     ctermbg=NONE   ctermfg=1
 hi VertSplit    ctermbg=NONE   ctermfg=0    cterm=NONE
-hi LineNr       ctermbg=NONE   ctermfg=7
+hi LineNr       ctermbg=NONE   ctermfg=8
 hi SignColumn   ctermbg=NONE   ctermfg=NONE cterm=NONE
 hi NonText      ctermbg=NONE   ctermfg=0
 hi Pmenu        ctermbg=8      ctermfg=15
@@ -38,8 +38,8 @@ hi DIffAdd      ctermbg=NONE   ctermfg=2
 hi DiffDelete   ctermbg=NONE   ctermfg=1
 hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
-hi CursorLine   ctermbg=0      ctermfg=NONE cterm=NONE
-hi CursorLineNr ctermbg=NONE   ctermfg=15    cterm=bold
+hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
+hi CursorLineNr ctermbg=NONE   ctermfg=16    cterm=bold
 hi CursorColumn ctermbg=0      ctermfg=NONE
 hi MatchParen   ctermbg=2      ctermfg=15
 hi ModeMsg      ctermbg=NONE   ctermfg=5

@@ -1,4 +1,4 @@
-set number relativenumber
+set number
 set mouse=a
 
 map k gk
