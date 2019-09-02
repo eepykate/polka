@@ -1,6 +1,7 @@
-#         ---
-#   GaugeK's zshrc
-#         ---
+#   ┏━━━━━━━┓
+#   ┃ zshrc ┃
+#   ┗━━━━━━━┛
+
 bindkey '^E' end-of-line              # Ctrl-E
 bindkey '^[[P' delete-char            # Delete
 bindkey '^[[4~' end-of-line           # End
@@ -13,7 +14,7 @@ bindkey '^?' backward-delete-char     # Backspace
 bindkey '^[[5~' up-line-or-history    # PageUp
 bindkey '^[[6~' down-line-or-history  # PageDown
 bindkey '^[[Z' reverse-menu-complete  # Shift-Tab
-bindkey '^r' history-incremental-search-backward  # Ctrl-r
+bindkey '^r' history-incremental-search-backward  # Ctrl-E
 
 #     ---
 #   History

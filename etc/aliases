@@ -1,51 +1,46 @@
-#     Aliases     #
-alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
-alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
-# alias cat='(( RANDOM % 3 == 0 )) && echo meow || cat'
-alias neofetch="neofetch --ascii ~/etc/cat.txt"
-alias ci="xclip -selection clipboard -t image/png"  # Copy Image
-alias cv="xclip -selection clipboard -t video/mp4"  # Copy video
-# ls, group directories, and human readable sizes
-alias ls="ls -h --group-directories-first --color=auto"
-alias lol="lolcat -t -p 0.9 2>/dev/null"   # lolcat with some options
-alias emoji="cat ~/.emoji | grep -i "      # Emojis from ~/.emoji file
-alias obr="openbox --reconfigure"   # Reconfigure openbox
-alias songs="instantmusic -l "      # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
-alias song="instantmusic -s "       # Download songs from terminals (https://github.com/yask123/Instant-Music-Downloader)
-alias rs="pkill -SIGUSR1 sxhkd"
-alias grep="grep --color=auto"
-alias mat="cmatrix -C blue"         # blue cmatrix
-alias kills="kill -9 -1"   # Kill current session
-alias t="thunar . & disown"   # Kill current session
-alias n="nmtui-connect"
-alias fuck="pkill -9"      # kill window
-alias fak="sudo !!"        # run last command with sudo
-alias SU="sudo zsh"        # open zsh as root user
-alias rm="rm -i"
-alias s="dirs"
-alias f="fff"              # terminal file manager
-alias td="transmission-daemon"
-alias SS="sudo systemctl"
+#   ┏━━━━━━━━━┓
+#   ┃ aliases ┃
+#   ┗━━━━━━━━━┛
 
-# pacman/yay
-alias upd="sudo pacman -Syu"        # Update the system
-alias rems="sudo pacman -Rs"        # Remove <package> and dependencies that aren't used anywhere else
-alias rem="sudo pacman -R"          # Remove <package>
-alias ins="sudo pacman -S"          # install package from official repos
-alias p="sudo pacman"      # quicker way to type sudo pacman
-alias src="yay -Ss"        # Search <keywords> (Includes aur)
-alias insa="yay -S"        # Install <package> fromn the aur
+alias s="dirs"
+alias rm="rm -i"
+alias SU="sudo zsh"
+alias fuck="pkill -9"
+alias ss="sudo systemctl"
 
 # Git
-alias gl="git log --all --decorate --oneline --graph"   # git - Better git log
-alias gca="git commit --amend"   # git - Commit all staged files in the last commit
-alias gcm="git commit -m"        # git - commit with message in quotes
-alias gpf="git push -f"          # git - Push and overwrite remote repository
-alias gp="git push"              # git - Push
-alias gaa="git add -A"           # git - Add all unstaged files to staging area
-alias ga="git add"               # git - Add <file(s)>
-alias gs="git status"            # git - status
-alias gc="git commit"            # git - Commit all staged files (needs -m, --amend, etc)
+alias ga="git add"
+alias gp="git push"
+alias gs="git status"
+alias gc="git commit"
+alias gaa="git add -A"
+alias gpf="git push -f"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gl="git log --all --decorate --oneline --graph"
+
+# pacman/yay
+
+alias insa="yay -S"
+alias src="yay -Ss"
+alias p="sudo pacman"
+alias ins="sudo pacman -S"
+alias rem="sudo pacman -Rs"
+alias upd="sudo pacman -Syu"
+
+
+
+
+alias kills="kill -9 -1"
+alias t="thunar . & disown"
+alias grep="grep --color=auto"
+alias td="transmission-daemon"
+alias rs="pkill -SIGUSR1 sxhkd"
+alias ls="ls -h --group-directories-first --color=auto"
+alias ci="xclip -selection clipboard -t image/png"
+alias cv="xclip -selection clipboard -t video/mp4"
+alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
+alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
 reset_cursor() {
 	echo -en "\e[4 q"
@@ -169,12 +164,9 @@ function cgif() {
 }
 
 colours() {
-	echo
-	for c in {0..7}; do printf "\e[3${c}m\e[4${c}m  \e[0m "; done
+	printf ' '
+	for c in {0..7}; do printf "\e[9${c}m*\e[0m "; done
 	printf "\n"
-	for c in {0..7}; do printf "\e[9${c}m\e[10${c}m  \e[0m "; done
-	printf "\n"
-	echo
 }
 
 

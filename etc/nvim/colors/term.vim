@@ -103,6 +103,6 @@ hi shConditional       ctermbg=NONE   ctermfg=4     cterm=NONE
 hi shDerefSimple       ctermbg=NONE   ctermfg=1     cterm=NONE
 hi Delimiter           ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shVariable          ctermbg=NONE   ctermfg=15    cterm=NONE
-hi shStatement         ctermbg=NONE   ctermfg=5     cterm=NONE
+hi shStatement         ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shQuote             ctermbg=NONE   ctermfg=2     cterm=NONE
 hi shFunction          ctermbg=NONE   ctermfg=4     cterm=NONE

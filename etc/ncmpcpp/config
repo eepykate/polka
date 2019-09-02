@@ -28,9 +28,9 @@ message_delay_time = 1
 current_item_prefix = "$(16_black)"
 current_item_suffix = "$/r$(end)"
 
-now_playing_prefix = "$(16)"
+now_playing_prefix = ""
 now_playing_suffix = "$(17)* $9"
 
 song_status_format = $/b{%t}|{%f}
-song_list_format = "$(16_0) $/b%t$R "
+song_list_format = "$(16) $/b%t$R$(end) "
 song_library_format = $/b{{%a - %t} (%b)}|{%f}

@@ -24,7 +24,7 @@ sh="${SHELL##*/}"
 [[ $tty =~ /dev/tty* ]] && wm="TTY" || \
 	id="$(xprop -root -notype _NET_SUPPORTING_WM_CHECK 2>/dev/null | awk '{print $5}' )" \
 	wm="$(xprop -id "$id" -notype -len 100 2>/dev/null | \
-		awk '/\_NET_WM_NAME/ {gsub("\"", "") gsub("Shell", ""); print $3 $4}')"
+		awk '/NET_WM_NAME/ {gsub("\"", "") gsub("Shell", ""); print $3 $4}')"
 
 # Get Terminal emulator
 [[ $tty =~ /dev/tty* ]] && term="$(tty | sed 's/.*\///')" || \
@@ -38,11 +38,11 @@ printc() {
 	printf "\n"
 }
 
-printc "os  "   "$os"     # print distro
-printc "sh  "   "$sh"     # Print shell of user
+#printc "os  "   "$os"     # print distro
+#printc "sh  "   "$sh"     # Print shell of user
 printc "wm  "   "$wm"     # Print Window Manager
 printc "term"   "$term"   # Print terminal emulator
 
-echo -e "  $red▲$rst $grn▼$rst $ylw▲$rst $blu▼$rst $prp▲$rst $cyn▼$rst  " #▼▲
+echo -e "  $red*$rst $grn*$rst $ylw*$rst $blu*$rst $prp*$rst $cyn*$rst  " #▼▲
 
 echo
