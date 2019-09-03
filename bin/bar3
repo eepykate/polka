@@ -77,7 +77,7 @@ bat() {
 
 	[[ $status = Charging ]] && bat=
 
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:notify-send \\\"\$(acpi)\\\":}${bat} $cap%%{A}%{A}%{A}%{O15}" > $fifo
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:notify-send \\\"\$(acpi)\\\":}${bat} $cap%%{A}%{A}%{A}" > $fifo
 }
 
 
@@ -101,7 +101,7 @@ done &
 
 monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="260"
+width="280"
 offX="$(( ${monitor[0]} + ${monitor[2]} - $width - 30 ))"
 offY="$((${monitor[3]} + 30))"
 
@@ -122,7 +122,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O20}$desk%{O15}%{B-}%{r}%{O15}%{O15}$bat$time%{O20}"
+	echo -e "%{O20}$desk%{O15}$bat%{B-}%{r}$time%{O20}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
