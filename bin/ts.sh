@@ -46,7 +46,7 @@ elif [[ $theme = Snow ]]; then
 	bgdark="f7f9ff"
 	bglight="eef0f5"
 	bglighter="e1e4ea"
-	bglightest="$(darken $bglighter 0.97)"
+	bglightest="$(darken $bglighter 0.98)"
 
 	fgdark="909cad"
 	fglight="43566f"
