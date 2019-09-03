@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 hextorgb() {
 	hex="$1"
@@ -7,9 +7,9 @@ hextorgb() {
 
 a=( $(hextorgb $1) )
 
-r="$(echo $(( ${a[1]} * ${2:-0.8} )) | sed 's/\.$//g')"
-g="$(echo $(( ${a[2]} * ${2:-0.8} )) | sed 's/\.$//g')"
-b="$(echo $(( ${a[3]} * ${2:-0.8} )) | sed 's/\.$//g')"
+r="$(bc <<< "${a[0]} * ${2:-0.8}" | sed 's/\.$//g')"
+g="$(bc <<< "${a[1]} * ${2:-0.8}" | sed 's/\.$//g')"
+b="$(bc <<< "${a[2]} * ${2:-0.8}" | sed 's/\.$//g')"
 
 
 col="$(printf "%02X%02X%02X\n" $r $g $b)"
