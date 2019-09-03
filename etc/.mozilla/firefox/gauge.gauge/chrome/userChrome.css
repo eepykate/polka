@@ -12,7 +12,7 @@
 --fgdark: #8686a4;
 --fglight: #ccccfa;
 
---accent: #82a3e7;
+--accent: #d39ceb;
 --border: #2f364a;
 --disabled: #696969;
 --selected: var(--button);
@@ -28,7 +28,7 @@
 	--toolbar-bgcolor: highlight !important;
 	--lwt-accent-color: -moz-dialog !important;
 	--toolbar-color: var(--autocomplete-popup-highlight-color) !important;
-	--lwt-text-color: -moz-dialogtext !important;
+	--lwt-text-color: var(--autocomplete-popup-highlight-color) !important;
 	--lwt-toolbarbutton-icon-fill: -moz-dialogtext !important;
 	--lwt-toolbar-field-focus-color: -moz-dialogtext !important;
 	--autocomplete-popup-highlight-background: highlight !important;
@@ -64,7 +64,7 @@ findbar {
 
 #urlbar,
 .tab-text[selected] {
-	color: var(--autocomplete-popup-highlight-color) !important;
+	color: -moz-dialog !important;
 }
 
 #urlbar {
@@ -75,14 +75,14 @@ findbar {
 
 /* Change colour of fill animation when tab has finished loading */
 .tabbrowser-tab {
-	--tab-loading-fill: -moz-dialogtext !important;
+	--tab-loading-fill: transparent !important;
 	box-shadow: none !important;
 }
 
 
 
 .tab-background {
-	border-radius: 2px !important;
+	border-radius: 0px !important;
 }
 
 

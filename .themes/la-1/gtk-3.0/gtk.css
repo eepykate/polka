@@ -1569,13 +1569,13 @@ window.csd > .titlebar:not(headerbar) {
 
 :not(headerbar) .caja-pathbar button, .caja-pathbar :not(headerbar) button, :not(headerbar)
 .path-bar button {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #82a3e7 0%, transparent 0%) 0 0 0/0 0 0px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ccccfa 0%, transparent 0%) 0 0 0/0 0 0px;
   border-radius: 7px;
 }
 
 :not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar)
 .path-bar button:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #82a3e7 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ccccfa 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 :not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar) .caja-pathbar button:checked:disabled, .caja-pathbar :not(headerbar) button:checked:disabled, :not(headerbar)
@@ -6275,8 +6275,8 @@ FIXME this is really an API */
 
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #82a3e7;
-	color: #fff;
+	background-color: #ccccfa;
+	color: #232836;
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
@@ -6312,6 +6312,6 @@ window.background.thunar,
 
 
 text:selected {
-	background-color: #82a3e7;
-	color: #fff;
+	background-color: #ccccfa;
+	color: #000;
 }

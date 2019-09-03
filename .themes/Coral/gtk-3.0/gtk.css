@@ -1543,13 +1543,13 @@ headerbar .entry-tag, headerbar .documents-entry-tag, headerbar .photos-entry-ta
 .path-bar button {
   padding-left: 4px;
   padding-right: 4px;
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #f7b0b4 0%, transparent 0%) 0 0 0/0 0 0px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #edeef0 0%, transparent 0%) 0 0 0/0 0 0px;
   border-radius: 4px;
 }
 
 .caja-pathbar button:checked,
 .path-bar button:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #f7b0b4 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #edeef0 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 .caja-pathbar button:checked, .caja-pathbar button:checked:disabled,
@@ -6404,7 +6404,7 @@ FIXME this is really an API */
 
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #f7b0b4;
+	background-color: #edeef0;
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
@@ -6444,6 +6444,6 @@ window.background.thunar,
 
 
 text:selected {
-	background-color: #f7b0b4;
+	background-color: #edeef0;
 	color: #000;
 }

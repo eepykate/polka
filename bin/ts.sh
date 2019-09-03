@@ -216,7 +216,8 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 	# Change bspwm colours
 	sed --follow-symlinks -i \
-		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$accent\"/g" \
+		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$fgdark\"/g" \
+		-e "s/focused_border_color \"#.*\"/focused_border_color \"#$fglight\"/g" \
 		${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 	wm restart
 
@@ -227,14 +228,21 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 
 	#walgen "#$bglighter"
 
-	[[ -d ~/git/usr/icons/$theme/ ]] &&
-		[[ -d ~/usr/icons/Papirus-Dark ]] &&
-		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
+#	[[ -d ~/git/usr/icons/$theme/ ]] &&
+#		[[ -d ~/usr/icons/Papirus-Dark ]] &&
+#		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
+
+	cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
+	cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
+	sed -i --follow-symlinks \
+		-e "s|000000|$fglight|g" \
+		-e "s|222222|$(darken $fglight 0.9)|g" \
+		$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
 
 
 	for f in devices/drive-harddisk.svg places/folder.svg; do
 	sed -i --follow-symlinks \
-		"s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$hover/" \
+		"s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$bgdark/" \
 		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/16x16/$f
 	done
 

@@ -1084,7 +1084,7 @@ button.combo {
   background-image: none;
   font-weight: inherit;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9ab2dc 0%, transparent 0%) 0 0 0/0 0 0px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ccccfa 0%, transparent 0%) 0 0 0/0 0 0px;
   box-shadow: inset 0 -1px rgba(204, 204, 238, 0.3);
   background-color: rgba(204, 204, 238, 0.04);
   color: #ccccee;
@@ -1095,7 +1095,7 @@ button.combo:hover {
 }
 
 button.combo:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9ab2dc 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), # 100%, transparent 0%) 0 0 2/0 0 2px;
   box-shadow: inset 0 -1px rgba(204, 204, 238, 0.3);
 }
 
@@ -1575,7 +1575,7 @@ window.csd > .titlebar:not(headerbar) {
 
 :not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar)
 .path-bar button:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #9ab2dc 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #ccccfa 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 :not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar) .caja-pathbar button:checked:disabled, .caja-pathbar :not(headerbar) button:checked:disabled, :not(headerbar)
@@ -6274,8 +6274,8 @@ FIXME this is really an API */
 @define-color placeholder_text_color #999bb5;
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #97aae3;
-	color: #fff;
+	background-color: #ccccfa;
+	color: #232836;
 }
 
 window.background.thunar,
@@ -6303,6 +6303,6 @@ window.background.thunar,
 
 
 text:selected {
-	background-color: #97aae3;
-	color: #fff;
+	background-color: #ccccfa;
+	color: #000;
 }

@@ -7,7 +7,7 @@
 --fgdark: #8686a4;
 --fglight: #ccccfa;
 
---accent: #82a3e7;
+--accent: #d39ceb;
 --border: #2f364a;
 --disabled: #696969;
 --hover: #ffffff;
@@ -27,26 +27,28 @@ html {
 	background-position: top -24px left 0;
 }
 
-#page {
-	max-width: 300px;
-
-	margin: 0 auto;
-	margin-top: 20px;
+html {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
 }
 
 main {
-	max-width: 700px;
 	margin-top: auto;
 	display: flex;
 	overflow-y: auto;
 	flex-flow: row wrap;
+	width: 380px;
+	position: relative;
+	top: -10px;
 }
 
 #clock {
+	position: relative;
+	top: -30px;
 	display: flex;
-	margin: 0 auto;
 	text-align: center;
-	padding: 10px;
 }
 
 #time, #date {
@@ -65,77 +67,11 @@ main {
 	text-align: right;
 }
 
-.slash {
-	color: var(--fgdark)
-}
-
-.search-box {
-	max-width: 300px;
-	margin: 0 auto;
-	width: 90%;
-}
-.search-box input[type="text"] {
-	background-color: transparent;
-	border: none;
-	border-bottom: 2px solid var(--bglighter);
-	color: var(--fglight);
-	transition: all 00ms;
-	width: 100%;
-	max-width: 300px;
-	height: 24px;
-	display: block;
-	margin: 0 auto;
-	text-align: center;
-	padding-left: 0;
-	padding-right: 0;
-	/*box-shadow: 4px 4px 6px 2px rgba(0,0,0,0.2);*/
-}
-
-.search-underline {
-	position: relative;
-	top: -2px;
-	display: block;
-	width: 0px;
-	margin: 0 auto;
-	height: 2px;
-	background-color: var(--bglighter);
-	transition: all 200ms;
-	transition-timing-function: ease-out;
-}
-
-.search-box:focus-within > .search-underline,
-.search-box:hover > .search-underline {
-	width: 300px;
-	background-color: var(--accent);
-}
-
-.title {
-	display: block;
-	width: auto;
-	text-align: center;
-	transition: all 00ms ease 0s;
-	border-radius: 2px;
-}
-
-.title {
-	color: var(--hover);
-	transition: all 00ms ease 0s;
-	display: block;
-	text-align: center;
-	background-color: var(--accent);
-	padding: 6px;
-}
-
 .links {
 	padding: 5px 15px;
 	width: auto;
 	display: block;
-}
-
-
-hr {
-	color: var(--bglighter);
-	margin: 2px;
+	text-align: center;
 }
 
 a:visited, a {
@@ -146,51 +82,14 @@ a:visited, a {
 a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 00ms ease 0s; }
 a:hover {	color: var(--fglight); }
 
+.slash {
+	color: var(--fgdark);
+}
+
 main section {
 	flex: 1 1 25%;
 	box-sizing: border-box;
 }
-
-main section {
-	margin: 0 3px;
-	margin-top: 20px;
-}
-
-
-.box:hover .content {
-	padding: 5px 0;
-	opacity: 1;
-	visibility: visible;
-}
-
-.content {
-	visibility: hidden;
-	position: relative;
-	left: 0;
-	right: 0;
-	background-color: var(--bglight);
-	transition: all 200ms;
-	opacity: 0;
-	box-shadow: 8px 2px 6px 3px rgba(0,0,0,0.08);
-}
-
-.box:hover .title {
-	background-color: var(--accent);
-	color: var(--hover);
-}
-
-.box:hover * .links {
-	display: block;
-}
-
-.links {
-	display: none;
-}
-
-main {
-	padding-bottom: 10px;
-}
-
 
 /* Transparent blyrry UI */
 /*
@@ -224,4 +123,32 @@ a, a:visited {
 
 a:hover, a:visited:hover {
 	color: #fff;
+}
+*/
+
+.title {
+	display: none;
+}
+
+body {
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+}
+
+section {
+	margin: 12px;
+	padding: 12px;
+	border: 8px solid var(--fgdark);
+	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.25);
+}
+
+section:hover {
+	border: 8px solid var(--fglight);
+}
+
+
+.content {
+
 }
