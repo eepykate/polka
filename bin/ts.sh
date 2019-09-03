@@ -23,116 +23,101 @@ fi
 if [[ $theme = Coral ]]; then
 
 	accentn="5"
-	false="#8ac4ba"
-	bgdark="#111c23"
-	bglight="#17242c"
-	bglighter="#1c2d37"
-	bglightest="#203440"
+	false="8ac4ba"
+	bgdark="111c23"
+	bglight="17242c"
+	bglighter="1c2d37"
+	bglightest="$(darken $bglighter 1.1)"
 
-	fgdark="#999ba0"
-	fglight="#edeef0"
+	fgdark="999ba0"
+	fglight="edeef0"
 
-	disabled="#595959"
-	accent="#f6b2b6"
-	button="#edeef01a"
-	border="#242e35"
-	red="#d48398"
-	hover="#000000"
+	disabled="595959"
+	accent="f6b2b6"
+	button="edeef01a"
+	border="242e35"
+	red="d48398"
+	hover="000000"
 
 elif [[ $theme = Snow ]]; then
 
 	accentn="1"
-	false="#7bb854"
-	bgdark="#f7f9ff"
-	bglight="#eef0f5"
-	bglighter="#e1e4ea"
-	bglightest="#D8DBE0"
+	false="7bb854"
+	bgdark="f7f9ff"
+	bglight="eef0f5"
+	bglighter="e1e4ea"
+	bglightest="$(darken $bglighter 0.97)"
 
-	fgdark="#909cad"
-	fglight="#43566f"
+	fgdark="909cad"
+	fglight="43566f"
 
-	disabled="#595959"
-	accent="#cd5e79"
-	button="#43566f1a"
-	border="#b0b4bb"
-	red="#e09b70"
-	hover="#ffffff"
+	disabled="595959"
+	accent="cd5e79"
+	button="43566f1a"
+	border="b0b4bb"
+	red="e09b70"
+	hover="ffffff"
 
 elif [[ $theme = la ]]; then
 
 	accentn="5"
-	false="#93caae"
-	bgdark="#232836"
-	bglight="#282e3f"
-	bglighter="#2f364a"
-	bglightest="#343C52"
+	false="93caae"
+	bgdark="232836"
+	bglight="282e3f"
+	bglighter="2f364a"
+	bglightest="$(darken $bglighter 1.1)"
 
-	fgdark="#8686a4"
-	fglight="#ccccfa"
+	fgdark="8686a4"
+	fglight="ccccfa"
 
-	disabled="#696969"
-	accent="#d39ceb"
-	button="#ccccfa1a"
+	disabled="696969"
+	accent="d39ceb"
+	button="ccccfa1a"
 	border="$bglighter"
-	red="#dc8189"
-	hover="#ffffff"
+	red="dc8189"
+	hover="ffffff"
 
 elif [[ $theme = la-1 ]]; then
 
 	accentn="5"
-	false="#d86880"
-	bgdark="#232836"
-	bglight="#282e3f"
-	bglighter="#2f364a"
-	bglightest="#343C52"
+	false="d86880"
+	bgdark="232836"
+	bglight="282e3f"
+	bglighter="2f364a"
+	bglightest="$(darken $bglighter 1.1)"
 
-	fgdark="#8686a4"
-	fglight="#ccccfa"
+	fgdark="8686a4"
+	fglight="ccccfa"
 
-	disabled="#696969"
-	accent="#82a3e7"
-	button="#ccccfa1a"
+	disabled="696969"
+	accent="82a3e7"
+	button="ccccfa1a"
 	border="$bglighter"
-	red="#dc8189"
-	hover="#ffffff"
+	red="dc8189"
+	hover="ffffff"
 
 elif [[ $theme = Winter ]]; then
 
 	accentn="4"
-	false="#dc8195"
-	bgdark="#232731"
-	bglight="#282d39"
-	bglighter="#303644"
-	bglightest="#363D4D"
+	false="dc8195"
+	bgdark="232731"
+	bglight="282d39"
+	bglighter="303644"
+	bglightest="$(darken $bglighter 1.1)"
 
-	fgdark="#8888a0"
-	fglight="#ccccee"
+	fgdark="8888a0"
+	fglight="ccccee"
 
-	disabled="#696969"
-	accent="#97aae3"
-	button="#ccccee1a"
-	border="#262c42"
-	red="#dc8189"
-	hover="#ffffff"
+	disabled="696969"
+	accent="97aae3"
+	button="ccccee1a"
+	border="262c42"
+	red="dc8189"
+	hover="ffffff"
 
 else
 	echo "Invalid theme; exiting"; exit
 fi
-
-# Remove the `#` from the variables so it doesn't completely fuck up the colours in the css files in case of missing colour
-bgdark="${bgdark#?}"
-false="${false#?}"
-bglight="${bglight#?}"
-bglighter="${bglighter#?}"
-bglightest="${bglightest#?}"
-fgdark="${fgdark#?}"
-fglight="${fglight#?}"
-disabled="${disabled#?}"
-accent="${accent#?}"
-button="${button#?}"
-border="${border#?}"
-hover="${hover#?}"
-red="${red#?}"
 
 if [[ -n "$theme" ]]; then
 	#xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
@@ -249,8 +234,8 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 
 	cp ~/opt/Wallpapers/rectangles.svg ~/opt/Wallpapers/tile.svg
 	sed --follow-symlinks -i \
-		-e "s/000000/$bglighter/g" \
-		-e "s/222222/$(darken $bglighter 0.95)/g" \
+		-e "s/000000/$bglightest/g" \
+		-e "s/222222/$bglighter/g" \
 		~/opt/Wallpapers/tile.svg
 	inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
 	feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
