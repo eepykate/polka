@@ -32,8 +32,8 @@ by="\033[43m"
 br="\033[41m"
 fr="\033[31m"
 
-bw="\033[107m"
-fw="\033[97m"
+bw="\033[48;05;250m"
+fw="\033[38;05;250m"
 
 c="\033[0m"
 
@@ -41,10 +41,10 @@ c="\033[0m"
 
 
 printf "
- $fg▄$c  $fg▄ $c
-$fg $e▀$fw█$fw$e▀$c$fw█ $c
+ $fw▄$c  $fw▄ $c
+$fw $e▀$fw█$fw$e▀$c$fw█ $c
  $c$fw▀$by▀$br▀$c$fr$bw▀$c$fw█$fg$c$fw▄▄▄$c$fw   ▄
-  $fw$bw▀$c$fw▀$bw▀$bw▀$bg▀$c$fw██$fw▀▄▄▀
-  $fw▀ $fw▀ $fg▀ ▀$fg$c
+  $fw$bw▀$c$fw▀$bw▀$bw▀$bw▀$c$fw██$fw▀▄▄▀
+  $fw▀ $fw▀ $fw▀ ▀$fg$c
 
 "
