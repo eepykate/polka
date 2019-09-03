@@ -19,6 +19,7 @@
 
 #by="\033[48;05;178m"
 
+e="\033[48;05;232m"
 
 bb="\033[100m"
 fb="\033[90m"
@@ -41,7 +42,7 @@ c="\033[0m"
 
 printf "
 $bb$fg ▄$c$fb▄▄$bb$fg▄ $c
-$bb$fg $bb▀$fw█$bb$fg▀█$bb $c
+$bb$fg $e▀$fw█$e$fg▀█$bb $c
 $fb▀$c$bb$fw▀$by▀$br▀$c$fr$bw▀$fg▀$c$fb$bg▀▀▀$c$fb▄$c $fb▄$fg$bb▄$c$fb▄
  $fb█$fw$bw▀$bb▀$bw▀$bg▀$c$fg███$c$fb$bg▄$c$bg$fb▀▀$c$fg$bb▀$c$fb▀
  $fb▀$fw▀$fb▀$fw▀$fb▀$fg▀$fb▀$fg▀$fb▀$fb▀▀$c
