@@ -71,6 +71,10 @@ findbar {
 	background-color: transparent !important;
 }
 
+.tab-close-button[selected="true"] {
+	color: -moz-dialog !important;
+}
+
 
 
 /* Change colour of fill animation when tab has finished loading */
