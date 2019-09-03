@@ -101,9 +101,9 @@ done &
 
 monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="$(bc <<< "${monitor[0]}*0.4" | sed 's/\..*//')"
-offX="$(( $(( ${monitor[0]} - $width - $(( ${monitor[0]} / 2 )) + $(( $width / 2)) )) + ${monitor[2]} ))"
-offY="$((${monitor[3]} + 25))"
+width="260"
+offX="$(( ${monitor[0]} + ${monitor[2]} - $width - 30 ))"
+offY="$((${monitor[3]} + 30))"
 
 (sleep 0.4;
 bat;
@@ -122,7 +122,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O20}$desk%{O15}%{B-}%{c}$time%{r}%{O15}%{O15}$bat$vol%{O20}"
+	echo -e "%{O20}$desk%{O15}%{B-}%{r}%{O15}%{O15}$bat$time%{O20}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
