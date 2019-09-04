@@ -224,8 +224,8 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 		$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
 
 
-	cp -r ~/usr/icons/{places,devices} ~/usr/icons/Papirus-Dark/16x16/
-	for f in devices/drive-harddisk.svg places/folder.svg; do
+	cp -r ~/usr/icons/16x16/ ~/usr/icons/22x22/ ~/usr/icons/Papirus-Dark/
+	for f in devices/drive-harddisk.svg devices/drive-harddisk.svg places/folder.svg; do
 		sed -i --follow-symlinks \
 			"s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$bgdark/" \
 			${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/16x16/$f
