@@ -213,7 +213,7 @@ rose() {
 
 col() {
 	printf '\n     '
-	for c in {1..7}; do printf "\e[3${c}m*\e[9${c}m*\e[3${c}m*\e[0m\n     "; done
+	for c in 5 1 3 2 6 4 7; do printf "\e[3${c}m*\e[9${c}m*\e[3${c}m*\e[0m\n     "; done
 	printf "\n"
 }
 
