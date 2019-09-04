@@ -224,14 +224,15 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 		$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
 
 
-	cp -r ~/usr/icons/16x16/ ~/usr/icons/22x22/ ~/usr/icons/Papirus-Dark/
+	cp -r ~/usr/icons/16x16/ ~/usr/icons/Papirus-Dark/
+	cp -r ~/usr/icons/22x22/emblems/* ~/usr/icons/Papirus-Dark/22x22/emblems/
 	for f in \
 		16x16/devices/drive-harddisk.svg \
 		16x16/devices/drive-harddisk.svg \
 		16x16/places/folder.svg \
 		16x16/devices/drive-removable-media-usb.svg \
-		22x22/emblems/emblem-symbolic-link.svg \
 		16x16/actions/media-eject.svg \
+		22x22/emblems/emblem-symbolic-link.svg \
 		22x22/emblems/emblem-unreadable.svg;
 	do
 		sed -i --follow-symlinks \
