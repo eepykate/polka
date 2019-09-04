@@ -46,7 +46,7 @@ elif [[ $theme = Snow ]]; then
 	bgdark="f7f9ff"
 	bglight="eef0f5"
 	bglighter="e1e4ea"
-	bglightest="$(darken $bglighter 0.98)"
+	bglightest="dadde8"
 
 	fgdark="909cad"
 	fglight="43566f"
@@ -163,15 +163,15 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 
 	# Replace colours in dunst
 	sed --follow-symlinks -i \
-		-e "s/frame_color = \".*\"/frame_color = \"#$accent\"/" \
-		-e "s/background = \".*\"/background = \"#$accent\"/" \
-		-e "s/foreground = \".*\"/foreground = \"#$hover\"/"  \
+		-e "s/frame_color = \".*\"/frame_color = \"#$fgdark\"/" \
+		-e "s/background = \".*\"/background = \"#$bgdark\"/" \
+		-e "s/foreground = \".*\"/foreground = \"#$fglight\"/"  \
 		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 	# Make urgent notifications have a different colour
-	dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
-	sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fglight\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
-	sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bglight\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+	#dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
+	#sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fglight\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+	#sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bglight\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 	pkill -9 dunst; dunst &>/dev/null &!
 
@@ -232,13 +232,15 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	done
 
 
-	cp ~/opt/Wallpapers/rectangles.svg ~/opt/Wallpapers/tile.svg
-	sed --follow-symlinks -i \
-		-e "s/000000/$bglightest/g" \
-		-e "s/222222/$bglighter/g" \
-		~/opt/Wallpapers/tile.svg
-	inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
-	feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+	#cp ~/opt/Wallpapers/rectangles.svg ~/opt/Wallpapers/tile.svg
+	#sed --follow-symlinks -i \
+	#	-e "s/000000/$bglightest/g" \
+	#	-e "s/222222/$bglighter/g" \
+	#	~/opt/Wallpapers/tile.svg
+	#inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
+	#feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+
+	walgen1 "#$bglighter"
 
 
 	# Reload gtk theme - probably a major hack
