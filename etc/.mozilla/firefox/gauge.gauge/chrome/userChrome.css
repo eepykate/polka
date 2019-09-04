@@ -33,6 +33,11 @@
 	--lwt-toolbar-field-focus-color: var(--fglight) !important;
 	--autocomplete-popup-highlight-background: var(--accent) !important;
 	--autocomplete-popup-color: var(--fglight) !important;
+	--lwt-sidebar-background-color: var(--bgdark) !important;
+}
+
+#sidebar-box {
+	--sidebar-background-color: var(--bgdark) !important;
 }
 
 .toolbarbutton-icon, .toolbarbutton-badge-stack {
@@ -134,6 +139,17 @@ findbar {
 	{
 		background: var(--bgdark) !important;
 	}
+}
+
+#browser vbox#appcontent tabbrowser,
+#content,
+#tabbrowser-tabpanels,
+browser[type=content-primary],
+browser[type=content] > html {
+	background: -moz-dialog !important
+}
+#tabbrowser-tabpanels {
+	background: -moz-dialog !important;
 }
 
 
