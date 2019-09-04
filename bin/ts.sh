@@ -71,7 +71,7 @@ elif [[ $theme = la ]]; then
 	fglight="ccccfa"
 
 	disabled="696969"
-	accent="d39ceb"
+	accent="8099ee"
 	button="ccccfa1a"
 	border="$bglighter"
 	red="dc8189"
