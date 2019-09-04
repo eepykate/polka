@@ -11,7 +11,7 @@ fd="8686a4"
 bg="232836"
 bl="282e3f"
 blr="2f364a"
-ac="82a3e7"
+ac="d39ceb"
 fifo="/tmp/barfifo"
 #trap 'pkill -P $$' SIGINT
 
@@ -122,7 +122,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{+u}%{+o}%{B#ff$fd}%{O8}%{B-}%{O15}$desk%{O10}$bat%{B-}                     %{r}$time%{O15}%{B#ff$fd}%{O8}%{B-}"
+	echo -e "%{+u}%{+o}%{B#ff$fd}%{O8}%{B-}%{O15}$desk%{O15}$bat%{B-}                     %{r}$time%{O15}%{B#ff$fd}%{O8}%{B-}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
