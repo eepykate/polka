@@ -24,7 +24,7 @@
 
 /*** Change colours of a few items ***/
 :root {
-	--tab-min-height: 42px  !important;
+	--tab-min-height: 30px  !important;
 	--toolbar-bgcolor: var(--bglight) !important;
 	--lwt-accent-color: var(--bgdark) !important;
 	--toolbar-color: var(--fglight)!important;
@@ -42,10 +42,6 @@
 
 .close-icon {
 	color: var(--fglight) !important;
-}
-
-.tabbrowser-tab:not([selected]):not(:hover) {
-		border: 8px solid var(--fgdark) !important;
 }
 
 .tabbrowser-tab .tab-content .tab-text {
@@ -87,7 +83,7 @@ findbar {
 
 
 
-
+/*
 .tabbrowser-tab {
 	border: 8px solid var(--fglight) !important;
 	padding: 4px !important;
@@ -96,6 +92,10 @@ findbar {
 
 #titlebar {
   margin: 10px !important;
+}
+
+.tabbrowser-tab:not([selected]):not(:hover) {
+		border: 8px solid var(--fgdark) !important;
 }
 
 
@@ -144,7 +144,7 @@ findbar {
 .tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
 	filter: grayscale(50%) !important;
 }
-/*.tabbrowser-tab{
+.tabbrowser-tab{
 	opacity: 0.50 !important;
 }
 .tabbrowser-tab:hover{
@@ -284,19 +284,19 @@ findbar-closebutton {
 
 
 /* Change size of a few items */
-/*#navigator-toolbox * #urlbar-zoom-button {
+#navigator-toolbox * #urlbar-zoom-button {
 	width: auto !important;
 	max-width: 100px !important;
 }
-#navigator-toolbox * toolbarbutton:not(.tabs-newtab-button) {
+#navigator-toolbox * toolbarbutton {
 	height: var(--tab-min-height) !important;
 	max-height: var(--tab-min-height) !important;
 	width: var(--tab-min-height) !important;
 	max-width: var(--tab-min-height) !important;
 }
 
-#navigator-toolbox * toolbarbutton:not(.tabs-newtab-button) image,
-#navigator-toolbox * toolbarbutton:not(.tabs-newtab-button) stack {
+#navigator-toolbox * toolbarbutton image,
+#navigator-toolbox * toolbarbutton stack {
 	height: calc(var(--tab-min-height) * 0.9) !important;
 	max-height: calc(var(--tab-min-height) * 0.9) !important;
 	width: calc(var(--tab-min-height) * 0.9) !important;
@@ -304,13 +304,11 @@ findbar-closebutton {
 }
 
 #identity-icon,
-.tab-icon-image,*/
+.tab-icon-image,
 .tab-close-button {
-	/*height: calc(var(--tab-min-height) * 0.6 ) !important;
-	width: calc(var(--tab-min-height) * 0.6 ) !important;*/
-	height: 16px !important !important;
-	width: 16px!important;
-}/*
+	height: calc(var(--tab-min-height) * 0.6 ) !important;
+	width: calc(var(--tab-min-height) * 0.6 ) !important;
+}
 
 #identity-icon {
 	padding: 2px;
@@ -334,7 +332,7 @@ findbar-closebutton {
 	max-height: var(--tab-min-height);
 }
 
-*/
+
 /* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
 	-moz-box-ordinal-group: 0 !important;
@@ -413,11 +411,11 @@ findbar-closebutton {
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 180px !important;
+	max-width: 140px !important;
 }
 
 .tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
-	max-width: 140px !important;
+	max-width: 100px !important;
 }
 
 

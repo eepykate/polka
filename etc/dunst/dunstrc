@@ -11,7 +11,7 @@
 	separator_height = 2
 	padding = 20
 	horizontal_padding = 20
-	frame_width = 8
+	frame_width = 0
 	frame_color = "#8686a4"
 	separator_color = frame
 	sort = yes

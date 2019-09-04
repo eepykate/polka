@@ -122,7 +122,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{+u}%{+o}%{B#ff$fd}%{O8}%{B-}%{O15}$desk%{O15}$bat%{B-}                     %{r}$time%{O15}%{B#ff$fd}%{O8}%{B-}"
+	echo -e "%{O15}$desk%{O15}$bat%{B-}%{r}$time%{O15}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
@@ -133,7 +133,7 @@ done | (lemonbar \
 	-F "#ff$fg" \
 	-f "kiwi:size=10" \
 	-f "t mango Wide:size=10" \
-	-g "${width}x48+$offX+$offY"; kill -- -0)| bash &
+	-g "${width}x40+$offX+$offY"; kill -- -0)| bash &
 
 (sleep 0.4; bspc config -m "$monitorName" top_padding 0) &
 
