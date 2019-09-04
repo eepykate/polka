@@ -28,7 +28,7 @@
 	--toolbar-bgcolor: var(--bglight) !important;
 	--lwt-accent-color: var(--bgdark) !important;
 	--toolbar-color: var(--fglight)!important;
-	--lwt-text-color: var(--autocomplete-popup-highlight-color) !important;
+	--lwt-text-color: var(--fglight) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fglight) !important;
 	--lwt-toolbar-field-focus-color: var(--fglight) !important;
 	--autocomplete-popup-highlight-background: var(--accent) !important;
@@ -72,7 +72,7 @@ findbar {
 
 #urlbar,
 .tab-text[selected] {
-	color: var(--bgdark) !important;
+	color: var(--fglight) !important;
 }
 
 #urlbar {
