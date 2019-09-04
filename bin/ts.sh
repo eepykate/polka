@@ -96,25 +96,6 @@ elif [[ $theme = la-1 ]]; then
 	red="dc8189"
 	hover="ffffff"
 
-elif [[ $theme = Winter ]]; then
-
-	accentn="4"
-	false="dc8195"
-	bgdark="232731"
-	bglight="282d39"
-	bglighter="303644"
-	bglightest="$(darken $bglighter 1.1)"
-
-	fgdark="8888a0"
-	fglight="ccccee"
-
-	disabled="696969"
-	accent="97aae3"
-	button="ccccee1a"
-	border="262c42"
-	red="dc8189"
-	hover="ffffff"
-
 else
 	echo "Invalid theme; exiting"; exit
 fi
