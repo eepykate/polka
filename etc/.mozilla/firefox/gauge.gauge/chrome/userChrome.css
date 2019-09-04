@@ -12,7 +12,7 @@
 --fgdark: #8686a4;
 --fglight: #ccccfa;
 
---accent: #d39ceb;
+--accent: #8da4eb;
 --border: #2f364a;
 --disabled: #696969;
 --selected: var(--button);
@@ -34,6 +34,7 @@
 	--autocomplete-popup-highlight-background: var(--accent) !important;
 	--autocomplete-popup-color: var(--fglight) !important;
 	--lwt-sidebar-background-color: var(--bgdark) !important;
+	--urlbar-popup-url-color: var(--accent) !important;
 }
 
 #sidebar-box {
