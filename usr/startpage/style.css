@@ -151,6 +151,10 @@ section:hover {
 }*/
 
 section {
-	background-color: var(--bglight) !important;
+	background-color: var(--bglight);
 	border-radius: 4px;
+}
+
+section:hover {
+	background-color: var(--bglighter);
 }
