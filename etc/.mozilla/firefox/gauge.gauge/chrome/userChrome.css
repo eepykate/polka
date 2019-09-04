@@ -146,10 +146,10 @@ findbar {
 #tabbrowser-tabpanels,
 browser[type=content-primary],
 browser[type=content] > html {
-	background: -moz-dialog !important
+	background: var(--bgdark) !important
 }
 #tabbrowser-tabpanels {
-	background: -moz-dialog !important;
+	background: var(--bgdark) !important;
 }
 
 
