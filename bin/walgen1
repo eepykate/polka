@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+#   Plain Colour Wallpaper
+#
+
+fi="$HOME/opt/Wallpapers/tile.png"
+
+convert -size 100x100 canvas:"$1" $fi
+
+feh --bg-tile --no-fehbg $fi
