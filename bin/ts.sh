@@ -225,10 +225,18 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 
 
 	cp -r ~/usr/icons/16x16/ ~/usr/icons/22x22/ ~/usr/icons/Papirus-Dark/
-	for f in devices/drive-harddisk.svg devices/drive-harddisk.svg places/folder.svg; do
+	for f in \
+		16x16/devices/drive-harddisk.svg \
+		16x16/devices/drive-harddisk.svg \
+		16x16/places/folder.svg \
+		16x16/devices/drive-removable-media-usb.svg \
+		22x22/emblems/emblem-symbolic-link.svg \
+		16x16/actions/media-eject.svg \
+		22x22/emblems/emblem-unreadable.svg;
+	do
 		sed -i --follow-symlinks \
 			"s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$bgdark/" \
-			${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/16x16/$f
+			${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
 	done
 
 
