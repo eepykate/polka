@@ -80,7 +80,7 @@ a:visited, a {
 	outline: none;
 }
 
-a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 50ms ease 0s; }
+a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 0ms ease 0s; }
 a:hover {	color: var(--fglight); }
 
 .slash {
