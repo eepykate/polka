@@ -30,8 +30,8 @@ grep "\*.*foreground" <<< $xrdb  | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;257;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
 
-ac="#cd5e79"
-fa="#7bb854"
+ac="#82a3e7"
+fa="#d86880"
 echo "echo -ne \"\033]4;16;$ac\007\"" >> /tmp/colours.sh
 echo "echo -ne \"\033]4;17;$fa\007\"" >> /tmp/colours.sh
 
