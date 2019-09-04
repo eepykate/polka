@@ -210,4 +210,11 @@ rose() {
                 \\|"
 }
 
+
+col() {
+	printf '\n     '
+	for c in {0..7}; do printf "\e[3${c}m*\e[9${c}m*\e[3${c}m*\e[0m\n     "; done
+	printf "\n"
+}
+
 # vim: ft=sh

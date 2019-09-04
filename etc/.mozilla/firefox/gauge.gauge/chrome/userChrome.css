@@ -24,22 +24,34 @@
 
 /*** Change colours of a few items ***/
 :root {
-	--tab-min-height: 26px  !important;
-	--toolbar-bgcolor: highlight !important;
-	--lwt-accent-color: -moz-dialog !important;
-	--toolbar-color: var(--autocomplete-popup-highlight-color) !important;
+	--tab-min-height: 42px  !important;
+	--toolbar-bgcolor: var(--bglight) !important;
+	--lwt-accent-color: var(--bgdark) !important;
+	--toolbar-color: var(--fglight)!important;
 	--lwt-text-color: var(--autocomplete-popup-highlight-color) !important;
-	--lwt-toolbarbutton-icon-fill: -moz-dialogtext !important;
-	--lwt-toolbar-field-focus-color: -moz-dialogtext !important;
-	--autocomplete-popup-highlight-background: highlight !important;
-	--autocomplete-popup-color: -moz-fieldtext !important;
+	--lwt-toolbarbutton-icon-fill: var(--fglight) !important;
+	--lwt-toolbar-field-focus-color: var(--fglight) !important;
+	--autocomplete-popup-highlight-background: var(--accent) !important;
+	--autocomplete-popup-color: var(--fglight) !important;
 }
 
-#nav-bar {
-	--lwt-toolbarbutton-icon-fill: -moz-dialog !important;
+.toolbarbutton-icon, .toolbarbutton-badge-stack {
+	--toolbarbutton-hover-background: var(--button) !important;
+	--toolbarbutton-active-background: var(--button) !important;
 }
 
-/*
+.close-icon {
+	color: var(--fglight) !important;
+}
+
+.tabbrowser-tab:not([selected]):not(:hover) {
+		border: 8px solid var(--fgdark) !important;
+}
+
+.tabbrowser-tab .tab-content .tab-text {
+	color: var(--fglight) !important;
+}
+
 findbar {
 	--lwt-accent-color: var(--bgdark) !important;
 	--lwt-toolbar-field-background-color: var(--bglighter) !important;
@@ -58,65 +70,55 @@ findbar {
 	fill: var(--fglight) !important;
 }
 
-.toolbarbutton-icon, .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: var(--button) !important;
-	--toolbarbutton-active-background: var(--button) !important;
-}
-
 :root:not([lwtheme-image]) .browserContainer > findbar:-moz-lwtheme {
 	background-image: none !important;
-}*/
+}
 
 #urlbar,
 .tab-text[selected] {
-	color: -moz-dialog !important;
+	color: var(--bgdark) !important;
 }
 
 #urlbar {
 	background-color: transparent !important;
 }
 
-.tab-close-button[selected="true"] {
-	color: -moz-dialog !important;
+
+
+
+
+
+.tabbrowser-tab {
+	border: 8px solid var(--fglight) !important;
+	padding: 4px !important;
+	margin-right: 15px !important;
 }
+
+#titlebar {
+  margin: 10px !important;
+}
+
+
+
 
 
 
 /* Change colour of fill animation when tab has finished loading */
 .tabbrowser-tab {
 	--tab-loading-fill: transparent !important;
-	box-shadow: none !important;
 }
 
 
-
-.tab-background {
-	border-radius: 0px !important;
-}
-
-
-
-/* Stop white flash on opening a new tab */
-#browser vbox#appcontent tabbrowser,
-#content,
-#tabbrowser-tabpanels,
-browser[type=content-primary],
-browser[type=content] > html {
-	background: -moz-dialog !important
-}
-#tabbrowser-tabpanels {
-	background: -moz-dialog !important;
-}
 
 
 
 /*Prevents White pre-load flash*/
 .tabbrowser-tabbox {
-	background-color: -moz-dialog !important;
+	background-color: var(--bgdark) !important;
 }
 
 @-moz-document url(about:blank) {
-	* { background: -moz-dialog !important; }
+	* { background: var(--bgdark) !important; }
 }
 
 @-moz-document url(chrome://browser/content/browser.xul) {
@@ -130,74 +132,11 @@ browser[type=content] > html {
 	#content,
 	browser[type="content"] > html
 	{
-		background: -moz-dialog !important;
+		background: var(--bgdark) !important;
 	}
 }
 
 
-
-/***   Transparent Blurry UI   ***/
-/*
-:root {
-	--lwt-toolbarbutton-icon-fill: #ffffff !important;
-}
-.toolbarbutton-1,
-.tab-close-button:not([selected="true"]) {
-	color: #fff !important;
-}
-
-.tabs-newtab-button:hover,
-.tab-close-button:hover {
-	background-color: #ffffff11 !important;
-}
-.tab-close-button:active {
-	background-color: #ffffff33 !important;
-}
-
-#navigator-toolbox * #tabbrowser-tabs,
-#main-window #navigator-toolbox,
-#titlebar,
-#nav-bar
-{
-	background-image: url(Blur.png) !important;
-	background-color: transparent !important;
-	background-size: 100% 100vh;
-}
-
-#navigator-toolbox * .tabbrowser-tab, .tab-content, .tab-background {
-	background-color: transparent !important;
-}
-
-#navigator-toolbox * .tabbrowser-tab .tab-background[selected="true"] {
-	background: #00000022 !important;
-}
-
-#navigator-toolbox * .tabbrowser-tab .tab-text.tab-label {
-	color: #fff !important;
-}
-
-#navigator-toolbox * .tab-close-button[selected="true"],
-#navigator-toolbox * .tabbrowser-tab[selected="true"] .tab-text.tab-label {
-	color: #fff !important;
-}
-
-#navigator-toolbox * #urlbar {
-	background-color: #00000022 !important;
-}
-
-#navigator-toolbox * .toolbarbutton-icon,
-#navigator-toolbox * .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: #ffffff11 !important;
-	--toolbarbutton-active-background: #ffffff33 !important;
-}
-
-#navigator-toolbox * .tab-close-button[selected="true"]:hover {
-	background-color: #ffffff0a !important;
-}
-
-#navigator-toolbox * .tab-close-button[selected="true"]:active {
-	background-color: #ffffff22 !important;
-}
 
 
 
@@ -205,11 +144,11 @@ browser[type=content] > html {
 .tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
 	filter: grayscale(50%) !important;
 }
-.tabbrowser-tab{
-	opacity: 0.70 !important;
+/*.tabbrowser-tab{
+	opacity: 0.50 !important;
 }
 .tabbrowser-tab:hover{
-	opacity: 0.80 !important;
+	opacity: 1 !important;
 }
 .tabbrowser-tab[selected]{
 	opacity: 1 !important;
@@ -217,10 +156,13 @@ browser[type=content] > html {
 
 
 
+
+
 /* Round URL bar */
 #urlbar, .searchbar-textbox{
 	border-radius: 0.5em !important;
 }
+
 
 
 
@@ -239,10 +181,14 @@ browser[type=content] > html {
 
 
 
+
+
 /* Remove 2px border from the bottom of the titlebar */
 #navigator-toolbox {
 	border: none !important;
 }
+
+
 
 
 
@@ -258,16 +204,6 @@ browser[type=content] > html {
 
 
 
-/* Show tab-line */
-/*.tab-line[selected="true"] {
-	background-color: var(--accent) !important;
-	z-index: 2 !important;
-}
-
-#tabbrowser-tabs:-moz-window-inactive {
-	--tab-line-color: var(--bglight) !important;
-}*/
-
 
 
 /* Hide a few buttons on the navbar */
@@ -277,10 +213,14 @@ browser[type=content] > html {
 
 
 
+
+
 /* Hide tab seperator line */
 .tabbrowser-tab::after, .tabbrowser-tab::before {
 	border-left: none !important;
 }
+
+
 
 
 
@@ -293,12 +233,16 @@ browser[type=content] > html {
 
 
 
+
+
 /* Remove shadow from navbar */
 #nav-bar {
 	margin-top: 0px !important;
 	border-top: 0px !important;
 	box-shadow: none !important;
 }
+
+
 
 
 
@@ -313,11 +257,15 @@ browser[type=content] > html {
 
 
 
+
+
 /* Desaturate and italic pending tabs */
 .tabbrowser-tab[pending] {
 	font-style: italic;
 	filter: grayscale(100%) !important;
 }
+
+
 
 
 
@@ -333,20 +281,22 @@ findbar-closebutton {
 
 
 
+
+
 /* Change size of a few items */
-#navigator-toolbox * #urlbar-zoom-button {
+/*#navigator-toolbox * #urlbar-zoom-button {
 	width: auto !important;
 	max-width: 100px !important;
 }
-#navigator-toolbox * toolbarbutton {
+#navigator-toolbox * toolbarbutton:not(.tabs-newtab-button) {
 	height: var(--tab-min-height) !important;
 	max-height: var(--tab-min-height) !important;
 	width: var(--tab-min-height) !important;
 	max-width: var(--tab-min-height) !important;
 }
 
-#navigator-toolbox * toolbarbutton image,
-#navigator-toolbox * toolbarbutton stack {
+#navigator-toolbox * toolbarbutton:not(.tabs-newtab-button) image,
+#navigator-toolbox * toolbarbutton:not(.tabs-newtab-button) stack {
 	height: calc(var(--tab-min-height) * 0.9) !important;
 	max-height: calc(var(--tab-min-height) * 0.9) !important;
 	width: calc(var(--tab-min-height) * 0.9) !important;
@@ -354,11 +304,13 @@ findbar-closebutton {
 }
 
 #identity-icon,
-.tab-close-button,
-.tab-icon-image {
-	height: var(--tab-min-height) * 0.6 ) !important;
-	width: calc(var(--tab-min-height) * 0.6 ) !important;
-}
+.tab-icon-image,*/
+.tab-close-button {
+	/*height: calc(var(--tab-min-height) * 0.6 ) !important;
+	width: calc(var(--tab-min-height) * 0.6 ) !important;*/
+	height: 16px !important !important;
+	width: 16px!important;
+}/*
 
 #identity-icon {
 	padding: 2px;
@@ -382,8 +334,7 @@ findbar-closebutton {
 	max-height: var(--tab-min-height);
 }
 
-
-
+*/
 /* Make tab close buttons appear on tab hover, replacing the tab icon */
 .tabbrowser-tab .tab-close-button {
 	-moz-box-ordinal-group: 0 !important;
@@ -405,6 +356,8 @@ findbar-closebutton {
 
 
 
+
+
 /***   Tabs-only OneLiner   ***
 /* Make the tab bar go above the hidden navbar */
 /* Hide navbar and move it up into the same line as the tab bar */
@@ -420,6 +373,8 @@ findbar-closebutton {
 }
 
 
+
+
 /* When navbar is focused, bring it into view */
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
 	pointer-events: auto;
@@ -428,6 +383,8 @@ findbar-closebutton {
 	opacity: 1 !important;
 	max-height: 32px;
 }
+
+
 
 
 
@@ -452,14 +409,18 @@ findbar-closebutton {
 
 
 
+
+
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 140px !important;
+	max-width: 180px !important;
 }
 
 .tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
-	max-width: 100px !important;
+	max-width: 140px !important;
 }
+
+
 
 
 
@@ -471,9 +432,13 @@ findbar-closebutton {
 
 
 
+
+
 toolbarbutton#alltabs-button {
 	-moz-binding: url("userChrome.xml#js");
 }
+
+
 
 
 
@@ -490,6 +455,8 @@ toolbarbutton#alltabs-button {
 	fill: currentColor !important;
 	stroke: currentColor !important;
 }
+
+
 
 
 
