@@ -43,6 +43,7 @@ code,                          /* Code blocks */
 [class*="autocompleteRow"],
 .sizeSmall-Sf4iOi,             /* Delete message popup */
 .footer-2yfCgX,                /* Delete message popup footer */
+.container-3baos1,
 .autocomplete-1vrmpx           /* Emoji autocomplete box */
 {
 	background-color: var(--bgdark) !important;
@@ -53,7 +54,6 @@ code,                          /* Code blocks */
 }
 
 .divider-3gKybi,
-.container-3baos1,
 .containerDefault-1ZnADq:active * .content-3at_AU,
 .containerDefault-1ZnADq:hover:active * .content-3at_AU,
 /*.menu-Sp6bN1,            /* ?? */
@@ -235,7 +235,7 @@ a svg.homeIcon-tEMBK1 path {
 */
 
 .pill-31IEus .item-2hkk8m {
-	background-color: var(--fgdark) !important;
+	background-color: var(--accent) !important;
 }
 
 
@@ -247,7 +247,7 @@ a svg.homeIcon-tEMBK1 path {
 	top: 0;
 	bottom: 0;
 	z-index: 50;
-	background-color: var(--bglight) !important;
+	background-color: var(--bgdark) !important;
 }
 
 .wrapper-1Rf91z:hover * .pill-31IEus,
