@@ -24,7 +24,7 @@
 
 /*** Change colours of a few items ***/
 :root {
-	--tab-min-height: 28px  !important;
+	--tab-min-height: 26px  !important;
 	--toolbar-bgcolor: var(--bglight) !important;
 	--lwt-accent-color: var(--bgdark) !important;
 	--toolbar-color: var(--fglight)!important;
