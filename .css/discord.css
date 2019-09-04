@@ -288,14 +288,10 @@ a svg.homeIcon-tEMBK1 path {
 
 
 .unread-3zKkbm,
-.channels-Ie2l6A:not(:hover) * .children-Bmpf2Q,
 .channels-Ie2l6A:not(:hover) * .name-IbjUBS {
 	display: none;
 }
 
-.channels-Ie2l6A:not(:hover) * .content-3at_AU > *:not(.icon-1_QxNX) {
-	display: none;
-}
 
 .channels-Ie2l6A:not(:hover) * .content-3at_AU {
 	max-width: 33px;
@@ -344,4 +340,19 @@ a svg.homeIcon-tEMBK1 path {
 pre,
 .wrapper-35wsBm {
 	border: none !important;
+}
+
+.numberBadge-2s8kKX {
+	background-color: var(--accent) !important;
+	color: var(--hover) !important;
+	font-size: 10px !important;
+	font-family: monospace !important;
+	font-weight: 500 !important;
+	padding: 0 !important;
+}
+
+.channels-Ie2l6A:not(:hover) * .numberBadge-2s8kKX {
+	position: relative;
+	left: -24px;
+	top: -3px;
 }
