@@ -218,7 +218,6 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 #		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
 
 	cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
-	cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
 	sed -i --follow-symlinks \
 		-e "s|000000|$fglight|g" \
 		-e "s|222222|$(darken $fglight 0.9)|g" \

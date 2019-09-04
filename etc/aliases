@@ -183,6 +183,8 @@ it() {
 	ln -s ~/git/etc/* ~/etc/ -f
 	cp ~/git/etc/.mozilla/firefox/gauge.gauge/chrome/* ~/etc/.mozilla/firefox/gauge.gauge/chrome/ -f
 	ln -s ~/git/bin/* ~/bin/ -f
+	cp ~/git/usr/icons/folder-blue.svg ~/usr/icons/
+	cp ~/git/usr/icons/{drive-harddisk.svg,places/folder.svg} ~/usr/icons/Papirus-Dark/16x16/
 }
 
 hib() {
