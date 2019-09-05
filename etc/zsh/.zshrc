@@ -58,8 +58,8 @@ autoload -U compinit && compinit -u -d ${XDG_CACHE_HOME:-~/.cache}/zsh/zcompdump
 #       ---
 setopt prompt_subst
 lis() { dirs | grep -o "\(^/\)\?\(^~/\)\?[^/]*$" || dirs }
-PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.>)%{\e[0m%} '
-export SUDO_PROMPT=$'\e[34m[sudo]\e[95m password for %p:\e[0m '   # Colourful sudo prompt
+PROMPT=$'%(?.%{\e[38;05;15m%}.%{\e[38;05;7m%})%(!.#.|)%{\e[0m%} '
+export SUDO_PROMPT=$'\e[97m[sudo]\e[37m password for %p:\e[0m '   # Colourful sudo prompt
 
 #        ---
 #   Miscellaneous
