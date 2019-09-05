@@ -1979,7 +1979,7 @@ span.pagename.redditname a:hover {
  font-size:9px!important;
  border:none!important;
  text-transform:uppercase;
- transition:200ms;
+ transition:90ms;
  background-image:none!important
 }
 .res .fancy-toggle-button .add,
@@ -2415,21 +2415,6 @@ div.leavemoderator {
 }
 .side .usertext {
  margin-top:20px
-}
-.fancy-toggle-button .add,
-.RESshortcutside,
-.RESDashboardToggle {
- background:#80d04b
-}
-.fancy-toggle-button .add:hover,
-body.res .RESshortcutside:hover,
-.RESDashboardToggle:hover {
- background:#A6DE81
-}
-.fancy-toggle-button .add:active,
-body.res .RESshortcutside:active,
-.RESDashboardToggle:active {
- background:#599134
 }
 .side .titlebox .md h3 a {
  border-radius:3.5px;
@@ -3775,7 +3760,7 @@ div.entry.res-selected {
 
 body.comments-page * div.entry.res-selected {
 	padding-left: 6px !important;
-	border-left: 3px solid var(--accent) !important;
+	border-left: 3px solid var(--fglight) !important;
 }
 
 .sidebox .morelink,
@@ -3894,10 +3879,23 @@ body.profile-page * .bottom img {
 	margin: 0 auto;
 }
 
-.fancy-toggle-button .add {
-	background-color: var(--accent) !important;
+.RESshortcutside,
+.RESshortcut, .RESDashboardToggle,
+.fancy-toggle-button .add,
+.fancy-toggle-button .remove {
+	background-color: var(--button) !important;
+	color: var(--fglight) !important;
+}
+
+.RESshortcutside:hover,
+.RESshortcut:hover,
+.RESDashboardToggle:hover,
+.fancy-toggle-button .add:hover,
+.fancy-toggle-button .remove:hover {
+	background-color: var(--fglight) !important;
 	color: var(--bgdark) !important;
 }
+
 ertext-edit textarea:focus {
 	border-color: var(--accent) !important;
 	border-width: 1px !important;
@@ -3936,15 +3934,12 @@ ertext-edit textarea:focus {
 	background-color: #00000000 !important;
 }
 
-.RESshortcut, .RESDashboardToggle {
-	color: var(--bgdark) !important;
-}
 .usertext-edit .md textarea {
 	border: 2px solid var(--bglighter) !important;
 }
 .usertext-edit .md textarea:focus,
 .usertext-edit .md textarea:hover{
-	border: 2px solid var(--accent) !important;
+	border: 2px solid var(--fglight) !important;
 }
 * { outline: none !important; }
 
@@ -4088,8 +4083,8 @@ html body * button {
 }
 
 html body * button:hover {
-	background-color: var(--accent) !important;
-	color: var(--hover) !important;
+	background-color: var(--fglight) !important;
+	color: var(--bgdark) !important;
 }
 
 .side .redditname a {

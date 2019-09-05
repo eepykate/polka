@@ -345,8 +345,8 @@ pre,
 }
 
 .numberBadge-2s8kKX {
-	background-color: var(--accent) !important;
-	color: var(--hover) !important;
+	background-color: var(--fglight) !important;
+	color: var(--bgdark) !important;
 	font-size: 10px !important;
 	font-family: monospace !important;
 	font-weight: 500 !important;
