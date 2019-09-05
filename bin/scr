@@ -28,7 +28,7 @@ case $1 in
 		newname || exit
 		fehstuff;;
 	-s)
-		maim -su -l -c 0.64314,0.41176,0.70588,0.2 -b 1 "${dir}/${name}.png" &&
+		maim -su -b 8 "${dir}/${name}.png" &&
 		newname || exit
 		fehstuff;;
 	*)
