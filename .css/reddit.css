@@ -4164,7 +4164,7 @@ html body .content * .thing * h6 { font-size: 13px !important; }
 	color: #C48CD9 !important;	
 }
 
-:not(.res-nightmode) * .md a:visited,
-:not(.res-nightmode) * .md * a:visited {
+body:not(.res-nightmode) * .md a:visited,
+body:not(.res-nightmode) * .md * a:visited {
 	color: #9369A3 !important;	
 }
