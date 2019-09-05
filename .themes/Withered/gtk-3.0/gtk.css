@@ -6401,3 +6401,51 @@ read if you used those and something break with a version upgrade you're on your
 FIXME this is really an API */
 @define-color content_view_bg #f8efe8;
 @define-color placeholder_text_color #807e7c;
+
+
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
+	background-color: #4d4d4d;
+	color: #f8efe8;
+}
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
+	background-image: image(rgba(0, 0, 0, 0.1));
+}
+
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget) {
+	color: #fff;
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar,
+window.background.thunar,
+.thunar grid.horizontal toolbar#location-toolbar.horizontal {
+	background-color: #f8efe8;
+}
+
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:selected {
+	background-color: #c49c66;
+	color: #000;
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
+	background-color: rgba(204, 204, 255, 0.1);
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:hover {
+	background-color: rgba(204, 204, 255, 0.15);
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
+	background: rgba(204, 204, 255, 0.20);
+}
+
+
+
+
+text:selected {
+	background-color: #edeef0;
+	color: #111C23;
+}
