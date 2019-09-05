@@ -39,7 +39,7 @@ hi DiffDelete   ctermbg=NONE   ctermfg=1
 hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
 hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
-hi CursorLineNr ctermbg=NONE   ctermfg=16    cterm=bold
+hi CursorLineNr ctermbg=NONE   ctermfg=15    cterm=bold
 hi CursorColumn ctermbg=0      ctermfg=NONE
 hi MatchParen   ctermbg=2      ctermfg=0 
 hi ModeMsg      ctermbg=NONE   ctermfg=5
