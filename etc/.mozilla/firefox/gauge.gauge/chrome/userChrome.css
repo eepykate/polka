@@ -35,10 +35,13 @@
 	--autocomplete-popup-color: var(--fglight) !important;
 	--lwt-sidebar-background-color: var(--bgdark) !important;
 	--urlbar-popup-url-color: var(--accent) !important;
+	--lwt-sidebar-text-color: var(--fglight) !important;
 }
 
 #sidebar-box {
 	--sidebar-background-color: var(--bgdark) !important;
+	--sidebar-text-color: var(--fglight) !important;
+	--arrowpanel-color: var(--fglight) !important;
 }
 
 .toolbarbutton-icon, .toolbarbutton-badge-stack {
@@ -84,6 +87,16 @@ findbar {
 #urlbar {
 	background-color: transparent !important;
 }
+
+
+
+
+
+
+.tabbrowser-tab .tab-background {
+	border-radius: 3px !important;
+}
+
 
 
 

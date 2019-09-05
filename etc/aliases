@@ -217,4 +217,12 @@ col() {
 	printf "\n"
 }
 
+col2() {
+	echo -e "\n\n\n"
+	echo "    \e[37m*\e[37m*\e[37m*\e[37m*\e[37m*"
+	echo "    \e[37m*\e[37m* \e[97m*\e[97m*"
+	echo "    \e[97m*\e[97m*\e[97m*\e[97m*\e[97m*"
+	echo -e "\n\n\n"
+}
+
 # vim: ft=sh

@@ -19,15 +19,11 @@
 --hover: #ffffff;
 --button: #ccccfa1a;
 }
-	
-:root{
-	scrollbar-color: var(--accent) var(--bgdark) !important;
-	scrollbar-width: thin !important;
-}
+
 
 * {
 	scrollbar-width: thin !important;
-} 
+}
 
 
 /* You can find an updated version here: https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme */
@@ -44,11 +40,11 @@ from the addons rules every time we update anything here */
 The scrollbars-width only has 3 acceptable values, auto, thin, and none:
 auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
 		--scrollbars-width: thin;
-		--scrollbars-thumb-color: var(--accent);
-		--scrollbars-track-color: var(--bglighter);
+		--scrollbars-thumb-color: var(--fglight);
+		--scrollbars-track-color: var(--bgdark);
 
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
-like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for 
+like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for
 text-inputting things. Leave as "none" for default letter color. */
 /*	--text-color-for-input-fields: var(--bglighter);
 
@@ -71,9 +67,9 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	/* Variable to change most pages context menu highlights */
 	--in-content-context-highlight: var(--blue);
 
-	/* This changes context menu background colors. The last number changes the opacity %. 
+	/* This changes context menu background colors. The last number changes the opacity %.
 	Change that 1 for 0.9 for semitransparent backgrounds */
-	--in-content-context-background: rgba(68,68,68, 1); 
+	--in-content-context-background: rgba(68,68,68, 1);
 
 	/* Variable to change the about:addons page extension names color */
 	--addons-addon-name: var(--blue);
@@ -84,7 +80,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 		--in-content-link-color-hover: var(--blue) !important;
 		--in-content-link-color-active: var(--blue) !important;
 		--in-content-link-color-visited: var(--blue) !important;
-	
+
 	/* These change the selected categories color on sidebars on about: pages*/
 	--in-content-category-text-selected: var(--accent) !important;
 	--in-content-category-text-selected-active: var(--accent) !important;
@@ -103,7 +99,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 	--button-border: var(--bglighter)}
 
 /*------ FILE BROWSING PAGE ------*/
-/* This was placed here for bug fixing of styles overriding when testing things, for the 
+/* This was placed here for bug fixing of styles overriding when testing things, for the
 coloring part, go to the common part for all firefox pages (if you use a global userstyle,
 you don't even need these, so just comment it all out).*/
 /*@-moz-document url-prefix(file://) {
@@ -132,9 +128,9 @@ td {color: var(--fgdark) !important}} */
 
 /* This changes the input fields text color (fix for custom OS themes) *//*
 @-moz-document url-prefix(http){
-form select, input[type=text], input[type=email], input[type=password], input[type=date], 
-input[type=datetime-local], input[type=time], input[type=week], input[type=month], 
-input[type=number], input[type=search], input[type=tel], input[type=url], textarea 
+form select, input[type=text], input[type=email], input[type=password], input[type=date],
+input[type=datetime-local], input[type=time], input[type=week], input[type=month],
+input[type=number], input[type=search], input[type=tel], input[type=url], textarea
 {color: var(--text-color-for-input-fields) !important}
 }
 
@@ -155,7 +151,7 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 #ublock0-epicker #resultsetCount {background-color: var(--bglighter) !important; color: #ddd !important}
 
 #ublock0-epicker section > div:first-child > textarea {
-	background: var(--bglighter) !important; 
+	background: var(--bglighter) !important;
 	color: #ddd !important;
 	border: 1px solid var(--bglighter) !important}
 
@@ -194,7 +190,7 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 .tab-middle, .treecol-text {color: var(--fglight) !important}
 
 /* This part covers all the dialog boxes backgrounds */
-dialog, window, .prefpane, 
+dialog, window, .prefpane,
 .prefwindow, .windowDialog {
  	background-color: var(--bgdark) !important;
  	color: var(--fgdark) !important}
@@ -214,7 +210,7 @@ dialog, window, .prefpane,
 .dnsNotFound #errorPageContainer:not(.button-container),
 .malformedURI #errorPageContainer, #lic-info .license-header:not(a) {filter: invert(98%) hue-rotate(200deg)}
 
-/* This fixes the inverted colors caused by the image filter (since I couldn't directly filter 
+/* This fixes the inverted colors caused by the image filter (since I couldn't directly filter
 only the images */
 .connectionFailure #errorPageContainer .button-container,
 .netInterrupt #errorPageContainer .button-container,
@@ -229,7 +225,7 @@ only the images */
 .netReset #errorPageContainer #text-container,
 .netOffline #errorPageContainer #text-container,
 .dnsNotFound #errorPageContainer #text-container,
-.malformedURI #errorPageContainer #text-container, 
+.malformedURI #errorPageContainer #text-container,
 #lic-info .license-header p, #lic-info .license-header h1 {filter: invert(98%) hue-rotate(-200deg)}
 
 #errorPageContainer #text-container h1 {color: var(--blue) !important}
@@ -274,10 +270,10 @@ html {
 .attribute-value {color: var(--blue) !important}
 }
 
-/*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/ 
+/*------ HOME/NEWTAB PAGE (About:home, about:newtab) ------*/
 @-moz-document url-prefix(about:home), url-prefix(about:newtab) {
 
-body { 
+body {
  	background-color: var(--bgdark) !important;
 		color: var(--home-text) !important;
 		overflow: auto !important}
@@ -317,13 +313,13 @@ body {
 		border: 1px solid var(--bglight) !important;
 		fill: rgba(170, 170, 170, 0.8) !important}
 
-.top-sites-list .top-site-outer > a.active .tile, .top-sites-list .top-site-outer > a:focus .tile, 
-.card-outer > a.active .card, .card-outer > a:focus .card 
+.top-sites-list .top-site-outer > a.active .tile, .top-sites-list .top-site-outer > a:focus .tile,
+.card-outer > a.active .card, .card-outer > a:focus .card
 {box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #000 !important}
 
-.top-sites-list .top-site-outer:hover .tile, .top-sites-list .top-site-outer:focus .tile, 
-.top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus, 
-.active):not(.placeholder) 
+.top-sites-list .top-site-outer:hover .tile, .top-sites-list .top-site-outer:focus .tile,
+.top-sites-list .top-site-outer.active .tile, .card-outer:-moz-any(:hover, :focus,
+.active):not(.placeholder)
 {box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px var(--bglighter) !important}
 
 /* No need to say this goes for the buttons */
@@ -438,7 +434,7 @@ body {
 /* Edit top sites */
 input[type=text] {color: var(--fgdark) !important}
 
-.edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin, 
+.edit-menu button.icon.icon-unpin, .edit-menu button.icon.icon-pin,
 .edit-menu button.icon.icon-edit, .edit-menu button.icon.icon-dismiss {
 	background-color: var(--bglighter) !important;
 	border-right: none !important}
@@ -448,7 +444,7 @@ input[type=text] {color: var(--fgdark) !important}
 
 .edit-menu {border: 1px solid var(--bglight) !important; background-color: var(--bglighter) !important}
 
-.edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover, 
+.edit-menu button.icon.icon-unpin:hover, .edit-menu button.icon.icon-pin:hover,
 .edit-menu button.icon.icon-edit:hover, .edit-menu button.icon.icon-dismiss:hover {
 	background-color: var(--bglighter) !important}
 
@@ -487,32 +483,32 @@ input[type=text] {color: var(--fgdark) !important}
 
 #onboarding-overlay img {filter: invert(90%) hue-rotate(200deg)}
 
-/* This adds a background image of your choice in the main area 
+/* This adds a background image of your choice in the main area
 Delete the final /* to use -> */
 body {
 	background-image: var(--home-background-image) !important;
 	background-size: cover !important;
 	background-position: center !important}
 
-.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options, 
+.prefs-pane .sidebar, .card-outer, .prefs-pane .prefs-modal-inner-wrapper .options,
 .sidebar .actions, #snippets-container, .collapsible-section.top-sites.animation-enabled.active,
 .collapsible-section.section.animation-enabled.active {
 	background: rgba(0,0,0,0.6) !important}
 
 .context-menu-button.icon {fill: var(--fgdark) !important}
 
-.top-site-outer .top-site-icon.rich-icon, 
+.top-site-outer .top-site-icon.rich-icon,
 .top-site-outer .screenshot {background-color: transparent !important}
 }
 
 /*------ COMMON ATTRIBUTES ON MOST ABOUT PAGES ------*/
-@-moz-document url(about:about), url(about:), 
+@-moz-document url(about:about), url(about:),
 url(https://www.mozilla.org/credits/), url-prefix(about:cache),
-url-prefix(about:checkerboard), url-prefix(about:plugins), 
-url-prefix(about:buildconfig), url-prefix(about:support), 
+url-prefix(about:checkerboard), url-prefix(about:plugins),
+url-prefix(about:buildconfig), url-prefix(about:support),
 url-prefix(about:profiles), url(about:crashes), url(about:license),
 url-prefix(about:memory), url-prefix(about:networking), url(about:performance),
-url(about:rights), url(about:robots), url-prefix(about:studies), 
+url(about:rights), url(about:robots), url-prefix(about:studies),
 url-prefix(about:telemetry), url(about:url-classifier), url(about:webrtc),
 url(about:devtools), url(about:serviceworkers) {
 
@@ -551,16 +547,16 @@ treechildren::-moz-tree-row(selected) {background-color: var(--blue) !important}
 }
 
 /*------ ABOUT: PAGES WITH TABLES  ------*/
-@-moz-document url-prefix(about:cache), url-prefix(about:plugins), 
+@-moz-document url-prefix(about:cache), url-prefix(about:plugins),
 url-prefix(about:buildconfig), url-prefix(about:networking),
 url-prefix(about:telemetry) {
 
-th {background: var(--bglight) !important; 
+th {background: var(--bglight) !important;
 	color: var(--fglight) !important;
 	outline: 1px solid #000 !important;
 	padding-left: 4px !important}
 
-td {background: var(--bglighter) !important; 
+td {background: var(--bglighter) !important;
 	color: #ddd !important;
 	outline: 1px solid #000 !important;
 	border: none !important;
@@ -568,7 +564,7 @@ td {background: var(--bglighter) !important;
 
 /*------ BACKGROUND OF MOST ABOUT PAGES  ------*/
 @-moz-document url(about:), url(about:about), url(https://www.mozilla.org/credits/),
-url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache), 
+url-prefix(about:checkerboard), url(about:accounts), url-prefix(about:cache),
 url-prefix(about:plugins), url-prefix(about:buildconfig), url-prefix(about:memory),
 url-prefix(about:support), url-prefix(about:profiles), url(about:robots), url(about:serviceworkers),
 url(about:webrtc) {
@@ -580,14 +576,14 @@ body, html {background-color: var(--bgdark) !important}}
 }
 
 /*------ PAGES WITH PLAIN TEXT OVER BACKGROUND  ------*/
-@-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/), 
-url-prefix(about:credits), url(about:devtools), url(about:license), 
+@-moz-document url(about:about), url-prefix(https://www.mozilla.org/credits/),
+url-prefix(about:credits), url(about:devtools), url(about:license),
 url-prefix(about:crashes), url(about:rights), url(about:serviceworkers) {
 .container, #reportListUnsubmitted, #reportListSubmitted,
 #aboutPageContainer, #welcome-page .box, #welcome-page .features,
 #lic-info, #serviceworkers {
-	padding: 3em !important; 
-	background: #363636 !important; 
+	padding: 3em !important;
+	background: #363636 !important;
 	border-radius: 6px !important}
 
 #reportListSubmitted, #welcome-page .features {
@@ -619,7 +615,7 @@ menupopup {
 /* This changes the text of disabled items */
 menuitem[disabled="true"],
 menu[disabled="true"] {color: var(--bglighter) !important}
-	
+
 /* This changes the color on hover of the context-menu items */
 menuitem:hover,
 menu:hover {
@@ -698,7 +694,7 @@ td {background: var(--bglighter) !important}
 select {border: 1px solid #111 !important}
 
 #ping-picker {
-	background-color: var(--bglight) !important; 
+	background-color: var(--bglight) !important;
 	border: 1px solid #111 !important}
 
 #categories, #category-raw {background: var(--bglight) !important}
@@ -726,7 +722,7 @@ select {border: 1px solid #111 !important}
 
 /* This affects the main content part */
 .target-list .addon-target-container {
-	background-color: var(--bglight) !important; 
+	background-color: var(--bglight) !important;
 	box-shadow: none !important}
 
 .main-content button {
@@ -743,7 +739,7 @@ select {border: 1px solid #111 !important}
 
 /* These are the alert message that appears on the "workers" category, and the status notice */
 .service-worker-multi-process {
-	background-color: var(--red) !important; 
+	background-color: var(--red) !important;
 	color: #ddd !important;
 	border-radius: 6px !important}
 
@@ -797,7 +793,7 @@ dl {color: #ddd !important}}
 	--in-content-box-border-color: var(--bglighter) !important}}
 
 /*------ INFORMATION PAGES WITH TABLES ------*/
-@-moz-document url-prefix(about:support), url-prefix(about:profiles), 
+@-moz-document url-prefix(about:support), url-prefix(about:profiles),
 url(about:performance), url(about:url-classifier) {
 
 :root {
@@ -844,9 +840,9 @@ td {background: var(--bglighter) !important}
 	border-left: 4px solid var(--accent) !important;
 }
 
-.groupbox-title, 
+.groupbox-title,
 
-/* These last two apply to some general panel labels in the preferences page (if 
+/* These last two apply to some general panel labels in the preferences page (if
 it's updated and if its the default browser) */
 #isDefaultLabel, #updateBox {color: var(--fglight) !important}
 
@@ -906,7 +902,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .main-content {
 	background-color: var(--bglight) !important;
 }
-	
+
 /* Context menus*/
 #header-utils-btn .scrollbox-innerbox,
 .arrowscrollbox-scrollbox {background-color: var(--bglight) !important}
@@ -921,7 +917,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 
 #header-utils-btn {fill: black !important}
 
-.accessory-button:hover, button:hover, 
+.accessory-button:hover, button:hover,
 #header-utils-btn:hover {
 	background: var(--bglight) !important;
 		color: var(--fglight) !important}
@@ -946,7 +942,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .addon.addon-view[selected="true"] .basicinfo-container {color: var(--addons-addon-name-active) !important}
 
 .addon.addon-view[active="false"] {opacity: 0.7}
-.addon.addon-view[active="false"] .basicinfo-container, 
+.addon.addon-view[active="false"] .basicinfo-container,
 .addon.addon-view[active="false"] .description {color: #888 !important}
 
 .addon.addon-view[selected="true"] .description {color: var(--fglight) !important}
@@ -972,7 +968,7 @@ treecol:hover {background-color: var(--bglighter) !important}
 .detail-view-container {color: var(--fgdark) !important}
 
 #detail-contributions {
-	background-color: rgba(0,0,0,0.15) !important; 
+	background-color: rgba(0,0,0,0.15) !important;
 	border: 1px solid var(--bglight) !important}
 
 #detail-rows * {text-shadow: none !important}
@@ -1025,9 +1021,9 @@ span, .statsBoxSection-header {color: var(--fglight) !important}
 /*------ MOZILLA ADDONS PAGE (Includes both the new and the old) ------*/
 @-moz-document url-prefix(https://addons.mozilla.org) {
 
-html, .App-content, tr.LanguageTools-table-row:nth-child(even), 
+html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 #main-wrapper, #search-tools-sidebar, .primary, .secondary, #search-tools-sidebar li a, body.restyle,
-.Card-footer, .Paginate 
+.Card-footer, .Paginate
 {background: var(--bgdark) !important}
 
 #footer {
@@ -1043,8 +1039,8 @@ html, .App-content, tr.LanguageTools-table-row:nth-child(even),
 
 #react-autowhatever-1 * {background-color: var(--bglight) !important}
 
-.Hero .Card-contents, .Home-SubjectShelf .Card-contents, 
-.CardList .Card-header, .CardList .Card-contents, a.SearchResult-link, 
+.Hero .Card-contents, .Home-SubjectShelf .Card-contents,
+.CardList .Card-header, .CardList .Card-contents, a.SearchResult-link,
 .Card-contents, .Card-Header, ul.AddonsCard-list li.SearchResult, ul.AddonsCard-list,
 .ExpandableCard .Card-header, span .Paginate-item.disabled.Paginate-previous,
 .Card-header, .Card-footer-text, .Card-footer-link, a.ShowMoreCard-expand-link,
@@ -1063,17 +1059,17 @@ a.Addon-all-reviews-link, .MetadataCard, .Card-contents ul li, .LandingPage-head
 
 #search-facets .facets {background: transparent !important}
 
-#search-facets .facets .facet.active, #search-facets .facets .facet, 
+#search-facets .facets .facet.active, #search-facets .facets .facet,
 #sorter > ul > li.extras ul, #sorter > ul > li.extras a:hover {background-color: var(--bglight) !important; border: 1px solid var(--bglighter) !important}
 #search-facets .facets .facet.active, #search-facets .facets .facet:hover,
 #sorter > ul > li.extras > ul > li > a:hover {background-color: var(--bglight) !important}
 
-button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button), 
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button),
 .PermissionCard-learn-more, .AddAddonToCollection-select, #CollectionSort-select {
 	background-color: var(--bglighter) !important;
 	color: var(--fglight) !important}
 
-button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):hover, 
+button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not(.Icon-arrow):not(.DropdownMenu-button):hover,
 .PermissionCard-learn-more:hover, .AddAddonToCollection-select:hover {
 	background-color: var(--bglight) !important;
 	color: var(--blue) !important}
@@ -1086,29 +1082,29 @@ button:not(.pswp__button):not(.pswp__ui):not(.AutoSearchInput-submit-button):not
 		border-left: 1px dotted #000 !important;
 }
 
-button.DropdownMenu-button, button.TooltipMenu-opener, 
+button.DropdownMenu-button, button.TooltipMenu-opener,
 button.SearchForm-submit-button, ul.LanguageTools-addon-list li,
 #aux-nav > ul > li {background: transparent !important}
 
-ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow, 
+ul.DropdownMenu-items, ul.TooltipMenu-list, .TooltipMenu-arrow,
 ul.TooltipMenu-list li.ListItem, tr.LanguageTools-table-row:nth-child(odd) {
 	background-color: var(--bgdark) !important;
 	color: var(--fgdark) !important}
 
-ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li, .highlight 
+ul.TooltipMenu-list li.ListItem, ul.LanguageTools-addon-list li, .highlight
 {border: none !important}
 
 th.LanguageTools-header-cell {background-color: #101010 !important}
 
-.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus, 
-.Home-SubjectShelf-link:hover, a.Button.Categories-link:hover 
+.Home-SubjectShelf-link:active, .Home-SubjectShelf-link:focus,
+.Home-SubjectShelf-link:hover, a.Button.Categories-link:hover
 {color: #0d96ff !important}
 
-.Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited 
+.Home-SubjectShelf-link:link, .Home-SubjectShelf-link:visited
 {color: #343a40 !important}
 
-a.SearchResult-link h2, span, label *, 
-p, a, h4, h2, blockquote, li, .num-results 
+a.SearchResult-link h2, span, label *,
+p, a, h4, h2, blockquote, li, .num-results
 {color: var(--fgdark) !important}
 
 .header-bg {
@@ -1120,18 +1116,18 @@ p, a, h4, h2, blockquote, li, .num-results
 
 .Paginate .Paginate-item, li.p-popular {background-color: var(--bglight) !important}
 
-.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled, 
+.Paginate .Paginate-item:disabled, .Paginate .Paginate-item.disabled,
 .Paginate .Paginate-item:hover, li.p-popular:hover, #search-tools-sidebar li a:hover,
-.other-apps li a:hover, #site-search-suggestions a.sel, #site-search-suggestions a:hover, 
-#site-search-suggestions.sel a.sel:hover, #site-search-suggestions li p a:hover, 
-#other-apps ul.other-apps, #addon-list-options li:not(.selected) a:hover, 
-.pagination li:not(.selected) a:hover, #aux-nav > ul > li:not(:first-child)::before, 
-#addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus 
+.other-apps li a:hover, #site-search-suggestions a.sel, #site-search-suggestions a:hover,
+#site-search-suggestions.sel a.sel:hover, #site-search-suggestions li p a:hover,
+#other-apps ul.other-apps, #addon-list-options li:not(.selected) a:hover,
+.pagination li:not(.selected) a:hover, #aux-nav > ul > li:not(:first-child)::before,
+#addon-list-options li:not(.selected) a:focus, .pagination li:not(.selected) a:focus
 {background-color: var(--bgdark) !important}
 
 a.SearchResult-link:hover h2, span:not(.Addon-author):hover, a:hover {color: var(--blue) !important}
 
-h2.Home-SubjectShelf-subheading, .CardList h2.Card-header, 
+h2.Home-SubjectShelf-subheading, .CardList h2.Card-header,
 h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
 {color: var(--fglight) !important}
 
@@ -1142,7 +1138,7 @@ h1, .Paginate-page-number, .Badge, a.Button.Categories-link, .install a *, h3
 .AMInstallButton-button--uninstall {background-color: var(--red) !important}
 .AMInstallButton-button--uninstall:hover {background-color: var(--red) !important; color: var(--fglight) !important}
 
-input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType, 
+input.SearchForm-query, select#SearchFilters-Sort, select#SearchFilters-AddonType,
 select#SearchFilters-AddonType, select#SearchFilters-OperatingSystem, select#language,
 input#search-q {
 	background-color: var(--bgdark) !important;
@@ -1154,7 +1150,7 @@ input#search-q {
 
 .Notice-generic {background-color: var(--bglighter) !important}
 
-.ShowMoreCard-contents::after 
+.ShowMoreCard-contents::after
 {background: linear-gradient(rgba(48, 48, 48, 0.3), var(--bglight)) !important}
 }
 
@@ -1210,23 +1206,23 @@ div {color: var(--fgdark) !important}
 #main-breadcrumbs li:not(a), .card-grid > li > a,
 .product-list .product a, .sidebar-header {color: var(--fgdark) !important}
 
-.answers .notice, .karma-titles li, .warning, #toc, #doc-content .note, 
+.answers .notice, .karma-titles li, .warning, #toc, #doc-content .note,
 .tag-list a, .wiki-doc .vote-wrap {
-	background-color: var(--bglight) !important; 
+	background-color: var(--bglight) !important;
 	color: var(--fgdark) !important;
 	border: 1px solid var(--bglighter) !important}
 
 .main-content, #try-an-article, .grid_6 article, #pw-reset,
 #retrieve-username, .hero-bar, .row .content-box, .highlight-box, .wiki-doc {
-	background-color: var(--bglight) !important; 
-	border-radius: 6px !important; 
+	background-color: var(--bglight) !important;
+	border-radius: 6px !important;
 	color: var(--fgdark) !important}
 
 #doc-content tr:nth-child(2n+1) {background: var(--bglight) !important}
 
 .main-content::before {filter: brightness(27%) !important}
 
-.sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span, 
+.sidebar-nav > li > span, .sidebar-nav .sidebar-nav > li > span,
 .sidebar-nav .sidebar-nav > li > a, .sidebar-nav .sidebox, .sidebar-nav > li > a,
 #email-subscribe-kbox, #showfor-panel,
 #register-form, .subtopics > li > a {background-color: var(--bglight) !important; color: var(--fgdark) !important}
@@ -1261,9 +1257,9 @@ div {color: var(--fgdark) !important}
 
 .sidebar-nav > li.selected {border-bottom: #373737 !important}
 
-input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"], 
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="date"],
 textarea {
-	background: var(--bglight) !important; 
+	background: var(--bglight) !important;
 	color: var(--fgdark) !important}
 
 #search-q {border: 2px solid var(--bglight) !important}
@@ -1273,7 +1269,7 @@ textarea {
 
 .simple-search-form input {color: var(--fgdark) !important}
 
-#email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"], 
+#email-subscribe-kbox input[type="submit"], #retrieve-username input[type="submit"],
 #pw-reset input[type="submit"], .btn, span.button, .volunteer-button {
 	background: linear-gradient(#2050AA, #203050) !important;
 		color: var(--fglight) !important;
@@ -1281,7 +1277,7 @@ textarea {
 	border: 1px solid var(--blue) !important;
 	box-shadow: none !important}
 
-#email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover, 
+#email-subscribe-kbox input[type="submit"]:hover, #retrieve-username input[type="submit"]:hover,
 #pw-reset input[type="submit"]:hover, .btn:hover, .volunteer-button:hover {
 	background: linear-gradient(#203050, #2050AA) !important;
 		color: var(--blue) !important}
