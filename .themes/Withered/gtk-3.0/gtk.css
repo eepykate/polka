@@ -6431,15 +6431,15 @@ window.background.thunar,
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
-	background-color: rgba(204, 204, 255, 0.1);
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:hover {
-	background-color: rgba(204, 204, 255, 0.15);
+	background-color: rgba(0, 0, 0, 0.15);
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
-	background: rgba(204, 204, 255, 0.20);
+	background: rgba(0, 0, 0, 0.20);
 }
 
 
