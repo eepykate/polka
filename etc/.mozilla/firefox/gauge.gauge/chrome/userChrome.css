@@ -5,26 +5,295 @@
  */
 
 :root {
---bg1: #f8efe8;
---bg2: #F2E9E3;
---bg3: #E6DDD6;
+  --bg1: #f8efe8;
+  --bg2: #F2E9E3;
+  --bg3: #E6DDD6;
 
---fg2: #999999;
---fg1: #4D4D4D;
+  --fg2: #999999;
+  --fg1: #4D4D4D;
 
---accent: #c48b66;
---border: #b0b4bb;
---disabled: #595959;
---selected: var(--button);
---button: #4D4D4D16;
---hover: #f8efe8;
---toolbar-bgimage: none !important;
---arrowpanel-dimmed: transparent !important;
+  --accent: #c48b66;
+  --disabled: #595959;
+  --selected: var(--button);
+  --button: #4D4D4D16;
+  --hover: #f8efe8;
+  --toolbar-bgimage: none !important;
+  --arrowpanel-dimmed: transparent !important;
+	--tab-min-height: 26.5px  !important;
 }
+
+
+
+
+
+
+.tabbrowser-tab .tab-background {
+	border-radius: 3px !important;
+}
+
+
+
+
+
+
+
+/* Tabs are de-saturated and transparent when inactive */
+.tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
+	filter: grayscale(50%) !important;
+}
+.tabbrowser-tab{
+	opacity: 0.50 !important;
+}
+.tabbrowser-tab:hover{
+	opacity: 1 !important;
+}
+.tabbrowser-tab[selected]{
+	opacity: 1 !important;
+}
+
+/* Desaturate and italic pending tabs */
+.tabbrowser-tab[pending] {
+	font-style: italic;
+	filter: grayscale(100%) !important;
+}
+
+
+
+
+
+
+
+/* Hide tab line */
+.tab-line {
+	display: none !important;
+}
+
+/* Remove 2px gap left by tab-line if hidden */
+.tabbrowser-tab {
+	margin-top: -1px !important;
+}
+
+
+
+
+/***   Hide some stuff   ***/
+/* Hide tab seperator line */
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+	border-left: none !important;
+}
+
+#pageActionSeparator, #pocket-button {
+	display: none !important;
+}
+
+#urlbar, .searchbar-textbox {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+#nav-bar {
+	margin-top: 0px !important;
+	border-top: 0px !important;
+}
+
+/* Remove 2px border from the bottom of the titlebar */
+#navigator-toolbox {
+	border: none !important;
+}
+
+/* Hide user icon on navbar in developer edition */
+#fxa-toolbar-menu-button { display: none !important; }
+
+/* Hide "go" arrow in urlbar */
+.urlbar-go-button { display: none !important; }
+
+
+
+
+
+
+
+/* Change size of a few items */
+#navigator-toolbox * #urlbar-zoom-button {
+	width: auto !important;
+	max-width: 100px !important;
+}
+
+#navigator-toolbox * toolbarbutton {
+	height: var(--tab-min-height) !important;
+	max-height: var(--tab-min-height) !important;
+	width: var(--tab-min-height) !important;
+	max-width: var(--tab-min-height) !important;
+}
+
+#navigator-toolbox * toolbarbutton image,
+#navigator-toolbox * toolbarbutton stack {
+	height: calc(var(--tab-min-height) * 0.9) !important;
+	max-height: calc(var(--tab-min-height) * 0.9) !important;
+	width: calc(var(--tab-min-height) * 0.9) !important;
+	max-width: calc(var(--tab-min-height) * 0.9) !important;
+}
+
+#identity-icon,
+.tab-icon-image,
+.tab-close-button {
+	height: calc(var(--tab-min-height) * 0.6 ) !important;
+	width: calc(var(--tab-min-height) * 0.6 ) !important;
+}
+
+#identity-icon {
+	padding: 2px;
+}
+
+#TabsToolbar,
+#nav-bar,
+#titlebar,
+.tabbrowser-tab,
+#tabbrowser-tabs {
+	height: var(--tab-min-height) !important;
+}
+
+#urlbar {
+	min-height: 90% !important;
+}
+
+#tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+	height: var(--tab-min-height);
+	min-height: var(--tab-min-height);
+	max-height: var(--tab-min-height);
+}
+
+/* Tab width */
+.tabbrowser-tab[fadein]:not([pinned]) {
+	max-width: 140px !important;
+}
+
+.tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
+	max-width: 100px !important;
+}
+
+
+
+
+
+
+
+/* Make tab close buttons appear on tab hover, replacing the tab icon */
+.tabbrowser-tab .tab-close-button {
+	-moz-box-ordinal-group: 0 !important;
+	margin: 2px 6px 0px 0px !important;
+}
+
+.tabbrowser-tab .tab-close-button {
+	display: none !important;
+}
+
+.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image,
+.tabbrowser-tab:not([pinned="true"]):hover .tab-throbber {
+	display: none;
+}
+
+.tabbrowser-tab:not([pinned="true"]):hover .tab-close-button {
+	display: -moz-box !important;
+}
+
+
+
+
+
+/***   Tabs-only OneLiner   ***/
+#nav-bar:not([customizing]) {
+	margin-top: calc(var(--tab-min-height) * -1 - 16px) !important;
+	z-index: 2 !important;
+	pointer-events: none;
+	transition: all 200ms, z-index 0ms !important;
+	overflow-y: hidden;
+	padding-top:0 !important;
+	margin-bottom:16px !important;
+	opacity: 0;
+}
+
+#navigator-toolbox:not([customizing]):focus-within #nav-bar {
+	pointer-events: auto;
+	margin-top: calc(var(--tab-min-height) * -1) !important;
+	margin-bottom: 0px !important;
+	opacity: 1 !important;
+	max-height: 32px;
+}
+
+/* Fix some moving tab problems with the tabs-only oneliner */
+#TabsToolbar[movingtab] {
+	padding-bottom: 0px !important;
+}
+
+#TabsToolbar[movingtab] > .tabbrowser-tabs {
+	padding-bottom: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+#tabbrowser-tabs[movingtab] {
+	margin-bottom: -2px !important;
+}
+
+#navigator-toolbox[movingtab],
+#tabbrowser-tabs[movingtab] {
+	margin: 0 !important;
+}
+
+
+
+
+
+/* Run javascript files */
+toolbarbutton#alltabs-button {
+	-moz-binding: url("userChrome.xml#js");
+}
+
+
+
+
+
+/***  
+  *  Custom icons
+  *  Enable `svg.context-properties.content.enabled` in about:config  
+ ***/
+.toolbarbutton-animatable-image {
+	animation-duration: 0ms !important;
+}
+
+#home-button .toolbarbutton-icon,
+#back-button .toolbarbutton-icon,
+#reload-button .toolbarbutton-icon,
+#forward-button .toolbarbutton-icon {
+	-moz-context-properties: fill, stroke;
+	fill: currentColor !important;
+	stroke: currentColor !important;
+}
+
+
+#reload-button .toolbarbutton-icon {
+	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-dashoffset='100' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M6.269 6.12a2.852 2.852 0 0 1-3.28.677A2.852 2.852 0 0 1 1.326 3.89a2.852 2.852 0 0 1 2.247-2.483 2.852 2.852 0 0 1 3.059 1.365'/%3E%3Ccircle cx='6.543' cy='2.385' r='1.323' fill='context-fill' fill-rule='evenodd'/%3E%3C/svg%3E");;
+}
+
+#home-button .toolbarbutton-icon {
+	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cg fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058'%3E%3Cpath d='M1.884 3.73v2.557c0 .595.336.888.882.888l3.013-.02c.578 0 .792-.394.792-.871l.012-2.553'/%3E%3Cpath d='M1.227 4.298l3.006-3.006L7.24 4.298'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+#back-button .toolbarbutton-icon {
+	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M5.774.973L2.57 4.175l3.32 3.319'/%3E%3C/svg%3E");
+}
+
+#forward-button .toolbarbutton-icon {
+	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M2.693.973l3.203 3.202-3.32 3.319'/%3E%3C/svg%3E");
+}
+
+
+
+
+
 
 /*** Change colours of a few items ***/
 :root {
-	--tab-min-height: 26.5px  !important;
 	--toolbar-bgcolor: var(--bg2) !important;
 	--lwt-accent-color: var(--bg1) !important;
 	--toolbar-color: var(--fg1)!important;
@@ -94,44 +363,20 @@ findbar {
 	background-color: transparent !important;
 }
 
-
-
-
-
-
-.tabbrowser-tab .tab-background {
-	border-radius: 3px !important;
+findbar-closebutton {
+	background-color: var(--bg1) !important;
+	border-radius: 0 !important;
 }
 
-
-
-
-
-
-/*
-.tabbrowser-tab {
-	border: 8px solid var(--fg1) !important;
-	padding: 4px !important;
-	margin-right: 15px !important;
+.findbar-highlight {
+	background-color: var(--button) !important;
 }
-
-#titlebar {
-  margin: 10px !important;
-}
-
-.tabbrowser-tab:not([selected]):not(:hover) {
-		border: 8px solid var(--fg2) !important;
-}
-
-
-
-
-
 
 /* Change colour of fill animation when tab has finished loading */
 .tabbrowser-tab {
-	--tab-loading-fill: transparent !important;
+	--tab-loading-fill: var(--accent) !important;
 }
+
 
 
 
@@ -170,342 +415,4 @@ browser[type=content] > html {
 }
 #tabbrowser-tabpanels {
 	background: var(--bg1) !important;
-}
-
-
-
-
-
-/* Tabs are de-saturated and transparent when inactive */
-.tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
-	filter: grayscale(50%) !important;
-}
-.tabbrowser-tab{
-	opacity: 0.50 !important;
-}
-.tabbrowser-tab:hover{
-	opacity: 1 !important;
-}
-.tabbrowser-tab[selected]{
-	opacity: 1 !important;
-}
-
-
-
-
-
-/* Round URL bar */
-#urlbar, .searchbar-textbox{
-	border-radius: 0.5em !important;
-}
-
-
-
-
-/* Rounded buttons */
-.toolbarbutton-1 {
-	border-radius: var(--button-radius) !important;
-}
-
-.close-icon {
-	border-radius: var(--button-radius) !important;
-}
-
-.tabs-newtab-button > #new-tab-button > #alltabs-button {
-	border-radius: var(--button-radius) !important;
-}
-
-
-
-
-
-/* Remove 2px border from the bottom of the titlebar */
-#navigator-toolbox {
-	border: none !important;
-}
-
-
-
-
-
-/* Hide tab line */
-.tab-line {
-	display: none !important;
-}
-
-/* Remove 2px gap left by tab-line if hidden */
-.tabbrowser-tab {
-	margin-top: -1px !important;
-}
-
-
-
-
-
-/* Hide a few buttons on the navbar */
-#pageActionSeparator, #pocket-button {
-	display: none !important;
-}
-
-
-
-
-
-/* Hide tab seperator line */
-.tabbrowser-tab::after, .tabbrowser-tab::before {
-	border-left: none !important;
-}
-
-
-
-
-
-/* Hide urlbar border and shadow + change height */
-#urlbar, .searchbar-textbox {
-	border: none !important;
-	box-shadow: none !important;
-	height: 20px !important;
-}
-
-
-
-
-
-/* Remove shadow from navbar */
-#nav-bar {
-	margin-top: 0px !important;
-	border-top: 0px !important;
-	box-shadow: none !important;
-}
-
-
-
-
-
-/* Remove padding from some items */
-#context-back > .menu-iconic-left,
-#context-stop > .menu-iconic-left,
-#context-reload > .menu-iconic-left,
-#context-forward > .menu-iconic-left,
-#context-bookmarkpage > .menu-iconic-left {
-	padding: 0px !important;
-}
-
-
-
-
-
-/* Desaturate and italic pending tabs */
-.tabbrowser-tab[pending] {
-	font-style: italic;
-	filter: grayscale(100%) !important;
-}
-
-
-
-
-
-/* Find popup */
-findbar-closebutton {
-	background-color: var(--bg1) !important;
-	border-radius: 0 !important;
-}
-
-.findbar-highlight {
-	background-color: var(--button) !important;
-}
-
-
-
-
-
-/* Change size of a few items */
-#navigator-toolbox * #urlbar-zoom-button {
-	width: auto !important;
-	max-width: 100px !important;
-}
-#navigator-toolbox * toolbarbutton {
-	height: var(--tab-min-height) !important;
-	max-height: var(--tab-min-height) !important;
-	width: var(--tab-min-height) !important;
-	max-width: var(--tab-min-height) !important;
-}
-
-#navigator-toolbox * toolbarbutton image,
-#navigator-toolbox * toolbarbutton stack {
-	height: calc(var(--tab-min-height) * 0.9) !important;
-	max-height: calc(var(--tab-min-height) * 0.9) !important;
-	width: calc(var(--tab-min-height) * 0.9) !important;
-	max-width: calc(var(--tab-min-height) * 0.9) !important;
-}
-
-#identity-icon,
-.tab-icon-image,
-.tab-close-button {
-	height: calc(var(--tab-min-height) * 0.6 ) !important;
-	width: calc(var(--tab-min-height) * 0.6 ) !important;
-}
-
-#identity-icon {
-	padding: 2px;
-}
-
-#TabsToolbar,
-#nav-bar,
-#titlebar,
-.tabbrowser-tab,
-#tabbrowser-tabs {
-	height: var(--tab-min-height) !important;
-}
-
-#urlbar {
-	min-height: 90% !important;
-}
-
-#tabbrowser-tabs > .tabbrowser-arrowscrollbox {
-	height: var(--tab-min-height);
-	min-height: var(--tab-min-height);
-	max-height: var(--tab-min-height);
-}
-
-
-/* Make tab close buttons appear on tab hover, replacing the tab icon */
-.tabbrowser-tab .tab-close-button {
-	-moz-box-ordinal-group: 0 !important;
-	margin: 2px 6px 0px 0px !important;
-}
-
-.tabbrowser-tab .tab-close-button {
-	display: none !important;
-}
-
-.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image,
-.tabbrowser-tab:not([pinned="true"]):hover .tab-throbber {
-	display: none;
-}
-
-.tabbrowser-tab:not([pinned="true"]):hover .tab-close-button {
-	display: -moz-box !important;
-}
-
-
-
-
-
-/***   Tabs-only OneLiner   ***
-/* Make the tab bar go above the hidden navbar */
-/* Hide navbar and move it up into the same line as the tab bar */
-#nav-bar:not([customizing]) {
-	margin-top: calc(var(--tab-min-height) * -1 - 16px) !important;
-	z-index: 2 !important;
-	pointer-events: none;
-	transition: all 200ms, z-index 0ms !important;
-	overflow-y: hidden;
-	padding-top:0 !important;
-	margin-bottom:16px !important;
-	opacity: 0;
-}
-
-
-
-
-/* When navbar is focused, bring it into view */
-#navigator-toolbox:not([customizing]):focus-within #nav-bar {
-	pointer-events: auto;
-	margin-top: calc(var(--tab-min-height) * -1) !important;
-	margin-bottom: 0px !important;
-	opacity: 1 !important;
-	max-height: 32px;
-}
-
-
-
-
-
-/* Fix some moving tab problems with the tabs-only oneliner */
-#TabsToolbar[movingtab] {
-	padding-bottom: 0px !important;
-}
-
-#TabsToolbar[movingtab] > .tabbrowser-tabs {
-	padding-bottom: 0px !important;
-	margin-bottom: 0px !important;
-}
-
-#tabbrowser-tabs[movingtab] {
-	margin-bottom: -2px !important;
-}
-
-#navigator-toolbox[movingtab],
-#tabbrowser-tabs[movingtab] {
-	margin: 0 !important;
-}
-
-
-
-
-
-/* Tab width */
-.tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 140px !important;
-}
-
-.tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
-	max-width: 100px !important;
-}
-
-
-
-
-
-/* Hide user icon on navbar in developer edition */
-#fxa-toolbar-menu-button { display: none !important; }
-
-/* Hide "go" arrow in urlbar */
-.urlbar-go-button { display: none !important; }
-
-
-
-
-
-toolbarbutton#alltabs-button {
-	-moz-binding: url("userChrome.xml#js");
-}
-
-
-
-
-
-/***   Enable `svg.context-properties.content.enabled` in about:config   ***/
-.toolbarbutton-animatable-image {
-	animation-duration: 0ms !important;
-}
-
-#home-button .toolbarbutton-icon,
-#back-button .toolbarbutton-icon,
-#reload-button .toolbarbutton-icon,
-#forward-button .toolbarbutton-icon {
-	-moz-context-properties: fill, stroke;
-	fill: currentColor !important;
-	stroke: currentColor !important;
-}
-
-
-
-
-
-#reload-button .toolbarbutton-icon {
-	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-dashoffset='100' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M6.269 6.12a2.852 2.852 0 0 1-3.28.677A2.852 2.852 0 0 1 1.326 3.89a2.852 2.852 0 0 1 2.247-2.483 2.852 2.852 0 0 1 3.059 1.365'/%3E%3Ccircle cx='6.543' cy='2.385' r='1.323' fill='context-fill' fill-rule='evenodd'/%3E%3C/svg%3E");;
-}
-
-#home-button .toolbarbutton-icon {
-	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cg fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058'%3E%3Cpath d='M1.884 3.73v2.557c0 .595.336.888.882.888l3.013-.02c.578 0 .792-.394.792-.871l.012-2.553'/%3E%3Cpath d='M1.227 4.298l3.006-3.006L7.24 4.298'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-#back-button .toolbarbutton-icon {
-	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M5.774.973L2.57 4.175l3.32 3.319'/%3E%3C/svg%3E");
-}
-
-#forward-button .toolbarbutton-icon {
-	list-style-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 8.467 8.467'%3E%3Cpath fill='none' stroke='context-fill' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.058' d='M2.693.973l3.203 3.202-3.32 3.319'/%3E%3C/svg%3E");
 }
