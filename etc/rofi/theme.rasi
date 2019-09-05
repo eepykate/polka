@@ -1,10 +1,10 @@
 /* RASI Theme */
 
 * {
-	bg:         #232836;
-  sel:        #ccccfa1a;
-  fg:         #ccccfa;
-  accent:     #8da4eb;
+	bg:         #f8efe8;
+  sel:        #4D4D4D16;
+  fg:         #4D4D4D;
+  accent:     #4D4D4D;
   black:      #1c202a;
   red:        #f0185a;
   green:      #12e689;
