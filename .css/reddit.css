@@ -165,6 +165,54 @@ body:not(.res-nightmode) {
  background:url("//b.thumbs.redditmedia.com/dC5rET-j_ti8F4Y12zGEZ7f8sLPt-yBNXQ8KzsvdGdE.png") no-repeat
 }
 
+.flair-aix::before,
+.flair-android::before,
+.flair-antergos::before,
+.flair-arch::before,
+.flair-archbang::before,
+.flair-bodhi::before,
+.flair-centos::before,
+.flair-chakra::before,
+.flair-crunchbang::before,
+.flair-debian::before,
+.flair-deepin::before,
+.flair-elementary::before,
+.flair-exherbo::before,
+.flair-fedora::before,
+.flair-freebsd::before,
+.flair-gentoo::before,
+.flair-gnu::before,
+.flair-korora::before,
+.flair-kubuntu::before,
+.flair-linux::before,
+.flair-lmde::before,
+.flair-lubuntu::before,
+.flair-macos::before,
+.flair-magiea::before,
+.flair-manjaro::before,
+.flair-mint::before,
+.flair-neon::before,
+.flair-nixos::before,
+.flair-opensuse::before,
+.flair-osx::before,
+.flair-siduction::before,
+.flair-solus::before,
+.flair-ubuntu::before,
+.flair-ubuntu::before,
+.flair-ubuntu::before,
+.flair-void::before,
+.flair-windows::before,
+.flair-xubuntu::before,
+.flair-zorin::before {
+	content: "";
+    float: left;
+    height: 15px;
+    margin-left: 3px;
+    text-align: right;
+    width: 15px;
+	margin-right: -4px;
+}
+
 span.pagename.redditname a,
 body.profile-page * span.pagename {
  display:block;
