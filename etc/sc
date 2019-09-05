@@ -51,15 +51,8 @@ f   b4         ~/bin/bar4
 
 
 # Xresources
-f   xp         ~/etc/Xres.Pure
-f   xb         ~/etc/Xres.Berry
-f   xp1        ~/etc/Xres.Pure-1
 f   xf         ~/etc/Xres.Frost
-f   xfp        ~/etc/Xres.Frost-Purple
-f   xa         ~/etc/Xres.aa
-f   xx         ~/etc/Xres.xd
-f   xw         ~/etc/Xres.Winter
-f   x1         ~/etc/Xres.aaaaa1_
+f   xw         ~/etc/Xres.Withered
 f   xc         ~/etc/Xres.Coral
 f   xs         ~/etc/Xres.Snow
 f   xl         ~/etc/Xres.la

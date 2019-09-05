@@ -44,15 +44,15 @@ elif [[ $theme = Withered ]]; then
 	accentn="1"
 	false="7bb854"
 	bgdark="f8efe8"
-	bglight="E6DDD6"
-	bglighter="DBD3CC"
+	bglight="F2E9E3"
+	bglighter="E6DDD6"
 	bglightest=""
 
 	fgdark="999999"
 	fglight="4D4D4D"
 
 	disabled="595959"
-	accent="4D4D4D"
+	accent="c48b66"
 	button="4D4D4D16"
 	border="b0b4bb"
 	red="e09b70"

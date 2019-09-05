@@ -9,9 +9,9 @@
 fg="4D4D4D"
 fd="999999"
 bg="f8efe8"
-bl="E6DDD6"
-blr="DBD3CC"
-ac="4D4D4D"
+bl="F2E9E3"
+blr="E6DDD6"
+ac="c48b66"
 fifo="/tmp/barfifo"
 #trap 'pkill -P $$' SIGINT
 

@@ -69,7 +69,7 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 unsetopt menu_complete     # Do not autoselect the first completion entry
 source ${XDG_CONFIG_HOME:-~/.config}/aliases   # Aliases
-ac="#4D4D4D"
+ac="#c48b66"
 fa="#7bb854"
 echo -ne "\033]4;16;$ac\007"
 echo -ne "\033]4;17;$fa\007"

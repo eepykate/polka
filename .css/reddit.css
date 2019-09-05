@@ -4163,3 +4163,8 @@ html body .content * .thing * h6 { font-size: 13px !important; }
 .res-nightmode .md * a:visited {
 	color: #C48CD9 !important;	
 }
+
+:not(.res-nightmode) * .md a:visited,
+:not(.res-nightmode) * .md * a:visited {
+	color: #9369A3 !important;	
+}
