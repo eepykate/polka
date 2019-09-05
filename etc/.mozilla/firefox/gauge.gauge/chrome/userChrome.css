@@ -22,21 +22,6 @@
 	--tab-min-height: 26.5px  !important;
 }
 
-
-
-
-
-
-.tabbrowser-tab .tab-background {
-	border-radius: 3px !important;
-}
-
-
-
-
-
-
-
 /* Tabs are de-saturated and transparent when inactive */
 .tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
 	filter: grayscale(50%) !important;
@@ -57,6 +42,10 @@
 	filter: grayscale(100%) !important;
 }
 
+
+.tabbrowser-tab .tab-background {
+	border-radius: 3px !important;
+}
 
 
 
