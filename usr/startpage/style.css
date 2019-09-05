@@ -1,15 +1,15 @@
 :root {
---bgdark: #232836;
---bglight: #282e3f;
---bglighter: #2f364a;
+--bg1: #f8efe8;
+--bg2: #F2E9E3;
+--bg3: #E6DDD6;
 
---fgdark: #8686a4;
---fglight: #ccccfa;
+--fgdark: #999999;
+--fglight: #4D4D4D;
 
---accent: #8da4eb;
---border: #2f364a;
---disabled: #696969;
---hover: #ffffff;
+--accent: #c48b66;
+--border: #b0b4bb;
+--disabled: #595959;
+--hover: #f8efe8;
 }
 
 * {
@@ -18,11 +18,11 @@
 }
 
 /*body, html {
-	background-color: var(--bgdark);
+	background-color: var(--bg1);
 }*/
 
 html {
-	background: var(--bgdark);
+	background: var(--bg1);
 	background-position: top -24px left 0;
 	margin-top: -26px;
 }
@@ -150,11 +150,11 @@ section:hover {
 }*/
 
 section {
-	background-color: var(--bglight);
+	background-color: var(--bg2);
 	border-radius: 4px;
 	transition: all 150ms ease;
 }
 
 section:hover {
-	background-color: var(--bglighter);
+	background-color: var(--bg3);
 }

@@ -3,7 +3,7 @@
 .getting-started,
 .getting-started__wrapper > *,
 .scrollable {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .status__content__spoiler-link,
@@ -21,14 +21,14 @@ ul li,
 .drawer__header,
 .drawer__inner,
 .drawer__inner__mastodon {
-	background-color: var(--bglighter) !important;
+	background-color: var(--bg3) !important;
 }
 
 .account__section-headline > *,
 dl dt,
 .columns-area ,
 .notification__filter-bar button {
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 }
 
 .attachment-list__list li {
@@ -36,7 +36,7 @@ dl dt,
 }
 
 * {
-	border-color: var(--bglighter) !important;
+	border-color: var(--bg3) !important;
 }
 
 .account__header__extra__links > * > *,
@@ -54,13 +54,13 @@ dl dt,
 .display-name__html,
 .status__content,
 .status__content > * {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 .notification-favourite * .status__content,
 .notification-favourite * .status__content > *,
 .display-name__account {
-	color: var(--fgdark) !important;
+	color: var(--fg2) !important;
 }
 
 .notification-reblog,

@@ -261,16 +261,16 @@ a {
  transition:150ms;
  -webkit-transition:150ms;
  font-weight:normal;
- color:var(--fgdark)!important;
+ color:var(--fg2)!important;
  text-shadow:0px 1px 8px rgba(0,0,0,0.5)
 }
 .tabmenu li:hover a {
  background-color:rgba(255,255,255,0.08);
- color:var(--fglight)!important;
+ color:var(--fg1)!important;
  font-weight:bold!important
 }
 .tabmenu li.selected a {
- color:var(--fglight)!important;
+ color:var(--fg1)!important;
  background-color:rgba(255,255,255,0.15);
  font-weight:bold!important;
  border:none!important
@@ -372,7 +372,7 @@ div#RESStyleSheetTipPane-header {
  border:none!important
 }
 .toc ul {
- background:var(--fglight)
+ background:var(--fg1)
 }
 .commentNavSortType:hover,
 .commentarea .menuarea .toggle a:hover {
@@ -850,7 +850,7 @@ body.res #header-bottom-right #mail.havemail {
 #header-bottom-right a,
 #header-bottom-right .user,
 #header-bottom-right .user .userkarma {
- color:var(--fglight);
+ color:var(--fg1);
  font-size:11px;
  font-weight:bold;
  text-transform:uppercase
@@ -1197,8 +1197,8 @@ html body * .RESSubscriptionButton {
  text-transform:uppercase;
  text-align:center;
  cursor:pointer;
- color:var(--fglight)!important;
- background-color:var(--bglighter);
+ color:var(--fg1)!important;
+ background-color:var(--bg3);
  border-radius:3px;
  transition:.25s ease;
  border: none !important;
@@ -1276,7 +1276,7 @@ body.comments-page .sitetable {
  padding:4px;
  margin-left:2px!important;
  margin-top:15px;
- border:1px solid var(--bglighter) !important
+ border:1px solid var(--bg3) !important
 }
 body.comments-page div.content {
  border:none!important
@@ -1344,7 +1344,7 @@ div.child {
  color:#4D5763
 }
 .wiki-page .wiki-page-content .wiki.md h2 {
- color: var(--fglight)
+ color: var(--fg1)
 }
 .wiki-page .wiki-page-content .wiki.md p {
  font-size:14px;
@@ -2262,7 +2262,7 @@ body:not(.search-page) #search input[type=text]:focus {
 .morelink a,
 .morelink a:hover,
 .morelink a:visited {
- color:var(--fglight)
+ color:var(--fg1)
 }
 .disabled .morelink,
 .disabled .morelink:hover {
@@ -3746,7 +3746,7 @@ ul.tabmenu > li > a,
 .link,
 .md pre code,
 .entry {
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 }
 
 .thing div.entry.res-selected,
@@ -3755,7 +3755,7 @@ ul.tabmenu > li > a,
 #siteTable .thing .res-selected .md-container,
 .linkflairlabel
 {
-	background-color: var(--bglighter) !important;
+	background-color: var(--bg3) !important;
 }
 
 .side .spacer .sidecontentbox .content,
@@ -3790,7 +3790,7 @@ div.thing .entry, */
 .crosspost-preview-header,
 .titlebox > *
 {
-	background-color: var(--bglight) !important
+	background-color: var(--bg2) !important
 }
 
 .entry, 
@@ -3799,16 +3799,16 @@ div.thing .entry, */
 div.content,
 .crosspost-preview,
 textarea {
-	border-color: var(--bglighter) !important;
+	border-color: var(--bg3) !important;
 }
 
 div.entry.res-selected {
-	border-left: 3px solid var(--fglight) !important;
+	border-left: 3px solid var(--fg1) !important;
 }
 
 body.comments-page * div.entry.res-selected {
 	padding-left: 6px !important;
-	border-left: 3px solid var(--fglight) !important;
+	border-left: 3px solid var(--fg1) !important;
 }
 
 .sidebox .morelink,
@@ -3816,15 +3816,15 @@ body.comments-page * div.entry.res-selected {
 .wiki .toc ul,
 textarea
 {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 #search input {
 	border: none !important;
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 a.title:visited {
-	color: var(--fgdark) !important
+	color: var(--fg2) !important
 }
 
 
@@ -3843,13 +3843,13 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 .pagename a,
 .res-nightmode .entry.res-selected .md-container > .md p
 {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 .sitetable > div.thing.comment.res-selected > .entry,
 .sitetable > div.thing.comment.res-selected > .entry .md-container
 {
-	background-color: var(--bglighter) !important;
+	background-color: var(--bg3) !important;
 }
 
 .shortlink > input {
@@ -3877,7 +3877,7 @@ a:visited em {
 	content: none !important;
 }
 
-.title a:visited { color: var(--fgdark) !important; }
+.title a:visited { color: var(--fg2) !important; }
 
 .md-spoiler-text {
 	background-color: #666666 !important;
@@ -3887,12 +3887,12 @@ a:visited em {
 
 .md-spoiler-text.revealed {
 	background-color: #66666699 !important;
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 .md blockquote {
 	background-color: transparent !important;
-	border-left: 2px solid var(--fgdark) !important;
+	border-left: 2px solid var(--fg2) !important;
 	margin-top: 2px !important;
 }
 .tagline > .flair {
@@ -3919,7 +3919,7 @@ body.profile-page * .bottom img {
 
 .bottom .access-required[data-event-action="compose"] {
 	background-color: var(--accent) !important;
-	color: var(--bgdark);
+	color: var(--bg1);
 	padding: 5px !important;
 	border-radius: 0.5em !important;
 	display: block !important;
@@ -3932,7 +3932,7 @@ body.profile-page * .bottom img {
 .fancy-toggle-button .add,
 .fancy-toggle-button .remove {
 	background-color: var(--button) !important;
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 .RESshortcutside:hover,
@@ -3940,8 +3940,8 @@ body.profile-page * .bottom img {
 .RESDashboardToggle:hover,
 .fancy-toggle-button .add:hover,
 .fancy-toggle-button .remove:hover {
-	background-color: var(--fglight) !important;
-	color: var(--bgdark) !important;
+	background-color: var(--fg1) !important;
+	color: var(--bg1) !important;
 }
 
 ertext-edit textarea:focus {
@@ -3955,8 +3955,8 @@ ertext-edit textarea:focus {
 	margin-bottom: -2px;
 	padding: 1px 6px !important;
 	border-radius: 1em;
-	background-color: var(--bgdark) !important;
-	border-color: var(--bglighter) !important;
+	background-color: var(--bg1) !important;
+	border-color: var(--bg3) !important;
 	overflow-y: hidden !important;
 }
 #header-img {
@@ -3971,11 +3971,11 @@ ertext-edit textarea:focus {
 
 #header-bottom-right,
 #header-bottom-left {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .tabmenu {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .flairselector::before {
@@ -3983,11 +3983,11 @@ ertext-edit textarea:focus {
 }
 
 .usertext-edit .md textarea {
-	border: 2px solid var(--bglighter) !important;
+	border: 2px solid var(--bg3) !important;
 }
 .usertext-edit .md textarea:focus,
 .usertext-edit .md textarea:hover{
-	border: 2px solid var(--fglight) !important;
+	border: 2px solid var(--fg1) !important;
 }
 * { outline: none !important; }
 
@@ -4006,7 +4006,7 @@ span.pagename {
 }
 
 .md pre {
-	border: 1px solid var(--bglighter) !important;
+	border: 1px solid var(--bg3) !important;
 	border-radius: 1em;
 }
 
@@ -4088,7 +4088,7 @@ body * a > * {
 }
 
 .tabmenu .selected {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 .res-toggle-filterline-visibility {
@@ -4131,8 +4131,8 @@ html body * button {
 }
 
 html body * button:hover {
-	background-color: var(--fglight) !important;
-	color: var(--bgdark) !important;
+	background-color: var(--fg1) !important;
+	color: var(--bg1) !important;
 }
 
 .side .redditname a {

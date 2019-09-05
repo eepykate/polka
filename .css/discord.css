@@ -5,7 +5,7 @@ code:not(.inline)::before {
     opacity: 0.5;
 }
 :root {
---selected: var(--bglighter);
+--selected: var(--bg3);
 }
 
 
@@ -46,7 +46,7 @@ code,                          /* Code blocks */
 .container-3baos1,
 .autocomplete-1vrmpx           /* Emoji autocomplete box */
 {
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 }
 
 .searchResultMessage-2VxO12 { /* Remove shadow from search results */
@@ -80,7 +80,7 @@ code,                          /* Code blocks */
 div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search popup */
 .darkTheme-3uETC4.container-2XeR5Z /* Search box in discord homepage */
 {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .modeSelected-1zApJ_ .content-3at_AU,  /* Selected channel */
@@ -107,7 +107,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 .wrapper-35wsBm,
 .circleIconButton-jET_ig,
 .containerDefault-1ZnADq:hover * .content-3at_AU { /* Hover over a channel in the channel sidebar */
-	background-color: var(--bglighter) !important;
+	background-color: var(--bg3) !important;
 }
 
 
@@ -128,7 +128,7 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 .label-3aiqT2 > span,         /* "Add a comment" text in upload popup */
 .tabBar-1E2ExX .primary-3j8BhM  /* "Add Friend" button */
 {
-	color: var(--bgdark) !important;
+	color: var(--bg1) !important;
 }
 
 .name-3_Dsmg {  /* Normal channel sidebar text colour */
@@ -153,7 +153,7 @@ s,
 .modeSelected-1zApJ_ * .icon-1_QxNX path,
 .modeSelected-1zApJ_ * .name-3_Dsmg      /* Active channel */
 {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 .wrapper-3WhCwL,   /* Channel thing text */
 .mention   /* User mention text */
@@ -176,7 +176,7 @@ code, .inline {
 }
 
 *:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg):not(button):not(a):not(.primary-3j8BhM):not(.mention):not(em):not(.filename-ovv3c5):not(.markup-2BOw-j)  { /* Set the font colour almost everywhere */
-	color: var(--fgdark);
+	color: var(--fg2);
 }
 
 /*.unread-3zKkbm,               /* Unread channel arrow */
@@ -196,7 +196,7 @@ hr.divider-32i8lo,            /* hr between messages */
 div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::before, 
 div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::after 
 {
-	border-color: var(--bglighter) !important;
+	border-color: var(--bg3) !important;
 }
 
 .dividerRed-MKoLlr > dividerContent-2L12VI::before,
@@ -235,7 +235,7 @@ a svg.homeIcon-tEMBK1 path {
 */
 
 .pill-31IEus .item-2hkk8m {
-	background-color: var(--fglight) !important;
+	background-color: var(--fg1) !important;
 }
 
 
@@ -247,7 +247,7 @@ a svg.homeIcon-tEMBK1 path {
 	top: 0;
 	bottom: 0;
 	z-index: 50;
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 }
 
 .wrapper-1Rf91z:hover * .pill-31IEus,
@@ -274,7 +274,7 @@ a svg.homeIcon-tEMBK1 path {
 	bottom: 0;
 	left: -198px;
 	z-index: 2;
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .channels-Ie2l6A:hover {
@@ -334,7 +334,7 @@ a svg.homeIcon-tEMBK1 path {
 }
 
 .attachButtonPlus-rUdX-B {
-	fill: var(--fgdark) !important;
+	fill: var(--fg2) !important;
 }
 
 .attachment-33OFj0,
@@ -345,8 +345,8 @@ pre,
 }
 
 .numberBadge-2s8kKX {
-	background-color: var(--fglight) !important;
-	color: var(--bgdark) !important;
+	background-color: var(--fg1) !important;
+	color: var(--bg1) !important;
 	font-size: 10px !important;
 	font-family: monospace !important;
 	font-weight: 500 !important;

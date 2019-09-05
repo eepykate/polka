@@ -13,37 +13,37 @@
 .mx_TopLeftMenuButton,            /* Name at the top left */
 .mx_RoomHeader_buttons 
 {
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 }
 
 .mx_BaseAvatar_image,
 .dark-panel .mx_SearchBox,
 .mx_RoomView {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .mx_MessageActionBar_maskButton,
 .mx_EventTile:hover > .mx_EventTile_line,
 .mx_EventTile:hover,
 .mx_RoomTile_selected {
-	background-color: var(--bglighter);
+	background-color: var(--bg3);
 }
 
 body { font-family: Roboto Condensed; }
 .markdown-body code { font-family: Iosevka Term; }
 
 *:not(.mx_SenderProfile_name) {
-	color: var(--fglight);
+	color: var(--fg1);
 }
 
 .mx_MessageActionBar_maskButton::after,
 .mx_RoomHeader_button,
 .mx_RightPanel_headerButton::before {
-	background-color: var(--fgdark) !important;
+	background-color: var(--fg2) !important;
 }
 
 .mx_Pill {
-	color: var(--bgdark) !important;
+	color: var(--bg1) !important;
 }
 
 .mx_Pill {
@@ -96,5 +96,5 @@ pre {
 }
 
 .mx_MessageTimestamp {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }

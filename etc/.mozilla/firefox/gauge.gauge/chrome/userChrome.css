@@ -5,19 +5,19 @@
  */
 
 :root {
---bgdark: #232836;
---bglight: #282e3f;
---bglighter: #2f364a;
+--bg1: #f8efe8;
+--bg2: #F2E9E3;
+--bg3: #E6DDD6;
 
---fgdark: #8686a4;
---fglight: #ccccfa;
+--fg2: #999999;
+--fg1: #4D4D4D;
 
---accent: #8da4eb;
---border: #2f364a;
---disabled: #696969;
+--accent: #c48b66;
+--border: #b0b4bb;
+--disabled: #595959;
 --selected: var(--button);
---button: #ccccfa1a;
---hover: #ffffff;
+--button: #4D4D4D16;
+--hover: #f8efe8;
 --toolbar-bgimage: none !important;
 --arrowpanel-dimmed: transparent !important;
 }
@@ -25,24 +25,29 @@
 /*** Change colours of a few items ***/
 :root {
 	--tab-min-height: 26.5px  !important;
-	--toolbar-bgcolor: var(--bglight) !important;
-	--lwt-accent-color: var(--bgdark) !important;
-	--toolbar-color: var(--fglight)!important;
-	--lwt-text-color: var(--fglight) !important;
-	--lwt-toolbarbutton-icon-fill: var(--fglight) !important;
-	--lwt-toolbar-field-focus-color: var(--fglight) !important;
-	--autocomplete-popup-highlight-background: var(--fglight) !important;
-	--autocomplete-popup-highlight-color: var(--bgdark) !important;
-	--autocomplete-popup-color: var(--fglight) !important;
-	--lwt-sidebar-background-color: var(--bgdark) !important;
+	--toolbar-bgcolor: var(--bg2) !important;
+	--lwt-accent-color: var(--bg1) !important;
+	--toolbar-color: var(--fg1)!important;
+	--lwt-text-color: var(--fg1) !important;
+	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
+	--lwt-toolbar-field-focus-color: var(--fg1) !important;
+	--autocomplete-popup-highlight-background: var(--fg1) !important;
+	--autocomplete-popup-highlight-color: var(--bg1) !important;
+	--autocomplete-popup-color: var(--fg1) !important;
+	--lwt-sidebar-background-color: var(--bg1) !important;
 	--urlbar-popup-url-color: var(--accent) !important;
-	--lwt-sidebar-text-color: var(--fglight) !important;
+	--lwt-sidebar-text-color: var(--fg1) !important;
 }
 
 #sidebar-box {
-	--sidebar-background-color: var(--bgdark) !important;
-	--sidebar-text-color: var(--fglight) !important;
-	--arrowpanel-color: var(--fglight) !important;
+	--sidebar-background-color: var(--bg1) !important;
+	--sidebar-text-color: var(--fg1) !important;
+	--arrowpanel-color: var(--fg1) !important;
+}
+
+#main-window {
+	--arrowpanel-background: var(--bg1) !important;
+	--arrowpanel-color: var(--fg1) !important;
 }
 
 .toolbarbutton-icon, .toolbarbutton-badge-stack {
@@ -51,21 +56,21 @@
 }
 
 .close-icon {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 .tabbrowser-tab .tab-content .tab-text {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 findbar {
-	--lwt-accent-color: var(--bgdark) !important;
-	--lwt-toolbar-field-background-color: var(--bglighter) !important;
+	--lwt-accent-color: var(--bg1) !important;
+	--lwt-toolbar-field-background-color: var(--bg3) !important;
 }
 
 #appMenu-mainView,
 #urlbar-results {
-	background-color: var(--bglight) !important;
+	background-color: var(--bg2) !important;
 }
 
 .urlbarView-row[aria-selected] {
@@ -73,7 +78,7 @@ findbar {
 }
 
 .tabs-newtab-button {
-	fill: var(--fglight) !important;
+	fill: var(--fg1) !important;
 }
 
 :root:not([lwtheme-image]) .browserContainer > findbar:-moz-lwtheme {
@@ -82,7 +87,7 @@ findbar {
 
 #urlbar,
 .tab-text[selected] {
-	color: var(--fglight) !important;
+	color: var(--fg1) !important;
 }
 
 #urlbar {
@@ -105,7 +110,7 @@ findbar {
 
 /*
 .tabbrowser-tab {
-	border: 8px solid var(--fglight) !important;
+	border: 8px solid var(--fg1) !important;
 	padding: 4px !important;
 	margin-right: 15px !important;
 }
@@ -115,7 +120,7 @@ findbar {
 }
 
 .tabbrowser-tab:not([selected]):not(:hover) {
-		border: 8px solid var(--fgdark) !important;
+		border: 8px solid var(--fg2) !important;
 }
 
 
@@ -134,15 +139,15 @@ findbar {
 
 /*Prevents White pre-load flash*/
 .tabbrowser-tabbox {
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 }
 
 @-moz-document url(about:blank) {
-	* { background: var(--bgdark) !important; }
+	* { background: var(--bg1) !important; }
 }
 
 @-moz-document url(chrome://browser/content/browser.xul) {
-	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bgdark) !important}}
+	browser, browser.display.background_color, tabbrowser tabpanels { background: var(--bg1) !important}}
 
 @-moz-document url(chrome://browser/content/browser.xul) {
 	#main-window,
@@ -152,7 +157,7 @@ findbar {
 	#content,
 	browser[type="content"] > html
 	{
-		background: var(--bgdark) !important;
+		background: var(--bg1) !important;
 	}
 }
 
@@ -161,10 +166,10 @@ findbar {
 #tabbrowser-tabpanels,
 browser[type=content-primary],
 browser[type=content] > html {
-	background: var(--bgdark) !important
+	background: var(--bg1) !important
 }
 #tabbrowser-tabpanels {
-	background: var(--bgdark) !important;
+	background: var(--bg1) !important;
 }
 
 
@@ -302,7 +307,7 @@ browser[type=content] > html {
 
 /* Find popup */
 findbar-closebutton {
-	background-color: var(--bgdark) !important;
+	background-color: var(--bg1) !important;
 	border-radius: 0 !important;
 }
 
