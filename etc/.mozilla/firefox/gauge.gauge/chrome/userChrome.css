@@ -31,7 +31,8 @@
 	--lwt-text-color: var(--fglight) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fglight) !important;
 	--lwt-toolbar-field-focus-color: var(--fglight) !important;
-	--autocomplete-popup-highlight-background: var(--accent) !important;
+	--autocomplete-popup-highlight-background: var(--fglight) !important;
+	--autocomplete-popup-highlight-color: var(--bgdark) !important;
 	--autocomplete-popup-color: var(--fglight) !important;
 	--lwt-sidebar-background-color: var(--bgdark) !important;
 	--urlbar-popup-url-color: var(--accent) !important;
