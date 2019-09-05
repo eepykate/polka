@@ -1,15 +1,15 @@
 :root {
---bg1: #f8efe8;
---bg2: #F2E9E3;
---bg3: #E6DDD6;
+--bg1: #232836;
+--bg2: #282e3f;
+--bg3: #2f364a;
 
---fgdark: #999999;
---fglight: #4D4D4D;
+--fg2: #8686a4;
+--fg1: #ccccfa;
 
---accent: #c48b66;
---border: #b0b4bb;
---disabled: #595959;
---hover: #f8efe8;
+--accent: #8da4eb;
+--border: #;
+--disabled: #696969;
+--hover: #ffffff;
 }
 
 * {
@@ -52,7 +52,7 @@ main {
 }
 
 #time, #date {
-	color: var(--fglight);
+	color: var(--fg1);
 	display: inline-block;
 	margin: 0 5px;
 	flex-grow: 1;
@@ -75,16 +75,16 @@ main {
 }
 
 a:visited, a {
-	color: var(--fgdark);
+	color: var(--fg2);
 	text-decoration: none;
 	outline: none;
 }
 
 a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 0ms ease 0s; }
-a:hover {	color: var(--fglight); }
+a:hover {	color: var(--fg1); }
 
 .slash {
-	color: var(--fgdark);
+	color: var(--fg2);
 }
 
 main section {
@@ -141,12 +141,12 @@ body {
 section {
 	margin: 12px;
 	padding: 12px;
-	/*border: 8px solid var(--fgdark);*/
+	/*border: 8px solid var(--fg2);*/
 	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.13);
 }
 /*
 section:hover {
-	border: 8px solid var(--fglight);
+	border: 8px solid var(--fg1);
 }*/
 
 section {
