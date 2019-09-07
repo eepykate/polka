@@ -12,6 +12,7 @@ bspc config window_gap 40
 bspc config border_width 0
 bspc config border_radius 7
 
+xsetroot -cursor_name left_ptr
 bspc config pointer_modifier mod1
 
 bspc config single_monocle true
