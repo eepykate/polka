@@ -36,6 +36,7 @@ if [[ $theme = Coral ]]; then
 	accent="f6b2b6"
 	false="8ac4ba"
 	hover="000000"
+	red="d48398"
 	#   -----
 
 elif [[ $theme = Withered ]]; then
@@ -54,6 +55,7 @@ elif [[ $theme = Withered ]]; then
 	accent="c48b66"
 	false="7bb854"
 	hover="f8efe8"
+	red="be6767"
 	#   -----
 
 elif [[ $theme = Snow ]]; then
@@ -72,6 +74,7 @@ elif [[ $theme = Snow ]]; then
 	accent="cd5e79"
 	false="7bb854"
 	hover="ffffff"
+	red="cd5e79"
 	#   -----
 
 
@@ -91,6 +94,7 @@ elif [[ $theme = Frost ]]; then
 	accent="8da4eb"
 	false="e9799b"
 	hover="ffffff"
+	red="e9799b"
 	#   -----
 
 else
@@ -137,6 +141,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 		-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
 		-e "s/.*--button:.*#.*\;/--button: #$button\;/" \
 		-e "s/.*--hover:.*#.*\;/--hover: #$hover\;/" \
+		-e "s/.*--red:.*#.*\;/--red: #$red\;/" \
 		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/"
 
 	# Replace colours in dunst
