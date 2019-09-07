@@ -81,31 +81,30 @@ fi
 echo "Installing programs"
 pacman -S --noconfirm --needed \
 	git bspwm sxhkd xclip util-linux \
-	transmission-qt transmission-cli \
-	noto-fonts noto-fonts-cjk xfce4 xfce4-goodies \
+	transmission-cli \
+	noto-fonts noto-fonts-cjk \
 	xorg-server xorg-xdpyinfo xorg-xwininfo \
 	xorg-xinit xorg-xkill xorg-xset \
 	xorg-xprop xorg-xrandr xorg-xgamma \
-	curl wget code papirus-icon-theme \
+	curl wget papirus-icon-theme \
 	rofi zsh \
 	arandr dosfstools exfat-utils \
 	feh ffmpeg firefox firefox-developer-edition \
-	gnome-keyring gnome-themes-extra ntfs-3g \
+	ntfs-3g \
 	pulseaudio pulseaudio-alsa \
 	scrot maim unrar unzip p7zip \
 	wget xdotool xssstate youtube-dl \
-	source-highlight syntax-highlighting \
-	vlc mpv gimp inkscape qt5ct \
+	vlc mpv gimp inkscape \
 	xf86-input-synaptics dunst \
 	python xautolock playerctl gst-plugins-good \
 	rsync ffmpegthumbnailer ffmpegthumbs \
-	ark acpi imagemagick neovim cmus \
+	acpi imagemagick neovim \
 	zsh-completions compton mpd ncmpcpp \
 	gcolor3 gnome-system-monitor \
 	xsettingsd lxappearance
 
 
-for i in i3lock-color-git qview gtk3-mushrooms pulseaudio-ctl light-git lemonbar-xft-git kvantum-qt4-git transmission-remote-cli-git flashfocus-git mpdris2; do
+for i in i3lock-color-git qview pulseaudio-ctl light-git lemonbar-xft-git transmission-remote-cli-git mpdris2; do
 
 	sudo -u $name yay -S --noconfirm --needed $i
 
