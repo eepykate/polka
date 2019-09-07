@@ -6410,7 +6410,7 @@ FIXME this is really an API */
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-image: image(rgba(0, 0, 0, 0.1));
+	background-image: image(rgba(255, 255, 255, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget) {
