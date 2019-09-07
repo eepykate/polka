@@ -224,15 +224,15 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	done
 
 
-	cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
-	sed --follow-symlinks -i \
-		-e "s/000000/$bg3/g" \
-		-e "s/222222/$bg2/g" \
-		~/opt/Wallpapers/tile.svg
-	inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
-	feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+	#cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
+	#sed --follow-symlinks -i \
+	#	-e "s/000000/$bg3/g" \
+	#	-e "s/222222/$bg2/g" \
+	#	~/opt/Wallpapers/tile.svg
+	#inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
+	#feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
 
-	#walgen1 "#$bg3"
+	walgen1 "#$bg3"
 
 
 	# Reload gtk theme - probably a major hack
