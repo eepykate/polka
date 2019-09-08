@@ -5,18 +5,18 @@
  */
 
 :root {
-  --bg1: #f8efe8;
-  --bg2: #F2E9E3;
-  --bg3: #E6DDD6;
+--bg1: #232836;
+--bg2: #282e3f;
+--bg3: #2f364a;
 
-  --fg2: #999999;
-  --fg1: #4D4D4D;
+--fg2: #8686a4;
+--fg1: #ccccfa;
 
-  --accent: #c48b66;
-  --disabled: #595959;
+--accent: #8da4eb;
+--disabled: #696969;
   --selected: var(--button);
-  --button: #4D4D4D16;
-  --hover: #f8efe8;
+--button: #ccccfa1a;
+--hover: #ffffff;
   --toolbar-bgimage: none !important;
   --arrowpanel-dimmed: transparent !important;
 	--tab-min-height: 26.5px  !important;
@@ -295,6 +295,9 @@ toolbarbutton#alltabs-button {
 	--lwt-sidebar-background-color: var(--bg1) !important;
 	--urlbar-popup-url-color: var(--accent) !important;
 	--lwt-sidebar-text-color: var(--fg1) !important;
+	--autocomplete-popup-background: var(--bg2) !important;
+	--urlbar-popup-action-color: var(--accent) !important;
+	--panel-disabled-color: var(--fg2) !important;
 }
 
 #sidebar-box {
