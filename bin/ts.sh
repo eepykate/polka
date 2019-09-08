@@ -54,7 +54,7 @@ elif [[ $theme = Ash ]]; then
 	#   -----
 	accent="a8afd7"
 	false="dd908d"
-	hover="444444"
+	hover="222222"
 	red="dd908d"
 	#   -----
 
