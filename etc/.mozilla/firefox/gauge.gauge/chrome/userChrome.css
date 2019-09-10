@@ -44,7 +44,7 @@
 
 
 .tabbrowser-tab .tab-background {
-	border-radius: 3px !important;
+	border-radius: 4px !important;
 }
 
 
@@ -407,4 +407,10 @@ browser[type=content] > html {
 }
 #tabbrowser-tabpanels {
 	background: var(--bg1) !important;
+}
+
+
+
+#tabs-newtab-button:not(:hover) {
+	opacity: 0;
 }
