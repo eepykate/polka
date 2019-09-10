@@ -46,7 +46,7 @@ elif [[ $theme = Ash ]]; then
 	bg2="1f1f1f"
 	bg3="242424"
 	bg4="292929"
-	button="eeeeee16"
+	button="bbbbbb16"
 	#   -----
 	fg1="bbbbbb"
 	fg2="888888"

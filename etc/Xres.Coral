@@ -1,7 +1,7 @@
 ! #16252E
 ! special
 *foreground:   #edeef0
-*background:   #111C23
+*background:   #111c23
 *cursorColor:  #edeef0
 
 ! black
@@ -13,12 +13,12 @@
 *color9:       #d48398
 
 ! green
-*color2:       #8ac4ba
-*color10:      #8ac4ba
+*color2:       #8ac4ac
+*color10:      #8ac4ac
 
 ! yellow
-*color3:       #e6c7bb
-*color11:      #e6c7bb
+*color3:       #e6c4bb
+*color11:      #e6c4bb
 
 ! blue
 *color4:       #9dcce1

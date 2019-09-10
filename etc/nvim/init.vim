@@ -56,3 +56,28 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 source $HOME/etc/nvim/statusline.vim
+
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+
+
+let s:hidden_all = 1
+function! ToggleHiddenAll()
+	if s:hidden_all  == 0
+		let s:hidden_all = 1
+		set noshowmode
+		set noruler
+		set laststatus=0
+		set noshowcmd
+	else
+		let s:hidden_all = 0
+		set showmode
+		set ruler
+		set laststatus=2
+		set showcmd
+	endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
