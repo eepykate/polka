@@ -12,7 +12,7 @@
 	padding = 20
 	horizontal_padding = 20
 	frame_width = 0
-	frame_color = "#8686a4"
+	frame_color = "#888888"
 	separator_color = frame
 	sort = yes
 	idle_threshold = 120
@@ -48,16 +48,16 @@
 	history = ctrl+shift+grave
 	context = ctrl+shift+period
 [urgency_low]
-	background = "#232836"
-	foreground = "#ccccfa"
+	background = "#212121"
+	foreground = "#bbbbbb"
 	timeout = 5
 	#icon = /path/to/icon
 [urgency_normal]
-	background = "#232836"
-	foreground = "#ccccfa"
+	background = "#212121"
+	foreground = "#bbbbbb"
 	timeout = 5
 [urgency_critical]
-	background = "#232836"
-	foreground = "#ccccfa"
-	frame_color = "#8686a4"
+	background = "#212121"
+	foreground = "#bbbbbb"
+	frame_color = "#888888"
 	timeout = 0

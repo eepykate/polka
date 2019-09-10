@@ -32,8 +32,9 @@
 body { font-family: Roboto Condensed; }
 .markdown-body code { font-family: Iosevka Term; }
 
-*:not(.mx_SenderProfile_name) {
-	color: var(--fg1);
+*::placeholder,
+*:not(code):not(.mx_SenderProfile_name) {
+	color: var(--fg1) !important;
 }
 
 .mx_MessageActionBar_maskButton::after,
@@ -98,3 +99,4 @@ pre {
 .mx_MessageTimestamp {
 	color: var(--fg1) !important;
 }
+
