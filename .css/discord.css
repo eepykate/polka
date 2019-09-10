@@ -8,108 +8,9 @@ code:not(.inline)::before {
 --selected: var(--bg3);
 }
 
-
-pre,
-html,
-#app-mount,
-.container-16j22k,
-/*.size-JLvFeT,                /* ?? */
-/*.container-16j22k,           /* ?? */
-/*.searchBar-6Kv8R2,           /* ?? */
-.container-2Thooq,             /* Bottom left user info */
-.scroller-2wx7Hm,              /* Channel Sidebar */
-.header-2o-2hj,                /* Top-Left Server name */
-.title-3qD0b-,                 /* Top bar */
-.container-1r6BKw,             /* Top bar */
-.resultsGroup-r_nuzN,          /* Top-Right search popup */
-.innerNoAutocomplete-1WpcVO,   /* Bottom User message box */
-.innerAutocomplete-1PN280,     /* Bottom User message box */
-.pad-29zQak,                   /* Padding on the left of scroll bars */
-.userPopout-3XzG_A > *,        /* User Popup */
-.privateChannels-1nO12o,       /* Sidebar in the home page */
-code,                          /* Code blocks */
-.searchResultsWrap-2DKFzt,     /* Search sidebar */
-.channelSeparator-1X1FuH > *,  /* Search sidebar channel name */
-.searchHeader-1l-wpR,          /* Top of search sidebar */
-.searchResultMessage-2VxO12,   /* Search Result */
-.members-1998pB,               /* Members sidebar */
-.header-SsaQ8X,                /* Pinned message header */
-.footer-1kmXd4,                /* Pinned message footer */
-.messageGroupWrapperOffsetCorrection-phOU-k, /* Pinned messages popup messages */
-.emojiPicker-3m1S-j,           /* Emoji picker */
-.header-1R_AjF,                /* Header on the channel description popup */
-.size-JLvFeT,                  /* Channel description popup */
-.category-2U57w6,              /* Emoji picker frequently used */
-[class*="autocompleteRow"],
-.sizeSmall-Sf4iOi,             /* Delete message popup */
-.footer-2yfCgX,                /* Delete message popup footer */
-.container-3baos1,
-.autocomplete-1vrmpx           /* Emoji autocomplete box */
-{
-	background-color: var(--bg1) !important;
-}
-
 .searchResultMessage-2VxO12 { /* Remove shadow from search results */
 	box-shadow: none !important; 
 }
-
-.divider-3gKybi,
-.containerDefault-1ZnADq:active * .content-3at_AU,
-.containerDefault-1ZnADq:hover:active * .content-3at_AU,
-/*.menu-Sp6bN1,            /* ?? */
-/*.inner-3ErfOT,           /* ?? */
-/*.layout-1cQCv2,          /* ?? */
-/*.headerTop-3C2Zn0,       /* ?? */
-/*.queryContainer-RKFJW-,  /* ?? */
-.messagesWrapper-3lZDfY,   /* Main messages box */
-.searchBar-3dMhjb,         /* Top-Right search box */
-.spacer-1fA9zc > form,     /* Stuff around bottom message box */
-.spacer-1fA9zc,            /* Stuff around bottom message box */
-.typing-2GQL18,            /* Typing dialog box at the bottom */
-.quickMessage-2XpSaN,      /* Message box in user popup */
-.note-3HfJZ5,              /* Notes for user in popup */
-.header-2BwW8b,            /* User Popout top */
-.gatedContent-3-B7qB,      /* NSFW channel thing */
-.messagesPopout-24nkyi,    /* Pinned Messages popup inner */
-.lightTheme-3LGLQs,        /* Search box in emoji popup */
-.friendsTable-133bsv,      /* Friends section */
-.menu-Sp6bN1,              /* Top left server popup */
-.container-1UB9sr,         /* Voice connected area */
-.message-2qRu38,           /* Delete message popup message preview */
-.container-3gCOGc,         /* Friends section */
-div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search popup */
-.darkTheme-3uETC4.container-2XeR5Z /* Search box in discord homepage */
-{
-	background-color: var(--bg2) !important;
-}
-
-.modeSelected-1zApJ_ .content-3at_AU,  /* Selected channel */
-.selected-rZcOL-,          /* Selected element in the search popup */
-.selected-3s45Ha,          /* Selected tab in homepage top bar */
-.item-3HpYcP:hover,        /* Selected tab in homepage top bar hover */
-.channel-2QD9_O:hover a,     /* Selected tab in homepage sidebar hover */
-.channel-2QD9_O a:hover,   /* Selected tab in homepage sidebar hover */
-.selected-1HYmZZ a,          /* Selected tab in homepage sidebar */
-.selected-1HYmZZ a,        /* Selected tab in homepage sidebar */
-.item-1GzJrl:hover,        /* Top left popup hover */
-.markup-2BOw-j:hover,     /* Hover on messages */
-.content-3dzVd8:hover,     /* Images */
-.buttonContainer-KtQ8wc:hover ~ .markup-2BOw-j, /* Hover on message option/react buttons */
-[class*="autocompleteRow"] > [class*="selectable"]:hover,  /* Selected emoji in the autocomplete popup */
-[class*="autocompleteRow"] > [class*="selectorSelected"]   /* Selected emoji in the autocomplete popup */
-{
-	background-color: var(--selected) !important;
-}
-
-.button-OhfaWu,
-.attachment-33OFj0,
-.embedInner-1-fpTo,
-.wrapper-35wsBm,
-.circleIconButton-jET_ig,
-.containerDefault-1ZnADq:hover * .content-3at_AU { /* Hover over a channel in the channel sidebar */
-	background-color: var(--bg3) !important;
-}
-
 
 /* Hide ugly gradient coming from the right on some elements */
 .children-19S4PO::after, .resultsGroup-r_nuzN::after, 
@@ -119,47 +20,6 @@ div.queryContainer-RKFJW-.focused-2bY0OD, /* Search for... message in search pop
 }
 
 
-.premiumGuildIconGem-C4yUDR,
-.premiumGuildIconGem-C4yUDR > path,
-.newMessagesBar-mujexs > * > *,   /* New messages dialog */
-.newMessagesBar-mujexs > *,   /* New messages dialog */
-.botTag-2BhDSU,               /* Tag next to username bots have */
-.filename-ovv3c5,             /* Filename in upload popup */
-.label-3aiqT2 > span,         /* "Add a comment" text in upload popup */
-.tabBar-1E2ExX .primary-3j8BhM  /* "Add Friend" button */
-{
-	color: var(--bg1) !important;
-}
-
-.name-3_Dsmg {  /* Normal channel sidebar text colour */
-	color: var(--normalsidebar) !important; 
-}
-
- /*base-gE7OpD stop-animation */
-
-html body * svg.homeIcon-tEMBK1 path,
-.theme-dark .embedAuthorName-3mnTWj,
-.cooldownWrapper-3joyFc,
-.content-2M3n_H .anchor-3Z-8Bb,
-.textArea-2Spzkt::placeholder,
-.username-_4ZSMR:not([style]),
-s,
-.modeUnread-1zpFdA * .name-3_Dsmg,       /* Unread channels */
-.modeUnread-1zpFdA * .icon-1_QxNX path,  /* Unread channels icon */
-.markup-2BOw-j,                          /* Main messages */
-.markup-2BOw-j > strong,                 /* Bold text */
-.markup-2BOw-j strong,
-.markup-2BOw-j * strong,
-.modeSelected-1zApJ_ * .icon-1_QxNX path,
-.modeSelected-1zApJ_ * .name-3_Dsmg      /* Active channel */
-{
-	color: var(--fg1) !important;
-}
-.wrapper-3WhCwL,   /* Channel thing text */
-.mention   /* User mention text */
-{
-	color: var(--accent) !important;
-}
 
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
  {
@@ -175,10 +35,6 @@ code, .inline {
 	font-family: Monospace !important;
 }
 
-*:not(.username-_4ZSMR):not(code):not([class*="hljs"]):not(.name-3_Dsmg):not(button):not(a):not(.primary-3j8BhM):not(.mention):not(em):not(.filename-ovv3c5):not(.markup-2BOw-j)  { /* Set the font colour almost everywhere */
-	color: var(--fg2);
-}
-
 /*.unread-3zKkbm,               /* Unread channel arrow */
 
 hr.divider-32i8lo,            /* hr between messages */
@@ -186,27 +42,6 @@ hr.divider-32i8lo,            /* hr between messages */
 .messageGroupBlocked-3wrQQX   /* X blocked messages */
 {
 	display: none !important;
-}waiot 
-
-.reactionMe-23mbRf /* React toggled */
-{
-	background-color: #434c6d !important;
-}
-
-div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::before, 
-div:not(.dividerRed-MKoLlr) > .dividerContent-2L12VI::after 
-{
-	border-color: var(--bg3) !important;
-}
-
-.dividerRed-MKoLlr > dividerContent-2L12VI::before,
-.dividerRed-MKoLlr > dividerContent-2L12VI::after
-{
-	border-color: var(--red) !important	
-}
-
-.dividerRed-MKoLlr > .dividerContent-2L12VI {
-	color: var(--red) !important;
 }
 
 .scroller-2wx7Hm,
@@ -367,3 +202,68 @@ pre,
 	left: -24px;
 	top: -3px;
 }
+
+.animatedContainer-1pJv5C {
+	background-color: transparent !important;
+}
+
+.modeSelected-1zApJ_ * path,
+.modeUnread-1zpFdA * path {
+	color: var(--fg1);
+}
+
+.title-3qD0b- {
+	background-color: var(--bg1) !important;
+}
+
+.markup-2BOw-j:hover {
+	background-color: var(--bg3)
+}
+
+
+
+.theme-dark {
+    --header-primary: var(--fg1);
+    --header-secondary: var(--fg2);
+    --text-normal: var(--fg1);
+    --text-muted: var(--fg2);
+    --text-link: #3F7CE0;
+    --channels-default: var(--fg2);
+    --interactive-normal: var(--fg2);
+    --interactive-hover: var(--fg1);
+    --interactive-active: var(--fg1);
+    --interactive-muted: var(--fg2);
+    --background-primary: var(--bg);
+    --background-secondary: var(--bg1);
+    --background-tertiary: var(--bg2);
+    --background-accent: var(--accent);
+    --background-floating: var(--bg1);
+    --background-modifier-hover: rgba(79,84,92,0.16);
+    --background-modifier-active: rgba(79,84,92,0.24);
+    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    --channeltextarea-background: var(--bg1);
+    --activity-card-background: var(--bg2);
+    --deprecated-panel-background: var(--bg1);
+	--background-modifier-selected: var(--button);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
