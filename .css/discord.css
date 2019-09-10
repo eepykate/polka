@@ -240,7 +240,7 @@ a svg.homeIcon-tEMBK1 path {
 
 
 
-.wrapper-1Rf91z {
+.guilds-1SWlCJ {
 	margin-left: -60px;
 	transition: all 200ms;
 	position: fixed;
@@ -250,11 +250,11 @@ a svg.homeIcon-tEMBK1 path {
 	background-color: var(--bg1) !important;
 }
 
-.wrapper-1Rf91z:hover * .pill-31IEus,
-.wrapper-1Rf91z:hover {
+.guilds-1SWlCJ:hover * .pill-31IEus,
+.guilds-1SWlCJ:hover {
 	margin-left: 0px;
 }
-.wrapper-1Rf91z * .pill-31IEus {
+.guilds-1SWlCJ * .pill-31IEus {
 	margin-left: 60px;
 }
 
@@ -262,12 +262,22 @@ a svg.homeIcon-tEMBK1 path {
 	margin-left: 12px;
 }
 
+.base-3dtUhz {
+	margin-left: -60px;
+}
+.bannerVisible-14J9lQ .header-2o-2hj,
+.title-3qD0b-,
+.animatedContainer-1pJv5C {
+	box-shadow: none !important;
+	filter: none !important;
+}
+.title-3qD0b- {
+	margin-left: 40px
+}
 
 
 
-
-
-.channels-Ie2l6A {
+.sidebar-2K8pFh {
 	transition: all 200ms;
 	position: absolute;
 	top: 0;
@@ -277,30 +287,29 @@ a svg.homeIcon-tEMBK1 path {
 	background-color: var(--bg2) !important;
 }
 
-.channels-Ie2l6A:hover {
+.sidebar-2K8pFh:hover {
 	left: 0;
 }
-.container-3gCOGc,
-.container-1r6BKw,
+
 .content-yTz4x3 {
-	margin-left: 50px;
+	margin-left: 40px;
 }
 
 
 .scroller-2wx7Hm > div:first-of-type,
 .bannerImage-1jOskm,
 .unread-3zKkbm,
-.channels-Ie2l6A:not(:hover) * .name-IbjUBS {
+.sidebar-2K8pFh:not(:hover) * .name-IbjUBS {
 	display: none;
 }
 
 
-.channels-Ie2l6A:not(:hover) * .content-3at_AU {
+.sidebar-2K8pFh:not(:hover) * .content-3at_AU {
 	max-width: 33px;
 	padding-left: 7px;
 }
 
-.channels-Ie2l6A:not(:hover) * .containerDefault-1ZnADq {
+.sidebar-2K8pFh:not(:hover) * .containerDefault-1ZnADq {
 	position: relative;
 	left: 194px;
 }
@@ -318,13 +327,13 @@ a svg.homeIcon-tEMBK1 path {
 	left: 190px;
 }
 */
-.channels-Ie2l6A:not(:hover) * .icon-WnO6o2 {
+.sidebar-2K8pFh:not(:hover) * .icon-WnO6o2 {
 	position: relative;
 	left: 182px;
 }
 
 
-.channels-Ie2l6A {
+.sidebar-2K8pFh {
 	z-index: 10 !important;
 }
 
@@ -353,7 +362,7 @@ pre,
 	padding: 0 !important;
 }
 
-.channels-Ie2l6A:not(:hover) * .numberBadge-2s8kKX {
+.sidebar-2K8pFh:not(:hover) * .numberBadge-2s8kKX {
 	position: relative;
 	left: -24px;
 	top: -3px;
