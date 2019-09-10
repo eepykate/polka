@@ -48,16 +48,16 @@
 	history = ctrl+shift+grave
 	context = ctrl+shift+period
 [urgency_low]
-	background = "#212121"
+	background = "#1b1b1b"
 	foreground = "#bbbbbb"
 	timeout = 5
 	#icon = /path/to/icon
 [urgency_normal]
-	background = "#212121"
+	background = "#1b1b1b"
 	foreground = "#bbbbbb"
 	timeout = 5
 [urgency_critical]
-	background = "#212121"
+	background = "#1b1b1b"
 	foreground = "#bbbbbb"
 	frame_color = "#888888"
 	timeout = 0

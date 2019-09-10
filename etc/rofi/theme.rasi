@@ -1,7 +1,7 @@
 /* RASI Theme */
 
 * {
-	bg:         #212121;
+	bg:         #1b1b1b;
   sel:        #eeeeee16;
   fg:         #bbbbbb;
   accent:     #a8afd7;

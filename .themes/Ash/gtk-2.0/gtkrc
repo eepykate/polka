@@ -12,9 +12,9 @@
 # order to not mess up the dark theme.
 
 # Text/base
-gtk-color-scheme = "text_color:#bbbbbb\nbase_color:#212121"
+gtk-color-scheme = "text_color:#bbbbbb\nbase_color:#1b1b1b"
 # Foreground/background
-gtk-color-scheme = "fg_color:#bbbbbb\nbg_color:#111111"
+gtk-color-scheme = "fg_color:#bbbbbb\nbg_color:#0b0b0b"
 # Selected foreground/background
 gtk-color-scheme = "selected_fg_color:#bbbbbb\nselected_bg_color:#a8afd7"
 # Titlebar foreground/background

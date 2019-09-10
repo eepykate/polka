@@ -42,10 +42,10 @@ if [[ $theme = Coral ]]; then
 elif [[ $theme = Ash ]]; then
 
 	#   -----
-	bg1="212121"
-	bg2="262626"
-	bg3="2E2E2E"
-	bg4="333333"
+	bg1="1b1b1b"
+	bg2="1f1f1f"
+	bg3="242424"
+	bg4="292929"
 	button="eeeeee16"
 	#   -----
 	fg1="bbbbbb"
@@ -252,7 +252,7 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	#inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
 	#feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
 
-	walgen1 "#$bg3"
+	walgen1 "#$bg4"
 
 
 	# Reload gtk theme - probably a major hack

@@ -367,7 +367,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .modal-dialog {
   border-radius: 4px;
   color: #bbbbbb;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border: none;
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
 }
@@ -828,7 +828,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-rise: 0;
   -arrow-box-shadow: none;
   margin: 5px 8px 8px;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border-radius: 4px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
 }
@@ -989,7 +989,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .resize-popup,
 .switcher-list, .workspace-switcher-container {
   color: #bbbbbb;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border: none;
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.5), 0 10px 5px rgba(0, 0, 0, 0.44);
   border-radius: 4px;
@@ -1016,7 +1016,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* TOP BAR */
 #panel {
-  background-color: #010101;
+  background-color: #000000;
   /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
@@ -1082,7 +1082,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
-  background-color: rgba(1, 1, 1, 0.01);
+  background-color: rgba(0, 0, 0, 0.01);
   box-shadow: inset 0 -2px 0px white;
   color: white;
 }
@@ -1130,7 +1130,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.solid {
-  background-color: #010101;
+  background-color: #000000;
   /* transition from transparent to solid */
   transition-duration: 250ms;
   background-gradient-direction: none;
@@ -1142,7 +1142,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.solid .panel-corner {
-  -panel-corner-background-color: #010101;
+  -panel-corner-background-color: #000000;
 }
 
 #panel.solid .panel-button {
@@ -1975,7 +1975,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 4px;
   padding: 7px 8px;
   color: #bbbbbb;
-  background-color: #212121;
+  background-color: #1b1b1b;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-align: center;
   -x-offset: 8px;
@@ -2243,17 +2243,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 5px;
   border-radius: 4px;
   color: #bbbbbb;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border: none;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
 }
 
 .notification-banner:hover {
-  background-color: #212121;
+  background-color: #1b1b1b;
 }
 
 .notification-banner:focus {
-  background-color: #212121;
+  background-color: #1b1b1b;
 }
 
 .notification-banner .notification-icon {
@@ -2470,7 +2470,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 4px;
   border: none;
   color: #bbbbbb;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border-color: transparent;
   box-shadow: 0 1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
   text-shadow: none;
@@ -2487,7 +2487,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key:hover, .keyboard-key:checked {
   color: #bbbbbb;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border-color: transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-shadow: none;
@@ -2496,7 +2496,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key:active {
   color: #bbbbbb;
-  background-color: #464646;
+  background-color: #414141;
   border-color: transparent;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
   text-shadow: none;
@@ -2512,12 +2512,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .keyboard-key.default-key {
   border-color: transparent;
-  background-color: #212121;
+  background-color: #1b1b1b;
   background-size: 24px;
 }
 
 .keyboard-key.default-key:active {
-  background-color: #404040;
+  background-color: #3b3b3b;
 }
 
 .keyboard-key.enter-key {
@@ -2560,7 +2560,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-base: 0;
   -arrow-rise: 0;
   -boxpointer-gap: 5px;
-  background-color: #212121;
+  background-color: #1b1b1b;
   border-radius: 4px;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.24), 0 3px 3px rgba(0, 0, 0, 0.345);
 }
@@ -3040,12 +3040,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #lockDialogGroup {
-  background: #010101;
+  background: #000000;
   background-size: cover;
 }
 
 #LookingGlassDialog {
-  background-color: #212121;
+  background-color: #1b1b1b;
   spacing: 4px;
   padding: 0;
   border: none;
@@ -3057,7 +3057,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 0 8px;
   border: none;
   border-radius: 0;
-  background-color: rgba(33, 33, 33, 0.01);
+  background-color: rgba(27, 27, 27, 0.01);
   box-shadow: inset 0 -1px 0 rgba(187, 187, 187, 0.12);
 }
 
@@ -3092,7 +3092,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #LookingGlassDialog .notebook-tab:selected {
   border-bottom-width: 0;
   border-color: transparent;
-  background-color: rgba(33, 33, 33, 0.01);
+  background-color: rgba(27, 27, 27, 0.01);
   box-shadow: inset 0 -2px 0px #a8afd7;
   color: #bbbbbb;
   text-shadow: none;
@@ -3209,7 +3209,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #LookingGlassPropertyInspector {
-  background: #212121;
+  background: #1b1b1b;
   border: none;
   border-radius: 4px;
   padding: 6px;
