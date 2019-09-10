@@ -208,6 +208,7 @@ pre,
 }
 
 
+.headerTagUsernameNoNickname-2_H881,
 .body-3iLsc4,
 .headerName-fajvi9,
 .bannerVisible-14J9lQ .header-2o-2hj,
@@ -217,6 +218,11 @@ pre,
 .modeSelected-1zApJ_ * path,
 .modeUnread-1zpFdA * path {
 	color: var(--fg1) !important;
+}
+
+.body-3iLsc4,
+.headerTag-2pZJzA {
+	color: var(--fg2) !important;
 }
 
 .body-3iLsc4,
