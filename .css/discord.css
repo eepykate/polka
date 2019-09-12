@@ -81,7 +81,7 @@ a svg.homeIcon-tEMBK1 path {
 	position: fixed;
 	top: 0;
 	bottom: 0;
-	z-index: 50;
+	z-index: 102;
 	background-color: var(--bg1) !important;
 }
 
@@ -169,7 +169,7 @@ a svg.homeIcon-tEMBK1 path {
 
 
 .sidebar-2K8pFh {
-	z-index: 10 !important;
+	z-index: 101 !important;
 }
 
 
@@ -276,9 +276,8 @@ pre,
     --channeltextarea-background: var(--bg1);
     --activity-card-background: var(--bg2);
     --deprecated-panel-background: var(--bg1);
-	--background-modifier-selected: var(--button);
+	--background-modifier-selected: var(--bg3);
 }
-
 
 
 
