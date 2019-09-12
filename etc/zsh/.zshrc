@@ -1,7 +1,6 @@
-#   ┏━━━━━━━┓
-#   ┃ zshrc ┃
-#   ┗━━━━━━━┛
-
+#     ---
+#    zshrc
+#     ---
 bindkey '^E' end-of-line              # Ctrl-E
 bindkey '^[[P' delete-char            # Delete
 bindkey '^[[4~' end-of-line           # End
