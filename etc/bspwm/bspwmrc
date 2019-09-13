@@ -39,4 +39,4 @@ bspc rule -a floating state=floating
 bspc rule -a ksysguard state=floating
 
 
-bar &
+#bar &
