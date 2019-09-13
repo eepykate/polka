@@ -13,7 +13,7 @@
 }
 
 * {
-	font-family: "t kiwi Wide";
+	font-family: "lime";
 	font-size: 10px;
 }
 
@@ -68,7 +68,7 @@ main {
 }
 
 .links {
-	padding: 5px 15px;
+	padding: 3px 15px;
 	width: auto;
 	display: block;
 	text-align: center;
@@ -80,7 +80,6 @@ a:visited, a {
 	outline: none;
 }
 
-a:not(.tablinks):visited, a:not(.tablinks) {  transition: all 0ms ease 0s; }
 a:hover {	color: var(--fg1); }
 
 .slash {
