@@ -1,6 +1,3 @@
-rofi.font:        Iosevka Term 14
-URxvt.font:       xft:Iosevka Term:style=Regular:pixelsize=12
-*shell:           /bin/zsh
 st.alpha:         1
 st.termname:      st-256color
 st.font:          lime:pixelsize=10
