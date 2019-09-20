@@ -120,160 +120,159 @@ else
 	echo "Invalid theme; exiting"; exit
 fi
 
-if [[ -n "$theme" ]]; then
-	#xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
-	#xfconf-query -c xfwm4 -p /general/theme -s "$theme"
-	# Manually change gtk theme
-	sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.config/gtk-2.0/gtkrc-2.0
-	sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
+[[ -z "$theme" ]] && exit
 
-	#kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
+#xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
+#xfconf-query -c xfwm4 -p /general/theme -s "$theme"
+# Manually change gtk theme
+sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ~/.config/gtk-2.0/gtkrc-2.0
+sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
 
-	# if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
-	[[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
-		sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/.Xresources
+#kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
 
-	sed --follow-symlinks -i \
-		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
-		-e "s/fa=\".*\"/fa=\"#$false\"/" \
-		${XDG_CONFIG_HOME:-~/.config}/zsh/.zshrc
-	sed --follow-symlinks -i \
-		-e "s/ac=\".*\"/ac=\"#$accent\"/" \
-		-e "s/fa=\".*\"/fa=\"#$false\"/" \
-		~/bin/rc
+# if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
+[[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
+	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/.Xresources
 
-	# Reload terminal colours using Xresources
-	rc
+sed --follow-symlinks -i \
+	-e "s/ac=\".*\"/ac=\"#$accent\"/" \
+	-e "s/fa=\".*\"/fa=\"#$false\"/" \
+	${XDG_CONFIG_HOME:-~/.config}/zsh/.zshrc
+sed --follow-symlinks -i \
+	-e "s/ac=\".*\"/ac=\"#$accent\"/" \
+	-e "s/fa=\".*\"/fa=\"#$false\"/" \
+	~/bin/rc
 
-	# Change the colour variables in firefox and my startpage
-	# $HOME/.startpage/style.css
-	echo "${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
+# Reload terminal colours using Xresources
+rc
+
+# Change the colour variables in firefox and my startpage
+# $HOME/.startpage/style.css
+echo "${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 ${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
-		xargs sed --follow-symlinks -i \
-		-e "s/.*--bg1:.*#.*\;/--bg1: #$bg1\;/" \
-		-e "s/.*--bg2:.*#.*\;/--bg2: #$bg2\;/" \
-		-e "s/.*--bg3:.*#.*\;/--bg3: #$bg3\;/" \
-		-e "s/.*--fg2:.*#.*\;/--fg2: #$fg2\;/" \
-		-e "s/.*--fg1:.*#.*\;/--fg1: #$fg1\;/" \
-		-e "s/.*--accent:.*#.*\;/--accent: #$accent\;/" \
-		-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
-		-e "s/.*--button:.*#.*\;/--button: #$button\;/" \
-		-e "s/.*--hover:.*#.*\;/--hover: #$hover\;/" \
-		-e "s/.*--red:.*#.*\;/--red: #$red\;/" \
-		-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/"
+	xargs sed --follow-symlinks -i \
+	-e "s/.*--bg1:.*#.*\;/--bg1: #$bg1\;/" \
+	-e "s/.*--bg2:.*#.*\;/--bg2: #$bg2\;/" \
+	-e "s/.*--bg3:.*#.*\;/--bg3: #$bg3\;/" \
+	-e "s/.*--fg2:.*#.*\;/--fg2: #$fg2\;/" \
+	-e "s/.*--fg1:.*#.*\;/--fg1: #$fg1\;/" \
+	-e "s/.*--accent:.*#.*\;/--accent: #$accent\;/" \
+	-e "s/.*--border:.*#.*\;/--border: #$border\;/" \
+	-e "s/.*--button:.*#.*\;/--button: #$button\;/" \
+	-e "s/.*--hover:.*#.*\;/--hover: #$hover\;/" \
+	-e "s/.*--red:.*#.*\;/--red: #$red\;/" \
+	-e "s/.*--disabled:.*#.*\;/--disabled: #$disabled\;/"
 
-	# Replace colours in dunst
-	sed --follow-symlinks -i \
-		-e "s/frame_color = \".*\"/frame_color = \"#$fg2\"/" \
-		-e "s/background = \".*\"/background = \"#$bg1\"/" \
-		-e "s/foreground = \".*\"/foreground = \"#$fg1\"/"  \
-		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+# Replace colours in dunst
+sed --follow-symlinks -i \
+	-e "s/frame_color = \".*\"/frame_color = \"#$fg2\"/" \
+	-e "s/background = \".*\"/background = \"#$bg1\"/" \
+	-e "s/foreground = \".*\"/foreground = \"#$fg1\"/"  \
+	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
-	# Make urgent notifications have a different colour
-	#dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
-	#sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fg1\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
-	#sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bg2\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+# Make urgent notifications have a different colour
+#dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
+#sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fg1\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+#sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bg2\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
-	pkill -9 dunst; dunst &>/dev/null &!
+pkill -9 dunst; dunst &>/dev/null &!
 
-	# Change the theme in rofi
-	sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bg1};/g" \
-		-e "s/fg:.*#.*;/fg:         #$fg1;/" \
-		-e "s/accent:.*#.*;/accent:     #$accent;/"\
-		-e "s/sel:.*#.*;/sel:        #$button;/"\
-		${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
+# Change the theme in rofi
+sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bg1};/g" \
+	-e "s/fg:.*#.*;/fg:         #$fg1;/" \
+	-e "s/accent:.*#.*;/accent:     #$accent;/"\
+	-e "s/sel:.*#.*;/sel:        #$button;/"\
+	${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
 
-	# Change the wallpaper
-	[[ -n $wallpaper ]] &&
-		[[ -f ~/Wallpapers/$wallpaper ]] &&
-		cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
+# Change the wallpaper
+[[ -n $wallpaper ]] &&
+	[[ -f ~/Wallpapers/$wallpaper ]] &&
+	cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
-	# Change lemonbar colours
-	sed --follow-symlinks -i \
-		-e "s/bg=\".*\"/bg=\"$bg1\"/" \
-		-e "s/bl=\".*\"/bl=\"$bg2\"/" \
-		-e "s/blr=\".*\"/blr=\"$bg3\"/" \
-		-e "s/fg=\".*\"/fg=\"$fg1\"/" \
-		-e "s/fd=\".*\"/fd=\"$fg2\"/" \
-		-e "s/ac=\".*\"/ac=\"$accent\"/" \
-		~/bin/bar
-	# bar &!         # This is now in my bspwmrc
+# Change lemonbar colours
+sed --follow-symlinks -i \
+	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
+	-e "s/bl=\".*\"/bl=\"$bg2\"/" \
+	-e "s/blr=\".*\"/blr=\"$bg3\"/" \
+	-e "s/fg=\".*\"/fg=\"$fg1\"/" \
+	-e "s/fd=\".*\"/fd=\"$fg2\"/" \
+	-e "s/ac=\".*\"/ac=\"$accent\"/" \
+	~/bin/bar
+# bar &!         # This is now in my bspwmrc
 
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
-	# Change bspwm colours
-	sed --follow-symlinks -i \
-		-e "s/normal_border_color \"#.*\"/normal_border_color \"#$fg2\"/g" \
-		-e "s/focused_border_color \"#.*\"/focused_border_color \"#$fg1\"/g" \
-		${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
-	wm restart
+# Change bspwm colours
+sed --follow-symlinks -i \
+	-e "s/normal_border_color \"#.*\"/normal_border_color \"#$fg2\"/g" \
+	-e "s/focused_border_color \"#.*\"/focused_border_color \"#$fg1\"/g" \
+	${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
+wm restart
 
-	# Change qview colours
-	sed --follow-symlinks -i \
-		-e "s/bgcolor=.*/bgcolor=#$bg1/" \
-		${XDG_CONFIG_HOME:-~/.config}/qView/qView.conf
+# Change qview colours
+sed --follow-symlinks -i \
+	-e "s/bgcolor=.*/bgcolor=#$bg1/" \
+	${XDG_CONFIG_HOME:-~/.config}/qView/qView.conf
 
-	#walgen "#$bg3"
+#walgen "#$bg3"
 
 #	[[ -d ~/git/usr/icons/$theme/ ]] &&
 #		[[ -d ~/usr/icons/Papirus-Dark ]] &&
 #		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
 
-	cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
+cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
+sed -i --follow-symlinks \
+	-e "s|000000|$fg1|g" \
+	-e "s|222222|$(darken $fg1 0.9)|g" \
+	$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
+
+
+cp -rf ~/usr/icons/16x16/ ~/usr/icons/Papirus-Dark/
+cp -r ~/usr/icons/22x22/emblems/* ~/usr/icons/Papirus-Dark/22x22/emblems/
+for f in \
+	16x16/devices/drive-harddisk.svg \
+	16x16/devices/drive-harddisk.svg \
+	16x16/places/folder.svg \
+	16x16/devices/drive-removable-media-usb.svg \
+	16x16/actions/media-eject.svg \
+	22x22/emblems/emblem-symbolic-link.svg \
+	22x22/emblems/emblem-unreadable.svg;
+do
 	sed -i --follow-symlinks \
-		-e "s|000000|$fg1|g" \
-		-e "s|222222|$(darken $fg1 0.9)|g" \
-		$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
+		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$bg1/" \
+		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$bg1/" \
+		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
+done
 
 
-	cp -rf ~/usr/icons/16x16/ ~/usr/icons/Papirus-Dark/
-	cp -r ~/usr/icons/22x22/emblems/* ~/usr/icons/Papirus-Dark/22x22/emblems/
-	for f in \
-		16x16/devices/drive-harddisk.svg \
-		16x16/devices/drive-harddisk.svg \
-		16x16/places/folder.svg \
-		16x16/devices/drive-removable-media-usb.svg \
-		16x16/actions/media-eject.svg \
-		22x22/emblems/emblem-symbolic-link.svg \
-		22x22/emblems/emblem-unreadable.svg;
-	do
-		sed -i --follow-symlinks \
-			-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$bg1/" \
-			-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$bg1/" \
-			${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
-	done
+#cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
+#sed --follow-symlinks -i \
+#	-e "s/000000/$bg3/g" \
+#	-e "s/222222/$bg2/g" \
+#	~/opt/Wallpapers/tile.svg
+#inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
+#feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+
+walgen1 "#$bg4"
 
 
-	#cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
-	#sed --follow-symlinks -i \
-	#	-e "s/000000/$bg3/g" \
-	#	-e "s/222222/$bg2/g" \
-	#	~/opt/Wallpapers/tile.svg
-	#inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
-	#feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+# Reload gtk theme - probably a major hack
+temp="$(mktemp)"
+temp2="$(mktemp)"
+echo "Net/IconThemeName \"Blank\"" > $temp2
+xsettingsd -c $temp2 &
+xse2=$!
+sleep 0.08; kill $xse2
 
-	walgen1 "#$bg4"
-
-
-	# Reload gtk theme - probably a major hack
-	temp="$(mktemp)"
-	temp2="$(mktemp)"
-	echo "Net/IconThemeName \"Blank\"" > $temp2
-	xsettingsd -c $temp2 &
-	xse2=$!
-	sleep 0.08; kill $xse2
-
-	echo "Net/ThemeName \"$theme\"" > $temp
-	echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
-	xsettingsd -c $temp &
-	xse=$!
-	sleep 0.2; kill $xse
-	rm $temp $temp2
-	#refresh
+echo "Net/ThemeName \"$theme\"" > $temp
+echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
+xsettingsd -c $temp &
+xse=$!
+sleep 0.2; kill $xse
+rm $temp $temp2
+#refresh
 
 
-	#walgen "#$bg3"
+#walgen "#$bg3"
 
-	notify-send "Theme changed to $theme"
-
-fi
+notify-send "Theme changed to $theme"
