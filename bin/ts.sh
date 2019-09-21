@@ -120,8 +120,6 @@ else
 	echo "Invalid theme; exiting"; exit
 fi
 
-[[ -z "$theme" ]] && exit
-
 #xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
 #xfconf-query -c xfwm4 -p /general/theme -s "$theme"
 # Manually change gtk theme
