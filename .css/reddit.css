@@ -2699,9 +2699,6 @@ div.leavemoderator {
  font-size:10px;
  font-weight:bold
 }
-body.comments-page .sitetable {
- z-index:3
-}
 .side .flairselector:before {
  display:block;
  position:fixed;
