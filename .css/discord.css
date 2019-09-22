@@ -220,11 +220,13 @@ pre,
 	color: var(--fg1) !important;
 }
 
+.bodyInner-245q0L,
 .body-3iLsc4,
 .headerTag-2pZJzA {
 	color: var(--fg2) !important;
 }
 
+.bodyInner-245q0L,
 .body-3iLsc4,
 .footer-1fjuF6,
 .title-3qD0b- {
@@ -279,7 +281,9 @@ pre,
 	--background-modifier-selected: var(--bg3);
 }
 
-
+.scroller-2TZvBN {
+	background-color: var(--bg1) !important;
+}
 
 
 
