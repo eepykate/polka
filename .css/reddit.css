@@ -467,7 +467,7 @@ img.RESImage {
 .nsfw-stamp {
  color:white;
  border:none!important;
- background:#D10023;
+ background:#d10023;
  padding:0px 8px!important;
  border-radius:20px;
  font-weight:bold
@@ -1883,7 +1883,7 @@ span.totalvotes {
  position:absolute;
  box-shadow:0 1px 5px rgba(0,0,0,0.08);
  border-radius:4px;
- width:300px
+ width:300px;
 }
 .linkinfo .date {
  font-weight:bold;
@@ -2811,7 +2811,7 @@ body:not(.comments-page) .over18 .link .tagline,
 body:not(.comments-page) .over18 .tagline,
 body:not(.comments-page) .over18 .entry .buttons li a,
 body:not(.comments-page) .over18 .entry .buttons li+li {
- color:#D10023!important
+ color:var(--red)!important
 }
 .res #RESShortcutsEditContainer,
 .res #sr-more-link {
@@ -3118,23 +3118,16 @@ button,
 .commentarea .comment a.expand:hover {
  background:var(--accent);
 }
-.commentarea span.score,
-.comment .flat-list li a:hover,
-.comment .flat-list li a[onclick*=reply],
-.commentNavSortType:hover,
-.commentarea .menuarea .toggle a:hover,
-.entry .buttons .may-blank,
 .error,
 .link .domain a:hover,
 .link .entry .buttons li a:hover,
 .loadFlat:hover,
 .submit-page .roundfield a,
-.thing .title,
 #progressIndicator a#NERStaticLink,
 .deepthread a,
 .deepthread::after,
 .linefield .title {
- color:var(--accent)
+ color:var(--accent) !important
 }
 .roundfield input[type=url]:focus,
 .roundfield input[type=text]:focus,
@@ -3803,12 +3796,12 @@ textarea {
 }
 
 div.entry.res-selected {
-	border-left: 3px solid var(--fg1) !important;
+	border-left: 3px solid var(--accent) !important;
 }
 
 body.comments-page * div.entry.res-selected {
 	padding-left: 6px !important;
-	border-left: 3px solid var(--fg1) !important;
+	border-left: 3px solid var(--accent) !important;
 }
 
 .sidebox .morelink,
@@ -3832,6 +3825,7 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
+.tagline .author,
 html body .side h1.redditname a,
 body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 #srDropdownContainer a,
@@ -3933,15 +3927,6 @@ body.profile-page * .bottom img {
 .fancy-toggle-button .remove {
 	background-color: var(--button) !important;
 	color: var(--fg1) !important;
-}
-
-.RESshortcutside:hover,
-.RESshortcut:hover,
-.RESDashboardToggle:hover,
-.fancy-toggle-button .add:hover,
-.fancy-toggle-button .remove:hover {
-	background-color: var(--fg1) !important;
-	color: var(--bg1) !important;
 }
 
 ertext-edit textarea:focus {
@@ -4129,10 +4114,14 @@ html body * button {
 	background-color: var(--button) !important;
 	border: none !important;
 }
-
+.RESshortcutside:hover,
+.RESshortcut:hover,
+.RESDashboardToggle:hover,
+.fancy-toggle-button .add:hover,
+.fancy-toggle-button .remove:hover,
 html body * button:hover {
-	background-color: var(--fg1) !important;
-	color: var(--bg1) !important;
+	background-color: var(--accent) !important;
+	color: var(--hover) !important;
 }
 
 .side .redditname a {
@@ -4167,4 +4156,8 @@ html body .content * .thing * h6 { font-size: 13px !important; }
 body:not(.res-nightmode) * .md a:visited,
 body:not(.res-nightmode) * .md * a:visited {
 	color: #9369A3 !important;	
+}
+
+.flairrichtext {
+	height: 16px !important;
 }
