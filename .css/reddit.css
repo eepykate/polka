@@ -1214,22 +1214,14 @@ body.comments-page .link {
 body.comments-page .sitetable {
  position:relative
 }
-.commentarea>.usertext {
- border-radius:0px 0px 2px 2px;
- box-shadow:0px 1px 5px rgba(0,0,0,0.08);
- overflow:visible;
- padding-top:165px;
- padding-left:29px;
- margin-top:-160px;
- margin-left:-10px;
- margin-right:-10px
-}
+
 .res .commentarea>.usertext {
  position:relative;
- top:-110px;
+ top: 40px;
  margin-bottom:-90px;
  margin-top:-160px;
- clear:left
+ clear:left;
+ padding-bottom: 125px;
 }
 .commentarea .panestack-title {
  margin:16px 0 -40px 22px;
