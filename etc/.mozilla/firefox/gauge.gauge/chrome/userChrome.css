@@ -52,6 +52,8 @@
 
 
 
+
+/***   Hide some stuff   ***/
 /* Hide tab line */
 .tab-line {
 	display: none !important;
@@ -62,10 +64,6 @@
 	margin-top: -1px !important;
 }
 
-
-
-
-/***   Hide some stuff   ***/
 /* Hide tab seperator line */
 .tabbrowser-tab::after, .tabbrowser-tab::before {
 	border-left: none !important;
@@ -95,6 +93,12 @@
 
 /* Hide "go" arrow in urlbar */
 .urlbar-go-button { display: none !important; }
+
+
+#tabs-newtab-button:not(:hover) {
+	opacity: 0;
+}
+
 
 
 
@@ -369,6 +373,10 @@ findbar-closebutton {
 	--tab-loading-fill: var(--accent) !important;
 }
 
+.tab-throbber::before {
+    fill: var(--accent) !important;
+}
+
 
 
 
@@ -407,10 +415,4 @@ browser[type=content] > html {
 }
 #tabbrowser-tabpanels {
 	background: var(--bg1) !important;
-}
-
-
-
-#tabs-newtab-button:not(:hover) {
-	opacity: 0;
 }
