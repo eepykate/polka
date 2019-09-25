@@ -161,35 +161,26 @@ echo "Installing some fonts"
 mkdir -p /usr/share/fonts/TTF
 mkdir -p /usr/share/fonts/OTF
 
-echo " - Source Code Pro"
-# Sauce Code Pro font
-curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip >> /tmp/SauceCodePro.zip 
-unzip -o /tmp/SauceCodePro.zip -d /usr/share/fonts/TTF/ &>/dev/null
-
 echo " - Iosevka"
-# Iosevka font
-curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip 
+curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip
 unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-# Iosevka Nerd Font
-curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -o /tmp/Iosevka-nerd-font.zip
-unzip -o /tmp/Iosevka-nerd-font.zip -d /usr/share/fonts/TTF/ &>/dev/null
-
 echo " - Roboto"
-# Roboto fonts
 curl -Ls https://fonts.google.com/download?family=Roboto -o /tmp/Roboto.zip
 unzip -o /tmp/Roboto.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
+echo " - Roboto Condensed"
 curl -Ls https://fonts.google.com/download?family=Roboto%20Condensed -o /tmp/Roboto-Condensed.zip
 unzip -o /tmp/Roboto-Condensed.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-echo " - Normal nerd font"
-# Nerd font
+echo " - Fira Mono"
+curl -Ls https://fonts.google.com/download?family=Fira%20Mono -o /tmp/Fira-Mono.zip
+unzip -o /tmp/Fira-Mono.zip -d /usr/share/fonts/TTF &>/dev/null
+
+echo " - Regular nerd font"
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Regular.zip -o /tmp/Regular.zip
 unzip -o /tmp/Regular.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
-#Fira code font
-#curl -Ls https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fura%20Code%20Regular%20Nerd%20Font%20Complete%20Mono.otf > "/usr/share/fonts/OTF/Fira Code Mono.otf"
 
 fc-cache -f
 
