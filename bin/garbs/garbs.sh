@@ -101,7 +101,7 @@ pacman -S --noconfirm --needed \
 	acpi imagemagick neovim \
 	zsh-completions compton mpd ncmpcpp \
 	gcolor3 gnome-system-monitor \
-	xsettingsd lxappearance
+	xsettingsd lxappearance ttf-ubuntu-font-family
 
 
 for i in i3lock-color-git qview pulseaudio-ctl light-git lemonbar-xft-git transmission-remote-cli-git mpdris2; do
