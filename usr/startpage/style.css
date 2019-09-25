@@ -13,8 +13,9 @@
 }
 
 * {
-	font-family: "lime";
-	font-size: 10px;
+	font-family: "Roboto Mono";
+	font-weight: Medium;
+	font-size: 9.5px;
 }
 
 /*body, html {
@@ -68,7 +69,7 @@ main {
 }
 
 .links {
-	padding: 3px 15px;
+	padding: 4px 15px;
 	width: auto;
 	display: block;
 	text-align: center;

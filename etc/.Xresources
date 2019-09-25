@@ -1,13 +1,13 @@
 st.alpha:         1
 st.termname:      st-256color
-st.font:          lime:pixelsize=10
+st.font:          Roboto Mono:pixelsize=9.5:style=Medium
 st.borderpx:      50
 st.tabspaces:     4
 st.xfps:          60
 st.actionfps:     60
 st.bellvolume:    0
 st.cwscale:       1.0
-st.chscale:       1.05
+st.chscale:       1.0
 st.blinktimeout:  0.5
 
 Xft.dpi: 96
