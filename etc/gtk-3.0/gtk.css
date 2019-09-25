@@ -28,10 +28,6 @@
 }
 */
 
-* {
-	font-weight: normal;
-}
-
 /*
 .thunar {
     background: url("Blur.png");
@@ -76,3 +72,7 @@
     margin-left: 4px;
 }
 */
+
+* {
+    font-weight: Bold;
+}
