@@ -430,8 +430,15 @@ browser[type=content] > html {
 	font-size: 9.5px !important;
 }
 
-.urlbarView-title > strong {
+
+.urlbarView-secondary,
+.urlbarView-row[type=search] > .urlbarView-row-inner > .urlbarView-title strong,
+.urlbarView-row:not([type=search]) > .urlbarView-row-inner > .urlbarView-title {
 	font-weight: normal !important;
+}
+
+#urlbarView-row-0 * strong {
+	font-weight: bold !important;
 }
 
 .urlbarView-title,
