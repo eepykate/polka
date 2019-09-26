@@ -1,25 +1,26 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 /*
  *     GaugeK's userChrome.css
  *     gitlab.com/GaugeK/dots
  */
 
 :root {
---bg1: #232836;
---bg2: #282e3f;
---bg3: #2f364a;
-
---fg2: #8686a4;
---fg1: #ccccfa;
-
---accent: #8da4eb;
---disabled: #696969;
-  --selected: var(--button);
---button: #ccccfa1a;
---hover: #ffffff;
-  --toolbar-bgimage: none !important;
-  --arrowpanel-dimmed: transparent !important;
-	--tab-min-height: 29.5px  !important;
+	/*  ----  */
+	--bg1: #232836;
+	--bg2: #282e3f;
+	--bg3: #2f364a;
+	--button: #ccccfa1a;
+	/*  ----  */
+	--fg2: #8686a4;
+	--fg1: #ccccfa;
+	--disabled: #696969;
+	/*  ----  */
+	--accent: #8da4eb;
+	--hover: #ffffff;
+	--red: #e9799b;
+	/*  ----  */
+	--toolbar-bgimage: none !important;
+	--arrowpanel-dimmed: transparent !important;
+	-tab-min-height: 29.5px  !important;
 }
 
 /* Tabs are de-saturated and transparent when inactive */
@@ -158,7 +159,7 @@
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 180px !important;
+	max-width: 170px !important;
 }
 /*
 .tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
@@ -285,23 +286,29 @@ toolbarbutton#alltabs-button {
 
 
 
+
 /*** Change colours of a few items ***/
 :root {
+	/* Toolbar */
+	--toolbar-color: var(--fg1) !important;
+	--lwt-text-color: var(--fg1) !important;
 	--toolbar-bgcolor: var(--bg2) !important;
 	--lwt-accent-color: var(--bg1) !important;
-	--toolbar-color: var(--fg1)!important;
-	--lwt-text-color: var(--fg1) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
 	--lwt-toolbar-field-focus-color: var(--fg1) !important;
-	--autocomplete-popup-highlight-background: var(--fg1) !important;
-	--autocomplete-popup-highlight-color: var(--bg1) !important;
-	--autocomplete-popup-color: var(--fg1) !important;
-	--lwt-sidebar-background-color: var(--bg1) !important;
-	--urlbar-popup-url-color: var(--accent) !important;
-	--lwt-sidebar-text-color: var(--fg1) !important;
-	--autocomplete-popup-background: var(--bg2) !important;
-	--urlbar-popup-action-color: var(--accent) !important;
+
+	/* Autocomplete Popup */
 	--panel-disabled-color: var(--fg2) !important;
+	--urlbar-popup-url-color: var(--accent) !important;
+	--autocomplete-popup-color: var(--fg1)  !important;
+	--urlbar-popup-action-color: var(--accent) !important;
+	--autocomplete-popup-background: var(--bg2) !important;
+	--autocomplete-popup-highlight-color: var(--fg1) !important;
+	--autocomplete-popup-highlight-background: var(--button) !important;
+
+	/* Sidebar */
+	--lwt-sidebar-text-color: var(--fg1) !important;
+	--lwt-sidebar-background-color: var(--bg1) !important;
 }
 
 #sidebar-box {
@@ -336,10 +343,6 @@ findbar {
 #appMenu-mainView,
 #urlbar-results {
 	background-color: var(--bg2) !important;
-}
-
-.urlbarView-row[aria-selected] {
-	background-color: var(--button) !important;
 }
 
 .tabs-newtab-button {
@@ -415,4 +418,24 @@ browser[type=content] > html {
 }
 #tabbrowser-tabpanels {
 	background: var(--bg1) !important;
+}
+
+
+
+
+
+/* Font stuff */
+* {
+	font-family: Fira Mono;
+	font-size: 9.5px !important;
+}
+
+.urlbarView-title > strong {
+	font-weight: normal !important;
+}
+
+.urlbarView-title,
+.urlbarView-secondary,
+.urlbarView-title-separator {
+	line-height: 16px !important;
 }
