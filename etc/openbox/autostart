@@ -16,23 +16,3 @@
 #
 #xfce-mcs-manager &
 
-compton &
-nm-applet &
-yakuake &
-#xfce4-panel &
-#latte-dock &
-feh --bg-fill "/home/gauge/Wallpapers/Hexagon Krayons.png"
-#lxqt-panel &
-#tint2 &
-#lxqt-notificationd &
-#volumeicon &
-pnmixer &
-xautolock -time 10 -locker ~/bin/lock &
-kglobalaccel5 &
-albert &
-tint2 -c /home/gauge/.config/tint2/topleft.tint2rc &
-tint2 -c /home/gauge/.config/tint2/topright.tint2rc &
-conky &
-dunst &
-cbatticon --command-left-click "battery" &
-

@@ -120,6 +120,18 @@ else
 	echo "Invalid theme; exiting"; exit
 fi
 
+
+#sed --follow-symlinks -i \
+#	-e "s/active.title.bg.color.*/active.title.bg.color: #$fg1/" \
+#	-e "s/active.label.bg.color.*/active.label.bg.color: #$fg1/" \
+#	-e "s/inactive.title.bg.color.*/inactive.title.bg.color: #$bg1/" \
+#	-e "s/inactive.label.bg.color.*/inactive.label.bg.color: #$bg1/" \
+#	-e "s/active.label.text.color.*/active.label.text.color: #$bg1/" \
+#	-e "s/inactive.label.text.color.*/inactive.label.text.color: #$fg2/" \
+#	~/git/.themes/ob/openbox-3/themerc
+
+#openbox --reconfigure
+
 #xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
 #xfconf-query -c xfwm4 -p /general/theme -s "$theme"
 # Manually change gtk theme

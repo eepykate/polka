@@ -71,11 +71,11 @@ ctrl + alt + s
 alt + grave
 	dropdown.sh
 
-#alt + q
-#	xdotool getwindowfocus windowclose
+alt + q
+	xdotool getwindowfocus windowclose
 
-#super + q
-#	xdotool getwindowfocus windowkill
+super + q
+	xdotool getwindowfocus windowkill
 
 super + s
 	players.sh
@@ -99,11 +99,11 @@ ctrl + alt + {Prior, Home, Insert, End}
 #   bspwm
 #    ---
 
-super + q
-	bspc node -k
+#super + q
+#	bspc node -k
 
-alt + q
-	bspc node -c
+#alt + q
+#	bspc node -c
 
 alt + c
 	bspc node -p cancel

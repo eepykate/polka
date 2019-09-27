@@ -10,7 +10,7 @@
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
        apply -->
-    <followMouse>no</followMouse>
+    <followMouse>yes</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
     <!-- focus the last used window when changing desktops, instead of the one
@@ -25,7 +25,7 @@
        mouse into it, also raise the window -->
   </focus>
   <placement>
-    <policy>Smart</policy>
+    <policy>UnderMouse</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
@@ -42,8 +42,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Krayons</name>
-    <titleLayout>CIMLN</titleLayout>
+    <name>ob</name>
+    <titleLayout/>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -54,60 +54,60 @@
       S: shade (roll up/down)
       D: omnipresent (on all desktops).
   -->
-    <keepBorder>yes</keepBorder>
+    <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Noto Sans</name>
-      <size>10</size>
+      <name> Fira Mono</name>
+      <size>9</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Bold</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Noto Sans</name>
-      <size>10</size>
+      <name> Fira Mono</name>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Bold</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Noto Sans</name>
-      <size>10</size>
+      <name> Fira Mono</name>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Bold</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Noto Sans</name>
-      <size>10</size>
+      <name> Fira Mono</name>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Bold</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Noto Sans</name>
-      <size>10</size>
+      <name> Fira Mono</name>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Bold</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Noto Sans</name>
-      <size>10</size>
+      <name> Fira Mono</name>
+      <size>9</size>
       <!-- font size in points -->
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>Normal</slant>
+      <slant>Bold</slant>
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
@@ -120,13 +120,14 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>5</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -177,140 +178,69 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
-    <keybind key="W-u">
+    <keybind key="W-v">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="W-Escape">
       <action name="Execute">
-        <command>usb</command>
+        <command>openbox --reconfigure</command>
       </action>
     </keybind>
-    <keybind key="C-A-End">
+    <keybind key="W-S-Escape">
       <action name="Execute">
-        <command>stop</command>
+        <command>openbox --exit</command>
       </action>
     </keybind>
-    <keybind key="C-A-Insert">
-      <action name="Execute">
-        <command>record</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessUp">
-      <action name="Execute">
-        <command>light -A 10</command>
-      </action>
-    </keybind>
-    <keybind key="XF86MonBrightnessDown">
-      <action name="Execute"> 
-        <command>light -U 10</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-u">
-      <action name="Execute">
-        <command>dmenuumount</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-m">
-      <action name="Execute">
-        <command>dmenumount</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-t">
-      <action name="Execute">
-        <command>synclient TouchpadOff=1</command>
-      </action>
-    </keybind>
-    <keybind key="W-A-t">
-      <action name="Execute">
-        <command>synclient TouchpadOff=0</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-d">
-      <action name="Execute">
-        <command>dolphin</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-f">
-      <action name="Execute">
-        <command>firefox</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-h">
-      <action name="Execute">
-        <command>hib</command>
-      </action>
-    </keybind>
-    <keybind key="A-d">
-      <action name="Execute">
-        <command>/usr/bin/skippy-xd</command>
-      </action>
-    </keybind>
-    <keybind key="W-l">
-      <action name="Execute">
-        <command>lock</command>
-      </action>
-    </keybind>
-    <keybind key="W-Return">
-      <action name="Execute">
-        <command>st</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-w">
-      <action name="Execute">
-        <command>wifi</command>
-      </action>
-    </keybind>
-    <keybind key="W-F4">
-      <action name="Execute">
-        <command>xdotool getwindowfocus windowkill</command>
-      </action>
-    </keybind>
-    <keybind key="C-W-Up">
+    <!--  Window Manipulation  -->
+    <keybind key="W-A-Right">
       <action name="ResizeRelative">
-        <bottom>-10</bottom>
+        <right>25</right>
       </action>
     </keybind>
-    <keybind key="C-W-Down">
+    <keybind key="W-A-Down">
       <action name="ResizeRelative">
-        <bottom>10</bottom>
+        <bottom>25</bottom>
       </action>
     </keybind>
-    <keybind key="C-W-Right">
+    <keybind key="W-A-Left">
       <action name="ResizeRelative">
-        <right>10</right>
+        <right>-25</right>
       </action>
     </keybind>
-    <keybind key="C-W-Left">
+    <keybind key="W-A-Up">
       <action name="ResizeRelative">
-        <right>-10</right>
+        <bottom>-25</bottom>
       </action>
     </keybind>
-    <keybind key="W-Right">
+    <keybind key="W-C-Right">
       <action name="MoveRelative">
-        <x>10</x>
+        <x>25</x>
         <y>0</y>
       </action>
     </keybind>
-    <keybind key="W-Left">
+    <keybind key="W-C-Left">
       <action name="MoveRelative">
-        <x>-10</x>
+        <x>-25</x>
         <y>0</y>
       </action>
     </keybind>
-    <keybind key="W-Up">
+    <keybind key="W-C-Up">
       <action name="MoveRelative">
         <x>0</x>
-        <y>-10</y>
+        <y>-25</y>
       </action>
     </keybind>
-    <keybind key="W-Down">
+    <keybind key="W-C-Down">
       <action name="MoveRelative">
         <x>0</x>
-        <y>10</y>
+        <y>25</y>
       </action>
     </keybind>
     <keybind key="A-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>50%</width>
+        <width>49%</width>
       </action>
       <action name="MoveToEdgeWest"/>
     </keybind>
@@ -318,7 +248,7 @@
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
-        <width>50%</width>
+        <width>49%</width>
       </action>
       <action name="MoveToEdgeEast"/>
     </keybind>
@@ -330,52 +260,27 @@
       <action name="Unmaximize">
       </action>
     </keybind>
-    <keybind key="XF86AudioPlay">
-      <action name="Execute">
-        <command>playerctl play-pause</command>
+    <!-- Keybindings for window switching with the arrow keys -->
+    <keybind key="W-Right">
+      <action name="DirectionalCycleWindows">
+        <direction>right</direction>
       </action>
     </keybind>
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-        <command>pulseaudio-ctl up</command>
+    <keybind key="W-Left">
+      <action name="DirectionalCycleWindows">
+        <direction>left</direction>
       </action>
     </keybind>
-    <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>pulseaudio-ctl down</command>
+    <keybind key="W-Up">
+      <action name="DirectionalCycleWindows">
+        <direction>up</direction>
       </action>
     </keybind>
-    <keybind key="XF86AudioMute">
-      <action name="Execute">
-        <command>pulseaudio-ctl mute</command>
+    <keybind key="W-Down">
+      <action name="DirectionalCycleWindows">
+        <direction>down</direction>
       </action>
     </keybind>
-    <keybind key="S-Print">
-      <action name="Execute">
-        <command>scrot_selection</command>
-      </action>
-    </keybind>
-    <keybind key="Print">
-      <action name="Execute">
-        <command>scrot_fullscreen</command>
-      </action>
-    </keybind>
-    <keybind key="W-Print">
-      <action name="Execute">
-        <command>scrot_focused</command>
-      </action>
-    </keybind>
-    <keybind key="W-space">
-      <action name="Execute">
-        <command>rofi -show run</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-space">
-      <action name="Execute">
-        <command>dmenu_run -nf '#CCCCCC' -nb '#181A21' -sb '#6992c5' -sf '#181A21' -fn 'Iosevka term-16'</command>
-      </action>
-    </keybind>
-    <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -425,9 +330,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
-    </keybind>
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
       <action name="Close"/>
@@ -472,40 +374,12 @@
         </finalactions>
       </action>
     </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows">
-        <direction>right</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows">
-        <direction>left</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows">
-        <direction>up</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="DirectionalCycleWindows">
-        <direction>down</direction>
-      </action>
-    </keybind>
-    <!-- Keybindings for running applications -->
-    <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Konqueror</name>
-        </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
-      </action>
+    <keybind key="W-d">
+      <action xmlns="http://openbox.org/3.4/rc" name="ToggleMaximize"/>
     </keybind>
   </keyboard>
   <mouse>
-    <dragThreshold>1</dragThreshold>
+    <dragThreshold>3</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>500</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
@@ -554,7 +428,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action xmlns="http://openbox.org/3.4/rc" name="ToggleMaximize"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
