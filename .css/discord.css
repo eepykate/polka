@@ -33,6 +33,8 @@ code:not(.inline)::before {
 
 code, .inline {
 	font-family: Monospace !important;
+	font-weight: bold !important;
+	font-size: 9.5px !important;
 }
 
 /*.unread-3zKkbm,               /* Unread channel arrow */
