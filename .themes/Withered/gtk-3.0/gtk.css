@@ -6428,3 +6428,8 @@ text:selected {
 .thunar widget {
 	color: #999999;
 }
+
+.thunar widget:selected {
+	background-image: image(#c48b66);
+	color: #f8efe8;
+}

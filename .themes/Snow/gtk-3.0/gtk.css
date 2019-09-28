@@ -6299,3 +6299,8 @@ text:selected {
 .thunar widget {
 	color: #909cad;
 }
+
+.thunar widget:selected {
+	background-image: image(#cd5e79);
+	color: #ffffff;
+}

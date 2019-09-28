@@ -6281,7 +6281,7 @@ FIXME this is really an API */
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-image: image(rgba(255, 255, 255, 0.1));
+	background-image: image(rgba(200, 200, 240, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
@@ -6298,4 +6298,9 @@ text:selected {
 
 .thunar widget {
 	color: #8686a4;
+}
+
+.thunar widget:selected {
+	background-image: image(#8da4eb);
+	color: #ffffff;
 }
