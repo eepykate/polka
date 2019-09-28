@@ -6275,12 +6275,12 @@ FIXME this is really an API */
 
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #ccccfa;
-	color: #232836;
+	background-color: #2f364a;
+	color: #ccccfa;
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-image: image(rgba(0, 0, 0, 0.1));
+	background-image: image(rgba(255, 255, 255, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
@@ -6290,28 +6290,11 @@ window.background.thunar,
 	background-color: #232836;
 }
 
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:selected {
-	background-color: #82a3e7;
-	color: #000;
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
-	background-color: rgba(204, 204, 255, 0.1);
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:hover {
-	background-color: rgba(204, 204, 255, 0.15);
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
-	background: rgba(204, 204, 255, 0.20);
-}
-
-
-
-
 text:selected {
 	background-color: #ccccfa;
 	color: #232836;
+}
+
+.thunar widget {
+	color: #8686a4;
 }

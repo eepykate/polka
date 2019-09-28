@@ -6275,23 +6275,26 @@ FIXME this is really an API */
 
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #43566f;
-	color: #f7f9ff;
+	background-color: #e1e4ea;
+	color: #43566f;
 }
 
+.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
+	background-image: image(rgba(255, 255, 255, 0.1));
+}
+
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
+.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar,
 window.background.thunar,
 .thunar grid.horizontal toolbar#location-toolbar.horizontal {
 	background-color: #f7f9ff;
 }
 
-.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:selected {
-	background-image: image(rgba(255, 255, 250, 0.1));
-}
-
-
-
-
 text:selected {
 	background-color: #43566f;
 	color: #f7f9ff;
+}
+
+.thunar widget {
+	color: #909cad;
 }

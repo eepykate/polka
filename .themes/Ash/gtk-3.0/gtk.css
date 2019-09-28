@@ -6402,14 +6402,13 @@ FIXME this is really an API */
 @define-color placeholder_text_color #8b8b8b;
 
 
-
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #bbbbbb;
-	color: #1b1b1b;
+	background-color: #242424;
+	color: #bbbbbb;
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-image: image(rgba(0, 0, 0, 0.1));
+	background-image: image(rgba(255, 255, 255, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
@@ -6419,28 +6418,11 @@ window.background.thunar,
 	background-color: #1b1b1b;
 }
 
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:selected {
-	background-color: #a8afd7;
-	color: #000;
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
-	background-color: rgba(204, 204, 255, 0.1);
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:hover {
-	background-color: rgba(204, 204, 255, 0.15);
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
-	background: rgba(204, 204, 255, 0.20);
-}
-
-
-
-
 text:selected {
 	background-color: #bbbbbb;
 	color: #1b1b1b;
+}
+
+.thunar widget {
+	color: #888888;
 }

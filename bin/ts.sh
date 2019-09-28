@@ -232,8 +232,8 @@ sed --follow-symlinks -i \
 
 cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
 sed -i --follow-symlinks \
-	-e "s|000000|$fg1|g" \
-	-e "s|222222|$(darken $fg1 0.9)|g" \
+	-e "s|000000|$fg2|g" \
+	-e "s|222222|$(darken $fg2 0.9)|g" \
 	$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
 
 
@@ -249,8 +249,8 @@ for f in \
 	22x22/emblems/emblem-unreadable.svg;
 do
 	sed -i --follow-symlinks \
-		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$bg1/" \
-		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$bg1/" \
+		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$fg1/" \
+		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$fg1/" \
 		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
 done
 

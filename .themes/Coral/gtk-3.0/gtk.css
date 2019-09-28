@@ -6402,17 +6402,13 @@ FIXME this is really an API */
 @define-color placeholder_text_color #aeb2b5;
 
 
-
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #edeef0;
+	background-color: #1c2d37;
+	color: #edeef0;
 }
 
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget):selected {
-	background-image: image(rgba(0, 0, 0, 0.1));
-}
-
-.thunar grid.horizontal paned.horizontal scrolledwindow.frame .view:not(widget) {
-	color: #000;
+	background-image: image(rgba(255, 255, 255, 0.1));
 }
 
 .thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:not(.rubberband),
@@ -6422,28 +6418,11 @@ window.background.thunar,
 	background-color: #111c23;
 }
 
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame widget:selected {
-	background-color: #f7b0b4;
-	color: #000;
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider {
-	background-color: rgba(204, 204, 255, 0.1);
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:hover {
-	background-color: rgba(204, 204, 255, 0.15);
-}
-
-.thunar grid.horizontal paned.horizontal grid.horizontal notebook stack scrolledwindow.frame scrollbar * slider:active {
-	background: rgba(204, 204, 255, 0.20);
-}
-
-
-
-
 text:selected {
 	background-color: #edeef0;
-	color: #111C23;
+	color: #111c23;
+}
+
+.thunar widget {
+	color: #999ba0;
 }
