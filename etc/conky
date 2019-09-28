@@ -1,0 +1,25 @@
+conky.config = {
+	alignment = 'bottom_right',
+	background = false,
+	cpu_avg_samples = 2,
+	double_buffer = true,
+	draw_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 30,
+	gap_y = 05,
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	update_interval = 1.0,
+	use_xft = true,
+};
+
+conky.text = [[
+
+${color 8686a4}${exec volbar a}${color 232836}${exec volbar b}
+
+]];

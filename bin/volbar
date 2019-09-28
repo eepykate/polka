@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+volume="$(amixer -D pulse get Master | grep -o '[0-9][0-9]*%' | head -1 | sed 's/%//')"
+volume="$(($volume / 5))"
+notvol="$(( 20 - $volume ))"
+a="$(
+	for i in $(eval echo {1..$volume}); do
+		printf "▃"
+	done
+)"
+
+b="$(
+	for i in $(eval echo {1..$notvol}); do
+		printf "▃"
+	done
+)"
+case $1 in
+	a) printf "$a";;
+	b) printf "$b";;
+esac

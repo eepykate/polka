@@ -224,6 +224,11 @@ sed --follow-symlinks -i \
 	-e "s/bgcolor=.*/bgcolor=#$bg1/" \
 	${XDG_CONFIG_HOME:-~/.config}/qView/qView.conf
 
+#sed --follow-symlinks -i \
+#	-e "s/color [a-zA-Z0-9][a-zA-Z0-9]*/color $bg1/g" \
+#	-e "s/color [a-zA-Z0-9][a-zA-Z0-9]*/color $fg2/" \
+#	~/etc/conky
+
 #walgen "#$bg3"
 
 #	[[ -d ~/git/usr/icons/$theme/ ]] &&
