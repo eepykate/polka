@@ -6402,6 +6402,7 @@ FIXME this is really an API */
 @define-color placeholder_text_color #aeb2b5;
 
 
+.thunar .sidebar,
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
 	background-color: #1c2d37;
 	color: #edeef0;

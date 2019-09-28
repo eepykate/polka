@@ -76,3 +76,8 @@
 * {
     font-weight: Bold;
 }
+
+.thunar .standard-view,
+.thunar .sidebar {
+	padding: 15px;
+}
