@@ -28,7 +28,6 @@
 html {
 	background: var(--bg1);
 	background-position: top -24px left 0;
-	margin-top: -26px;
 }
 
 html {
@@ -39,11 +38,11 @@ html {
 }
 
 main {
+	width: 290px;
 	margin-top: auto;
 	display: flex;
 	overflow-y: auto;
 	flex-flow: row wrap;
-	width: 380px;
 	position: relative;
 	top: -10px;
 }
@@ -142,8 +141,8 @@ body {
 }
 
 section {
-	margin: 12px;
-	padding: 12px;
+	margin: 15px;
+	padding: 18px;
 	/*border: 8px solid var(--fg2);*/
 	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.13);
 }
