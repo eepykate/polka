@@ -18,10 +18,15 @@
 	--hover: #ffffff;
 	--red: #e9799b;
 	/*  ----  */
+	
+	
+	
+	
 	--toolbar-bgimage: none !important;
 	--arrowpanel-dimmed: transparent !important;
 	--tab-min-height: 35.5px  !important;
 	--button-size: 16px  !important;
+	
 }
 
 /* Tabs are de-saturated and transparent when inactive */
@@ -101,7 +106,7 @@
 	opacity: 0;
 }
 
-
+ 
 
 
 
@@ -115,16 +120,17 @@
 }
 
 #navigator-toolbox * toolbarbutton {
-	height: var(--button-size) !important;
-	width:  var(--button-size) !important;
+	min-height: var(--tab-min-height) !important;
+	height: var(--tab-min-height) !important;
+	width:  var(--tab-min-height) !important;
 }
 
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) image,
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) stack {
-	height:  var(--button-size) !important;
-	max-height: var(--button-size) !important;
-	width:  var(--button-size) !important;
-	max-width:  var(--button-size) !important;
+	height: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
+	max-height: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
+	width:  calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
+	max-width:  calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
 }
 
 #identity-icon,
