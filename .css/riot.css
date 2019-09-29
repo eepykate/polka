@@ -43,11 +43,8 @@ body { font-family: Roboto Condensed; }
 	background-color: var(--fg2) !important;
 }
 
-.mx_Pill {
-	color: var(--bg1) !important;
-}
-
-.mx_Pill {
+.mx_EventTile_content .markdown-body a.mx_UserPill {
+	color: var(--hover) !important;
 	background-color: var(--accent) !important;
 }
 
