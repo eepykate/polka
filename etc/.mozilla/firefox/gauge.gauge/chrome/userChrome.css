@@ -51,7 +51,7 @@
 
 
 .tabbrowser-tab .tab-background {
-	border-radius: 4px !important;
+	border-radius: 6px !important;
 }
 
 
@@ -298,7 +298,7 @@ toolbarbutton#alltabs-button {
 	/* Toolbar */
 	--toolbar-color: var(--fg1) !important;
 	--lwt-text-color: var(--fg1) !important;
-	--toolbar-bgcolor: var(--bg2) !important;
+	--toolbar-bgcolor: var(--bg3) !important;
 	--lwt-accent-color: var(--bg1) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
 	--lwt-toolbar-field-focus-color: var(--fg1) !important;

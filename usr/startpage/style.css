@@ -152,11 +152,11 @@ section:hover {
 }*/
 
 section {
-	background-color: var(--bg2);
+	background-color: var(--bg3);
 	border-radius: 4px;
 	transition: all 150ms ease;
 }
 
 section:hover {
-	background-color: var(--bg3);
+	background-color: var(--bg2);
 }
