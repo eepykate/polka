@@ -101,9 +101,8 @@
 /* Hide "go" arrow in urlbar */
 .urlbar-go-button { display: none !important; }
 
-
-#tabs-newtab-button:not(:hover) {
-	opacity: 0;
+#tabs-newtab-button {
+  display: none;
 }
 
  
@@ -165,7 +164,7 @@
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 170px !important;
+	max-width: none !important;
 }
 /*
 .tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
