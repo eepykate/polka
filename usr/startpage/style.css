@@ -144,7 +144,7 @@ section {
 	margin: 15px;
 	padding: 18px;
 	/*border: 8px solid var(--fg2);*/
-	box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.13);
+	box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.2);
 }
 /*
 section:hover {
