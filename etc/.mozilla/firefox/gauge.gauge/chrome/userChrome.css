@@ -101,8 +101,8 @@
 /* Hide "go" arrow in urlbar */
 .urlbar-go-button { display: none !important; }
 
-#tabs-newtab-button {
-  display: none;
+#tabs-newtab-button:not(:hover) {
+  opacity: 0;
 }
 
  
