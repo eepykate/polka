@@ -47,10 +47,10 @@ body { font-family: Roboto Condensed; }
 	color: var(--hover) !important;
 	background-color: var(--accent) !important;
 }
-
+/*
 .mx_EventTile_highlight, .mx_EventTile_highlight .markdown-body {
 	color: var(--accent) !important;
-}
+}*/
 
 
 /*.mx_EventTile_content .markdown-body code {
@@ -97,3 +97,9 @@ pre {
 	color: var(--fg1) !important;
 }
 
+
+.mx_ResizeHandle,
+.mx_RightPanel,
+.mx_LeftPanel_container {
+	display: none
+}
