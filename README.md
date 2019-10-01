@@ -1,8 +1,8 @@
 # Gauge Krahe's dotfiles
 
-Feel free to do anything with these files. Credit isn't needed.
+Feel free to do anything with these files. Credit isn't needed but is appreciated.
 
-![Current setup](https://i.imgur.com/gz9J2KP.png) \*Probably out of date
+![current setup](https://i.imgur.com/Hwfqhxd.png) \*Probably out of date
 
 **Distribution:** Arch (GNU/Linux)
 
@@ -10,4 +10,4 @@ Feel free to do anything with these files. Credit isn't needed.
 
 **Terminal:** [st](https://gitlab.com/GaugeK/st)
 
-**Font:** kiwi - Made by [github/turquoise-hexagon](https://github.com/turquoise-hexagon/)
+**Font:** Fira Mono Bold (9.5px, mostly)
