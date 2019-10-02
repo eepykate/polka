@@ -39,6 +39,7 @@ dl dt,
 	border-color: var(--bg3) !important;
 }
 
+.status__content__spoiler-link,
 .account__header__extra__links > * > *,
 .account__header__content,
 .getting-started__footer > * > *,
