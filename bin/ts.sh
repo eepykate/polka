@@ -81,9 +81,9 @@ elif [[ $theme = Snow ]]; then
 
 	#   -----
 	bg1="f7f9ff"
-	bg2="eef0f5"
-	bg3="e1e4ea"
-	bg4="dadde8"
+	bg2="EDF1FA"
+	bg3="E6EAF5"
+	bg4="DADFED"
 	button="43566f1a"
 	#   -----
 	fg1="43566f"

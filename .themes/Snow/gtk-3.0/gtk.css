@@ -6276,7 +6276,7 @@ FIXME this is really an API */
 
 .thunar .sidebar,
 .thunar grid.horizontal paned.horizontal scrolledwindow.frame treeview.view {
-	background-color: #e1e4ea;
+	background-color: #E6EAF5;
 	color: #43566f;
 }
 
