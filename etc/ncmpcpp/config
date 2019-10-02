@@ -9,7 +9,7 @@ mpd_crossfade_time = "5"
 
 visualizer_color = cyan, green, yellow, magenta, red
 playlist_display_mode = classic
-progressbar_look = "━━ "  # ━━─
+progressbar_look = "▂▂ "  # ━━─
 header_visibility = no
 statusbar_visibility = no
 titles_visibility = no
