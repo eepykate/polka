@@ -217,6 +217,14 @@ col() {
 	printf "\n"
 }
 
+blocks() {
+	echo
+	for i in {0..7}; do echo -n "\e[4${i}m  \e[0m ";	done
+	echo
+	for i in {0..7}; do echo -n "\e[10${i}m  \e[0m ";	done
+	echo -e "\n"
+}
+
 col2() {
 	echo -e "\n\n\n"
 	echo "    \e[37m*\e[37m*\e[37m*\e[37m*\e[37m*"

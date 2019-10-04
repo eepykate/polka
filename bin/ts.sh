@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Frost\nCoral\nAsh\nSnow\nWithered" # List of themes
+themes="Frost\nCoral\nCoal\nAsh\nSnow\nWithered" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -37,6 +37,44 @@ if [[ $theme = Coral ]]; then
 	false="8ac4ba"
 	hover="000000"
 	red="d48398"
+	#   -----
+
+elif [[ $theme = Frost ]]; then
+
+	#   -----
+	bg1="232836"
+	bg2="282e3f"
+	bg3="2f364a"
+	bg4="$(darken $bg3 1.1)"
+	button="ccccfa1a"
+	#   -----
+	fg1="ccccfa"
+	fg2="8686a4"
+	disabled="696969"
+	#   -----
+	accent="8da4eb"
+	false="e9799b"
+	hover="ffffff"
+	red="e9799b"
+	#   -----
+
+elif [[ $theme = Coal ]]; then
+
+	#   -----
+	bg1="18191c"
+	bg2="1C1E21"
+	bg3="202326"
+	bg4="232629"
+	button="daddee1a"
+	#   -----
+	fg1="daddee"
+	fg2="a6a9b7"
+	disabled="696969"
+	#   -----
+	accent="7baae8"
+	false="c488ec"
+	hover="ffffff"
+	red="e56f92"
 	#   -----
 
 elif [[ $theme = Ash ]]; then
@@ -94,26 +132,6 @@ elif [[ $theme = Snow ]]; then
 	false="7bb854"
 	hover="ffffff"
 	red="cd5e79"
-	#   -----
-
-
-elif [[ $theme = Frost ]]; then
-
-	#   -----
-	bg1="232836"
-	bg2="282e3f"
-	bg3="2f364a"
-	bg4="$(darken $bg3 1.1)"
-	button="ccccfa1a"
-	#   -----
-	fg1="ccccfa"
-	fg2="8686a4"
-	disabled="696969"
-	#   -----
-	accent="8da4eb"
-	false="e9799b"
-	hover="ffffff"
-	red="e9799b"
 	#   -----
 
 else
@@ -254,21 +272,21 @@ for f in \
 	22x22/emblems/emblem-unreadable.svg;
 do
 	sed -i --follow-symlinks \
-		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$fg1/" \
-		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$fg1/" \
+		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$accent/" \
+		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$accent/" \
 		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
 done
 
 
-#cp ~/opt/Wallpapers/swirls.svg ~/opt/Wallpapers/tile.svg
-#sed --follow-symlinks -i \
-#	-e "s/000000/$bg3/g" \
-#	-e "s/222222/$bg2/g" \
-#	~/opt/Wallpapers/tile.svg
-#inkscape -e ~/opt/Wallpapers/tile.png ~/opt/Wallpapers/tile.svg
-#feh --bg-tile --no-fehbg ~/opt/Wallpapers/tile.png
+cp ~/opt/Wallpapers/mnml_crcl.svg ~/opt/Wallpapers/pap.svg
+sed --follow-symlinks -i \
+	-e "s/000000/$bg4/g" \
+	-e "s/ffffff/$fg2/g" \
+	~/opt/Wallpapers/pap.svg
+inkscape -e ~/opt/Wallpapers/pap.png ~/opt/Wallpapers/pap.svg
+feh --bg-fill --no-fehbg ~/opt/Wallpapers/pap.png
 
-walgen1 "#$bg4"
+#walgen1 "#$bg4"
 
 
 # Reload gtk theme - probably a major hack

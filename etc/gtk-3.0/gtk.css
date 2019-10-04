@@ -1,4 +1,4 @@
-*:not(.path-bar-button):not(.rubberband) {
+*:not(.path-bar-button):not(.rubberband):not(separator) {
 	border: none;
 }
 
@@ -80,4 +80,14 @@
 .thunar .standard-view,
 .thunar .sidebar {
 	padding: 15px;
+}
+
+/*.thunar paned separator {
+	border-left: 2px solid #79aaeb;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}*/
+
+.thunar separator {
+	background: transparent;
 }

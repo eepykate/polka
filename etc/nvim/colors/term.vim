@@ -39,7 +39,7 @@ hi DiffDelete   ctermbg=NONE   ctermfg=1
 hi DiffChange   ctermbg=NONE   ctermfg=1
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0
 hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
-hi CursorLineNr ctermbg=NONE   ctermfg=15    cterm=bold
+hi CursorLineNr ctermbg=NONE   ctermfg=16    cterm=bold
 hi CursorColumn ctermbg=0      ctermfg=NONE
 hi MatchParen   ctermbg=2      ctermfg=0 
 hi ModeMsg      ctermbg=NONE   ctermfg=5
@@ -48,7 +48,7 @@ hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 " language syntax
 hi Comment      ctermbg=NONE   ctermfg=8    cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=3    cterm=NONE
-hi String       ctermbg=NONE   ctermfg=2    cterm=NONE
+hi String       ctermbg=NONE   ctermfg=4    cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Number       ctermbg=NONE   ctermfg=3    cterm=NONE
 hi Boolean      ctermbg=NONE   ctermfg=11   cterm=NONE
@@ -104,5 +104,5 @@ hi shDerefSimple       ctermbg=NONE   ctermfg=1     cterm=NONE
 hi Delimiter           ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shVariable          ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shStatement         ctermbg=NONE   ctermfg=15    cterm=NONE
-hi shQuote             ctermbg=NONE   ctermfg=2     cterm=NONE
+hi shQuote             ctermbg=NONE   ctermfg=4     cterm=NONE
 hi shFunction          ctermbg=NONE   ctermfg=4     cterm=NONE
