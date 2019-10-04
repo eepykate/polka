@@ -16,7 +16,7 @@ titles_visibility = no
 colors_enabled = yes
 main_window_color = 16
 progressbar_color = white
-progressbar_elapsed_color = 16
+progressbar_elapsed_color = 17
 seek_time = 5
 volume_change_step = 5
 message_delay_time = 1
@@ -32,5 +32,5 @@ now_playing_prefix = ""
 now_playing_suffix = "$(17)* $9"
 
 song_status_format = $/b{%t}|{%f}
-song_list_format = "$(16) $/b%t$R$(end) "
+song_list_format = "%t$R$(end) "
 song_library_format = $/b{{%a - %t} (%b)}|{%f}
