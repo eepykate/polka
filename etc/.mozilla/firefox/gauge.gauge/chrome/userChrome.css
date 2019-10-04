@@ -1,32 +1,32 @@
 /*
- *     GaugeK's userChrome.css
- *     gitlab.com/GaugeK/dots
+ *    GaugeK's userChrome.css
+ *    gitlab.com/GaugeK/dots
  */
 
 :root {
-	/*  ----  */
-	--bg1: #232836;
-	--bg2: #282e3f;
-	--bg3: #2f364a;
-	--button: #ccccfa1a;
-	/*  ----  */
-	--fg2: #8686a4;
-	--fg1: #ccccfa;
+	/*	----  */
+	--bg1: #18191c;
+	--bg2: #1C1E21;
+	--bg3: #202326;
+	--button: #daddee1a;
+	/*	----  */
+	--fg2: #a6a9b7;
+	--fg1: #daddee;
 	--disabled: #696969;
-	/*  ----  */
-	--accent: #8da4eb;
+	/*	----  */
+	--accent: #7baae8;
 	--hover: #ffffff;
-	--red: #e9799b;
-	/*  ----  */
-	
-	
-	
-	
+	--red: #e56f92;
+	/*	----  */
+
+
+
+
 	--toolbar-bgimage: none !important;
 	--arrowpanel-dimmed: transparent !important;
-	--tab-min-height: 35.5px  !important;
-	--button-size: 16px  !important;
-	
+	--tab-min-height: 38.5px	!important;
+	--button-size: 16px	!important;
+
 }
 
 /* Tabs are de-saturated and transparent when inactive */
@@ -66,7 +66,7 @@
 	display: none !important;
 }
 
-/* Remove 2px gap left by tab-line if hidden */
+/* Remove gap left by tab-line if hidden */
 .tabbrowser-tab {
 	margin-top: -1px !important;
 }
@@ -102,10 +102,10 @@
 .urlbar-go-button { display: none !important; }
 
 #tabs-newtab-button:not(:hover) {
-  opacity: 0;
+	opacity: 0;
 }
 
- 
+
 
 
 
@@ -121,22 +121,22 @@
 #navigator-toolbox * toolbarbutton {
 	min-height: var(--tab-min-height) !important;
 	height: var(--tab-min-height) !important;
-	width:  var(--tab-min-height) !important;
+	width: var(--tab-min-height) !important;
 }
 
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) image,
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) stack {
 	height: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
 	max-height: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
-	width:  calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
-	max-width:  calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
+	width: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
+	max-width: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
 }
 
 #identity-icon,
 .tab-icon-image,
 .tab-close-button {
-	height:  var(--button-size) !important;
-	width:  var(--button-size) !important;
+	height:	var(--button-size) !important;
+	width:	var(--button-size) !important;
 }
 
 #identity-icon {
@@ -159,7 +159,6 @@
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
 	height: var(--tab-min-height);
 	min-height: var(--tab-min-height);
-	max-height: var(--tab-min-height);
 }
 
 /* Tab width */
@@ -170,6 +169,29 @@
 .tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
 	max-width: 100px !important;
 }
+
+/* Floating Tabs/Navbar */
+#navigator-toolbox {
+	padding: 20px;
+	margin-bottom: 0px;
+	padding-bottom: 7px;
+}
+
+#tabbrowser-tabs .arrowscrollbox-scrollbox {
+	margin: -20px;
+	padding: 20px;
+	margin-bottom: -7px;
+	padding-bottom: 7px;
+}
+
+.tabbrowser-tab {
+	margin-right: 20px !important;
+	box-shadow: 3px 2px 6px 1px rgba(0,0,0,0.1);
+}
+
+
+
+
 
 
 
@@ -252,9 +274,9 @@ toolbarbutton#alltabs-button {
 
 
 
-/***  
+/***
   *  Custom icons
-  *  Enable `svg.context-properties.content.enabled` in about:config  
+  *  Enable `svg.context-properties.content.enabled` in about:config
  ***/
 .toolbarbutton-animatable-image {
 	animation-duration: 0ms !important;
@@ -382,7 +404,7 @@ findbar-closebutton {
 }
 
 .tab-throbber::before {
-    fill: var(--accent) !important;
+	  fill: var(--accent) !important;
 }
 
 
@@ -390,7 +412,7 @@ findbar-closebutton {
 
 
 
-/*Prevents White pre-load flash*/
+/* Prevents White pre-load flash */
 .tabbrowser-tabbox {
 	background-color: var(--bg1) !important;
 }
@@ -451,3 +473,13 @@ browser[type=content] > html {
 .urlbarView-title-separator {
 	line-height: 16px !important;
 }
+
+.tab-text {
+	margin-top: 2px !important;
+}
+
+
+
+
+
+
