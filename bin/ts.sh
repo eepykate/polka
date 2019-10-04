@@ -278,15 +278,15 @@ do
 done
 
 
-cp ~/opt/Wallpapers/mnml_crcl.svg ~/opt/Wallpapers/pap.svg
-sed --follow-symlinks -i \
-	-e "s/000000/$bg4/g" \
-	-e "s/ffffff/$fg2/g" \
-	~/opt/Wallpapers/pap.svg
-inkscape -e ~/opt/Wallpapers/pap.png ~/opt/Wallpapers/pap.svg
-feh --bg-fill --no-fehbg ~/opt/Wallpapers/pap.png
+#cp ~/opt/Wallpapers/mnml_crcl.svg ~/opt/Wallpapers/pap.svg
+#sed --follow-symlinks -i \
+#	-e "s/000000/$bg4/g" \
+#	-e "s/ffffff/$fg2/g" \
+#	~/opt/Wallpapers/pap.svg
+#inkscape -e ~/opt/Wallpapers/pap.png ~/opt/Wallpapers/pap.svg
+#feh --bg-fill --no-fehbg ~/opt/Wallpapers/pap.png
 
-#walgen1 "#$bg4"
+walgen1 "#$bg4"
 
 
 # Reload gtk theme - probably a major hack
