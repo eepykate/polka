@@ -17,13 +17,13 @@ echo "$colours" | sed -e "s/^/echo -en '\\\\033\]4;   /" -e "s/$/\\\\033\\\\\\\\
 chmod a+x /tmp/colours.sh
 
 grep "\*.*background" <<< $xrdb  | \
-	sed -e 's/#//' | \
+	sed 's/.*ground//' | \
 	grep -o "$c" | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;256;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
 
 grep "\*.*foreground" <<< $xrdb  | \
-	sed -e 's/#//' | \
+	sed 's/.*ground//' | \
 	grep -o "$c" | \
 	sed -e 's/.\{2\}/&\//g' -e 's/\/$//' -e 's/^/rgb\:/' | \
 	sed -e "s/^/echo -en \'\\\\033\]4;257;/" -e "s/$/\\\\033\\\\\\\\\'/"  >> /tmp/colours.sh
