@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Torrent
+Exec=transadd %U
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;

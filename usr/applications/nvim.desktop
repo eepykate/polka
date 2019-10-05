@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=NeoVim
+GenericName=nvim
+Comment=A small descriptive blurb about this application.
+Icon=nvim
+Exec=st -e zsh -c 'source ~/etc/zsh/.zshrc; nvim %F'
+Actions=
+MimeType=text;text/plain;text/html;text/css;text/shell;text/all;
+Categories=Utility;
