@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 var openUrlBar = function(e) {
-	var urlbar = document.getElementById('urlbar');
+	var urlbar = document.getElementById('urlbar-input');
 	urlbar.focus();
 };
 
