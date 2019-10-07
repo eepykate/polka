@@ -23,7 +23,7 @@ code:not(.inline)::before {
 
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
  {
-	font-family: Roboto Condensed !important;
+	font-family: "Open Sans" !important;
 	font-size: 12px !important;
 }
 
@@ -210,6 +210,9 @@ pre,
 }
 
 
+.textRow-19NEd_,
+.activityName-1IaRLn,
+.headerText-1HLrL7,
 .headerTagUsernameNoNickname-2_H881,
 .body-3iLsc4,
 .headerName-fajvi9,
@@ -235,6 +238,7 @@ pre,
 	background-color: var(--bg1) !important;
 }
 
+.header-2BwW8b,
 .headerNormal-T_seeN,
 .quickMessage-2XpSaN {
 	background-color: var(--bg2) !important;
@@ -286,18 +290,4 @@ pre,
 .scroller-2TZvBN {
 	background-color: var(--bg1) !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
