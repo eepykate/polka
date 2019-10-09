@@ -76,6 +76,16 @@
 	border-left: none !important;
 }
 
+#identity-box,
+#back-button,
+#forward-button,
+#stop-button,
+#reload-button,
+#tracking-protection-icon-container,
+.urlbar-history-dropmarker,
+#pageActionButton,
+#star-button-box,
+#pocket-button-box,
 #pageActionSeparator, #pocket-button {
 	display: none !important;
 }
@@ -189,6 +199,9 @@
 	box-shadow: 3px 2px 6px 1px rgba(0,0,0,0.1);
 }
 
+#urlbar-container {
+	padding-left: 20px !important;
+}
 
 
 
