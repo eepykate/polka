@@ -3,3 +3,6 @@ text/plain=nvim.desktop
 text/css=nvim.desktop
 text/html=nvim.desktop
 text/js=nvim.desktop
+image/png=qView.desktop
+image/jpg=qView.desktop
+image/jpeg=qView.desktop
