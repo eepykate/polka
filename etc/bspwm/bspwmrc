@@ -6,7 +6,7 @@
 #
 
 bspc monitor -d 1 2 3 4 5
-bspc monitor DVI-D-0 -d 6 7
+bspc monitor DVI-D-0 -d 6 7 8 9
 
 bspc config window_gap 40
 bspc config border_width 0
