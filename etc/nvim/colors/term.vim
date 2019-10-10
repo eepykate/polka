@@ -48,7 +48,7 @@ hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 " language syntax
 hi Comment      ctermbg=NONE   ctermfg=8    cterm=italic
 hi Constant     ctermbg=NONE   ctermfg=3    cterm=NONE
-hi String       ctermbg=NONE   ctermfg=4    cterm=NONE
+hi String       ctermbg=NONE   ctermfg=16   cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=1    cterm=NONE
 hi Number       ctermbg=NONE   ctermfg=3    cterm=NONE
 hi Boolean      ctermbg=NONE   ctermfg=11   cterm=NONE
@@ -104,5 +104,5 @@ hi shDerefSimple       ctermbg=NONE   ctermfg=1     cterm=NONE
 hi Delimiter           ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shVariable          ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shStatement         ctermbg=NONE   ctermfg=15    cterm=NONE
-hi shQuote             ctermbg=NONE   ctermfg=4     cterm=NONE
+hi shQuote             ctermbg=NONE   ctermfg=16     cterm=NONE
 hi shFunction          ctermbg=NONE   ctermfg=4     cterm=NONE
