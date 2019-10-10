@@ -1133,11 +1133,10 @@ body:not(.search-page) .menuarea {
 .commentarea .comment a.expand:hover {
  opacity:1;
  color:white;
- border-radius:3px;
  text-decoration:none;
  font-weight:bold
 }
-.res .commentarea .comment a.expand:hover {
+.res .commentarea .comment a.expand {
  border-radius:3px 0px 0px 3px
 }
 .commentarea .thing,
