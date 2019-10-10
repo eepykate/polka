@@ -2,7 +2,7 @@
 
 Feel free to do anything with these files. Credit isn't needed but is appreciated.
 
-![current setup](https://i.imgur.com/Hwfqhxd.png) \*Probably out of date
+![current setup](https://i.imgur.com/I82MpBb.png) \*Probably out of date
 
 **Distribution:** Arch (GNU/Linux)
 
