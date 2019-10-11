@@ -24,7 +24,7 @@
 
 	--toolbar-bgimage: none !important;
 	--arrowpanel-dimmed: transparent !important;
-	--tab-min-height: 38.5px	!important;
+	--tab-min-height: 32.5px	!important;
 	--button-size: 16px	!important;
 
 }
@@ -51,7 +51,7 @@
 
 
 .tabbrowser-tab .tab-background {
-	border-radius: 6px !important;
+	border-radius: 3px !important;
 }
 
 
@@ -111,8 +111,20 @@
 /* Hide "go" arrow in urlbar */
 .urlbar-go-button { display: none !important; }
 
-#tabs-newtab-button:not(:hover) {
-	opacity: 0;
+#tabs-newtab-button > image {
+	display: none !important;
+}
+
+.arrowscrollbox-scrollbox {
+	margin-right: -15px !important;
+}
+
+#tabs-newtab-button {
+	display:  block !important;
+	position: absolute !important;
+	margin-right: 0px 0ortant;
+	width: 10px !important;
+	max-width: 15px !important;
 }
 
 
@@ -171,37 +183,26 @@
 	min-height: var(--tab-min-height);
 }
 
+#urlbar-container {
+	padding-left: 20px !important;
+}
+
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) {
-	max-width: 170px !important;
-}
-/*
-.tabbrowser-tab[fadein]:not([pinned]):not([selected="true"]) {
-	max-width: 100px !important;
+	max-width: 90% !important;
 }
 
 /* Floating Tabs/Navbar */
 #navigator-toolbox {
-	padding: 20px;
+	padding: 10px;
 	margin-bottom: 0px;
 	padding-bottom: 7px;
 }
 
-#tabbrowser-tabs .arrowscrollbox-scrollbox {
-	margin: -20px;
-	padding: 20px;
-	margin-bottom: -7px;
-	padding-bottom: 7px;
-}
-
 .tabbrowser-tab {
-	margin-right: 20px !important;
-	box-shadow: 3px 2px 6px 1px rgba(0,0,0,0.1);
+	margin-right: 0 !important;
 }
 
-#urlbar-container {
-	padding-left: 20px !important;
-}
 
 
 
@@ -417,7 +418,7 @@ findbar-closebutton {
 }
 
 .tab-throbber::before {
-	  fill: var(--accent) !important;
+	fill: var(--accent) !important;
 }
 
 
@@ -490,6 +491,42 @@ browser[type=content] > html {
 .tab-text {
 	margin-top: 2px !important;
 }
+
+
+
+
+
+/*.tabbrowser-tab[selected]::before,
+.tabbrowser-tab[selected]::after {
+	opacity: 1 !important;
+	content: '';
+	display: block;
+	position: unset;
+	border-left: 1px solid var(--fg2) !important;
+	margin-top: 5px !important;;
+	margin-bottom: 5px !important;;
+}*/
+
+/* Center tab text */
+.tab-label {
+	-moz-box-flex: 1 !important;
+	text-align: center !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
