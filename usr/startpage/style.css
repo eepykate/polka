@@ -1,23 +1,23 @@
 :root {
 	/*  ----  */
-	--bg1: #232836;
-	--bg2: #282e3f;
-	--bg3: #2f364a;
-	--button: #ccccfa1a;
+	--bg1: #18191c;
+	--bg2: #1C1E21;
+	--bg3: #202326;
+	--button: #daddee1a;
 	/*  ----  */
-	--fg2: #8686a4;
-	--fg1: #ccccfa;
+	--fg2: #a6a9b7;
+	--fg1: #daddee;
 	--disabled: #696969;
 	/*  ----  */
-	--accent: #8da4eb;
+	--accent: #7baae8;
 	--hover: #ffffff;
-	--red: #e9799b;
+	--red: #e56f92;
 	/*  ----  */
 }
 
 * {
 	font-family: "Fira Mono";
-	font-weight: Bold;
+	font-weight: bold;
 	font-size: 9.5px;
 }
 
@@ -45,6 +45,7 @@ main {
 	flex-flow: row wrap;
 	position: relative;
 	top: -10px;
+	padding: 20px;
 }
 
 #clock {
@@ -135,8 +136,8 @@ a:hover, a:visited:hover {
 
 body {
 	position:absolute;
-	top: 50%;
-	left: 50%;
+	top: calc(50% - 15px);
+	left: calc(50% - 8px);
 	transform:translate(-50%,-50%);
 }
 
@@ -157,6 +158,7 @@ section {
 	transition: all 150ms ease;
 }
 
+/*
 section:hover {
 	background-color: var(--bg2);
 }
