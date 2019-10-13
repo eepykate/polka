@@ -93,8 +93,9 @@
 }
 
 
-.thunar .view {
+.thunar .view:not(:selected) {
 	background: transparent;
+	color: #fff;
 }
 
 .thunar {
@@ -103,10 +104,6 @@
 	background-attachment: scroll;
 	background-position: center center;
 	background-size: cover;
-}
-
-.thunar .view {
-	color: #fff;
 }
 
 .thunar treeview,
