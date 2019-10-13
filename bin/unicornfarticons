@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+
+cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
+sed -i --follow-symlinks \
+	-e "s|000000|dddddd|g" \
+	-e "s|222222|bbbbbb|g" \
+	$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
+
+cp -rf ~/usr/icons/16x16/ ~/usr/icons/Papirus-Dark/
+cp -r ~/usr/icons/22x22/emblems/* ~/usr/icons/Papirus-Dark/22x22/emblems/
+for f in \
+	16x16/devices/drive-harddisk.svg \
+	16x16/devices/drive-harddisk.svg \
+	16x16/places/folder.svg \
+	16x16/devices/drive-removable-media-usb.svg \
+	16x16/actions/media-eject.svg \
+	22x22/emblems/emblem-symbolic-link.svg \
+	22x22/emblems/emblem-unreadable.svg;
+do
+	sed -i --follow-symlinks \
+		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#fff/" \
+		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#fff/" \
+		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
+done
+
+temp="$(mktemp)"
+temp2="$(mktemp)"
+echo "Net/IconThemeName \"Blank\"" > $temp2
+xsettingsd -c $temp2 &
+xse2=$!
+sleep 0.08; kill $xse2
+
+echo "Net/ThemeName \"$theme\"" > $temp
+echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
+xsettingsd -c $temp &
+xse=$!
+sleep 0.2; kill $xse
+rm $temp $temp2
