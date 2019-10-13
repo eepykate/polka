@@ -91,3 +91,25 @@
 .thunar separator {
 	background: transparent;
 }
+
+
+.thunar .view {
+	background: transparent;
+}
+
+.thunar {
+	background-image: url("/home/gauge/etc/gtk-3.0/Coal.png");
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
+}
+
+.thunar .view {
+	color: #fff;
+}
+
+.thunar treeview,
+.thunar .sidebar {
+	background-color: rgba(0, 0, 0, 0.2);
+}

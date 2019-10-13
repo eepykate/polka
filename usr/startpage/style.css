@@ -27,7 +27,6 @@
 
 html {
 	background: var(--bg1);
-	background-position: top -24px left 0;
 }
 
 html {
@@ -161,4 +160,20 @@ section {
 /*
 section:hover {
 	background-color: var(--bg2);
+}*/
+
+html {
+	background-image: url(Coal.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
+}
+
+section {
+	background: #00000033;
+}
+
+a, a:visited {
+	color: #fff;
 }

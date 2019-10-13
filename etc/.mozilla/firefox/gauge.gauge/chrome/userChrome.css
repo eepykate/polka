@@ -21,12 +21,10 @@
 
 
 
-
 	--toolbar-bgimage: none !important;
 	--arrowpanel-dimmed: transparent !important;
 	--tab-min-height: 32.5px	!important;
 	--button-size: 16px	!important;
-
 }
 
 /* Tabs are de-saturated and transparent when inactive */
@@ -518,10 +516,25 @@ browser[type=content] > html {
 
 
 
+#navigator-toolbox {
+	background-image: url(Coal.png) !important;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover;
+}
 
+.tabbrowser-tab .tab-text:not([selected]) {
+	color: #000 !important;
+}
 
+.tabbrowser-tab .tab-text[selected] {
+	color: #fff !important;
+}
 
-
+.tab-background[selected] {
+	background: #00000033 !important;
+}
 
 
 
