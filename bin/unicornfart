@@ -30,9 +30,10 @@ xsettingsd -c $temp2 &
 xse2=$!
 sleep 0.08; kill $xse2
 
-echo "Net/ThemeName \"$theme\"" > $temp
 echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
 xsettingsd -c $temp &
 xse=$!
 sleep 0.2; kill $xse
 rm $temp $temp2
+
+feh --bg-fill --no-fehbg ~/opt/Wallpapers/Coal.png
