@@ -518,10 +518,8 @@ browser[type=content] > html {
 
 #navigator-toolbox {
 	background-image: url(Coal.png) !important;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position: center center;
-	background-size: cover;
+	background-size: 100% calc(100vh + 34.5px);
+	background-position: 0% -35.5px;
 }
 
 .tabbrowser-tab .tab-text:not([selected]) {
