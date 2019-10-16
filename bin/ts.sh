@@ -71,8 +71,8 @@ elif [[ $theme = Coal ]]; then
 	fg2="a6a9b7"
 	disabled="696969"
 	#   -----
-	accent="7baae8"
-	false="c488ec"
+	accent="99bae6"
+	false="e4a6d9"
 	hover="ffffff"
 	red="e56f92"
 	#   -----
