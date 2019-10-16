@@ -110,7 +110,7 @@ elif [[ $theme = Cherry ]]; then
 	disabled="595959"
 	#   -----
 	accent="c882ca"
-	false="8abc6a"
+	false="6b95d8"
 	hover="ffffff"
 	red="c96d83"
 	#   -----

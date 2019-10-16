@@ -31,6 +31,7 @@ alias upd="sudo pacman -Syu"
 
 
 
+alias f="feh --no-fehbg"
 alias kills="kill -9 -1"
 alias t="thunar . & disown"
 alias grep="grep --color=auto"
