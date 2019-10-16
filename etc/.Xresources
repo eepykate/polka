@@ -18,4 +18,4 @@ Xft.autohint: false
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-#include "Xres.Coal"
+#include "Xres.Cherry"
