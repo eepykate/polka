@@ -23,7 +23,7 @@ code:not(.inline)::before {
 
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
  {
-	font-family: "Open Sans" !important;
+	font-family: "Roboto Condensed" !important;
 	font-size: 12px !important;
 }
 
@@ -52,7 +52,7 @@ hr.divider-32i8lo,            /* hr between messages */
 }
 
 a svg.homeIcon-tEMBK1 path {
-	color: #eee !important;
+	color: var(--fg1) !important;
 }
 /*
 .name-3_Dsmg {
@@ -153,7 +153,6 @@ a svg.homeIcon-tEMBK1 path {
 
 .scroller-2FKFPG:not(:hover) {
 	overflow-x: hidden !important;
-	overflow-y: hidden !important;
 }
 
 
@@ -271,8 +270,8 @@ pre,
     --interactive-active: var(--fg1);
     --interactive-muted: var(--fg2);
     --background-primary: var(--bg);
-    --background-secondary: var(--bg1);
-    --background-tertiary: var(--bg2);
+    --background-secondary: var(--bg3);
+    --background-tertiary: var(--bg1);
     --background-accent: var(--accent);
     --background-floating: var(--bg1);
     --background-modifier-hover: rgba(79,84,92,0.16);
@@ -283,11 +282,26 @@ pre,
     --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
     --channeltextarea-background: var(--bg1);
     --activity-card-background: var(--bg2);
-    --deprecated-panel-background: var(--bg1);
-	--background-modifier-selected: var(--bg3);
+    --deprecated-panel-background: var(--bg3);
+	--background-modifier-selected: var(--bg1);
 }
 
+.container-PNkimc,
 .scroller-2TZvBN {
-	background-color: var(--bg1) !important;
+	background-color: var(--bg3) !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
