@@ -62,9 +62,9 @@ elif [[ $theme = Coal ]]; then
 
 	#   -----
 	bg1="18191c"
-	bg2="1C1E21"
-	bg3="202326"
-	bg4="232629"
+	bg2="1C1D21"
+	bg3="1F2126"
+	bg4="262930"
 	button="daddee1a"
 	#   -----
 	fg1="daddee"
@@ -238,14 +238,14 @@ sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bg1};/g" \
 	cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
 # Change lemonbar colours
-sed --follow-symlinks -i \
-	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
-	-e "s/bl=\".*\"/bl=\"$bg2\"/" \
-	-e "s/blr=\".*\"/blr=\"$bg3\"/" \
-	-e "s/fg=\".*\"/fg=\"$fg1\"/" \
-	-e "s/fd=\".*\"/fd=\"$fg2\"/" \
-	-e "s/ac=\".*\"/ac=\"$accent\"/" \
-	~/bin/bar
+#sed --follow-symlinks -i \
+#	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
+#	-e "s/bl=\".*\"/bl=\"$bg2\"/" \
+#	-e "s/blr=\".*\"/blr=\"$bg3\"/" \
+#	-e "s/fg=\".*\"/fg=\"$fg1\"/" \
+#	-e "s/fd=\".*\"/fd=\"$fg2\"/" \
+#	-e "s/ac=\".*\"/ac=\"$accent\"/" \
+#	~/bin/bar
 # bar &!         # This is now in my bspwmrc
 
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
