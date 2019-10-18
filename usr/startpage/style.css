@@ -1,8 +1,8 @@
 :root {
 	/*  ----  */
 	--bg1: #18191c;
-	--bg2: #1C1E21;
-	--bg3: #202326;
+	--bg2: #1C1D21;
+	--bg3: #1F2126;
 	--button: #daddee1a;
 	/*  ----  */
 	--fg2: #a6a9b7;
@@ -134,7 +134,7 @@ section:hover {
 	background-position: center center;
 	background-size: cover;
 }*/
-
+/*
 html {
 	background-image: url(Coal.png);
 	background-size: 100% calc(100vh + 34.5px);

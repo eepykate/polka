@@ -6,8 +6,8 @@
 :root {
 	/*	----  */
 	--bg1: #18191c;
-	--bg2: #1C1E21;
-	--bg3: #202326;
+	--bg2: #1C1D21;
+	--bg3: #1F2126;
 	--button: #daddee1a;
 	/*	----  */
 	--fg2: #a6a9b7;
@@ -15,6 +15,7 @@
 	--disabled: #696969;
 	/*	----  */
 	--accent: #7baae8;
+	--accent2: #85BBFF;
 	--hover: #ffffff;
 	--red: #e56f92;
 	/*	----  */
@@ -515,7 +516,7 @@ browser[type=content] > html {
 
 
 
-
+/*
 #navigator-toolbox {
 	background-image: url(Coal.png) !important;
 	background-size: 100% calc(100vh + 34.5px);
@@ -533,7 +534,7 @@ browser[type=content] > html {
 .tab-background[selected] {
 	background: #00000033 !important;
 }
-
+*/
 
 
 

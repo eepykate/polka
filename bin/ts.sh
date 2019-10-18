@@ -305,7 +305,7 @@ done
 #inkscape -e ~/opt/Wallpapers/pap.png ~/opt/Wallpapers/pap.svg
 #feh --bg-fill --no-fehbg ~/opt/Wallpapers/pap.png
 
-walgen1 "#$bg4"
+#walgen1 "#$bg4"
 
 
 # Reload gtk theme - probably a major hack
