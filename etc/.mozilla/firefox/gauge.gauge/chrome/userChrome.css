@@ -467,7 +467,7 @@ browser[type=content] > html {
 /* Font stuff */
 * {
 	font-family: Fira Mono;
-	font-size: 9.5px !important;
+	font-size: 10px !important;
 }
 
 
