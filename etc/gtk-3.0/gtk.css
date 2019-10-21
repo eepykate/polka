@@ -92,6 +92,11 @@
 	background: transparent;
 }
 
+.thunar .sidebar treeview {
+	padding-bottom: 1px;
+	padding-top: 1px;
+}
+
 /*
 .thunar .view:not(:selected) {
 	background: transparent;
