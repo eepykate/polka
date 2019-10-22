@@ -57,9 +57,8 @@ autoload -U compinit && compinit -u -d ${XDG_CACHE_HOME:-~/.cache}/zsh/zcompdump
 #       ---
 setopt prompt_subst
 #PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.].|)%{\e[0m%} '
-PROMPT=$'
-%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})│%{\e[37m%} %2~
-%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})│%{\e[0m%} '
+PROMPT=$'%{\e[37m%}%2~
+%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})>>%{\e[0m%} '
 
 #        ---
 #   Miscellaneous
