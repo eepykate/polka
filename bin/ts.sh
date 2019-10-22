@@ -210,9 +210,11 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	-e "s/--bg1:.*#.*\;/--bg1: #$bg1\;/" \
 	-e "s/--bg2:.*#.*\;/--bg2: #$bg2\;/" \
 	-e "s/--bg3:.*#.*\;/--bg3: #$bg3\;/" \
+	-e "s/--bg4:.*#.*\;/--bg4: #$bg4\;/" \
 	-e "s/--fg2:.*#.*\;/--fg2: #$fg2\;/" \
 	-e "s/--fg1:.*#.*\;/--fg1: #$fg1\;/" \
 	-e "s/--accent:.*#.*\;/--accent: #$accent\;/" \
+	-e "s/--false:.*#.*\;/--false: #$false\;/" \
 	-e "s/--border:.*#.*\;/--border: #$border\;/" \
 	-e "s/--button:.*#.*\;/--button: #$button\;/" \
 	-e "s/--hover:.*#.*\;/--hover: #$hover\;/" \

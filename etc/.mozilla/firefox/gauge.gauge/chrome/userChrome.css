@@ -9,6 +9,7 @@
 	--bg1: #18191c;
 	--bg2: #1C1D21;
 	--bg3: #1F2126;
+	--bg4: #262930;
 	--button: #daddee1a;
 	/*	----  */
 	--fg2: #a6a9b7;
@@ -17,6 +18,7 @@
 	/*	----  */
 	--accent: #7baae8;
 	--accent2: #85BBFF;
+	--false: #c488ec;
 	--hover: #ffffff;
 	--red: #e56f92;
 	/*	----  */
@@ -77,8 +79,8 @@
 }
 
 #identity-box,
-#back-button,
-#forward-button,
+/*#back-button,
+#forward-button,*/
 #stop-button,
 #reload-button,
 #tracking-protection-icon-container,
@@ -129,6 +131,16 @@
 
 
 
+#navigator-toolbox * #urlbar.megabar {
+	top: 0 !important;
+}
+
+#urlbar:not([open]) #urlbar-input-container {
+	margin-top: 1px !important;
+}
+#urlbar[open] #urlbar-input-container {
+	margin-top: 4px !important;
+}
 
 
 
@@ -183,8 +195,11 @@
 	min-height: var(--tab-min-height);
 }
 
-#urlbar-container {
+#urlbar-input {
 	padding-left: 20px !important;
+}
+#urlbar-background {
+	border: none !important;
 }
 
 /* Tab width */
@@ -242,7 +257,6 @@
 	z-index: 2 !important;
 	pointer-events: none;
 	transition: all 200ms, z-index 0ms !important;
-	overflow-y: hidden;
 	padding-top:0 !important;
 	margin-bottom:16px !important;
 	opacity: 0;
@@ -346,6 +360,8 @@ toolbarbutton#alltabs-button {
 	--autocomplete-popup-background: var(--bg2) !important;
 	--autocomplete-popup-highlight-color: var(--fg1) !important;
 	--autocomplete-popup-highlight-background: var(--button) !important;
+	--lwt-toolbar-field-background-color: var(--bg3) !important;
+	--panel-separator-color: transparent !important;
 
 	/* Sidebar */
 	--lwt-sidebar-text-color: var(--fg1) !important;
@@ -381,9 +397,8 @@ findbar {
 	--lwt-toolbar-field-background-color: var(--bg3) !important;
 }
 
-#appMenu-mainView,
-#urlbar-results {
-	background-color: var(--bg2) !important;
+#appMenu-mainViews {
+	background-color: var(--bg1) !important;
 }
 
 .tabs-newtab-button {
@@ -539,10 +554,16 @@ browser[type=content] > html {
 
 
 
-
-
-
-
-
-
-
+/* Make urlbar megabar appear more compact */
+/* Set the pref browser.urlbar.megabar to true */
+#urlbar.megabar[breakout]{
+  margin-inline-start: 0px !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+}
+#urlbar.megabar[breakout]:not([open]){ bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; }
+.urlbarView.megabar{ margin-inline: 0 !important; width: auto !important; }
+.urlbarView-row{ padding-inline: 4px !important; }
+#urlbar-background{ animation: none !important; }
+#urlbar-input-container{ padding: 0 !important; height: 100% !important; }

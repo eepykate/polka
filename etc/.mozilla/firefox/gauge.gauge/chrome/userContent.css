@@ -4,6 +4,7 @@
 	--bg1: #18191c;
 	--bg2: #1C1D21;
 	--bg3: #1F2126;
+	--bg4: #262930;
 	--button: #daddee1a;
 	/*  ----  */
 	--fg2: #a6a9b7;
@@ -11,6 +12,7 @@
 	--disabled: #696969;
 	/*  ----  */
 	--accent: #7baae8;
+	--false: #c488ec;
 	--hover: #ffffff;
 	--red: #e56f92;
 	/*  ----  */
@@ -756,7 +758,7 @@ span.target-status {background-color: var(--bg1) !important}
 	--in-content-primary-button-background: var(--red) !important;
 	--in-content-primary-button-background-hover: var(--red) !important;
 	--in-content-primary-button-background-active: var(--red) !important;
-	--in-content-text-color: var(--green) !important;
+	--in-content-text-color: var(--fg1) !important;
 	--in-content-item-selected: var(--blue) !important;
 	--in-content-box-background: var(--bg2) !important;
 	--in-content-box-background-hover: var(--bg2) !important;
