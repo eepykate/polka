@@ -23,6 +23,7 @@ fi
 if [[ $theme = Coral ]]; then
 
 	#   -----
+	bg0="0E171C"
 	bg1="111c23"
 	bg2="17242c"
 	bg3="1c2d37"
@@ -42,6 +43,7 @@ if [[ $theme = Coral ]]; then
 elif [[ $theme = Frost ]]; then
 
 	#   -----
+	bg0="20242E"
 	bg1="232836"
 	bg2="282e3f"
 	bg3="2f364a"
@@ -61,6 +63,7 @@ elif [[ $theme = Frost ]]; then
 elif [[ $theme = Coal ]]; then
 
 	#   -----
+	bg0="151517"
 	bg1="18191c"
 	bg2="1C1D21"
 	bg3="1F2126"
@@ -80,6 +83,7 @@ elif [[ $theme = Coal ]]; then
 elif [[ $theme = Ash ]]; then
 
 	#   -----
+	bg0="171717"
 	bg1="1b1b1b"
 	bg2="1f1f1f"
 	bg3="242424"
@@ -99,6 +103,7 @@ elif [[ $theme = Ash ]]; then
 elif [[ $theme = Cherry ]]; then
 
 	#   -----
+	bg0="ffffff"
 	bg1="eeeeee"
 	bg2="E8E8E8"
 	bg3="E3E3E3"
@@ -118,6 +123,7 @@ elif [[ $theme = Cherry ]]; then
 elif [[ $theme = Withered ]]; then
 
 	#   -----
+	bg0="FFF6EF"
 	bg1="f8efe8"
 	bg2="F2E9E3"
 	bg3="E6DDD6"
@@ -137,6 +143,7 @@ elif [[ $theme = Withered ]]; then
 elif [[ $theme = Snow ]]; then
 
 	#   -----
+	bg0="ffffff"
 	bg1="f7f9ff"
 	bg2="EDF1FA"
 	bg3="E6EAF5"
@@ -296,16 +303,9 @@ do
 		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
 done
 
+#. swirls.sh
 
-#cp ~/opt/Wallpapers/mnml_crcl.svg ~/opt/Wallpapers/pap.svg
-#sed --follow-symlinks -i \
-#	-e "s/000000/$bg4/g" \
-#	-e "s/ffffff/$fg2/g" \
-#	~/opt/Wallpapers/pap.svg
-#inkscape -e ~/opt/Wallpapers/pap.png ~/opt/Wallpapers/pap.svg
-#feh --bg-fill --no-fehbg ~/opt/Wallpapers/pap.png
-
-#walgen1 "#$bg4"
+walgen1 "#$bg0"
 
 
 # Reload gtk theme - probably a major hack
