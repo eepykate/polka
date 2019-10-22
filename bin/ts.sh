@@ -206,6 +206,7 @@ echo "${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChro
 ${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	xargs sed --follow-symlinks -i \
+	-e "s/--bg0:.*#.*\;/--bg0: #$bg0\;/" \
 	-e "s/--bg1:.*#.*\;/--bg1: #$bg1\;/" \
 	-e "s/--bg2:.*#.*\;/--bg2: #$bg2\;/" \
 	-e "s/--bg3:.*#.*\;/--bg3: #$bg3\;/" \
@@ -219,16 +220,28 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/"
 
 # Replace colours in dunst
+# urgent notifications
+dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
+
+# low priority notifications
+dunst_low="$(( $(awk '/urgency_low/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
+
+
 sed --follow-symlinks -i \
 	-e "s/frame_color = \".*\"/frame_color = \"#$fg2\"/" \
-	-e "s/background = \".*\"/background = \"#$bg1\"/" \
-	-e "s/foreground = \".*\"/foreground = \"#$fg1\"/"  \
+	-e "s/background = \".*\"/background = \"#$fg2\"/" \
+	-e "s/foreground = \".*\"/foreground = \"#$bg1\"/"  \
 	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
-# Make urgent notifications have a different colour
-#dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
-#sed --follow-symlinks -i "${dunst_urgent}s/background = \".*\"/background = \"#$fg1\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
-#sed --follow-symlinks -i "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bg2\"/" ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+sed --follow-symlinks -i \
+	\
+	-e "${dunst_urgent}s/background = \".*\"/background = \"#$fg1\"/" \
+	-e "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$bg1\"/" \
+	\
+	-e "${dunst_low}s/background = \".*\"/background = \"#$bg3\"/" \
+	-e "$(( ${dunst_low} + 1 ))s/foreground = \".*\"/foreground = \"#$fg1\"/" \
+	\
+	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 pkill -9 dunst; dunst &>/dev/null &!
 
