@@ -1,23 +1,48 @@
-xrdb ${XDG_CONFIG_HOME:-~/.config}/.Xresources &
-synclient TouchpadOff=1
-compton &
-/usr/bin/xset r rate 200 60 &
-/usr/bin/sxhkd &
+#!/bin/sh
+
+#     --
+#   Tweaks
+#     --
+
+# Basic X stuff
+[ -d /etc/X11/xinit ] && (
+for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
+	[ -x "$f" ] && . "$f"
+done
+unset f)
+
+# DBus
 if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
-	dbus-launch --exit-with-session ~/.xinitrc "$@" &
+	dbus-launch --exit-with-session ${XDG_CONFIG_HOME:-~/.config}/xinitrc "$@" &
 fi
-dunst &
-pap
-xsetroot -cursor_name left_ptr
-tabbed -r 2 -n "drop-down-st" st -w '' &
-#xautolock -time 10 -locker ~/bin/lock &
-command -v screen.sh &>/dev/null && screen.sh
-mpd
-mpDris2 &
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
+
+
+pap           # Wallpaper
+screen.sh     # Custom screen layout
+
+synclient TouchpadOff=1           # Disable touchpad
+xset r rate 200 60 &              # Faster keyboard
+xsetroot -cursor_name left_ptr    # Make desktop use normal cursor
+
+xrdb ${XDG_CONFIG_HOME:-~/.config}/.Xresources &
+
+
+#       ----
+#   Applications
+#       ----
+
+mpd        # Music daemon
+mpDris2 &  # playerctl support for mpd
+           #
+dunst &    # Notification daemon
+sxhkd &    # Hotkey daemon
+compton &  # compositor
+
+start-dropdown.sh &
+
+
+#                   ----
+#   And finally, start the window manager
+#                   ----
+
 exec bspwm
