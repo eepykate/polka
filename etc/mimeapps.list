@@ -6,3 +6,5 @@ text/js=nvim.desktop
 image/png=qView.desktop
 image/jpg=qView.desktop
 image/jpeg=qView.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
