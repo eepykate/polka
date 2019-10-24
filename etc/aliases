@@ -43,6 +43,13 @@ alias cv="xclip -selection clipboard -t video/mp4"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
+title() {  print -n -r $'\e]0;'$ssh_info$1$'\a'  }
+title "$(dirs)"
+chpwd() { title "$(dirs)" }
+precmd() { title "$(dirs)" }
+preexec() { title "$2"; epoch="$(date +%s%3N)" }
+
+
 reset_cursor() {
 	echo -en "\e[4 q"
 }

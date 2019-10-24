@@ -18,31 +18,34 @@ fifo="/tmp/barfifo"
 tim() {
 	if [[ $(cat /tmp/barblink) = ":" ]]; then
 		echo " " > /tmp/barblink
-		time="$(date "+%A %I %M")";
+		time="%{F#ff$fd}$(date "+%A")%{F-} $(date "+%I %M")";
 	else
 		echo ":" > /tmp/barblink
-		time="$(date "+%A %I:%M")";
+		time="%{F#ff$fd}$(date "+%A")%{F-} $(date "+%I:%M")";
 	fi
 
 	echo "t%{A:nottime:}$time%{A}" > $fifo
 }
 
 nam() {
-	echo "n$(xdotool getwindowfocus getwindowname)" > $fifo
+	name="$(xdotool getwindowfocus getwindowname)"
+	[[ $(wc -m <<< "$name") -ge 41 ]] && 
+		echo "n$(cut -c -40 <<< "$name")..." > $fifo ||
+		echo "n$name" > $fifo
 }
 
 desktop() {
-	#echo "d$(bspc query -D -d focused --names)" > $fifo
-	out=""
-	f="$(bspc query -D -d focused --names)"
-	for i in $(bspc query -D --names | sort -n | head -5); do
-		if [[ $i = $f ]]; then
-			out+="%{F#ff$fg}%{F-}"
-		else
-			out+="%{F#ff$fd}%{F-}"
-		fi
-	done
-	echo -e "d$out" > $fifo
+	echo "d$(bspc query -D -d focused --names)" > $fifo
+	#out=""
+	#f="$(bspc query -D -d focused --names)"
+	#for i in $(bspc query -D --names | sort -n | head -5); do
+	#	if [[ $i = $f ]]; then
+	#		out+="%{F#ff$fg}%{F-}"
+	#	else
+	#		out+="%{F#ff$fd}%{F-}"
+	#	fi
+	#done
+	#echo -e "d$out" > $fifo
 }
 
 volume() {
@@ -53,10 +56,10 @@ volume() {
 	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
 	local a="%{A}%{A}%{A}%{A}"
 	if [[ $muted = off ]]; then
-		echo -e "v${b} Muted${a}" > $fifo; return
+		echo -e "v${b}Muted${a}" > $fifo; return
 	fi
 
-	echo -e "v${b} $vol${a}" > $fifo
+	echo -e "v${b}$vol${a}" > $fifo
 }
 
 bat() {
@@ -97,13 +100,19 @@ sleep 0.1
 
 bspc subscribe desktop_focus | while read -r des; do
 	bar -d
+	sleep 0.05
+	bar -n
+done &
+
+bspc subscribe node | while read -r title; do
+	bar -n
 done &
 
 monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
-width="300"
-offX="$(( ${monitor[0]} + ${monitor[2]} - $width - 30 ))"
-offY="$((${monitor[3]} + 30))"
+width="$(( ${monitor[0]} - 400 ))"
+offX="$(( ${monitor[2]} + 200 ))"
+offY="$((${monitor[3]} + 20))"
 
 (sleep 0.4;
 bat;
@@ -117,12 +126,11 @@ while read -r line < "$fifo"; do
 	case $line in
 		v*) vol="${line#?}";;
 		b*) bat="${line#?}";;
-		a*) asda="${line#?}";;
 		t*) time="${line#?}";;
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O15}$desk%{O15}$bat%{B-}%{r}$time%{O15}"
+	echo -e "%{O25}$time%{O15}$bat%{c}$name%{r}$vol%{O12}%{F#ff$fd}|%{F-}%{O12}$desk%{O25}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
@@ -131,11 +139,9 @@ done | (lemonbar \
 	-u 8 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
-	-f "kiwi:size=10" \
-	-f "t mango Wide:size=10" \
-	-g "${width}x40+$offX+$offY"; kill -- -0)| bash &
-
-(sleep 0.4; bspc config -m "$monitorName" top_padding 0) &
+	-f "Fira Mono:pixelsize=10:style=bold" \
+	-f "Hack Nerd Font:pixelsize=10" \
+	-g "${width}x50+$offX+$offY"; kill -- -0) | bash &
 
 #while true; do
 #	bar -n;
@@ -145,5 +151,6 @@ done | (lemonbar \
 while true; do
 	bar -b;
 	bar -t;
+	bar -n;
 	sleep 1
 done > $fifo &
