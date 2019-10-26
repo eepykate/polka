@@ -8,6 +8,6 @@ Feel free to do anything with these files. Credit isn't needed but is appreciate
 
 **WM:** bspwm
 
-**Terminal:** [st](https://gitlab.com/GaugeK/st)
+**Terminal:** [st](https://github.com/GaugeK/st)
 
 **Font:** Fira Mono Bold (10px, mostly)
