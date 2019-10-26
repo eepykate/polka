@@ -101,7 +101,7 @@ pacman -S --noconfirm --needed \
 	acpi imagemagick neovim \
 	zsh-completions compton mpd ncmpcpp \
 	gcolor3 gnome-system-monitor \
-	xsettingsd lxappearance ttf-ubuntu-font-family
+	xsettingsd lxappearance ttf-fira-mono
 
 
 for i in i3lock-color-git qview pulseaudio-ctl light-git lemonbar-xft-git transmission-remote-cli-git mpdris2; do
@@ -115,37 +115,8 @@ echo -e "installing dotfiles"
 # Install the dotfiles in the user's home directory
 putgitrepo "$dots" "/home/$name/git"
 
-#Symlink / copy files from ~/git into ~/
+sudo -u $name bash "/home/$name/git/deploy"
 
-mkdir -p \
-	/home/$name/etc/.mozilla/firefox/gauge.gauge/chrome \
-	/home/$name/usr \
-	/home/$name/opt \
-	/home/$name/bin \
-	/home/$name/etc/backup
-
-
-find /home/$name/git/etc/ -maxdepth 1 > /tmp/config.txt
-sed -e 's/git\///' -e '1d' < /tmp/config.txt > /tmp/config_1.txt
-while read i; do [[ -f $i ]] && mv $i /home/$name/etc/backup/; done < /tmp/config_1.txt
-while read i; do ln -sf $i /home/$name/etc/; done < /tmp/config.txt
-
-cp -rf /home/$name/git/usr/* /home/$name/usr/
-cp -rf /home/$name/git/.themes/* /usr/share/themes/
-
-#cp -f /home/$name/git/.icons/ /usr/share/icons/
-
-find /home/$name/git/ -maxdepth 1 | grep -v "local\|config\|bin\|mozilla\|theme\|icon"> /tmp/home.txt
-for i in $(cat /tmp/home.txt); do ln -sf $i /home/$name/; done
-
-cp -rf /home/$name/git/Wallpapers/ /home/$name/opt/
-
-#ln -sf /home/$name/git/etc/.mozilla/firefox/gauge.gauge/chrome/* /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/
-cp /home/$name/git/etc/.mozilla/firefox/profiles.ini /home/$name/etc/.mozilla/firefox/profiles.ini
-
-ln -sf /home/$name/git/bin/* /home/$name/bin/
-
-chown $name:wheel /home/$name -R
 
 # Most important command! Get rid of the beep!
 rmmod pcspkr
@@ -162,8 +133,8 @@ mkdir -p /usr/share/fonts/TTF
 mkdir -p /usr/share/fonts/OTF
 
 echo " - Iosevka"
-curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip >> /tmp/02-iosevka-term-2.0.1.zip
-unzip -o /tmp/02-iosevka-term-2.0.1.zip -d /usr/share/fonts/TTF/ &>/dev/null
+curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip -o /tmp/iosevka.zip
+unzip -o /tmp/iosevka.zip -d /usr/share/fonts/TTF/ &>/dev/null
 
 echo " - Roboto"
 curl -Ls https://fonts.google.com/download?family=Roboto -o /tmp/Roboto.zip
@@ -172,10 +143,6 @@ unzip -o /tmp/Roboto.zip -d /usr/share/fonts/TTF/ &>/dev/null
 echo " - Roboto Condensed"
 curl -Ls https://fonts.google.com/download?family=Roboto%20Condensed -o /tmp/Roboto-Condensed.zip
 unzip -o /tmp/Roboto-Condensed.zip -d /usr/share/fonts/TTF/ &>/dev/null
-
-echo " - Fira Mono"
-curl -Ls https://fonts.google.com/download?family=Fira%20Mono -o /tmp/Fira-Mono.zip
-unzip -o /tmp/Fira-Mono.zip -d /usr/share/fonts/TTF &>/dev/null
 
 echo " - Regular nerd font"
 curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Regular.zip -o /tmp/Regular.zip
