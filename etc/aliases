@@ -241,4 +241,10 @@ col2() {
 	echo -e "\n\n\n"
 }
 
+notthing() {
+	notify-send -u critical -t 99999999 '      urgent      ​'; \
+	notify-send -t 99999999 '      normal      ​'; \
+	notify-send -u low -t 99999999 'low'
+}
+
 # vim: ft=sh
