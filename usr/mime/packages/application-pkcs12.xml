@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
-    <mime-type type="application/pkcs12">
-        <comment>PKCS#12 certificate bundle</comment>
-        <glob-deleteall/>
-        <glob pattern="*.p12"/>
-        <glob pattern="*.pfx"/>
-    </mime-type>
-</mime-info>

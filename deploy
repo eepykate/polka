@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo
+echo "This is made for me, and me alone, please do not
+expect this to work on your system, and do not complain
+that this doesn't work on your system"
+echo
+
+printf '[Make sure this repository is installed as ~/git, then hit y] '
+read -r y
+[[ $y = y ]] || exit
+
+mkdir ~/bin ~/etc ~/usr ~/tmp ~/opt 2>/dev/null
+
+ln -sf $HOME/git/*/bin/* ~/bin/ 2>/dev/null
+ln -sf $HOME/git/*/etc/* ~/etc/ 2>/dev/null
+ln -sf $HOME/git/*/usr/* ~/usr/ 2>/dev/null

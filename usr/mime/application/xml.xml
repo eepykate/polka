@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/xml">
-  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
-  <comment>application/xml</comment>
-  <glob-deleteall/>
-  <glob pattern="*.kdenlive"/>
-</mime-type>
