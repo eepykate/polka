@@ -8,7 +8,7 @@ mpd_connection_timeout = "5"
 mpd_crossfade_time = "5"
 
 visualizer_color = cyan, green, yellow, magenta, red
-playlist_display_mode = classic
+playlist_display_mode = columns
 progressbar_look = "▂▂ "  # ━━─
 header_visibility = no
 statusbar_visibility = no
@@ -28,9 +28,10 @@ message_delay_time = 1
 current_item_prefix = "$(16_black)"
 current_item_suffix = "$/r$(end)"
 
-now_playing_prefix = ""
+now_playing_prefix = "  ​"
 now_playing_suffix = "$(17)* $9"
 
 song_status_format = $/b{%t}|{%f}
-song_list_format = "%t$R$(end) "
+song_list_format = "%a  -  %t$R$(end) "
 song_library_format = $/b{{%a - %t} (%b)}|{%f}
+song_columns_list_format = "(50)[08]{ar} (50)[16]{t}"
