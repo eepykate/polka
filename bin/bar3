@@ -67,20 +67,20 @@ bat() {
 	declare -i capacity status
 
 	cap="$(cat /sys/class/power_supply/*/capacity 2>/dev/null)"
-	capacity="$(($cap / 4))"
+	#capacity="$(($cap / 4))"
 	status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
 
-	case "$capacity" in
-		0) bat=;;
-		1) bat=;;
-		2) bat=;;
-		3) bat=;;
-		*) bat=;;
-	esac
+	#case "$capacity" in
+	#	0) bat=;;
+	#	1) bat=;;
+	#	2) bat=;;
+	#	3) bat=;;
+	#	*) bat=;;
+	#esac
 
-	[[ $status = Charging ]] && bat=
+	[[ $status = Charging ]] && stuff="(c)"
 
-	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:notify-send \\\"\$(acpi)\\\":}${bat} $cap%%{A}%{A}%{A}" > $fifo
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:notify-send \\\"\$(acpi)\\\":}${bat} $stuff $cap%%{O12}|%{O12}%{A}%{A}%{A}" > $fifo
 }
 
 
@@ -130,7 +130,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O25}$time%{O15}$bat%{c}$name%{r}$vol%{O12}%{F#ff$fd}|%{F-}%{O12}$desk%{O25}"
+	echo -e "%{O25}$time%{c}$name%{r}$bat$vol%{O12}%{F#ff$fd}|%{F-}%{O12}$desk%{O25}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
