@@ -41,7 +41,7 @@ hi EndOfBuffer  ctermbg=NONE   ctermfg=0
 hi CursorLine   ctermbg=NONE   ctermfg=NONE cterm=NONE
 hi CursorLineNr ctermbg=NONE   ctermfg=16    cterm=bold
 hi CursorColumn ctermbg=0      ctermfg=NONE
-hi MatchParen   ctermbg=2      ctermfg=0 
+hi MatchParen   ctermbg=NONE   ctermfg=2     cterm=underline
 hi ModeMsg      ctermbg=NONE   ctermfg=5
 hi NormalNC     ctermbg=NONE   ctermfg=15   cterm=NONE
 
