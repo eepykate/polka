@@ -428,6 +428,10 @@ findbar-closebutton {
 	background-color: var(--button) !important;
 }
 
+#nav-bar {
+	box-shadow: none !important;
+}
+
 /* Change colour of fill animation when tab has finished loading */
 .tabbrowser-tab {
 	--tab-loading-fill: var(--accent) !important;
@@ -483,7 +487,7 @@ browser[type=content] > html {
 
 /* Font stuff */
 * {
-	font-family: Fira Mono;
+	font-family: kiwi;
 	font-size: 10px !important;
 }
 

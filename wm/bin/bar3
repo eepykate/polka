@@ -9,8 +9,8 @@
 fg="daddee"
 fd="a6a9b7"
 bg="18191c"
-bl="1C1E21"
-blr="202326"
+bl="1C1D21"
+blr="1F2126"
 ac="7baae8"
 fifo="/tmp/barfifo"
 #trap 'pkill -P $$' SIGINT
@@ -139,7 +139,7 @@ done | (lemonbar \
 	-u 8 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
-	-f "Fira Mono:pixelsize=10:style=bold" \
+	-f "kiwi:pixelsize=10" \
 	-f "Hack Nerd Font:pixelsize=10" \
 	-g "${width}x50+$offX+$offY"; kill -- -0) | bash &
 
