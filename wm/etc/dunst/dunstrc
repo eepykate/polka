@@ -16,7 +16,7 @@
 	separator_color = frame
 	sort = yes
 	idle_threshold = 120
-	font = Fira Mono Bold 6.5
+	font = kiwi Medium 8
 	line_height = 0
 	markup = full
 	format = "%s\n%b"
