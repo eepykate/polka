@@ -144,18 +144,18 @@ elif [[ $theme = Snow ]]; then
 
 	#   -----
 	bg0="ffffff"
-	bg1="f7f9ff"
-	bg2="EDF1FA"
-	bg3="E6EAF5"
-	bg4="DADFED"
+	bg1="f8f9fc"
+	bg2="F0F2F7"
+	bg3="EBEEF5"
+	bg4="E3E6ED"
 	button="43566f1a"
 	#   -----
-	fg1="43566f"
-	fg2="909cad"
+	fg1="314053"
+	fg2="7d8998"
 	disabled="595959"
 	#   -----
-	accent="cd5e79"
-	false="7bb854"
+	accent="6796e1"
+	false="c185da"
 	hover="ffffff"
 	red="cd5e79"
 	#   -----
@@ -186,7 +186,7 @@ sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CON
 
 # if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 [[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
-	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/.Xresources
+	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
 sed --follow-symlinks -i \
 	-e "s/ac=\".*\"/ac=\"#$accent\"/" \
@@ -260,14 +260,14 @@ sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bg1};/g" \
 	cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
 # Change lemonbar colours
-#sed --follow-symlinks -i \
-#	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
-#	-e "s/bl=\".*\"/bl=\"$bg2\"/" \
-#	-e "s/blr=\".*\"/blr=\"$bg3\"/" \
-#	-e "s/fg=\".*\"/fg=\"$fg1\"/" \
-#	-e "s/fd=\".*\"/fd=\"$fg2\"/" \
-#	-e "s/ac=\".*\"/ac=\"$accent\"/" \
-#	~/bin/bar
+sed --follow-symlinks -i \
+	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
+	-e "s/bl=\".*\"/bl=\"$bg2\"/" \
+	-e "s/blr=\".*\"/blr=\"$bg3\"/" \
+	-e "s/fg=\".*\"/fg=\"$fg1\"/" \
+	-e "s/fd=\".*\"/fd=\"$fg2\"/" \
+	-e "s/ac=\".*\"/ac=\"$accent\"/" \
+	~/bin/bar
 # bar &!         # This is now in my bspwmrc
 
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
