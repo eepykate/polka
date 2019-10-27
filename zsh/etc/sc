@@ -22,7 +22,7 @@ f   bashrc     ~/.bashrc
 f   pro        ~/.profile
 f   xpro       ~/.xprofile
 f   zpro       ~/etc/zsh/.zprofile
-f   xres       ~/etc/.Xresources
+f   xres       ~/etc/Xresources
 f   sc         ~/etc/sc
 f   aliases    ~/etc/aliases
 f   a          ~/etc/aliases
