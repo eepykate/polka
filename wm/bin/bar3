@@ -139,8 +139,7 @@ done | (lemonbar \
 	-u 8 \
 	-B "#ff$bg" \
 	-F "#ff$fg" \
-	-f "kiwi:pixelsize=10" \
-	-f "Hack Nerd Font:pixelsize=10" \
+	-f "Fira Mono:pixelsize=10:style=bold" \
 	-g "${width}x50+$offX+$offY"; kill -- -0) | bash &
 
 #while true; do

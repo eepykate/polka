@@ -487,7 +487,8 @@ browser[type=content] > html {
 
 /* Font stuff */
 * {
-	font-family: kiwi;
+	font-family: "Fira Mono";
+	font-weight: bold;
 	font-size: 10px !important;
 }
 
