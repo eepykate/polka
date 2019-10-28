@@ -498,6 +498,7 @@ browser[type=content] > html {
 	font-weight: normal !important;
 }
 
+.urlbarView-title,
 #urlbarView-row-0 * strong {
 	font-weight: bold !important;
 }
