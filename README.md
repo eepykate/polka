@@ -2,7 +2,7 @@
 
 Feel free to do anything with these files. Credit isn't needed but is appreciated.
 
-![current setup](https://i.imgur.com/Ts3T8CE.png) \*Probably out of date
+![current setup](https://i.imgur.com/ah2WA42.png) \*Probably out of date
 
 **Distribution:** Arch (GNU/Linux)
 
@@ -10,4 +10,4 @@ Feel free to do anything with these files. Credit isn't needed but is appreciate
 
 **Terminal:** [st](https://github.com/GaugeK/st)
 
-**Font:** Fira Mono Bold (10px, mostly)
+**Font:** Fira Mono Bold (10px)
