@@ -24,7 +24,7 @@ synclient TouchpadOff=1           # Disable touchpad
 xset r rate 200 60 &              # Faster keyboard
 xsetroot -cursor_name left_ptr    # Make desktop use normal cursor
 
-xrdb ${XDG_CONFIG_HOME:-~/.config}/.Xresources &
+xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources &
 
 
 #       ----
