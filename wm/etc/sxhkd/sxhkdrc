@@ -117,8 +117,8 @@ super + {_,shift} + Escape
 super + {d,a}
 	bspc node -t "~{floating,fullscreen}"
 
-super + {_,ctrl,alt,shift} + {Left,Down,Up,Right}
-	{focus,move,resize,bspc node -p} {west,south,north,east}
+super + {_,ctrl,shift} + {Left,Down,Up,Right}
+	{focus,move,resize} {west,south,north,east}
 
 shift + alt + {Right,Left}
 	DIR={next,prev}; \
