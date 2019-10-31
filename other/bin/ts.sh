@@ -79,6 +79,8 @@ elif [[ $theme = Coal ]]; then
 	hover="ffffff"
 	red="e56f92"
 	#   -----
+	wall="grey_annie-spratt-JsOK6ko9SUo-unsplash.jpg"
+	#   -----
 
 elif [[ $theme = Ash ]]; then
 
@@ -248,16 +250,13 @@ sed --follow-symlinks -i \
 pkill -9 dunst; dunst &>/dev/null &!
 
 # Change the theme in rofi
-sed --follow-symlinks -i -e "s/bg:.*#.*;/bg:         #${bg1};/g" \
+sed --follow-symlinks -i \
+	-e "s/bg:.*#.*;/bg:         #$bg3;/g" \
 	-e "s/fg:.*#.*;/fg:         #$fg1;/" \
 	-e "s/accent:.*#.*;/accent:     #$accent;/"\
 	-e "s/sel:.*#.*;/sel:        #$button;/"\
+	-e "s/hover:.*#.*;/hover:      #$hover;/"\
 	${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
-
-# Change the wallpaper
-[[ -n $wallpaper ]] &&
-	[[ -f ~/Wallpapers/$wallpaper ]] &&
-	cp ~/Wallpapers/$wallpaper ~/Wallpapers/Wallpaper.png
 
 # Change lemonbar colours
 sed --follow-symlinks -i \
@@ -320,8 +319,16 @@ done
 
 #. swirls.sh
 
-walgen1 "#$bg0"
+if [[ -n $wall ]]; then
+	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/$wall\""
+	eval $wallthing
+else
+	walgen1 "#$bg0"
+	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/tile.png\""
+fi
 
+echo "#!/bin/sh
+$wallthing" > ~/bin/pap
 
 # Reload gtk theme - probably a major hack
 temp="$(mktemp)"
@@ -337,9 +344,6 @@ xsettingsd -c $temp &
 xse=$!
 sleep 0.2; kill $xse
 rm $temp $temp2
-#refresh
 
-
-#walgen "#$bg3"
 
 notify-send "Theme changed to $theme"
