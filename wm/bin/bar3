@@ -104,9 +104,9 @@ bspc subscribe desktop_focus | while read -r des; do
 	bar -n
 done &
 
-bspc subscribe node | while read -r title; do
-	bar -n
-done &
+#bspc subscribe node | while read -r title; do
+#	bar -n
+#done &
 
 monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
 monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
@@ -130,7 +130,7 @@ while read -r line < "$fifo"; do
 		n*) name="${line#?}";;
 		d*) desk="${line#?}";;
 	esac
-	echo -e "%{O25}$time%{c}$name%{r}$bat$vol%{O12}%{F#ff$fd}|%{F-}%{O12}$desk%{O25}"
+	echo -e "%{O25}$time%{c}%{r}$bat$vol%{O12}%{F#ff$fd}|%{F-}%{O12}$desk%{O25}"
 	sleep 0.01
 done | (lemonbar \
 	-d \
