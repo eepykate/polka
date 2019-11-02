@@ -20,7 +20,6 @@ alias gca="git commit --amend"
 alias gl="git log --all --decorate --oneline --graph"
 
 # pacman/yay
-
 alias insa="yay -S"
 alias src="yay -Ss"
 alias p="sudo pacman"
@@ -32,6 +31,7 @@ alias upd="sudo pacman -Syu"
 
 
 alias f="feh --no-fehbg"
+alias q="qview"
 alias kills="kill -9 -1"
 alias t="thunar . & disown"
 alias grep="grep --color=auto"
