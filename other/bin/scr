@@ -15,9 +15,9 @@ newname() {
 }
 
 case $1 in
-	-f) maim -ui $(xdotool getactivewindow) "${dir}/${name}.png";;
-	-s) maim -su -b 8 "${dir}/${name}.png";;
-	*) maim -u "${dir}/${name}.png";;
+	-f) maim -ui $(xdotool getactivewindow) "$dn";;
+	-s) maim -su -b 8 "$dn";;
+	*) maim -u "$dn";;
 esac
 
 newname || exit
