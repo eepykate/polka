@@ -7,18 +7,15 @@ dn="$dir/$name.png"
 
 mkdir -p "$dir" || exit 1
 
-newname() {
-	name1="${name}-$(file ${dir}/${name}.png | \
-		awk '{gsub(",","")} {print $5 "x" $7}')" &&
-	dn1="$dir/$name1.png"
-	mv "$dn" "$dn1"
-}
-
 case $1 in
 	-f) maim -ui $(xdotool getactivewindow) "$dn";;
 	-s) maim -su -b 8 "$dn";;
 	*) maim -u "$dn";;
 esac
 
-newname || exit
+name1="${name}-$(file ${dir}/${name}.png | \
+	awk '{gsub(",","")} {print $5 "x" $7}')" &&
+dn1="$dir/$name1.png" &&
+mv "$dn" "$dn1" || exit
+
 preview "$dn1"
