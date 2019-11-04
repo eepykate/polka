@@ -11,6 +11,6 @@ feh -g 320x200+$offX+$offY -. -B "#000000" "$1" &
 feh="$!"
 
 (sleep 0.1; xdotool key \
-	--window "$(xdotool search --classname minecraft)" w)
+	--window "$(xdotool search --pid $feh)" w)
 
 sleep 2; kill -- $feh
