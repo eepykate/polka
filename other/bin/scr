@@ -6,20 +6,24 @@ name="maim-$(date +%F_%H:%M:%S)"
 mkdir -p "$dir" || exit 1
 
 newname() {
-	name1="${name}-$(file ${dir}/${name}.png | awk '{gsub(",","")} {print $5 "x" $7}')" &&
+	name1="${name}-$(file ${dir}/${name}.png | \
+		awk '{gsub(",","")} {print $5 "x" $7}')" &&
 	mv ${dir}/${name}.png ${dir}/${name1}.png
 }
 
 fehstuff() {
-	thing=( $(xrandr --query | grep 'primary' | grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' | sed -e 's/x/ /g' -e 's/+/ /g') )
+	thing=( $(xrandr --query | grep 'primary' | \
+		grep -o '[0-9][0-9]*x[0-9][0-9]*[^ ]*' | \
+		sed -e 's/x/ /g' -e 's/+/ /g') )
 
 	offX="$(( ${thing[0]} + ${thing[2]} - 320 - 50 ))"
 	offY="$(( ${thing[3]} + 50 ))"
 
 	feh -g 320x200+$offX+$offY -. -B "#000000" "$dir/$name1.png" &
 	feh="$!"
-	#( sleep 0.1; xdotool key 'w' ) &
-	(sleep 2; kill -- $feh)
+	(sleep 0.1; xdotool key \
+		--window "$(xdotool search --classname minecraft)" w)
+	sleep 2; kill -- $feh
 }
 
 case $1 in
