@@ -8,7 +8,7 @@ super + g
 	tasks
 
 super + w
-	mpv --loop "$(find /home/gauge/opt/linux/oth | dmenu -l 20 -i)"
+	mpv --loop "$(find $HOME/opt/linux/oth | dmenu -l 20 -i)"
 
 super + y
 	tp.sh
