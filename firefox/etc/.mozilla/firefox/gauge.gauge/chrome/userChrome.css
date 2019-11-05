@@ -1,6 +1,6 @@
 /*
  *    GaugeK's userChrome.css
- *    gitlab.com/GaugeK/dots
+ *    github.com/GaugeK/dots
  */
 
 :root {
@@ -574,3 +574,4 @@ browser[type=content] > html {
 .urlbarView-row{ padding-inline: 4px !important; }
 #urlbar-background{ animation: none !important; }
 #urlbar-input-container{ padding: 0 !important; height: 100% !important; }
+
