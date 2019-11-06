@@ -18,7 +18,7 @@ echo -en \"\\e]PExd\"  # cyan
 echo -en \"\\e]PFxd\"  # white"
 
 colours=($(xrdb -query | \
-grep \*color | \
+grep "\*.*color" | \
 sed -e 's/\*//' -e 's/color//' -e 's/\://' -e 's/#//' | \
 sort -n | \
 awk '{print $2}'))
