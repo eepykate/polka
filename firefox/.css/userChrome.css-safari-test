@@ -706,40 +706,53 @@ browser[type=content] > html {
 	margin-top: 9px !important;
 }
 
+#close-button image,
+#minimize-button image,
+#restore-button image,
 .titlebar-min image,
 .titlebar-max image,
 .titlebar-close image {
 	display: none !important;
 }
 
+#close-button::after,
+#minimize-button::after,
+#restore-button::after,
 .titlebar-min,
 .titlebar-max,
 .titlebar-close {
 	width: 30px !important;
 	max-width: 30px !important;
 	min-width: 30px !important;
-	background-color: transparent !important;
+	background-color: transparent;
 }
 
-
+#close-button::after,
+#minimize-button::after,
+#restore-button::after,
 .titlebar-max::after,
 .titlebar-close::after,
 .titlebar-min::after {
   content: '';
 	width: 14px !important;
+	max-width: 14px !important;
+	min-width: 14px !important;
   height: 14px !important;
 	border-radius: 100%;
   display: block !important;
 }
 
+#close-button::after,
 .titlebar-close::after {
   background-color: #EE545C;
 }
 
+#minimize-button::after,
 .titlebar-min::after {
   background-color: #F8C534;
 }
 
+#restore-button::after,
 .titlebar-max::after {
   background-color: #3AF550;
 }
@@ -748,15 +761,52 @@ browser[type=content] > html {
 	margin-top: -7.5px !important;
 }
 
-
-:root .titlebar-buttonbox-container {
+#window-controls,
+.titlebar-buttonbox-container {
 	-moz-box-ordinal-group: 0 !important;
 	margin-top: calc(var(--tab-min-height) * -1 - 1px);
 	height: var(--tab-min-height) !important;
 	min-height: var(--tab-min-height) !important;
 	max-height: var(--tab-min-height) !important;
 	position: absolute;
+	z-index: 500 !important;
 }
+
+:root[sizemode="fullscreen"] #window-controls {
+	display: block !important;
+}
+
+:root[sizemode="fullscreen"] #nav-bar {
+	padding-left: 110px !important;
+}
+
+:root[sizemode="fullscreen"] #window-controls {
+	margin-top: calc(var(--tab-min-height) * -1 - 3px);
+	-moz-box-ordinal-group: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
