@@ -459,7 +459,7 @@ toolbarbutton#alltabs-button {
 .tab-icon-image:not([pinned]) {
 	display: none;
 }
-.tab-icon-image {
+.tab-icon-image:not([selected]) {
 	filter: saturate(0%);
 }
 
