@@ -137,7 +137,7 @@
 }
 
 #urlbar:not([open]) #urlbar-input-container {
-	margin-top: px !important;
+	margin-top: 2px !important;
 }
 #urlbar[open] #urlbar-input-container {
 	margin-top: 4px !important;
@@ -384,8 +384,8 @@ toolbarbutton#alltabs-button {
 }
 
 .toolbarbutton-icon, .toolbarbutton-badge-stack {
-	--toolbarbutton-hover-background: var(--button) !important;
-	--toolbarbutton-active-background: var(--button) !important;
+	--toolbarbutton-hover-background: transparent !important;
+	--toolbarbutton-active-background: transparent !important;
 }
 
 .close-icon {
@@ -493,9 +493,9 @@ browser[type=content] > html {
 
 /* Font stuff */
 * {
-	font-family: "Fira Mono";
-	font-weight: bold;
-	font-size: 10px !important;
+	font-family: "SF Pro Display";
+	font-weight: 600;
+	font-size: 11px !important;
 }
 
 
@@ -625,6 +625,7 @@ browser[type=content] > html {
 	margin-left: 100px !important;
 	margin-right: 100px !important;
 }
+
 #nav-bar {
 	padding-left: 10px !important;
 	padding-right: 10px !important;
@@ -665,6 +666,51 @@ browser[type=content] > html {
 #tabbrowser-tabs[movingtab] {
 	margin-bottom: 0px !important;
 }
+
+#navigator-toolbox #nav-bar * .toolbarbutton-1:not(#back-button) {
+	margin-right: 5px !important;
+}
+
+#navigator-toolbox #nav-bar * .toolbarbutton-1 {
+	background-color: var(--bg1) !important;
+	opacity: 1 !important;
+	margin-right: 1px !important;
+	max-height: calc(var(--tab-min-height) - 6px) !important;
+	min-height: calc(var(--tab-min-height) - 6px) !important;
+	margin-top: 3px !important;
+	border-radius: 6px !important;
+	border: 1px solid var(--bg3) !important;
+	transition: 100ms !important;
+	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1)
+}
+
+#navigator-toolbox #nav-bar * .toolbarbutton-1:not([disabled]):hover {
+	background-color: var(--bg2) !important;
+}
+
+:root:not([customizing]) .toolbarbutton-1[disabled="true"] image {
+	opacity: 0.5 !important;
+}
+
+#nav-bar-overflow-button {
+	display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
