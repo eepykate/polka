@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-opt="$(echo -e "lock\nsuspend\nreboot\npoweroff" | rofi -dmenu)"
+opt="$(echo -e "lock\nsuspend\nhibernate\nreboot\npoweroff" | rofi -dmenu)"
 case $opt in
-    p*|r*|s*) systemctl $opt;;
+    h*|p*|r*|s*) systemctl $opt;;
     lock) lock;;
 esac
