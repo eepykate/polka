@@ -116,7 +116,7 @@
 #tabs-newtab-button > image {
 	display: none !important;
 }
-
+/*
 .tabbrowser-arrowscrollbox {
 	margin-right: -15px !important;
 }
@@ -605,8 +605,8 @@ browser[type=content] > html {
   border-left: 1px solid var(--bg4) !important;
 }
 
-#tabbrowser-tabs {
-	border-top: 1px solid var(--bg4) !important;
+#nav-bar {
+	border-bottom: 1px solid var(--bg4) !important;
 }
 
 
@@ -622,8 +622,8 @@ browser[type=content] > html {
 }
 
 #urlbar-container {
-	margin-left: 100px !important;
-	margin-right: 100px !important;
+	margin-left: 10vw !important;
+	margin-right: 10vw !important;
 }
 
 #nav-bar {
@@ -692,18 +692,49 @@ browser[type=content] > html {
 	opacity: 0.5 !important;
 }
 
+.titlebar-spacer,
 #nav-bar-overflow-button {
 	display: none !important;
 }
 
+:root:not([gtktiledwindow])[sizemode="maximized"] #nav-bar {
+	margin-top: 9px !important;
+}
+
+.titlebar-min image,
+.titlebar-max image,
+.titlebar-close image {
+	display: none !important;
+}
+
+.titlebar-max::after,
+.titlebar-close::after,
+.titlebar-min::after {
+  content: '';
+	width: 16px !important;
+  height: 16px !important;
+	border-radius: 100%;
+  display: block !important;
+	left: 9px;
+	top: 11px;
+}
+
+.titlebar-close::after {
+  background-color: #f00;
+}
 
 
+.titlebar-min::after {
+  background-color: #ff0;
+}
 
+.titlebar-max::after {
+  background-color: #0f0;
+}
 
-
-
-
-
+:root[gtktiledwindow] #urlbar {
+	margin-top: -7.5px !important;
+}
 
 
 
