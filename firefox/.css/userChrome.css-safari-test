@@ -27,7 +27,7 @@
 
 	--toolbar-bgimage: none !important;
 	--arrowpanel-dimmed: transparent !important;
-	--tab-min-height: 27px !important;
+	--tab-min-height: 27.5px !important;
 	--navbar-min-height: 34px !important;
 	--button-size: 16px	!important;
 }
@@ -171,11 +171,25 @@
 	max-width: calc(var(--tabnavbarmin-height) - calc(var(--navbar-min-height / 2)) + var(--button-size)) !important;
 }
 
+#navigator-toolbox * #tabs-newtab-button image {
+	height:	var(--tab-min-height) !important;
+	max-height:	var(--tab-min-height) !important;
+	min-height:	var(--tab-min-height) !important;
+	width: var(--tab-min-height) !important;
+	max-width:	var(--tab-min-height) !important;
+	min-width:	var(--tab-min-height) !important;
+}
+
+
 #identity-icon,
 .tab-icon-image,
 .tab-close-button {
 	height:	calc(var(--tab-min-height) * 0.6) !important;
 	width:	calc(var(--tab-min-height) * 0.6) !important;
+}
+
+#tabs-newtab-button {
+	margin-left: 5px;
 }
 
 #identity-icon {
