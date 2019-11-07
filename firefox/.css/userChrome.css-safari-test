@@ -112,11 +112,11 @@
 
 /* Hide "go" arrow in urlbar */
 .urlbar-go-button { display: none !important; }
-
+/*
 #tabs-newtab-button > image {
 	display: none !important;
 }
-/*
+
 .tabbrowser-arrowscrollbox {
 	margin-right: -15px !important;
 }
@@ -629,6 +629,11 @@ browser[type=content] > html {
 #nav-bar {
 	padding-left: 10px !important;
 	padding-right: 10px !important;
+}
+
+:root:not([gtktiledwindow]) #nav-bar {
+	padding-left: 100px !important;
+	padding-right: 10px !important;
 
 }
 
@@ -707,29 +712,36 @@ browser[type=content] > html {
 	display: none !important;
 }
 
+.titlebar-min,
+.titlebar-max,
+.titlebar-close {
+	width: 30px !important;
+	max-width: 30px !important;
+	min-width: 30px !important;
+	background-color: transparent !important;
+}
+
+
 .titlebar-max::after,
 .titlebar-close::after,
 .titlebar-min::after {
   content: '';
-	width: 16px !important;
-  height: 16px !important;
+	width: 14px !important;
+  height: 14px !important;
 	border-radius: 100%;
   display: block !important;
-	left: 9px;
-	top: 11px;
 }
 
 .titlebar-close::after {
-  background-color: #f00;
+  background-color: #EE545C;
 }
 
-
 .titlebar-min::after {
-  background-color: #ff0;
+  background-color: #F8C534;
 }
 
 .titlebar-max::after {
-  background-color: #0f0;
+  background-color: #3AF550;
 }
 
 :root[gtktiledwindow] #urlbar {
@@ -737,14 +749,14 @@ browser[type=content] > html {
 }
 
 
-
-
-
-
-
-
-
-
+:root .titlebar-buttonbox-container {
+	-moz-box-ordinal-group: 0 !important;
+	margin-top: calc(var(--tab-min-height) * -1 - 1px);
+	height: var(--tab-min-height) !important;
+	min-height: var(--tab-min-height) !important;
+	max-height: var(--tab-min-height) !important;
+	position: absolute;
+}
 
 
 
