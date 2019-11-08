@@ -207,9 +207,9 @@
 
 
 /* Tabs are de-saturated and transparent when inactive */
-.tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
+/*.tabbrowser-tab:not([selected=true]):not(:hover) .tab-stack .tab-content .tab-icon-image {
 	filter: grayscale(50%) !important;
-}
+}*/
 .tabbrowser-tab {
 	opacity: 0.50 !important;
 }
@@ -219,6 +219,17 @@
 .tabbrowser-tab[selected] {
 	opacity: 1 !important;
 }
+
+
+
+.tab-icon-image:not([pinned]) {
+	display: none;
+}
+.tab-icon-image:not([selected]) {
+	filter: grayscale(100%) brightness(80%) !important;
+}
+
+
 
 
 /* Desaturate and italic pending tabs */
@@ -326,8 +337,6 @@ toolbarbutton#alltabs-button {
 	-moz-box-flex: 1 !important;
 	text-align: center !important;
 }
-
-
 
 
 
