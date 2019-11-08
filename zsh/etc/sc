@@ -2,7 +2,7 @@
 d   mn         /mnt/
 d   me         /media/
 d   fchr       ~/etc/.mozilla/firefox/gauge.gauge/chrome/
-d   dots       ~/git/
+d   dots       ~/opt/dots/
 d   bin        ~/bin/
 d   pics       ~/opt/Screenshots/maim/
 d   recs       ~/opt/1-Recordings/

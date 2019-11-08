@@ -1,6 +1,6 @@
 #     ~/.profile     #
 export XDG_CONFIG_HOME="$HOME/etc"
-export XDG_CACHE_HOME="$HOME/tmp"
+export XDG_CACHE_HOME="$HOME/usr/cache"
 export XDG_DATA_HOME="$HOME/usr"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"     # Qt themes for non-Qt DEs/WMs
