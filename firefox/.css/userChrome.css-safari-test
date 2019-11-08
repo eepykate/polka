@@ -452,9 +452,6 @@ toolbarbutton#alltabs-button {
 }
 
 
-#tabbrowser-tabs[movingtab] {
-	margin-top: -20px !important;
-}
 
 .tab-icon-image:not([pinned]) {
 	display: none;
