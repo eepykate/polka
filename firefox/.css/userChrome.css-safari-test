@@ -428,17 +428,19 @@ toolbarbutton#alltabs-button {
 	background-color: var(--bg3) !important;
 	border-radius: 6px !important;
 	height: 22px;
-	margin-top: 6.5px;
+	margin-top: 6px;
 	border: 1px solid var(--bg4) !important;
 }
 
 #urlbar {
-	min-height: 80% !important;
+	min-height: 90% !important;
+	margin-top: 5px;
 }
 
 #urlbar-input {
 	padding-left: 7px !important;
-	margin-top: 9px !important;
+	margin-top: 7px !important;
+	margin-bottom: 0px !important;
 }
 
 #urlbar-container {
@@ -461,6 +463,7 @@ toolbarbutton#alltabs-button {
 .urlbarView.megabar {
 	background-color: var(--bg2) !important;
 }
+
 
 
 
