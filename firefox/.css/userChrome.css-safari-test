@@ -3,17 +3,28 @@
  *    github.com/GaugeK/dots
  */
 
+
+/*
+	--b0: #1C1B1C;
+	--b1: #201F20;
+	--b2: #2B2A2B;
+	--b3: #333133;
+	--b4: #4E5054;
+	--f2: #999;
+	--f1: #DFE3ED;
+*/
+
 :root {
 	/*	----  */
-	--bg0: #1C1B1C;
-	--bg1: #201F20;
-	--bg2: #2B2A2B;
-	--bg3: #333133;
-	--bg4: #4E5054;
+	--bg0: #151517;
+	--bg1: #18191c;
+	--bg2: #1C1D21;
+	--bg3: #1F2126;
+	--bg4: #262930;
 	--button: #daddee1a;
 	/*	----  */
-	--fg2: #999;
-	--fg1: #DFE3ED;
+	--fg2: #a6a9b7;
+	--fg1: #daddee;
 	--disabled: #696969;
 	/*	----  */
 	--accent: #7baae8;
@@ -417,7 +428,7 @@ toolbarbutton#alltabs-button {
 	background-color: var(--bg3) !important;
 	border-radius: 6px !important;
 	height: 22px;
-	margin-top: 5px;
+	margin-top: 6.5px;
 	border: 1px solid var(--bg4) !important;
 }
 
@@ -427,7 +438,7 @@ toolbarbutton#alltabs-button {
 
 #urlbar-input {
 	padding-left: 7px !important;
-	margin-top: 5px !important;
+	margin-top: 9px !important;
 }
 
 #urlbar-container {
