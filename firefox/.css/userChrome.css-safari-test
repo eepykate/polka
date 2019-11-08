@@ -6,10 +6,10 @@
 :root {
 	/*	----  */
 	--bg0: #151517;
-	--bg1: #2D2D30;
-	--bg2: #39393B;
-	--bg3: #4B4B4D;
-	--bg4: #606066;
+	--bg1: #201F20;
+	--bg2: #2B2A2B;
+	--bg3: #333133;
+	--bg4: #4E5054;
 	--button: #daddee1a;
 	/*	----  */
 	--fg2: #999;
@@ -413,7 +413,7 @@ toolbarbutton#alltabs-button {
 }
 
 
-#urlbar-background {
+#nav-bar * #urlbar-background {
 	background-color: var(--bg3) !important;
 	border-radius: 6px !important;
 	height: 22px;
