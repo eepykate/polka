@@ -156,6 +156,10 @@ a svg.homeIcon-tEMBK1 path {
 }
 
 
+/*.chat-3bRxxu {
+	margin-left: 35px !important;
+}
+
 
 /*.channels-Ie2l6A:not(:hover) * .icon-1_QxNX,
 .channels-Ie2l6A:not(:hover) * .icon-WnO6o2 {
@@ -291,8 +295,9 @@ pre,
 	background-color: var(--bg3) !important;
 }
 
-
-
+.markup-2BOw-j {
+	max-width: 700px !important;
+}
 
 
 
