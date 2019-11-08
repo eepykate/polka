@@ -232,10 +232,7 @@
 	margin-right: 0 !important;
 }
 
-
-
-
-/* hidden newtab button in padding */
+/* Hidden newtab button in padding */
 /*
 #tabs-newtab-button > image {
 	display: none !important;
@@ -253,6 +250,8 @@
 	width: 10px !important;
 	max-width: 15px !important;
 }
+
+
 
 
 
@@ -380,12 +379,9 @@ toolbarbutton#alltabs-button {
 	animation: none !important; 
 }
 
-#urlbar-input-container{  
-	padding: 0 !important; height: 100% !important;
+#urlbar-input-container {  
+	padding: 0 !important; 
 }
-
-
-
 
 
 
@@ -399,47 +395,30 @@ toolbarbutton#alltabs-button {
   -moz-box-ordinal-group: 2;
 }
 
-.titlebar-placeholder,
-#TabsToolbar .titlebar-spacer {
-  display: none;
-}
-
 /* Also hide the toolbox bottom border which isn't at bottom with this setup */
 #navigator-toolbox::after {
   display: none !important;
 }
 
-@media (-moz-gtk-csd-close-button) {
-  .titlebar-button {
-    -moz-box-orient: vertical;
-  }
-}
-
 .tabbrowser-tab:not([first-visible-tab]) {
-  border-left: 1px solid var(--bg4) !important;
+	border-left: 1px solid var(--bg4) !important;
 }
 
 #nav-bar {
 	border-bottom: 1px solid var(--bg4) !important;
 }
 
-
-#nav-bar * #urlbar-background {
+#nav-bar * #urlbar-input-container {
 	background-color: var(--bg3) !important;
 	border-radius: 6px !important;
-	height: 22px;
-	margin-top: 6px;
+	height: calc(var(--navbar-min-height) * 0.6) !important;
+	margin-top: calc(var(--navbar-min-height) * 0.05) !important;
 	border: 1px solid var(--bg4) !important;
-}
-
-#urlbar {
-	min-height: 90% !important;
-	margin-top: 5px;
 }
 
 #urlbar-input {
 	padding-left: 7px !important;
-	margin-top: 7px !important;
+	margin-top: -1px !important;
 	margin-bottom: 0px !important;
 }
 
@@ -452,13 +431,6 @@ toolbarbutton#alltabs-button {
 	padding-left: 10px !important;
 	padding-right: 10px !important;
 }
-
-:root:not([gtktiledwindow]) #nav-bar {
-	padding-left: 100px !important;
-	padding-right: 10px !important;
-
-}
-
 
 .urlbarView.megabar {
 	background-color: var(--bg2) !important;
@@ -525,87 +497,6 @@ toolbarbutton#alltabs-button {
 :root:not([gtktiledwindow])[sizemode="maximized"] #nav-bar {
 	margin-top: 9px !important;
 }
-
-#close-button image,
-#minimize-button image,
-#restore-button image,
-.titlebar-min image,
-.titlebar-max image,
-.titlebar-close image {
-	display: none !important;
-}
-
-#close-button::after,
-#minimize-button::after,
-#restore-button::after,
-.titlebar-min,
-.titlebar-max,
-.titlebar-close {
-	width: 30px !important;
-	max-width: 30px !important;
-	min-width: 30px !important;
-	background-color: transparent;
-}
-
-#close-button::after,
-#minimize-button::after,
-#restore-button::after,
-.titlebar-max::after,
-.titlebar-close::after,
-.titlebar-min::after {
-  content: '';
-	width: 14px !important;
-	max-width: 14px !important;
-	min-width: 14px !important;
-  height: 14px !important;
-	border-radius: 100%;
-  display: block !important;
-}
-
-#close-button::after,
-.titlebar-close::after {
-  background-color: #EE545C;
-}
-
-#minimize-button::after,
-.titlebar-min::after {
-  background-color: #F8C534;
-}
-
-#restore-button::after,
-.titlebar-max::after {
-  background-color: #3AF550;
-}
-
-:root[gtktiledwindow] #urlbar {
-	margin-top: -7.5px !important;
-}
-
-#window-controls,
-.titlebar-buttonbox-container {
-	-moz-box-ordinal-group: 0 !important;
-	margin-top: calc(var(--navbar-min-height) * -1 - 1px);
-	height: var(--navbar-min-height) !important;
-	min-height: var(--navbar-min-height) !important;
-	max-height: var(--navbar-min-height) !important;
-	position: absolute;
-	z-index: 500 !important;
-}
-
-:root[sizemode="fullscreen"] #window-controls {
-	display: block !important;
-}
-
-:root[sizemode="fullscreen"] #nav-bar {
-	padding-left: 110px !important;
-}
-
-:root[sizemode="fullscreen"] #window-controls {
-	margin-top: calc(var(--navbar-min-height) * -1 - 3px);
-	-moz-box-ordinal-group: 0 !important;
-}
-
-
 
 
 
@@ -714,7 +605,7 @@ toolbarbutton#alltabs-button {
 	--autocomplete-popup-background: var(--bg2) !important;
 	--autocomplete-popup-highlight-color: var(--fg1) !important;
 	--autocomplete-popup-highlight-background: var(--button) !important;
-	--lwt-toolbar-field-background-color: var(--bg3) !important;
+	--lwt-toolbar-field-background-color: transparent !important;
 	--panel-separator-color: transparent !important;
 
 	/* Sidebar */
