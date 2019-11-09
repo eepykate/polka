@@ -119,7 +119,7 @@ putgitrepo "$dots" "/home/$name/opt/dots"
 sudo -u $name bash "/home/$name/opt/dots/deploy"
 
 
-# Most important command! Get rid of the beep!
+# Get rid of the beep!
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
@@ -274,42 +274,35 @@ echo "Downloading syntax highlighting plugin for zsh"
 git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fast-syntax-highlighting
 
 # Change default shell to zsh
-if [[ -n $(grep $name /etc/passwd | grep bash) ]]; then
-	echo "Changing default shell from bash to zsh"
-	sed -i "/$name/s/\/bin\/bash/\/usr\/bin\/zsh/" /etc/passwd
-fi
+chsh -s /bin/zsh $name
 
+mkdir -p /home/$name/opt/git
 
 echo "Installing st"
-# (re)install ST
-git clone https://gitlab.com/gaugek/st.git /tmp/st &&
-cd /tmp/st &&
+git clone https://github.com/gaugek/st.git /home/$name/opt/git/st &&
+cd /home/$name/opt/git/st &&
 make clean install &>/dev/null
-cd /tmp;
+
+echo "Installing stmessage to live-reload st"
+git clone https://github.com/PaxPlay/thememenu /home/$name/opt/git/thememenu
+cd /home/$name/opt/git/thememenu
+make; cp stmessage /usr/local/bin/
 
 echo "Installing tabbed"
-# (re)install tabbed
-git clone https://gitlab.com/gaugek/tabbed.git /tmp/tabbed &&
-cd /tmp/tabbed &&
+git clone https://gitlab.com/gaugek/tabbed.git /home/$name/opt/git/tabbed &&
+cd /home/$name/opt/git//tabbed &&
 make clean install &>/dev/null
-cd /tmp
 
 echo "Installing dmenu"
-# (re)install dmenu
-git clone https://gitlab.com/gaugek/dmenu.git /tmp/dmenu &&
-cd /tmp/dmenu &&
+git clone https://gitlab.com/gaugek/dmenu.git /home/$name/opt/git/dmenu &&
+cd /home/$name/opt/git/dmenu &&
 make clean install &>/dev/null
-cd /tmp
 
 echo "Installing wmutils"
-# install wmutils
-git clone https://github.com/wmutils/core /tmp/wmutils;
-	cd /tmp/wmutils; make clean install &>/dev/null
-
-mkdir -p /home/$name/Stuff/Screenshots/scrot/
+git clone https://github.com/wmutils/core /home/$name/opt/git/wmutils;
+	cd /home/$name/opt/git/wmutils; make clean install &>/dev/null
 
 echo "Adding mpris support to mpv"
-# mpris support in mpv
 mkdir -p /etc/mpv/scripts
 cd /tmp
 git clone https://github.com/hoyon/mpv-mpris
@@ -318,26 +311,23 @@ make &>/dev/null
 cp mpris.so /etc/mpv/scripts/
 
 echo "Adding scripts to send a notification when a usb is removed/inserted"
-# Send a notification when a USB is un/plugged, with the detected USBs and a bit of information
 mkdir -p /usr/local/bin /usr/local/sounds;
-curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove -o /usr/local/bin/usb-remove;
-curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-insert -o /usr/local/bin/usb-insert;
-curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb.rules -o /etc/udev/rules.d/usb.rules;
-curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
-curl -L https://gitlab.com/GaugeK/dots/raw/master/bin/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove -o /usr/local/bin/usb-remove;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert -o /usr/local/bin/usb-insert;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb.rules -o /etc/udev/rules.d/usb.rules;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
 
 udevadm control --reload-rules;
 
 
 
 echo "Installing vim-plug for neovim"
-# vim-plug for neovim
 curl -fLo /home/$name/usr/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 echo "Changing a few things in journald to possibly speed up boot time"
-# Changes to systemd journald to speed up boot time
 sed -i \
 	-e 's/^#Storage=.*/Storage=auto/' \
 	-e 's/^#SystemMaxFiles=.*/SystemMaxFiles=5/' \
