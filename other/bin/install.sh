@@ -113,9 +113,10 @@ done
 echo -e "installing dotfiles"
 
 # Install the dotfiles in the user's home directory
-putgitrepo "$dots" "/home/$name/git"
+mkdir -p "/home/$name/opt/"
+putgitrepo "$dots" "/home/$name/opt/dots"
 
-sudo -u $name bash "/home/$name/git/deploy"
+sudo -u $name bash "/home/$name/opt/dots/deploy"
 
 
 # Most important command! Get rid of the beep!
