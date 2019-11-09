@@ -190,15 +190,6 @@ sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CON
 [[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
 	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
-sed --follow-symlinks -i \
-	-e "s/ac=\".*\"/ac=\"#$accent\"/" \
-	-e "s/fa=\".*\"/fa=\"#$false\"/" \
-	${XDG_CONFIG_HOME:-~/.config}/zsh/.zshrc
-sed --follow-symlinks -i \
-	-e "s/ac=\".*\"/ac=\"#$accent\"/" \
-	-e "s/fa=\".*\"/fa=\"#$false\"/" \
-	~/bin/rc
-
 # Reload terminal colours using Xresources
 rc
 

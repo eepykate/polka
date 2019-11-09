@@ -41,6 +41,7 @@ bindkey '^[[B' down-line-or-beginning-search
 #        ---
 setopt auto_menu         # Show completion menu on successive tab press
 setopt always_to_end     # Move cursor to end of word if completed in-word
+unsetopt menu_complete   # Do not autoselect the first completion entry
 setopt complete_in_word
 ZSH_CACHE_DIR=$HOME/.cache/zsh
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -64,11 +65,6 @@ PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.>>)%{\e[0m%} '
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
-unsetopt menu_complete     # Do not autoselect the first completion entry
 source ${XDG_CONFIG_HOME:-~/.config}/aliases   # Aliases
-#ac="#7baae8"
-#fa="#c488ec"
-#echo -ne "\033]4;16;$ac\007"
-#echo -ne "\033]4;17;$fa\007"
 
 # vim: ft=sh
