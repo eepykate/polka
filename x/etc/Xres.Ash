@@ -34,3 +34,7 @@
 ! white
 *color7:       #888888
 *color15:      #bbbbbb
+
+! accent
+*.color16:     #a8afd7
+*.color17:     #dd908d

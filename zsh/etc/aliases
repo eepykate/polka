@@ -44,10 +44,12 @@ alias ls="ls -Fh --group-directories-first --color=auto"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
+reset_cursor() { echo -en "\e[4 q" }
+
 mc() { mkdir -p "$1" && cd "$1" }
 bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk" }
-tc() { transmission-remote-cli; echo -en "\e[4 q" }
-v() { nvim $@; echo -en "\e[4 q" }
+tc() { transmission-remote-cli; reset_cursor }
+v() { nvim $@; reset_cursor }
 
 hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2} }
 rgbtohex() { printf "%02X%02X%02X\n" $@ }
