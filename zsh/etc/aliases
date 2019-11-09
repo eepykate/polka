@@ -1,14 +1,15 @@
-#   ┏━━━━━━━━━┓
-#   ┃ aliases ┃
-#   ┗━━━━━━━━━┛
+#     ---
+#   aliases
+#     ---
 
-alias s="dirs"
 alias rm="rm -i"
 alias SU="sudo zsh"
 alias fuck="pkill -9"
 alias ss="sudo systemctl"
 
+
 # Git
+
 alias ga="git add"
 alias gp="git push"
 alias gs="git status"
@@ -19,7 +20,9 @@ alias gcm="git commit -m"
 alias gca="git commit --amend"
 alias gl="git log --all --decorate --oneline --graph"
 
+
 # pacman/yay
+
 alias insa="yay -S"
 alias src="yay -Ss"
 alias p="sudo pacman"
@@ -30,110 +33,40 @@ alias upd="sudo pacman -Syu"
 
 
 
-alias f="feh --no-fehbg"
 alias q="qview"
 alias kills="kill -9 -1"
 alias t="thunar . & disown"
 alias grep="grep --color=auto"
 alias td="transmission-daemon"
 alias rs="pkill -SIGUSR1 sxhkd"
-alias ls="ls -Fh --group-directories-first --color=auto"
 alias ci="xclip -selection clipboard -t image/png"
-alias cv="xclip -selection clipboard -t video/mp4"
+alias ls="ls -Fh --group-directories-first --color=auto"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
-title() {  print -n -r $'\e]0;'$ssh_info$1$'\a'  }
-title "$(dirs)"
-chpwd() { title "$(dirs)" }
-precmd() { title "$(dirs)" }
-preexec() { title "$2"; epoch="$(date +%s%3N)" }
+mc() { mkdir -p "$1" && cd "$1" }
+bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk" }
+tc() { transmission-remote-cli; echo -en "\e[4 q" }
+v() { nvim $@; echo -en "\e[4 q" }
 
+hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2} }
+rgbtohex() { printf "%02X%02X%02X\n" $@ }
 
-reset_cursor() {
-	echo -en "\e[4 q"
-}
-tc() {
-	transmission-remote-cli; reset_cursor
-}
-v() {
-	nvim $@; reset_cursor
-}
+source ${XDG_CONFIG_HOME:-~/.config}/sc.sh
 
-se() {
-	du -a $HOME/bin/ $HOME/git | awk '{print $2}' | fzf | xargs -r $EDITOR;
-}
-cf() {
-	cp -v $@ "$(awk '/d/ {print $3}' ~/.sc | fzf | sed "s|~|$HOME|")";
-}
-
-# ls on cd
-#preexec() { LS_USED=$(echo $1|cut -d' ' -f1) }
-#chpwd() {
-#     ls --color=auto --group-directories-first -hF;
-#}
-
-hextorgb() {
-	hex="$1"
-	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
-}
-
-rgbtohex() {
-	printf "%02X%02X%02X\n" $@
-}
-
-function uli() {
-	local dir="$HOME/opt/Screenshots/maim"
-	local image="$(ls -1t $dir --ignore old | head -1)"
-	#xclip -selection clipboard -t image/png $dir/$image
-	local link="$(curl -s -F"file=@$dir/$image" 0x0.st)"
-	[[ -z $link ]] && notify-send "Upload failed" && return 1
-	echo "$link" | xclip -selection clipboard
-	echo "$link"
-	notify-send "Image uploaded to 0x0.st" "$link copied to clipboard"
-}
 
 function cli() {
 	local image="$(ls -1t $HOME/opt/Screenshots/maim/ --ignore old --ignore GPUCache | head -1)"
 	xclip -selection clipboard -t image/png $HOME/opt/Screenshots/maim/$image
 }
 
-function da() {
-	local image="$(ls -1t $HOME/opt/Screenshots/maim/ --ignore old | head -1)"
-	cp $HOME/opt/Screenshots/maim/$image $HOME/.aaaaa.png
-}
 
-function clv() {
-	local video="$(ls -1t $HOME/Videos/recordings | head -1)"
-	xclip -selection clipboard -t video/mp4 $HOME/Videos/recordings/$video
-}
 
-source ${XDG_CONFIG_HOME:-~/.config}/sc.sh  # Add directory / file shortcuts to shell
 
-e() {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)   tar xjvf $1 ;;
-			*.tar.gz)    tar xzvf $1 ;;
-			*.tar.xz)    tar xJvf $1 ;;
-			*.bz2)       bunzip2 $1 ;;
-			*.rar)       unrar xv $1 ;;
-			*.gz)        gunzip $1 ;;
-			*.tar)       tar xvf $1 ;;
-			*.tbz2)      tar xvjf $1 ;;
-			*.tgz)       tar xzvf $1 ;;
-			*.zip)       unzip $1 ;;
-			*.7z)        7z $1 ;;
-			*.xz)        xz -vd $1 ;;
-			*)           echo "'$1' cannot be extracted via extract()" ;;
-		esac
-	else
-		echo "'$1' is not a valid file"
-	fi
-}
+
+# tar
 
 c() {
-
 	unset opts
 	exclude=""
 	opts=`getopt -o x: --long exclude: -- "$@"`
@@ -150,74 +83,56 @@ c() {
 	tar -czvf "${1##*/}_$(date +%Y-%m-%d_%H-%M-%S).tar.gz" $(printf " $exclude") $1
 }
 
-bk() {
-	cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"
+e() {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   tar xjvf $1;;
+			*.tar.gz)    tar xzvf $1;;
+			*.tar.xz)    tar xJvf $1;;
+			*.bz2)       bunzip2 $1;;
+			*.rar)       unrar xv $1;;
+			*.gz)        gunzip $1;;
+			*.tar)       tar xvf $1;;
+			*.tbz2)      tar xvjf $1;;
+			*.tgz)       tar xzvf $1;;
+			*.zip)       unzip $1;;
+			*.7z)        7z $1;;
+			*.xz)        xz -vd $1;;
+			*)           echo "The filetype '.${1/*.}' is not supported";;
+		esac
+	else
+		echo "'$1' is not a valid file"
+	fi
 }
 
-mc() {
-	mkdir -p "$1"; cd "$1";
+
+
+
+# ffmpeg
+
+cgif() {
+	local i=( $(ffmpeg -i $1 2>&1 | grep -io "[1-9][0-9]*x" | sed 's/[a-z]//g') )
+
+	local f="fps=30,scale=$i:-1:flags=lanczos"
+
+	ffmpeg -i "$1" -vf "$f,palettegen" -y "/tmp/palette.png" -loglevel error
+	ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "$f [x]; [x][1:v] paletteuse" \
+		-y "${1%.*}.gif" -loglevel error
 }
 
-function cgif() {
-	rm -f /tmp/palette.png /tmp/recording.mp4 /tmp/encoded.gif
-	#local video="$(ls -1t $HOME/Videos/recordings | head -1)"
-	video="$1"
-	cp $video /tmp/recording.mp4
-	#cp $HOME/Videos/recordings/$video /tmp/recording.mp4
 
-	local frames="$(ffmpeg -i /tmp/recording.mp4 2>&1 | grep -o ".. fps" | grep -o "^..")"
 
-  ffmpeg -i "/tmp/recording.mp4" -vf palettegen "/tmp/palette.png"
-  ffmpeg -i "/tmp/recording.mp4" -i "/tmp/palette.png" -filter_complex paletteuse -r $frames "/tmp/encoded.gif"
-}
 
-colours() {
-	printf ' '
-	for c in {0..7}; do printf "\e[9${c}m*\e[0m "; done
-	printf "\n"
-}
 
+# fun
 
 lines() {
 	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -ne "\e[3$(( $RANDOM % 8 ))m╱" || echo -ne "\e[3$(( $RANDOM % 8 ))m╲"; }
 }
+
 lines2() {
 	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -n ╱ || echo -n ╲; }
 }
-
-
-it() {
-	sudo cp ~/git/.themes/* /usr/share/themes/ -r
-	ln -s ~/git/etc/* ~/etc/ -f
-	cp ~/git/etc/.mozilla/firefox/gauge.gauge/chrome/* ~/etc/.mozilla/firefox/gauge.gauge/chrome/ -f
-	ln -s ~/git/bin/* ~/bin/ -f
-	cp ~/git/usr/icons/* ~/usr/icons/ -rf
-}
-
-hib() {
-	lock &
-	sleep 1.5;
-	systemctl hibernate;
-}
-
-
-rose() {
-	echo -e "\e[31m    _,--._.-,
-   /\\_r-,\\_ )
-.-.) _;=\'_/ (.;
- \\ \\\'     \\/S )
-  L.\'-. _.'|-'
- <_\`-\'\\'_.'/
-   \`\'-._(\e[0m\e[32m \\
-    ___   \\\\,      ___
-    \\ .\'-. \\\\   .-'_. /
-     \'._' '.\\\\/.-'_.'
-        \'--\`\`\\('--'
-              \\\\
-              \`\\\\,
-                \\|"
-}
-
 
 col() {
 	printf '\n     '
@@ -231,14 +146,6 @@ blocks() {
 	echo
 	for i in {0..7}; do echo -n "\e[10${i}m  \e[0m ";	done
 	echo -e "\n"
-}
-
-col2() {
-	echo -e "\n\n\n"
-	echo "    \e[37m*\e[37m*\e[37m*\e[37m*\e[37m*"
-	echo "    \e[37m*\e[37m \e[38;05;16m*\e[97m \e[97m*"
-	echo "    \e[97m*\e[97m*\e[97m*\e[97m*\e[97m*"
-	echo -e "\n\n\n"
 }
 
 notthing() {
