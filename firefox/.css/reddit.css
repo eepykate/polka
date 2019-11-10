@@ -957,9 +957,6 @@ body:not(.search-page) .menuarea {
  border-top:1px solid #e1e1e1;
  border-bottom:1px solid #e1e1e1
 }
-.combined-search-page .searchpane {
- background:#444
-}
 .combined-search-page #search input[type="text"] {
  max-width:none;
 }
@@ -3713,6 +3710,7 @@ html[lang="dm"] .RES-keyNav-activeElement .md-container {
 	margin-top: -165px !important;
 }
 
+.search-result-group-header,
 #keyHelp,
 .RESNotification > *,
 .RESNotification > * > *,
@@ -3774,6 +3772,8 @@ div.thing .entry, */
 	background-color: var(--bg2) !important
 }
 
+.search-result,
+.search-result-group-header,
 .entry, 
 .side,
 .sitetable div.thing.comment,
@@ -3828,6 +3828,7 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 	color: var(--fg1) !important;
 }
 
+.content .searchpane.raisedbox,
 .sitetable > div.thing.comment.res-selected > .entry,
 .sitetable > div.thing.comment.res-selected > .entry .md-container
 {
@@ -4149,3 +4150,7 @@ body:not(.res-nightmode) * .md * a:visited {
 .flairrichtext {
 	height: 16px !important;
 }
+
+
+
+
