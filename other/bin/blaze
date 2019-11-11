@@ -1,39 +1,60 @@
 #!/usr/bin/env bash
 #
 # Source:
-#   https://gitlab.com/GaugeK/dots/
+#   https://github.com/GaugeK/dots/
 #
 
+[[ -z "$DISPLAY" ]] &&
+	echo "Can't open display; exiting" && exit
+
 tempdir="/tmp/blaze"
-dir="$HOME/opt/1-Recordings"
-name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')" # Needs .mp4 after this is listed in the actual recording part
-#name="Video-$(( $(ls $dir/Video* | wc -l) + 1 ))"
+[[ -z "$BLAZE_DIR" ]] &&
+	BLAZE_DIR="$HOME/opt/1-Recordings"
 
-[[   -d $dir   ]] || mkdir -p $dir
-[[ -d $tempdir ]] || mkdir -p $tempdir
+[[ -z "$BLAZE_FILENAME" ]] &&
+	BLAZE_FILENAME="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
 
-opts=$(getopt -o d:sncp:bShB: --long display:,save,no-nvenc,noconfirm,preset:,blaze,save-blaze,help,bitrate: -- "$@")
-eval set -- "$opts"
+output="$BLAZE_DIR/$BLAZE_FILENAME"
+
+[[ -d $BLAZE_DIR ]] || mkdir -p $blaze_dir
+[[  -d $tempdir  ]] || mkdir -p  $tempdir
 
 help="
-Gauge Krahe's recording script
-  https://gitlab.com/GaugeK/dots/
+GaugeK's recording script
+  \e[34mhttps://github.com/GaugeK/dots/\e[0m
 
+Variables:
+  \e[34mBLAZE_FILENAME\e[0m          Changes the output filename (Make sure it's not a
+                          static filename or else it will get overridden
+                          every time you start a new recording)
+  \e[34mBLAZE_DIR\e[0m               Changes the output directory
+
+
+\e[37m[1]\e[0m = Requires one argument, if not stated no arguments are accepted
 Options:
-  -s / --save:             Save normal recording
-	-b / --blaze:            Use blaze ( Record in background, only keep the last <X> minutes )
-  -S / --save-blaze:       Save blaze recording
-  -c / --noconfirm:        Don't ask if you want to start the recording
-	-B / --bitrate:          Force bitrate (In megabytes)
-  -h / --help:             Print this
-  -n / --no-nvenc:         Don't use nvenc ( Auto-detected, only do this if your nvidia card doesn't support it )
-  -p / --preset:           Use recording preset <X> ( Stored in ~/.config/blaze-preset-<X> )
-
+  \e[34m-h / --help\e[0m             Display what you are reading now
+  \e[34m-e / --examples\e[0m         Show usage examples
+  \e[34m-s / --save\e[0m             Save normal recording
+  \e[34m-b / --blaze\e[0m            Use blaze (Record in background,
+                          only keep the last <X> minutes)
+  \e[34m-S / --save-blaze\e[0m       Save blaze recording
+  \e[34m-c / --noconfirm\e[0m        Don't ask if you want to start the recording
+  \e[34m-B / --bitrate\e[0m     \e[37m[1]\e[0m  Force bitrate (In megabytes)
+  \e[34m-h / --help\e[0m             Print this
+  \e[34m-n / --no-nvenc\e[0m         Don't use nvenc (Nvidia cards are auto-detected,
+                          only do this if your nvidia card doesn't
+                          support nvenc)
+  \e[34m-p / --preset\e[0m      \e[37m[1]\e[0m  Use recording preset <X>
+                          (Stored in ~/.config/blaze-preset-<X>)
+  \e[34m-o / --output\e[0m      \e[37m[1]\e[0m  Force output file
+"
+examples="
 Examples:
    \e[37m# Start normal recording and save to / load from preset 1\e[0m
   $ blaze -p 1
-   \e[37m# Same as last one, but don't ask if you want to start\e[0m
-  $ blaze -c -p 1
+   \e[37m# Same as last one, but don't ask if you want to start
+   \e[37m# and output to blaze_video.mp4\e[0m
+  $ blaze -p 1 -c -o blaze_video
    \e[37m# Start normal recording, but ask for every option\e[0m
   $ blaze
    \e[37m# Save normal recording\e[0m
@@ -43,6 +64,10 @@ Examples:
    \e[37m# Save blaze recording\e[0m
   $ blaze -S
 "
+
+opts=$(getopt -o ed:sncp:bShB:t:o: --long example,display:,save,no-nvenc,noconfirm,preset:,blaze,save-blaze,help,bitrate:,trim:,output: -- "$@")
+eval set -- "$opts"
+
 
 while true; do
 	case "$1" in
@@ -56,6 +81,8 @@ while true; do
 		-S|--save-blaze) SoR="save"; blaze="blaze"; shift;;
 		-b|--blaze) blaze="blaze"; shift;;
 		-p|--preset) preset="$2"; shift 2;;
+		-o|--output) output="$2"; shift 2;;
+		-e|--example) echo -e "$examples"; exit;;
 		--) shift; break;;
 	esac
 done
@@ -67,7 +94,7 @@ if [[ $SoR = save ]]; then
 		name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
 		ls -R1t $tempdir/*.mp4 | head -2 | sed -e "s/^/file \'/g" -e "s/$/\'/g" > /tmp/blaze_inputs.txt
 
-		ffmpeg -f concat -safe 0 -i /tmp/blaze_inputs.txt -c copy $dir/$name.mp4 -loglevel error
+		ffmpeg -f concat -safe 0 -i /tmp/blaze_inputs.txt -c copy $BLAZE_DIR/$name.mp4 -loglevel error
 
 		notify-send -t 4000 "Recording saved, you might want to run the script again"
 		exit
@@ -161,7 +188,7 @@ if [[ $RtR = Yes ]]; then
 			ffmpeg -y $(printf " $audio") \
 				-f x11grab -draw_mouse 1 \
 				-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
-				-pix_fmt yuv444 p-t $trimm \
+				-pix_fmt yuv420p -t $trimm \
 				-qscale 0 $(printf " $nvenc") \
 				/tmp/blaze/$curname.mp4 -loglevel error
 
@@ -189,6 +216,6 @@ if [[ $RtR = Yes ]]; then
 			-pix_fmt yuv420p \
 			$(printf " $bitrate")\
 			-q:v 0 $(printf " $nvenc") \
-			"${dir}/${name}".mp4 -loglevel error
+			"$output".mp4 -loglevel error
 	fi
 fi
