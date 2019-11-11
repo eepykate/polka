@@ -35,11 +35,9 @@ Options:
   \e[34m-h / --help\e[0m             Display what you are reading now
   \e[34m-e / --examples\e[0m         Show usage examples
   \e[34m-s / --save\e[0m             Save normal recording
-  \e[34m-b / --blaze\e[0m            Use blaze (Record in background,
                           only keep the last <X> minutes)
-  \e[34m-S / --save-blaze\e[0m       Save blaze recording
   \e[34m-c / --noconfirm\e[0m        Don't ask if you want to start the recording
-  \e[34m-B / --bitrate\e[0m     \e[37m[1]\e[0m  Force bitrate (In megabytes)
+  \e[34m-b / --bitrate\e[0m     \e[37m[1]\e[0m  Force bitrate (In megabytes)
   \e[34m-h / --help\e[0m             Print this
   \e[34m-n / --no-nvenc\e[0m         Don't use nvenc (Nvidia cards are auto-detected,
                           only do this if your nvidia card doesn't
@@ -50,59 +48,42 @@ Options:
 "
 examples="
 Examples:
-   \e[37m# Start normal recording and save to / load from preset 1\e[0m
+   \e[37m# Start recording and save to / load from preset 1\e[0m
   $ blaze -p 1
    \e[37m# Same as last one, but don't ask if you want to start
    \e[37m# and output to blaze_video.mp4\e[0m
   $ blaze -p 1 -c -o blaze_video
-   \e[37m# Start normal recording, but ask for every option\e[0m
+   \e[37m# Start recording, but ask for every option\e[0m
   $ blaze
-   \e[37m# Save normal recording\e[0m
+   \e[37m# Save recording\e[0m
   $ blaze -s
-   \e[37m# Start blaze recording and save to / load from preset b\e[0m
-  $ blaze -b -p b
-   \e[37m# Save blaze recording\e[0m
-  $ blaze -S
 "
 
-opts=$(getopt -o ed:sncp:bShB:t:o: --long example,display:,save,no-nvenc,noconfirm,preset:,blaze,save-blaze,help,bitrate:,trim:,output: -- "$@")
+opts=$(getopt -o ed:sncp:hb:o: --long example,display:,save,no-nvenc,noconfirm,preset:,help,bitrate:,output: -- "$@")
 eval set -- "$opts"
 
 
 while true; do
 	case "$1" in
-		-d|--display) [[ -n $2 ]] && DoM="Display" && display_select="$2"; shift 2;;
-		-h|--help) echo -e "$help"; exit ;;
+		-d|--display) DoM="Display"; display_select="$2"; shift 2;;
+		-h|--help) echo -e "$help"; exit;;
+		-e|--example) echo -e "$examples"; exit;;
 		-n|--no-nvenc) nvenc=" "; shift 1;;
 		-c|--noconfirm) RtR="Yes"; shift 1;;
 		-h|--help) echo -e "$help"; shift;;
 		-s|--save) SoR="save"; shift;;
-		-B|--bitrate) bitrate="-b:v ${2}M"; shift 2;;
-		-S|--save-blaze) SoR="save"; blaze="blaze"; shift;;
-		-b|--blaze) blaze="blaze"; shift;;
+		-b|--bitrate) bitrate="-b:v ${2}M"; shift 2;;
 		-p|--preset) preset="$2"; shift 2;;
 		-o|--output) output="$2"; shift 2;;
-		-e|--example) echo -e "$examples"; exit;;
 		--) shift; break;;
 	esac
 done
 
 # Save the recording
 if [[ $SoR = save ]]; then
-	if [[ $blaze = blaze ]]; then
-		pkill ffmpeg
-		name="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
-		ls -R1t $tempdir/*.mp4 | head -2 | sed -e "s/^/file \'/g" -e "s/$/\'/g" > /tmp/blaze_inputs.txt
-
-		ffmpeg -f concat -safe 0 -i /tmp/blaze_inputs.txt -c copy $BLAZE_DIR/$name.mp4 -loglevel error
-
-		notify-send -t 4000 "Recording saved, you might want to run the script again"
-		exit
-	else
-		pkill ffmpeg &&
-		notify-send -t 2000 "recording stopped"
-		exit
-	fi
+	pkill ffmpeg &&
+	notify-send -t 2000 "recording stopped"
+	exit
 fi
 
 
@@ -147,11 +128,6 @@ fi
 # Ask the user if they want desktop audio and what framerate
 [[ -z $audio ]] && audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
 [[ -z $rate ]] && rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
-# Get the amount to save if running in blaze mode
-[[ $blaze = blaze ]] &&
-	[[ -z $trim ]] &&
-	trim="$(echo -e "2\n5" | dmenu -i -p "Min amount of minutes to save")"
-
 # Save preset
 [[ -n $preset ]] && [[ $DoM = Display ]] &&
 echo -e "
@@ -160,10 +136,6 @@ display_select=\"$display_select\"
 rate=\"$rate\"
 audio=\"$audio\"
 " > ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset &&
-[[ $blaze = blaze ]] && echo -e "trim=\"$trim\"\nblaze=\"$blaze\"" >> ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset
-
-# Convert the seconds of trim to minutes
-[[ -n $trim ]] && trimm="$(( $trim * 60 ))"
 
 # add actual audio command to $audio if yes
 if [[ $audio = yes ]]; then
@@ -180,42 +152,11 @@ fi
 
 if [[ $RtR = Yes ]]; then
 	notify-send -t 2000 "recording started"
-	if [[ $blaze = blaze ]]; then
-		while true; do
-			curname="snippet-$(date '+%Y-%m-%d_%H-%M-%S')"
-
-			# Record X minutes
-			ffmpeg -y $(printf " $audio") \
-				-f x11grab -draw_mouse 1 \
-				-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
-				-pix_fmt yuv420p -t $trimm \
-				-qscale 0 $(printf " $nvenc") \
-				/tmp/blaze/$curname.mp4 -loglevel error
-
-			# Stop recording if you press ^c
-			[[ $? -gt 128 ]] && break;
-
-			latest="$(ls -R1t $tempdir/*.mp4 | head -2)"
-			lastone="$(echo $latest | sed '1!d')"
-			lasttwo="$(echo $latest | sed '2!d')"
-
-			# Delete every file in $tempdir but the 2 most recent ones
-			for file in "$(printf $tempdir/*.mp4)"; do
-				if [[ $file != $lastone ]] && [[ $file != $laattwo ]]; then
-					rm $file
-				fi
-			done
-		done
-
-	else
-
-		# The actual command
-		ffmpeg -y $(printf " $audio") \
-			-f x11grab -draw_mouse 1 \
-			-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
-			-pix_fmt yuv420p \
-			$(printf " $bitrate")\
-			-q:v 0 $(printf " $nvenc") \
-			"$output".mp4 -loglevel error
-	fi
+	ffmpeg -y $(printf " $audio") \
+		-f x11grab -draw_mouse 1 \
+		-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
+		-pix_fmt yuv420p \
+		$(printf " $bitrate")\
+		-q:v 0 $(printf " $nvenc") \
+		"$output".mp4 -loglevel error
 fi
