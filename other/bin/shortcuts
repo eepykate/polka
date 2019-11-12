@@ -6,9 +6,8 @@
 # $3 = file or folder to edit / cd to
 
 echo -n "" > ${XDG_CONFIG_HOME:-~/.config}/sc.sh
-sed '/^#/d' ${XDG_CONFIG_HOME:-~/.config}/sc | tee \
-  >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3 " " $4 " " $5"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) \
-  >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3 " " $4 " " $5"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) \
-  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3 " " $4 " "$5" ; reset_cursor\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) &>/dev/null
-
-# >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3 " " $4 " " $5"\""}' >> ~/.sc.sh) \
+sed -e '/^#/d' ${XDG_CONFIG_HOME:-~/.config}/sc \
+	-e "s|~|$HOME|g" | tee \
+  >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) \
+  >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) \
+  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"; reset_cursor\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) &>/dev/null
