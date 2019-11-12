@@ -106,3 +106,10 @@ hi shVariable          ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shStatement         ctermbg=NONE   ctermfg=15    cterm=NONE
 hi shQuote             ctermbg=NONE   ctermfg=16     cterm=NONE
 hi shFunction          ctermbg=NONE   ctermfg=4     cterm=NONE
+
+
+" Markdown
+hi htmlItalic          ctermbg=NONE   ctermfg=3     cterm=italic
+hi htmlBold            ctermbg=NONE   ctermfg=1     cterm=bold
+hi Title               ctermbg=NONE   ctermfg=4     cterm=NONE
+hi Delimiter           ctermbg=NONE   ctermfg=4     cterm=NONE
