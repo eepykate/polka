@@ -14,6 +14,8 @@ d   gi         ~/opt/git/
 d   sp         ~/usr/startpage/
 d   mu         ~/opt/Music/
 d   oth        ~/opt/linux/oth/
+d   sn         ~/opt/git/shnippets/
+d   ri         ~/opt/git/ricing/
 
 # File shortcuts
 f   zshrc      ~/etc/zsh/.zshrc
