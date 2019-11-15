@@ -34,7 +34,7 @@ code:not(.inline)::before {
 code, .inline {
 	font-family: Monospace !important;
 	font-weight: bold !important;
-	font-size: 9.5px !important;
+	font-size: 10px !important;
 }
 
 /*.unread-3zKkbm,               /* Unread channel arrow */
@@ -295,17 +295,24 @@ pre,
 	background-color: var(--bg3) !important;
 }
 
+pre,
+code,
 .markup-2BOw-j {
 	max-width: 700px !important;
 }
+/* *:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
+ */
 
 
+.username-_4ZSMR[style*="color: rgb(27,"] {
+	color: var(--fg1) !important;
+}
 
 
-
-
-
-
+.markup-2BOw-j em img {
+	width: 3rem !important;
+	height: 3rem !important;
+}
 
 
 
