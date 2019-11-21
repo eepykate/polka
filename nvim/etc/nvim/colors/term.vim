@@ -113,3 +113,6 @@ hi htmlItalic          ctermbg=NONE   ctermfg=3     cterm=italic
 hi htmlBold            ctermbg=NONE   ctermfg=1     cterm=bold
 hi Title               ctermbg=NONE   ctermfg=4     cterm=NONE
 hi Delimiter           ctermbg=NONE   ctermfg=4     cterm=NONE
+hi markdownCode        ctermbg=NONE   ctermfg=5     cterm=NONE
+hi markdownCodeDelimiter  ctermbg=NONE   ctermfg=5     cterm=NONE
+hi markdownBlockquote  ctermbg=NONE   ctermfg=7     cterm=NONE
