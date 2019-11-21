@@ -17,7 +17,6 @@ rootplanter() {
 	bspc node @/ -p cancel
 }
 
-bspc config pointer_follows_focus true
 # Find current window mode
 is_floating() {
 bspc query -T -n | grep -q '"state":"floating"'
