@@ -43,7 +43,7 @@ setopt auto_menu         # Show completion menu on successive tab press
 setopt always_to_end     # Move cursor to end of word if completed in-word
 unsetopt menu_complete   # Do not autoselect the first completion entry
 setopt complete_in_word
-ZSH_CACHE_DIR=$HOME/.cache/zsh
+ZSH_CACHE_DIR=${XDG_CACHE_HOME:-~/.cache}/zsh
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
