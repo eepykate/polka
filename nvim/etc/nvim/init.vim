@@ -35,6 +35,7 @@ call plug#begin()
 	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 	Plug 'chrisbra/Colorizer'
 	Plug 'junegunn/goyo.vim'
+	Plug 'scrooloose/nerdtree'
 call plug#end()
 
 set cursorline
@@ -69,7 +70,7 @@ function! ToggleHiddenAll()
 		let s:hidden_all = 1
 		set noshowmode
 		set noruler
-		set laststatus=0
+		set laststatus=1
 		set noshowcmd
 	else
 		let s:hidden_all = 0
@@ -81,3 +82,4 @@ function! ToggleHiddenAll()
 endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
+nmap <C-s> :NERDTreeToggle<CR>
