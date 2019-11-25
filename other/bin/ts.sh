@@ -167,25 +167,6 @@ else
 fi
 
 
-#sed --follow-symlinks -i \
-#	-e "s/active.title.bg.color.*/active.title.bg.color: #$fg1/" \
-#	-e "s/active.label.bg.color.*/active.label.bg.color: #$fg1/" \
-#	-e "s/inactive.title.bg.color.*/inactive.title.bg.color: #$bg1/" \
-#	-e "s/inactive.label.bg.color.*/inactive.label.bg.color: #$bg1/" \
-#	-e "s/active.label.text.color.*/active.label.text.color: #$bg1/" \
-#	-e "s/inactive.label.text.color.*/inactive.label.text.color: #$fg2/" \
-#	~/git/.themes/ob/openbox-3/themerc
-
-#openbox --reconfigure
-
-#xfconf-query -c xsettings -p /Net/ThemeName -s "$theme" # Set GTK theme (In Xfce)
-#xfconf-query -c xfwm4 -p /general/theme -s "$theme"
-# Manually change gtk theme
-sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
-sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
-
-#kvantummanager --set "$theme" &>/dev/null # Set Kvantum theme
-
 # if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 [[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
 	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/Xresources
@@ -321,20 +302,28 @@ fi
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
 
-# Reload gtk theme - probably a major hack
-temp="$(mktemp)"
-temp2="$(mktemp)"
-echo "Net/IconThemeName \"Blank\"" > $temp2
-xsettingsd -c $temp2 &
-xse2=$!
-sleep 0.08; kill $xse2
+#
+# tbf I use like 1 gtk app, this doesn't matter
+#
 
-echo "Net/ThemeName \"$theme\"" > $temp
-echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
-xsettingsd -c $temp &
-xse=$!
-sleep 0.2; kill $xse
-rm $temp $temp2
+# Reload gtk theme - probably a major hack
+#temp="$(mktemp)"
+#temp2="$(mktemp)"
+#echo "Net/IconThemeName \"Blank\"" > $temp2
+#xsettingsd -c $temp2 &
+#xse2=$!
+#sleep 0.08; kill $xse2
+
+#echo "Net/ThemeName \"$theme\"" > $temp
+#echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
+#xsettingsd -c $temp &
+#xse=$!
+#sleep 0.2; kill $xse
+#rm $temp $temp2
+
+# Manually change gtk theme
+#sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
+#sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
 
 
 notify-send "Theme changed to $theme"
