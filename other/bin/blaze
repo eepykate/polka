@@ -3,6 +3,7 @@
 # Source:
 #   https://github.com/GaugeK/dots/
 #
+set -x
 
 [[ -z "$DISPLAY" ]] &&
 	echo "Can't open display; exiting" && exit
@@ -81,8 +82,7 @@ done
 
 # Save the recording
 if [[ $SoR = save ]]; then
-	pkill ffmpeg &&
-	notify-send -t 2000 "recording stopped"
+	pkill ffmpeg;
 	exit
 fi
 
@@ -98,7 +98,8 @@ if [[ -z $DoM ]]; then
 	for x in $(ls ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-*); do
 		presets+="\npreset-${x##*-}";
 	done
-	DoM="$(echo -e "Display\nSlop$presets" | dmenu -i -p "Automatic dimensions from display, or select a region?")"
+	DoM="$(echo -e "Display\nSlop$presets" | \
+		dmenu -i -p "Automatic dimensions from display, or select a region?")"
 	# If a preset is chosen, load that
 	[[ $DoM = preset* ]] && preset="${DoM##*-}"
 	[[ $DoM = preset* ]] && . ${XDG_CONFIG_HOME:-~/.config}/blaze-$DoM
@@ -106,7 +107,9 @@ fi
 
 if [[ ${DoM} = Display ]]; then
 	# Get display list
-	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | awk '{gsub("primary ", "");print $1 " " $3}')"
+	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | \
+		awk '{gsub("primary ", "");print $1 " " $3}')"
+
 	if [[ -z $display_select ]]; then
 		# Choose a display
 		[[ $(wc -l <<< $displays) = 1 ]] && display_select="$(awk '{print $1}' <<< $displays)" ||
@@ -114,7 +117,9 @@ if [[ ${DoM} = Display ]]; then
 	fi
 
 	# Get resolution and offset of the chosen display
-	read -r width height offsetX offsetY < <(echo -e "$displays" | grep -i $display_select | awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )
+	read -r width height offsetX offsetY < <(echo -e "$displays" | \
+		grep -i $display_select | \
+		awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )
 elif [[ ${DoM} = Slop ]]; then
 	# Select an area with slop
 	slop="$(slop -l -c 0.64314,0.41176,0.70588,0.2 -b 1 -f '%w %h %x %y')"
@@ -138,16 +143,22 @@ audio=\"$audio\"
 " > ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset &&
 
 # add actual audio command to $audio if yes
-if [[ $audio = yes ]]; then
-	audio="-f pulse -i $(pacmd list-sources | grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
-else
+if [[ $audio != yes ]]; then
 	audio=""
 fi
 
-[[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
+if [[ $audio = yes ]]; then
+	audio="-f pulse -i $(pacmd list-sources | \
+		grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
+fi
+
+
+[[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && \
+	RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
 
 # if user has a nvidia card use nvenc
-[[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && nvenc="-vcodec h264_nvenc"
+[[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && \
+	nvenc="-vcodec h264_nvenc"
 
 
 if [[ $RtR = Yes ]]; then
@@ -159,4 +170,5 @@ if [[ $RtR = Yes ]]; then
 		$(printf " $bitrate")\
 		-q:v 0 $(printf " $nvenc") \
 		"$output".mp4 -loglevel error
+	notify-send -t 2000 "recording stopped"
 fi
