@@ -87,27 +87,23 @@ pacman -S --noconfirm --needed \
 	xorg-xinit xorg-xkill xorg-xset \
 	xorg-xprop xorg-xrandr xorg-xgamma \
 	curl wget papirus-icon-theme \
-	rofi zsh \
-	arandr dosfstools exfat-utils \
-	feh ffmpeg firefox firefox-developer-edition \
-	ntfs-3g \
+	dosfstools exfat-utils \
+	feh ffmpeg firefox-developer-edition \
+	rofi zsh ntfs-3g \
 	pulseaudio pulseaudio-alsa \
-	scrot maim unrar unzip p7zip \
+	scrot maim unrar unzip \
 	wget xdotool xssstate youtube-dl \
 	vlc mpv gimp inkscape \
 	xf86-input-synaptics dunst \
-	python xautolock playerctl gst-plugins-good \
-	rsync ffmpegthumbnailer ffmpegthumbs \
-	acpi imagemagick neovim \
+	python xautolock playerctl \
+	rsync acpi imagemagick neovim \
 	zsh-completions compton mpd ncmpcpp \
 	gcolor3 gnome-system-monitor \
 	xsettingsd lxappearance ttf-fira-mono
 
 
 for i in i3lock-color-git qview pulseaudio-ctl light-git lemonbar-xft-git transmission-remote-cli-git mpdris2; do
-
 	sudo -u $name yay -S --noconfirm --needed $i
-
 done
 
 echo -e "installing dotfiles"
