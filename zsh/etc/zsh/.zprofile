@@ -24,7 +24,7 @@ export LESSHISTFILE="/dev/null"
 eval "$(dircolors ${XDG_CONFIG_HOME:-~/.config}/dircolors)"
 
 # Places where binaries/scripts go so you dont have to type the whole path to run them
-export PATH="$(find ~/bin/ -maxdepth 1 -type d | sed 's|/$||'| tr '\n' ':')$HOME/.local/bin:$PATH"
+export PATH="$(find ~/bin/ -maxdepth 1 -type d | sed 's|/$||'| tr '\n' ':')$PATH"
 
 # less/man colors
 export LESS=-R
