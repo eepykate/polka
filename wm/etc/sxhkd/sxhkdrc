@@ -180,3 +180,7 @@ XF86AudioStop
 
 XF86AudioMute
 	vol m
+
+# Sorry for spaghetti code, I promise it wasn't me that wrote it
+super + Tab
+	pulsemixer --id $(pulsemixer --list-sinks | rg $(ps -p `xdotool getactivewindow getwindowpid` -o comm=) -i | rg "ID: (.*?)," -r '$1' -o | tail -1) --toggle-mute
