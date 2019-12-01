@@ -3,7 +3,35 @@
 # Source:
 #   https://github.com/GaugeK/dots/
 #
-set -x
+# I actually use variable "word splitting" to my advantage
+# shellcheck disable=SC2086
+#
+
+c() {
+ command -v "$@" &>/dev/null
+}
+
+# Sorry, this needs to exist or else I can't exit on missing deps
+deps() {
+	echo -e "\e[31;1mYou are missing dependencies\e[0m
+
+\e[34mRequired Dependencies:\e[0m
+ - \e[34mdmenu\e[0m     Selecting the options
+ - \e[34mffmpeg\e[0m    Actually recording
+ - \e[34mawk\e[0m       Getting specific information from strings
+ - \e[34mgrep\e[0m      ^ This again
+ - \e[34mxrandr\e[0m    Getting screen information
+ - \e[34mpkill\e[0m     Ending the recording
+
+\e[32mOptional Dependencies: \e[0m
+ - \e[32mlspci\e[0m     Detecting nvidia cards to use nvenc
+ - \e[32mslop\e[0m      \"slop\" recording mode, to select an area to record
+ - \e[32mpacmd\e[0m     Recording desktop audio"
+ exit
+}
+
+c dmenu && c ffmpeg && c awk && c grep && c xrandr && c pkill || \
+	deps
 
 [[ -z "$DISPLAY" ]] &&
 	echo "Can't open display; exiting" && exit
@@ -105,7 +133,7 @@ if [[ -z $DoM ]]; then
 	[[ $DoM = preset* ]] && . ${XDG_CONFIG_HOME:-~/.config}/blaze-$DoM
 fi
 
-if [[ ${DoM} = Display ]]; then
+if [[ "$DoM" = Display ]]; then
 	# Get display list
 	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | \
 		awk '{gsub("primary ", "");print $1 " " $3}')"
@@ -120,7 +148,7 @@ if [[ ${DoM} = Display ]]; then
 	read -r width height offsetX offsetY < <(echo -e "$displays" | \
 		grep -i $display_select | \
 		awk '{gsub("x", " "); gsub("+", " ");  print $2 " " $3 " " $4 " " $5}' )
-elif [[ ${DoM} = Slop ]]; then
+elif [[ "$DoM" = Slop ]]; then
 	# Select an area with slop
 	slop="$(slop -l -c 0.64314,0.41176,0.70588,0.2 -b 1 -f '%w %h %x %y')"
 
@@ -143,13 +171,11 @@ audio=\"$audio\"
 " > ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset &&
 
 # add actual audio command to $audio if yes
-if [[ $audio != yes ]]; then
-	audio=""
-fi
-
 if [[ $audio = yes ]]; then
 	audio="-f pulse -i $(pacmd list-sources | \
 		grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
+else
+	audio=""
 fi
 
 
@@ -163,12 +189,12 @@ fi
 
 if [[ $RtR = Yes ]]; then
 	notify-send -t 2000 "recording started"
-	ffmpeg -y $(printf " $audio") \
+	ffmpeg -y $audio \
 		-f x11grab -draw_mouse 1 \
-		-s ${width}x${height} -r ${rate} -i $DISPLAY.0+${offsetX},${offsetY} \
+		-s "${width}x$height" -r "$rate" -i "$DISPLAY.0+$offsetX,$offsetY" \
 		-pix_fmt yuv420p \
-		$(printf " $bitrate")\
-		-q:v 0 $(printf " $nvenc") \
+		$bitrate \
+		-q:v 0 $nvenc \
 		"$output".mp4 -loglevel error
 	notify-send -t 2000 "recording stopped"
 fi
