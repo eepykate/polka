@@ -280,12 +280,12 @@ cd /home/$name/opt/git/st &&
 make clean install &>/dev/null
 
 echo "Installing stmessage to live-reload st"
-git clone https://github.com/PaxPlay/thememenu /home/$name/opt/git/thememenu
+git clone https://github.com/gaugek/thememenu /home/$name/opt/git/thememenu
 cd /home/$name/opt/git/thememenu
 make; cp stmessage /usr/local/bin/
 
 echo "Installing tabbed"
-git clone https://gitlab.com/gaugek/tabbed.git /home/$name/opt/git/tabbed &&
+git clone https://github.com/gaugek/tabbed.git /home/$name/opt/git/tabbed &&
 cd /home/$name/opt/git//tabbed &&
 make clean install &>/dev/null
 
