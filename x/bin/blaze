@@ -171,12 +171,9 @@ audio=\"$audio\"
 " > ${XDG_CONFIG_HOME:-~/.config}/blaze-preset-$preset &&
 
 # add actual audio command to $audio if yes
-if [[ $audio = yes ]]; then
-	audio="-f pulse -i $(pacmd list-sources | \
-		grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')"
-else
+[[ $audio = yes ]] && audio="-f pulse -i $(pacmd list-sources | \
+	grep -PB 1 "analog.*monitor>" | head -n 1 | sed 's/.* //g')" || \
 	audio=""
-fi
 
 
 [[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && \
