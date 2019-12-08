@@ -48,15 +48,9 @@ m() {
 [[ ! "$DISPLAY" ]] &&
 	echo "Can't open display; exiting" && exit
 
-# if the variable BLAZE_DIR isn't set, set it
-[[ ! "$BLAZE_DIR" ]] &&
-	BLAZE_DIR="$HOME/opt/1-Recordings"
-
-# if the variable BLAZE_FILENAME isn't set, set it
-[[ ! "$BLAZE_FILENAME" ]] &&
-	BLAZE_FILENAME="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
-
-output="$BLAZE_DIR/$BLAZE_FILENAME"
+# output file, use $BLAZE_DIR and $BLAZE_FILENAME if they are set
+output="${BLAZE_DIR:-$HOME/opt/1-Recordings}/"\
+"${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S')}"
 
 help="
 \e[34mOptions\e[0m
