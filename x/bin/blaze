@@ -13,8 +13,13 @@ c() {
 
 # Sorry, this needs to exist or else I can't exit on missing deps
 deps() {
-	echo -e "\e[31;1mYou are missing dependencies\e[0m
+	md="
+\e[33mMissing dependencies\e[0m
+$(for i in $deps; do echo " - \e[33m$i\e[0m"; done)
+"
 
+	echo -e "\e[31;1mYou are missing dependencies\e[0m
+$md
 \e[34mRequired Dependencies:\e[0m
  - \e[34mrofi\e[0m      Selecting the options
  - \e[34mffmpeg\e[0m    Actually recording
@@ -27,11 +32,18 @@ deps() {
  - \e[32mlspci\e[0m     Detecting nvidia cards to use nvenc
  - \e[32mslop\e[0m      \"slop\" recording mode, to select an area to record
  - \e[32mpacmd\e[0m     Recording desktop audio"
- exit
+ exit 1
 }
 
-c rofi && c ffmpeg && c awk && c grep && c xrandr && c pkill || \
-	deps
+c rofi   || deps+="rofi"
+c ffmpeg || deps+="ffmpeg"
+c awk    || deps+="awk"
+c grep   || deps+="grep"
+c xrandr || deps+="xrandr"
+c pkill  || deps+="pkill"
+
+[[ -n "$deps" ]] && deps
+
 
 [[ -z "$DISPLAY" ]] &&
 	echo "Can't open display; exiting" && exit
