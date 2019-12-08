@@ -7,6 +7,39 @@
 #   shellcheck disable=SC2086
 #
 
+deps() {
+	md="$(for i in $deps; do echo -e " - \e[31m$i\e[0m"; done)"
+
+	echo -e "\e[31mYou are missing dependencies\e[0m
+$md
+
+\e[34mAll required dependencies\e[0m
+ - \e[34mffmpeg\e[0m         Actually recording
+ - \e[34mrofi\e[0m           Selecting the options
+ - \e[34mpkill\e[0m          Ending the recordings
+
+\e[35mAt least one of these is required\e[0m
+ - \e[35mdisputils\e[0m      Selecting a display to record
+ - \e[35mslop\e[0m           Selecting an area to record
+
+\e[32mOptional dependencies\e[0m
+ - \e[32mlspci\e[0m          Detecting if the user has a nvidia card
+ - \e[32mgrep\e[0m           ^ Used only in this
+ - \e[32mnotify-send\e[0m    Letting the user know when the recording starts/ends
+"
+	exit 1
+}
+
+_() { command -v "$1" &>/dev/null || deps+=" $1"; }
+
+_ rofi
+_ pkill
+_ ffmpeg
+command -v dattr slop &>/dev/null || deps+=" disputils/slop"
+
+[[ "$deps" ]] && deps
+
+
 m() {
 	rofi -dmenu -i "$@"
 }
@@ -24,8 +57,6 @@ m() {
 	BLAZE_FILENAME="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
 
 output="$BLAZE_DIR/$BLAZE_FILENAME"
-
-
 
 help="
 \e[34mOptions\e[0m
@@ -71,8 +102,16 @@ fi
 
 
 # ask the user what method they want to use
-[[ ! "$method" ]] && \
-	method="$(echo -e "display\nselection" | m -p "Method of recording")"
+if [[ ! "$method" ]]; then
+	command -v slop &>/dev/null && s=s
+	command -v dattr &>/dev/null && d=d
+
+	[[ "$s" && "$d" ]] &&
+		method="$(echo -e "display\nselection" | m -p "Method of recording")"
+
+	[[ "$s" ]] && method=selection
+	[[ "$d" ]] && method=display
+fi
 
 if [[ "$method" = display ]]; then
 
