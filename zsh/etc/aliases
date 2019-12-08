@@ -44,15 +44,15 @@ alias ls="ls -Fh --group-directories-first --color=auto"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
-reset_cursor() { echo -en "\e[4 q" }
+reset_cursor() { echo -en "\e[4 q"; }
 
-mc() { mkdir -p "$1" && cd "$1" }
-bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk" }
-tc() { transmission-remote-cli; reset_cursor }
-v() { nvim $@; reset_cursor }
+mc() { mkdir -p "$1" && cd "$1"; }
+bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
+tc() { transmission-remote-cli; reset_cursor; }
+v() { nvim $@; reset_cursor; }
 
-hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2} }
-rgbtohex() { printf "%02X%02X%02X\n" $@ }
+hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
+rgbtohex() { printf "%02X%02X%02X\n" $@; }
 
 source ${XDG_CONFIG_HOME:-~/.config}/sc.sh
 
@@ -154,6 +154,14 @@ notthing() {
 	notify-send -u critical -t 99999999 '      urgent      ​'; \
 	notify-send -t 99999999 '      normal      ​'; \
 	notify-send -u low -t 99999999 'low'
+}
+
+inf() {
+	echo
+	printf "$USER\e[38;05;16m@\e[0m$HOST\n"
+	printf "\e[38;05;16mos:\e[0m    "; source /etc/os-release; printf "%s\n" "$NAME"
+	printf "\e[38;05;16mpkgs:\e[0m  "; pacman -Qq | wc -l
+	echo
 }
 
 # vim: ft=sh
