@@ -1,0 +1,168 @@
+#!/usr/bin/env bash
+#
+# Source:
+#   https://github.com/GaugeK/dots/
+#
+# I actually use variable "word splitting" to my advantage
+#   shellcheck disable=SC2086
+#
+
+m() {
+	rofi -dmenu -i "$@"
+}
+
+# exit if X isn't running
+[[ ! "$DISPLAY" ]] &&
+	echo "Can't open display; exiting" && exit
+
+# if the variable BLAZE_DIR isn't set, set it
+[[ ! "$BLAZE_DIR" ]] &&
+	BLAZE_DIR="$HOME/opt/1-Recordings"
+
+# if the variable BLAZE_FILENAME isn't set, set it
+[[ ! "$BLAZE_FILENAME" ]] &&
+	BLAZE_FILENAME="blaze-$(date '+%Y-%m-%d_%H-%M-%S')"
+
+output="$BLAZE_DIR/$BLAZE_FILENAME"
+
+
+
+help="
+\e[34mOptions\e[0m
+  \e[37m-s / --save\e[0m        Stop ffmpeg (Warning, not just in this script)
+  \e[37m-o / --output\e[0m   \e[35m[]\e[0m Save recording to <file>.mp4
+  \e[37m-n / --nvenc\e[0m       Force disable nvenc (For older nvidia cards) this script
+                       only enables nvenc if a nvidia card is detected
+  \e[37m-c / --confirm\e[0m     Don't ask if the user is ready to record
+  \e[37m-p / --preset\e[0m   \e[35m[]\e[0m Save to and load from preset <x>
+  \e[37m-b / --bitrate\e[0m  \e[35m[]\e[0m force bitrate (in MB)
+  \e[37m-h / --help\e[0m        Display what you're reading right now
+
+\e[35m[]\e[0m = Option requires a value
+"
+
+while [[ "$1" ]]; do
+	case "$1" in
+		-s|--save)    pkill ffmpeg; exit   ;;
+		-o|--output)  output="$2"; shift   ;;
+		-n|--nvenc)   nvenc=""             ;;
+		-c|--confirm) ready="yes"          ;;
+		-p|--preset)  preset="$2"; shift   ;;
+		-b|--bitrate) bitrate="-b:v ${2}M"; shift;;
+		-h|--help)    echo -e "$help"; exit;;
+	esac
+	shift
+done
+
+
+
+
+if [[ "$preset" ]]; then
+	# make the directory blaze presets are stored
+	mkdir -p "${XDG_CONFIG_HOME:-~/.config}/blaze" &>/dev/null
+
+	# the location of the current preset
+	preset_location="${XDG_CONFIG_HOME:-~/.config}/blaze/blaze-preset-$preset"
+
+	[[ -f "$preset_location" ]] &&
+		. "$preset_location"
+fi
+
+
+
+# ask the user what method they want to use
+[[ ! "$method" ]] && \
+	method="$(echo -e "display\nselection" | m -p "Method of recording")"
+
+if [[ "$method" = display ]]; then
+
+	# get information about the screen
+	lsd="$(lsd)"
+
+	# if there's only one display, use that and skip asking
+	if [[ $(echo "$lsd" | wc -l) = 1 ]]; then
+		display="$lsd"
+	else  # if there are other displays ask the user which one to use
+		[[ ! "$display" ]] && display="$(echo "$lsd" | m -p "Display to record")"
+	fi
+
+	# get information about the display
+	width="$(dattr  w "$display")"
+	height="$(dattr h "$display")"
+	offX="$(dattr x "$display")"
+	offY="$(dattr y "$display")"
+
+elif [[ "$method" = selection ]]; then
+
+	# select an area and make each number a separate word
+	slop=( $(slop -f '%w %h %x %y') )
+
+	# get information about the display
+	width="${slop[0]}"
+	height="${slop[1]}"
+	offX="${slop[2]}"
+	offY="${slop[3]}"
+
+else
+
+	echo "Invalid method; exiting"
+	exit 1
+
+fi
+
+# ask the user what they want the framerate of the video to be
+[[ ! "$rate" ]] && rate="$(echo -e "30\n60" | m -p "Framerate")"
+
+
+if [[ "$preset" ]] && [[ "$method" = display ]]; then
+
+	echo "rate=\"$rate\"
+display=\"$display\"
+method=\"$method\"" > "$preset_location"
+
+fi
+
+
+
+
+# detect if the user has a nvidia card and use nvenc
+[[ ! "$nvenc" ]] && [[ -n $(lspci | grep -i nvidia) ]] && \
+	nvenc="-vcodec h264_nvenc"
+
+# ask the user if they want to start the recording
+[[ ! "$ready" ]] && ready="$(echo -e "yes\nno" | m -p "Start the recording")"
+
+if [[ "$ready" = yes ]]; then
+	notify-send -t 1500 "Recording Started"
+
+	#
+	# -loglevel error   | makes ffmpeg only print errors to the terminal
+	# -y                | don't ask to start
+	# -draw_mouse 1     | show the mouse in the video
+	# -s                | specifies the size of the recording
+	# -r "$rate"        | specifies the framerate of the video
+	# -i                | the input X display (not physical monitor) and offset
+	# -pix_fmt yuv420p  | allows the video to be played on browsers like firefox
+	# -q:v              | changes the quality of the video, lower is better,
+	#                     this doesn't seem to work that well with nvenc though
+	# $nvenc            | if the user has a nvidia card offload the work
+	#                     onto the GPU (Defined earlier in the script)
+	# "$output".mp4     | file to save the recording to
+	#
+
+	ffmpeg                         \
+		-loglevel error              \
+		-y                           \
+		-f x11grab                   \
+		-draw_mouse 1                \
+		-s "${width}x$height"        \
+		-r "$rate"                   \
+		-i "$DISPLAY.0+$offX,$offY"  \
+		$bitrate                     \
+		-pix_fmt yuv420p             \
+		-q:v 0                       \
+		$nvenc                       \
+		"$output".mp4
+
+	notify-send -t 2000 "Recording Stopped"
+fi
