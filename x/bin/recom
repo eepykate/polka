@@ -4,7 +4,7 @@
 #    (The fork I use has a memory leak)
 #
 
-while sleep 10m; do
+while sleep 1h; do
 	pkill compton &&
 		sleep 0.5 &&
 		compton &!
