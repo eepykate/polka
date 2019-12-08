@@ -294,12 +294,12 @@ pre,
 .scroller-2TZvBN {
 	background-color: var(--bg3) !important;
 }
-
+/*
 pre,
 code,
 .markup-2BOw-j {
 	max-width: 700px !important;
-}
+}*/
 /* *:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
  */
 
@@ -325,5 +325,53 @@ code,
 .placeholder-P6ptfj {
 	opacity: 0.3 !important;
 }
+
+/* Send bar padding
+Thanks _diamondburned_#4507 */
+[class^="chatContent"] > form {
+    background-image: linear-gradient(transparent, rgba(10, 10, 10, 0.35));
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+}
+
+[class^="chatContent"] > div > div > div > div, 
+[class^="chatContent"] [class^="channelTextArea"] {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+[class^="chatContent"] [class^="channelTextArea"] {
+    margin-bottom: 15px;
+}
+
+[class^="chatContent"] div[class^="typing"] {
+    max-width: 1000px;
+    width: 100%;
+    transition: all 150ms linear;
+    background-color: transparent !important;
+    top: -10px;
+    height: 0;
+    position: relative;
+    overflow: visible;
+	margin: 0 auto;
+}
+
+/* Autocomplete popup */
+[class*="autocomplete-"] {
+    background-color: var(--bg3) !important;
+}
+
+[class*="selectorSelected"] {
+    background-color: var(--bg1) !important;
+}
+
+
+
+
+
+
 
 
