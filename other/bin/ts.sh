@@ -92,8 +92,8 @@ elif [[ $theme = nh ]]; then
 	bg0="000000"
 	bg1="0D0D0D"
 	bg2="141414"
-	bg3="171717"
-	bg4="1A1A1A"
+	bg3="1A1A1A"
+	bg4="1F1F1F"
 	button="d9d9d91a"
 	#   -----
 	fg1="d9d9d9"
