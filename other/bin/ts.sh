@@ -284,9 +284,18 @@ sed --follow-symlinks -i \
 if [[ -f "$HOME/opt/Wallpapers/$wall" ]]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/$wall\""
 	eval $wallthing
+	sed --follow-symlinks -i \
+		-e "s/separator_height.*/separator_height = 0/" \
+		-e "s/frame_width.*/frame_width = 0/" \
+		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 else
 	walgen1 "#$wall"
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/tile.png\""
+	sed --follow-symlinks -i \
+		-e "s/frame_color.*/frame_color = \"#$wall\"/" \
+		-e "s/separator_height.*/separator_height = 8/" \
+		-e "s/frame_width.*/frame_width = 1/" \
+		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 fi
 
 echo "#!/bin/sh

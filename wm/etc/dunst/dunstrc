@@ -8,11 +8,11 @@
 	shrink = yes
 	transparency = 0
 	notification_height = 0
-	separator_height = 2
+	separator_height = 8
 	padding = 25
 	horizontal_padding = 25
-	frame_width = 0
-	frame_color = "#d9d9d9"
+	frame_width = 1
+	frame_color = "#141414"
 	separator_color = frame
 	sort = yes
 	idle_threshold = 120
@@ -59,5 +59,4 @@
 [urgency_critical]
 	background = "#ed2553"
 	foreground = "#ffffff"
-	frame_color = "#d9d9d9"
 	timeout = 0
