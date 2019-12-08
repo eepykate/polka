@@ -100,7 +100,7 @@ hi cssAttributeSelector   ctermbg=NONE   ctermfg=3      cterm=NONE
 " sh syntax adjustments
 hi shFunction             ctermbg=NONE   ctermfg=4       cterm=NONE
 hi shConditional          ctermbg=NONE   ctermfg=4       cterm=NONE
-hi shDerefSimple          ctermbg=NONE   ctermfg=1       cterm=NONE
+hi shDerefSimple          ctermbg=NONE   ctermfg=17      cterm=NONE
 hi Delimiter              ctermbg=NONE   ctermfg=15      cterm=NONE
 hi shVariable             ctermbg=NONE   ctermfg=15      cterm=NONE
 hi shStatement            ctermbg=NONE   ctermfg=15      cterm=NONE
