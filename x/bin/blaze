@@ -16,7 +16,7 @@ deps() {
 	echo -e "\e[31;1mYou are missing dependencies\e[0m
 
 \e[34mRequired Dependencies:\e[0m
- - \e[34mdmenu\e[0m     Selecting the options
+ - \e[34mrofi\e[0m      Selecting the options
  - \e[34mffmpeg\e[0m    Actually recording
  - \e[34mawk\e[0m       Getting specific information from strings
  - \e[34mgrep\e[0m      ^ This again
@@ -30,7 +30,7 @@ deps() {
  exit
 }
 
-c dmenu && c ffmpeg && c awk && c grep && c xrandr && c pkill || \
+c rofi && c ffmpeg && c awk && c grep && c xrandr && c pkill || \
 	deps
 
 [[ -z "$DISPLAY" ]] &&
@@ -127,7 +127,7 @@ if [[ -z $DoM ]]; then
 		presets+="\npreset-${x##*-}";
 	done
 	DoM="$(echo -e "Display\nSlop$presets" | \
-		dmenu -i -p "Automatic dimensions from display, or select a region?")"
+		rofi -dmenu -i -p "Automatic dimensions from display, or select a region?")"
 	# If a preset is chosen, load that
 	[[ $DoM = preset* ]] && preset="${DoM##*-}"
 	[[ $DoM = preset* ]] && . ${XDG_CONFIG_HOME:-~/.config}/blaze-$DoM
@@ -141,7 +141,7 @@ if [[ "$DoM" = Display ]]; then
 	if [[ -z $display_select ]]; then
 		# Choose a display
 		[[ $(wc -l <<< $displays) = 1 ]] && display_select="$(awk '{print $1}' <<< $displays)" ||
-		display_select="$(echo -e "$displays" | awk '{print $1}' | dmenu -i -p "Display to record")"
+		display_select="$(echo -e "$displays" | awk '{print $1}' | rofi -dmenu -i -p "Display to record")"
 	fi
 
 	# Get resolution and offset of the chosen display
@@ -159,8 +159,8 @@ elif [[ "$DoM" = Slop ]]; then
 fi
 
 # Ask the user if they want desktop audio and what framerate
-[[ -z $audio ]] && audio="$(echo -e "no\nyes" | dmenu -i -p "Desktop audio?")"
-[[ -z $rate ]] && rate="$(echo -e "30\n60" | dmenu -i -p "Framerate")"
+[[ -z $audio ]] && audio="$(echo -e "no\nyes" | rofi -dmenu -i -p "Desktop audio?")"
+[[ -z $rate ]] && rate="$(echo -e "30\n60" | rofi -dmenu -i -p "Framerate")"
 # Save preset
 [[ -n $preset ]] && [[ $DoM = Display ]] &&
 echo -e "
@@ -177,7 +177,7 @@ audio=\"$audio\"
 
 
 [[ -n $DoM ]] && [[ -n $rate ]] && [[ -z $RtR ]] && \
-	RtR="$(echo -e "No\nYes" | dmenu -i -p "Are you ready to record?")"
+	RtR="$(echo -e "No\nYes" | rofi -dmenu -i -p "Are you ready to record?")"
 
 # if user has a nvidia card use nvenc
 [[ -n $(lspci | grep -i nvidia) ]] && [[ -z $nvenc ]] && \
