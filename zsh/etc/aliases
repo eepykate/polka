@@ -167,7 +167,8 @@ inf() {
 	printf "$USER\e[38;05;16m@\e[0m$HOST\n"
 	printf "\e[38;05;16mos:\e[0m    "; source /etc/os-release; printf "%s\n" "$NAME"
 	printf "\e[38;05;16mpkgs:\e[0m  "; pacman -Qq | wc -l
-	echo
+	for i in {0..7}; do echo -n "\e[9${i}m▄\e[0m ";	done
+	echo; echo
 }
 
 # vim: ft=sh
