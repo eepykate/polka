@@ -147,7 +147,7 @@ fi
 
 if [[ "$DoM" = Display ]]; then
 	# Get display list
-	displays="$(xrandr -q --current | grep -iv "   \|disconnect\|screen" | \
+	displays="$(xrandr | grep -iv "   \|disconnect\|screen" | \
 		awk '{gsub("primary ", "");print $1 " " $3}')"
 
 	if [[ -z $display_select ]]; then
