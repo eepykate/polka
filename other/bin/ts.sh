@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Frost\nCoral\nCoal\nnh\nCherry\nAsh\nSnow\nWithered" # List of themes
+themes="Frost\nCoral\nCoal\nnh\nSnow\nWithered" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -106,50 +106,6 @@ elif [[ $theme = nh ]]; then
 	red="ed2553"
 	#   -----
 	wall="$bg2"
-	#   -----
-
-elif [[ $theme = Ash ]]; then
-
-	#   -----
-	bg0="171717"
-	bg1="1b1b1b"
-	bg2="1f1f1f"
-	bg3="242424"
-	bg4="292929"
-	button="bbbbbb16"
-	#   -----
-	fg1="bbbbbb"
-	fg2="888888"
-	disabled="888888"
-	#   -----
-	accent="a8afd7"
-	false="dd908d"
-	hover="222222"
-	red="dd908d"
-	#   -----
-	wall="$bg0"
-	#   -----
-
-elif [[ $theme = Cherry ]]; then
-
-	#   -----
-	bg0="ffffff"
-	bg1="eeeeee"
-	bg2="E8E8E8"
-	bg3="E3E3E3"
-	bg4="$(darken $bg3 0.95)"
-	button="4D4D4D16"
-	#   -----
-	fg1="4b4e53"
-	fg2="70747c"
-	disabled="595959"
-	#   -----
-	accent="c882ca"
-	false="6b95d8"
-	hover="ffffff"
-	red="c96d83"
-	#   -----
-	wall="$bg0"
 	#   -----
 
 elif [[ $theme = Withered ]]; then
