@@ -13,7 +13,7 @@ deps() {
 	echo -e "\e[31mYou are missing dependencies\e[0m
 $md
 
-\e[34mAll required dependencies\e[0m
+\e[34mRequired dependencies\e[0m
  - \e[34mffmpeg\e[0m         Actually recording
  - \e[34mrofi\e[0m           Selecting the options
  - \e[34mpkill\e[0m          Ending the recordings
