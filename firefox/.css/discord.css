@@ -308,12 +308,22 @@ code,
 	color: var(--fg1) !important;
 }
 
-
-.markup-2BOw-j em img {
+.markup-2BOw-j s .emoji,
+.markup-2BOw-j strong .emoji,
+.markup-2BOw-j em .emoji {
 	width: 3rem !important;
 	height: 3rem !important;
+	min-height: 3rem !important;
 }
 
+.emoji[aria-label*=":stare"] {
+	width: 5rem !important;
+	height: 5rem !important;
+	min-height: 5rem !important;
+}
 
+.placeholder-P6ptfj {
+	opacity: 0.3 !important;
+}
 
 
