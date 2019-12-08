@@ -161,6 +161,13 @@ fi
 [[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
 	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
+sed --follow-symlinks -i \
+	-e "s/normbgcolor.*/normbgcolor: #$bg4/" \
+	-e "s/normfgcolor.*/normfgcolor: #$fg2/" \
+	-e "s/selbgcolor.*/selbgcolor:  #$bg1/" \
+	-e "s/selfgcolor.*/selfgcolor:  #$fg1/" \
+	${XDG_CONFIG_HOME:-~/.config}/Xresources
+
 # Reload terminal colours using Xresources
 rc
 
@@ -323,18 +330,6 @@ $wallthing" > ~/bin/pap
 # Manually change gtk theme
 #sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
 #sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
-
-
-# tabbed
-[[ -e "$HOME/opt/git/tabbed" ]] &&
-	cd $HOME/opt/git/tabbed &&
-	sed -i \
-		-e "s/normbgcolor *=.*/normbgcolor  = \"#$bg4\";/" \
-		-e "s/normfgcolor *=.*/normfgcolor  = \"#$fg2\";/" \
-		-e "s/selbgcolor *=.*/selbgcolor  = \"#$bg1\";/" \
-		-e "s/selfgcolor *=.*/selfgcolor  = \"#$fg1\";/" \
-		config.h &&
-	sudo make clean install
 
 
 notify-send "Theme changed to $theme"

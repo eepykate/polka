@@ -10,6 +10,11 @@ st.cwscale:       1.0
 st.chscale:       1.0
 st.blinktimeout:  0.5
 
+tabbed.normbgcolor: #1F1F1F
+tabbed.normfgcolor: #a9a9a9
+tabbed.selfgcolor:  #d9d9d9
+tabbed.selbgcolor:  #0D0D0D
+
 Xft.dpi: 96
 Xft.antialias: true
 Xft.hinting: true
