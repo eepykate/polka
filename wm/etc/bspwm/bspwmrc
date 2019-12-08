@@ -9,7 +9,7 @@ bspc monitor -d 1 2 3 4 5 6
 bspc monitor DVI-D-0 -d 7 8 9 10
 
 bspc config window_gap 40
-bspc config border_width 0
+bspc config border_width 6
 bspc config border_radius 7
 
 xsetroot -cursor_name left_ptr
@@ -21,8 +21,8 @@ bspc config borderless_monocle true
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
 
-bspc config normal_border_color "#a6a9b7"
-bspc config focused_border_color "#daddee"
+bspc config normal_border_color "#141414"
+bspc config focused_border_color "#1A1A1A"
 bspc config presel_feedback_color "#eeeeee"
 
 #       ----

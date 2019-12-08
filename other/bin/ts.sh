@@ -12,7 +12,7 @@ while true; do
 	esac
 done
 
-themes="Frost\nCoral\nCoal\nCherry\nAsh\nSnow\nWithered" # List of themes
+themes="Frost\nCoral\nCoal\nnh\nCherry\nAsh\nSnow\nWithered" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -39,6 +39,8 @@ if [[ $theme = Coral ]]; then
 	hover="000000"
 	red="d48398"
 	#   -----
+	wall="$bg0"
+	#   -----
 
 elif [[ $theme = Frost ]]; then
 
@@ -58,6 +60,8 @@ elif [[ $theme = Frost ]]; then
 	false="e9799b"
 	hover="ffffff"
 	red="e9799b"
+	#   -----
+	wall="$bg0"
 	#   -----
 
 elif [[ $theme = Coal ]]; then
@@ -82,6 +86,28 @@ elif [[ $theme = Coal ]]; then
 	wall="grey_annie-spratt-JsOK6ko9SUo-unsplash.jpg"
 	#   -----
 
+elif [[ $theme = nh ]]; then
+
+	#   -----
+	bg0="000000"
+	bg1="0D0D0D"
+	bg2="141414"
+	bg3="171717"
+	bg4="1A1A1A"
+	button="d9d9d91a"
+	#   -----
+	fg1="d9d9d9"
+	fg2="a9a9a9"
+	disabled="696969"
+	#   -----
+	accent="ed2553"
+	false="ff920c"
+	hover="ffffff"
+	red="ed2553"
+	#   -----
+	wall="$bg2"
+	#   -----
+
 elif [[ $theme = Ash ]]; then
 
 	#   -----
@@ -100,6 +126,8 @@ elif [[ $theme = Ash ]]; then
 	false="dd908d"
 	hover="222222"
 	red="dd908d"
+	#   -----
+	wall="$bg0"
 	#   -----
 
 elif [[ $theme = Cherry ]]; then
@@ -121,6 +149,8 @@ elif [[ $theme = Cherry ]]; then
 	hover="ffffff"
 	red="c96d83"
 	#   -----
+	wall="$bg0"
+	#   -----
 
 elif [[ $theme = Withered ]]; then
 
@@ -141,6 +171,8 @@ elif [[ $theme = Withered ]]; then
 	hover="f8efe8"
 	red="be6767"
 	#   -----
+	wall="$bg0"
+	#   -----
 
 elif [[ $theme = Snow ]]; then
 
@@ -160,6 +192,8 @@ elif [[ $theme = Snow ]]; then
 	false="c185da"
 	hover="ffffff"
 	red="cd5e79"
+	#   -----
+	wall="$bg0"
 	#   -----
 
 else
@@ -244,8 +278,8 @@ sed --follow-symlinks -i \
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 # Change bspwm colours
 sed --follow-symlinks -i \
-	-e "s/normal_border_color \"#.*\"/normal_border_color \"#$fg2\"/g" \
-	-e "s/focused_border_color \"#.*\"/focused_border_color \"#$fg1\"/g" \
+	-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bg2\"/g" \
+	-e "s/focused_border_color \"#.*\"/focused_border_color \"#$bg4\"/g" \
 	${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 wm restart
 
@@ -265,37 +299,37 @@ sed --follow-symlinks -i \
 #		[[ -d ~/usr/icons/Papirus-Dark ]] &&
 #		cp -f ~/git/usr/icons/$theme/* ~/usr/icons/Papirus-Dark/32x32/places/
 
-cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
-sed -i --follow-symlinks \
-	-e "s|000000|$fg2|g" \
-	-e "s|222222|$(darken $fg2 0.9)|g" \
-	$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
+#cp $HOME/usr/icons/folder-blue.svg $HOME/usr/icons/Papirus-Dark/32x32/places/
+#sed -i --follow-symlinks \
+#	-e "s|000000|$fg2|g" \
+#	-e "s|222222|$(darken $fg2 0.9)|g" \
+#	$HOME/usr/icons/Papirus-Dark/32x32/places/folder-blue.svg
 
 
-cp -rf ~/usr/icons/16x16/ ~/usr/icons/Papirus-Dark/
-cp -r ~/usr/icons/22x22/emblems/* ~/usr/icons/Papirus-Dark/22x22/emblems/
-for f in \
-	16x16/devices/drive-harddisk.svg \
-	16x16/devices/drive-harddisk.svg \
-	16x16/places/folder.svg \
-	16x16/devices/drive-removable-media-usb.svg \
-	16x16/actions/media-eject.svg \
-	22x22/emblems/emblem-symbolic-link.svg \
-	22x22/emblems/emblem-unreadable.svg;
-do
-	sed -i --follow-symlinks \
-		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$accent/" \
-		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$accent/" \
-		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
-done
+#cp -rf ~/usr/icons/16x16/ ~/usr/icons/Papirus-Dark/
+#cp -r ~/usr/icons/22x22/emblems/* ~/usr/icons/Papirus-Dark/22x22/emblems/
+#for f in \
+#	16x16/devices/drive-harddisk.svg \
+#	16x16/devices/drive-harddisk.svg \
+#	16x16/places/folder.svg \
+#	16x16/devices/drive-removable-media-usb.svg \
+#	16x16/actions/media-eject.svg \
+#	22x22/emblems/emblem-symbolic-link.svg \
+#	22x22/emblems/emblem-unreadable.svg;
+#do
+#	sed -i --follow-symlinks \
+#		-e "s/fill:#[[a-zA-Z0-9][a-zA-Z0-9]*/fill:#$accent/" \
+#		-e "s/stroke:#[[a-zA-Z0-9][a-zA-Z0-9]*/stroke:#$accent/" \
+#		${XDG_DATA_HOME:-~/.local/share}/icons/Papirus-Dark/$f
+#done
 
 #. swirls.sh
 
-if [[ -n $wall ]]; then
+if [[ -f "$HOME/opt/Wallpapers/$wall" ]]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/$wall\""
 	eval $wallthing
 else
-	walgen1 "#$bg0"
+	walgen1 "#$wall"
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/tile.png\""
 fi
 
