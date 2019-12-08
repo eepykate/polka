@@ -150,6 +150,12 @@ blocks() {
 	echo -e "\n"
 }
 
+bm() {
+	echo
+	for i in {0..7}; do echo -n "\e[9${i}ma\e[0m ";	done
+	echo; echo
+}
+
 notthing() {
 	notify-send -u critical -t 99999999 '      urgent      ​'; \
 	notify-send -t 99999999 '      normal      ​'; \
