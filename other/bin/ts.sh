@@ -101,7 +101,7 @@ elif [[ $theme = nh ]]; then
 	disabled="696969"
 	#   -----
 	accent="ed2553"
-	false="ff920c"
+	false="ff32e3"
 	hover="ffffff"
 	red="ed2553"
 	#   -----
@@ -303,8 +303,9 @@ else
 		-e "s/separator_height.*/separator_height = 8/" \
 		-e "s/frame_width.*/frame_width = 1/" \
 		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
-	pkill dunst; dunst &!
 fi
+
+pkill dunst; dunst &!
 
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap

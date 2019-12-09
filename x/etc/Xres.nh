@@ -24,8 +24,8 @@
 *.color12:      #2097ef
 
 ! magenta
-*.color5:       #c82de4
-*.color13:      #c82de4
+*.color5:       #e42dcc
+*.color13:      #e42dcc
 
 ! cyan
 *.color6:       #20d2ef
@@ -37,4 +37,4 @@
 
 ! accent
 *.color16:      #ed2553
-*.color17:      #ff920c
+*.color17:      #ff32e3
