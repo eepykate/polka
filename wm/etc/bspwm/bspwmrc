@@ -9,7 +9,7 @@ bspc monitor -d 1 2 3 4 5 6
 bspc monitor DVI-D-0 -d 7 8 9 10
 
 bspc config window_gap 40
-bspc config border_width 6
+bspc config border_width 0
 bspc config border_radius 7
 
 xsetroot -cursor_name left_ptr

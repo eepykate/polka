@@ -36,8 +36,8 @@ mpDris2 &  # playerctl support for mpd
            #
 dunst &    # Notification daemon
 sxhkd &    # Hotkey daemon
-#compton &  # compositor
-recom &    # restart compton every 10m
+compton &  # compositor
+recom &    # restart compton every once in a while
 
 start-dropdown.sh &
 
