@@ -303,6 +303,7 @@ else
 		-e "s/separator_height.*/separator_height = 8/" \
 		-e "s/frame_width.*/frame_width = 1/" \
 		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+	pkill dunst; dunst &!
 fi
 
 echo "#!/bin/sh
