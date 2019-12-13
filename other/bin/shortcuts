@@ -10,4 +10,4 @@ sed -e '/^#/d' ${XDG_CONFIG_HOME:-~/.config}/sc \
 	-e "s|~|$HOME|g" | tee \
   >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) \
   >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) \
-  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"$EDITOR "$3"; reset_cursor\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) &>/dev/null
+  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"v "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sc.sh) &>/dev/null

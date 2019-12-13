@@ -49,7 +49,14 @@ reset_cursor() { echo -en "\e[4 q"; }
 mc() { mkdir -p "$1" && cd "$1"; }
 bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 tc() { transmission-remote-cli; reset_cursor; }
-v() { nvim $@; reset_cursor; }
+v() {
+	if {ls -la $1 | grep -i '^[a-z-]* [0-9] root'} &>/dev/null; then
+		sudo nvim $1
+	else
+		nvim $1
+	fi
+	reset_cursor
+}
 
 hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
 rgbtohex() { printf "%02X%02X%02X\n" $@; }
