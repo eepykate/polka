@@ -4,8 +4,8 @@
 #    https://github.com/sasawat/firefox-ctrl-q-workaround
 #
 
-W="$(xdotool getactivewindow)"
-S1="$(xprop -id "$W" | awk -F '"' '/WM_CLASS/{print $4}')"
-if [ "$S1" != "Firefox" ] && [ "$S1" != "Firefox Developer Edition" ]; then
-	xdotool key --clearmodifiers --window "$W" "ctrl+q"
+w="$(xdotool getactivewindow)"
+
+if ! xdotool getwindowname "$w" | grep "Firefox"; then
+	xdotool key --window "$w" --clearmodifiers "ctrl+q"
 fi
