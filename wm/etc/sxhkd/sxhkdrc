@@ -50,7 +50,7 @@ super + i
 	rofi-emoji
 
 ctrl + alt + w
-	nmcli networking off && nmcli networking on
+	nmcli networking off && sleep 0.5 && nmcli networking on
 
 super + l
 	lock
