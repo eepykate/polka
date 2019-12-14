@@ -5,8 +5,10 @@
 #
 
 while sleep 1h; do
+	pgrep minecraft || {
 	pkill compton &&
 		sleep 0.5 &&
 		compton &!
 	notify-send "Restarted compton"
+	}
 done
