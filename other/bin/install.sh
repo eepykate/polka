@@ -339,4 +339,26 @@ sed -i 's/load-module module-esound-protocol-unix/#load-module module-esound-pro
 echo "Telling linux to use no more than 10M ram for caching writes"
 echo 10000000 > /proc/sys/vm/dirty_bytes
 
+
+echo Making firefox dev edition support uc.js files
+git clone https://github.com/alice0775/userChrome.js /home/$name/opt/git/userChrome.js
+cd /home/$name/opt/git/userChrome.js/72
+cp -r install_folder/* /lib/firefox-developer-edition
+mv /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js \
+	/home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js-backup 2>/dev/null
+cp userChrome.js /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 echo 'finished'
