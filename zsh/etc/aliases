@@ -179,4 +179,8 @@ inf() {
 	echo; echo
 }
 
+calc() {
+	echo $(($@))
+}
+
 # vim: ft=sh
