@@ -527,7 +527,6 @@ button[disabled] {
 }
 ul.report-reasons {
  background-color:transparent;
- text-transform:uppercase;
  border:none
 }
 .content .entry .buttons li.reported-stamp,
@@ -3813,6 +3812,8 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
+body.mod-toolbox-rd .tb-page-overlay a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons):not(.tb-submitter):not(.tb-comment-author):not(.tb-submission-author), body.mod-toolbox-rd .tb-popup a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons):not(.tb-submitter):not(.tb-comment-author):not(.tb-submission-author), body.mod-toolbox-rd #tb-bottombar a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons),
+.pretty-button,
 .tagline .author,
 html body .side h1.redditname a,
 body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
@@ -3828,6 +3829,19 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 	color: var(--fg1) !important;
 }
 
+body.mod-toolbox-rd .tb-general-button,
+.tb-popup-footer,
+.tb-popup-header,
+.tb-history-disclaimer,
+td.url-td,
+.tb-popup-content,
+.mod-toolbox-rd #tb-bottombar-hidden,
+#tb-flatview-link,
+#tb-context-menu,
+.mod-toolbox-rd #tb-modbar-hide-tooltip,
+.tb-modbar-button,
+.mod-toolbox-rd #tb-bottombar,
+.mod-toolbox-rd #tb-bottombar-hidden,
 .content .searchpane.raisedbox,
 .sitetable > div.thing.comment.res-selected > .entry,
 .sitetable > div.thing.comment.res-selected > .entry .md-container
@@ -3835,6 +3849,8 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 	background-color: var(--bg3) !important;
 }
 
+.mod-toolbox-rd .tb-modbar-button,
+.tb-bottombar *,
 .shortlink > input {
 	border: none !important;
 }
@@ -4150,6 +4166,38 @@ body:not(.res-nightmode) * .md * a:visited {
 .flairrichtext {
 	height: 16px !important;
 }
+
+
+body.moderator * div.thing.spam {
+	background-color: rgba(250, 128, 114, 0.1) !important;
+}
+
+.tb-history-row-warning {
+	background-color: rgba(255, 252, 127, 0.2) !important;
+}
+
+
+.thing.spam div.entry.res-selected,
+.thing.spam .entry,
+#siteTable .thing .res-selected .md-container,
+.thing.spam * .usertext-body,
+.sitetable div.thing.comment.spam .entry {
+	background-color: transparent !important;
+}
+
+.tb-popup,
+#tb-modbar-hide-tooltip,
+.mod-toolbox-rd #tb-context-menu,
+.res-nightmode .mod-toolbox-rd #tb-bottombar {
+	filter: none !important;
+}
+
+
+
+
+
+
+
 
 
 
