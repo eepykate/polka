@@ -41,6 +41,9 @@
 /* Hide tab seperator line */
 .tabbrowser-tab::after, .tabbrowser-tab::before { border-left: none !important; }
 
+/* Hide tab title update indicator (Glowing blue circle under tab icon) */
+.tab-content { background-image: none !important; }
+
 .urlbar-go-button,
 #identity-box,
 /*#back-button,
@@ -61,6 +64,9 @@
 
 /* Remove small border from above the navbar*/
 #nav-bar { box-shadow: none !important; }
+
+/* Remove border from urlbar (obviously) */
+#urlbar { border: none !important; }
 
 
 
@@ -254,14 +260,12 @@ toolbarbutton#alltabs-button {
 
 
 /* Make sure selected stuff in the autocomplete popup is bold and everything else is normal */
-.urlbarView-secondary,
-.urlbarView-row[type=search] > .urlbarView-row-inner > .urlbarView-title strong,
-.urlbarView-row:not([type=search]) > .urlbarView-row-inner > .urlbarView-title {
+#urlbar-results * {
 	font-weight: normal !important;
 }
 
-.urlbarView-title,
-#urlbarView-row-0 * strong {
+#navigator-toolbox * .urlbarView-title,
+#navigator-toolbox * #urlbarView-row-0 * strong {
 	font-weight: bold !important;
 }
 
