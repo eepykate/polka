@@ -31,6 +31,8 @@ code:not(.inline)::before {
 	font-size: 14px !important;	
 }
 
+.codeBlockText-11zCaP, .codeLine-3qsZPQ,
+.codeBlockText-11zCaP *,
 code, .inline {
 	font-family: Monospace !important;
 	font-weight: bold !important;
@@ -281,13 +283,13 @@ pre,
     --background-modifier-hover: rgba(79,84,92,0.16);
     --background-modifier-active: rgba(79,84,92,0.24);
     --background-modifier-accent: hsla(0,0%,100%,0.06);
-    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
     --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
     --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
     --channeltextarea-background: var(--bg1);
     --activity-card-background: var(--bg2);
     --deprecated-panel-background: var(--bg3);
 	--background-modifier-selected: var(--bg1);
+	--elevation-low: none !important;
 }
 
 .container-PNkimc,
@@ -326,10 +328,9 @@ code,
 	opacity: 0.3 !important;
 }
 
-/* Send bar padding
+/* Padding in main content area
 Thanks _diamondburned_#4507 */
 [class^="chatContent"] > form {
-    background-image: linear-gradient(transparent, rgba(10, 10, 10, 0.35));
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -367,8 +368,6 @@ Thanks _diamondburned_#4507 */
 [class*="selectorSelected"] {
     background-color: var(--bg1) !important;
 }
-
-
 
 
 
