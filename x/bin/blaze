@@ -101,13 +101,14 @@ if [[ ! "$method" ]]; then
 	command -v slop &>/dev/null && s=s
 	command -v dattr &>/dev/null && d=d
 
+	# if the user only has slop or disputils (But not both) use that
+	[[ "$s" ]] && method=selection
+	[[ "$d" ]] && method=display
+
 	# if the user has both slop and disputils ask the user which one to use
 	[[ "$s" && "$d" ]] &&
 		method="$(echo -e "display\nselection" | m -p "Method of recording")"
 
-	# if the user only has slop or disputils (But not both) use that
-	[[ "$s" ]] && method=selection
-	[[ "$d" ]] && method=display
 fi
 
 if [[ "$method" = display ]]; then
