@@ -23,8 +23,6 @@ screen.sh     # Custom screen layout
 synclient TouchpadOff=1           # Disable touchpad
 xset r rate 200 60 &              # Faster keyboard
 xsetroot -cursor_name left_ptr    # Make desktop use normal cursor
-pkill -9 tumblerd
-HOME="$HOME/etc" /usr/lib/tumbler-1/tumblerd &
 
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources &
 
