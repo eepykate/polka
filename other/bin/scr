@@ -18,4 +18,5 @@ name1="${name}-$(file ${dir}/${name}.png | \
 dn1="$dir/$name1.png" &&
 mv "$dn" "$dn1" || exit
 
-preview "$dn1"
+#preview "$dn1"
+notify-send "pic taken"
