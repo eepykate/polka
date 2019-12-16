@@ -40,6 +40,7 @@ bindkey '^[[B' down-line-or-beginning-search
 #   Autocompletion
 #        ---
 setopt auto_menu         # Show completion menu on successive tab press
+setopt NO_NOMATCH          # Disable globbing
 setopt always_to_end     # Move cursor to end of word if completed in-word
 unsetopt menu_complete   # Do not autoselect the first completion entry
 setopt complete_in_word
