@@ -39,20 +39,14 @@ bindkey '^[[B' down-line-or-beginning-search
 #        ---
 #   Autocompletion
 #        ---
-setopt auto_menu         # Show completion menu on successive tab press
-setopt NO_NOMATCH          # Disable globbing
-setopt always_to_end     # Move cursor to end of word if completed in-word
-unsetopt menu_complete   # Do not autoselect the first completion entry
+setopt NO_NOMATCH        # Disable globbing
 setopt complete_in_word
-ZSH_CACHE_DIR=${XDG_CACHE_HOME:-~/.cache}/zsh
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
-autoload -U compinit && compinit -u -d ${XDG_CACHE_HOME:-~/.cache}/zsh/zcompdump-$ZSH_VERSION
+zstyle ':completion:*' menu select
+zstyle ':completion:*' special-dirs true
+autoload -U compinit &&
+	compinit -u -d ${XDG_CACHE_HOME:-~/.cache}/zsh/zcompdump-$ZSH_VERSION
 
 #       ---
 #   Shell Theme
