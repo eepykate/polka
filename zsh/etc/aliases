@@ -51,7 +51,7 @@ bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 tc() { transmission-remote-cli; reset_cursor; }
 v() {
 	# ls -la $1 | grep -i '^[a-z-]* [0-9] root'
-	if [[ "$(stat -c '%U' $1)" = root ]]; then
+	if [[ -e "$1" ]] && [[ "$(stat -c '%U' $1)" = root ]]; then
 		sudo nvim $1
 	else
 		nvim $1
@@ -156,12 +156,6 @@ blocks() {
 	echo
 	for i in {0..7}; do echo -n "\e[10${i}m  \e[0m ";	done
 	echo -e "\n"
-}
-
-bm() {
-	echo
-	for i in {0..7}; do echo -n "\e[9${i}ma\e[0m ";	done
-	echo; echo
 }
 
 notthing() {
