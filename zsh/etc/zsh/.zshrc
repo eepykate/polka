@@ -10,6 +10,7 @@ bindkey '^[[1;5C' forward-word        # Ctrl-RightArrow
 bindkey '^[[1;5D' backward-word       # Ctrl-LeftArrow
 bindkey '^[[H' beginning-of-line      # Home
 bindkey '^?' backward-delete-char     # Backspace
+bindkey '^[^M' self-insert-unmeta     # Alt-Return
 bindkey '^[[5~' up-line-or-history    # PageUp
 bindkey '^[[6~' down-line-or-history  # PageDown
 bindkey '^[[Z' reverse-menu-complete  # Shift-Tab
