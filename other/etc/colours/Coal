@@ -1,0 +1,26 @@
+#   -----
+bg0="151517"
+bg1="18191c"
+bg2="1C1D21"
+bg3="1F2126"
+bg4="262930"
+button="daddee1a"
+#   -----
+fg1="daddee"
+fg2="a6a9b7"
+disabled="696969"
+#   -----
+accent="7baae8"
+false="c488ec"
+hover="ffffff"
+#   -----
+wall="grey_annie-spratt-JsOK6ko9SUo-unsplash.jpg"
+#   -----
+
+black="484e5b"
+red="e56f92"
+green="8cd7aa"
+yellow="e9967e"
+blue="79aaeb"
+purple="c488ec"
+cyan="7abce4"

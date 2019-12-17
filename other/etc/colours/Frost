@@ -1,0 +1,27 @@
+#   -----
+bg0="20242E"
+bg1="232836"
+bg2="282e3f"
+bg3="2f364a"
+bg4="$(darken $bg3 1.1)"
+button="ccccfa1a"
+#   -----
+fg1="ccccfa"
+fg2="8686a4"
+disabled="696969"
+#   -----
+accent="8da4eb"
+false="e9799b"
+hover="ffffff"
+red="e9799b"
+#   -----
+wall="$bg0"
+#   -----
+
+black="434d6a"
+red="e9799b"
+green="93caa8"
+yellow="f5b2a3"
+blue="8da4eb"
+purple="dca7fa"
+cyan="8fc5e6"

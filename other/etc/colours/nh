@@ -1,0 +1,27 @@
+#   -----
+bg0="000000"
+bg1="0D0D0D"
+bg2="141414"
+bg3="1A1A1A"
+bg4="1F1F1F"
+button="d9d9d91a"
+#   -----
+fg1="d9d9d9"
+fg2="a9a9a9"
+disabled="696969"
+#   -----
+accent="ed2553"
+false="ff32e3"
+hover="ffffff"
+red="ed2553"
+#   -----
+wall="$bg2"
+#   -----
+
+black="404040"
+red="ed2553"
+green="9be32b"
+yellow="ff920c"
+blue="2097ef"
+purple="e42dcc"
+cyan="20d2ef"

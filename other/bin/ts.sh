@@ -16,152 +16,47 @@ if [[ -z $theme ]]; then
 		|| exit
 fi
 [[ -n $wallpaper ]] && wallpaper="$(ls $HOME/Wallpapers/*.png | sed 's/.*\///' | rofi -dmenu -i -p "Which Wallpaper?")" # Find png wallpapers in ~/Wallpapers
+ext() {
+	echo "Invalid theme ($theme); exiting"; exit
+}
 
 # Define the colours in the theme (for rofi, startpage, firefox, dunst, etc)
-if [[ $theme = Coral ]]; then
-
-	#   -----
-	bg0="0E171C"
-	bg1="111c23"
-	bg2="17242c"
-	bg3="1c2d37"
-	bg4="$(darken $bg3 1.1)"
-	button="edeef01a"
-	#   -----
-	fg1="edeef0"
-	fg2="999ba0"
-	disabled="595959"
-	#   -----
-	accent="f6b2b6"
-	false="8ac4ba"
-	hover="000000"
-	red="d48398"
-	#   -----
-	wall="$bg0"
-	#   -----
-
-elif [[ $theme = Frost ]]; then
-
-	#   -----
-	bg0="20242E"
-	bg1="232836"
-	bg2="282e3f"
-	bg3="2f364a"
-	bg4="$(darken $bg3 1.1)"
-	button="ccccfa1a"
-	#   -----
-	fg1="ccccfa"
-	fg2="8686a4"
-	disabled="696969"
-	#   -----
-	accent="8da4eb"
-	false="e9799b"
-	hover="ffffff"
-	red="e9799b"
-	#   -----
-	wall="$bg0"
-	#   -----
-
-elif [[ $theme = Coal ]]; then
-
-	#   -----
-	bg0="151517"
-	bg1="18191c"
-	bg2="1C1D21"
-	bg3="1F2126"
-	bg4="262930"
-	button="daddee1a"
-	#   -----
-	fg1="daddee"
-	fg2="a6a9b7"
-	disabled="696969"
-	#   -----
-	accent="7baae8"
-	false="c488ec"
-	hover="ffffff"
-	red="e56f92"
-	#   -----
-	wall="grey_annie-spratt-JsOK6ko9SUo-unsplash.jpg"
-	#   -----
-
-elif [[ $theme = nh ]]; then
-
-	#   -----
-	bg0="000000"
-	bg1="0D0D0D"
-	bg2="141414"
-	bg3="1A1A1A"
-	bg4="1F1F1F"
-	button="d9d9d91a"
-	#   -----
-	fg1="d9d9d9"
-	fg2="a9a9a9"
-	disabled="696969"
-	#   -----
-	accent="ed2553"
-	false="ff32e3"
-	hover="ffffff"
-	red="ed2553"
-	#   -----
-	wall="$bg2"
-	#   -----
-
-elif [[ $theme = Withered ]]; then
-
-	#   -----
-	bg0="FFF6EF"
-	bg1="f8efe8"
-	bg2="F2E9E3"
-	bg3="E6DDD6"
-	bg4="$(darken $bg3 0.97)"
-	button="4D4D4D16"
-	#   -----
-	fg1="4D4D4D"
-	fg2="999999"
-	disabled="595959"
-	#   -----
-	accent="c48b66"
-	false="7bb854"
-	hover="f8efe8"
-	red="be6767"
-	#   -----
-	wall="$bg0"
-	#   -----
-
-elif [[ $theme = Snow ]]; then
-
-	#   -----
-	bg0="ffffff"
-	bg1="f8f9fc"
-	bg2="F0F2F7"
-	bg3="EBEEF5"
-	bg4="E3E6ED"
-	button="43566f1a"
-	#   -----
-	fg1="314053"
-	fg2="7d8998"
-	disabled="595959"
-	#   -----
-	accent="6796e1"
-	false="c185da"
-	hover="ffffff"
-	red="cd5e79"
-	#   -----
-	wall="$bg0"
-	#   -----
-
-else
-	echo "Invalid theme; exiting"; exit
-fi
+[[ -f "${XDG_CONFIG_HOME:-~/.config}/colours/$theme" ]] &&
+	. "${XDG_CONFIG_HOME:-~/.config}/colours/$theme" ||
+	ext
 
 echo -e "Theme chosen: $theme\n"
 
 echo "Changing colours in:"
 
 echo " - xresources"
-# if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
-[[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
-	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/Xresources
+
+sed --follow-symlinks -i                      \
+	                                            \
+	-e "s/background:.*/background:   #$bg1/"   \
+	-e "s/foreground:.*/foreground:   #$fg1/"   \
+	-e "s/cursorColor:.*/cursorColor: #$fg1/"   \
+	                                            \
+	-e "s/color0:.*/color0:       #$bg1/"       \
+	-e "s/color8:.*/color8:       #$black/"     \
+	-e "s/color1:.*/color1:       #$red/"       \
+	-e "s/color9:.*/color9:       #$red/"       \
+	-e "s/color2:.*/color2:       #$green/"     \
+	-e "s/color3:.*/color3:       #$yellow/"    \
+	-e "s/color4:.*/color4:       #$blue/"      \
+	-e "s/color5:.*/color5:       #$purple/"    \
+	-e "s/color6:.*/color6:       #$cyan/"      \
+	-e "s/color7:.*/color7:       #$fg2/"       \
+	-e "s/color10:.*/color10:      #$green/"    \
+	-e "s/color11:.*/color11:      #$yellow/"   \
+	-e "s/color12:.*/color12:      #$blue/"     \
+	-e "s/color13:.*/color13:      #$purple/"   \
+	-e "s/color14:.*/color14:      #$cyan/"     \
+	-e "s/color15:.*/color15:      #$fg1/"      \
+	                                            \
+	-e "s/color16:.*/color16:      #$accent/"   \
+	-e "s/color17:.*/color17:      #$false/"    \
+	${XDG_CONFIG_HOME:-~/.config}/Xres
 
 sed --follow-symlinks -i \
 	-e "s/normbgcolor.*/normbgcolor: #$bg4/" \
@@ -170,7 +65,7 @@ sed --follow-symlinks -i \
 	-e "s/selfgcolor.*/selfgcolor:  #$fg1/" \
 	${XDG_CONFIG_HOME:-~/.config}/Xresources
 
-echo "   - Reloading tabbed and st"
+echo "   * Reloading tabbed and st"
 # Reload terminal colours using Xresources
 rc
 
@@ -318,7 +213,7 @@ fi
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
 
-echo -e "\nRestarting dunst as I might have changed the config in the wallpaper bit"
+echo -e "Restarting dunst as I might have changed the config in the wallpaper bit"
 pkill dunst; dunst &!
 
 #
@@ -345,5 +240,5 @@ pkill dunst; dunst &!
 #sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
 
 echo -e "\nSending a notification"
-
+sleep 0.1
 notify-send "Theme changed to $theme"
