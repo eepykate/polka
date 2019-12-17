@@ -155,6 +155,13 @@ sed --follow-symlinks -i \
 	-e "s/bgcolor=.*/bgcolor=#$bg1/" \
 	${XDG_CONFIG_HOME:-~/.config}/qView/qView.conf
 
+echo " - gtk context menus"
+sed --follow-symlinks -i \
+	-e "s|^	background-color: #.*|	background-color: #$bg3;|" \
+	-e "s|^	color: #.*|	color: #$fg1;|" \
+	${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/menus.css
+
+
 #sed --follow-symlinks -i \
 #	-e "s/color [a-zA-Z0-9][a-zA-Z0-9]*/color $bg1/g" \
 #	-e "s/color [a-zA-Z0-9][a-zA-Z0-9]*/color $fg2/" \
@@ -238,6 +245,7 @@ pkill dunst; dunst &!
 # Manually change gtk theme
 #sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
 #sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
+
 
 echo -e "\nSending a notification"
 sleep 0.1
