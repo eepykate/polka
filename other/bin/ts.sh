@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -x
-
 opts="$(getopt -o t:w --long theme:,wallpaper -- "$@")"
 eval set -- "$opts"
 while true; do
@@ -156,7 +154,11 @@ else
 	echo "Invalid theme; exiting"; exit
 fi
 
+echo -e "Theme chosen: $theme\n"
 
+echo "Changing colours in:"
+
+echo " - xresources"
 # if ${XDG_CONFIG_HOME:-~/.config}/Xres.<theme> exists, replace the `#include` line in ~/.Xresources to use that theme
 [[ -f ${XDG_CONFIG_HOME:-~/.config}/Xres.$theme ]] &&
 	sed --follow-symlinks -i "s/#include \"Xres.*\"/#include \"Xres.$theme\"/" ${XDG_CONFIG_HOME:-~/.config}/Xresources
@@ -168,15 +170,14 @@ sed --follow-symlinks -i \
 	-e "s/selfgcolor.*/selfgcolor:  #$fg1/" \
 	${XDG_CONFIG_HOME:-~/.config}/Xresources
 
+echo "   - Reloading tabbed and st"
 # Reload terminal colours using Xresources
 rc
 
+echo " - firefox"
 # Change the colour variables in firefox and my startpage
 # $HOME/.startpage/style.css
-echo "${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
-${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
-	xargs sed --follow-symlinks -i \
+sed --follow-symlinks -i \
 	-e "s/--bg0:.*#.*\;/--bg0: #$bg0\;/" \
 	-e "s/--bg1:.*#.*\;/--bg1: #$bg1\;/" \
 	-e "s/--bg2:.*#.*\;/--bg2: #$bg2\;/" \
@@ -190,8 +191,12 @@ ${XDG_DATA_HOME:-~/.local/share}/startpage/style.css" | \
 	-e "s/--button:.*#.*\;/--button: #$button\;/" \
 	-e "s/--hover:.*#.*\;/--hover: #$hover\;/" \
 	-e "s/--red:.*#.*\;/--red: #$red\;/" \
-	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/"
+	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
+	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChrome.css \
+	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userContent.css \
+	${XDG_DATA_HOME:-~/.local/share}/startpage/style.css
 
+echo " - dunst"
 # Replace colours in dunst
 # urgent notifications
 dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
@@ -218,6 +223,7 @@ sed --follow-symlinks -i \
 
 pkill -9 dunst; dunst &>/dev/null &!
 
+echo " - rofi"
 # Change the theme in rofi
 sed --follow-symlinks -i \
 	-e "s/bg:.*#.*;/bg:         #$bg3;/g" \
@@ -227,6 +233,7 @@ sed --follow-symlinks -i \
 	-e "s/hover:.*#.*;/hover:      #$hover;/"\
 	${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
 
+echo " - lemonbar"
 # Change lemonbar colours
 sed --follow-symlinks -i \
 	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
@@ -238,6 +245,7 @@ sed --follow-symlinks -i \
 	~/bin/bar
 # bar &!         # This is now in my bspwmrc
 
+echo " - bspwm"
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 # Change bspwm colours
 sed --follow-symlinks -i \
@@ -246,6 +254,7 @@ sed --follow-symlinks -i \
 	${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 wm restart
 
+echo " - qview"
 # Change qview colours
 sed --follow-symlinks -i \
 	-e "s/bgcolor=.*/bgcolor=#$bg1/" \
@@ -288,6 +297,7 @@ sed --follow-symlinks -i \
 
 #. swirls.sh
 
+echo -e "\nChanging wallpaper"
 if [[ -f "$HOME/opt/Wallpapers/$wall" ]]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/$wall\""
 	eval $wallthing
@@ -305,10 +315,11 @@ else
 		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 fi
 
-pkill dunst; dunst &!
-
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
+
+echo -e "\nRestarting dunst as I might have changed the config in the wallpaper bit"
+pkill dunst; dunst &!
 
 #
 # tbf I use like 1 gtk app, this doesn't matter
@@ -333,5 +344,6 @@ $wallthing" > ~/bin/pap
 #sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
 #sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
 
+echo -e "\nSending a notification"
 
 notify-send "Theme changed to $theme"

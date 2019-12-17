@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 
 dir=~/opt/Screenshots/maim
 name="maim-$(date +%F_%H:%M:%S)"
