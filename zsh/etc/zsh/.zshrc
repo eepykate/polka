@@ -3,16 +3,11 @@
 #     ---
 bindkey '^E' end-of-line              # Ctrl-E
 bindkey '^[[P' delete-char            # Delete
-bindkey '^[[4~' end-of-line           # End
-bindkey '^[[3~' delete-char           # Delete
 bindkey '^A' beginning-of-line        # Ctrl-A
 bindkey '^[[1;5C' forward-word        # Ctrl-RightArrow
 bindkey '^[[1;5D' backward-word       # Ctrl-LeftArrow
 bindkey '^[[H' beginning-of-line      # Home
-bindkey '^?' backward-delete-char     # Backspace
 bindkey '^[^M' self-insert-unmeta     # Alt-Return
-bindkey '^[[5~' up-line-or-history    # PageUp
-bindkey '^[[6~' down-line-or-history  # PageDown
 bindkey '^[[Z' reverse-menu-complete  # Shift-Tab
 bindkey '^r' history-incremental-search-backward  # Ctrl-E
 
@@ -22,12 +17,8 @@ bindkey '^r' history-incremental-search-backward  # Ctrl-E
 HISTSIZE=999999
 SAVEHIST=999999
 HISTFILE="${XDG_CONFIG_HOME:-~/.config}/zsh_history"
-setopt hist_verify             # Show command with history expansion to user before running it
-setopt share_history           # Share command history data
 setopt extended_history        # Record timestamp of command in HISTFILE
 setopt hist_ignore_dups        # Ignore duplicated commands history list
-setopt inc_append_history      # Add commands to HISTFILE in order of execution
-setopt hist_expire_dups_first  # Delete duplicates first when HISTFILE size exceeds HISTSIZE
 
 # Arrow keys search history
 autoload -U up-line-or-beginning-search
@@ -52,7 +43,6 @@ autoload -U compinit &&
 #       ---
 #   Shell Theme
 #       ---
-setopt prompt_subst
 PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.>>)%{\e[0m%} '
 
 #        ---
