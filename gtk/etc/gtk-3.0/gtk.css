@@ -4,9 +4,6 @@
 	border: none;
 }
 
-.thunar * statusbar {
-	margin-bottom: -16px
-}
 
 .thunar #location-toolbar {
 	margin-right: -50px;

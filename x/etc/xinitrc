@@ -27,6 +27,12 @@ xsetroot -cursor_name left_ptr    # Make desktop use normal cursor
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources &
 
 
+# Fuck you xfce for making me do this
+# (Run xfce apps in ~/etc as it doesn't support
+#  XDG_CONFIG_HOME anymore for some reason)
+HOME="$XDG_CONFIG_HOME" /lib/xfce4/xfconf/xfconfd &
+
+
 #       ----
 #   Applications
 #       ----
