@@ -129,24 +129,23 @@ a svg.homeIcon-tEMBK1 path {
 .sidebar-2K8pFh:hover {
 	left: 0;
 }
-
+/*
 .sidebar-2K8pFh:not(:hover) * .name-3_Dsmg {
 	font-size: 0px !important;
-	margin: 9px 0px 0px 2px !important;
+	text-align: center;
+	margin-top: 7px;
 }
 
 .sidebar-2K8pFh:not(:hover) * .name-3_Dsmg::first-letter {
-	font-family: "Fira Mono" !important;
-	font-size: 25px !important;
+	font-size: 20px !important;
 	font-weight: bold !important;
-}
+}*/
 
 .content-yTz4x3 {
 	margin-left: 40px;
 }
 
 .sidebar-2K8pFh:not(:hover) * .children-Bmpf2Q,
-.sidebar-2K8pFh:not(:hover) * .icon-1_QxNX,
 .scroller-2wx7Hm > div:first-of-type,
 .bannerImage-1jOskm,
 .unread-3zKkbm,
