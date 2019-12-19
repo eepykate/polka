@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-opt="$(echo -e "lock\nsuspend\nhibernate\nreboot\npoweroff" | rofi -dmenu)"
+#!/bin/sh
+opt="$(echo "lock\nsuspend\nhibernate\nreboot\npoweroff" | rofi -dmenu)"
 case $opt in
     h*|p*|r*|s*) systemctl $opt;;
     lock) lock;;
