@@ -188,6 +188,7 @@ if [[ "$ready" = yes ]]; then
 	#                     onto the GPU (Defined earlier in the script)
 	# "$output".mp4     | file to save the recording to
 	#
+#		$nvenc                       \
 
 	ffmpeg                         \
 		-loglevel error              \
@@ -200,8 +201,7 @@ if [[ "$ready" = yes ]]; then
 		$bitrate                     \
 		-pix_fmt yuv420p             \
 		-q:v 0                       \
-		$nvenc                       \
-		"$output".mp4
+		"$output".webm
 
 	notify-send -t 2000 "Recording Stopped"
 fi
