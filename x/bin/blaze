@@ -155,6 +155,8 @@ if [[ "$preset" ]] && [[ "$method" = display ]]; then
 
 	echo "rate=\"$rate\"
 display=\"$display\"
+[[ ! \"\$bitrate\" ]] &&
+	bitrate=\"$bitrate\"
 method=\"$method\"" > "$preset_location"
 
 fi
