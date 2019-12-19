@@ -33,6 +33,7 @@ alias upd="sudo pacman -Syu"
 
 
 
+alias sudo="doas"
 alias q="qview"
 alias kills="kill -9 -1"
 alias t="thunar . & disown"

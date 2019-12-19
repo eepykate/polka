@@ -99,7 +99,8 @@ pacman -S --noconfirm --needed \
 	rsync acpi imagemagick neovim \
 	zsh-completions compton mpd ncmpcpp \
 	gcolor3 gnome-system-monitor \
-	xsettingsd lxappearance ttf-fira-mono
+	xsettingsd lxappearance ttf-fira-mono \
+	doas
 
 
 for i in i3lock-color-git qview pulseaudio-ctl light-git lemonbar-xft-git transmission-remote-cli-git mpdris2; do
@@ -122,6 +123,8 @@ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 echo -e "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm, /usr/bin/kbdrate" >> /etc/sudoers
+
+echo -e "# basic\npermit nopass            root as root\npermit keepenv persist    $name as root\n\n# power\npermit nopass    $name as root cmd systemctl     args  suspend\npermit nopass    $name as root cmd systemctl     args  hibernate\npermit nopass    $name as root cmd systemctl     args  poweroff\npermit nopass    $name as root cmd systemctl     args  reboot\n\npermit nopass    $name as root cmd mount\npermit nopass    $name as root cmd umount\n\n# packages\npermit nopass    $name as root cmd pacman        args  -Syu\npermit nopass    $name as root cmd pacman        args  -Syyu\n\n# others\npermit nopass    $name as root cmd kbdrate\npermit nopass    $name as root cmd make          args  clean install\npermit nopass    $name as root cmd systemctl     args  restart NetworkManager\n" >> /etc/doas.conf
 
 
 echo "Installing some fonts"
