@@ -221,7 +221,8 @@ echo "#!/bin/sh
 $wallthing" > ~/bin/pap
 
 echo -e "Restarting dunst as I might have changed the config in the wallpaper bit"
-pkill dunst; dunst &!
+pkill dunst; sleep 0.1; dunst &!
+sleep 0.1
 
 #
 # tbf I use like 1 gtk app, this doesn't matter
@@ -248,5 +249,4 @@ pkill dunst; dunst &!
 
 
 echo -e "\nSending a notification"
-sleep 0.1
 notify-send "Theme changed to $theme"
