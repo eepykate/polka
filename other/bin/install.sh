@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 dots="https://gitlab.com/GaugeK/dots.git"
 
