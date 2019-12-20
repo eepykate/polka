@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+#  pacman/makepkg/git wrapper for the aur
+#
+# deps
+# - doas
+# - makepkg
+# - an arch-based distro
+# - git
+#
+
+
+[ -z "$1" ] &&
+	echo "\033[31merror:\033[0m no packages specified" &&
+	exit
+
+# location for this script to download the aur repos
+location="${XDG_CACHE_HOME:-~/.cache}/aur"
+
+# make $location if it doesn't already exist
+mkdir -p "$location"
+
+# check if the package exists in the official repos
+for i in "$@"; do
+	if pacman -Si "$i" >/dev/null 2>&1; then
+		echo "\033[34m'$i'\033[0m found in official repos; installing normally."
+		# install the package
+		doas pacman -S "$i"
+	else
+		# if the package has already been cloned, rename the existing
+		# directory and clone again.
+		[ -e "$location/$i" ] && mv "$location/$i" \
+			"$location/$i-$(date "+%Y-%m-%d_%H-%M")"
+
+		# check if the package exists in the aur
+		if [ -n "$(git ls-remote "https://aur.archlinux.org/$i.git")" ]; then
+			echo "\033[34m'$i'\033[0m found in AUR; cloning"
+
+			# clone the package
+			git clone "https://aur.archlinux.org/$i" "$location/$i"
+
+			# make the package
+			cd "$location/$i"
+			makepkg -si
+		else
+			# exit if the package isn't in the aur
+			echo "\033[31merror:\033[0m package '$i' not found"
+		fi
+	fi
+done
