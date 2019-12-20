@@ -30,6 +30,14 @@ alias p="sudo pacman"
 alias rem="sudo pacman -Rs"
 alias upd="sudo pacman -Syu"
 
+# make ins list pacman packages
+function _ins() {
+	compadd $(pacman -Ssq)
+}
+
+which compdef &>/dev/null &&
+	compdef _ins ins
+
 
 
 
