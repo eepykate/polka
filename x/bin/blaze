@@ -201,7 +201,7 @@ if [[ "$ready" = yes ]]; then
 		$bitrate                     \
 		-pix_fmt yuv420p             \
 		-q:v 0                       \
-		"$output".webm
+		"$output".mp4
 
 	notify-send -t 2000 "Recording Stopped"
 fi
