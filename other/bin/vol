@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# amixer/playerctl wrapper script for volume/media
+#
+# source:
+#   https://github.com/GaugeK/dots
+#
+#
+
+
+# shellcheck stuff
+
+
+# "'a && b || c' is not if"
+#   Is it even possible for var=content to fail?
+#   If it is, I don't care enough
+#     shellcheck disable=SC2015
+#
+# "double quote variables"
+#   I want $2 in functions to be empty if
+#   the user hasn't supplied it.
+#     shellcheck disable=SC2086
+
+mute() {
+	# if a command isn't specified toggle mute
+	if [ -z "$1" ]; then
+		[ "$(amixer get Master | grep -io "\[on\|\[off" | head -1)" = "[on" ] &&
+			action="mute" || action="unmute"
+	else
+		action="$1"
+	fi
+
+	# un/mute
+	amixer set Master "${action}" >/dev/null
+	notif="Volume ${action}d"
+}
+
+volume() {
+	# get the current volume
+	current="$(amixer get Master | grep -io "[0-9][0-9]*%" | \
+		head -1 | tr -d '%')"
+
+	# if $2 isn't provided set it to 5 (Default up/down percent)
+	[ -n "$2" ] &&
+		number="$2" ||
+		{ [ "$1" != set ] && number="5"; }
+
+	# get the new volume to set by adding/subtracting the chosen
+	# number from the current volume
+	if [ "$1" = up ]; then
+		number="$((current + number))"
+	elif [ "$1" = down ]; then
+		number="$((current - number))"
+	fi
+
+	# set the volume to the new value
+	amixer set Master "$number%" >/dev/null
+
+	notif="Volume set to $number%"
+}
+
+media() {
+	# i have a script to choose a playerctl player,
+	# this enables that to be used in this script.
+	[ -f /tmp/player ] || touch /tmp/player
+	. /tmp/player
+
+	action="$1"
+
+	# if $1 is p, toggle play/pause
+	if [ "$1" = p ]; then
+		status="$(playerctl -p "$player" status)"
+		{ [ "$status" = Stopped ] || [ "$status" = Paused ]; } &&
+			{ action="play"; action1="Resumed"; } ||
+			{ action="pause"; action1="Paused"; }
+	fi
+
+	# actually run the command
+	playerctl -p "$player" "$action"
+	notif="$action1 $(playerctl -p "$player" metadata xesam:title)"
+}
+
+case $1 in
+	# mute
+	m) mute;;
+	mute|unmute) mute $1;;
+
+	# volume
+	set|up|down) volume $1 $2;;
+
+	# media
+	p|pause|play|stop) media $1;;
+esac
+
+notify-send "$notif"
