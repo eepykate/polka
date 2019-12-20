@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-notify-send "$(date "+%a %d %b - %I:%M %p")"

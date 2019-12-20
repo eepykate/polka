@@ -1,1 +1,155 @@
-bar3
+#!/usr/bin/env bash
+#
+#        GaugeK's bar
+#   github.com/GaugeK/dots
+#
+
+#set -x
+
+fg="daddee"
+fd="a6a9b7"
+bg="18191c"
+bl="1C1D21"
+blr="1F2126"
+ac="7baae8"
+fifo="/tmp/barfifo"
+#trap 'pkill -P $$' SIGINT
+
+tim() {
+	if [[ $(cat /tmp/barblink) = ":" ]]; then
+		echo " " > /tmp/barblink
+		time="%{F#ff$fd}$(date "+%A")%{F-} $(date "+%I %M")";
+	else
+		echo ":" > /tmp/barblink
+		time="%{F#ff$fd}$(date "+%A")%{F-} $(date "+%I:%M")";
+	fi
+
+	echo "t%{A:nottime:}$time%{A}" > $fifo
+}
+
+nam() {
+	name="$(xdotool getwindowfocus getwindowname)"
+	[[ $(wc -m <<< "$name") -ge 41 ]] && 
+		echo "n$(cut -c -40 <<< "$name")..." > $fifo ||
+		echo "n$name" > $fifo
+}
+
+desktop() {
+	echo "d$(bspc query -D -d focused --names)" > $fifo
+	#out=""
+	#f="$(bspc query -D -d focused --names)"
+	#for i in $(bspc query -D --names | sort -n | head -5); do
+	#	if [[ $i = $f ]]; then
+	#		out+="%{F#ff$fg}%{F-}"
+	#	else
+	#		out+="%{F#ff$fd}%{F-}"
+	#	fi
+	#done
+	#echo -e "d$out" > $fifo
+}
+
+volume() {
+	amix="$(amixer -D pulse get Master | grep -i "\[off\]\|\[on\]")"
+	muted="$(awk '{print $6}' <<< $amix | sed -e '1!d' -e 's/\[//' -e 's/\]//')"
+	vol="$(sed -e '1!d' -e 's/\[//g' -e 's/\]//g'  <<< $amix | grep -oi '[0-9][0-9]*%')"
+
+	local b="%{A4:vol -p up:}%{A5:vol -p down:}%{A3:vol -p m:}%{A:vol -p status vol:}"
+	local a="%{A}%{A}%{A}%{A}"
+	if [[ $muted = off ]]; then
+		echo -e "v${b}Muted${a}" > $fifo; return
+	fi
+
+	echo -e "v${b}$vol${a}" > $fifo
+}
+
+bat() {
+	cat /sys/class/power_supply/*/capacity &>/dev/null || return
+	declare -i capacity status
+
+	cap="$(cat /sys/class/power_supply/*/capacity 2>/dev/null)"
+	#capacity="$(($cap / 4))"
+	status=$(cat /sys/class/power_supply/*/status 2>/dev/null)
+
+	#case "$capacity" in
+	#	0) bat=;;
+	#	1) bat=;;
+	#	2) bat=;;
+	#	3) bat=;;
+	#	*) bat=;;
+	#esac
+
+	[[ $status = Charging ]] && stuff="(c)"
+
+	echo "b%{A4:light -A 10:}%{A5:light -U 10:}%{A:notify-send \\\"\$(acpi)\\\":}${bat} $stuff $cap%%{O12}|%{O12}%{A}%{A}%{A}" > $fifo
+}
+
+
+case $1 in
+	-b) bat; exit;;
+	-t) tim; exit;;
+	-n) nam; exit;;
+	-v) volume; exit;;
+	-d) desktop; exit;;
+esac
+
+[[ -e $fifo ]] && rm $fifo
+mkfifo $fifo
+
+killall lemonbar
+sleep 0.1
+
+bspc subscribe desktop_focus | while read -r des; do
+	bar -d
+	sleep 0.05
+	bar -n
+done &
+
+#bspc subscribe node | while read -r title; do
+#	bar -n
+#done &
+
+monitor=( $(xrandr -q | grep primary | awk '{print $4}' | sed -e 's/x/ /g' -e 's/+/ /g') )
+monitorName="$(xrandr -q | grep primary | awk '{print $1}')"
+width="$(( ${monitor[0]} - 400 ))"
+offX="$(( ${monitor[2]} + 200 ))"
+offY="$((${monitor[3]} + 20))"
+
+(sleep 0.4;
+bat;
+volume;
+desktop;
+) &
+
+(sleep 1; xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)) &
+
+while read -r line < "$fifo"; do
+	case $line in
+		v*) vol="${line#?}";;
+		b*) bat="${line#?}";;
+		t*) time="${line#?}";;
+		n*) name="${line#?}";;
+		d*) desk="${line#?}";;
+	esac
+	echo -e "%{O25}$time%{c}%{r}$bat$vol%{O12}%{F#ff$fd}|%{F-}%{O12}$desk%{O25}"
+	sleep 0.01
+done | (lemonbar \
+	-d \
+	-a 25 \
+	-U "#ff$fd" \
+	-u 8 \
+	-B "#ff$bg" \
+	-F "#ff$fg" \
+	-f "Fira Mono:pixelsize=10:style=bold" \
+	-g "${width}x50+$offX+$offY"; kill -- -0) | bash &
+
+#while true; do
+#	bar -n;
+#	sleep 0.1
+#done
+
+while true; do
+	bar -b;
+	bar -t;
+	bar -n;
+	sleep 1
+done > $fifo &
