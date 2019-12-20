@@ -31,6 +31,7 @@ xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources &
 # (Run xfce apps in ~/etc as it doesn't support
 #  XDG_CONFIG_HOME anymore for some reason)
 HOME="$XDG_CONFIG_HOME" /lib/xfce4/xfconf/xfconfd &
+HOME="$XDG_CONFIG_HOME" /usr/lib/tumbler-1/tumblerd &
 
 
 #       ----
