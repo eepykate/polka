@@ -9,6 +9,9 @@
 # - git
 #
 
+# if colours don't work for you, install (and symlink to
+# /bin/sh) a shell that's actually POSIX-compliant like `dash`
+
 
 [ -z "$1" ] &&
 	echo "\033[31merror:\033[0m no packages specified" &&
