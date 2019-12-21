@@ -3,7 +3,9 @@
 echo
 echo "This is made for me, and me alone, please do not
 expect this to work on your system, and do not complain
-that this doesn't work on your system"
+that this doesn't work on your system.
+I am not responsible for your system breaking
+if you proceed any further."
 echo
 
 printf '[Make sure this repository is installed as ~/opt/dots, then hit y] '
