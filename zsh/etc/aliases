@@ -62,6 +62,8 @@ v() {
 	# ls -la $1 | grep -i '^[a-z-]* [0-9] root'
 	if [[ -e "$1" ]] && [[ "$(stat -c '%U' $1)" = root ]]; then
 		sudo nvim $1
+	elif [[ -e "${1%/*}" ]] && [[ "$(stat -c '%U' ${1%/*})" = root ]]; then
+		sudo nvim $1
 	else
 		nvim $1
 	fi
