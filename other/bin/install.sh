@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-dots="https://gitlab.com/GaugeK/dots.git"
+dots="https://github.com/GaugeK/dots.git"
+
+dialog --title Information[!] --msgbox "This script was made for me, and me alone,
+do not expect this to work on your system,
+and do not hold me responsible if something breaks." 10 50
+
 
 pacman -Syyu --noconfirm --needed dialog archlinux-keyring
 
@@ -79,32 +84,73 @@ if ! grep "root ALL=(ALL) ALL" "/etc/sudoers" &>/dev/null; then
 fi
 
 echo "Installing programs"
-pacman -S --noconfirm --needed \
-	git bspwm sxhkd xclip util-linux \
-	transmission-cli \
-	noto-fonts noto-fonts-cjk \
-	xorg-server xorg-xdpyinfo xorg-xwininfo \
-	xorg-xinit xorg-xkill xorg-xset \
-	xorg-xprop xorg-xrandr xorg-xgamma \
-	curl wget papirus-icon-theme \
-	dosfstools exfat-utils \
-	feh ffmpeg firefox-developer-edition \
-	rofi zsh ntfs-3g \
-	pulseaudio pulseaudio-alsa \
-	scrot maim unrar unzip \
-	wget xdotool xssstate youtube-dl \
-	vlc mpv gimp inkscape \
-	xf86-input-synaptics dunst \
-	python xautolock playerctl \
-	rsync acpi imagemagick neovim \
-	zsh-completions compton mpd ncmpcpp \
-	gcolor3 gnome-system-monitor \
-	xsettingsd lxappearance ttf-fira-mono \
-	doas
+echo " git bspwm sxhkd xclip util-linux
+	transmission-cli
+	noto-fonts noto-fonts-cjk
+	xorg-server xorg-xdpyinfo xorg-xwininfo
+	xorg-xinit xorg-xkill xorg-xset
+	xorg-xprop xorg-xrandr xorg-xgamma
+	curl wget papirus-icon-theme
+	dosfstools exfat-utils
+	feh ffmpeg firefox-developer-edition
+	rofi zsh ntfs-3g
+	pulseaudio pulseaudio-alsa
+	scrot maim unrar unzip
+	wget xdotool xssstate youtube-dl
+	vlc mpv gimp inkscape
+	xf86-input-synaptics dunst
+	python xautolock playerctl
+	rsync acpi imagemagick neovim
+	zsh-completions compton mpd ncmpcpp
+	gcolor3 gnome-system-monitor
+	xsettingsd lxappearance ttf-fira-mono
+	doas"
+
+# audio
+pkgs+=( alsa-utils alsa-tools pulseaudio
+	pulseaudio-alsa pulsemixer pavucontrol
+	playerctl mpd )
+
+# X.org
+# basic tools
+pkgs+=( bspwm dunst	maim mpv rofi
+	wmctrl xclip xdo xdotool xf86-input-synaptics
+	xfsprogs xorg-xdpyinfo xorg-xev xorg-xgamma
+	xorg-xinit xorg-xkill xorg-xlsfonts xorg-xprop
+	xorg-xrandr	xorg-xsetroot xorg-xwininfo xssstate )
+# other
+pkgs+=( firefox-developer-edition gcolor3
+	lxappearance-gtk3 tumbler thunar-volman )
+
+# terminal stuff
+pkgs+=( dash fzf jq jshon ncmpcpp neovim opendoas
+	patch ripgrep rsync unrar unzip tar
+	zsh zsh-completions ps youtube-dl zip )
+
+# everything else
+pkgs+=( noto-fonts-cjk noto-fonts-emoji
+	noto-fonts-extra usbutils inkscape ttf-symbola )
 
 
-for i in i3lock-color-git qview pulseaudio-ctl light-git lemonbar-xft-git transmission-remote-cli-git mpdris2; do
-	sudo -u $name yay -S --noconfirm --needed $i
+
+# aur
+aur+=( minecraft-launcher i3lock-color-git
+	light-git qview pulseaudio-ctl lemonbar-xft-git
+	transmission-remote-cli-git mpdris2 torrench
+	gimp-plugin-resynthesizer-git )
+
+
+
+
+
+
+for pkg in $pkgs; do
+	pacman -S --noconfirm --needed $pkg
+done
+
+
+for aur in $aur; do
+	sudo -u $name yay -S --noconfirm --needed $aur
 done
 
 echo -e "installing dotfiles"
@@ -120,8 +166,6 @@ sudo -u $name bash "/home/$name/opt/dots/deploy"
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
-# This line, overwriting the `newperms` command above will allow the user to run
-# serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 echo -e "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm, /usr/bin/kbdrate" >> /etc/sudoers
 
 echo -e "# basic\npermit nopass            root as root\npermit keepenv persist    $name as root\n\n# power\npermit nopass    $name as root cmd systemctl     args  suspend\npermit nopass    $name as root cmd systemctl     args  hibernate\npermit nopass    $name as root cmd systemctl     args  poweroff\npermit nopass    $name as root cmd systemctl     args  reboot\n\npermit nopass    $name as root cmd mount\npermit nopass    $name as root cmd umount\n\n# packages\npermit nopass    $name as root cmd pacman        args  -Syu\npermit nopass    $name as root cmd pacman        args  -Syyu\n\n# others\npermit nopass    $name as root cmd kbdrate\npermit nopass    $name as root cmd make          args  clean install\npermit nopass    $name as root cmd systemctl     args  restart NetworkManager\n" >> /etc/doas.conf
@@ -154,7 +198,6 @@ fc-cache -f
 
 
 echo "Disabling mouse acceleration"
-# Disable mouse acceleration
 if [ ! -f /etc/X11/xorg.conf.d/50-mouse-acceleration.conf ]; then
 echo 'Section "InputClass"
     Identifier "My Mouse"
@@ -162,10 +205,9 @@ echo 'Section "InputClass"
     Option "AccelerationProfile" "-1"
     Option "AccelerationScheme" "none"
     Option "AccelSpeed" "-0.75"
-EndSection' >> /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+EndSection' > /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 fi
 
-# Touchpad stuff
 echo "Making some minor touchpad modifications"
 if [ ! -f /etc/X11/xorg.conf.d/70-synaptics.conf ]; then
 echo 'Section "InputClass"
@@ -190,8 +232,7 @@ echo 'Section "InputClass"
         Option "FingerLow" "30"
         Option "FingerHigh" "50"
         Option "MaxTapTime" "125"
-EndSection
-' >> /etc/X11/xorg.conf.d/70-synaptics.conf
+EndSection' > /etc/X11/xorg.conf.d/70-synaptics.conf
 fi
 
 # Make sudo as normal user request the root user's password instead of that user's
@@ -200,17 +241,14 @@ fi
 #fi
 
 echo "Enabling verbose package lists in pacman"
-# One line per pkg pacman
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
 echo "Enabling pacman loading bar in pacman"
-# Pacman-like loading bar in pacman
 if [[ -z $(grep ILoveCandy "/etc/pacman.conf") ]]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
 echo "Making pacman/yay colourful"
-# Make pacman and yay colorful because why not.
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
 
 # Make wifi faster on my card
@@ -311,9 +349,9 @@ cp mpris.so /etc/mpv/scripts/
 
 echo "Adding scripts to send a notification when a usb is removed/inserted"
 mkdir -p /usr/local/bin /usr/local/sounds;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove -o /usr/local/bin/usb-remove;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert -o /usr/local/bin/usb-insert;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb.rules -o /etc/udev/rules.d/usb.rules;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove     -o /usr/local/bin/usb-remove;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert     -o /usr/local/bin/usb-insert;
+curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb.rules      -o /etc/udev/rules.d/usb.rules;
 curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
 curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
 
