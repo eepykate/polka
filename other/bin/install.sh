@@ -107,37 +107,37 @@ echo " git bspwm sxhkd xclip util-linux
 	doas"
 
 # audio
-pkgs+=( alsa-utils alsa-tools pulseaudio
+pkgs+=( alsa-tools alsa-utils alsa-tools pulseaudio
 	pulseaudio-alsa pulsemixer pavucontrol
-	playerctl mpd )
+	playerctl )
 
 # X.org
 # basic tools
-pkgs+=( bspwm dunst	maim mpv rofi
-	wmctrl xclip xdo xdotool xf86-input-synaptics
-	xfsprogs xorg-xdpyinfo xorg-xev xorg-xgamma
-	xorg-xinit xorg-xkill xorg-xlsfonts xorg-xprop
-	xorg-xrandr	xorg-xsetroot xorg-xwininfo xssstate )
+pkgs+=( bspwm sxhkd dunst maim mpv rofi
+	xclip xdo xdotool xf86-input-synaptics
+	xfsprogs xorg-xgamma
+	xorg-xinit xorg-xkill xorg-xprop
+	xorg-xrandr xorg-xsetroot )
 # other
-pkgs+=( firefox-developer-edition gcolor3
-	lxappearance-gtk3 tumbler thunar-volman )
+pkgs+=( feh firefox-developer-edition gcolor3
+	gnome-themes-extra )
 
 # terminal stuff
-pkgs+=( dash fzf jq jshon ncmpcpp neovim opendoas
-	patch ripgrep rsync unrar unzip tar
-	zsh zsh-completions ps youtube-dl zip )
+pkgs+=( git htop dash neovim opendoas
+	patch unrar unzip wget transmission-cli
+	zsh zsh-completions zip )
 
 # everything else
-pkgs+=( noto-fonts-cjk noto-fonts-emoji
-	noto-fonts-extra usbutils inkscape ttf-symbola )
+pkgs+=( yay hunspell-en_US make gcc intel-ucode automake
+	xcb-util-image xcb-util-renderutil
+	libnotify usbutils ttf-symbola )
 
 
 
 # aur
-aur+=( minecraft-launcher i3lock-color-git
-	light-git qview pulseaudio-ctl lemonbar-xft-git
-	transmission-remote-cli-git mpdris2 torrench
-	gimp-plugin-resynthesizer-git )
+aur+=( i3lock-color-git
+	light-git pulseaudio-ctl
+	transmission-remote-cli-git torrench )
 
 
 
@@ -315,29 +315,37 @@ chsh -s /bin/zsh $name
 
 mkdir -p /home/$name/opt/git
 
-echo "Installing st"
+echo "Manually installing some programs"
+
+echo " - st"
 git clone https://github.com/gaugek/st.git /home/$name/opt/git/st &&
-cd /home/$name/opt/git/st &&
-make clean install &>/dev/null
+	cd /home/$name/opt/git/st &&
+	make clean install &>/dev/null
 
-echo "Installing stmessage to live-reload st"
+echo " - stmessage (to live-reload st)"
 git clone https://github.com/gaugek/thememenu /home/$name/opt/git/thememenu
-cd /home/$name/opt/git/thememenu
-make; cp stmessage /usr/local/bin/
+	cd /home/$name/opt/git/thememenu
+	make; cp stmessage /usr/local/bin/
 
-echo "Installing tabbed"
+echo " - tabbed"
 git clone https://github.com/gaugek/tabbed.git /home/$name/opt/git/tabbed &&
-cd /home/$name/opt/git//tabbed &&
-make clean install &>/dev/null
+	cd /home/$name/opt/git//tabbed &&
+	make clean install &>/dev/null
 
-echo "Installing dmenu"
+echo " - dmenu"
 git clone https://gitlab.com/gaugek/dmenu.git /home/$name/opt/git/dmenu &&
-cd /home/$name/opt/git/dmenu &&
-make clean install &>/dev/null
+	cd /home/$name/opt/git/dmenu &&
+	make clean install &>/dev/null
 
-echo "Installing wmutils"
+echo " - wmutils"
 git clone https://github.com/wmutils/core /home/$name/opt/git/wmutils;
 	cd /home/$name/opt/git/wmutils; make clean install &>/dev/null
+
+echo " - opendoas"
+git clone https://github.com/Duncaen/OpenDoas /home/$name/opt/git/opendoas
+	cd /home/$name/opt/git/opendoas
+	curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/doas-prompt.patch | patch -Np1
+
 
 echo "Adding mpris support to mpv"
 mkdir -p /etc/mpv/scripts

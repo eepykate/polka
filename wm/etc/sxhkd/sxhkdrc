@@ -184,6 +184,11 @@ XF86AudioStop
 XF86AudioMute
 	vol m
 
-# Sorry for spaghetti code, I promise it wasn't me that wrote it
+# toggle mute on current window
+# i really need to find a better way to do this.
+# at least it doesn't need rg anymore (i didn't
+# do the original version)
 super + Tab
-	pulsemixer --id $(pulsemixer --list-sinks | rg $(ps -p `xdotool getactivewindow getwindowpid` -o comm=) -i | rg "ID: (.*?)," -r '$1' -o | tail -1) --toggle-mute
+	pulsemixer --id "$(pulsemixer --list-sinks | \
+		grep -i $(ps -p $(xdotool getactivewindow getwindowpid) -o comm=) | \
+		grep -io 'sink-input-[0-9]*' | tail -1)" --toggle-mute

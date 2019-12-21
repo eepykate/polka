@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # resize window
+set -x
 
 percent=5
 
@@ -15,7 +16,10 @@ case $1 in
 esac
 
 # get a percentage of the monitor resolution
-var=$((`bspc query -T -m | jshon -e rectangle -e "$dim"` * percent / 100))
+#var=$((`bspc query -T -m | jshon -e rectangle -e "$dim"` * percent / 100))
+dim1="$(echo $dim | head -c 1)"
+var="$(($(dattr $dim1 $(pfd)) * percent / 100 ))"
+
 
 [ "$dim" = width  ] && { x=$sign$var; y=0; }
 [ "$dim" = height ] && { y=$sign$var; x=0; }
