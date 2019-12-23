@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# search aur and official repos for pkg
+#
+
+for i in "$@"; do
+	# official repos (blue)
+	printf "\033[34m"
+	pacman -Sqs "$i"
+
+	# aur (purple)
+	printf "\033[35m"
+	curl -s "https://aur.archlinux.org/rpc/?v=5&type=search&arg=$i" | \
+		grep -o 'Name":"[^"]*' | sed  's/Name":"//g'
+	printf "\033[0m"
+done
