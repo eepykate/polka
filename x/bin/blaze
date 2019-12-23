@@ -140,6 +140,9 @@ elif [[ "$method" = selection ]]; then
 	offX="${slop[2]}"
 	offY="${slop[3]}"
 
+	(( $width % 2 )) && width="$(( $width + 1))"
+	(( $height % 2 )) && height="$(( $height + 1))"
+
 else
 
 	echo "Invalid method; exiting"
