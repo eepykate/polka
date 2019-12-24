@@ -99,12 +99,12 @@ pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra"
 pkgs="$pkgs git htop dash neovim patch unrar unzip wget transmission-cli zsh zsh-completions zip"
 
 # everything else
-pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake xcb-util-image xcb-util-renderutil libnotify usbutils ttf-symbola"
+pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake xcb-util-image xcb-util-renderutil libnotify usbutils"
 
 
 
 # aur
-aur="i3lock-color-git light-git pulseaudio-ctl transmission-remote-cli-git torrench"
+aur="i3lock-color-git light-git pulseaudio-ctl transmission-remote-cli-git torrench ttf-symbola"
 
 pacman -S --noconfirm --needed $pkgs
 
