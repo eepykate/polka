@@ -5,11 +5,11 @@
 
 :root {
 	/*  ----  */
-	--bg0: #151517;
-	--bg1: #18191c;
-	--bg2: #1C1D21;
-	--bg3: #1F2126;
-	--bg4: #262930;
+	--bg0: #131314;
+	--bg1: #141417;
+	--bg2: #19191C;
+	--bg3: #1C1C21;
+	--bg4: #202026;
 	--button: #daddee1a;
 	/*  ----  */
 	--fg2: #a6a9b7;
@@ -27,8 +27,8 @@
 
 	--toolbar-bgimage: none !important;
 	--arrowpanel-dimmed: transparent !important;
-	--tab-min-height: 32.5px	!important;
-	--button-size: 16px	!important;
+	--tab-min-height: 32.5px !important;
+	--button-size: 16px !important;
 }
 
 /***   Hide some stuff   ***/
