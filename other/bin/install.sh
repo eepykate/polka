@@ -124,12 +124,17 @@ aur+=( i3lock-color-git
 
 
 for pkg in $pkgs; do
-	pacman -S --noconfirm --needed $pkg
+	echo " - $pkg"
+	pacman -S --noconfirm --needed $pkg >/dev/null ||
+		echo "Failed to install $pkg"
 done
 
 
-for aur in $aur; do
-	sudo -u $name yay -S --noconfirm --needed $aur
+echo "Installing aur packages"
+for aur1 in $aur; do
+	echo " - $aur1"
+	sudo -u $name yay -S --noconfirm --needed $aur1 ||
+		echo "Failed to install $aur1"
 done
 
 echo -e "installing dotfiles"
@@ -314,14 +319,11 @@ cp mpris.so /etc/mpv/scripts/
 
 echo "Adding scripts to send a notification when a usb is removed/inserted"
 mkdir -p /usr/local/bin /usr/local/sounds;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove     -o /usr/local/bin/usb-remove;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert     -o /usr/local/bin/usb-insert;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb.rules      -o /etc/udev/rules.d/usb.rules;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
-curl -L https://github.com/GaugeK/dots/raw/master/other/bin/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
-
-udevadm control --reload-rules;
-
+curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-remove     -o /usr/local/bin/usb-remove;
+curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-insert     -o /usr/local/bin/usb-insert;
+curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb.rules      -o /etc/udev/rules.d/usb.rules;
+curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
+curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
 
 
 echo "Installing vim-plug for neovim"
