@@ -87,48 +87,26 @@ fi
 echo "Installing programs"
 
 # audio
-pkgs="alsa-tools alsa-utils alsa-tools pulseaudio
-	pulseaudio-alsa pulsemixer pavucontrol
-	playerctl"
+pkgs="alsa-tools alsa-utils alsa-tools pulseaudio pulseaudio-alsa pulsemixer pavucontrol playerctl"
 
 # X.org
 # basic tools
-pkgs="$pkgs bspwm sxhkd dunst maim mpv rofi
-	xclip xdo xdotool xf86-input-synaptics
-	xfsprogs xorg-xgamma
-	xorg-xinit xorg-xkill xorg-xprop
-	xorg-xrandr xorg-xsetroot"
+pkgs="$pkgs bspwm sxhkd dunst maim mpv rofi xclip xdo xdotool xf86-input-synaptics xfsprogs xorg-xgamma xorg-xinit xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot"
 # other
-pkgs="$pkgs feh firefox-developer-edition gcolor3
-	gnome-themes-extra"
+pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra"
 
 # terminal stuff
-pkgs="$pkgs git htop dash neovim
-	patch unrar unzip wget transmission-cli
-	zsh zsh-completions zip"
+pkgs="$pkgs git htop dash neovim patch unrar unzip wget transmission-cli zsh zsh-completions zip"
 
 # everything else
-pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake
-	xcb-util-image xcb-util-renderutil
-	libnotify usbutils ttf-symbola"
+pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake xcb-util-image xcb-util-renderutil libnotify usbutils ttf-symbola"
 
 
 
 # aur
-aur+=( i3lock-color-git
-	light-git pulseaudio-ctl
-	transmission-remote-cli-git torrench )
+aur="i3lock-color-git light-git pulseaudio-ctl transmission-remote-cli-git torrench"
 
-
-
-
-
-
-for pkg in $pkgs; do
-	echo " - $pkg"
-	pacman -S --noconfirm --needed $pkg >/dev/null ||
-		echo "Failed to install $pkg"
-done
+pacman -S --noconfirm --needed $pkgs
 
 
 echo "Installing aur packages"
