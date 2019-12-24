@@ -2,6 +2,9 @@
 
 dots="https://github.com/GaugeK/dots.git"
 
+pacman -S --noconfirm dialog ||
+	pacman -Syy --noconfirm dialog
+
 dialog --title Information[!] --msgbox "This script was made for me, and me alone,
 do not expect this to work on your system,
 and do not hold me responsible if something breaks." 10 50
