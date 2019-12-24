@@ -71,14 +71,13 @@ pacman --noconfirm --needed -S base-devel &>/dev/null
 echo "Installing yay, an AUR helper"
 
 [[ -f /usr/bin/yay ]] || (
-cd /tmp
-rm -rf /tmp/"yay"*
-curl -sO https://aur.archlinux.org/cgit/aur.git/snapshot/"yay".tar.gz &&
-sudo -u "$name" tar -xvf "yay".tar.gz &>/dev/null &&
-cd "yay" &&
- makepkg --noconfirm -si &>/dev/null
-cd /tmp)
-
+	cd /tmp
+	rm -rf /tmp/yay*
+	curl -sO https://aur.archlinux.org/cgit/aur.git/snapshot/"yay".tar.gz &&
+	sudo -u $name tar -xf yay.tar.gz &&
+	cd yay &&
+	sudo -u $name makepkg --noconfirm -si
+	cd /tmp;)
 
 echo "Making sure the root user has sudoers permissions"
 
@@ -89,30 +88,30 @@ fi
 echo "Installing programs"
 
 # audio
-pkgs+=( alsa-tools alsa-utils alsa-tools pulseaudio
+pkgs="alsa-tools alsa-utils alsa-tools pulseaudio
 	pulseaudio-alsa pulsemixer pavucontrol
-	playerctl )
+	playerctl"
 
 # X.org
 # basic tools
-pkgs+=( bspwm sxhkd dunst maim mpv rofi
+pkgs="$pkgs bspwm sxhkd dunst maim mpv rofi
 	xclip xdo xdotool xf86-input-synaptics
 	xfsprogs xorg-xgamma
 	xorg-xinit xorg-xkill xorg-xprop
-	xorg-xrandr xorg-xsetroot )
+	xorg-xrandr xorg-xsetroot"
 # other
-pkgs+=( feh firefox-developer-edition gcolor3
-	gnome-themes-extra )
+pkgs="$pkgs feh firefox-developer-edition gcolor3
+	gnome-themes-extra"
 
 # terminal stuff
-pkgs+=( git htop dash neovim
+pkgs="$pkgs git htop dash neovim
 	patch unrar unzip wget transmission-cli
-	zsh zsh-completions zip )
+	zsh zsh-completions zip"
 
 # everything else
-pkgs+=( yay hunspell-en_US make gcc intel-ucode automake
+pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake
 	xcb-util-image xcb-util-renderutil
-	libnotify usbutils ttf-symbola )
+	libnotify usbutils ttf-symbola"
 
 
 
@@ -150,7 +149,7 @@ sudo -u $name bash "/home/$name/opt/dots/deploy -y"
 
 
 # Get rid of the beep!
-rmmod pcspkr
+hmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 echo -e "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm, /usr/bin/kbdrate" >> /etc/sudoers
