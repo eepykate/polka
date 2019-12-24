@@ -1,64 +1,42 @@
 # Directory shortcuts
-d   mn         /mnt/
-d   me         /media/
-d   fchr       ~/etc/.mozilla/firefox/gauge.gauge/chrome/
-d   dots       ~/opt/dots/
-d   bin        ~/bin/
-d   pics       ~/opt/Screenshots/maim/
-d   recs       ~/opt/1-Recordings/
-d   wp         ~/opt/Wallpapers/
 d   h          ~/
-d   suck       ~/opt/git/suckless/
-d   gkgl       ~/opt/git/gaugek.gitlab.io/
+d   dots       ~/opt/dots/
 d   gi         ~/opt/git/
 d   sp         ~/usr/startpage/
-d   mu         ~/opt/Music/
 d   oth        ~/opt/linux/oth/
-d   sn         ~/opt/git/shnippets/
+d   wp         ~/opt/Wallpapers/
 d   ri         ~/opt/git/ricing/
+d   recs       ~/opt/1-Recordings/
+d   sn         ~/opt/git/shnippets/
+d   pics       ~/opt/Screenshots/maim/
+d   fchr       ~/etc/.mozilla/firefox/gauge.gauge/chrome/
 
 # File shortcuts
-f   zshrc      ~/etc/zsh/.zshrc
-f   vimrc      ~/etc/nvim/init.vim
+
+# shells
 f   bashrc     ~/.bashrc
-f   pro        ~/.profile
 f   xpro       ~/.xprofile
-f   zpro       ~/etc/zsh/.zprofile
-f   xres       ~/etc/Xresources
-f   sc         ~/etc/sc
-f   aliases    ~/etc/aliases
 f   a          ~/etc/aliases
-f   scsh       ~/etc/sc.sh
-f   xin        ~/etc/xinitrc
-f   sz         ~/bin/slight.zsh
-f   sb         ~/bin/slight.bash
-f   drc        ~/etc/dunst/dunstrc
-f   sx         ~/etc/sxhkd/sxhkdrc
+f   aliases    ~/etc/aliases
+f   zshrc      ~/etc/zsh/.zshrc
+f   pro        ~/etc/zsh/.zprofile
+f   zpro       ~/etc/zsh/.zprofile
+
+# wm
 f   com        ~/etc/compton.conf
 f   bs         ~/etc/bspwm/bspwmrc
-f   po         ~/etc/polybar/config
-f   mo         ~/opt/.movie.txt
-f   cm         ~/etc/cmus/rc
+f   drc        ~/etc/dunst/dunstrc
+f   sx         ~/etc/sxhkd/sxhkdrc
+
+# X
+f   xin        ~/etc/xinitrc
+f   xres       ~/etc/Xresources
+f   gcs        ~/etc/gtk-3.0/gtk.css
 f   uc         ~/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 f   ucc        ~/etc/.mozilla/firefox/gauge.gauge/chrome/userContent.css
-f   gcs        ~/etc/gtk-3.0/gtk.css
-f   nc         ~/etc/ncmpcpp/config
-f   ncb        ~/etc/ncmpcpp/bindings
-f   mp         ~/etc/mpd/mpd.conf
-f   b0         ~/bin/bar0
-f   b1         ~/bin/bar1
-f   b2         ~/bin/bar2
-f   b3         ~/bin/bar3
-f   b4         ~/bin/bar4
-f   ob         ~/etc/openbox/rc.xml
 
-
-# Xresources
-f   xf         ~/etc/Xres.Frost
-f   xw         ~/etc/Xres.Withered
-f   xc         ~/etc/Xres.Coral
-f   xs         ~/etc/Xres.Snow
-f   xa         ~/etc/Xres.Ash
-f   xcc        ~/etc/Xres.Coal
-f   xC         ~/etc/Xres.Cherry
-f   xh         ~/etc/Xres.nh
+# other
+f   sc         ~/etc/sc
+f   scsh       ~/etc/sc.sh
+f   mo         ~/opt/.movie.txt
+f   vimrc      ~/etc/nvim/init.vim
