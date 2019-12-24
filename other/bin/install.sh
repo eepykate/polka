@@ -126,7 +126,7 @@ sudo -u $name bash "/home/$name/opt/dots/deploy -y"
 
 
 # Get rid of the beep!
-hmmod pcspkr
+rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 echo -e "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm, /usr/bin/kbdrate" >> /etc/sudoers
@@ -140,8 +140,8 @@ curl -Ls https://fonts.google.com/download?family=Roboto%20Condensed \
 	-o /tmp/Roboto-Condensed.zip
 unzip -o /tmp/Roboto-Condensed.zip -d /home/$name/usr/fonts/ &>/dev/null
 
-
 echo "Disabling mouse acceleration"
+mkdir -p /etc/X11/xorg.conf.d/
 if [ ! -f /etc/X11/xorg.conf.d/50-mouse-acceleration.conf ]; then
 echo 'Section "InputClass"
     Identifier "My Mouse"
@@ -298,11 +298,11 @@ cp mpris.so /etc/mpv/scripts/
 
 echo "Adding scripts to send a notification when a usb is removed/inserted"
 mkdir -p /usr/local/bin /usr/local/sounds;
-curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-remove     -o /usr/local/bin/usb-remove;
-curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-insert     -o /usr/local/bin/usb-insert;
-curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb.rules      -o /etc/udev/rules.d/usb.rules;
-curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
-curl -L https://raw.githubusercontent/GaugeK/dots/master/other/other/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
+curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/usb-remove     -o /usr/local/bin/usb-remove;
+curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/usb-insert     -o /usr/local/bin/usb-insert;
+curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/usb.rules      -o /etc/udev/rules.d/usb.rules;
+curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/usb-insert.wav -o /usr/local/sounds/usb-insert.wav;
+curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/usb-remove.wav -o /usr/local/sounds/usb-remove.wav;
 
 
 echo "Installing vim-plug for neovim"
@@ -328,6 +328,7 @@ echo 10000000 > /proc/sys/vm/dirty_bytes
 
 
 echo Making firefox dev edition support uc.js files
+mkdir -p /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js
 git clone https://github.com/alice0775/userChrome.js /home/$name/opt/git/userChrome.js
 cd /home/$name/opt/git/userChrome.js/72
 cp -r install_folder/* /lib/firefox-developer-edition
@@ -337,15 +338,6 @@ cp userChrome.js /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.
 
 echo adding nodelay to pam_unix.so so sudo doesn\'t take a lifetime to fail
 sed -i "s/pam_unix.so.*/pam_unix.so     try_first_pass nullok nodelay/" /etc/pam.d/system-auth
-
-
-
-
-
-
-
-
-
 
 
 
