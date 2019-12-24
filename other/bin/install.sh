@@ -319,7 +319,7 @@ sed -i \
 
 
 
-echo 'ZDOTDIR=$HOME/.config/zsh
+echo 'ZDOTDIR=$HOME/etc/zsh
 [[ $UID = 0 ]] && source $HOME/etc/zsh/.zprofile' > /etc/zsh/zshenv
 sed -i 's/load-module module-esound-protocol-unix/#load-module module-esound-protocol-unix/g' /etc/pulse/default.pa
 
