@@ -119,7 +119,7 @@ done
 echo -e "installing dotfiles"
 
 # Install the dotfiles in the user's home directory
-mkdir -p "/home/$name/opt/"
+sudo -u "$name" mkdir -p "/home/$name/opt/"
 putgitrepo "$dots" "/home/$name/opt/dots"
 
 sudo -u $name bash "/home/$name/opt/dots/deploy -y"
@@ -338,6 +338,9 @@ cp userChrome.js /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.
 
 echo adding nodelay to pam_unix.so so sudo doesn\'t take a lifetime to fail
 sed -i "s/pam_unix.so.*/pam_unix.so     try_first_pass nullok nodelay/" /etc/pam.d/system-auth
+
+echo fixing permissions in $user\'s home dir
+chown -R "${name}:wheel" "/home/$name"
 
 
 
