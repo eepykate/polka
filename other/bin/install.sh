@@ -173,28 +173,12 @@ echo -e "# basic\npermit nopass            root as root\npermit keepenv persist 
 
 echo "Installing some fonts"
 
-mkdir -p /usr/share/fonts/TTF
-mkdir -p /usr/share/fonts/OTF
-
-echo " - Iosevka"
-curl -Ls https://github.com/be5invis/Iosevka/releases/download/v2.0.1/02-iosevka-term-2.0.1.zip -o /tmp/iosevka.zip
-unzip -o /tmp/iosevka.zip -d /usr/share/fonts/TTF/ &>/dev/null
-
-echo " - Roboto"
-curl -Ls https://fonts.google.com/download?family=Roboto -o /tmp/Roboto.zip
-unzip -o /tmp/Roboto.zip -d /usr/share/fonts/TTF/ &>/dev/null
+mkdir -p /home/$name/usr/fonts
 
 echo " - Roboto Condensed"
-curl -Ls https://fonts.google.com/download?family=Roboto%20Condensed -o /tmp/Roboto-Condensed.zip
-unzip -o /tmp/Roboto-Condensed.zip -d /usr/share/fonts/TTF/ &>/dev/null
-
-echo " - Regular nerd font"
-curl -Ls https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Regular.zip -o /tmp/Regular.zip
-unzip -o /tmp/Regular.zip -d /usr/share/fonts/TTF/ &>/dev/null
-
-
-fc-cache -f
-
+curl -Ls https://fonts.google.com/download?family=Roboto%20Condensed \
+	-o /tmp/Roboto-Condensed.zip
+unzip -o /tmp/Roboto-Condensed.zip -d /home/$name/usr/fonts/ &>/dev/null
 
 
 echo "Disabling mouse acceleration"
@@ -240,15 +224,17 @@ fi
 #	sed -i '/## Defaults specification/a Defaults rootpw' /etc/sudoers
 #fi
 
-echo "Enabling verbose package lists in pacman"
+echo pacman tweaks
+
+echo " - Verbose package lists"
 sed -i "s/^#VerbosePkgLists/VerbosePkgLists/g" /etc/pacman.conf
 
-echo "Enabling pacman loading bar in pacman"
+echo " - pacman loading bar (game character)"
 if [[ -z $(grep ILoveCandy "/etc/pacman.conf") ]]; then
 	sed -i '/# Misc options/a ILoveCandy' /etc/pacman.conf
 fi
 
-echo "Making pacman/yay colourful"
+echo " - colour"
 sed -i "s/^#Color/Color/g" /etc/pacman.conf
 
 # Make wifi faster on my card
