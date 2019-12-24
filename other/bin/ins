@@ -3,7 +3,7 @@
 #  pacman/makepkg/git wrapper for the aur
 #
 # deps
-# - doas
+# - sudo
 # - makepkg
 # - an arch-based distro
 # - git
@@ -26,7 +26,7 @@ mkdir -p "$location"
 official() {
 	echo "\033[34m$officialhr\033[0m found in official repos; installing normally."
 	# install the package
-	doas pacman -S $continue $official
+	sudo pacman -S $continue $official
 }
 
 aur() {

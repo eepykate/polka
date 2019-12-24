@@ -84,27 +84,6 @@ if ! grep "root ALL=(ALL) ALL" "/etc/sudoers" &>/dev/null; then
 fi
 
 echo "Installing programs"
-echo " git bspwm sxhkd xclip util-linux
-	transmission-cli
-	noto-fonts noto-fonts-cjk
-	xorg-server xorg-xdpyinfo xorg-xwininfo
-	xorg-xinit xorg-xkill xorg-xset
-	xorg-xprop xorg-xrandr xorg-xgamma
-	curl wget papirus-icon-theme
-	dosfstools exfat-utils
-	feh ffmpeg firefox-developer-edition
-	rofi zsh ntfs-3g
-	pulseaudio pulseaudio-alsa
-	scrot maim unrar unzip
-	wget xdotool xssstate youtube-dl
-	vlc mpv gimp inkscape
-	xf86-input-synaptics dunst
-	python xautolock playerctl
-	rsync acpi imagemagick neovim
-	zsh-completions compton mpd ncmpcpp
-	gcolor3 gnome-system-monitor
-	xsettingsd lxappearance ttf-fira-mono
-	doas"
 
 # audio
 pkgs+=( alsa-tools alsa-utils alsa-tools pulseaudio
@@ -123,7 +102,7 @@ pkgs+=( feh firefox-developer-edition gcolor3
 	gnome-themes-extra )
 
 # terminal stuff
-pkgs+=( git htop dash neovim opendoas
+pkgs+=( git htop dash neovim
 	patch unrar unzip wget transmission-cli
 	zsh zsh-completions zip )
 
@@ -159,7 +138,7 @@ echo -e "installing dotfiles"
 mkdir -p "/home/$name/opt/"
 putgitrepo "$dots" "/home/$name/opt/dots"
 
-sudo -u $name bash "/home/$name/opt/dots/deploy"
+sudo -u $name bash "/home/$name/opt/dots/deploy -y"
 
 
 # Get rid of the beep!
@@ -167,9 +146,6 @@ rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 echo -e "%wheel ALL=(ALL) ALL\\n%wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm, /usr/bin/kbdrate" >> /etc/sudoers
-
-echo -e "# basic\npermit nopass            root as root\npermit keepenv persist    $name as root\n\n# power\npermit nopass    $name as root cmd systemctl     args  suspend\npermit nopass    $name as root cmd systemctl     args  hibernate\npermit nopass    $name as root cmd systemctl     args  poweroff\npermit nopass    $name as root cmd systemctl     args  reboot\n\npermit nopass    $name as root cmd mount\npermit nopass    $name as root cmd umount\n\n# packages\npermit nopass    $name as root cmd pacman        args  -Syu\npermit nopass    $name as root cmd pacman        args  -Syyu\n\n# others\npermit nopass    $name as root cmd kbdrate\npermit nopass    $name as root cmd make          args  clean install\npermit nopass    $name as root cmd systemctl     args  restart NetworkManager\n" >> /etc/doas.conf
-
 
 echo "Installing some fonts"
 
@@ -327,11 +303,6 @@ echo " - wmutils"
 git clone https://github.com/wmutils/core /home/$name/opt/git/wmutils;
 	cd /home/$name/opt/git/wmutils; make clean install &>/dev/null
 
-echo " - opendoas"
-git clone https://github.com/Duncaen/OpenDoas /home/$name/opt/git/opendoas
-	cd /home/$name/opt/git/opendoas
-	curl -L https://raw.githubusercontent.com/GaugeK/dots/master/other/other/doas-prompt.patch | patch -Np1
-
 
 echo "Adding mpris support to mpv"
 mkdir -p /etc/mpv/scripts
@@ -383,7 +354,8 @@ mv /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js \
 	/home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js-backup 2>/dev/null
 cp userChrome.js /home/$name/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.js
 
-
+echo adding nodelay to pam_unix.so so sudo doesn\'t take a lifetime to fail
+sed -i "s/pam_unix.so.*/pam_unix.so     try_first_pass nullok nodelay/" /etc/pam.d/system-auth
 
 
 
