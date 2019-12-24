@@ -287,6 +287,10 @@ echo " - wmutils"
 git clone https://github.com/wmutils/core /home/$name/opt/git/wmutils;
 	cd /home/$name/opt/git/wmutils; make clean install &>/dev/null
 
+echo " - disputils"
+git clone https://github.com/tudurom/disputils /home/$name/opt/git/disputils;
+	cd /home/$name/opt/git/disputils; make clean install &>/dev/null
+
 
 echo "Adding mpris support to mpv"
 mkdir -p /etc/mpv/scripts
