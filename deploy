@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+[ "$1" = -y ] &&
+	y=y
+
 echo
 echo "This is made for me, and me alone, please do not
 expect this to work on your system, and do not complain
