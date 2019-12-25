@@ -69,6 +69,23 @@ v() {
 	reset_cursor
 }
 
+f() {
+	case "$(file -ib "$1")" in
+		# images
+		*image*)       i "$1";;
+		# videos
+		*video*)     mpv "$1";;
+		# sounds
+		*audio*)  paplay "$1";;
+		# (gzip) archives
+		*gzip*)   tar -t "$1";;
+		# html files
+		*html*)  firefox "$1";;
+		# everything else
+		*)             v "$1";;
+	esac
+}
+
 hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
 rgbtohex() { printf "%02X%02X%02X\n" $@; }
 
