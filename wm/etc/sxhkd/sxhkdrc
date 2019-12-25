@@ -133,12 +133,12 @@ ctrl + alt + {Right,Left}
 	bspc desktop -f {next,prev}; \
 	nottop
 
-ctrl + super + {1,2,3,4,5,6,7,8,9,0}
-	bspc node -d {1,2,3,4,5,6,7,8,9,10}; \
+ctrl + super + {1-9,0}
+	bspc node -d {1-9,10}; \
 	nottop
 
-super + {1,2,3,4,5,6,7,8,9,0}
-	bspc desktop -f {1,2,3,4,5,6,7,8,9,10}; \
+super + {1-9,0}
+	bspc desktop -f {1-9,10}; \
 	nottop
 
 alt + Tab
@@ -185,10 +185,5 @@ XF86AudioMute
 	vol m
 
 # toggle mute on current window
-# i really need to find a better way to do this.
-# at least it doesn't need rg anymore (i didn't
-# do the original version)
 super + Tab
-	pulsemixer --id "$(pulsemixer --list-sinks | \
-		grep -i $(ps -p $(xdotool getactivewindow getwindowpid) -o comm=) | \
-		grep -io 'sink-input-[0-9]*' | tail -1)" --toggle-mute
+	vol mw

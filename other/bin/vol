@@ -35,6 +35,13 @@ mute() {
 	notif="Volume ${action}d"
 }
 
+mute_window() {
+	# sorry this is so messy lol
+	pulsemixer --id "$(pulsemixer --list-sinks | \
+		grep -i $(ps -p $(xdotool getactivewindow getwindowpid) -o comm=) | \
+		grep -io 'sink-input-[0-9]*' | tail -1)" --toggle-mute
+}
+
 volume() {
 	# get the current volume
 	current="$(amixer get Master | grep -io "[0-9][0-9]*%" | \
@@ -84,6 +91,9 @@ case $1 in
 	# mute
 	m) mute;;
 	mute|unmute) mute $1;;
+
+	# mute current window
+	mw) mute_window;;
 
 	# volume
 	set|up|down) volume $1 $2;;
