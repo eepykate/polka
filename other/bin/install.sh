@@ -99,7 +99,7 @@ pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra"
 pkgs="$pkgs git htop dash neovim patch unrar unzip wget transmission-cli zsh zsh-completions zip imagemagick"
 
 # everything else
-pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake xcb-util-image xcb-util-renderutil libnotify usbutils xcb-util-cursor"
+pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake xcb-util-image xcb-util-renderutil libnotify usbutils xcb-util-cursor noto-fonts-emoji"
 
 
 
