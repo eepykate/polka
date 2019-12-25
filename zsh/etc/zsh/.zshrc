@@ -54,4 +54,9 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 source ${XDG_CONFIG_HOME:-~/.config}/aliases   # Aliases
 
+# make Ctrl-K clear the screen and run ls
+els() { clear; ls; zle redisplay }
+zle -N els; bindkey "^K" els
+
+
 # vim: ft=sh
