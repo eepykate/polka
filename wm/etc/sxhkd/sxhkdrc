@@ -90,7 +90,7 @@ ctrl + alt + {d,x,c}
 	scr {_,-s,-f}
 
 super + z
-	xclip -selection clipboard -t image/png $HOME/opt/Screenshots/maim/$(ls -1t $HOME/opt/Screenshots/maim/ --ignore old | head -1)
+	xclip -selection clipboard -t image/png $HOME/opt/x/pics/maim/$(ls -1t $HOME/opt/x/pics/maim/ --ignore old | head -1)
 
 ctrl + alt + {Prior, Home, Insert, End}
 	blaze {-c -p k -B 8, -c -p k,_,-s}
