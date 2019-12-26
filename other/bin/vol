@@ -21,6 +21,16 @@
 #   the user hasn't supplied it.
 #     shellcheck disable=SC2086
 
+# use gdbus to replace notifications
+# notify <id of notif> <header> <body>
+# body is optional
+notify() {
+	gdbus call -e -d "org.freedesktop.Notifications" \
+		-o /org/freedesktop/Notifications \
+		-m org.freedesktop.Notifications.Notify "" \
+		$1 "" "$2" "$3" "[]" "{}" 5000 >/dev/null
+}
+
 mute() {
 	# if a command isn't specified toggle mute
 	if [ -z "$1" ]; then
@@ -102,4 +112,4 @@ case $1 in
 	p|pause|play|stop) media $1;;
 esac
 
-notify-send "$notif"
+notify 69 "$notif"
