@@ -52,7 +52,7 @@ PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.>>)%{\e[0m%} '
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
-source ${XDG_CONFIG_HOME:-~/.config}/aliases   # Aliases
+source ${XDG_CONFIG_HOME:-~/.config}/zsh/aliases   # Aliases
 
 # make Ctrl-K clear the screen and run ls
 els() { clear; ls; zle redisplay }

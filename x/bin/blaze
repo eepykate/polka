@@ -49,7 +49,7 @@ m() {
 	echo "Can't open display; exiting" && exit
 
 # output file, use $BLAZE_DIR and $BLAZE_FILENAME if they are set
-output="${BLAZE_DIR:-$HOME/opt/1-Recordings}/"\
+output="${BLAZE_DIR:-$HOME/opt/x/recs}/"\
 "${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S')}"
 
 help="
@@ -191,9 +191,8 @@ if [[ "$ready" = yes ]]; then
 	#                     onto the GPU (Defined earlier in the script)
 	# "$output".mp4     | file to save the recording to
 	#
-#		$nvenc                       \
 
-	ffmpeg                         \
+	ffmpeg                           \
 		-loglevel error              \
 		-y                           \
 		-f x11grab                   \

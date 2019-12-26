@@ -128,18 +128,6 @@ sed --follow-symlinks -i \
 	-e "s/hover:.*#.*;/hover:      #$hover;/"\
 	${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
 
-echo " - lemonbar"
-# Change lemonbar colours
-sed --follow-symlinks -i \
-	-e "s/bg=\".*\"/bg=\"$bg1\"/" \
-	-e "s/bl=\".*\"/bl=\"$bg2\"/" \
-	-e "s/blr=\".*\"/blr=\"$bg3\"/" \
-	-e "s/fg=\".*\"/fg=\"$fg1\"/" \
-	-e "s/fd=\".*\"/fd=\"$fg2\"/" \
-	-e "s/ac=\".*\"/ac=\"$accent\"/" \
-	~/bin/bar
-# bar &!         # This is now in my bspwmrc
-
 echo " - bspwm"
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 # Change bspwm colours
@@ -218,7 +206,7 @@ else
 fi
 
 echo "#!/bin/sh
-$wallthing" > ~/bin/pap
+$wallthing" > ~/bin/x/pap
 
 echo -e "Restarting dunst as I might have changed the config in the wallpaper bit"
 pkill dunst; sleep 0.1; dunst &!

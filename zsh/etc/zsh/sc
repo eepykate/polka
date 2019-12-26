@@ -6,9 +6,9 @@ d   sp         ~/usr/startpage/
 d   oth        ~/opt/linux/oth/
 d   wp         ~/opt/Wallpapers/
 d   ri         ~/opt/git/ricing/
-d   recs       ~/opt/1-Recordings/
 d   sn         ~/opt/git/shnippets/
-d   pics       ~/opt/Screenshots/maim/
+d   recs       ~/opt/x/recs
+d   pics       ~/opt/x/pics/maim/
 d   fchr       ~/etc/.mozilla/firefox/gauge.gauge/chrome/
 
 # File shortcuts
