@@ -30,7 +30,6 @@ mute() {
 		action="$1"
 	fi
 
-	# un/mute
 	amixer set Master "${action}" >/dev/null
 	notif="Volume ${action}d"
 }
@@ -60,15 +59,17 @@ volume() {
 		number="$((current - number))"
 	fi
 
-	# set the volume to the new value
 	amixer set Master "$number%" >/dev/null
 
 	notif="Volume set to $number%"
 }
 
 media() {
-	# i have a script to choose a playerctl player,
-	# this enables that to be used in this script.
+	# force playerctl to use <x> player
+	# format:
+	# player="<x>"
+	# where <x> is the name of the player (ex: cmus)
+	# (location is /tmp/player, it will get removed every reboot)
 	[ -f /tmp/player ] || touch /tmp/player
 	. /tmp/player
 
@@ -82,7 +83,6 @@ media() {
 			{ action="pause"; action1="Paused"; }
 	fi
 
-	# actually run the command
 	playerctl -p "$player" "$action"
 	notif="$action1 $(playerctl -p "$player" metadata xesam:title)"
 }
