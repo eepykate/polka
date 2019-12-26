@@ -1,2 +1,2 @@
 #!/bin/sh
-feh -. -g "600x400" --start-at "$1" "$(dirname "$1")"
+feh -Z -. -g "600x400" --start-at "$1" "$(dirname "$1")"
