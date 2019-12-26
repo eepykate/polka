@@ -4,7 +4,7 @@ d   dots       ~/opt/dots/
 d   gi         ~/opt/git/
 d   sp         ~/usr/startpage/
 d   oth        ~/opt/linux/oth/
-d   wp         ~/opt/Wallpapers/
+d   wp         ~/opt/git/Wallpapers/
 d   ri         ~/opt/git/ricing/
 d   sn         ~/opt/git/shnippets/
 d   recs       ~/opt/x/recs
@@ -14,10 +14,10 @@ d   fchr       ~/etc/.mozilla/firefox/gauge.gauge/chrome/
 # File shortcuts
 
 # shells
-f   bashrc     ~/.bashrc
-f   xpro       ~/.xprofile
-f   a          ~/etc/aliases
-f   aliases    ~/etc/aliases
+f   sc         ~/etc/zsh/sc
+f   scsh       ~/etc/zsh/sc.sh
+f   a          ~/etc/zsh/aliases
+f   aliases    ~/etc/zsh/aliases
 f   zshrc      ~/etc/zsh/.zshrc
 f   pro        ~/etc/zsh/.zprofile
 f   zpro       ~/etc/zsh/.zprofile
@@ -36,7 +36,5 @@ f   uc         ~/etc/.mozilla/firefox/gauge.gauge/chrome/userChrome.css
 f   ucc        ~/etc/.mozilla/firefox/gauge.gauge/chrome/userContent.css
 
 # other
-f   sc         ~/etc/sc
-f   scsh       ~/etc/sc.sh
-f   mo         ~/opt/.movie.txt
+f   no         ~/opt/junk/notes
 f   vimrc      ~/etc/nvim/init.vim
