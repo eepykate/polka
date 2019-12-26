@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-chosen=$(grep -v "#" ~/etc/emoji | \
+chosen=$(grep -v "#" ~/opt/junk/emoji | \
 	rofi -dmenu \
 	-columns 2 \
 	-kb-row-select "Tab" -kb-row-tab "" \
