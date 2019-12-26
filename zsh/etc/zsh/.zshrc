@@ -58,7 +58,7 @@ source ${XDG_CONFIG_HOME:-~/.config}/zsh/aliases   # Aliases
 els() { clear; ls; zle redisplay }
 zle -N els; bindkey "^K" els
 
-WORDCHARS="$(echo "$WORDCHARS" | tr -d '=/_-')"
+WORDCHARS="*?.[]~&!#$%^(){}<>"
 
 
 # vim: ft=sh
