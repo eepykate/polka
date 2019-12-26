@@ -188,7 +188,7 @@ sed --follow-symlinks -i \
 #. swirls.sh
 
 echo -e "\nChanging wallpaper"
-if [[ -f "$HOME/opt/Wallpapers/$wall" ]]; then
+	if [[ -f "$HOME/opt/git/Wallpapers/$wall" ]]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/Wallpapers/$wall\""
 	eval $wallthing
 	sed --follow-symlinks -i \
