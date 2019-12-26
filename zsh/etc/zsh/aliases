@@ -89,7 +89,7 @@ f() {
 hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
 rgbtohex() { printf "%02X%02X%02X\n" $@; }
 
-source ${XDG_CONFIG_HOME:-~/.config}/sc.sh
+source ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh
 
 
 function cli() {
