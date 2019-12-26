@@ -12,7 +12,7 @@ export LdESSHISTFILE="/dev/null"
 
 
 # Custom ls colours
-eval "$(dircolors ${XDG_CONFIG_HOME:-~/.config}/dircolors)"
+eval "$(dircolors ${XDG_CONFIG_HOME:-~/.config}/zsh/dircolors)"
 
 # Places where binaries/scripts go so you dont have to type the whole path to run them
 export PATH="$(find ~/bin/ -maxdepth 1 -type d | sed 's|/$||'| tr '\n' ':')$PATH"
