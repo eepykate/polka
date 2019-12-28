@@ -60,5 +60,7 @@ zle -N els; bindkey "^K" els
 
 WORDCHARS="*?[]~&!#$%^(){}<>"
 
+export FZF_DEFAULT_OPTS="--height='50%' --layout='reverse-list' --color='16'"
+
 
 # vim: ft=sh

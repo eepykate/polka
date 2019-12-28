@@ -69,6 +69,12 @@ v() {
 	reset_cursor
 }
 
+vb() {
+	local file="$(find "$HOME/bin" -type f,l | fzf)" &&
+		[[ -n "$file" ]] &&
+		v "$file"
+}
+
 f() {
 	case "$(file -ib "$1")" in
 		# images
