@@ -3812,6 +3812,7 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
+.mod-toolbox-rd .tb-bracket-button,
 body.mod-toolbox-rd .tb-page-overlay a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons):not(.tb-submitter):not(.tb-comment-author):not(.tb-submission-author), body.mod-toolbox-rd .tb-popup a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons):not(.tb-submitter):not(.tb-comment-author):not(.tb-submission-author), body.mod-toolbox-rd #tb-bottombar a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons),
 .pretty-button,
 .tagline .author,
@@ -3829,6 +3830,12 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 	color: var(--fg1) !important;
 }
 
+
+[class*="tb"]:not(.tb-dt-type-title_dot):not(.tb-has-context-left) *,
+.mod-toolbox-rd .tb-bracket-button,
+.reason-popup-footer,
+.reason-popup-header,
+.reason-popup-content,
 body.mod-toolbox-rd .tb-general-button,
 .tb-popup-footer,
 .tb-popup-header,
@@ -4000,6 +4007,7 @@ span.pagename {
 	border-radius: 1em;
 }
 
+.mod-toolbox-rd .tb-bracket-button,
 #sitetable * div.thing.comment {
 	border: none !important;
 }
@@ -4176,7 +4184,11 @@ body.moderator * div.thing.spam {
 	background-color: rgba(255, 252, 127, 0.2) !important;
 }
 
+.mod-toolbox-rd .reason-popup .selectable-reason.reason-selected .styled-reason {
+	background-color: rgba(177, 221, 170, 0.1) !important;
+}
 
+.sitetable > div.thing.comment.res-selected.spam > .entry .md-container,
 .thing.spam div.entry.res-selected,
 .thing.spam .entry,
 #siteTable .thing .res-selected .md-container,
@@ -4185,6 +4197,9 @@ body.moderator * div.thing.spam {
 	background-color: transparent !important;
 }
 
+[class*="tb"] *,
+.mod-toolbox-rd .tb-bracket-button,
+.mod-toolbox-rd .reason-popup,
 .tb-popup,
 #tb-modbar-hide-tooltip,
 .mod-toolbox-rd #tb-context-menu,
