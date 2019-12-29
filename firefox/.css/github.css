@@ -27,8 +27,9 @@ html .pagehead-actions .btn-sm {
 	background-color: var(--bg4) !important;
 }
 
-
-
+.position-absolute.right-0.left-0.bottom-0.text-center {
+	background-image: none !important;
+}
 
 
 
