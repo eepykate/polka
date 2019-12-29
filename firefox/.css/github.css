@@ -2,6 +2,7 @@
 	color: var(--fg1) !important;
 }
 
+html table.files td.message a,
 html a.reponav-item,
 html table.files td .simplified-path,
 .reponav * {
@@ -13,6 +14,8 @@ html .file-navigation .btn-sm:not(.btn-primary),
 	background-color: var(--bg3) !important;
 }
 
+details summary:hover,
+html .btn,
 html .reponav-item .Counter {
 	background-color: var(--button) !important;
 	color: var(--fg2) !important;
