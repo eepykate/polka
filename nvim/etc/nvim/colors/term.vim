@@ -76,7 +76,7 @@ hi Underliend   ctermbg=NONE   ctermfg=1      cterm=underline
 hi Ignore       ctermbg=NONE   ctermfg=1      cterm=NONE
 hi Error        ctermbg=NONE   ctermfg=1      cterm=bold
 hi Todo         ctermbg=NONE   ctermfg=3      cterm=bold
-hi Statemen     ctermbg=NONE   ctermfg=3      cterm=bold
+hi Statement    ctermbg=NONE   ctermfg=3      cterm=bold
 
 
 " Css syntax adjustments
