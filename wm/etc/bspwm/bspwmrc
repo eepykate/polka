@@ -47,7 +47,3 @@ pgrep sxhkd &>/dev/null &&
 
 sxhkd &
 sxhkd -c ${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm &
-
-dunst    &
-compton  &
-recom    &
