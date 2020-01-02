@@ -37,7 +37,7 @@ ctrl + alt + w
 
 # send a notif of the time and battery
 super + {t, shift + F1}
-	notify-send "$(date "+%a %d %b - %I:%M %p")" \
+	notify-send "$(date "+%F (%a) - %H:%M")" \
 	"$(acpi)"
 
 
