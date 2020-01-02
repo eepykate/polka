@@ -101,22 +101,22 @@ dunst_low="$(( $(awk '/urgency_low/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/du
 
 
 sed --follow-symlinks -i \
-	-e "s/frame_color = \".*\"/frame_color = \"#$bg3\"/" \
-	-e "s/background = \".*\"/background = \"#$bg3\"/" \
-	-e "s/foreground = \".*\"/foreground = \"#$fg1\"/"  \
+	-e "s/frame_color = \".*\"/frame_color = \"#$fg1\"/" \
+	-e "s/background = \".*\"/background = \"#$fg1\"/" \
+	-e "s/foreground = \".*\"/foreground = \"#$bg1\"/"  \
 	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 sed --follow-symlinks -i \
 	\
-	-e "${dunst_urgent}s/background = \".*\"/background = \"#$bg4\"/" \
-	-e "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$fg1\"/" \
+	-e "${dunst_urgent}s/background = \".*\"/background = \"#$accent\"/" \
+	-e "$(( ${dunst_urgent} + 1 ))s/foreground = \".*\"/foreground = \"#$hover\"/" \
 	\
-	-e "${dunst_low}s/background = \".*\"/background = \"#$bg2\"/" \
-	-e "$(( ${dunst_low} + 1 ))s/foreground = \".*\"/foreground = \"#$fg2\"/" \
+	-e "${dunst_low}s/background = \".*\"/background = \"#$bg4\"/" \
+	-e "$(( ${dunst_low} + 1 ))s/foreground = \".*\"/foreground = \"#$fg1\"/" \
 	\
 	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
-pkill -9 dunst; sleep 0.1; dunst &>/dev/null &!
+pkill -9 dunst; dunst &>/dev/null &!
 
 echo " - rofi"
 # Change the theme in rofi
@@ -136,6 +136,12 @@ sed --follow-symlinks -i \
 	-e "s/focused_border_color \"#.*\"/focused_border_color \"#$bg4\"/g" \
 	${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 wm restart
+
+echo " - qview"
+# Change qview colours
+sed --follow-symlinks -i \
+	-e "s/bgcolor=.*/bgcolor=#$bg1/" \
+	${XDG_CONFIG_HOME:-~/.config}/qView/qView.conf
 
 echo " - gtk context menus"
 sed --follow-symlinks -i \
