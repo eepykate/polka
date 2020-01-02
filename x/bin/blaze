@@ -54,8 +54,8 @@ m() {
 [ ! "$DISPLAY" ] &&
 	print "Can't open display; exiting" && exit
 
-# output file, use $BLAZE_DIR and $BLAZE_FILENAME if they are set
-output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S').mp4}"
+# output file, use $BLAZE_DIR and $BLAZE_FILE if they are set
+output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILE:-blaze-$(date '+%Y-%m-%d_%H-%M-%S').mp4}"
 
 help="
 \033[34mOptions\033[0m
@@ -65,9 +65,15 @@ help="
   \033[37m-b / --bitrate\033[0m  \033[35m[]\033[0m force bitrate (in MB)
   \033[37m-h / --help\033[0m        Display what you're reading right now
 
+\033[35m[]\033[0m = Option requires a value
+
 Anything after these will be the output file (optional)
 
-\033[35m[]\033[0m = Option requires a value
+\033[34mVariables\033[0m
+  \033[37mBLAZE_DIR\033[0m        Location to save the video
+                     \033[37mDefault: '\$HOME/opt/x/recs'\033[0m
+  \033[37mBLAZE_FILE\033[0m       Name of the saved video
+                     \033[37mDefault: 'blaze-\$(date '+%Y-%m-%d_%H-%M-%S').mp4'\033[0m
 "
 
 while [ "$1" ]; do
