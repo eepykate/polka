@@ -10,9 +10,12 @@
 #   shellcheck disable=SC2015
 #
 
-[ "$(readlink /bin/sh)" = "bash" ] &&
-	print() { echo -e "$@"; } ||
-	print() { echo "$@"; }
+binsh="$(readlink /bin/sh)"
+
+case "$(readlink /bin/sh)" in
+	*bash) print() { echo -e "$@"; };;
+	*)     print() { echo    "$@"; };;
+esac
 
 deps() {
 	md="$(for i in $deps; do print " - \033[31m$i\033[0m"; done)"
