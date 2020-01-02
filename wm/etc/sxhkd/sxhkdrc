@@ -1,189 +1,80 @@
+# terminal
+super + Return
+	st
+
+
+# don't send `ctrl + q` events to firefox
 ctrl + q
 	ctrlq
 
-super + h
-	pm
-
-super + e
-	st -e zsh -c 'source ~/etc/zsh/.zshrc; ncmpcpp'
-
-super + g
-	tasks
-
-super + w
-	mpv --loop "$(find $HOME/opt/linux/oth | dmenu -l 20 -i)"
-
-super + y
-	tp.sh
-
-ctrl + Escape
-	xkill
-
-XF86MonBrightness{Down,Up}
-	light -{U,A} 10
-
-{super,ctrl} + alt + t
-	synclient TouchpadOff={0,1}
-
-super + Return
-	st
 
 super + f
 	firefox
 
-super + c
-	thunar
 
-super + space
-	rofi -show run
+# power menu
+super + h
+	pm
 
-alt + ctrl + space
-	dmenu_run
 
-ctrl + alt + m
-	dmenumount
+# un/mount drives
+ctrl + alt + {m,u}
+	dmenu{_,u}mount
 
-ctrl + alt + u
-	dmenuumount
 
 super + i
 	rofi-emoji
 
+
+# restart wifi
 ctrl + alt + w
 	nmcli networking off && sleep 0.5 && nmcli networking on
 
-super + l
-	lock
 
-super + {shift + F1,t}
-	notify-send \
-	"$(date "+%a %d %b - %I:%M %p")" \
-	"Desktop: $(bspc query -D -d focused --names)\n\
-	Volume: $(amixer -D pulse get Master | grep -o '[0-9][0-9]*%' | head -1)\n\
-	$(acpi)"
+# send a notif of the time and battery
+super + {t, shift + F1}
+	notify-send "$(date "+%a %d %b - %I:%M %p")\n$(acpi)"
 
+
+# change theme
 ctrl + alt + s
 	ts.sh
 
-#super + x
-#	ts.sh; refresh
 
 alt + grave
 	dropdown.sh
 
-#alt + q
-#	xdotool getwindowfocus windowclose
 
-#super + q
-#	xdotool getwindowfocus windowkill
+#
+#   screenshots
+#
+{_,super, shift} + Print
+	scr {_,-f,-s}
+
+super + z
+	xclip -selection clipboard -t image/png $HOME/opt/x/pics/maim/$(ls \
+	-1t $HOME/opt/x/pics/maim/ --ignore old | head -1)
+
+
+ctrl + alt + {Insert, Home, End}
+	blaze {_,-c -p k,-s}
+
+
+#
+#   media
+#
+XF86Audio{Prev,Next,Play,Stop,Mute}
+	vol {prev, next, p, stop, m}
+
+super + {p, Tab}
+	vol {p, mw}
 
 super + s
 	players.sh
 
-alt + x
-	select_st
 
-{_,super, shift} + Print
-	scr {_,-f,-s}
-
-ctrl + alt + {d,x,c}
-	scr {_,-s,-f}
-
-super + z
-	xclip -selection clipboard -t image/png $HOME/opt/x/pics/maim/$(ls -1t $HOME/opt/x/pics/maim/ --ignore old | head -1)
-
-ctrl + alt + {Prior, Home, Insert, End}
-	blaze {-c -p k -B 8, -c -p k,_,-s}
-
-#    ---
-#   bspwm
-#    ---
-
-super + q
-	bspc node -k
-
-alt + q
-	bspc node -c
-
-alt + c
-	bspc node -p cancel
-
-#super + r
-#	bspc node -n last.!automatic -t tiled
-
-super + {r,m}
-	bspc desktop -l {tiled,monocle}
-
-super + {_,shift} + Escape
-	wm {restart,quit}
-
-super + {d,a}
-	bspc node -t "~{floating,fullscreen}"
-
-super + {_,ctrl,shift} + {Left,Down,Up,Right}
-	{focus,move,resize} {west,south,north,east}
-
-shift + alt + {Right,Left}
-	DIR={next,prev}; \
-	bspc node -d "$DIR"; \
-	bspc desktop -f "$DIR"; \
-	nottop
-
-ctrl + alt + {Right,Left}
-	bspc desktop -f {next,prev}; \
-	nottop
-
-ctrl + super + {1-9,0}
-	bspc node -d {1-9,10}; \
-	nottop
-
-super + {1-9,0}
-	bspc desktop -f {1-9,10}; \
-	nottop
-
-alt + Tab
-	bspc node -f next;
-
-alt + shift + Tab
-	bspc node -f prev;
-
-super + alt + 0
-	gaps r
-
-super + alt + equal
-	gaps up
-
-super + alt + minus
-	gaps down
-
-
-
-
-#    ---
-#   Media
-#    ---
-
-{XF86AudioPrev, super + comma}
-	vol prev
-
-{XF86AudioNext, super + period}
-	vol next
-
-{XF86AudioPlay, super + p, ctrl + alt + a}
-	vol p
-
-{XF86AudioRaiseVolume, super + u}
-	vol up
-
-{XF86AudioLowerVolume, super + j}
-	vol down
-
-XF86AudioStop
-	vol stop
-
-XF86AudioMute
-	vol m
-
-# toggle mute on current window
-super + Tab
-	vol mw
+#
+#   laptop
+#
+{super,ctrl} + alt + t
+	synclient TouchpadOff={0,1}

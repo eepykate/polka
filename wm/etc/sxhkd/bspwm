@@ -1,0 +1,35 @@
+{alt,super} + q
+	bspc node -{c,k}
+
+super + {r,m}
+	bspc desktop -l {tiled,monocle}
+
+super + {_,shift} + Escape
+	wm {restart,quit}
+
+super + {d,a}
+	bspc node -t "~{floating,fullscreen}"
+
+super + {_,ctrl,shift} + {Left,Down,Up,Right}
+	{focus,move,resize} {west,south,north,east}
+
+shift + alt + {Right,Left}
+	dir={next,prev}       ; \
+	bspc node -d    "$dir"; \
+	bspc desktop -f "$dir"; \
+	nottop
+
+ctrl + alt + {Right,Left}
+	bspc desktop -f {next,prev}; \
+	nottop
+
+ctrl + super + {1-9,0}
+	bspc node -d {1-9,10}; \
+	nottop
+
+super + {1-9,0}
+	bspc desktop -f {1-9,10}; \
+	nottop
+
+alt {_,shift} + Tab
+	bspc node -f {next, prev};

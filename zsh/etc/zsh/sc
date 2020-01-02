@@ -1,4 +1,6 @@
-# Directory shortcuts
+#
+#   dirs
+#
 d   h          ~/
 d   dots       ~/opt/dots/
 d   gi         ~/opt/git/
@@ -11,8 +13,9 @@ d   recs       ~/opt/x/recs
 d   pics       ~/opt/x/pics/maim/
 d   fchr       ~/etc/.mozilla/firefox/gauge.gauge/chrome/
 
-# File shortcuts
-
+#
+#   files
+#
 # shells
 f   sc         ~/etc/zsh/sc
 f   scsh       ~/etc/zsh/sc.sh
@@ -27,6 +30,7 @@ f   com        ~/etc/compton.conf
 f   bs         ~/etc/bspwm/bspwmrc
 f   drc        ~/etc/dunst/dunstrc
 f   sx         ~/etc/sxhkd/sxhkdrc
+f   sb         ~/etc/sxhkd/bspwm
 
 # X
 f   xin        ~/etc/xinitrc

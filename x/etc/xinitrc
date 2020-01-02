@@ -1,8 +1,8 @@
-#!/bin/sh
+!/bin/sh
 
-#     --
+#
 #   Tweaks
-#     --
+#
 
 # Basic X stuff
 [ -d /etc/X11/xinit ] && (
@@ -22,24 +22,11 @@ screen.sh     # Custom screen layout
 
 synclient TouchpadOff=1           # Disable touchpad
 xset r rate 200 60 &              # Faster keyboard
-xsetroot -cursor_name left_ptr    # Make desktop use normal cursor
 
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
-#       ----
-#   Applications
-#       ----
-
-dunst &    # Notification daemon
-sxhkd &    # Hotkey daemon
-compton &  # compositor
-recom &    # restart compton every once in a while
-
-start-dropdown.sh &
-
-
-#                   ----
+#
 #   And finally, start the window manager
-#                   ----
+#
 
 exec bspwm
