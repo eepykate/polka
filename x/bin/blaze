@@ -10,8 +10,6 @@
 #   shellcheck disable=SC2015
 #
 
-binsh="$(readlink /bin/sh)"
-
 case "$(readlink /bin/sh)" in
 	*bash) print() { echo -e "$@"; };;
 	*)     print() { echo    "$@"; };;
