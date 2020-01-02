@@ -30,4 +30,6 @@ if [[ "$TERM" = "linux" ]]; then
 	( source tty-colours.sh & )
 	( sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null & )
 	#clear #for background artifacting
+	# because for some reason I need to manually start pulseaudio now. ok
+	( pulseaudio --start & )
 fi
