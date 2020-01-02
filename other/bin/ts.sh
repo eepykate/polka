@@ -35,7 +35,7 @@ sed --follow-symlinks -i                      \
 	                                            \
 	-e "s/background:.*/background:   #$bg1/"   \
 	-e "s/foreground:.*/foreground:   #$fg1/"   \
-	-e "s/cursorColor:.*/cursorColor: #$fg1/"   \
+	-e "s/cursorColor:.*/cursorColor:  #$fg1/"  \
 	                                            \
 	-e "s/color0:.*/color0:       #$bg1/"       \
 	-e "s/color8:.*/color8:       #$black/"     \
