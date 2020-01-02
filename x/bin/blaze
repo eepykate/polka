@@ -1,43 +1,50 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 # Source:
 #   https://github.com/GaugeK/dots/
 #
 # I actually use variable "word splitting" to my advantage
-#   shellcheck disable=SC2086
+#   shellcheck disable=SC2086 disable=SC2046
+#
+# I know && isn't if
+#   shellcheck disable=SC2015
 #
 
-deps() {
-	md="$(for i in $deps; do echo -e " - \e[31m$i\e[0m"; done)"
+[ "$(readlink /bin/sh)" = "bash" ] &&
+	print() { echo -e "$@"; } ||
+	print() { echo "$@"; }
 
-	echo -e "\e[31mYou are missing dependencies\e[0m
+deps() {
+	md="$(for i in $deps; do print " - \033[31m$i\033[0m"; done)"
+
+	print "\033[31mYou are missing dependencies\033[0m
 $md
 
-\e[34mRequired dependencies\e[0m
- - \e[34mffmpeg\e[0m         Actually recording
- - \e[34mrofi\e[0m           Selecting the options
- - \e[34mpkill\e[0m          Ending the recordings
+\033[34mRequired dependencies\033[0m
+ - \033[34mffmpeg\033[0m         Actually recording
+ - \033[34mrofi\033[0m           Selecting the options
+ - \033[34mpkill\033[0m          Ending the recordings
 
-\e[35mAt least one of these is required\e[0m
- - \e[35mdisputils\e[0m      Selecting a display to record
- - \e[35mslop\e[0m           Selecting an area to record
+\033[35mAt least one of these is required\033[0m
+ - \033[35mdisputils\033[0m      Selecting a display to record
+ - \033[35mslop\033[0m           Selecting an area to record
 
-\e[32mOptional dependencies\e[0m
- - \e[32mlspci\e[0m          Detecting if the user has a nvidia card
- - \e[32mgrep\e[0m           ^ Used only in this
- - \e[32mnotify-send\e[0m    Letting the user know when the recording starts/ends
+\033[32mOptional dependencies\033[0m
+ - \033[32mlspci\033[0m          Detecting if the user has a nvidia card
+ - \033[32mgrep\033[0m           ^ Used only in this
+ - \033[32mnotify-send\033[0m    Letting the user know when the recording starts/ends
 "
 	exit 1
 }
 
-_() { command -v "$1" &>/dev/null || deps+=" $1"; }
+_() { command -v "$1" >/dev/null 2>&1 || deps="$deps $1"; }
 
 _ rofi
 _ pkill
 _ ffmpeg
-command -v dattr slop &>/dev/null || deps+=" disputils/slop"
+command -v dattr slop >/dev/null 2>&1 || deps="$deps disputils/slop"
 
-[[ "$deps" ]] && deps
+[ "$deps" ] && deps
 
 
 m() {
@@ -45,28 +52,27 @@ m() {
 }
 
 # exit if X isn't running
-[[ ! "$DISPLAY" ]] &&
-	echo "Can't open display; exiting" && exit
+[ ! "$DISPLAY" ] &&
+	print "Can't open display; exiting" && exit
 
 # output file, use $BLAZE_DIR and $BLAZE_FILENAME if they are set
-output="${BLAZE_DIR:-$HOME/opt/x/recs}/"\
-"${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S')}"
+output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S')}"
 
 help="
-\e[34mOptions\e[0m
-  \e[37m-s / --save\e[0m        Stop ffmpeg (Warning, not just in this script)
-  \e[37m-o / --output\e[0m   \e[35m[]\e[0m Save recording to <file>.mp4
-  \e[37m-n / --nvenc\e[0m       Force disable nvenc (For older nvidia cards) this script
+\033[34mOptions\033[0m
+  \033[37m-s / --save\033[0m        Stop ffmpeg (Warning, not just in this script)
+  \033[37m-o / --output\033[0m   \033[35m[]\033[0m Save recording to <file>.mp4
+  \033[37m-n / --nvenc\033[0m       Force disable nvenc (For older nvidia cards) this script
                        only enables nvenc if a nvidia card is detected
-  \e[37m-c / --confirm\e[0m     Don't ask if the user is ready to record
-  \e[37m-p / --preset\e[0m   \e[35m[]\e[0m Save to and load from preset <x>
-  \e[37m-b / --bitrate\e[0m  \e[35m[]\e[0m force bitrate (in MB)
-  \e[37m-h / --help\e[0m        Display what you're reading right now
+  \033[37m-c / --confirm\033[0m     Don't ask if the user is ready to record
+  \033[37m-p / --preset\033[0m   \033[35m[]\033[0m Save to and load from preset <x>
+  \033[37m-b / --bitrate\033[0m  \033[35m[]\033[0m force bitrate (in MB)
+  \033[37m-h / --help\033[0m        Display what you're reading right now
 
-\e[35m[]\e[0m = Option requires a value
+\033[35m[]\033[0m = Option requires a value
 "
 
-while [[ "$1" ]]; do
+while [ "$1" ]; do
 	case "$1" in
 		-s|--save)    pkill ffmpeg; exit   ;;
 		-o|--output)  output="$2"; shift   ;;
@@ -74,7 +80,7 @@ while [[ "$1" ]]; do
 		-c|--confirm) ready="yes"          ;;
 		-p|--preset)  preset="$2"; shift   ;;
 		-b|--bitrate) bitrate="-b:v ${2}M"; shift;;
-		-h|--help)    echo -e "$help"; exit;;
+		-h|--help)    print "$help"; exit;;
 	esac
 	shift
 done
@@ -82,45 +88,45 @@ done
 
 
 
-if [[ "$preset" ]]; then
+if [ "$preset" ]; then
 	# make the directory blaze presets are stored
-	mkdir -p "${XDG_CONFIG_HOME:-~/.config}/blaze" &>/dev/null
+	mkdir -p "${XDG_CONFIG_HOME:-~/.config}/blaze" >/dev/null 2>&1
 
 	# the location of the current preset
 	preset_location="${XDG_CONFIG_HOME:-~/.config}/blaze/blaze-preset-$preset"
 
-	[[ -f "$preset_location" ]] &&
+	[ -f "$preset_location" ] &&
 		. "$preset_location"
 fi
 
 
 
 # ask the user what method they want to use
-if [[ ! "$method" ]]; then
+if [ ! "$method" ]; then
 	# Check if the user has slop and disputils
-	command -v slop &>/dev/null && s=s
-	command -v dattr &>/dev/null && d=d
+	command -v slop  >/dev/null 2>&1 && s=s
+	command -v dattr >/dev/null 2>&1 && d=d
 
 	# if the user only has slop or disputils (But not both) use that
-	[[ "$s" ]] && method=selection
-	[[ "$d" ]] && method=display
+	[ "$s" ] && method=selection
+	[ "$d" ] && method=display
 
 	# if the user has both slop and disputils ask the user which one to use
-	[[ "$s" && "$d" ]] &&
-		method="$(echo -e "display\nselection" | m -p "Method of recording")"
+	[ "$s" ] && [ "$d" ] &&
+		method="$(print "display\nselection" | m -p "Method of recording")"
 
 fi
 
-if [[ "$method" = display ]]; then
+if [ "$method" = display ]; then
 
 	# get information about the screen
 	lsd="$(lsd)"
 
 	# if there's only one display, use that and skip asking
-	if [[ $(echo "$lsd" | wc -l) = 1 ]]; then
+	if [ $(print "$lsd" | wc -l) = 1 ]; then
 		display="$lsd"
 	else  # if there are other displays ask the user which one to use
-		[[ ! "$display" ]] && display="$(echo "$lsd" | m -p "Display to record")"
+		[ ! "$display" ] && display="$(print "$lsd" | m -p "Display to record")"
 	fi
 
 	# get information about the display
@@ -129,36 +135,36 @@ if [[ "$method" = display ]]; then
 	offX="$(dattr x "$display")"
 	offY="$(dattr y "$display")"
 
-elif [[ "$method" = selection ]]; then
+elif [ "$method" = selection ]; then
 
 	# select an area and make each number a separate word
-	slop=( $(slop -f '%w %h %x %y') )
+	set -- $(slop -f '%w %h %x %y')
 
 	# get information about the display
-	width="${slop[0]}"
-	height="${slop[1]}"
-	offX="${slop[2]}"
-	offY="${slop[3]}"
+	width="$1"
+	height="$2"
+	offX="$3"
+	offY="$4"
 
-	(( $width % 2 )) && width="$(( $width + 1))"
-	(( $height % 2 )) && height="$(( $height + 1))"
+	[ "$(( width % 2 ))" = 1 ] && width="$(( width + 1 ))"
+	[ "$(( height % 2 ))" = 1 ] && height="$(( height + 1 ))"
 
 else
 
-	echo "Invalid method; exiting"
+	print "Invalid method; exiting"
 	exit 1
 
 fi
 
 # ask the user what they want the framerate of the video to be
-[[ ! "$rate" ]] && rate="$(echo -e "30\n60" | m -p "Framerate")"
+[ ! "$rate" ] && rate="$(print "30\n60" | m -p "Framerate")"
 
 
-if [[ "$preset" ]] && [[ "$method" = display ]]; then
+if [ "$preset" ] && [ "$method" = display ]; then
 
-	echo "rate=\"$rate\"
+	print "rate=\"$rate\"
 display=\"$display\"
-[[ ! \"\$bitrate\" ]] &&
+[ ! \"\$bitrate\" ] &&
 	bitrate=\"$bitrate\"
 method=\"$method\"" > "$preset_location"
 
@@ -168,13 +174,13 @@ fi
 
 
 # detect if the user has a nvidia card and use nvenc
-[[ ! "$nvenc" ]] && [[ -n $(lspci | grep -i nvidia) ]] && \
+[ ! "$nvenc" ] && lspci | grep -qi nvidia && \
 	nvenc="-vcodec h264_nvenc"
 
 # ask the user if they want to start the recording
-[[ ! "$ready" ]] && ready="$(echo -e "yes\nno" | m -p "Start the recording")"
+[ ! "$ready" ] && ready="$(print "yes\nno" | m -p "Start the recording")"
 
-if [[ "$ready" = yes ]]; then
+if [ "$ready" = yes ]; then
 	notify-send -t 1500 "Recording Started"
 
 	#
