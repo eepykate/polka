@@ -1861,7 +1861,7 @@ span.totalvotes {
 .linkinfo .totalvotes {
  font-size:100%
 }
-.linkinfo {
+.linkinfo:not(.snoovatar-link) {
  border:none!important;
  background-color:#fff;
  top:375px;
