@@ -31,8 +31,6 @@ $md
  - \033[35mslop\033[0m           Selecting an area to record
 
 \033[32mOptional dependencies\033[0m
- - \033[32mlspci\033[0m          Detecting if the user has a nvidia card
- - \033[32mgrep\033[0m           ^ Used only in this
  - \033[32mnotify-send\033[0m    Letting the user know when the recording starts/ends
 "
 	exit 1
@@ -57,31 +55,29 @@ m() {
 	print "Can't open display; exiting" && exit
 
 # output file, use $BLAZE_DIR and $BLAZE_FILENAME if they are set
-output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S')}"
+output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILENAME:-blaze-$(date '+%Y-%m-%d_%H-%M-%S').mp4}"
 
 help="
 \033[34mOptions\033[0m
   \033[37m-s / --save\033[0m        Stop ffmpeg (Warning, not just in this script)
-  \033[37m-o / --output\033[0m   \033[35m[]\033[0m Save recording to <file>.mp4
-  \033[37m-n / --nvenc\033[0m       Force disable nvenc (For older nvidia cards) this script
-                       only enables nvenc if a nvidia card is detected
   \033[37m-c / --confirm\033[0m     Don't ask if the user is ready to record
   \033[37m-p / --preset\033[0m   \033[35m[]\033[0m Save to and load from preset <x>
   \033[37m-b / --bitrate\033[0m  \033[35m[]\033[0m force bitrate (in MB)
   \033[37m-h / --help\033[0m        Display what you're reading right now
+
+Anything after these will be the output file (optional)
 
 \033[35m[]\033[0m = Option requires a value
 "
 
 while [ "$1" ]; do
 	case "$1" in
+		-h|--help)    print "$help"; exit  ;;
 		-s|--save)    pkill ffmpeg; exit   ;;
-		-o|--output)  output="$2"; shift   ;;
-		-n|--nvenc)   nvenc=""             ;;
 		-c|--confirm) ready="yes"          ;;
 		-p|--preset)  preset="$2"; shift   ;;
 		-b|--bitrate) bitrate="-b:v ${2}M"; shift;;
-		-h|--help)    print "$help"; exit;;
+		*) output="$1"; break;;
 	esac
 	shift
 done
@@ -174,10 +170,6 @@ fi
 
 
 
-# detect if the user has a nvidia card and use nvenc
-[ ! "$nvenc" ] && lspci | grep -qi nvidia && \
-	nvenc="-vcodec h264_nvenc"
-
 # ask the user if they want to start the recording
 [ ! "$ready" ] && ready="$(print "yes\nno" | m -p "Start the recording")"
 
@@ -192,11 +184,8 @@ if [ "$ready" = yes ]; then
 	# -r "$rate"        | specifies the framerate of the video
 	# -i                | the input X display (not physical monitor) and offset
 	# -pix_fmt yuv420p  | allows the video to be played on browsers like firefox
-	# -q:v              | changes the quality of the video, lower is better,
-	#                     this doesn't seem to work that well with nvenc though
-	# $nvenc            | if the user has a nvidia card offload the work
-	#                     onto the GPU (Defined earlier in the script)
-	# "$output".mp4     | file to save the recording to
+	# -q:v              | changes the quality of the video, lower is better.
+	# "$output"         | file to save the recording to
 	#
 
 	ffmpeg                           \
@@ -210,7 +199,7 @@ if [ "$ready" = yes ]; then
 		$bitrate                     \
 		-pix_fmt yuv420p             \
 		-q:v 0                       \
-		"$output".mp4
+		"$output"
 
 	notify-send -t 2000 "Recording Stopped"
 fi
