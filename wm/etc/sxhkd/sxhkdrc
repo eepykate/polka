@@ -3,6 +3,10 @@ super + Return
 	st
 
 
+super + space
+	rofi -show run
+
+
 # don't send `ctrl + q` events to firefox
 ctrl + q
 	ctrlq
