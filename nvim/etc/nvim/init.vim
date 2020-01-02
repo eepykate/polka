@@ -46,6 +46,7 @@ call plug#begin()
 	Plug 'chrisbra/Colorizer'
 	Plug 'junegunn/goyo.vim'
 	Plug 'scrooloose/nerdtree'
+	Plug 'kovetskiy/sxhkd-vim'
 call plug#end()
 
 set cursorline
