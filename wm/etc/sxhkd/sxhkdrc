@@ -15,6 +15,9 @@ ctrl + q
 super + f
 	firefox
 
+ctrl + alt + f
+	firefox --private-window
+
 
 # power menu
 super + h
