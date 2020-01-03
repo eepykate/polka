@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Originally by https://github.com/windelicato/
 
 size=${2:-'40'}

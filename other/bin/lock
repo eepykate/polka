@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #set -x
 pgrep i3lock &>/dev/null && exit
 cache="$HOME/tmp/lock.png"
