@@ -1,9 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-while getopts rd option; do 
-	case "${option}" in 
-		r) sed "s/\(.\)/>!\1!</g";;
-		d) sed 's/|/\\|/g' | sed "s/\(.\)/||\1||/g";;
-	esac
-done
+case "$1" in
+	-r) sed "s/\(.\)/>!\1!</g";;
+	-d) sed 's/|/\\|/g' | sed "s/\(.\)/||\1||/g";;
+esac
 
