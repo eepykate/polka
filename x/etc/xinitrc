@@ -25,10 +25,10 @@ xset r rate 200 60 &              # Faster keyboard
 
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
-dunst    &
-compton  &
-recom    &
-start-dropdown.sh &
+dunst     &
+compton   &
+recom     &
+sdropdown &
 
 #
 #   And finally, start the window manager
