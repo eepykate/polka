@@ -16,13 +16,4 @@ b="$(bc <<< "${a[2]} * ${2:-0.8}" | sed 's/\..*$//g')"
 [[ $b -gt 255 ]] && b=255
 
 
-col="$(printf "%02X%02X%02X\n" $r $g $b)"
-
-fi="$HOME/opt/Wallpapers/tile.png"
-
-if [[ $@ = *-w* ]]; then
-	convert -size 100x100 canvas:"#$col" $fi
-	feh --bg-tile --no-fehbg $fi
-else
-	echo $col
-fi
+echo "$(printf "%02X%02X%02X\n" $r $g $b)"
