@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 #
 #  Restart compton after a period of time
 #    (The fork I use has a memory leak)
@@ -10,6 +10,6 @@ while sleep 1h; do
 	done
 	pkill compton &&
 		sleep 0.5 &&
-		compton &!
+		compton &
 	notify-send "Restarted compton"
 done
