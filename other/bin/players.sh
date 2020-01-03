@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 players="$(playerctl -l)"
-chosen_player="$(echo -e "$players" | rofi -dmenu -i )"
-echo "player=\"$chosen_player\"" > /tmp/player
+chosen_player="$(echo "$players" | rofi -dmenu -i)"
+echo "player='$chosen_player'" > /tmp/player
