@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/gauge/.gtkrc-2.0.mine"
-gtk-theme-name="Frost"
+gtk-theme-name="Coal"
 gtk-icon-theme-name="Papirus-Dark"
 gtk-font-name="Fira Mono Bold 8"
 gtk-cursor-theme-name="Bibata_Ice"

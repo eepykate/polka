@@ -10,6 +10,7 @@ export XAUTHORITY="/run/user/$UID/.Xauthority"
 export LEESSHISTFILE="/dev/null"
 
 export EDITOR="nvim"
+export GTK2_RC_FILES="${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0"
 export FZF_DEFAULT_OPTS="--height='50%' --layout='reverse-list' --color='16'"
 
 # Custom ls colours
