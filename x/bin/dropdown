@@ -10,26 +10,25 @@ else
 	echo "windowunmap" > /tmp/tabbed-status
 fi
 
-eval "$(xdotool search --classname "dropdown" getwindowgeometry --shell)"
+eval "$(xdotool getwindowfocus getwindowgeometry --shell)"
 
 # check which display has the window
 # (I can't use pfd because that outputs my left monitor when
 #  a window is maximized on my right monitor)
 for i in $(lsd); do
-	sw="$(dattr w "$i")"
-	sh="$(dattr h "$i")"
-	sx="$(dattr x "$i")"
-	sy="$(dattr y "$i")"
+	set -- $(dattr whxy "$i")
 
-	[ "$X" -ge "$sx" ] &&
-		[ "$Y" -ge "$sy" ] &&
-		[ "$X" -le $(( sw + sx )) ] &&
-		[ "$Y" -le $(( sh + sy )) ] &&
+	[ "$X" -ge "$3" ] &&
+		[ "$Y" -ge "$4" ] &&
+		[ "$X" -le $(( $1 + $3 )) ] &&
+		[ "$Y" -le $(( $2 + $4 )) ] &&
 		break
 done
 
-nx="$((sx + sw - $((sw / 2)) - $((WIDTH / 2))))"
-ny="$((sy + sh - $((sh / 2)) - $((HEIGHT / 2 ))))"
+eval "$(xdotool search --classname "dropdown" getwindowgeometry --shell)"
+
+nx="$(($3 + $1 - $(($1 / 2)) - $((WIDTH / 2))))"
+ny="$(($4 + $2 - $(($2 / 2)) - $((HEIGHT / 2 ))))"
 
 xdotool search --classname "dropdown" $thing
 xdotool search --classname "dropdown" windowmove "$nx" "$ny"
