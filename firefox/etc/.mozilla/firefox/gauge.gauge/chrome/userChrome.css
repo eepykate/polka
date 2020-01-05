@@ -54,6 +54,7 @@
 #pageActionButton,
 #pocket-button-box,
 #permissions-granted-icon,
+#identity-box > *:not(#identity-icon),
 #pageActionSeparator, #pocket-button {
 	display: none !important;
 }
