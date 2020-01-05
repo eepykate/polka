@@ -60,30 +60,38 @@ output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILE:-blaze-$(date '+%Y-%m-%d_%H-
 help="
 \033[34mOptions\033[0m
   \033[37m-s / --save\033[0m        Stop ffmpeg (Warning, not just in this script)
+  \033[37m-h / --help\033[0m        Display what you're reading right now
   \033[37m-c / --confirm\033[0m     Don't ask if the user is ready to record
   \033[37m-p / --preset\033[0m   \033[35m[]\033[0m Save to and load from preset <x>
   \033[37m-b / --bitrate\033[0m  \033[35m[]\033[0m force bitrate (in MB)
-  \033[37m-h / --help\033[0m        Display what you're reading right now
+  \033[37m-S / --slop\033[0m        Options to use for slop
+                       \033[37mRequires slop's options to be quoted\033[0m
 
 \033[35m[]\033[0m = Option requires a value
 
 Anything after these will be the output file (optional)
 
 \033[34mVariables\033[0m
-  \033[37mBLAZE_DIR\033[0m        Location to save the video
-                     \033[37mDefault: '\$HOME/opt/x/recs'\033[0m
-  \033[37mBLAZE_FILE\033[0m       Name of the saved video
-                     \033[37mDefault: 'blaze-\$(date '+%Y-%m-%d_%H-%M-%S').mp4'\033[0m
+  \033[37mBLAZE_DIR\033[0m          Location to save the video
+                       \033[37mDefault: '\$HOME/opt/x/recs'\033[0m
+  \033[37mBLAZE_FILE\033[0m         Name of the saved video
+                       \033[37mDefault: 'blaze-\$(date '+%Y-%m-%d_%H-%M-%S').mp4'\033[0m
+  \033[37mBLAZE_SLOP\033[0m         Options to use for slop
+                       \033[37mChange the look of slop using its built-in options\033[0m
 "
 
 while [ "$1" ]; do
 	case "$1" in
-		-h|--help)    print "$help"; exit  ;;
-		-s|--save)    pkill ffmpeg; exit   ;;
-		-c|--confirm) ready="yes"          ;;
-		-p|--preset)  preset="$2"; shift   ;;
-		-b|--bitrate) bitrate="-b:v ${2}M"; shift;;
-		*) output="$1"; break;;
+		-h|--help)    print "$help"        ; exit   ;;
+		-s|--save)    pkill ffmpeg         ; exit   ;;
+		-c|--confirm) ready="yes"                   ;;
+		-p|--preset)  preset="$2"          ; shift  ;;
+		-b|--bitrate) bitrate="-b:v ${2}M" ; shift  ;;
+		-S|--slop)    sloptions="$2"       ; shift  ;;
+		--)           shift
+		              [ "$1" ] && output="$1"
+		              break;;
+		*)            output="$1"          ; break ;;
 	esac
 	shift
 done
@@ -141,7 +149,7 @@ if [ "$method" = display ]; then
 elif [ "$method" = selection ]; then
 
 	# select an area and make each number a separate word
-	set -- $(slop -f '%w %h %x %y')
+	set -- $(slop $sloptions -f '%w %h %x %y')
 
 	# get information about the display
 	width="$1"
