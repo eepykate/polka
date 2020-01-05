@@ -5,7 +5,7 @@
 
 :root {
 	/*  ----  */
-	--bg0: #131314;
+	--bg0: #101012;
 	--bg1: #141417;
 	--bg2: #19191C;
 	--bg3: #1C1C21;
@@ -45,7 +45,6 @@
 .tab-content { background-image: none !important; }
 
 .urlbar-go-button,
-#identity-box,
 /*#back-button,
 #forward-button,*/
 #stop-button,
@@ -53,10 +52,22 @@
 #tracking-protection-icon-container,
 .urlbar-history-dropmarker,
 #pageActionButton,
-#star-button-box,
 #pocket-button-box,
+#permissions-granted-icon,
 #pageActionSeparator, #pocket-button {
 	display: none !important;
+}
+
+#navigator-toolbox #nav-bar * #star-button,
+#identity-icon {
+	display: block !important;
+	width: 10px !important;
+	list-style-image: none !important;
+}
+
+#identity-icon,
+#identity-box {
+	padding: 0px !important;
 }
 
 /* Remove 2px border from the bottom of the titlebar */
@@ -447,7 +458,7 @@ browser[type=content] > html {
 	min-height: var(--tab-min-height);
 }
 
-#urlbar-input { padding-left: 20px !important; }
+#urlbar-input { padding-left: 5px !important; }
 #urlbar-background { border: none !important; }
 
 /* Tab width */
