@@ -25,6 +25,9 @@ for i in $(lsd); do
 		break
 done
 
+[ "$WIDTH" = 3360 ] &&
+	set -- $(dattr whxy $(ppd))
+
 eval "$(xdotool search --classname "dropdown" getwindowgeometry --shell)"
 
 nx="$(($3 + $1 - $(($1 / 2)) - $((WIDTH / 2))))"
