@@ -60,7 +60,7 @@ output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILE:-blaze-$(date '+%Y-%m-%d_%H-
 help="
 \033[34mOptions\033[0m
   \033[34m-s / --save\033[0m
-    Stop ffmpeg (Warning, kills all instances of ffmpeg)
+    End the recording (Warning, kills all instances of ffmpeg)
 
   \033[34m-h / --help\033[0m
     Display what you're reading right now
