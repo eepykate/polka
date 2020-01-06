@@ -201,8 +201,10 @@ notthing() {
 inf() {
 	echo
 	printf "    $USER\e[38;05;16m@\e[0m$HOST\n"
-	printf "\e[38;05;16mos:\e[0m    "; source /etc/os-release; printf "%s\n" "$NAME"
-	printf "\e[38;05;16mpkgs:\e[0m  "; pacman -Qq | wc -l
+	printf "\e[38;05;16m os:\e[0m  "
+		printf "%8s\n" "$(source /etc/os-release; printf "%s\n" "$NAME")"
+	printf "\e[38;05;16m pkgs:\e[0m"
+		printf "%8s\n" "$(pacman -Qq | wc -l)"
 	for i in 0 5 1 3 2 6 4 7; do echo -n "\e[9${i}m▄\e[0m ";	done
 	echo; echo
 }
