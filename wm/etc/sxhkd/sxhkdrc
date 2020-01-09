@@ -74,6 +74,9 @@ ctrl + alt + {Insert, Home, End}
 XF86Audio{Prev,Next,Play,Stop,Mute}
 	vol {prev, next, p, stop, m}
 
+XF86Audio{Raise,Lower}Volume
+	vol {up,down}
+
 super + {p, Tab}
 	vol {p, mw}
 
