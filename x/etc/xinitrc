@@ -30,6 +30,8 @@ compton   &
 recom     &
 sdropdown &
 
+start-pulseaudio-x11 &
+
 #
 #   And finally, start the window manager
 #
