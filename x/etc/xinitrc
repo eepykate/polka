@@ -29,7 +29,8 @@ compton   &
 recom     &
 sdropdown &
 
-start-pulseaudio-x11 &
+unclutter -idle 15     &
+start-pulseaudio-x11   &
 
 #
 #   And finally, start the window manager

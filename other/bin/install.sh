@@ -93,7 +93,7 @@ pkgs="alsa-tools alsa-utils alsa-tools pulseaudio pulseaudio-alsa pulsemixer pav
 # basic tools
 pkgs="$pkgs bspwm sxhkd dunst maim mpv rofi xclip xdo xdotool xf86-input-synaptics xfsprogs xorg-server xorg-xgamma xorg-xinit xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot"
 # other
-pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra"
+pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra unclutter"
 
 # terminal stuff
 pkgs="$pkgs git htop dash neovim patch unrar unzip wget transmission-cli zsh zsh-completions zip imagemagick"
