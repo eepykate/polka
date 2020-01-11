@@ -77,9 +77,9 @@ vb() {
 }
 
 f() {
-	case "$(file -ib "$1")" in
+	case "$(file -ib "$1") $1" in
 		*video*|*gif*) mpv "$1";;
-		*image*)         i "$1";;
+		*http*|*image*)  i "$1";;
 		*audio*)    paplay "$1";;
 		*gzip*)     tar -t "$1";;
 		*html*)    firefox "$1";;
