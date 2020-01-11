@@ -5,11 +5,10 @@
 #
 
 # Basic X stuff
-[ -d /etc/X11/xinit ] && (
 for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
 	[ -x "$f" ] && . "$f"
 done
-unset f)
+unset f
 
 # DBus
 if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
