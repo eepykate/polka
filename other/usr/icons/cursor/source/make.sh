@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 if ! [ -x "$(command -v xcursorgen)" ]; then
 echo 'xcursorgen is not installed (part of \e[4;32mx11-apps\e[0m package in Devuan)'
 return
@@ -18,7 +19,7 @@ xcursorgen top_left_corner.in ../cursors/top_left_corner
 xcursorgen top_right_corner.in ../cursors/top_right_corner
 xcursorgen bottom_left_corner.in ../cursors/bottom_left_corner
 xcursorgen bottom_right_corner.in ../cursors/bottom_right_corner
-xcursorgen watch.in ../cursors/watch
+#xcursorgen watch.in ../cursors/watch
 xcursorgen sb_left_arrow.in ../cursors/sb_left_arrow
 xcursorgen sb_right_arrow.in ../cursors/sb_right_arrow
 xcursorgen sb_up_arrow.in ../cursors/sb_up_arrow
