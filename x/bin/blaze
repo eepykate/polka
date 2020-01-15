@@ -240,18 +240,18 @@ if [ "$ready" = yes ]; then
 	#
 
 	ffmpeg                         \
-		-loglevel error              \
-		-y                           \
-		-f x11grab                   \
-		-draw_mouse 1                \
-		-s "${width}x$height"        \
-		-r "$rate"                   \
-		-i "$DISPLAY.0+$offX,$offY"  \
-		$bitrate                     \
-		-pix_fmt yuv420p             \
-		$nvenc                       \
-		-q:v 0                       \
-		"$output"
+	  -loglevel error              \
+	  -y                           \
+	  -f x11grab                   \
+	  -draw_mouse 1                \
+	  -s "${width}x$height"        \
+	  -r "$rate"                   \
+	  -i "$DISPLAY.0+$offX,$offY"  \
+	  $bitrate                     \
+	  -pix_fmt yuv420p             \
+	  $nvenc                       \
+	  -q:v 0                       \
+	  "$output"
 
 	notify-send -t 2000 "Recording Stopped"
 fi
