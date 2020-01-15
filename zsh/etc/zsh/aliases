@@ -79,10 +79,14 @@ vb() {
 f() {
 	case "$(file -ib "$1") $1" in
 		*video*|*gif*) mpv "$1";;
-		*http*|*image*)  i "$1";;
+		*image*)         i "$1";;
 		*audio*)    paplay "$1";;
 		*gzip*)     tar -t "$1";;
 		*html*)    firefox "$1";;
+		*http*)
+			curl -Ls "$1" -o "/tmp/f_temp-$$.png"
+			f   "/tmp/f_temp-$$.png"
+			rm  "/tmp/f_temp-$$.png";;
 		# everything else
 		*)             v "$1";;
 	esac
