@@ -83,6 +83,9 @@ help="
   \033[34m-d / --display\033[0m  \033[35m[]\033[0m
     Force display  (Doesn't require -m)
 
+  \033[34m-n / --nvenc\033[0m
+    Force disable NVENC (If you have a nvidia card which doesn't support it)
+
   \033[34m-S / --slop\033[0m
     Options to use for slop
     \033[37mRequires slop's options to be quoted\033[0m
@@ -115,6 +118,7 @@ while [ "$1" ]; do
 		-b|--bitrate) bitrate="-b:v ${2}M" ; shift  ;;
 		-m|--method)  method="$2"          ; shift  ;;
 		-r|--rate)    rate="$2"            ; shift  ;;
+		-n|--nvenc)   nvenc="  "                    ;;
 		-d|--display) display="$2"
 		              method="display"     ; shift  ;;
 		-S|--slop)    sloptions="$2"       ; shift  ;;
@@ -212,6 +216,9 @@ method=\"$method\"" > "$preset_location"
 fi
 
 
+# detect if the user has a nvidia card and use nvenc
+[ ! "$nvenc" ] && lspci | grep -qi nvidia && \
+	nvenc="-vcodec h264_nvenc"
 
 
 # ask the user if they want to start the recording
@@ -242,6 +249,7 @@ if [ "$ready" = yes ]; then
 		-i "$DISPLAY.0+$offX,$offY"  \
 		$bitrate                     \
 		-pix_fmt yuv420p             \
+		$nvenc                       \
 		-q:v 0                       \
 		"$output"
 
