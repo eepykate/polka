@@ -10,6 +10,8 @@
 #   shellcheck disable=SC2015
 #
 
+trap 'pkill -F /tmp/blaze-pid' 15
+
 case "$(readlink /bin/sh)" in
 	*bash) print() { echo -e "$@"; };;
 	*)     print() { echo    "$@"; };;
@@ -59,60 +61,35 @@ output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILE:-blaze-$(date '+%Y-%m-%d_%H-
 
 help="
 \033[34mOptions\033[0m
-  \033[34m-s / --save\033[0m
-    End the recording (Warning, kills all instances of ffmpeg)
-
-  \033[34m-h / --help\033[0m
-    Display what you're reading right now
-
-  \033[34m-c / --confirm\033[0m
-    Don't ask if the user is ready to record
-
-  \033[34m-p / --preset\033[0m   \033[35m[]\033[0m
-    Save to and load from preset <x>
-
-  \033[34m-b / --bitrate\033[0m  \033[35m[]\033[0m
-    Force bitrate  (in MB)
-
-  \033[34m-r / --rate\033[0m     \033[35m[]\033[0m
-    Force framerate
-
-  \033[34m-m / --method\033[0m   \033[35m[]\033[0m
-    Force method   (slop, display)
-
-  \033[34m-d / --display\033[0m  \033[35m[]\033[0m
-    Force display  (Doesn't require -m)
-
-  \033[34m-n / --nvenc\033[0m
-    Force disable NVENC (If you have a nvidia card which doesn't support it)
-
-  \033[34m-S / --slop\033[0m
-    Options to use for slop
-    \033[37mRequires slop's options to be quoted\033[0m
+  \033[34m-s / --save\033[0m        End the recording
+  \033[34m-h / --help\033[0m        Display what you're reading right now
+  \033[34m-c / --confirm\033[0m     Don't ask if the user is ready to record
+  \033[34m-p / --preset\033[0m   \033[35m[]\033[0m Save to and load from preset <x>
+  \033[34m-r / --rate\033[0m     \033[35m[]\033[0m Force framerate
+  \033[34m-b / --bitrate\033[0m  \033[35m[]\033[0m Force bitrate  (in MB)
+  \033[34m-m / --method\033[0m   \033[35m[]\033[0m Force method   (slop, display)
+  \033[34m-d / --display\033[0m  \033[35m[]\033[0m Force display  (Doesn't require -m)
+  \033[34m-n / --nvenc\033[0m       Force disable NVENC
+  \033[34m-S / --slop\033[0m        Options to use for slop (Needs to be quoted)
 
 
 \033[35m[]\033[0m = Option requires a value
 
-Anything after these will be the output file (optional)
-
 \033[34mVariables\033[0m
-  \033[34mBLAZE_DIR\033[0m
-    Location to save the video
-    \033[37mDefault: '\$HOME/opt/x/recs'\033[0m
+  \033[34mBLAZE_DIR\033[0m    Location to save the video
+    \033[37mDefault:     '\$HOME/opt/x/recs'\033[0m
 
-  \033[34mBLAZE_FILE\033[0m
-    Name of the saved video
-    \033[37mDefault: 'blaze-\$(date '+%Y-%m-%d_%H-%M-%S').mp4'\033[0m
+  \033[34mBLAZE_FILE\033[0m   Name of the saved video
+    \033[37mDefault:     'blaze-\$(date '+%Y-%m-%d_%H-%M-%S').mp4'\033[0m
 
-  \033[34mBLAZE_SLOP\033[0m
-    Options to use for slop
-    \033[37mDefault: None\033[0m
+  \033[34mBLAZE_SLOP\033[0m   Options to use for slop
+    \033[37mDefault:     None\033[0m
 "
 
 while [ "$1" ]; do
 	case "$1" in
 		-h|--help)    print "$help"        ; exit   ;;
-		-s|--save)    pkill ffmpeg         ; exit   ;;
+		-s|--save)    pkill blaze          ; exit   ;;
 		-c|--confirm) ready="yes"                   ;;
 		-p|--preset)  preset="$2"          ; shift  ;;
 		-b|--bitrate) bitrate="-b:v ${2}M" ; shift  ;;
@@ -251,7 +228,15 @@ if [ "$ready" = yes ]; then
 	  -pix_fmt yuv420p             \
 	  $nvenc                       \
 	  -q:v 0                       \
-	  "$output"
+	  "$output"                    &
+
+	pid=$!
+	echo "$pid" > /tmp/blaze-pid
+
+	while pgrep -F /tmp/blaze-pid >/dev/null; do
+		sleep 0.5
+	done
 
 	notify-send -t 2000 "Recording Stopped"
+	rm /tmp/blaze-pid
 fi
