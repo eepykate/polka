@@ -85,8 +85,8 @@ f() {
 		*html*)    firefox "$1";;
 		*http*)
 			curl -Ls "$1" -o "/tmp/f_temp-$$.png"
-			f   "/tmp/f_temp-$$.png"
-			rm  "/tmp/f_temp-$$.png";;
+			f     "/tmp/f_temp-$$.png"
+			rm -f "/tmp/f_temp-$$.png";;
 		# everything else
 		*)             v "$1";;
 	esac
