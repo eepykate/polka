@@ -72,8 +72,9 @@ help="
   \033[34m-n / --nvenc\033[0m       Force disable NVENC
   \033[34m-S / --slop\033[0m        Options to use for slop (Needs to be quoted)
 
-
 \033[35m[]\033[0m = Option requires a value
+
+Final argument not starting with \`-\` will be output file
 
 \033[34mVariables\033[0m
   \033[34mBLAZE_DIR\033[0m    Location to save the video
