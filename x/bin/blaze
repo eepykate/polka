@@ -101,8 +101,10 @@ while [ "$1" ]; do
 		-S|--slop)    sloptions="$2"       ; shift  ;;
 		--)           shift
 		              [ "$1" ] && output="$1"
-		              break;;
-		*)            output="$1"          ; break ;;
+		              break                         ;;
+		-*)           echo "Invalid option '$1'"
+		              exit                          ;;
+		*)            output="$1"          ; break  ;;
 	esac
 	shift
 done
