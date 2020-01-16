@@ -10,7 +10,7 @@
 #   shellcheck disable=SC2015
 #
 
-trap 'pkill -F /tmp/blaze-pid' 15
+trap 'pkill -2 -F /tmp/blaze-pid' 2 15
 
 case "$(readlink /bin/sh)" in
 	*bash) print() { echo -e "$@"; };;
@@ -107,7 +107,7 @@ while [ "$1" ]; do
 	shift
 done
 
-
+[ -f /tmp/blaze-pid ] && echo "Blaze is already running, exiting." && exit
 
 
 if [ "$preset" ]; then
@@ -234,7 +234,7 @@ if [ "$ready" = yes ]; then
 	echo "$pid" > /tmp/blaze-pid
 
 	while pgrep -F /tmp/blaze-pid >/dev/null; do
-		sleep 0.5
+		sleep 0.25
 	done
 
 	notify-send -t 2000 "Recording Stopped"
