@@ -317,9 +317,10 @@ code,
  */
 
 
-.username-_4ZSMR[style*="color: rgb(27,"] {
+/*.username-_4ZSMR[style*="color: rgb(27,"] {
 	color: var(--fg1) !important;
 }
+
 
 .markup-2BOw-j s .emoji,
 .markup-2BOw-j strong .emoji,
@@ -333,11 +334,7 @@ code,
 	width: 5rem !important;
 	height: 5rem !important;
 	min-height: 5rem !important;
-}
-
-.placeholder-P6ptfj {
-	opacity: 0.3 !important;
-}
+}*/
 
 /* Padding in main content area
 Thanks _diamondburned_#4507 */
@@ -380,7 +377,10 @@ Thanks _diamondburned_#4507 */
     background-color: var(--bg1) !important;
 }
 
-
+/* messages placeholder text */
+.placeholder-37qJjk {
+	opacity: 0.3 !important;
+}
 
 
 
