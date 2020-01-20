@@ -73,10 +73,15 @@ add() {
 
 # check if the package exists in the official repos
 for i in "$@"; do
-	pacman -Si "$i" 2>&1 | grep -i 'was not found' >/dev/null && \
-		add aur "$i" || add official "$i"
+	case "$i" in
+		-*) opts="$i";;
+		*) pacman -Si "$i" 2>&1 | grep -i 'was not found' >/dev/null && \
+		add aur "$i" || add official "$i";;
+	esac
 done
 
+[ -n "$opts" ] &&
+	sudo pacman -S "$opts"
 
 [ -n "$official" ] && official $official
 
