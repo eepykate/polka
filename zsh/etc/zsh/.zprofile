@@ -2,6 +2,8 @@
 #   zprofile
 #
 
+export BLAZE_DIR="$HOME/opt/x/recs"
+
 export XDG_CONFIG_HOME="$HOME/etc"
 export XDG_CACHE_HOME="$HOME/usr/cache"
 export XDG_DATA_HOME="$HOME/usr"
