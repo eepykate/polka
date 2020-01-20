@@ -8,6 +8,6 @@ for bin in borders panel; do
 done
 
 case $1 in
-    quit)    bspc quit;;
-    restart) bspc wm -r
+    -q*|q*)    bspc quit;;
+    -r*|r*) bspc wm -r
 esac
