@@ -10,7 +10,7 @@
 #   shellcheck disable=SC2015
 #
 
-trap 'pkill -2 -F /tmp/blaze-pid' 2 15
+trap 'pkill -2 -P $(cat /tmp/blaze-pid)' 15
 
 case "$(readlink /bin/sh)" in
 	*bash) print() { echo -e "$@"; };;
@@ -57,7 +57,7 @@ m() {
 	print "Can't open display; exiting" && exit
 
 # output file, use $BLAZE_DIR and $BLAZE_FILE if they are set
-output="${BLAZE_DIR:-$HOME/opt/x/recs}/${BLAZE_FILE:-blaze-$(date '+%Y-%m-%d_%H-%M-%S').mp4}"
+output="${BLAZE_DIR:-$PWD}/${BLAZE_FILE:-blaze-$(date '+%Y-%m-%d_%H-%M-%S').mp4}"
 
 help="
 \033[34mOptions\033[0m
@@ -78,7 +78,7 @@ Final argument not starting with \`-\` will be output file
 
 \033[34mVariables\033[0m
   \033[34mBLAZE_DIR\033[0m    Location to save the video
-    \033[37mDefault:     '\$HOME/opt/x/recs'\033[0m
+    \033[37mDefault:     Current directory\033[0m
 
   \033[34mBLAZE_FILE\033[0m   Name of the saved video
     \033[37mDefault:     'blaze-\$(date '+%Y-%m-%d_%H-%M-%S').mp4'\033[0m
@@ -109,6 +109,11 @@ while [ "$1" ]; do
 	esac
 	shift
 done
+
+[ ! "$BLAZE_DIR" ] &&
+	[ ! "$output" ] &&
+	print "No output file specified; exiting" &&
+	exit
 
 [ -f /tmp/blaze-pid ] && echo "Blaze is already running, exiting." && exit
 
@@ -219,6 +224,8 @@ if [ "$ready" = yes ]; then
 	# "$output"         | file to save the recording to
 	#
 
+	echo $$ > /tmp/blaze-pid
+
 	ffmpeg                         \
 	  -loglevel error              \
 	  -y                           \
@@ -231,14 +238,7 @@ if [ "$ready" = yes ]; then
 	  -pix_fmt yuv420p             \
 	  $nvenc                       \
 	  -q:v 0                       \
-	  "$output"                    &
-
-	pid=$!
-	echo "$pid" > /tmp/blaze-pid
-
-	while pgrep -F /tmp/blaze-pid >/dev/null; do
-		sleep 0.25
-	done
+	  "$output"
 
 	notify-send -t 2000 "Recording Stopped"
 	rm /tmp/blaze-pid
