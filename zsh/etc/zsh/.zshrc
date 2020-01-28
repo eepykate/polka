@@ -59,6 +59,4 @@ zle -N els; bindkey "^k" els
 egs() { clear; git status; zle redisplay }
 zle -N egs; bindkey "^j" egs
 
-WORDCHARS="*?[]~&!#$%^(){}<>"
-
 # vim: ft=sh
