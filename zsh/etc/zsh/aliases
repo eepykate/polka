@@ -163,6 +163,11 @@ cgif() {
 		-y "${1%.*}.gif" -loglevel error
 }
 
+c720() {
+	ffmpeg -i "$1"          \
+	  -vf "scale=1280:720"  \
+	  "${1%.*}-720.mp4"
+}
 
 
 
