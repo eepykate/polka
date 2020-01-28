@@ -10,10 +10,11 @@ alarm_tone="/usr/share/sounds/freedesktop/stereo/complete.oga"
 
 {
 	for i in $(seq "$seconds" -1 1); do
-		printf "\r  %s" "$(date -d"0+$i sec" +%H:%M:%S)"
+		printf "\r  %s" "$(date -d"0+$i sec" +%H:%M:%S)" &
+		echo "$(date -d"0+$i sec" +%H:%M:%S)" > "/tmp/timer-$$" &
 		sleep 1
 	done
-	printf "\r  %s" "$(date -d"0+$i sec" +%H:%M:%S)"
+	printf "\r%s\n" "Timer Finished"
 
 	paplay $alarm_tone 2>/dev/null &
 	notify-send -u critical "Timer finished" "$2"
