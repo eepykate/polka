@@ -4,7 +4,7 @@
 #    (The fork I use has a memory leak)
 #
 
-while sleep 1h; do
+while sleep 30m; do
 	while pgrep minecraft; do
 		sleep 10
 	done
