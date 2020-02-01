@@ -1,78 +1,41 @@
-:root {
-	/*  ----  */
-	--bg0: #151517;
-	--bg1: #18191c;
-	--bg2: #1C1D21;
-	--bg3: #1F2126;
-	--bg4: #262930;
-	--button: #daddee1a;
-	/*  ----  */
-	--fg2: #a6a9b7;
-	--fg1: #daddee;
-	--disabled: #696969;
-	/*  ----  */
-	--accent: #7baae8;
-	--accent2: #85BBFF;
-	--false: #c488ec;
-	--hover: #ffffff;
-	--red: #e56f92;
-	/*  ----  */
-}
+/*
+ * CSS rewritten by https://github.com/phisch
+ * */
 
-* {
-	font-family: "Fira Mono";
+
+html {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-family: "Fira Mono", sans-serif;
 	font-weight: bold;
 	font-size: 10px;
 }
 
-/*body, html {
-	background-color: var(--bg1);
-}*/
-
-html {
+html, body {
 	background: var(--bg1);
 }
 
-html {
-	width: 100vw;
-	height: 100vh;
-	padding: 0;
-	margin: 0;
+body {
+	width: 270px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-gap: 10px;
 }
 
-main {
-	width: 270px;
-	margin-top: auto;
-	display: flex;
-	overflow-y: auto;
-	flex-flow: row wrap;
-	position: relative;
-	top: -10px;
-	padding: 20px;
-}
-a:visited, a {
-	color: var(--fg2);
+a, a:visited {
 	text-decoration: none;
 	outline: none;
-}
-
-a:hover {	color: var(--fg1); }
-
-body {
-	position:absolute;
-	top: calc(50% - 15px);
-	left: calc(50% - 8px);
-	transform:translate(-50%,-50%);
-}
-
-a {
-	padding: 15px 17px;
+	color: var(--fg2);
+	padding: 15px 0;
 	border-radius: 4px;
-	margin: 10px;
-	width: 35px;
 	text-align: center;
-	transition: 200ms;
+	transition: background-color 200ms ease-in-out;
 }
+
 a:hover {
+	color: var(--fg1);
 	background: var(--bg3);
 }
