@@ -64,7 +64,7 @@ super + z
 	-1t $HOME/opt/x/pics/maim/ --ignore old | head -1)
 
 
-ctrl + alt + {Insert, Home, End}
+super + {Insert, Home, End}
 	blaze {_,-c -p k,-s}
 
 
