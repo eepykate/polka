@@ -167,6 +167,7 @@ c720() {
 	ffmpeg -i "$1"          \
 		-y                    \
 	  -vf "scale=1280:720"  \
+	  -b 3M                 \
 	  -vcodec h264_nvenc    \
 	  "${1%.*}-720.mp4"
 }
