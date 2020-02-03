@@ -5,7 +5,17 @@
 #
 
 
-seconds="$(echo "${1}*60" | bc | sed 's/\..*$//')"
+calc() {
+	seconds="$(echo "${1}*$2" | bc | sed 's/\..*$//')"
+}
+
+case "$1" in
+	*h) calc "${1%?}" 3600;;
+	*m) calc "${1%?}"   60;;
+	*s) seconds="${1%?}"  ;;
+	*)  calc "$1"       60;;
+esac
+
 alarm_tone="/usr/share/sounds/freedesktop/stereo/complete.oga"
 
 {
