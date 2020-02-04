@@ -410,3 +410,9 @@ Thanks _diamondburned_#4507 */
 	margin-top: 4px;
 }
 
+
+
+[class^="chatContent"] > div > div > div > div, [class^="chatContent"] [class^="channelTextArea"] {
+	width: 80%
+}
+
