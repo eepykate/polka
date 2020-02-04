@@ -412,7 +412,7 @@ Thanks _diamondburned_#4507 */
 
 
 
-[class^="chatContent"] > div > div > div > div, [class^="chatContent"] [class^="channelTextArea"] {
+[class^="chatContent"] > div > div > div > div {
 	width: 80%
 }
 
