@@ -301,8 +301,10 @@ pre,
     --deprecated-panel-background: var(--bg3);
 	--background-modifier-selected: var(--bg1);
 	--elevation-low: none !important;
+	--background-message-hover: var(--bg3) !important;
 }
 
+.panels-j1Uci_,
 .container-PNkimc,
 .scroller-2TZvBN {
 	background-color: var(--bg3) !important;
@@ -384,4 +386,27 @@ Thanks _diamondburned_#4507 */
 
 
 
+
+
+
+
+
+
+
+
+
+
+.timestampCozyAlt-1Hs08c {
+	font-size: 9px !important;
+}
+
+.reaction-1hd86g .emoji {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.reaction-1hd86g {
+	height: 20px !important;
+	margin-top: 4px;
+}
 
