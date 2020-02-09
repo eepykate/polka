@@ -87,8 +87,8 @@ sed --follow-symlinks -i \
 	-e "s/--hover:.*#.*\;/--hover: #$hover\;/" \
 	-e "s/--red:.*#.*\;/--red: #$red\;/" \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
-	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userChrome.css \
-	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/gauge.gauge/chrome/userContent.css \
+	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
+	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css \
 	${XDG_DATA_HOME:-~/.local/share}/startpage/style.css
 
 echo " - dunst"
