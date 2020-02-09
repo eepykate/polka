@@ -42,8 +42,15 @@ bspc rule -a Gcolor3               state=floating
 #
 #   autostart
 #
-pgrep sxhkd &>/dev/null &&
-	pkill sxhkd && sleep 0.1
+pkill compton
+pkill recom
+pkill dunst
+pkill sxhkd
 
+sleep 0.1
+
+compton &
+recom &
+dunst &
 sxhkd &
 sxhkd -c ${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm &

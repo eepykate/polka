@@ -200,10 +200,6 @@ fi
 echo "#!/bin/sh
 $wallthing" > ~/bin/x/pap
 
-echo -e " * Restarting dunst"
-pkill dunst; sleep 0.1; dunst &!
-sleep 0.1
-
 #
 # tbf I use like 1 gtk app, this doesn't matter
 #
