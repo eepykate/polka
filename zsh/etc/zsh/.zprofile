@@ -30,5 +30,4 @@ export LESS_TERMCAP_us=$'\033[1;35m'       # begin underline
 shortcuts
 
 # subshell is to hide the info about the fork to the background
-( source tty-colours.sh & )
 ( sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null & )
