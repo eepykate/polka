@@ -12,9 +12,13 @@
 # if colours don't work for you, install (and symlink to
 # /bin/sh) a shell that's actually POSIX-compliant like `dash`
 
+case "$(readlink /bin/sh)" in
+	*bash) print() { echo -e "$@"; };;
+	*)     print() { echo    "$@"; };;
+esac
 
 [ -z "$1" ] &&
-	echo "\033[31merror:\033[0m no packages specified" &&
+	print "\033[31merror:\033[0m no packages specified" &&
 	exit
 
 # location for this script to download the aur repos
@@ -24,7 +28,7 @@ location="${XDG_CACHE_HOME:-~/.cache}/aur"
 mkdir -p "$location"
 
 official() {
-	echo "\033[34m$officialhr\033[0m found in official repos; installing normally."
+	print "\033[34m$officialhr\033[0m found in official repos; installing normally."
 	# install the package
 	sudo pacman -S $continue $official
 }
@@ -37,18 +41,32 @@ aur() {
 
 	# check if the package exists in the aur
 	if [ -n "$(git ls-remote "https://aur.archlinux.org/$i.git")" ]; then
-		echo "\033[34m$i\033[0m found in AUR; cloning"
+		print "\033[34m$i\033[0m found in AUR; cloning"
 
-		# clone the package
 		git clone "https://aur.archlinux.org/$i" "$location/$i"
 
-		# make the package
 		cd "$location/$i"
+		deps
 		makepkg -si
 	else
 		# exit if the package isn't in the aur
-		echo "\033[31merror:\033[0m package '$i' not found"
+		print "\033[31merror:\033[0m package '$i' not found"
 	fi
+}
+
+deps() {
+	deps="$(grep "^depends=" PKGBUILD | sed -e 's/depends=(//' -e 's/)//' -e "s/'//g")"
+
+	for x in $deps; do
+		pacman -Qq "$x" >/dev/null 2>&1 ||
+			missing="$x"
+	done
+
+	[ "$missing" ] && {
+		print "package '$i' is missing the deps:"
+		print "$(for l in $missing; do print " - \033[34m$l\033[0m"; done)"
+		ins $missing
+	}
 }
 
 add() {
