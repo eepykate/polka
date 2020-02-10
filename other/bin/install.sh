@@ -263,6 +263,10 @@ mkdir -p /home/$name/opt/git
 
 echo "Manually installing some programs"
 
+echo " - blaze"
+git clone https://github.com/GaugeK/blaze /home/$name/opt/git/blaze &&
+	ln -s /home/$name/opt/git/blaze/blaze /home/$name/bin/x/blaze
+
 echo " - st"
 git clone https://github.com/gaugek/st.git /home/$name/opt/git/st &&
 	cd /home/$name/opt/git/st &&
