@@ -87,5 +87,5 @@ super + s
 #
 #   laptop
 #
-{super,ctrl} + alt + t
+ctrl + alt + t
 	synclient TouchpadOff={0,1}
