@@ -1,0 +1,35 @@
+#!/bin/sh
+
+case "$(readlink /bin/sh)" in
+	*bash) print() { echo -e "$@"; };;
+	*)     print() { echo    "$@"; };;
+esac
+
+sudo pacman -Sy
+
+print "\033[35mChecking which AUR packages are out-of-date\033[0m"
+
+aur_pkgs="$(pacman -Qm)"
+
+for i in $(echo "$aur_pkgs" | sed 's/ /13524/'); do
+	i="$(echo "$i" | sed 's/13524/ /')"
+	pkgname="$(echo "$i" | grep -o '^[^ ]*')"
+	curver="$(echo "$i" | grep -o '[^ ]*$')"
+	newver="$(curl -s \
+		"https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=$pkgname" | \
+		grep -o 'Version":"[^"]*' | sed 's/Version":"//g')"
+
+	[ "$curver" != "$newver" ] &&
+		printf "\033[34m$pkgname\033[0m out of date\n" &&
+		ood="$ood $pkgname"
+done
+
+[ "$ood" ] &&
+	print "\033[35mUpdating AUR packages\033[0m" &&
+	ins $ood
+
+[ ! "$ood" ] &&
+	print "\033[35mAll AUR packages are up-to-date\033[0m"
+
+print "\033[35mUpdating packages from official repos\033[0m"
+sudo pacman -Su

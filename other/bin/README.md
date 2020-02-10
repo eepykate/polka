@@ -6,8 +6,6 @@
 
 `dmenuumount` - unmount a drive with dmenu (Credit to Luke Smith)
 
-`ins` - install from official arch repos/AUR (Simple yay alternative because mnmlsm)
-
 `install.sh` - personal system install script
 
 `lock` - i3lock wrapper
@@ -24,8 +22,6 @@
 
 `shortcuts` - generate shortcuts from `~/.config/zsh/sc` and output to `~/.config/zsh/sc.sh`
 
-`src` - search arch's official repos and the AUR for package
-
 `tasks` - simple TODO manager (Credit to [mitch](http://github.com/mitchweaver/bin))
 
 `timer` - set a timer for x minutes
@@ -37,3 +33,11 @@
 `usb*` - display a notification when a usb is inserted/removed
 
 `vol` - manage MPRIS players and system volume
+
+### Arch
+
+`ins` - install from official arch repos/AUR (Simple yay alternative because mnmlsm)
+
+`src` - search arch's official repos and the AUR for package
+
+`upda` - update AUR and official packages
