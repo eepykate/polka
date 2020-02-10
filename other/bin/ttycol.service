@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/tty-colours-activate.sh
+ExecStart=/usr/local/bin/ttycol.sh
 
 [Install]
 WantedBy=multi-user.target

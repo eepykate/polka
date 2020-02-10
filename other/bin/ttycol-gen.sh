@@ -23,6 +23,18 @@ sed -e 's/\*//' -e 's/color//' -e 's/\://' -e 's/#//' | \
 sort -n | \
 awk '{print $2}'))
 
-for i in {1..16}; do
-	sed -e "${i}!d" -e "s/xd/${colours[${i}]}/" <<< $template
-done  >$HOME/bin/tty-colours.sh
+{
+	echo '#!/usr/bin/env bash'
+	echo 'export TERM=linux'
+	echo 'for tty in /dev/tty[0-9]; do'
+
+	for i in {1..16}; do
+		sed -e "${i}!d" -e "s/xd/${colours[${i}]}/" <<< $template
+	done
+
+	echo 'done'
+
+} > "$HOME/bin/ttycol.sh"
+
+echo "Moving ttycol.sh to /usr/local/bin/"
+sudo mv "$HOME/bin/ttycol.sh" /usr/local/bin/
