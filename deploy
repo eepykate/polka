@@ -25,4 +25,5 @@ for i in $(dirname $HOME/opt/dots/*/bin | sed "s|$HOME/opt/dots/||"); do
 done
 ln -sf $HOME/opt/dots/*/etc/* ~/etc/ 2>/dev/null
 ln -sf $HOME/opt/dots/*/usr/* ~/usr/ 2>/dev/null
+cp -r  $HOME/opt/dots/firefox/etc/.mozilla ~/etc/
 cp -r  $HOME/opt/dots/other/usr/fonts/* ~/usr/fonts
