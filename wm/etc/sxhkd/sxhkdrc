@@ -2,6 +2,8 @@
 super + Return
 	st
 
+super + slash
+	rofi-vb
 
 super + space
 	rofi -show run

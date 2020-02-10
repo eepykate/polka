@@ -1,0 +1,5 @@
+#!/bin/sh
+
+file="$(find ~/bin -type f | sed "s|$HOME/bin/||" | rofi -dmenu)"
+[ ! "$file" ] && exit
+st -e zsh -i -c "v '$HOME/bin/$file'"

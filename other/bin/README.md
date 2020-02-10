@@ -18,6 +18,8 @@
 
 `rofi-emoji` - copy an emoji from a list (`~/opt/junk/emoji`)
 
+`rofi-vb` - edit files in ~/bin
+
 `scr` - simple screenshot script using `maim`
 
 `shortcuts` - generate shortcuts from `~/.config/zsh/sc` and output to `~/.config/zsh/sc.sh`
