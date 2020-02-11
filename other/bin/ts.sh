@@ -10,7 +10,7 @@ while true; do
 	esac
 done
 
-themes="Frost\nCoral\nCoal\nnh\nSnow\nWithered" # List of themes
+themes="$(ls -1 ~/etc/colours/)" # List of themes
 if [[ -z $theme ]]; then
 	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
 		|| exit
@@ -183,18 +183,9 @@ echo -e "\nChanging wallpaper"
 	if [[ -f "$HOME/opt/git/Wallpapers/$wall" ]]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/$wall\""
 	eval $wallthing
-	sed --follow-symlinks -i \
-		-e "s/separator_height.*/separator_height    = 0/" \
-		-e "s/frame_width.*/frame_width         = 0/" \
-		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 else
 	walgen1 "#$wall"
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/tile.png\""
-	sed --follow-symlinks -i \
-		-e "s/frame_color.*/frame_color         = \"#$wall\"/" \
-		-e "s/separator_height.*/separator_height    = 8/" \
-		-e "s/frame_width.*/frame_width         = 1/" \
-		${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 fi
 
 echo "#!/bin/sh
