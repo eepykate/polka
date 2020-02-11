@@ -96,7 +96,7 @@ pkgs="$pkgs bspwm sxhkd dunst maim mpv rofi xclip xdo xdotool xf86-input-synapti
 pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra unclutter"
 
 # terminal stuff
-pkgs="$pkgs git htop dash neovim patch unrar unzip wget transmission-cli zsh zsh-completions zip imagemagick"
+pkgs="$pkgs bc git htop dash neovim patch unrar unzip wget transmission-cli zsh zsh-completions zip imagemagick"
 
 # everything else
 pkgs="$pkgs hunspell-en_US make gcc intel-ucode automake xcb-util-image xcb-util-renderutil libnotify usbutils xcb-util-cursor noto-fonts-emoji"
