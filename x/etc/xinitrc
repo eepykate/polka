@@ -24,8 +24,6 @@ xset r rate 200 60 &              # Faster keyboard
 
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
-sdropdown &
-
 unclutter -idle 15     &
 start-pulseaudio-x11   &
 

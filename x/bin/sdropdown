@@ -1,3 +1,0 @@
-#!/bin/sh
-
-tabbed -r 2 -n "dropdown" st -w '' &
