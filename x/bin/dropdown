@@ -1,13 +1,35 @@
 #!/bin/sh
 
-[ -f /tmp/tabbed-status ] || touch /tmp/tabbed-status
+xd() { xdotool search --classname "dropdown" $@; }
 
-if [ "$(cat /tmp/tabbed-status)" = windowunmap ]; then
-	thing="windowmap" &&
-	echo "windowmap" > /tmp/tabbed-status
+[ -f /tmp/tabbed-status ] || touch /tmp/tabbed-status
+status="$(cat /tmp/tabbed-status)"
+
+xd >/dev/null 2>&1 || {
+	tabbed -r 2 -n "dropdown" st -w '' &
+	status="1"
+}
+
+case "$1" in
+	-s|show) status="0";;
+	-h|hide) status="1";;
+esac
+
+if [ "$status" = 1 ]; then
+	action="windowmap" &&
+		echo "0" > /tmp/tabbed-status
 else
-	thing="windowunmap" &&
-	echo "windowunmap" > /tmp/tabbed-status
+	action="windowunmap" &&
+		echo "1" > /tmp/tabbed-status
+fi
+
+curdes="$(xdotool get_desktop)"
+tabdes="$(xd get_desktop_for_window)"
+
+if [ "$curdes" != "$tabdes" ]; then
+	xd set_desktop_for_window "$curdes"
+	action="windowmap"
+	echo "0" > /tmp/tabbed-status
 fi
 
 eval "$(xdotool getwindowfocus getwindowgeometry --shell)"
@@ -28,10 +50,10 @@ done
 [ "$WIDTH" = 3360 ] &&
 	set -- $(dattr whxy $(ppd))
 
-eval "$(xdotool search --classname "dropdown" getwindowgeometry --shell)"
+eval "$(xd getwindowgeometry --shell)"
 
 nx="$(($3 + $1 - $(($1 / 2)) - $((WIDTH / 2))))"
 ny="$(($4 + $2 - $(($2 / 2)) - $((HEIGHT / 2 ))))"
 
-xdotool search --classname "dropdown" $thing
-xdotool search --classname "dropdown" windowmove "$nx" "$ny"
+xd $action
+xd windowmove "$nx" "$ny"
