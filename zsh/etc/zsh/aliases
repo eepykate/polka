@@ -215,7 +215,7 @@ inf() {
 }
 
 calc() {
-	echo $(($@))
+	echo "scale=5; $*" | bc
 }
 
 # vim: ft=sh
