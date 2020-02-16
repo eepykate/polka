@@ -17,7 +17,7 @@ If you can't find it, firefox is in `firefox/etc/.mozilla`, as I don't like rand
 
 ![current setup](https://i.imgur.com/sRTB2pH.png) \*Probably out of date
 
-**Distribution:** Arch (GNU/Linux)
+**Distribution:** Some variation of GNU/Linux
 
 **WM:** bspwm
 
