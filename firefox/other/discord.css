@@ -425,7 +425,7 @@ Thanks _diamondburned_#4507 */
 
 
 
-* {
+[class*="autocomplete"] * {
 	color: var(--fg2);
 }
 
@@ -438,13 +438,6 @@ Thanks _diamondburned_#4507 */
 .span-3ncFWM {
 	color: var(--hover) !important;
 }
-
-
-
-
-
-
-
 
 
 
