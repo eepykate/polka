@@ -304,6 +304,7 @@ pre,
 	--background-message-hover: var(--bg3) !important;
 }
 
+.infoBar-U6oBFk,
 .panels-j1Uci_,
 .container-PNkimc,
 .scroller-2TZvBN {
@@ -410,9 +411,41 @@ Thanks _diamondburned_#4507 */
 	margin-top: 4px;
 }
 
-
-
-[class^="chatContent"] > div > div > div > div {
-	width: 80%
+.edited-DL9ECl {
+	opacity: 0.5 !important;
 }
+
+
+
+* {
+	color: var(--fg2);
+}
+
+.barBase-39XTcM {
+	background-color: var(--accent);
+}
+
+.barButtonIcon-3FGqPD path,
+.barButtonBase-3UKlW2,
+.span-3ncFWM {
+	color: var(--hover) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
