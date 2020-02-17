@@ -380,8 +380,14 @@ menuitem[disabled] {
 	--toolbarbutton-active-background: var(--button) !important;
 }
 
+.findbar-textbox,
+#findbar-textbox-wrapper {
+	background-color: var(--bg2) !important;
+}
+
 #urlbar,
 .tabbrowser-tab .tab-content .tab-text,
+.findbar-textbox,
 .close-icon {
 	color: var(--fg1) !important;
 }
