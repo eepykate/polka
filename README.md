@@ -15,7 +15,7 @@ Also look for PATH (used for ~/bin)
 
 If you can't find it, firefox is in `firefox/etc/.mozilla`, as I don't like random files being created in my home directory (Firefox makes ~/.mozilla), so I made a wrapper script to change $HOME to ~/etc when running firefox.
 
-![current setup](https://i.imgur.com/sRTB2pH.png) \*Probably out of date
+![current setup](https://i.imgur.com/vYsJ67E.png) \*Probably out of date
 
 **Distribution:** Some variation of GNU/Linux
 
