@@ -16,7 +16,7 @@ button="0000001a"
 #   -----
 fg1="444444"
 fg2="767676"
-disabled="000000"
+disabled="999999"
 #   -----
 accent="$green"
 false="$cyan"
