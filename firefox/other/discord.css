@@ -389,10 +389,18 @@ Thanks _diamondburned_#4507 */
 
 
 
+.lookFilled-1Gx00P.colorBrand-3pXr91 * span,
+.lookFilled-1Gx00P.colorBrand-3pXr91 {
+	color: var(--hover) !important;
+	background-color: var(--accent) !important;
+}
 
 
 
-
+.footer-3mqk7D,
+.uploadModal-2ifh8j {
+	background-color: var(--bg1) !important;
+}
 
 
 
