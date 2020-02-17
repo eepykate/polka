@@ -1,11 +1,11 @@
 /* RASI Theme */
 
 * {
-	bg:         #1C1C21;
+	bg:         #ebebeb;
 	hover:      #ffffff;
-	sel:        #daddee1a;
-	fg:         #daddee;
-	accent:     #7baae8;
+	sel:        #0000001a;
+	fg:         #444444;
+	accent:     #6B9E4C;
 
 	spacing: 0;
 	background-color: transparent;

@@ -9,7 +9,7 @@
 	padding             = 25
 	horizontal_padding  = 25
 	frame_width         = 0
-	frame_color         = "#daddee"
+	frame_color         = "#444444"
 	separator_height    = 0
 	separator_color     = frame
 
@@ -37,16 +37,16 @@
 	context             = ctrl+shift+period
 
 [urgency_low]
-	background          = "#202026"
-	foreground          = "#daddee"
+	background          = "#e3e3e3"
+	foreground          = "#444444"
 	timeout             = 5
 
 [urgency_normal]
-	background          = "#daddee"
-	foreground          = "#141417"
+	background          = "#444444"
+	foreground          = "#fafafa"
 	timeout             = 5
 
 [urgency_critical]
-	background          = "#7baae8"
+	background          = "#6B9E4C"
 	foreground          = "#ffffff"
 	timeout             = 0

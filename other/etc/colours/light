@@ -1,0 +1,29 @@
+black="acb1b8"
+red="b54a65"
+green="6B9E4C"
+yellow="c97d4e"
+blue="4973b7"
+purple="b45aaa"
+cyan="5094b4"
+
+#   -----
+bg0="ffffff"
+bg1="fafafa"
+bg2="f2f2f2"
+bg3="ebebeb"
+bg4="e3e3e3"
+button="0000001a"
+#   -----
+fg1="444444"
+fg2="767676"
+disabled="000000"
+#   -----
+accent="$green"
+false="$cyan"
+hover="ffffff"
+red="cd5e79"
+#   -----
+wall="$bg0"
+#   -----
+
+# vim:ft=sh
