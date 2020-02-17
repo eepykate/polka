@@ -19,8 +19,9 @@ esac
 
 {
 	for i in $(seq "$seconds" -1 1); do
-		printf "\r  %s" "$(date -d"0+$i sec" +%H:%M:%S)" &
-		echo "$(date -d"0+$i sec" +%H:%M:%S)" > "/tmp/timer-$$" &
+		secl="$(date -d"0+$i sec" +%H:%M:%S)"
+		printf "\r  %s" "$secl" &
+		echo "$secl" > "/tmp/timer-$$" &
 		sleep 1
 	done
 	printf "\r%s\n" "Timer Finished"
