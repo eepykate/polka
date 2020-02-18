@@ -342,7 +342,7 @@ toolbarbutton#alltabs-button {
 #navigator-toolbox * #urlbar.megabar { top: 0 !important; }
 
 #urlbar:not([open]) #urlbar-input-container { margin-top: 1px !important; }
-#urlbar[open] #urlbar-input-container { margin-top: 4px !important; }
+#urlbar[open] #urlbar-input-container { margin-top: 2px !important; }
 
 
 
@@ -372,6 +372,7 @@ toolbarbutton#alltabs-button {
 	--autocomplete-popup-highlight-background: var(--button) !important;
 	--lwt-toolbar-field-background-color: var(--bg3) !important;
 	--panel-separator-color: transparent !important;
+	--lwt-toolbar-field-focus: var(--bg3) !important;
 
 	/* Sidebar */
 	--lwt-sidebar-text-color: var(--fg1) !important;
@@ -407,6 +408,10 @@ menuitem[disabled] {
 .findbar-textbox,
 .close-icon {
 	color: var(--fg1) !important;
+}
+
+#urlbar:not(:focus-within) #urlbar-background {
+	background-color: transparent !important;
 }
 
 #urlbar,
