@@ -283,6 +283,10 @@ toolbarbutton#alltabs-button {
 	font-size: 10px !important;
 }
 
+#urlbar-input {
+	text-align: center !important;
+}
+
 
 /* Make sure selected stuff in the autocomplete popup is bold and everything else is normal */
 #urlbar-results * {
@@ -440,10 +444,6 @@ browser[type=content] > html {
 .tabbrowser-tab[selected] .tab-background {
 	background: var(--bg2) !important;
 	border-radius: 6px !important;
-}
-
-#urlbar {
-	box-shadow: none !important;
 }
 
 
