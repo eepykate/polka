@@ -383,6 +383,7 @@ toolbarbutton#alltabs-button {
 	--arrowpanel-color: var(--fg1) !important;
 }
 
+menu[disabled],
 menuitem[disabled] {
 	color: var(--disabled) !important;
 }
