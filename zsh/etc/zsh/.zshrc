@@ -49,7 +49,7 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 source ${XDG_CONFIG_HOME:-~/.config}/zsh/aliases   # Aliases
 
-PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.>>)%{\e[0m%} '
+PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.◊)%{\e[0m%} '
 
 # bind `^k` to ls
 els() { clear; ls; zle redisplay }
