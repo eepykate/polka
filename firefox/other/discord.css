@@ -24,7 +24,7 @@ code:not(.inline)::before {
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
  {
 	font-family: "Roboto Condensed" !important;
-	font-size: 12px !important;
+	font-size: 13px !important;
 }
 
 .name-3_Dsmg {
@@ -36,7 +36,7 @@ code:not(.inline)::before {
 code, .inline {
 	font-family: Monospace !important;
 	font-weight: bold !important;
-	font-size: 10px !important;
+	font-size: 12px !important;
 }
 
 /*.unread-3zKkbm,               /* Unread channel arrow */
