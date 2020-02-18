@@ -455,7 +455,9 @@ browser[type=content] > html {
 	border-radius: 6px !important;
 }
 
-
+.tab-background {
+	border-top-color: transparent !important;
+}
 
 
 
