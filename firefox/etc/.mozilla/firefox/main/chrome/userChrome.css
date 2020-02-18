@@ -467,15 +467,25 @@ browser[type=content] > html {
 	max-width: 100px !important;
 }
 
-#navigator-toolbox * toolbarbutton,
+#navigator-toolbox * toolbarbutton:not(.webextension-browser-action),
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) image,
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) stack {
 	width:      calc(var(--button-size) + 10px) !important;
-	height:     calc(var(--button-size) + 10px) !important;
-	max-height: var(--tab-min-height)  !important;
-	padding:    5px 5px 5px 5px        !important;
-	margin:     -5px 0px -5px 0px      !important;
+	max-height: var(--tab-min-height) !important;
+	height:     auto !important;
+	padding:    5px 5px 5px 5px    !important;
+	margin:     0px 0px 0px 0px    !important;
 }
+
+.webextension-browser-action {
+	margin: 0 5px !important;
+}
+
+.toolbarbutton-badge {
+  margin-top:   0px !important;	
+  margin-right: 0px !important;	
+}
+
 #navigator-toolbox #downloads-indicator-anchor #downloads-indicator-progress-outer #downloads-indicator-progress-inner,
 #navigator-toolbox #downloads-indicator-anchor #downloads-indicator-progress-outer {
 	margin-left: 1px !important;
