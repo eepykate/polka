@@ -145,6 +145,10 @@ a svg.homeIcon-tEMBK1 path {
 	margin-left: 40px;
 }
 
+.base-3dtUhz {
+	padding-left: 40px;
+}
+
 .sidebar-2K8pFh:not(:hover) * .children-Bmpf2Q,
 .scroller-2wx7Hm > div:first-of-type,
 .bannerImage-1jOskm,
@@ -304,6 +308,8 @@ pre,
 	--background-message-hover: var(--bg3) !important;
 }
 
+.outer-1AjyKL.interactive-3B9GmY:hover,
+.inset-3sAvek,
 .infoBar-U6oBFk,
 .panels-j1Uci_,
 .container-PNkimc,
@@ -397,6 +403,7 @@ Thanks _diamondburned_#4507 */
 
 
 
+.container-1D34oG,
 .footer-3mqk7D,
 .uploadModal-2ifh8j {
 	background-color: var(--bg1) !important;
@@ -424,7 +431,12 @@ Thanks _diamondburned_#4507 */
 }
 
 
-
+.barInner-3NDaY_ {
+	background-color: var(--fg2) !important;
+}
+.directionRow-3v3tfG,
+.directionRow-3v3tfG > *,
+.customStatusText-3YJeRZ,
 [class*="autocomplete"] * {
 	color: var(--fg2);
 }
