@@ -25,11 +25,11 @@
 
 :root {
 	--font              : Fira Mono;
-	--font-size         : 10px;
+	--font-size         : 12px;
 	--font-weight       : bold;
 	--icon-size         : 16px        !important;
 	--button-size       : 14px        !important;
-	--tab-min-height    : 32.5px      !important;
+	--tab-min-height    : 34px      !important;
 	--toolbar-bgimage   : none        !important;
 	--arrowpanel-dimmed : transparent !important;
 }
@@ -345,7 +345,7 @@ toolbarbutton#alltabs-button {
 #navigator-toolbox * #urlbar.megabar { top: 0 !important; }
 
 #urlbar:not([open]) #urlbar-input-container { margin-top: 1px !important; }
-#urlbar[open] #urlbar-input-container { margin-top: 2px !important; }
+#urlbar[open] #urlbar-input-container { margin-top: 3px !important; }
 
 
 
@@ -459,7 +459,9 @@ browser[type=content] > html {
 	border-top-color: transparent !important;
 }
 
-
+#urlbar-background {
+	box-shadow: none !important;
+}
 
 
 
@@ -494,7 +496,7 @@ browser[type=content] > html {
 
 #navigator-toolbox #downloads-indicator-anchor #downloads-indicator-progress-outer #downloads-indicator-progress-inner,
 #navigator-toolbox #downloads-indicator-anchor #downloads-indicator-progress-outer {
-	margin-left: 1px !important;
+	margin-left: -3px !important;
 }
 
 #identity-icon,
