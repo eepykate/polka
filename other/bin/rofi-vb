@@ -1,5 +1,9 @@
 #!/bin/sh
 
-file="$(find ~/bin -type f,l | sed "s|$HOME/bin/||" | rofi -dmenu)"
+loc="$HOME/opt/dots/"
+
+exclude="gtk"
+
+file="$(find "$loc" -type f,l | grep -iv "$exclude" | sed "s|$loc||" | rofi -dmenu)"
 [ ! "$file" ] && exit
-st -e zsh -i -c "v '$HOME/bin/$file'"
+st -e zsh -i -c "v '$loc/$file'"
