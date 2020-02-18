@@ -77,8 +77,9 @@
 /* Remove small border from above the navbar*/
 #nav-bar { box-shadow: none !important; }
 
-/* Remove border from urlbar (obviously) */
 #urlbar { border: none !important; }
+
+#urlbar:not(:focus-within) { box-shadow: none !important; }
 
 
 
@@ -115,7 +116,7 @@
 }
 
 /**  Navbar is on the same line as tabs  **/
-#nav-bar:not([customizing]) {
+/*#nav-bar:not([customizing]) {
 	margin-top: calc(var(--tab-min-height) * -1 - 16px) !important;
 	z-index: 2 !important;
 	pointer-events: none;
@@ -132,6 +133,13 @@
 	opacity: 1 !important;
 	max-height: 32px;
 }
+
+/* Navbar is above tabs */
+#nav-bar:not([customizing]) {
+	-moz-box-ordinal-group: 0 !important;
+  margin-bottom: 4px !important;
+}
+
 
 
 
@@ -153,9 +161,9 @@
 
 /* Floating Tabs/Navbar */
 #navigator-toolbox {
-	padding: 10px;
+	padding: 5px;
 	margin-bottom: 0px;
-	padding-bottom: 7px;
+	padding-bottom: 0px;
 }
 
 .tabbrowser-tab { margin-right: 0 !important; }
@@ -197,6 +205,11 @@
 /* Desaturate tab icon on non-selected tabs */
 .tab-icon-image:not([selected]) {
 	filter: grayscale(100%) brightness(80%) !important;
+}
+
+/* Round Tabs */
+.tabbrowser-tab .tab-background {
+	border-radius: 6px !important;
 }
 
 
@@ -340,7 +353,7 @@ toolbarbutton#alltabs-button {
 	/* Toolbar */
 	--toolbar-color: var(--fg1) !important;
 	--lwt-text-color: var(--fg1) !important;
-	--toolbar-bgcolor: var(--bg3) !important;
+	--toolbar-bgcolor: var(--bg1) !important;
 	--lwt-accent-color: var(--bg1) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
 	--lwt-toolbar-field-focus-color: var(--fg1) !important;
@@ -417,6 +430,21 @@ browser[type=content] > html {
 	background: var(--bg1) !important;
 }
 
+/*
+.tabbrowser-tab[selected] .tab-background {
+	background: linear-gradient(to right, var(--accent) 60%, var(--false) 100%) !important;
+	opacity: 20% !important;
+	border-radius: 6px !important;
+}*/
+
+.tabbrowser-tab[selected] .tab-background {
+	background: var(--bg2) !important;
+	border-radius: 6px !important;
+}
+
+#urlbar {
+	box-shadow: none !important;
+}
 
 
 
