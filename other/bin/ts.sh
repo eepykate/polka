@@ -73,19 +73,19 @@ echo " - firefox"
 # Change the colour variables in firefox and my startpage
 # $HOME/.startpage/style.css
 sed --follow-symlinks -i \
-	-e "s/--bg0:.*#.*\;/--bg0: #$bg0\;/" \
-	-e "s/--bg1:.*#.*\;/--bg1: #$bg1\;/" \
-	-e "s/--bg2:.*#.*\;/--bg2: #$bg2\;/" \
-	-e "s/--bg3:.*#.*\;/--bg3: #$bg3\;/" \
-	-e "s/--bg4:.*#.*\;/--bg4: #$bg4\;/" \
-	-e "s/--fg2:.*#.*\;/--fg2: #$fg2\;/" \
-	-e "s/--fg1:.*#.*\;/--fg1: #$fg1\;/" \
-	-e "s/--accent:.*#.*\;/--accent: #$accent\;/" \
-	-e "s/--false:.*#.*\;/--false: #$false\;/" \
-	-e "s/--border:.*#.*\;/--border: #$border\;/" \
-	-e "s/--button:.*#.*\;/--button: #$button\;/" \
-	-e "s/--hover:.*#.*\;/--hover: #$hover\;/" \
-	-e "s/--red:.*#.*\;/--red: #$red\;/" \
+	-e "s/--bg0:.*#.*\;/--bg0:      #$bg0\;/" \
+	-e "s/--bg1:.*#.*\;/--bg1:      #$bg1\;/" \
+	-e "s/--bg2:.*#.*\;/--bg2:      #$bg2\;/" \
+	-e "s/--bg3:.*#.*\;/--bg3:      #$bg3\;/" \
+	-e "s/--bg4:.*#.*\;/--bg4:      #$bg4\;/" \
+	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
+	-e "s/--fg1:.*#.*\;/--fg1:      #$fg1\;/" \
+	-e "s/--accent:.*#.*\;/--accent:   #$accent\;/" \
+	-e "s/--false:.*#.*\;/--false:    #$false\;/" \
+	-e "s/--border:.*#.*\;/--border:   #$border\;/" \
+	-e "s/--button:.*#.*\;/--button:   #$button\;/" \
+	-e "s/--hover:.*#.*\;/--hover:    #$hover\;/" \
+	-e "s/--red:.*#.*\;/--red:      #$red\;/" \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css \

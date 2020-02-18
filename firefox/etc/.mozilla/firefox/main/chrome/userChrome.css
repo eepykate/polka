@@ -5,30 +5,40 @@
 
 :root {
 	/*  ----  */
-	--bg0: #ffffff;
-	--bg1: #fafafa;
-	--bg2: #f2f2f2;
-	--bg3: #ebebeb;
-	--bg4: #e3e3e3;
-	--button: #0000001a;
+	--bg0:      #ffffff;
+	--bg1:      #fafafa;
+	--bg2:      #f2f2f2;
+	--bg3:      #ebebeb;
+	--bg4:      #e3e3e3;
+	--button:   #0000001a;
 	/*  ----  */
-	--fg2: #767676;
-	--fg1: #444444;
-	--disabled: #aaaaaa;
+	--fg2:      #767676;
+	--fg1:      #444444;
+	--disabled: #999999;
 	/*  ----  */
-	--accent: #6B9E4C;
-	--accent2: #85BBFF;
-	--false: #5094b4;
-	--hover: #ffffff;
-	--red: #cd5e79;
+	--accent:   #6B9E4C;
+	--false:    #5094b4;
+	--hover:    #ffffff;
+	--red:      #cd5e79;
 	/*  ----  */
+}
 
+:root {
+	--font              : Fira Mono;
+	--font-size         : 10px;
+	--font-weight       : bold;
+	--icon-size         : 16px        !important;
+	--button-size       : 16px        !important;
+	--tab-min-height    : 32.5px      !important;
+	--toolbar-bgimage   : none        !important;
+	--arrowpanel-dimmed : transparent !important;
+}
 
-
-	--toolbar-bgimage: none !important;
-	--arrowpanel-dimmed: transparent !important;
-	--tab-min-height: 32.5px !important;
-	--button-size: 16px !important;
+/* Floating Tabs/Navbar */
+#navigator-toolbox {
+	padding: 5px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
 /***   Hide some stuff   ***/
@@ -159,13 +169,6 @@
 #tabbrowser-tabs[movingtab] { margin-bottom: -2px !important; }
 
 
-/* Floating Tabs/Navbar */
-#navigator-toolbox {
-	padding: 5px;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-}
-
 .tabbrowser-tab { margin-right: 0 !important; }
 
 
@@ -278,9 +281,9 @@ toolbarbutton#alltabs-button {
 
 /* Font stuff */
 * {
-	font-family: "Fira Mono";
-	font-weight: bold;
-	font-size: 10px !important;
+	font-family: var(--font)        !important;
+	font-weight: var(--font-weight) !important;
+	font-size:   var(--font-size)   !important;
 }
 
 #urlbar-input {
@@ -464,25 +467,22 @@ browser[type=content] > html {
 	max-width: 100px !important;
 }
 
-#navigator-toolbox * toolbarbutton {
-	min-height: var(--tab-min-height) !important;
-	height: var(--tab-min-height) !important;
-	width: var(--tab-min-height) !important;
-}
-
+#navigator-toolbox * toolbarbutton,
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) image,
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) stack {
-	height: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
-	max-height: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
-	width: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
-	max-width: calc(var(--tab-min-height) - calc(var(--tab-min-height / 2)) + var(--button-size)) !important;
+	height:     var(--button-size) !important;
+	max-height: var(--tab-min-height) !important;
+	width:      var(--button-size) !important;
+	max-width:  var(--button-size) !important;
+	padding:    0px 0px 0px 0px    !important;
+	margin:     0px 5px 0px 5px    !important;
 }
 
 #identity-icon,
 .tab-icon-image,
 .tab-close-button {
-	height:	var(--button-size) !important;
-	width:	var(--button-size) !important;
+	height:	var(--icon-size) !important;
+	width:	var(--icon-size) !important;
 }
 
 #identity-icon { padding: 2px; }

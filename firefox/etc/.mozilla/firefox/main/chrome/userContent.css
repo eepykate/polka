@@ -1,21 +1,21 @@
 :root {
 	/*  ----  */
-	--bg0: #ffffff;
-	--bg1: #fafafa;
-	--bg2: #f2f2f2;
-	--bg3: #ebebeb;
-	--bg4: #e3e3e3;
-	--button: #0000001a;
+	--bg0:      #ffffff;
+	--bg1:      #fafafa;
+	--bg2:      #f2f2f2;
+	--bg3:      #ebebeb;
+	--bg4:      #e3e3e3;
+	--button:   #0000001a;
 	/*  ----  */
-	--fg2: #767676;
-	--fg1: #444444;
-	--disabled: #aaaaaa;
+	--fg2:      #767676;
+	--fg1:      #444444;
+	--disabled: #999999;
 	/*  ----  */
-	--accent: #6B9E4C;
+	--accent:   #6B9E4C;
 	--accent2: #85BBFF;
-	--false: #5094b4;
-	--hover: #ffffff;
-	--red: #cd5e79;
+	--false:    #5094b4;
+	--hover:    #ffffff;
+	--red:      #cd5e79;
 	/*  ----  */
 
 	--blue:        #02a4fc;
