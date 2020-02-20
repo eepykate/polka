@@ -23,4 +23,4 @@ If you can't find it, firefox is in `firefox/etc/.mozilla`, as I don't like rand
 
 **Terminal:** [st](https://github.com/GaugeK/st)
 
-**Font:** Fira Mono Bold (10px)
+**Font:** Fira Mono Bold (12px)
