@@ -1,0 +1,14 @@
+* {
+	font-family: "Sans Serif" !important;
+}
+
+
+[class*="code"] *,
+[class*="Code"] *,
+[id*="code"] *,
+[id*="Code"] *,
+code,
+.CodeMirror *,
+code * {
+	font-family: Monospace !important;
+}
