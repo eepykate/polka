@@ -494,9 +494,13 @@ browser[type=content] > html {
 	margin: 0px 5px !important;
 }
 
+#navigator-toolbox * toolbarbutton:not(.webextension-browser-action):not(#PanelUI-menu-button) #downloads-indicator-anchor {
+	padding-top: 0px !important;
+}
+
 #navigator-toolbox #downloads-indicator-anchor #downloads-indicator-progress-outer #downloads-indicator-progress-inner,
 #navigator-toolbox #downloads-indicator-anchor #downloads-indicator-progress-outer {
-	margin-left: -3px !important;
+	margin-left: -3.5px !important;
 }
 
 #identity-icon,
