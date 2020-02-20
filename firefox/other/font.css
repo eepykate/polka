@@ -3,12 +3,12 @@
 }
 
 
+.repository-content .Box *, /* Github */
 [class*="code"] *,
 [class*="Code"] *,
 [id*="code"] *,
 [id*="Code"] *,
-code,
-.CodeMirror *,
-code * {
+code *,
+code {
 	font-family: Monospace !important;
 }
