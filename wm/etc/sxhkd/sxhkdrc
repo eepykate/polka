@@ -5,6 +5,9 @@ super + Return
 super + slash
 	rofi-vb
 
+super + period
+	rofi-sc
+
 super + space
 	rofi -show run
 

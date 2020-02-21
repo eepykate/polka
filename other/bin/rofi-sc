@@ -1,0 +1,6 @@
+#!/bin/sh
+
+act="$(grep -i '^d' ~/etc/zsh/sc | grep -o '[^ ]*$' | \
+	sed "s|~/|$HOME/|" | rofi -dmenu -i)"
+
+[ "$act" ] && cd "$act" && st -e zsh
