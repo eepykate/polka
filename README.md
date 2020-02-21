@@ -17,7 +17,13 @@ If you can't find it, firefox is in `firefox/etc/.mozilla`, as I don't like rand
 
 ![current setup](https://i.imgur.com/TTEoDJP.png) \*Probably out of date
 
-**Distribution:** Some variation of GNU/Linux
+**Distribution:** Run:
+
+```sh
+eval $(echo Y2F0IC9kZXYvcmFuZG9tIHwgaGVhZCAtbiAxCg== | base64 -d)
+```
+
+to find out, shows the one I am using at this exact second, warning: I switch a lot
 
 **WM:** bspwm
 
