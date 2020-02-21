@@ -2,7 +2,7 @@
 
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
-stmessage st tabbed drop-down-st
+stmessage st tabbed dropdown
 exit
 
 xrdb="$(xrdb -query)"
