@@ -28,7 +28,7 @@ f   pro        ~/etc/zsh/.zprofile
 f   zpro       ~/etc/zsh/.zprofile
 
 # wm
-f   com        ~/etc/compton.conf
+f   com        ~/etc/picom.conf
 f   bs         ~/etc/bspwm/bspwmrc
 f   drc        ~/etc/dunst/dunstrc
 f   sx         ~/etc/sxhkd/sxhkdrc
