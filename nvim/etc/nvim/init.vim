@@ -42,11 +42,6 @@ set smartcase          " Ignore case when only lower case is typed
 au BufReadPost *.rasi set syntax=css
 
 call plug#begin()
-	"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-	Plug 'chrisbra/Colorizer'
-	Plug 'junegunn/goyo.vim'
-	Plug 'scrooloose/nerdtree'
-	Plug 'kovetskiy/sxhkd-vim'
 call plug#end()
 
 set cursorline
@@ -93,4 +88,3 @@ function! ToggleHiddenAll()
 endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
-nmap <C-s> :NERDTreeToggle<CR>
