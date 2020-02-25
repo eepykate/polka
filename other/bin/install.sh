@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dots="https://github.com/GaugeK/dots.git"
+dots="https://github.com/GaugeK/quoll.git"
 
 pacman -Syu --noconfirm --needed dialog archlinux-keyring
 
