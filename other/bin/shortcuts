@@ -5,9 +5,8 @@
 # $2 = name of alias
 # $3 = file or folder to edit / cd to
 
-echo -n "" > ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh
-sed -e '/^#/d' ${XDG_CONFIG_HOME:-~/.config}/zsh/sc \
-	-e "s|~|$HOME|g" | tee \
-  >(awk '$1 ~ /d/' | awk '{print "alias "$2"=\"cd "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh) \
-  >(awk '$1 ~ /d/' | awk '{print "export "$2"=\""$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh) \
-  >(awk '$1 ~ /f/' | awk '{print "alias "$2"=\"v "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh) &>/dev/null
+> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh
+sed -e '/^#/d' -e "s|~|$HOME|g"  ${XDG_CONFIG_HOME:-~/.config}/zsh/sc | tee \
+	>(grep '^d' | awk '{print "alias "$2"=\"cd "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh)  \
+	>(grep '^d' | awk '{print  "hash "$2"=\""$3"\""}'    >> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh)  \
+	>(grep '^f' | awk '{print "alias "$2"=\"v "$3"\""}'  >> ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh) &>/dev/null
