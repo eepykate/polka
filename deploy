@@ -17,13 +17,20 @@
 }
 [[ $y = y ]] || exit
 
-mkdir -p ~/bin ~/etc ~/usr/cache ~/opt 2>/dev/null
+mkdir -p      \
+	~/bin/app   \
+	~/bin/bin   \
+	~/etc       \
+	~/usr/cache \
+	~/opt 2>/dev/null
 
 for i in $(dirname $HOME/opt/dots/*/bin | sed "s|$HOME/opt/dots/||"); do
 	mkdir $HOME/bin/$i &>/dev/null
 	ln -s $HOME/opt/dots/$i/bin/* $HOME/bin/$i/ &>/dev/null
 done
+cp     $HOME/opt/dots/other/bin/app/* ~/bin/app
+rm -rf $HOME/bin/other/app
 ln -sf $HOME/opt/dots/*/etc/* ~/etc/ 2>/dev/null
 ln -sf $HOME/opt/dots/*/usr/* ~/usr/ 2>/dev/null
-cp -r  $HOME/opt/dots/firefox/etc/.mozilla ~/etc/
 cp -r  $HOME/opt/dots/other/usr/fonts/* ~/usr/fonts
+#cp -r  $HOME/opt/dots/firefox/etc/.mozilla ~/etc/
