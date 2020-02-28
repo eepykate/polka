@@ -155,10 +155,10 @@ e() {
 # ffmpeg
 
 cgif() {
-	local i=( $(ffmpeg -i $1 2>&1 | grep -io "[1-9][0-9]*x" | sed 's/[a-z]//g') )
-
-	local f="fps=30,scale=$i:-1:flags=lanczos"
-
+	local max_width="1000"
+	local i=($(ffmpeg -i $1 2>&1 | grep -io "[1-9][0-9]*x" | sed 's/[a-z]//g')) 
+	[ "$i" -ge "$max_width" ] && i="$max_width"
+	local f="fps=10,scale=$i:-1:flags=lanczos"
 	ffmpeg -i "$1" -vf "$f,palettegen" -y "/tmp/palette.png" -loglevel error
 	ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "$f [x]; [x][1:v] paletteuse" \
 		-y "${1%.*}.gif" -loglevel error
