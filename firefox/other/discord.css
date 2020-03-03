@@ -387,6 +387,7 @@ Thanks _diamondburned_#4507 */
 }
 
 /* messages placeholder text */
+.edited-3sfAzf,
 .placeholder-37qJjk {
 	opacity: 0.3 !important;
 }
@@ -454,8 +455,15 @@ Thanks _diamondburned_#4507 */
 
 
 
+.content-yTz4x3 {
+	margin-left: 0 !important;
+}
 
-
+@media only screen and (max-width: 1200px) {
+	.wrapper-2aW0bm {
+		margin-right: 100px !important;
+	}
+}
 
 
 
