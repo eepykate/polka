@@ -134,13 +134,13 @@ e() {
 			*.tar.gz)    tar xzvf $1;;
 			*.tar.xz)    tar xJvf $1;;
 			*.bz2)       bunzip2 $1;;
-			*.rar)       unrar xv $1;;
+			*.rar)       unrar e $1;;
 			*.gz)        gunzip $1;;
 			*.tar)       tar xvf $1;;
 			*.tbz2)      tar xvjf $1;;
 			*.tgz)       tar xzvf $1;;
 			*.zip)       unzip $1;;
-			*.7z)        7z $1;;
+			*.7z)        7z e $1;;
 			*.xz)        xz -vd $1;;
 			*)           echo "The filetype '.${1/*.}' is not supported";;
 		esac
