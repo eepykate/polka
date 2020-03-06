@@ -63,7 +63,9 @@ bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 tc() { transmission-remote-cli; reset_cursor; }
 v() {
 	# ls -la $1 | grep -i '^[a-z-]* [0-9] root'
-	if [ ! -e "$1" ] || [[ "$(stat -c '%U' ${1%/*})" = "$USER" ]]; then
+	if [ ! "$1" ]; then
+		nvim
+	elif [[ ! -e "$1" ]] || [[ "$(stat -c '%U' ${1%/*})" = "$USER" ]]; then
 		nvim "$1"
 	else
 		sudo nvim "$1"
