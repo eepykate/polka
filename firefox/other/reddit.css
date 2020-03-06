@@ -3771,6 +3771,7 @@ div.thing .entry, */
 	background-color: var(--bg2) !important
 }
 
+.happening-now,
 .search-result,
 .search-result-group-header,
 .entry, 
@@ -3832,6 +3833,7 @@ body.res #sr-header-area .sr-bar a.RESShortcutsCurrentSub,
 }
 
 
+.happening-now,
 [class^="tb"]:not(.tb-dt-type-title_dot):not(.tb-has-context-left):not(.tb-seen) *,
 .mod-toolbox-rd .tb-bracket-button,
 .reason-popup-footer,
