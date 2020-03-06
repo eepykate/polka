@@ -3812,6 +3812,7 @@ a.title:visited {
 .premium-banner-outer { display: none !important;}
 
 
+html body.mod-toolbox-rd .tb-action-button,
 .mod-toolbox-rd .tb-bracket-button,
 body.mod-toolbox-rd .tb-page-overlay a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons):not(.tb-submitter):not(.tb-comment-author):not(.tb-submission-author), body.mod-toolbox-rd .tb-popup a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons):not(.tb-submitter):not(.tb-comment-author):not(.tb-submission-author), body.mod-toolbox-rd #tb-bottombar a:not(.tb-action-button):not(.tb-bracket-button):not(.tb-icons),
 .pretty-button,
