@@ -471,13 +471,19 @@ browser[type=content] > html {
 	max-width: 100px !important;
 }
 
-#navigator-toolbox * toolbarbutton:not(.webextension-browser-action):not(#PanelUI-menu-button),
+#navigator-toolbox * toolbarbutton:not(#urlbar-zoom-button):not(.webextension-browser-action):not(#PanelUI-menu-button),
 #navigator-toolbox * toolbarbutton:not(#tabs-newtab-button) image,
 #navigator-toolbox * toolbarbutton:not(#downloads-button):not(#tabs-newtab-button) stack {
 	width:      calc(var(--button-size) + 10px) !important;
 	max-height: var(--tab-min-height) !important;
 	height:     auto !important;
 	padding:    5px 5px 5px 5px    !important;
+	margin:     0px 0px 0px 0px    !important;
+}
+#urlbar-zoom-button {
+	max-height: var(--tab-min-height) !important;
+	height:     auto !important;
+	padding:    5px 10px 5px 10px    !important;
 	margin:     0px 0px 0px 0px    !important;
 }
 
