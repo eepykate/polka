@@ -59,7 +59,7 @@ sed --follow-symlinks -i                      \
 	${XDG_CONFIG_HOME:-~/.config}/Xres
 
 sed --follow-symlinks -i \
-	-e "s/normbgcolor.*/normbgcolor: #$bg4/" \
+	-e "s/normbgcolor.*/normbgcolor: #$bg3/" \
 	-e "s/normfgcolor.*/normfgcolor: #$fg2/" \
 	-e "s/selbgcolor.*/selbgcolor:  #$bg1/" \
 	-e "s/selfgcolor.*/selfgcolor:  #$fg1/" \

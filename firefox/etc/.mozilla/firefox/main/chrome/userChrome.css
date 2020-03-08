@@ -29,14 +29,14 @@
 	--font-weight       : bold;
 	--icon-size         : 16px        !important;
 	--button-size       : 14px        !important;
-	--tab-min-height    : 34px      !important;
+	--tab-min-height    : 40px        !important;
 	--toolbar-bgimage   : none        !important;
 	--arrowpanel-dimmed : transparent !important;
 }
 
 /* Floating Tabs/Navbar */
 #navigator-toolbox {
-	padding: 5px;
+	padding: 0px;
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
@@ -126,7 +126,7 @@
 }
 
 /**  Navbar is on the same line as tabs  **/
-/*#nav-bar:not([customizing]) {
+#nav-bar:not([customizing]) {
 	margin-top: calc(var(--tab-min-height) * -1 - 16px) !important;
 	z-index: 2 !important;
 	pointer-events: none;
@@ -145,7 +145,7 @@
 }
 
 /* Navbar is above tabs */
-#nav-bar:not([customizing]) {
+/*#nav-bar:not([customizing]) {
 	-moz-box-ordinal-group: 0 !important;
   margin-bottom: 4px !important;
 }
@@ -212,7 +212,7 @@
 
 /* Round Tabs */
 .tabbrowser-tab .tab-background {
-	border-radius: 6px !important;
+	border-radius: 0px !important;
 }
 
 
@@ -360,7 +360,7 @@ toolbarbutton#alltabs-button {
 	/* Toolbar */
 	--toolbar-color: var(--fg1) !important;
 	--lwt-text-color: var(--fg1) !important;
-	--toolbar-bgcolor: var(--bg1) !important;
+	--toolbar-bgcolor: var(--bg3) !important;
 	--lwt-accent-color: var(--bg1) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
 	--lwt-toolbar-field-focus-color: var(--fg1) !important;
@@ -384,6 +384,19 @@ toolbarbutton#alltabs-button {
 	/* Popups */
 	--arrowpanel-background: var(--bg1) !important;
 	--arrowpanel-color: var(--fg1) !important;
+}
+
+#navigator-toolbox {
+	background-color: var(--bg3) !important;
+}
+
+.tabbrowser-tab[pinned="true"]:only-of-type::after {
+	content: '';
+	display: block !important;
+	width: calc(100vw - 35px) !important;
+	height: 40px !important;
+	margin: 0 !important;
+	background-color: var(--bg1) !important;
 }
 
 menu[disabled="true"],
@@ -451,8 +464,7 @@ browser[type=content] > html {
 }*/
 
 .tabbrowser-tab[selected] .tab-background {
-	background: var(--bg2) !important;
-	border-radius: 6px !important;
+	background: var(--bg1) !important;
 }
 
 .tab-background {
