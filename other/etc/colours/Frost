@@ -3,7 +3,7 @@ bg0="20242E"
 bg1="232836"
 bg2="282e3f"
 bg3="2f364a"
-bg4="$(darken $bg3 1.1)"
+bg4="333B51"
 button="ccccfa1a"
 #   -----
 fg1="ccccfa"
