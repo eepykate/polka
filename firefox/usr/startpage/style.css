@@ -11,6 +11,7 @@ html {
 	font-family: "Fira Mono", sans-serif;
 	font-weight: bold;
 	font-size: 10px;
+	margin-top: -10px;
 }
 
 html, body {
