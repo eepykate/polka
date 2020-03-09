@@ -390,6 +390,7 @@ toolbarbutton#alltabs-button {
 	background-color: var(--bg3) !important;
 }
 
+/* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
 .tabbrowser-tab[pinned="true"]:only-of-type::after {
 	content: '';
 	display: block !important;
@@ -397,6 +398,12 @@ toolbarbutton#alltabs-button {
 	height: 40px !important;
 	margin: 0 !important;
 	background-color: var(--bg1) !important;
+	position: absolute;
+	top: 1px;
+	left: 34px;
+	bottom: 0;
+	padding-right: 1px;
+	pointer-events: none !important;
 }
 
 menu[disabled="true"],
