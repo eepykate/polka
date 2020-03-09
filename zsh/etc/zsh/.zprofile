@@ -20,7 +20,7 @@ export FZF_DEFAULT_OPTS="--height='50%' --layout='reverse-list' --color='16'"
 eval "$(dircolors ${XDG_CONFIG_HOME:-~/.config}/zsh/dircolors)"
 
 # make binaries in ~/bin/* be runnable without ./
-export PATH="$(find ~/bin/ -maxdepth 1 -type d | sed 's|/$||'| tr '\n' ':')$PATH"
+export PATH="$(find ~/bin/ -type d | sed 's|/$||'| tr '\n' ':')$PATH"
 
 # less/man colors
 export LESS=-R

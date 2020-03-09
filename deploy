@@ -24,10 +24,15 @@ mkdir -p      \
 	~/usr/cache \
 	~/opt 2>/dev/null
 
-for i in $(dirname $HOME/opt/dots/*/bin | sed "s|$HOME/opt/dots/||"); do
-	mkdir $HOME/bin/$i &>/dev/null
-	ln -s $HOME/opt/dots/$i/bin/* $HOME/bin/$i/ &>/dev/null
+for i in $(echo $HOME/opt/dots/*/bin | sed -e "s|$HOME/opt/dots/||g" -e "s|/bin||g"); do
+	cd $HOME/opt/dots/$i/bin || { echo "couldn't cd; exiting" && exit; }
+	mkdir -p "$HOME/bin/$i"
+	for j in $(find . -type d | sed 's|\./||g'); do
+		mkdir -p $HOME/bin/$i/$j
+		ln -sf $(find $PWD/$j/ -maxdepth 1 -type f | sed 's|\./||g') $HOME/bin/$i/$j/
+	done
 done
+
 cp     $HOME/opt/dots/other/bin/app/* ~/bin/app
 rm -rf $HOME/bin/other/app
 ln -sf $HOME/opt/dots/*/etc/* ~/etc/ 2>/dev/null
