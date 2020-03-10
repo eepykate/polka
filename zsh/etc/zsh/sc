@@ -34,7 +34,7 @@ f   drc        ~/etc/dunst/dunstrc
 f   sx         ~/etc/sxhkd/sxhkdrc
 f   sb         ~/etc/sxhkd/bspwm
 f   sw         ~/etc/sxhkd/windowchef
-f   wc         ~/etc/windowchef/windowchefrc
+f   wch        ~/etc/windowchef/windowchefrc
 
 # X
 f   xin        ~/etc/xinitrc
