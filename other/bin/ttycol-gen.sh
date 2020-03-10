@@ -20,8 +20,8 @@ template="	echo -en \"\\e]P0xd\" > \"\$tty\" # black
 echo "Getting colours from xrdb"
 colours=($(xrdb -query | \
 grep "\*.*color" | \
-sed -e 's/\*//' -e 's/color//' -e 's/\://' -e 's/#//' | \
-sort -n | \
+sed -e 's/\*//' -e 's/\.color//' -e 's/\://' -e 's/#//' | \
+sort -t. -k1,4n | \
 awk '{print $2}'))
 
 echo "Writing to '$HOME/bin/ttycol.sh'"
