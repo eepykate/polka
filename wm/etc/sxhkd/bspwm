@@ -7,19 +7,19 @@ super + {r,m}
 super + {_,shift} + Escape
 	wm {restart,quit}
 
-super + {d,a}
+super + {c,x}
 	bspc node -t "~{floating,fullscreen}"
 
-super + {_,ctrl,shift} + {Left,Down,Up,Right}
+super + {_,ctrl,shift} + {a,s,w,d}
 	{focus,move,resize} {west,south,north,east}
 
-shift + alt + {Right,Left}
+shift + alt + {d,a}
 	dir={next,prev}       ; \
 	bspc node -d    "$dir"; \
 	bspc desktop -f "$dir"; \
 	nottop
 
-ctrl + alt + {Right,Left}
+ctrl + alt + {d,a}
 	bspc desktop -f {next,prev}; \
 	nottop
 

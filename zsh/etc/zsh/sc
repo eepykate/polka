@@ -33,6 +33,8 @@ f   bs         ~/etc/bspwm/bspwmrc
 f   drc        ~/etc/dunst/dunstrc
 f   sx         ~/etc/sxhkd/sxhkdrc
 f   sb         ~/etc/sxhkd/bspwm
+f   sw         ~/etc/sxhkd/windowchef
+f   wc         ~/etc/windowchef/windowchefrc
 
 # X
 f   xin        ~/etc/xinitrc
