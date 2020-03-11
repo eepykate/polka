@@ -85,8 +85,8 @@ XF86Audio{Raise,Lower}Volume
 super + {p, Tab}
 	vol {p, mw}
 
-super + s
-	players.sh
+#super + s
+#	players.sh
 
 
 #
