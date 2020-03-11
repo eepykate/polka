@@ -3,7 +3,7 @@ super + Return
 	st
 
 super + slash
-	rofi-vb
+	ros $HOME/bin
 
 super + period
 	rofi-sc

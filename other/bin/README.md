@@ -16,7 +16,7 @@
 
 `rofi-emoji` - copy an emoji from a list (`~/opt/junk/emoji`)
 
-`rofi-vb` - edit files in ~/bin
+`ros` - edit files in \<dir>
 
 `scr` - simple screenshot script using `maim`
 

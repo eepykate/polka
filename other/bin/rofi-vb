@@ -1,9 +1,0 @@
-#!/bin/sh
-
-loc="$HOME/opt/dots/"
-
-exclude="gtk"
-
-file="$(find "$loc" -type f,l | grep -iv "$exclude" | sed "s|$loc||" | rofi -dmenu)"
-[ ! "$file" ] && exit
-st -e zsh -i -c "v '$loc/$file'"
