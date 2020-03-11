@@ -4183,11 +4183,13 @@ body.moderator * div.thing.spam {
 	background-color: rgba(250, 128, 114, 0.1) !important;
 }
 
+.usertext.border .usertext-body,
 .tb-history-row-warning {
 	background-color: rgba(255, 252, 127, 0.2) !important;
 }
 
-.mod-toolbox-rd .reason-popup .selectable-reason.reason-selected .styled-reason {
+.mod-toolbox-rd .reason-popup .selectable-reason.reason-selected 
+.styled-reason {
 	background-color: rgba(177, 221, 170, 0.1) !important;
 }
 
