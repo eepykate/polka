@@ -65,7 +65,7 @@ v() {
 	# ls -la $1 | grep -i '^[a-z-]* [0-9] root'
 	if [ ! "$1" ]; then
 		nvim
-	elif [[ ! -e "$1" ]] || [[ "$(stat -c '%U' ${1%/*})" = "$USER" ]]; then
+	elif [[ ! -e "$1" ]] || [[ "$(stat -c '%U' "$1")" = "$USER" ]]; then
 		nvim "$1"
 	else
 		sudo nvim "$1"
@@ -87,9 +87,9 @@ d() {
 		*gzip*)     tar -t "$1";;
 		*html*)    firefox "$1";;
 		*http*)
-			curl -Ls "$1" -o "/tmp/f_temp-$$.png"
-			f     "/tmp/f_temp-$$.png"
-			rm -f "/tmp/f_temp-$$.png";;
+			curl -Ls "$1" -o "/tmp/${1##*/}"
+			d     "/tmp/${1##*/}"
+			rm -f "/tmp/${1##*/}";;
 		# everything else
 		*)             v "$1";;
 	esac
