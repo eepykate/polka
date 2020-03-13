@@ -559,3 +559,8 @@ browser[type=content] > html {
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) { max-width: 90% !important; }
+
+/* add padding to urlbar results */
+.urlbarView { margin: 0px 10% !important; }
+.urlbarView-row { height: 26px !important; }
+.urlbarView-row-inner { margin-top: 5px !important; }
