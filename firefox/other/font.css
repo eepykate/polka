@@ -1,5 +1,7 @@
 * {
-	font-family: "Sans Serif" !important;
+	font-family:
+		"Sans Serif",
+		"Batch" !important;
 }
 
 
@@ -11,4 +13,5 @@
 code *,
 code {
 	font-family: Monospace !important;
+	font-weight: bold !important;
 }
