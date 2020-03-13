@@ -21,7 +21,7 @@ bspc config pointer_follows_focus  false
 bspc config window_gap             40
 bspc config gapless_monocle        true
 
-bspc config border_width           0
+bspc config border_width           10
 bspc config borderless_monocle     true
 bspc config normal_border_color    "#19191C"
 bspc config focused_border_color   "#202026"
@@ -42,6 +42,7 @@ bspc rule -a Gcolor3               state=floating
 #
 #   autostart
 #
+borders &
 pkill picom
 pkill dunst
 pkill sxhkd

@@ -69,6 +69,13 @@ echo "   * Reloading tabbed and st"
 # Reload terminal colours using Xresources
 rc
 
+echo " - borders"
+sed --follow-symlinks -i               \
+	-e "s/outer=.*/outer='0x$bg1'/"      \
+	-e "s/inner1=.*/inner1='0x$accent'/"      \
+	-e "s/inner2=.*/inner2='0x$false'/"      \
+	~/bin/wm/borders
+
 echo " - firefox"
 # Change the colour variables in firefox and my startpage
 # $HOME/.startpage/style.css
@@ -130,8 +137,8 @@ echo " - bspwm"
 # -e "s/focused_border_color \"#.*\"/focused_border_color \"#$accent\"/g" \
 # Change bspwm colours
 sed --follow-symlinks -i \
-	-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bg2\"/g" \
-	-e "s/focused_border_color \"#.*\"/focused_border_color \"#$bg4\"/g" \
+	-e "s/normal_border_color \"#.*\"/normal_border_color \"#$bg1\"/g" \
+	-e "s/focused_border_color \"#.*\"/focused_border_color \"#$bg1\"/g" \
 	${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc
 wm restart
 

@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# double borders
+
+_() bspc config "$@"
+
+# get values from bspwm config
+outer='0x141417'
+inner1='0x7baae8'
+inner2='0xc488ec'
+
+draw() {
+    case $1 in
+        normal)  i=$inner2; o=$outer;;
+        focused) i=$inner1; o=$outer
+    esac
+
+    shift
+
+    chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null
+}
+
+# initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+    while read -r _; do
+        draw normal  "$(targets  normal)"
+        draw focused "$(targets focused)"
+    done
