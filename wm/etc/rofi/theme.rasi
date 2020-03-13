@@ -1,7 +1,7 @@
 /* RASI Theme */
 
 * {
-	bg:         #1C1C21;
+	bg:         #16161A;
 	hover:      #ffffff;
 	sel:        #daddee1a;
 	fg:         #daddee;
