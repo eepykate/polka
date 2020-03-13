@@ -8,9 +8,9 @@
 	# borders
 	padding             = 25
 	horizontal_padding  = 25
-	frame_width         = 0
-	frame_color         = "#daddee"
-	separator_height    = 0
+	frame_width         = 2
+	frame_color         = "#7baae8"
+	separator_height    = 2
 	separator_color     = frame
 
 	markup              = full
@@ -37,16 +37,19 @@
 	context             = ctrl+shift+period
 
 [urgency_low]
-	background          = "#202026"
+	background          = "#141417"
 	foreground          = "#daddee"
+	frame_color         = "#daddee"
 	timeout             = 5
 
 [urgency_normal]
-	background          = "#daddee"
-	foreground          = "#141417"
+	background          = "#141417"
+	foreground          = "#daddee"
+	frame_color         = "#7baae8"
 	timeout             = 5
 
 [urgency_critical]
-	background          = "#7baae8"
-	foreground          = "#ffffff"
+	background          = "#141417"
+	foreground          = "#daddee"
+	frame_color         = "#c488ec"
 	timeout             = 0
