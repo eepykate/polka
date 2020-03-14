@@ -9,16 +9,15 @@ percent=5
 bspc query -N -n focused.floating > /dev/null && percent=5
 
 case $1 in
-    west)  dim=width;  dir=right; falldir=left;   sign=-;;
-    east)  dim=width;  dir=right; falldir=left;   sign=+;;
-    north) dim=height; dir=top;   falldir=bottom; sign=-;;
-    south) dim=height; dir=top;   falldir=bottom; sign=+
+	west)  dim=width;  dir=right; falldir=left;   sign=-;;
+	east)  dim=width;  dir=right; falldir=left;   sign=+;;
+	north) dim=height; dir=top;   falldir=bottom; sign=-;;
+	south) dim=height; dir=top;   falldir=bottom; sign=+
 esac
 
 # get a percentage of the monitor resolution
 #var=$((`bspc query -T -m | jshon -e rectangle -e "$dim"` * percent / 100))
-dim1="$(echo $dim | head -c 1)"
-var="$(($(dattr $dim1 $(pfd)) * percent / 100 ))"
+var="$(($(mattr $(echo $dim | head -c 1) $(pfm)) * percent / 100 ))"
 
 
 [ "$dim" = width  ] && { x=$sign$var; y=0; }
