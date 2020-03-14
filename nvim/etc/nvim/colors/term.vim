@@ -65,18 +65,18 @@ hi Include      ctermbg=NONE   ctermfg=2      cterm=NONE
 hi Define       ctermbg=NONE   ctermfg=2      cterm=NONE
 hi Macro        ctermbg=NONE   ctermfg=1      cterm=NONE
 hi PreCondit    ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Type         ctermbg=NONE   ctermfg=1      cterm=NONE
+hi Type         ctermbg=NONE   ctermfg=17     cterm=NONE
 hi StorageClass ctermbg=NONE   ctermfg=15     cterm=NONE
-hi PreProc      ctermbg=NONE   ctermfg=4      cterm=NONE
+hi PreProc      ctermbg=NONE   ctermfg=16     cterm=NONE
 hi Structure    ctermbg=NONE   ctermfg=5      cterm=NONE
 hi Special      ctermbg=NONE   ctermfg=15     cterm=NONE
 hi SpecialChar  ctermbg=NONE   ctermfg=5      cterm=NONE
-hi Delimiter    ctermbg=NONE   ctermfg=1      cterm=NONE
 hi Underliend   ctermbg=NONE   ctermfg=1      cterm=underline
 hi Ignore       ctermbg=NONE   ctermfg=1      cterm=NONE
 hi Error        ctermbg=NONE   ctermfg=1      cterm=bold
 hi Todo         ctermbg=NONE   ctermfg=3      cterm=bold
-hi Statement    ctermbg=NONE   ctermfg=3      cterm=bold
+hi Statement    ctermbg=NONE   ctermfg=NONE   cterm=bold
+hi Delimiter    ctermbg=NONE   ctermfg=16      cterm=NONE
 
 
 " Css syntax adjustments
@@ -101,7 +101,6 @@ hi cssAttributeSelector   ctermbg=NONE   ctermfg=3      cterm=NONE
 hi shFunction             ctermbg=NONE   ctermfg=4       cterm=NONE
 hi shConditional          ctermbg=NONE   ctermfg=4       cterm=NONE
 hi shDerefSimple          ctermbg=NONE   ctermfg=17      cterm=NONE
-hi Delimiter              ctermbg=NONE   ctermfg=15      cterm=NONE
 hi shVariable             ctermbg=NONE   ctermfg=15      cterm=NONE
 hi shStatement            ctermbg=NONE   ctermfg=15      cterm=NONE
 hi shQuote                ctermbg=NONE   ctermfg=16      cterm=NONE
@@ -113,7 +112,10 @@ hi htmlItalic             ctermbg=NONE   ctermfg=NONE    cterm=italic
 hi htmlBold               ctermbg=NONE   ctermfg=7       cterm=bold
 hi markdownLinkText       ctermbg=NONE   ctermfg=7       cterm=underline
 hi Title                  ctermbg=NONE   ctermfg=4       cterm=NONE
-hi Delimiter              ctermbg=NONE   ctermfg=4       cterm=NONE
 hi markdownCode           ctermbg=NONE   ctermfg=5       cterm=NONE
 hi markdownBlockquote     ctermbg=NONE   ctermfg=3       cterm=NONE
 hi markdownCodeDelimiter  ctermbg=NONE   ctermfg=5       cterm=NONE
+
+
+" vimscript
+hi vimNotation            ctermbg=NONE   ctermfg=16      cterm=NONE
