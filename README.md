@@ -19,6 +19,10 @@ If you can't find it, firefox is in `firefox/etc/.mozilla`, as I don't like rand
 
 # Rices
 
+## [bspwm] 🌋
+
+![](https://i.redd.it/bdhajrbjnhm41.png)
+
 ## [bspwm] 🌿
 
 ![](https://i.imgur.com/TTEoDJP.png)
