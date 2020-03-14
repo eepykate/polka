@@ -78,7 +78,6 @@ sed --follow-symlinks -i               \
 
 echo " - firefox"
 # Change the colour variables in firefox and my startpage
-# $HOME/.startpage/style.css
 sed --follow-symlinks -i \
 	-e "s/--bg0:.*#.*\;/--bg0:      #$bg0\;/" \
 	-e "s/--bg1:.*#.*\;/--bg1:      #$bg1\;/" \
@@ -95,8 +94,7 @@ sed --follow-symlinks -i \
 	-e "s/--red:.*#.*\;/--red:      #$red\;/" \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
-	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css \
-	${XDG_DATA_HOME:-~/.local/share}/startpage/style.css
+	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css
 
 echo " - dunst"
 # Replace colours in dunst
