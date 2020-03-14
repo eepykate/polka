@@ -77,9 +77,9 @@ rc
 
 echo " - borders"
 sed --follow-symlinks -i               \
-	-e "s/outer=.*/outer='0x$bg1'/"      \
-	-e "s/inner1=.*/inner1='0x$accent'/"      \
-	-e "s/inner2=.*/inner2='0x$false'/"      \
+	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
+	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
+	-e "s/inner2=.*/inner2='0x$false'  # normal/"      \
 	~/bin/wm/borders
 
 echo " - firefox"
