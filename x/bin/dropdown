@@ -32,28 +32,12 @@ if [ "$curdes" != "$tabdes" ]; then
 	echo "0" > /tmp/tabbed-status
 fi
 
-eval "$(xdotool getwindowfocus getwindowgeometry --shell)"
-
-# check which display has the window
-# (I can't use pfd because that outputs my left monitor when
-#  a window is maximized on my right monitor)
-for i in $(lsd); do
-	set -- $(dattr whxy "$i")
-
-	[ "$X" -ge "$3" ] &&
-		[ "$Y" -ge "$4" ] &&
-		[ "$X" -lt $(( $1 + $3 )) ] &&
-		[ "$Y" -lt $(( $2 + $4 )) ] &&
-		break
-done
-
-[ "$WIDTH" = 3360 ] &&
-	set -- $(dattr whxy $(ppd))
+set -- $(mattr whxy "$(pfm)")
 
 eval "$(xd getwindowgeometry --shell)"
 
-nx="$(($3 + $1 - $(($1 / 2)) - $((WIDTH / 2))))"
-ny="$(($4 + $2 - $(($2 / 2)) - $((HEIGHT / 2 ))))"
+nx="$(($3 + $(($1 / 2)) - $((WIDTH / 2))))"
+ny="$(($4 + $(($2 / 2)) - $((HEIGHT / 2 ))))"
 
 xd $action
 xd windowmove "$nx" "$ny"
