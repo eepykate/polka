@@ -5,38 +5,40 @@
 
 
 # desktops
-bspc monitor -d                    1 2 3 4 5 6
-bspc monitor DVI-D-0 -d            7 8 9 10
+bspc monitor -d             1 2 3 4 5 6
+bspc monitor DVI-D-0 -d     7 8 9 10
 
+_() { bspc config "$@"; }
 
 # mouse
-xsetroot    -cursor_name           left_ptr
-bspc config pointer_modifier       mod1
+xsetroot -cursor_name       left_ptr
+_ pointer_modifier          mod1
+_ pointer_motion_interval   10
 
-bspc config focus_follows_pointer  true
-bspc config pointer_follows_focus  false
+_ focus_follows_pointer     true
+_ pointer_follows_focus     false
 
 
 # borders/gaps
-bspc config window_gap             40
-bspc config gapless_monocle        true
+_ window_gap                40
+_ gapless_monocle           true
 
-bspc config border_width           10
-bspc config borderless_monocle     true
-bspc config normal_border_color    "#19191C"
-bspc config focused_border_color   "#202026"
+_ border_width              10
+_ borderless_monocle        true
+_ normal_border_color       "#19191C"
+_ focused_border_color      "#202026"
 
 
 # other
-bspc config single_monocle         true
+_ single_monocle            true
 
 
 #
 #   rules
 #
-bspc rule -a feh                   state=floating
-bspc rule -a tabbed                state=floating
-bspc rule -a Gcolor3               state=floating
+bspc rule -a feh            state=floating
+bspc rule -a tabbed         state=floating
+bspc rule -a Gcolor3        state=floating
 
 
 #
