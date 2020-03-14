@@ -1,5 +1,10 @@
 #!/bin/sh
 
+case "$1" in
+	a) a="Window moved to desktop";;
+	*) a="Desktop switched to";;
+esac
+
 gdbus call -e -d "org.freedesktop.Notifications" -o /org/freedesktop/Notifications \
--m org.freedesktop.Notifications.Notify "" 419 "" "Desktop switched to $(bspc query -D -d focused --names)" \
+-m org.freedesktop.Notifications.Notify "" 419 "" "$a $(bspc query -D -d focused --names)" \
 "" "[]" "{}" 750

@@ -17,7 +17,7 @@ shift + alt + {d,a}
 	dir={next,prev}       ; \
 	bspc node -d    "$dir"; \
 	bspc desktop -f "$dir"; \
-	nottop
+	nottop a
 
 ctrl + alt + {d,a}
 	bspc desktop -f {next,prev}; \
@@ -25,7 +25,7 @@ ctrl + alt + {d,a}
 
 ctrl + super + {1-9,0}
 	bspc node -d {1-9,10}; \
-	nottop
+	nottop a
 
 super + {1-9,0}
 	bspc desktop -f {1-9,10}; \
