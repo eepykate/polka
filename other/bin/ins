@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 #
 #  pacman/makepkg/git wrapper for the aur
 #
@@ -55,7 +56,9 @@ aur() {
 }
 
 deps() {
-	deps="$(grep "^depends=" PKGBUILD | sed -e 's/depends=(//' -e 's/)//' -e "s/'//g")"
+	deps="$(sed -e 's/#.*//g' PKGBUILD | tr '\n' ' ' | \
+		grep -ioP ' depends=.*?\)' | \
+		sed -e 's/depends=(//' -e 's/)//' -e "s/'//g")"
 
 	for x in $deps; do
 		pacman -Qq "$x" >/dev/null 2>&1 ||
