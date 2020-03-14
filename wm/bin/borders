@@ -1,10 +1,8 @@
 #!/bin/sh
 #
-# double borders
+#   double borders
+#
 
-_() bspc config "$@"
-
-# get values from bspwm config
 outer='0x0D0D0F'
 inner1='0x7baae8'
 inner2='0xc488ec'
