@@ -1,11 +1,14 @@
-set number
-set mouse=a
+"
+"   Keybinds
+"
 
+" move up/down better on long lines
 map k gk
 map j gj
 map <Up> gk
 map <Down> gj
 
+" move line
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -16,61 +19,75 @@ nnoremap <A-Up> :m .-2<CR>==
 inoremap <A-Down> <Esc>:m .+1<CR>==gi
 inoremap <A-Up> <Esc>:m .-2<CR>==gi
 
+" copy, cut & paste
 vmap <C-c> "+ya
 imap <C-c> "+ya
 vmap <C-x> "+c
 vmap <C-v> <ESC>"+pa
 imap <C-v> <ESC>"+pa
 
+" toggle numbers sidebar
 nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 
-color term
 
+
+
+"
+"   Settings
+"
+
+" indentation
 set tabstop=2          " Number of visual spaces per Tab
 set softtabstop=2      " Number of spaces in tab when editing
 set shiftwidth=2       " Number of spaces to use for autoindent
-"set expandtab          " Tabs are spaces
 set copyindent         " Copy the indentation from the previous line
-"set autoindent
 
+" search
 set incsearch          " Search as characters are typed
 set hlsearch           " Highlight matches
 set ignorecase         " Ignore case when searching
 set smartcase          " Ignore case when only lower case is typed
-"
-" .rasi files use css syntax highlighting
-au BufReadPost *.rasi set syntax=css
 
+" misc
+set number             " Line numbers
+set cursorline         " Highlight the line that the cursor is on
+set mouse=a            " Mouse support
+color term
+
+
+
+
+"
+"   Plugins
+"
 call plug#begin()
+	"  *tumbleweed rolls*
 call plug#end()
 
-set cursorline
-"set cursorcolumn
 
-" :let g:colorizer_auto_color = 1
 
-:let g:colorizer_auto_filetype='css,html'
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+
+"
+"   Misc
+"
+
+" whitespace at the end of the line
+hi   ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+autocmd BufWinLeave * call  clearmatches()
 
- " Output the current syntax group 
+ " Output the current syntax group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
+" statusline
 source $HOME/etc/nvim/statusline.vim
 
-set noshowmode
-set noruler
-set laststatus=0
-set noshowcmd
-
-
-let s:hidden_all = 1
+" Hide UI Elements
+let s:hidden_all = 0
 function! ToggleHiddenAll()
 	if s:hidden_all  == 0
 		let s:hidden_all = 1
@@ -87,4 +104,6 @@ function! ToggleHiddenAll()
 	endif
 endfunction
 
-nnoremap <S-h> :call ToggleHiddenAll()<CR>
+call ToggleHiddenAll()
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>:<BS><CR>
