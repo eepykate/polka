@@ -31,32 +31,38 @@ echo "Changing colours in:"
 
 echo " - xresources"
 
-sed --follow-symlinks -i                      \
-	                                            \
-	-e "s/background:.*/background:   #$bg1/"   \
-	-e "s/foreground:.*/foreground:   #$fg1/"   \
-	-e "s/cursorColor:.*/cursorColor:  #$fg1/"  \
-	                                            \
-	-e "s/color0:.*/color0:       #$bg1/"       \
-	-e "s/color8:.*/color8:       #$black/"     \
-	-e "s/color1:.*/color1:       #$red/"       \
-	-e "s/color9:.*/color9:       #$red/"       \
-	-e "s/color2:.*/color2:       #$green/"     \
-	-e "s/color3:.*/color3:       #$yellow/"    \
-	-e "s/color4:.*/color4:       #$blue/"      \
-	-e "s/color5:.*/color5:       #$purple/"    \
-	-e "s/color6:.*/color6:       #$cyan/"      \
-	-e "s/color7:.*/color7:       #$fg2/"       \
-	-e "s/color10:.*/color10:      #$green/"    \
-	-e "s/color11:.*/color11:      #$yellow/"   \
-	-e "s/color12:.*/color12:      #$blue/"     \
-	-e "s/color13:.*/color13:      #$purple/"   \
-	-e "s/color14:.*/color14:      #$cyan/"     \
-	-e "s/color15:.*/color15:      #$fg1/"      \
-	                                            \
-	-e "s/color16:.*/color16:      #$accent/"   \
-	-e "s/color17:.*/color17:      #$false/"    \
-	${XDG_CONFIG_HOME:-~/.config}/Xres
+cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
+*.background:   #$bg1
+*.foreground:   #$fg1
+*.cursorColor:  #$fg1
+
+*.color0:       #$bg1
+*.color8:       #$black
+
+*.color1:       #$red
+*.color9:       #$red
+
+*.color2:       #$green
+*.color10:      #$green
+
+*.color3:       #$yellow
+*.color11:      #$yellow
+
+*.color4:       #$blue
+*.color12:      #$blue
+
+*.color5:       #$purple
+*.color13:      #$purple
+
+*.color6:       #$cyan
+*.color14:      #$cyan
+
+*.color7:       #$fg2
+*.color15:      #$fg1
+
+*.color16:      #$accent
+*.color17:      #$false
+EOF
 
 sed --follow-symlinks -i \
 	-e "s/normbgcolor.*/normbgcolor: #$bg3/" \
