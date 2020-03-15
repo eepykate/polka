@@ -5,11 +5,11 @@
 
 :root {
 	/*  ----  */
-	--bg0:      #101012;
-	--bg1:      #141417;
-	--bg2:      #19191C;
-	--bg3:      #1C1C21;
-	--bg4:      #202026;
+	--bg0:      #070708;
+	--bg1:      #0D0D0F;
+	--bg2:      #111114;
+	--bg3:      #16161A;
+	--bg4:      #1A1A1F;
 	--button:   #daddee1a;
 	/*  ----  */
 	--fg2:      #a6a9b7;
@@ -360,7 +360,7 @@ toolbarbutton#alltabs-button {
 	/* Toolbar */
 	--toolbar-color: var(--fg1) !important;
 	--lwt-text-color: var(--fg1) !important;
-	--toolbar-bgcolor: var(--bg3) !important;
+	--toolbar-bgcolor: var(--bg2) !important;
 	--lwt-accent-color: var(--bg1) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
 	--lwt-toolbar-field-focus-color: var(--fg1) !important;
@@ -375,7 +375,7 @@ toolbarbutton#alltabs-button {
 	--autocomplete-popup-highlight-background: var(--button) !important;
 	--lwt-toolbar-field-background-color: var(--bg3) !important;
 	--panel-separator-color: transparent !important;
-	--lwt-toolbar-field-focus: var(--bg3) !important;
+	--lwt-toolbar-field-focus: var(--bg2) !important;
 
 	/* Sidebar */
 	--lwt-sidebar-text-color: var(--fg1) !important;
@@ -387,7 +387,7 @@ toolbarbutton#alltabs-button {
 }
 
 #navigator-toolbox {
-	background-color: var(--bg3) !important;
+	background-color: var(--bg2) !important;
 }
 
 /* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
@@ -562,5 +562,6 @@ browser[type=content] > html {
 
 /* add padding to urlbar results */
 .urlbarView { margin: 0px 10% !important; }
-.urlbarView-row { height: 26px !important; }
-.urlbarView-row-inner { margin-top: 5px !important; }
+.urlbarView-row { height: 35px !important; }
+.urlbarView-body-inner { border: none !important; }
+.urlbarView-row-inner { margin-top: 3px !important; }
