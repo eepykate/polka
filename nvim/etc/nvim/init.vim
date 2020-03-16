@@ -26,6 +26,9 @@ vmap <C-x> "+c
 vmap <C-v> <ESC>"+pa
 imap <C-v> <ESC>"+pa
 
+imap <C-s> <ESC>:w<CR>a
+nmap <C-s> :w<CR>
+
 " toggle numbers sidebar
 nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 
@@ -62,6 +65,7 @@ color term
 "
 call plug#begin()
 	"  *tumbleweed rolls*
+	Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 
