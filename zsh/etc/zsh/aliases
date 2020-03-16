@@ -35,11 +35,11 @@ alias rem="sudo pacman -Rs"
 alias upd="sudo pacman -Syu"
 
 # make ins list pacman packages
-function _ins() {
+_ins() {
 	compadd $(pacman -Ssq)
 }
 
-which compdef &>/dev/null &&
+command -v compdef &>/dev/null &&
 	compdef _ins ins
 
 
@@ -59,7 +59,7 @@ alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudi
 reset_cursor() { echo -en "\e[4 q"; }
 
 mc() { mkdir -p "$1" && cd "$1"; }
-bk() { cp -r $1 "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
+bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 tc() { transmission-remote-cli; reset_cursor; }
 v() {
 	# ls -la $1 | grep -i '^[a-z-]* [0-9] root'
@@ -95,13 +95,13 @@ d() {
 	esac
 }
 
-hextorgb() { printf "%d %d %d\n" 0x${1:0:2} 0x${1:2:2} 0x${1:4:2}; }
-rgbtohex() { printf "%02X%02X%02X\n" $@; }
+hextorgb() { printf "%d %d %d\n" "0x${1:0:2}" "0x${1:2:2}" "0x${1:4:2}"; }
+rgbtohex() { printf "%02X%02X%02X\n" "$@"; }
 
-source ${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh
+source "${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh"
 
 
-function cli() {
+cli() {
 	local image="$(ls -1t $HOME/opt/x/pics/maim/ --ignore old --ignore GPUCache | head -1)"
 	xclip -selection clipboard -t image/png $HOME/opt/x/pics/maim/$image
 }
@@ -113,20 +113,13 @@ function cli() {
 # tar
 
 c() {
-	unset opts
-	exclude=""
-	opts=`getopt -o x: --long exclude: -- "$@"`
-	eval set -- "$opts"
-
-	while true; do
-		case $1 in
-			-x|--exclude) exclude="--exclude $2"; shift 2;;
-			--) shift; break;;
+	while [ "$1" ]; do
+		case "$1" in
+			-e) ex"$e --exclude $2"; shift 2;;
 		esac
 	done
-	echo $exclude
 
-	tar -czvf "${1##*/}_$(date +%Y-%m-%d_%H-%M-%S).tar.gz" $(printf " $exclude") $1
+	tar -czvf "${1##*/}_$(date +%Y-%m-%d_%H-%M-%S).tar.gz" "$ex" $1
 }
 
 e() {
@@ -182,14 +175,6 @@ c720() {
 
 
 # fun
-
-lines() {
-	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -ne "\e[3$(( $RANDOM % 8 ))m╱" || echo -ne "\e[3$(( $RANDOM % 8 ))m╲"; }
-}
-
-lines2() {
-	for ((i = 0;i < LINES*COLUMNS; i++)); { (( $RANDOM % 2 )) && echo -n ╱ || echo -n ╲; }
-}
 
 col() {
 	printf '\n     '
