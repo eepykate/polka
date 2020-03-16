@@ -287,6 +287,11 @@ git clone https://gitlab.com/gaugek/dmenu.git /home/$name/opt/git/dmenu &&
 	cd /home/$name/opt/git/dmenu &&
 	make clean install &>/dev/null
 
+echo " - colorpicker"
+git clone https://github.com/ym1234/colorpicker.git /home/$name/opt/git/colorpicker &&
+	cd /home/$name/opt/git/colorpicker &&
+	make clean install &>/dev/null
+
 echo " - wmutils"
 git clone https://github.com/wmutils/core /home/$name/opt/git/wmutils;
 	cd /home/$name/opt/git/wmutils; make clean install &>/dev/null

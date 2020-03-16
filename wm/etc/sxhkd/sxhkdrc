@@ -57,6 +57,13 @@ ctrl + alt + s
 alt + grave
 	dropdown
 
+# I have this key bound on my mouse
+super + shift + F2
+	h="$(colorpicker -doq | tr -d '#\n')"; \
+	echo -n $h | xclip -sel clip;          \
+	notify-send "$h" "<span background=\"#$h\">      </span>"
+
+
 
 #
 #   screenshots
