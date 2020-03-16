@@ -12,7 +12,7 @@ chwb -s 10   # make the borders 10px wide, doesn't work on bspwm
 draw() { chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null; }
 
 # initial draw, and then subscribe to events
-{ echo; wew -m XCB_PROPERTY_NOTIFY; } |
+{ echo; wew; } |
 	while read -r _; do
 		i=$inner2 o=$outer draw "$(lsw)"
 		i=$inner1 o=$outer draw "$(pfw)"
