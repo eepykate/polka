@@ -106,4 +106,4 @@ endfunction
 
 call ToggleHiddenAll()
 
-nnoremap <S-h> :call ToggleHiddenAll()<CR>:<BS><CR>
+nnoremap <S-h> :call ToggleHiddenAll()<CR>:<BS>
