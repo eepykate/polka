@@ -199,6 +199,7 @@ echo -e "\nChanging wallpaper"
 else
 	walgen1 "#$wall"
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/tile.png\""
+	sleep 0.6
 fi
 
 echo "#!/bin/sh
