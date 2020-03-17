@@ -44,14 +44,12 @@ bspc rule -a Gcolor3        state=floating
 #
 #   autostart
 #
+
+s() { pkill "$1"; { sleep 0.1; "$@"; } & }
 borders &
-pkill picom
-pkill dunst
-pkill sxhkd
+s picom
+s dunst
+s sxhkd
 
-sleep 0.1
-
-picom &
-dunst &
-sxhkd &
-sxhkd -c ${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm &
+# bspwm-specific keybindings
+sxhkd -c "${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm" &
