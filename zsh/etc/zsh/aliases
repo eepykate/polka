@@ -124,7 +124,11 @@ c() {
 
 e() {
 	case "$1" in
-		-d) local to="-C ${1%%.*}"; shift;;
+		-d)
+			shift
+			local to="-C ${1%%.*}"
+			local zo="-d${1%%.*}"
+			;;
 	esac
 	if [ -f "$1" ]; then
 		case "$1" in
@@ -137,7 +141,7 @@ e() {
 			*.tar)       tar xvf  "$1";;
 			*.tbz2)      tar xvjf "$1";;
 			*.tgz)       tar xzvf "$1";;
-			*.zip)       unzip    "$1";;
+			*.zip)       unzip    "$1" $zo;;
 			*.7z)        7z e     "$1";;
 			*.xz)        xz -vd   "$1";;
 			*)           echo "The filetype '.${1%%.*}' is not supported";;
