@@ -7,7 +7,7 @@ outer='0x0D0D0F'   # outer
 inner1='0x7baae8'  # focused
 inner2='0xc488ec'  # normal
 
-chwb -s 10   # make the borders 10px wide, doesn't work on bspwm
+chwb -s 10
 
 draw() { chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null; }
 
