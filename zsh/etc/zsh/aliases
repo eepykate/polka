@@ -13,6 +13,7 @@ F() { find . -name "$*"; }
 
 # Git
 
+alias w="which"
 alias ga="git add"
 alias gd="git diff"
 alias gp="git push"
