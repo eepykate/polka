@@ -17,19 +17,21 @@ shift + alt + {d,a}
 	dir={next,prev}       ; \
 	bspc node -d    "$dir"; \
 	bspc desktop -f "$dir"; \
-	nottop a
+	nottop a $(bspc query -D -d focused --names)
 
 ctrl + alt + {d,a}
 	bspc desktop -f {next,prev}; \
-	nottop
+	nottop no $(bspc query -D -d focused --names)
 
 ctrl + super + {1-9,0}
-	bspc node -d {1-9,10} && \
-	nottop a
+	a={1-9,10};        \
+	bspc node -d $a && \
+	nottop a $a
 
 super + {1-9,0}
-	bspc desktop -f {1-9,10}; \
-	nottop
+	a={1-9,10};         \
+	bspc desktop -f $a; \
+	nottop no $a
 
 alt {_,shift} + Tab
 	bspc node -f {next, prev};

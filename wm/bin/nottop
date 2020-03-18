@@ -6,5 +6,5 @@ case "$1" in
 esac
 
 gdbus call -e -d "org.freedesktop.Notifications" -o /org/freedesktop/Notifications \
--m org.freedesktop.Notifications.Notify "" 419 "" "$a $(bspc query -D -d focused --names)" \
+-m org.freedesktop.Notifications.Notify "" 419 "" "$a $2" \
 "" "[]" "{}" 750
