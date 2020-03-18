@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+#   double borders
+#
+
+outer='0x0D0D0F'   # outer
+inner1='0x7baae8'  # focused
+inner2='0xa6a9b7'  # normal
+
+draw() { chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null; }
+
+# initial draw, and then subscribe to events
+{ echo; bspc subscribe node_geometry node_focus; } |
+	while read -r _; do
+		i=$inner1 o=$outer draw "$(targets focused)"
+		i=$inner2 o=$outer draw "$(targets  normal)"
+	done

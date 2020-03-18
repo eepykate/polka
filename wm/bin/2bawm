@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+#   double borders (on) any wm
+#
+
+outer='0x0D0D0F'   # outer
+inner1='0x7baae8'  # focused
+inner2='0xc488ec'  # normal
+
+chwb -s 10
+
+draw() { chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null; }
+
+# initial draw, and then subscribe to events
+{ echo; wew; } |
+	while read -r _; do
+		i=$inner2 o=$outer draw "$(lsw)"
+		i=$inner1 o=$outer draw "$(pfw)"
+	done
