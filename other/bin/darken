@@ -1,19 +1,22 @@
-#!/usr/bin/env bash
+#!/bin/sh
+#
+#   darken hex value
+#
+# credit: github/vizs
+# shellcheck disable=SC2046
 
-hextorgb() {
-	hex="$1"
-	printf "%d %d %d\n" 0x${hex:0:2} 0x${hex:2:2} 0x${hex:4:2}
+hex2rgb() {
+	s="${1#??}"
+	printf '%d %d %d' "0x${1%????}" "0x${s%??}" "0x${1#????}"
 }
 
-a=( $(hextorgb $1) )
+t=${2:-0.8}
+set -- $(hex2rgb "$1")
 
-r="$(bc <<< "${a[0]} * ${2:-0.8}" | sed 's/\..*$//g')"
-g="$(bc <<< "${a[1]} * ${2:-0.8}" | sed 's/\..*$//g')"
-b="$(bc <<< "${a[2]} * ${2:-0.8}" | sed 's/\..*$//g')"
-
-[[ $r -gt 255 ]] && r=255
-[[ $g -gt 255 ]] && g=255
-[[ $b -gt 255 ]] && b=255
-
-
-echo "$(printf "%02X%02X%02X\n" $r $g $b)"
+for i; do
+	a="$(echo "$i*$t" | bc)"
+	a="${a%.*}"
+	[ "$a" -gt 255 ] && a=255
+	printf '%02x' "$a"
+done
+printf "\n"
