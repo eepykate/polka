@@ -19,7 +19,7 @@ fg2="767676"
 disabled="999999"
 #   -----
 accent="$green"
-false="$cyan"
+accent2="$cyan"
 contrast="ffffff"
 red="cd5e79"
 #   -----

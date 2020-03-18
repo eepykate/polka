@@ -36,7 +36,7 @@ sed --follow-symlinks -i \
 	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
 	-e "s/--fg1:.*#.*\;/--fg1:      #$fg1\;/" \
 	-e "s/--accent:.*#.*\;/--accent:   #$accent\;/" \
-	-e "s/--false:.*#.*\;/--false:    #$false\;/" \
+	-e "s/--accent2:.*#.*\;/--accent2:  #$accent2\;/" \
 	-e "s/--border:.*#.*\;/--border:   #$border\;/" \
 	-e "s/--button:.*#.*\;/--button:   #$button\;/" \
 	-e "s/--contrast:.*#.*\;/--contrast: #$contrast\;/" \
@@ -77,7 +77,7 @@ cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
 *.color15:      #$fg1
 
 *.color16:      #$accent
-*.color17:      #$false
+*.color17:      #$accent2
 EOF
 
 sed --follow-symlinks -i \
@@ -94,7 +94,7 @@ echo " - 👀"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$false'  # normal/"      \
+	-e "s/inner2=.*/inner2='0x$accent2'  # normal/"      \
 	~/bin/wm/borders
 
 echo " - dunst"
@@ -115,7 +115,7 @@ sed --follow-symlinks -i \
 	\
 	-e "${dunst_urgent}s/background.*/background          = \"#$bg1\"/" \
 	-e "$(( ${dunst_urgent} + 1 ))s/foreground.*/foreground          = \"#$fg1\"/" \
-	-e "$(( ${dunst_urgent} + 2 ))s/frame_color.*/frame_color         = \"#$false\"/" \
+	-e "$(( ${dunst_urgent} + 2 ))s/frame_color.*/frame_color         = \"#$accent2\"/" \
 	\
 	-e "${dunst_low}s/background.*/background          = \"#$bg1\"/" \
 	-e "$(( ${dunst_low} + 1 ))s/foreground.*/foreground          = \"#$fg1\"/" \
