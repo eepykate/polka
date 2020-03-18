@@ -12,7 +12,7 @@ disabled="595959"
 #   -----
 accent="6796e1"
 false="c185da"
-hover="ffffff"
+contrast="ffffff"
 red="cd5e79"
 #   -----
 wall="$bg0"

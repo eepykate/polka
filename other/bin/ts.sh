@@ -39,7 +39,7 @@ sed --follow-symlinks -i \
 	-e "s/--false:.*#.*\;/--false:    #$false\;/" \
 	-e "s/--border:.*#.*\;/--border:   #$border\;/" \
 	-e "s/--button:.*#.*\;/--button:   #$button\;/" \
-	-e "s/--hover:.*#.*\;/--hover:    #$hover\;/" \
+	-e "s/--contrast:.*#.*\;/--contrast: #$contrast\;/" \
 	-e "s/--red:.*#.*\;/--red:      #$red\;/" \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
@@ -130,7 +130,7 @@ sed --follow-symlinks -i \
 	-e "s/fg:.*#.*;/fg:         #$fg1;/" \
 	-e "s/accent:.*#.*;/accent:     #$accent;/"\
 	-e "s/sel:.*#.*;/sel:        #$button;/"\
-	-e "s/hover:.*#.*;/hover:      #$hover;/"\
+	-e "s/contrast:.*#.*;/contrast:   #$contrast;/"\
 	${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
 
 echo " - gtk context menus"

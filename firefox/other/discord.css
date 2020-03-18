@@ -1,3 +1,4 @@
+
 .messageGroupBlocked, .da-messageGroupBlocked {display:none;}
 code:not(.inline)::before {
     content: attr(class) "\A" !important;
@@ -398,7 +399,7 @@ Thanks _diamondburned_#4507 */
 
 .lookFilled-1Gx00P.colorBrand-3pXr91 * span,
 .lookFilled-1Gx00P.colorBrand-3pXr91 {
-	color: var(--hover) !important;
+	color: var(--contrast) !important;
 	background-color: var(--accent) !important;
 }
 
@@ -449,7 +450,7 @@ Thanks _diamondburned_#4507 */
 .barButtonIcon-3FGqPD path,
 .barButtonBase-3UKlW2,
 .span-3ncFWM {
-	color: var(--hover) !important;
+	color: var(--contrast) !important;
 }
 
 

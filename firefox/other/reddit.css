@@ -1506,7 +1506,7 @@ div .thing .tagline .author.submitter:before,
 div .thing .tagline .author.submitter {
  font-weight:Bold;
  line-height:20px;
- color: var(--hover) !important;
+ color: var(--contrast) !important;
  display:inline-block;
  font-size:10px
 }
@@ -1524,7 +1524,7 @@ div .thing .tagline .author.submitter {
  border-radius:20px;
  transition:300ms;
  position: relative;
- color: var(--hover) !important;
+ color: var(--contrast) !important;
 }
 div .thing .tagline .author.submitter:hover {
  background:var(--accent)!important;
@@ -3134,10 +3134,10 @@ button,
 body.res .side .RESshortcutside.remove:hover,
 button:hover {
  background:var(--accent);
- color: var(--hover) !important;
+ color: var(--contrast) !important;
 }
 .comments-page .RESSubscriptionButton:hover > span {
- color: var(--hover) !important;
+ color: var(--contrast) !important;
 }
 .RESDashboardToggle.remove:active,
 .RESshortcutside.remove:active,
@@ -3149,7 +3149,7 @@ button:hover {
 .sidecontentbox a.helplink:active,
 button:active {
  background:var(--accent);
- color: var(--hover) !important;
+ color: var(--contrast) !important;
 }
 .thing .md table thead tr th,
 .morelink,
@@ -4137,7 +4137,7 @@ html body * button {
 .fancy-toggle-button .remove:hover,
 html body * button:hover {
 	background-color: var(--accent) !important;
-	color: var(--hover) !important;
+	color: var(--contrast) !important;
 }
 
 .side .redditname a {
@@ -4155,7 +4155,7 @@ a.author,
 	font-size: 12px !important;
 }
 .panestack-title > a {
-	color: var(--hover) !important;
+	color: var(--contrast) !important;
 }
 html body .content * .thing * h1 { font-size: 20px !important; }
 html body .content * .thing * h2 { font-size: 18px !important; }
