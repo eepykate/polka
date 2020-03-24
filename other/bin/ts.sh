@@ -126,7 +126,7 @@ sed --follow-symlinks -i \
 echo " - rofi"
 # Change the theme in rofi
 sed --follow-symlinks -i \
-	-e "s/bg:.*#.*;/bg:         #$bg3;/g" \
+	-e "s/bg:.*#.*;/bg:         #$bg2;/g" \
 	-e "s/fg:.*#.*;/fg:         #$fg1;/" \
 	-e "s/accent:.*#.*;/accent:     #$accent;/"\
 	-e "s/sel:.*#.*;/sel:        #$button;/"\
