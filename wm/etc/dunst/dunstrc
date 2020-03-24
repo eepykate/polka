@@ -22,6 +22,7 @@
 	browser             = ~/bin/app/firefox -new-tab
 
 	idle_threshold      = 120
+	show_indicators     = false
 	show_age_threshold  = 60
 
 	icon_position       = left
