@@ -115,13 +115,7 @@ cli() {
 # tar
 
 c() {
-	while [ "$1" ]; do
-		case "$1" in
-			-e) ex"$e --exclude $2"; shift 2;;
-		esac
-	done
-
-	tar -czvf "${1##*/}_$(date +%Y-%m-%d_%H-%M-%S).tar.gz" "$ex" $1
+	tar -czvf "${1##*/}_$(date +%Y-%m-%d_%H-%M-%S).tar.gz" "$@"
 }
 
 e() {
