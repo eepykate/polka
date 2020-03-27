@@ -2,7 +2,7 @@
 #   aliases
 #     ---
 
-alias rm="rm -i"
+alias rm="dl"
 alias SU="sudo zsh"
 alias fuck="pkill -9"
 alias ss="sudo systemctl"
