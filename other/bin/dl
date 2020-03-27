@@ -6,8 +6,8 @@
 
 td="$HOME/opt/trash"
 
-case "$*" in
-	*-f*|*-rf*) rm -rf "$@"; exit;;
+case " $* " in
+	*\ -f\ *|*\ -fr\ *|*\ -rf\ *) rm -rf "$@"; exit;;
 esac
 
 mv --backup=t "$@" "$td"
