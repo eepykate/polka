@@ -2,6 +2,7 @@
 #
 #   Move a file to trash
 #
+# (has GNUisms)
 
 td="$HOME/opt/trash"
 
