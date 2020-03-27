@@ -7,7 +7,7 @@
 td="$HOME/opt/trash"
 
 case "$*" in
-	*-f*) rm -rf "$@"; exit;;
+	*-f*|*-rf*) rm -rf "$@"; exit;;
 esac
 
 mv --backup=t "$@" "$td"
