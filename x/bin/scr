@@ -5,11 +5,19 @@ name="maim-$(date +%F_%H:%M:%S)"
 dn="$dir/$name.png"
 
 mkdir -p "$dir" || exit 1
+freeze() {
+	maim /tmp/pic.png
+	feh -g 3360x1080+1+1 --class feh-nb /tmp/pic.png &
+	pid=$!
+	maim -su -b 8 "$dn"
+	kill $pid
+}
 
 case $1 in
-	-f) maim -ui $(xdotool getactivewindow) "$dn";;
-	-s) maim -su -b 8 "$dn";;
-	*) maim -u "$dn";;
+	-f) maim -ui "$(xdotool getactivewindow)" "$dn";;
+	-s) freeze;;
+	*) maim -u "$dn" -g "$(mattr whxy "$(ppd)" | \
+		sed -e 's/ /+/g' -e "s/+/x/")";;
 esac
 
 name1="$name-$(file "$dn" | \
