@@ -16,7 +16,7 @@ freeze() {
 case $1 in
 	-f) maim -ui "$(xdotool getactivewindow)" "$dn";;
 	-s) freeze;;
-	*) maim -u "$dn" -g "$(mattr whxy "$(ppd)" | \
+	*) maim -u "$dn" -g "$(mattr whxy "$(pfm)" | \
 		sed -e 's/ /+/g' -e "s/+/x/")";;
 esac
 
