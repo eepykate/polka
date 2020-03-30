@@ -7,7 +7,7 @@ dn="$dir/$name.png"
 mkdir -p "$dir" || exit 1
 freeze() {
 	maim /tmp/pic.png
-	feh -g 3360x1080+1+1 --class feh-nb /tmp/pic.png &
+	feh -g 3360x1082+0+-1 --class feh-nb /tmp/pic.png &
 	pid=$!
 	maim -su -b 8 "$dn"
 	kill $pid
