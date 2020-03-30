@@ -94,7 +94,7 @@ echo " - 👀"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$accent2'  # normal/"      \
+	-e "s/inner2=.*/inner2='0x$fg2'  # normal/"      \
 	~/bin/wm/borders
 
 echo " - dunst"
