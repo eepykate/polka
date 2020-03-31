@@ -11,8 +11,8 @@ done
 unset f
 
 # DBus
-if [[ ! "$DBUS_SESSION_BUS_ADDRESS" ]]; then
-	dbus-launch --exit-with-session ${XDG_CONFIG_HOME:-~/.config}/xinitrc "$@" &
+if [ ! "$DBUS_SESSION_BUS_ADDRESS" ]; then
+	dbus-launch --exit-with-session "${XDG_CONFIG_HOME:-~/.config}/xinitrc" "$@" &
 fi
 
 
@@ -22,7 +22,7 @@ screen.sh     # Custom screen layout
 synclient TouchpadOff=1           # Disable touchpad
 xset r rate 200 60 &              # Faster keyboard
 
-xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources
+xrdb "${XDG_CONFIG_HOME:-~/.config}/Xresources"
 
 unclutter -idle 15     &
 start-pulseaudio-x11   &
@@ -31,4 +31,4 @@ start-pulseaudio-x11   &
 #   And finally, start the window manager
 #
 
-exec bspwm
+exec "${1:-bspwm}"
