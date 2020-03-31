@@ -2602,11 +2602,9 @@ div.leavemoderator {
  color:#FFF;
  font-weight:bold;
  padding:2px 10px;
- border-radius:20px
 }
 .linkflairlabel {
  max-width:none;
- border:0px none
 }
 .linkflair-red .linkflairlabel,
 .linkflair-purple .linkflairlabel,
