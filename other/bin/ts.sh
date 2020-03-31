@@ -41,6 +41,7 @@ sed --follow-symlinks -i \
 	-e "s/--button:.*#.*\;/--button:   #$button\;/" \
 	-e "s/--contrast:.*#.*\;/--contrast: #$contrast\;/" \
 	-e "s/--red:.*#.*\;/--red:      #$red\;/" \
+	-e "s/--green:.*#.*\;/--green:    #$green\;/" \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css
