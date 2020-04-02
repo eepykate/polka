@@ -1,4 +1,4 @@
-# GaugeK's dotfiles
+<h1 align=center>GaugeK's dotfiles</h1>
 
 Feel free to do anything with these files. Credit isn't needed but is appreciated.
 
