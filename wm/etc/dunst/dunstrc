@@ -1,5 +1,5 @@
 [global]
-	font                = Fira Mono Bold 10px
+	font                = Fira Mono Medium 12px
 	monitor             = 0
 	follow              = none
 	geometry            = "500x5-40-40"
@@ -54,3 +54,5 @@
 	foreground          = "#daddee"
 	frame_color         = "#c488ec"
 	timeout             = 0
+
+# vim: ft=conf

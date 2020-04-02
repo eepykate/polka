@@ -26,7 +26,7 @@
 :root {
 	--font              : Fira Mono;
 	--font-size         : 12px;
-	--font-weight       : bold;
+	--font-weight       : medium;
 	--icon-size         : 16px        !important;
 	--button-size       : 14px        !important;
 	--tab-min-height    : 40px        !important;
