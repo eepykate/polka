@@ -1,4 +1,3 @@
-
 .messageGroupBlocked, .da-messageGroupBlocked {display:none;}
 code:not(.inline)::before {
     content: attr(class) "\A" !important;
@@ -43,6 +42,7 @@ code, .inline {
 /*.unread-3zKkbm,               /* Unread channel arrow */
 
 hr.divider-32i8lo,            /* hr between messages */
+[data-ref-id="channels"] > div:first-of-type,
 .scrollbar-2rkZSL,            /* Scroll bar - makes it use your native ones */
 .messageGroupBlocked-3wrQQX   /* X blocked messages */
 {
@@ -151,7 +151,6 @@ a svg.homeIcon-tEMBK1 path {
 }
 
 .sidebar-2K8pFh:not(:hover) * .children-Bmpf2Q,
-.scroller-2wx7Hm > div:first-of-type,
 .bannerImage-1jOskm,
 .unread-3zKkbm,
 .sidebar-2K8pFh:not(:hover) * .name-IbjUBS {
@@ -207,6 +206,7 @@ a svg.homeIcon-tEMBK1 path {
 .attachment-33OFj0,
 .embedInner-1-fpTo,
 pre,
+.theme-dark .card-FDVird::before,
 .wrapper-35wsBm {
 	border: none !important;
 }
@@ -246,6 +246,7 @@ pre,
 	color: var(--fg1) !important;
 }
 
+.roleName-32vpEy,
 .bodyInner-245q0L,
 .body-3iLsc4,
 .headerTag-2pZJzA {
@@ -265,7 +266,8 @@ pre,
 	background-color: var(--bg2) !important;
 }
 
-
+.theme-dark .card-FDVird::before,
+.message-2qnXI6:hover,
 .content-3dzVd8:hover {
 	background-color: var(--bg3)
 }
@@ -436,8 +438,6 @@ Thanks _diamondburned_#4507 */
 .barInner-3NDaY_ {
 	background-color: var(--fg2) !important;
 }
-.directionRow-3v3tfG,
-.directionRow-3v3tfG > *,
 .customStatusText-3YJeRZ,
 [class*="autocomplete"] * {
 	color: var(--fg2);
@@ -472,6 +472,5 @@ Thanks _diamondburned_#4507 */
 .message-2qnXI6 {
 	width: calc(100% - 78px) !important;
 }
-
 
 
