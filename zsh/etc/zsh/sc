@@ -23,7 +23,7 @@ f   sc         ~/etc/zsh/sc
 f   scsh       ~/etc/zsh/sc.sh
 f   a          ~/etc/zsh/aliases
 f   aliases    ~/etc/zsh/aliases
-f   zshrc      ~/etc/zsh/.zshrc
+f   z          ~/etc/zsh/.zshrc
 f   pro        ~/etc/zsh/.zprofile
 f   zpro       ~/etc/zsh/.zprofile
 
