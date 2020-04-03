@@ -4210,11 +4210,12 @@ body.moderator * div.thing.spam {
 	filter: none !important;
 }
 
+.togglebutton.access-required[data-event-action="remove"],
 .pretty-button.negative,
 .pretty-button.neutral[data-event-action="remove"] {
 	color: var(--red) !important;
 }
-
+.approve-button .access-required,
 .pretty-button.positive {
 	color: var(--green) !important;
 }
