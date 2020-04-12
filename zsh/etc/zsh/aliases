@@ -7,8 +7,8 @@ alias SU="sudo zsh"
 alias fuck="pkill -9"
 alias ss="sudo systemctl"
 
-f() { find . -iname "*$**"; }
-F() { find . -name "$*"; }
+f() { find "${2:-.}" -iname "*$1*"; }
+F() { find "${2:-.}" -name "$1"; }
 
 
 # Git
