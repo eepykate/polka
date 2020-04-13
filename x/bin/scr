@@ -1,29 +1,20 @@
 #!/bin/sh
-
-dir=~/opt/x/pics/maim
-name="maim-$(date +%F_%H:%M:%S)"
-dn="$dir/$name.png"
-
-mkdir -p "$dir" || exit 1
-freeze() {
-	maim /tmp/pic.png
-	feh -g 3360x1082+0+-1 --class feh-nb /tmp/pic.png &
-	pid=$!
-	maim -su -b 8 "$dn"
-	kill $pid
-}
+n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
+mkdir -p "${n%/*}"
 
 case $1 in
-	-f) maim -ui "$(xdotool getactivewindow)" "$dn";;
-	-s) freeze;;
-	*) maim -u "$dn" -g "$(mattr whxy "$(pfm)" | \
-		sed -e 's/ /+/g' -e "s/+/x/")";;
+	-s) maim /tmp/pic
+		feh -g 3360x1082+0+-1 --class feh-nb /tmp/pic &
+		pid=$!
+		maim -su -b 8 "$n";  kill $pid;;
+	# screenshot focused window
+	-f) maim -ui "$(xdotool getactivewindow)" "$n";;
+	# screenshot current monitor
+	*) maim -u "$n" -g "$(mattr whxy "$(pfm)" | sed -e 's/ /+/g' -e "s/+/x/")"
 esac
 
-name1="$name-$(file "$dn" | \
-	awk '{gsub(",","")} {print $5 "x" $7}')" &&
-dn1="$dir/$name1.png" &&
-mv "$dn" "$dn1" || exit
-
-#preview "$dn1"
-notify-send "pic taken"
+# add resolution to filename
+n1="${n%.*}-$(identify -format "%wx%h" "$n").png"
+mv "$n" "$n1"
+# copy image
+xclip -sel clipboard -t image/png "$n1"
