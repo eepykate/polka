@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dir="$HOME/opt/x/copy"
+opt="$(ls "$dir" | rofi -dmenu -i)"
+
+xclip -sel clipboard -t image/png "$dir/$opt"

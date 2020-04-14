@@ -11,6 +11,10 @@ super + period
 super + space
 	rofi -show run
 
+# copy epic may mays
+super + u
+	copymaymays
+
 
 # don't send `ctrl + q` events to firefox
 ctrl + q
