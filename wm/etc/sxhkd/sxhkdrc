@@ -48,7 +48,7 @@ ctrl + alt + w
 
 
 # send a notif of the time and battery
-super + {t, shift + F1}
+super + t
 	notify-send "$(date "+%F (%a) - %H:%M")" \
 	"$(acpi)"
 
@@ -74,6 +74,10 @@ super + shift + F2
 #
 {_,super, shift} + Print
 	scr {_,-f,-s}
+
+# mouse bind
+super + shift + F1
+	scr -s
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/pics/maim/$(ls \
