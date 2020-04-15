@@ -50,14 +50,20 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 source "${XDG_CONFIG_HOME:-~/.config}/zsh/aliases"   # Aliases
 
-PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.◊)%{\e[0m%} '
+PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.⊱) %{\e[0m%}'
 
-# bind `^k` to ls
-els() { clear; ls; zle redisplay; }
-zle -N els; bindkey "^k" els
+# custom keybinds
+:> $ZDOTDIR/binds
+bind() {
+	echo "$3() { $2; }" >> $ZDOTDIR/binds
+	echo "zle -N $3; bindkey $1 $3" >> $ZDOTDIR/binds
+	unset temp
+}
 
-# bind `^j` to git status
-egs() { clear; git status; zle redisplay; }
-zle -N egs; bindkey "^j" egs
+bind ^k "clear; ls; zle redisplay" kls
+bind ^j "clear; gs; zle redisplay" kgs
 
+. $ZDOTDIR/binds
+
+# shellcheck disable=SC1090
 # vim: ft=sh
