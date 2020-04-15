@@ -55,13 +55,13 @@ PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.⊱) %{\e[0m%}'
 # custom keybinds
 :> $XDG_CACHE_HOME/zshbinds
 bind() {
-	echo "$3() { $2; }" >> $XDG_CACHE_HOME/zshbinds
+	echo "$3() { echo; $2; zle redisplay; }" >> $XDG_CACHE_HOME/zshbinds
 	echo "zle -N $3; bindkey $1 $3" >> $XDG_CACHE_HOME/zshbinds
 	unset temp
 }
 
-bind ^k "clear; ls; zle redisplay" kls
-bind ^j "clear; gs; zle redisplay" kgs
+bind ^k "clear; ls" kls
+bind ^j "clear; gs" kgs
 
 . $XDG_CACHE_HOME/zshbinds
 
