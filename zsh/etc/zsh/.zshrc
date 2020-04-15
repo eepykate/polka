@@ -53,17 +53,17 @@ source "${XDG_CONFIG_HOME:-~/.config}/zsh/aliases"   # Aliases
 PROMPT=$'%(?.%{\e[38;05;16m%}.%{\e[38;05;17m%})%(!.#.⊱) %{\e[0m%}'
 
 # custom keybinds
-:> $ZDOTDIR/binds
+:> $XDG_CACHE_HOME/zshbinds
 bind() {
-	echo "$3() { $2; }" >> $ZDOTDIR/binds
-	echo "zle -N $3; bindkey $1 $3" >> $ZDOTDIR/binds
+	echo "$3() { $2; }" >> $XDG_CACHE_HOME/zshbinds
+	echo "zle -N $3; bindkey $1 $3" >> $XDG_CACHE_HOME/zshbinds
 	unset temp
 }
 
 bind ^k "clear; ls; zle redisplay" kls
 bind ^j "clear; gs; zle redisplay" kgs
 
-. $ZDOTDIR/binds
+. $XDG_CACHE_HOME/zshbinds
 
 # shellcheck disable=SC1090
 # vim: ft=sh
