@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dis="$(ls "$HOME/opt/mnt")"
+cho="$(echo "$dis" | rofi -dmenu -p unmount)" || exit
+sudo umount "$HOME/opt/mnt/$cho"
+rm -rf "$HOME/opt/mnt/$cho"

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dis="$(lsblk -rpo "name,mountpoint,type" | grep '  part' | \
+	sed -e 's/ .*//' -e 's|/.*/||')"
+cho="$(echo "$dis" | rofi -dmenu -p mount)" || exit
+mkdir -p "$HOME/opt/mnt/$cho"
+sudo mount "/dev/$cho" "$HOME/opt/mnt/$cho"

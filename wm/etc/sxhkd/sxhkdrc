@@ -35,7 +35,7 @@ super + h
 
 # un/mount drives
 ctrl + alt + {m,u}
-	dmenu{_,u}mount
+	{_,u}mnt
 
 
 super + i
