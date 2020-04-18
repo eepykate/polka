@@ -1,4 +1,3 @@
-st.alpha:         1
 st.termname:      st-256color
 st.font:          Fira Mono:pixelsize=12:style=medium
 st.borderpx:      50
