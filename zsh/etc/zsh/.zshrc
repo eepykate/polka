@@ -44,7 +44,7 @@ autoload -U compinit && compinit -u
 #
 #   Miscellaneous
 #
-set +x                     # disable ^z
+set +m                     # disable ^z
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
