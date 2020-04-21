@@ -3,6 +3,7 @@ n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
 mkdir -p "${n%/*}"
 
 case $1 in
+	# freeze screen & select area
 	-s) maim /tmp/pic
 		feh -g 3360x1082+0+-1 --class feh-nb /tmp/pic &
 		pid=$!
@@ -10,7 +11,7 @@ case $1 in
 	# screenshot focused window
 	-f) maim -ui "$(xdotool getactivewindow)" "$n";;
 	# screenshot current monitor
-	*) maim -u "$n" -g "$(mattr whxy "$(pfm)" | sed -e 's/ /+/g' -e "s/+/x/")"
+	*) maim -ug "$(mattr -g "$(pfm)")" "$n"
 esac
 
 # add resolution to filename
