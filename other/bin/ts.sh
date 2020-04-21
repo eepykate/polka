@@ -129,7 +129,7 @@ echo " - rofi"
 sed --follow-symlinks -i \
 	-e "s/bg:.*#.*;/bg:         #$bg2;/g" \
 	-e "s/fg1:.*#.*;/fg1:        #$fg1;/" \
-	-e "s/fg2:.*#.*;/fg:        #$fg2;/" \
+	-e "s/fg2:.*#.*;/fg2:        #$fg2;/" \
 	-e "s/accent:.*#.*;/accent:     #$accent;/"\
 	-e "s/sel:.*#.*;/sel:        #$button;/"\
 	-e "s/contrast:.*#.*;/contrast:   #$contrast;/"\

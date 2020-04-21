@@ -5,7 +5,7 @@
 	hover:      #ffffff;
 	sel:        #daddee1a;
 	fg1:        #daddee;
-	fg:        #767676;
+	fg2:        #a6a9b7;
 	accent:     #7baae8;
 
 	spacing: 0;
