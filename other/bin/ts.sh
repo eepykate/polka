@@ -9,7 +9,7 @@ done
 
 themes="$(ls -1 ~/etc/colours/ | grep -iv 'current\|css')" # List of themes
 if [[ -z $theme ]]; then
-	theme="$(echo -e "$themes" | rofi -dmenu -i -p "What theme would you like to use?")" \
+	theme="$(echo -e "$themes" | rofi -dmenu -i -p "Theme?")" \
 		|| exit
 fi
 ext() {
@@ -128,7 +128,8 @@ echo " - rofi"
 # Change the theme in rofi
 sed --follow-symlinks -i \
 	-e "s/bg:.*#.*;/bg:         #$bg2;/g" \
-	-e "s/fg:.*#.*;/fg:         #$fg1;/" \
+	-e "s/fg1:.*#.*;/fg1:        #$fg1;/" \
+	-e "s/fg2:.*#.*;/fg:        #$fg2;/" \
 	-e "s/accent:.*#.*;/accent:     #$accent;/"\
 	-e "s/sel:.*#.*;/sel:        #$button;/"\
 	-e "s/contrast:.*#.*;/contrast:   #$contrast;/"\

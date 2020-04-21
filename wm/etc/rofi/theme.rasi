@@ -4,7 +4,8 @@
 	bg:         #111114;
 	hover:      #ffffff;
 	sel:        #daddee1a;
-	fg:         #daddee;
+	fg1:        #daddee;
+	fg:        #767676;
 	accent:     #7baae8;
 
 	spacing: 0;
@@ -12,7 +13,7 @@
 
 	font: "Fira Mono bold 9";
 
-	text-color: @fg;
+	text-color: @fg1;
 }
 
 * {
@@ -28,6 +29,8 @@ window {
 	border-color: @accent;
 	border: 0px;
 	padding: 15px;
+	/*border: 2px;
+	border-color: @accent;*/
 }
 
 #mainbox {
@@ -42,7 +45,7 @@ window {
 }
 
 #textbox {
-	text-color: @fg;
+	text-color: @fg1;
 	spacing: 4;
 	padding: 8;
 }
@@ -61,7 +64,7 @@ prompt {
 
 textbox-prompt-colon {
 	expand: false;
-	str: ":";
+	str: "»";
 	text-color: @text-alt;
 }
 
@@ -86,17 +89,17 @@ entry {
 	padding: 14px 10px;
 	/*border-radius: 0.3em;*/
 	border: 0px 0px 0px 0px;
-	text-color: @fg;
+	text-color: @fg1;
 }
 
 element.normal {
-	  background-color: transparent;
-	  border-color: @bg-alt;
+	background-color: transparent;
+	color: @fg2;
 }
 element.selected {
-	  background-color: @accent;
-	  color: @hover;
-	  border-color: @accent;
+	background-color: transparent;
+	color: @fg1;
+	border-color: @accent;
 }
 
 #prompt {
