@@ -48,6 +48,10 @@ set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 source "${XDG_CONFIG_HOME:-~/.config}/zsh/aliases"   # Aliases
+command_not_found_handler() {
+	echo "Attempt to run bad software detected: '$0' (command not found)"
+	return 1
+}
 
 PROMPT=$'%(?.%F{16m}.%F{17})%(!.#.⊱) %f'
 
