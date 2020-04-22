@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+#   Upload file to transfer.sh
+#
+notify-send -t 1000 'uploading to transfer.sh'
+set -e   # exit on error
+
+file="${*:-/dev/stdin}"
+
+url="$(curl --upload-file "$file" "https://transfer.sh/${file##*/}")"
+printf "%s" "$url" | xclip -sel clip
+notify-send "File uploaded" "$url"
