@@ -83,11 +83,6 @@ super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/pics/$(ls \
 	-1t $HOME/opt/x/pics/ --ignore old | head -1)
 
-ctrl + alt + z
-	ts $HOME/opt/x/pics/$(ls \
-	-1t $HOME/opt/x/pics/ --ignore old | head -1)
-
-
 super + {Insert, Home, Prior, End}
 	blaze {_,-c -p k, -c -p k -b 7,-s}
 
