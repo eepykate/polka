@@ -565,3 +565,11 @@ browser[type=content] > html {
 .urlbarView-row { height: 35px !important; }
 .urlbarView-body-inner { border: none !important; }
 .urlbarView-row-inner { margin-top: 3px !important; }
+
+
+
+/* fix context menu automatically selecting the first item when window isn't maximized */
+/* @TODO fix hard-coded width */
+#main-window:not([width="1920"]) * #contentAreaContextMenu {
+	margin: 10px 0 0 10px !important;
+}
