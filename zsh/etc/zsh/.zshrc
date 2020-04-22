@@ -53,7 +53,7 @@ command_not_found_handler() {
 	return 1
 }
 
-PROMPT=$'%(?.%F{16m}.%F{17})%(!.#.⊱) %f'
+PROMPT=$'%(?.%F{16m}.%F{17})%(!.#.|) %f'
 
 # custom keybinds
 :> $XDG_CACHE_HOME/zshbinds
