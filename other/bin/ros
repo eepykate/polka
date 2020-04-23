@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 file="$(find -L "$1" -type f,l | sed "s|$1/||" | tac | \
-rofi -dmenu -i -theme <(sed 's/width.*/width: 600px;/' \
-	~/etc/rofi/theme.rasi))"
+rofi -dmenu -i -width 700)"
 [ ! "$file" ] && exit
 st -e zsh -i -c "d '$1/$file'"

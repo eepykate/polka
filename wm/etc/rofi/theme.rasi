@@ -1,4 +1,7 @@
-/* RASI Theme */
+/* vim: ft=css */
+configuration {
+	width: 350;
+}
 
 * {
 	bg:         #111114;
@@ -25,7 +28,6 @@ window {
 	transparency: "real";
 	fullscreen: false;
 	background-color: @bg;
-	width: 350px;
 	border-color: @accent;
 	border: 0px;
 	padding: 15px;
@@ -36,7 +38,6 @@ window {
 #mainbox {
 	border: 0;
 	padding: 20;
-	width: 250px;
 }
 
 #message {
