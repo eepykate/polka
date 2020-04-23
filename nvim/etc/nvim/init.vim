@@ -64,10 +64,9 @@ color term
 "   Plugins
 "
 call plug#begin()
-	"  *tumbleweed rolls*
 	" Plug 'vim-syntastic/syntastic'
 	Plug 'dense-analysis/ale'
-	Plug 'maxboisvert/vim-simple-complete'
+	" Plug 'maxboisvert/vim-simple-complete'
 call plug#end()
 
 

@@ -21,12 +21,8 @@ hi PmenuThumb   ctermbg=8      ctermfg=8      cterm=NONE
 hi WildMenu     ctermbg=NONE   ctermfg=4      cterm=NONE
 
 " search
-hi Search       ctermfg=6      cterm=underline
-hi MatchParen   ctermfg=2      cterm=underline
-hi SpellBad     ctermfg=1      cterm=underline
-hi SpellCap     ctermfg=2      cterm=underline
-hi SpellRare    ctermfg=3      cterm=underline
-hi SpellLocal   ctermfg=10     cterm=underline
+hi Search       ctermfg=6    ctermbg=NONE  cterm=underline
+hi MatchParen   ctermfg=2    ctermbg=NONE  cterm=underline
 
 " other
 hi Visual       ctermbg=8      ctermfg=15
@@ -34,7 +30,13 @@ hi Normal       ctermbg=NONE   ctermfg=15     cterm=NONE
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0      cterm=NONE
 hi SignColumn   ctermbg=NONE
 hi WarningMsg   ctermbg=NONE   ctermfg=11     cterm=NONE
+hi SpellBad     ctermfg=1      ctermbg=NONE   cterm=underline
+hi SpellCap     ctermfg=2      ctermbg=NONE   cterm=underline
+hi SpellRare    ctermfg=3      ctermbg=NONE   cterm=underline
+hi SpellLocal   ctermfg=10     ctermbg=NONE   cterm=underline
 hi ErrorMsg     ctermfg=1
+hi error        ctermfg=1      ctermbg=NONE
+hi todo         ctermfg=3      ctermbg=NONE
 
 " general lang syntax
 hi Comment      ctermfg=8
