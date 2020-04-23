@@ -1,5 +1,5 @@
 [global]
-	font                = Fira Mono Medium 12px
+	font                = Fira Mono Bold 12px
 	monitor             = 0
 	follow              = none
 	geometry            = "500x5-40-40"
