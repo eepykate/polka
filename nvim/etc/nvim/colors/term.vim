@@ -50,7 +50,7 @@ hi Comment      ctermbg=NONE   ctermfg=8      cterm=NONE
 hi Constant     ctermbg=NONE   ctermfg=3      cterm=NONE
 hi String       ctermbg=NONE   ctermfg=16     cterm=NONE
 hi Character    ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Number       ctermbg=NONE   ctermfg=3      cterm=NONE
+hi Number       ctermbg=NONE   ctermfg=NONE   cterm=NONE
 hi Boolean      ctermbg=NONE   ctermfg=11     cterm=NONE
 hi Float        ctermbg=NONE   ctermfg=4      cterm=NONE
 hi Identifier   ctermbg=NONE   ctermfg=4      cterm=NONE
@@ -58,7 +58,7 @@ hi Function     ctermbg=NONE   ctermfg=3      cterm=NONE
 hi Conditional  ctermbg=NONE   ctermfg=2      cterm=NONE
 hi Repeat       ctermbg=NONE   ctermfg=1      cterm=NONE
 hi Label        ctermbg=NONE   ctermfg=4      cterm=NONE
-hi Operator     ctermbg=NONE   ctermfg=1      cterm=NONE
+hi Operator     ctermbg=NONE   ctermfg=17     cterm=NONE
 hi Keyword      ctermbg=NONE   ctermfg=1      cterm=NONE
 hi Exception    ctermbg=NONE   ctermfg=1      cterm=NONE
 hi Include      ctermbg=NONE   ctermfg=2      cterm=NONE
