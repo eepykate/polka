@@ -1,5 +1,5 @@
 #!/bin/sh
 
-file="$(find "$1" -type f,l | sed "s|$1/||" | rofi -dmenu)"
+file="$(find -L "$1" -type f,l | sed "s|$1/||" | tac | rofi -dmenu)"
 [ ! "$file" ] && exit
-st -e zsh -i -c "v '$1/$file'"
+st -e zsh -i -c "d '$1/$file'"
