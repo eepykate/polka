@@ -47,7 +47,7 @@ autoload -U compinit && compinit -u
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
-source "${XDG_CONFIG_HOME:-~/.config}/zsh/aliases"   # Aliases
+. "$ZDOTDIR/aliases"   # Aliases
 command_not_found_handler() {
 	echo "Attempt to run bad software detected: '$0' (command not found)"
 	return 1
@@ -56,17 +56,16 @@ command_not_found_handler() {
 PROMPT=$'%(?.%F{16m}.%F{17})%(!.#.|) %f'
 
 # custom keybinds
-:> $XDG_CACHE_HOME/zshbinds
+:> "$XDG_CACHE_HOME/zshbinds"
 bind() {
-	echo "$3() { echo; $2; zle redisplay; }" >> $XDG_CACHE_HOME/zshbinds
-	echo "zle -N $3; bindkey $1 $3" >> $XDG_CACHE_HOME/zshbinds
+	echo "$3() { echo; $2; zle redisplay; }" >> "$XDG_CACHE_HOME/zshbinds"
+	echo "zle -N $3; bindkey $1 $3" >> "$XDG_CACHE_HOME/zshbinds"
 	unset temp
 }
 
 bind ^k "clear; ls" kls
 bind ^j "clear; gs" kgs
 
-. $XDG_CACHE_HOME/zshbinds
+. "$XDG_CACHE_HOME/zshbinds"
 
-# shellcheck disable=SC1090
 # vim: ft=sh
