@@ -2,6 +2,7 @@
 #   zprofile
 #
 
+export SUDO_PROMPT=$'\e[37mpass for \e[0m%u '
 export BLAZE_DIR="$HOME/opt/x/recs"
 
 export XDG_CONFIG_HOME="$HOME/etc"
