@@ -1,121 +1,120 @@
-set background=dark
 hi clear
-if exists('syntax_on')
-    syntax reset
-endif
 
 let g:colors_name='term'
 
 set numberwidth=1
 
-hi Normal       ctermbg=NONE   ctermfg=15     cterm=NONE
-hi Cursor       ctermbg=NONE   ctermfg=15     cterm=NONE
-hi Directory    ctermbg=NONE   ctermfg=4      cterm=NONE
-hi ErrorMsg     ctermbg=NONE   ctermfg=1      cterm=NONE
-hi VertSplit    ctermbg=NONE   ctermfg=0      cterm=NONE
-hi LineNr       ctermbg=NONE   ctermfg=8      cterm=NONE
-hi SignColumn   ctermbg=NONE   ctermfg=NONE   cterm=NONE
-hi NonText      ctermbg=NONE   ctermfg=0      cterm=NONE
+" bars
+hi LineNr       ctermfg=8
+hi StatusLine   ctermfg=15
+
+" selected line/column
+hi StatusLineNC ctermfg=15
+hi CursorLineNr ctermfg=16
+hi CursorLine   cterm=NONE
+
+" autocomplete
 hi Pmenu        ctermbg=8      ctermfg=15     cterm=NONE
 hi PmenuSel     ctermbg=8      ctermfg=4      cterm=NONE
 hi PmenuSbar    ctermbg=8      ctermfg=8      cterm=NONE
 hi PmenuThumb   ctermbg=8      ctermfg=8      cterm=NONE
-hi Search       ctermbg=NONE   ctermfg=6      cterm=underline
-hi SpellBad     ctermbg=NONE   ctermfg=1      cterm=underline
-hi SpellCap     ctermbg=NONE   ctermfg=2      cterm=underline
-hi SpellLocal   ctermbg=NONE   ctermfg=10     cterm=underline
-hi SpellRare    ctermbg=NONE   ctermfg=3      cterm=underline
-hi StatusLine   ctermbg=0      ctermfg=15     cterm=NONE
-hi StatusLineNC ctermbg=0      ctermfg=15     cterm=NONE
-hi TabLine      ctermbg=0      ctermfg=NONE   cterm=NONE
-hi TabLineSel   ctermbg=0      ctermfg=15     cterm=NONE
-hi TabLineFill  ctermbg=0      ctermfg=NONE   cterm=NONE
-hi Title        ctermbg=NONE   ctermfg=15     cterm=NONE
-hi Visual       ctermbg=0      ctermfg=NONE   cterm=reverse
 hi WildMenu     ctermbg=NONE   ctermfg=4      cterm=NONE
-hi WarningMsg   ctermbg=NONE   ctermfg=11     cterm=NONE
-hi DIffAdd      ctermbg=NONE   ctermfg=2      cterm=NONE
-hi DiffDelete   ctermbg=NONE   ctermfg=1      cterm=NONE
-hi DiffChange   ctermbg=NONE   ctermfg=1      cterm=NONE
+
+" search
+hi Search       ctermfg=6      cterm=underline
+hi MatchParen   ctermfg=2      cterm=underline
+hi SpellBad     ctermfg=1      cterm=underline
+hi SpellCap     ctermfg=2      cterm=underline
+hi SpellRare    ctermfg=3      cterm=underline
+hi SpellLocal   ctermfg=10     cterm=underline
+
+" other
+hi Visual       ctermbg=8      ctermfg=15
+hi Normal       ctermbg=NONE   ctermfg=15     cterm=NONE
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0      cterm=NONE
-hi CursorLine   ctermbg=NONE   ctermfg=NONE   cterm=NONE
-hi CursorLineNr ctermbg=NONE   ctermfg=16     cterm=bold
-hi CursorColumn ctermbg=0      ctermfg=NONE   cterm=NONE
-hi MatchParen   ctermbg=NONE   ctermfg=2      cterm=underline
-hi ModeMsg      ctermbg=NONE   ctermfg=5      cterm=NONE
-hi NormalNC     ctermbg=NONE   ctermfg=15     cterm=NONE
+hi SignColumn   ctermbg=NONE
+hi WarningMsg   ctermbg=NONE   ctermfg=11     cterm=NONE
+hi ErrorMsg     ctermfg=1
 
-" language syntax
-hi Comment      ctermbg=NONE   ctermfg=8      cterm=NONE
-hi Constant     ctermbg=NONE   ctermfg=3      cterm=NONE
-hi String       ctermbg=NONE   ctermfg=16     cterm=NONE
-hi Character    ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Number       ctermbg=NONE   ctermfg=NONE   cterm=NONE
-hi Boolean      ctermbg=NONE   ctermfg=11     cterm=NONE
-hi Float        ctermbg=NONE   ctermfg=4      cterm=NONE
-hi Identifier   ctermbg=NONE   ctermfg=4      cterm=NONE
-hi Function     ctermbg=NONE   ctermfg=3      cterm=NONE
-hi Conditional  ctermbg=NONE   ctermfg=2      cterm=NONE
-hi Repeat       ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Label        ctermbg=NONE   ctermfg=4      cterm=NONE
-hi Operator     ctermbg=NONE   ctermfg=17     cterm=NONE
-hi Keyword      ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Exception    ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Include      ctermbg=NONE   ctermfg=2      cterm=NONE
-hi Define       ctermbg=NONE   ctermfg=2      cterm=NONE
-hi Macro        ctermbg=NONE   ctermfg=1      cterm=NONE
-hi PreCondit    ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Type         ctermbg=NONE   ctermfg=17     cterm=NONE
-hi StorageClass ctermbg=NONE   ctermfg=15     cterm=NONE
-hi PreProc      ctermbg=NONE   ctermfg=16     cterm=NONE
-hi Structure    ctermbg=NONE   ctermfg=5      cterm=NONE
-hi Special      ctermbg=NONE   ctermfg=15     cterm=NONE
-hi SpecialChar  ctermbg=NONE   ctermfg=5      cterm=NONE
-hi Underliend   ctermbg=NONE   ctermfg=1      cterm=underline
-hi Ignore       ctermbg=NONE   ctermfg=1      cterm=NONE
-hi Error        ctermbg=NONE   ctermfg=1      cterm=bold
-hi Todo         ctermbg=NONE   ctermfg=3      cterm=bold
-hi Statement    ctermbg=NONE   ctermfg=NONE   cterm=bold
-hi Delimiter    ctermbg=NONE   ctermfg=16      cterm=NONE
+" general lang syntax
+hi Comment      ctermfg=8
+hi Constant     ctermfg=3
+hi String       ctermfg=16
+hi Character    ctermfg=1
+hi Number       ctermfg=NONE
+hi Boolean      ctermfg=12
+hi Float        ctermfg=4
+hi Identifier   ctermfg=4
+hi Function     ctermfg=3
+hi Conditional  ctermfg=2
+hi Repeat       ctermfg=1
+hi Label        ctermfg=4
+hi Operator     ctermfg=17
+hi Keyword      ctermfg=1
+hi Exception    ctermfg=1
+hi Include      ctermfg=2
+hi Define       ctermfg=2
+hi Macro        ctermfg=1
+hi PreCondit    ctermfg=1
+hi Type         ctermfg=NONE
+hi StorageClass ctermfg=15
+hi PreProc      ctermfg=16
+hi Structure    ctermfg=5
+hi Special      ctermfg=15
+hi SpecialChar  ctermfg=5
+hi Underliend   ctermfg=1     cterm=underline
+hi Ignore       ctermfg=1
+hi Error        ctermfg=1     cterm=bold
+hi Todo         ctermfg=3     cterm=bold
+hi Statement    ctermfg=NONE  cterm=bold
+hi Delimiter    ctermfg=16
+hi Title        ctermfg=4
 
+"
+"   lang-specific syntax adjustments
+"
 
-" Css syntax adjustments
-hi cssUrl                 ctermbg=NONE   ctermfg=1      cterm=italic
-hi cssBraces              ctermbg=NONE   ctermfg=15     cterm=NONE
-hi cssTagName             ctermbg=NONE   ctermfg=1      cterm=NONE
-hi cssImportant           ctermbg=NONE   ctermfg=5      cterm=NONE
-hi cssClassName           ctermbg=NONE   ctermfg=3      cterm=NONE
-hi cssAttrRegion          ctermbg=NONE   ctermfg=1      cterm=NONE
-hi cssIdentifier          ctermbg=NONE   ctermfg=4      cterm=NONE
-hi cssDefinition          ctermbg=NONE   ctermfg=1      cterm=NONE
-hi cssClassNameDot        ctermbg=NONE   ctermfg=3      cterm=NONE
-hi cssFunctionName        ctermbg=NONE   ctermfg=1      cterm=NONE
-hi cssUnitDecorators      ctermbg=NONE   ctermfg=1      cterm=NONE
-hi cssBackgroundProp      ctermbg=NONE   ctermfg=15     cterm=NONE
-hi cssAttributeSelector   ctermbg=NONE   ctermfg=3      cterm=NONE
-hi cssAttributeSelector   ctermbg=NONE   ctermfg=3      cterm=NONE
-hi cssAttributeSelector   ctermbg=NONE   ctermfg=3      cterm=NONE
+" diff
+hi DiffAdd      ctermfg=2
+hi DiffDelete   ctermfg=1
+hi DiffChange   ctermfg=1
 
-
-" sh syntax adjustments
-hi shFunction             ctermbg=NONE   ctermfg=4       cterm=NONE
-hi shConditional          ctermbg=NONE   ctermfg=4       cterm=NONE
-hi shDerefSimple          ctermbg=NONE   ctermfg=17      cterm=NONE
-hi shVariable             ctermbg=NONE   ctermfg=15      cterm=NONE
-hi shStatement            ctermbg=NONE   ctermfg=15      cterm=NONE
-hi shQuote                ctermbg=NONE   ctermfg=16      cterm=NONE
-hi shFunction             ctermbg=NONE   ctermfg=4       cterm=NONE
+" css
+hi cssUrl                 ctermfg=1      cterm=italic
+hi cssBraces              ctermfg=15
+hi cssTagName             ctermfg=1
+hi cssImportant           ctermfg=5
+hi cssClassName           ctermfg=3
+hi cssAttrRegion          ctermfg=1
+hi cssIdentifier          ctermfg=4
+hi cssDefinition          ctermfg=1
+hi cssClassNameDot        ctermfg=3
+hi cssFunctionName        ctermfg=1
+hi cssUnitDecorators      ctermfg=1
+hi cssBackgroundProp      ctermfg=15
+hi cssAttributeSelector   ctermfg=3
+hi cssAttributeSelector   ctermfg=3
+hi cssAttributeSelector   ctermfg=3
 
 
-" Markdown
-hi htmlItalic             ctermbg=NONE   ctermfg=NONE    cterm=italic
-hi htmlBold               ctermbg=NONE   ctermfg=7       cterm=bold
-hi markdownLinkText       ctermbg=NONE   ctermfg=7       cterm=underline
-hi Title                  ctermbg=NONE   ctermfg=4       cterm=NONE
-hi markdownCode           ctermbg=NONE   ctermfg=5       cterm=NONE
-hi markdownBlockquote     ctermbg=NONE   ctermfg=3       cterm=NONE
-hi markdownCodeDelimiter  ctermbg=NONE   ctermfg=5       cterm=NONE
+" sh
+hi shFunction     ctermfg=4
+hi shConditional  ctermfg=4
+hi shDerefSimple  ctermfg=17
+hi shVariable     ctermfg=15
+hi shStatement    ctermfg=15
+hi shQuote        ctermfg=16
+hi shFunction     ctermfg=4
+
+
+" md
+hi htmlItalic             ctermfg=NONE    cterm=italic
+hi htmlBold               ctermfg=7       cterm=bold
+hi markdownLinkText       ctermfg=7       cterm=underline
+hi markdownCode           ctermfg=5
+hi markdownBlockquote     ctermfg=3
+hi markdownCodeDelimiter  ctermfg=5
 
 
 " vimscript
-hi vimNotation            ctermbg=NONE   ctermfg=16      cterm=NONE
+hi vimNotation    ctermfg=16
