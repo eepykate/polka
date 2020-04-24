@@ -34,7 +34,7 @@ hi SpellBad     ctermfg=1      ctermbg=NONE   cterm=underline
 hi SpellCap     ctermfg=2      ctermbg=NONE   cterm=underline
 hi SpellRare    ctermfg=3      ctermbg=NONE   cterm=underline
 hi SpellLocal   ctermfg=10     ctermbg=NONE   cterm=underline
-hi ErrorMsg     ctermfg=1
+hi ErrorMsg     ctermfg=1      ctermbg=NONE
 hi error        ctermfg=1      ctermbg=NONE
 hi todo         ctermfg=3      ctermbg=NONE
 
