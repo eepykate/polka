@@ -2,20 +2,29 @@
 n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
 mkdir -p "${n%/*}"
 
+ff() {
+	ffmpeg -y -loglevel error -f x11grab $3 \
+		-video_size "${1%%+*}" -i ":0.0+${1#*+}" -vframes 1 "$2"
+}
+
 case $1 in
-	# freeze screen & select area
-	-s) maim /tmp/pic
-		feh -g 3360x1082+0+-1 --class feh-nb /tmp/pic &
+	# freeze & screenshot selection
+	# don't worry, you're not meant to be able to read this :^)
+	-s)
+		mw="$(wattr wh "$(lsw -r)" | tr \  x)"
+		ff "$mw+0,0" /tmp/scr.png
+		feh -g "${mw%?}2+0+-1" --class feh-nb /tmp/scr.png &
 		pid=$!
-		maim -su -b 8 "$n";  kill $pid;;
-	# screenshot focused window
-	-f) maim -ui "$(xdotool getactivewindow)" "$n";;
+
+		w="$(sel '${W}x$H+$X,$Y')" &&
+		n="${n%%.*}-${w%%+*}.png" &&
+		ff "$w" "$n"; kill $pid
+	;;
 	# screenshot current monitor
-	*) maim -ug "$(mattr -g "$(pfm)")" "$n"
+	*)
+		ff "$(mattr -g "$(pfm)")" "$n" '-draw_mouse 0'
+	;;
 esac
 
-# add resolution to filename
-n1="${n%.*}-$(identify -format "%wx%h" "$n").png"
-mv "$n" "$n1"
 # copy image
-xclip -sel clipboard -t image/png "$n1"
+xclip -sel clipboard -t image/png "$n"

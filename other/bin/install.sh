@@ -300,6 +300,29 @@ echo " - mmutils"
 git clone https://github.com/pockata/mmutils /home/$name/opt/git/mmutils;
 	cd /home/$name/opt/git/mmutils; make clean install &>/dev/null
 
+echo " - crud"
+git clone https://github.com/ix/crud /home/$name/opt/git/crud
+	cd /home/$name/opt/git/crud
+	cat << EOF > crud-cancel.diff
+Cancel selection with right click
+diff --git a/crud.c b/crud.c
+index 6e97a0a..2a86cc3 100644
+--- a/crud.c
++++ b/crud.c
+@@ -189,6 +189,8 @@ int main(int argc, char **argv) {
+     XNextEvent(display, &event);
+     switch (event.type) {
+     case ButtonPress:
++      if (event.xbutton.button == Button3)
++        return 1;
+       button_state = true;
+       x = start_x = event.xbutton.x_root;
+       y = start_y = event.xbutton.y_root;
+EOF
+	patch -Np1 -i crud-cancel.diff
+	make
+	make install
+
 
 echo "Adding mpris support to mpv"
 mkdir -p /etc/mpv/scripts
