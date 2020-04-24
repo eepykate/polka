@@ -14,7 +14,8 @@ accent="7baae8"
 accent2="c488ec"
 contrast="ffffff"
 #   -----
-wall="volcano.jpg"
+#wall="volcano.jpg"
+wall="$bg4"
 #   -----
 
 black="484e5b"

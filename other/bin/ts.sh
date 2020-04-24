@@ -147,7 +147,7 @@ echo -e "\nChanging wallpaper"
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/$wall\""
 	eval $wallthing
 else
-	walgen1 "#$wall"
+	walgen "#$wall"
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/tile.png\""
 	sleep 0.6
 fi
