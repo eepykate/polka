@@ -3,7 +3,7 @@ n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
 mkdir -p "${n%/*}"
 
 ff() {
-	ffmpeg -y -loglevel error -f x11grab $3 \
+	ffmpeg -y -loglevel error -f x11grab -draw_mouse "$3" \
 		-video_size "${1%%+*}" -i ":0.0+${1#*+}" -vframes 1 "$2"
 }
 
@@ -12,17 +12,17 @@ case $1 in
 	# don't worry, you're not meant to be able to read this :^)
 	-s)
 		mw="$(wattr wh "$(lsw -r)" | tr \  x)"
-		ff "$mw+0,0" /tmp/scr.png
+		ff "$mw+0,0" /tmp/scr.png 1
 		feh -g "${mw%?}2+0+-1" --class feh-nb /tmp/scr.png &
 		pid=$!
 
 		w="$(sel '${W}x$H+$X,$Y')" &&
 		n="${n%%.*}-${w%%+*}.png" &&
-		ff "$w" "$n"; kill $pid
+		ff "$w" "$n" 0; kill $pid
 	;;
 	# screenshot current monitor
 	*)
-		ff "$(mattr -g "$(pfm)")" "$n" '-draw_mouse 0'
+		ff "$(mattr -g "$(pfm)")" "$n" 0
 	;;
 esac
 
