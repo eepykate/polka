@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+case "$(file -ib "$1") $1" in
+	*video*|*gif*) mpv "$1" & disown;;
+	*image*)         i "$1" & disown;;
+	*html*)    firefox "$1" & disown;;
+	*audio*)  st -e paplay "$1";;
+	*gzip*)   st -e tar -t "$1";;
+	# everything else
+	*)    st -e nvim "$1";;
+esac
