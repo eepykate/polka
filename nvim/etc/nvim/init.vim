@@ -112,3 +112,16 @@ endfunction
 call ToggleHiddenAll()
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>:<BS>
+
+
+"function! Tabs()
+"  let asd = system("echo $(( RANDOM % 2 ))")
+"	if asd
+"		" tabs
+"		normal! a	
+"	else
+"		" spaces
+"		normal! a        
+"	endif
+"endfunction
+"inoremap <Tab> <Esc>:call Tabs()<CR>a
