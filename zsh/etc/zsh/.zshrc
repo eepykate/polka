@@ -61,11 +61,11 @@ bind() {
 	echo "$3() { echo; $2; zle redisplay; }" >> "$XDG_CACHE_HOME/zshbinds"
 	echo "zle -N $3; bindkey $1 $3" >> "$XDG_CACHE_HOME/zshbinds"
 	unset temp
+	. "$XDG_CACHE_HOME/zshbinds"
 }
 
 bind ^k "clear; ls" kls
 bind ^j "clear; gs" kgs
 
-. "$XDG_CACHE_HOME/zshbinds"
 
 # vim: ft=sh
