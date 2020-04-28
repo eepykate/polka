@@ -48,12 +48,6 @@ set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 . "$ZDOTDIR/aliases"   # Aliases
-command_not_found_handler() {
-	echo "Attempt to run bad software detected: '$0' (command not found)"
-	return 1
-}
-
-PROMPT=$'%(?.%F{16}.%F{17})%(!.#.|) %f'
 
 # custom keybinds
 :> "$XDG_CACHE_HOME/zshbinds"
@@ -67,5 +61,33 @@ bind() {
 bind ^k "clear; ls" kls
 bind ^j "clear; gs" kgs
 
+
+command_not_found_handler() {
+	echo "Attempt to run bad software detected: '$0' (command not found)"
+	return 1
+}
+
+# fancy prompt
+setopt prompt_subst
+prompt() {
+	unset col char
+	[ -d .git ] && {
+		gout="$(git status --porcelain)"
+		# default git char
+		char='!';
+		case "$gout" in
+			# modified, staged & unstaged
+			*MM\ *) col='3';;
+			# modified, unstaged
+			*\ M\ *) col='1';;
+			# modified, staged
+			*M\ *) col='2';;
+			# new file
+			*??\ *) char='?';;
+		esac
+	}
+	echo "%(?.%F{${col:-16}}.%F{17})%(!.#.${char:-|}) %f"
+}
+PROMPT=$'$(prompt)'
 
 # vim: ft=sh
