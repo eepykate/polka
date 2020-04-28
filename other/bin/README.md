@@ -36,8 +36,8 @@
 
 ### Arch
 
-`ins` - install from official arch repos/AUR (Simple yay alternative because mnmlsm)
+`insa` - install from official arch repos/AUR (Simple yay alternative because mnmlsm)
 
-`src` - search arch's official repos and the AUR for package
+`srca` - search arch's official repos and the AUR for package
 
 `upda` - update AUR and official packages

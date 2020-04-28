@@ -28,10 +28,9 @@ alias gl="git log --all --decorate --oneline --graph"
 
 # pacman/yay
 
-#alias insa="yay -S"
-#alias src="yay -Ss"
 alias p="sudo pacman"
-#alias ins="sudo pacman -S"
+alias src="sudo pacman -Ss"
+alias ins="sudo pacman -S"
 alias rem="sudo pacman -Rs"
 alias upd="sudo pacman -Syu"
 
