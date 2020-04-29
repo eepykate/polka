@@ -47,7 +47,7 @@ autoload -U compinit && compinit -u
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
-. "$ZDOTDIR/aliases"   # Aliases
+. "$ZDOTDIR/aliases"       # Aliases
 
 # custom keybinds
 :> "$XDG_CACHE_HOME/zshbinds"
@@ -72,16 +72,16 @@ setopt prompt_subst
 prompt() {
 	unset col char
 	git rev-parse --git-dir &>/dev/null && {
-		gout="$(git status --porcelain | cut -d' ' -f 1)"
+		gout="$(git status --porcelain | cut -d' ' -f 1,2)"
 		# default git char
 		char='!';
 		# new file
-		[[ "$gout" = *\?\?*  ]] && char="?"
-		[[ "$gout" = *A*   ]] && char="?"
+		[[ "$gout" = *\?\?* ]] && char="?"
+		[[ "$gout" = *A* ]]    && char="?"
 		# modified, unstaged
 		[[ "$gout" = *\ M* ]] && col="1"
 		# modified, staged
-		[[ "$gout" = *M*   ]] && col="2"
+		[[ "$gout" = *M\ * ]] && col="2"
 		# modified, staged & unstaged
 		[[ "$gout" = *MM*  ]] && col="3"
 	}
