@@ -27,6 +27,8 @@ xrdb "${XDG_CONFIG_HOME:-~/.config}/Xresources"
 unclutter -idle 15     &
 start-pulseaudio-x11   &
 
+hw 0
+
 #
 #   And finally, start the window manager
 #
