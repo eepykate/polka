@@ -1,20 +1,21 @@
 #
 #   dirs
 #
-d   h          ~/
-d   dots       ~/opt/dots/
-d   gi         ~/opt/git/
-d   sp         ~/usr/startpage/
-d   oth        ~/opt/linux/oth/
-d   gst        ~/opt/git/st/
-d   blz        ~/opt/git/blaze/
-d   ri         ~/opt/git/ricing/
-d   sn         ~/opt/git/shnippets/
-d   wp         ~/opt/git/Wallpapers/
-d   recs       ~/opt/x/recs/
-d   pics       ~/opt/x/pics/
-d   fchr       ~/etc/.mozilla/firefox/main/chrome/
+d   h          ~
+d   dots       ~/opt/dots
+d   gi         ~/opt/git
+d   sp         ~/usr/startpage
+d   oth        ~/opt/linux/oth
+d   gst        ~/opt/git/st
+d   blz        ~/opt/git/blaze
+d   ri         ~/opt/git/ricing
+d   sn         ~/opt/git/shnippets
+d   wp         ~/opt/git/Wallpapers
+d   recs       ~/opt/x/recs
+d   pics       ~/opt/x/pics
+d   fchr       ~/etc/.mozilla/firefox/main/chrome
 d   up         ~/opt/unixporn
+d   z          ~/etc/zsh
 
 #
 #   files
