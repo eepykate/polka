@@ -72,22 +72,21 @@ setopt prompt_subst
 prompt() {
 	unset col char
 	git rev-parse --git-dir &>/dev/null && {
-		gout="$(git status --porcelain)"
+		gout="$(git status --porcelain | cut -d' ' -f 1)"
 		# default git char
 		char='!';
-		case "$gout" in
-			# modified, staged & unstaged
-			*MM\ *) col='3';;
-			# modified, unstaged
-			*\ M\ *) col='1';;
-			# modified, staged
-			*M\ *) col='2';;
-			# new file
-			*??\ *) char='?';;
-		esac
+		# new file
+		[[ "$gout" = *\?\?*  ]] && char="?"
+		[[ "$gout" = *A*   ]] && char="?"
+		# modified, unstaged
+		[[ "$gout" = *\ M* ]] && col="1"
+		# modified, staged
+		[[ "$gout" = *M*   ]] && col="2"
+		# modified, staged & unstaged
+		[[ "$gout" = *MM*  ]] && col="3"
 	}
 	echo "%(?.%F{${col:-16}}.%F{17})%(!.#.${char:-|}) %f"
 }
 PROMPT=$'$(prompt)'
 
-# vim: ft=sh
+# vim: ft=bash
