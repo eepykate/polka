@@ -1,6 +1,6 @@
 #!/bin/sh
 
-xd() { xdotool search --classname "dropdown" $@; }
+xd() { xdotool search --classname "dropdown" "$@"; }
 
 [ -f /tmp/tabbed-status ] || touch /tmp/tabbed-status
 status="$(cat /tmp/tabbed-status)"
