@@ -71,7 +71,7 @@ command_not_found_handler() {
 setopt prompt_subst
 prompt() {
 	unset col char
-	[ -d .git ] && {
+	git rev-parse --git-dir &>/dev/null && {
 		gout="$(git status --porcelain)"
 		# default git char
 		char='!';
