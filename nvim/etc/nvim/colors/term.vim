@@ -100,13 +100,12 @@ hi cssAttributeSelector   ctermfg=3
 
 
 " sh
-hi shFunction     ctermfg=4
 hi shConditional  ctermfg=4
 hi shDerefSimple  ctermfg=17
 hi shVariable     ctermfg=15
 hi shStatement    ctermfg=15
 hi shQuote        ctermfg=16
-hi shFunction     ctermfg=4
+hi shFunction     ctermfg=16
 
 
 " md
