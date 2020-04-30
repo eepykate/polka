@@ -1,4 +1,24 @@
 #!/bin/sh
+#
+##
+##  The most inefficient/bloated screenshot script you will ever see!
+##
+#
+# deps:
+#  - crud     selecting area
+#  - maim     taking selection scrots
+#  - ffmpeg   taking fullscreen screenshots
+#  - feh      freezing screen
+#  - kill     closing the fake freeze
+#  - wmutils  getting combined screen size
+#  - mmutils  getting dimensions of focused monitor
+#  - xclip    copying image
+#
+# the reason for ffmpeg + maim is because ffmpeg is
+#  faster at taking fullscreen screenshots, and
+#  maim is faster at smaller screenshots.
+#
+
 n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
 mkdir -p "${n%/*}"
 
@@ -16,9 +36,11 @@ case $1 in
 		feh -g "${mw%?}2+0+-1" --class feh-nb /tmp/scr.png &
 		pid=$!
 
-		w="$(sel '${W}x$H+$X,$Y')" &&
+		w="$(sel '${W}x$H+$X+$Y')" &&
 		n="${n%%.*}-${w%%+*}.png" &&
-		ff "$w" "$n" 0; kill $pid
+		maim -u -g "$w" "$n"
+		# ff "$w" "$n" 0
+		kill $pid
 	;;
 	# screenshot current monitor
 	*)
