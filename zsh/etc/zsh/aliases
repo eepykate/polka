@@ -29,6 +29,8 @@ alias gl="git log --all --decorate --oneline --graph"
 # pacman/yay
 
 alias p="sudo pacman"
+alias i="sudo pacman -S"
+alias r="sudo pacman -Rs"
 alias src="sudo pacman -Ss"
 alias ins="sudo pacman -S"
 alias rem="sudo pacman -Rs"
@@ -83,7 +85,7 @@ vb() {
 d() {
 	case "$(file -ib "$1") $1" in
 		*video*|*gif*) mpv "$1";;
-		*image*)         i "$1";;
+		*image*)        im "$1";;
 		*audio*)    paplay "$1";;
 		*gzip*)     tar -t "$1";;
 		*html*)    firefox "$1";;
