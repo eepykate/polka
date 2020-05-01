@@ -17,8 +17,8 @@ export EDITOR="nvim"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0"
 export FZF_DEFAULT_OPTS="--height='50%' --layout='reverse-list' --color='16'"
 
-# Custom ls colours
-eval "$(dircolors ${XDG_CONFIG_HOME:-~/.config}/zsh/dircolors)"
+# colours lol
+export LS_COLORS="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31:*.css=32:*.tar=31:*.gz=31:*.xz=31:*.zip=31:*.mp4=34:*.webm=34:*.png=36:"
 
 # make binaries in ~/bin/* be runnable without ./
 export PATH="$(find ~/bin/ -type d | sed 's|/$||'| tr '\n' ':')$PATH"
