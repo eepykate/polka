@@ -69,24 +69,6 @@ command_not_found_handler() {
 
 # fancy prompt
 setopt prompt_subst
-prompt() {
-	unset col char
-	git rev-parse --git-dir &>/dev/null && {
-		gout="$(git status --porcelain | cut -d' ' -f 1,2)"
-		# default git char
-		char='!';
-		# new file
-		[[ "$gout" = *\?\?* ]] && char="?"
-		[[ "$gout" = *A* ]]    && char="?"
-		# modified, unstaged
-		[[ "$gout" = *\ M* ]] && col="1"
-		# modified, staged
-		[[ "$gout" = *M\ * ]] && col="3"
-		# modified, staged & unstaged
-		[[ "$gout" = *MM*  ]] && col="2"
-	}
-	echo "%(?.%F{${col:-16}}.%F{17})%(!.#.${char:-|}) %f"
-}
-PROMPT=$'$(prompt)'
+PROMPT=$'%(?.%F{16}.%F{17})%(!.#.|) %f'
 
 # vim: ft=bash
