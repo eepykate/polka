@@ -1,0 +1,8 @@
+[credential]
+	helper = store
+[color "status"]
+	added = 3
+[color "diff"]
+	new = 3
+	meta = 7
+	frag = 4
