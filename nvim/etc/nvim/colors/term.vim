@@ -10,7 +10,7 @@ hi StatusLine   ctermfg=15
 
 " selected line/column
 hi StatusLineNC ctermfg=15
-hi CursorLineNr ctermfg=16
+hi CursorLineNr ctermfg=7
 hi CursorLine   cterm=NONE
 
 " autocomplete
@@ -47,7 +47,7 @@ hi AleError       ctermfg=1  cterm=underline
 " general lang syntax
 hi Comment      ctermfg=8
 hi Constant     ctermfg=3
-hi String       ctermfg=16
+hi String       ctermfg=7
 hi Character    ctermfg=1
 hi Number       ctermfg=NONE
 hi Boolean      ctermfg=12
@@ -57,7 +57,7 @@ hi Function     ctermfg=3
 hi Conditional  ctermfg=2
 hi Repeat       ctermfg=1
 hi Label        ctermfg=4
-hi Operator     ctermfg=17
+hi Operator     ctermfg=16
 hi Keyword      ctermfg=1
 hi Exception    ctermfg=1
 hi Include      ctermfg=2
@@ -66,7 +66,7 @@ hi Macro        ctermfg=1
 hi PreCondit    ctermfg=1
 hi Type         ctermfg=NONE
 hi StorageClass ctermfg=15
-hi PreProc      ctermfg=16
+hi PreProc      ctermfg=7
 hi Structure    ctermfg=5
 hi Special      ctermfg=15
 hi SpecialChar  ctermfg=5
@@ -75,7 +75,7 @@ hi Ignore       ctermfg=1
 hi Error        ctermfg=1     cterm=bold
 hi Todo         ctermfg=3     cterm=bold
 hi Statement    ctermfg=NONE  cterm=bold
-hi Delimiter    ctermfg=16
+hi Delimiter    ctermfg=7
 hi Title        ctermfg=4
 
 "
@@ -106,12 +106,12 @@ hi cssAttributeSelector   ctermfg=3
 
 
 " sh
-hi shConditional  ctermfg=16
-hi shDerefSimple  ctermfg=17
+hi shConditional  ctermfg=7
+hi shDerefSimple  ctermfg=16
 hi shVariable     ctermfg=15
 hi shStatement    ctermfg=15
-hi shQuote        ctermfg=16
-hi shFunction     ctermfg=16
+hi shQuote        ctermfg=7
+hi shFunction     ctermfg=7
 
 
 " md
@@ -124,4 +124,4 @@ hi markdownCodeDelimiter  ctermfg=5
 
 
 " vimscript
-hi vimNotation    ctermfg=16
+hi vimNotation    ctermfg=7
