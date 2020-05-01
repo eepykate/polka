@@ -1,22 +1,16 @@
 #!/bin/sh
 #
 ##
-##  The most inefficient/bloated screenshot script you will ever see!
+##   Shitty sCreenshot scRipt
 ##
 #
 # deps:
 #  - crud     selecting area
-#  - maim     taking selection scrots
-#  - ffmpeg   taking fullscreen screenshots
+#  - shotgun  screenshotting
 #  - feh      freezing screen
-#  - kill     closing the fake freeze
 #  - wmutils  getting combined screen size
 #  - mmutils  getting dimensions of focused monitor
 #  - xclip    copying image
-#
-# the reason for ffmpeg + maim is because ffmpeg is
-#  faster at taking fullscreen screenshots, and
-#  maim is faster at smaller screenshots.
 #
 
 n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
@@ -28,23 +22,24 @@ ff() {
 }
 
 case $1 in
-	# freeze & screenshot selection
-	# don't worry, you're not meant to be able to read this :^)
 	-s)
-		mw="$(wattr wh "$(lsw -r)" | tr \  x)"
-		ff "$mw+0,0" /tmp/scr.png 1
+		# get combined size of all screens (ex output: 3360x1080)
+		mw="$(wattr wh "$(lsw -r)" | tr ' ' x)"
+		# screenshot fullscreen
+		shotgun -g "$mw" /tmp/scr.png
+		# open that screenshot in feh to simulate a freeze
 		feh -g "${mw%?}2+0+-1" --class feh-nb /tmp/scr.png &
 		pid=$!
 
 		w="$(sel)" &&
 		n="${n%%.*}-${w%%+*}.png" &&
-		maim -u -g "$w" "$n"
+		shotgun -g "$w" "$n"
 		# ff "$w" "$n" 0
 		kill $pid
 	;;
 	# screenshot current monitor
 	*)
-		ff "$(mattr -g "$(pfm)")" "$n" 0
+		shotgun -g "$(mattr -g "$(pfm)")" "$n"
 	;;
 esac
 

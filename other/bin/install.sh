@@ -91,7 +91,7 @@ pkgs="alsa-tools alsa-utils alsa-tools pulseaudio pulseaudio-alsa pulsemixer pav
 
 # X.org
 # basic tools
-pkgs="$pkgs bspwm sxhkd dunst maim mpv rofi xclip xdo xdotool xf86-input-synaptics xfsprogs xorg-server xorg-xgamma xorg-xinit xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot"
+pkgs="$pkgs bspwm sxhkd dunst shotgun mpv rofi xclip xdo xdotool xf86-input-synaptics xfsprogs xorg-server xorg-xgamma xorg-xinit xorg-xkill xorg-xprop xorg-xrandr xorg-xsetroot"
 # other
 pkgs="$pkgs feh firefox-developer-edition gcolor3 gnome-themes-extra unclutter"
 
