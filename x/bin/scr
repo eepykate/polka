@@ -36,7 +36,7 @@ case $1 in
 		feh -g "${mw%?}2+0+-1" --class feh-nb /tmp/scr.png &
 		pid=$!
 
-		w="$(sel '${W}x$H+$X+$Y')" &&
+		w="$(sel)" &&
 		n="${n%%.*}-${w%%+*}.png" &&
 		maim -u -g "$w" "$n"
 		# ff "$w" "$n" 0
