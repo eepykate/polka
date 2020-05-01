@@ -22,7 +22,7 @@ hi WildMenu     ctermbg=NONE   ctermfg=4      cterm=NONE
 
 " search
 hi Search       ctermfg=6    ctermbg=NONE  cterm=underline
-hi MatchParen   ctermfg=2    ctermbg=NONE  cterm=underline
+hi MatchParen   ctermfg=3    ctermbg=NONE  cterm=underline
 
 " other
 hi Visual       ctermbg=8      ctermfg=15
@@ -32,11 +32,17 @@ hi SignColumn   ctermbg=NONE
 hi WarningMsg   ctermbg=NONE   ctermfg=11     cterm=NONE
 hi SpellBad     ctermfg=1      ctermbg=NONE   cterm=underline
 hi SpellCap     ctermfg=2      ctermbg=NONE   cterm=underline
-hi SpellRare    ctermfg=3      ctermbg=NONE   cterm=underline
+hi SpellRare    ctermfg=2      ctermbg=NONE   cterm=underline
 hi SpellLocal   ctermfg=10     ctermbg=NONE   cterm=underline
 hi ErrorMsg     ctermfg=1      ctermbg=NONE
 hi error        ctermfg=1      ctermbg=NONE
-hi todo         ctermfg=3      ctermbg=NONE
+hi todo         ctermfg=2      ctermbg=NONE
+
+" ale
+hi ALEWarningSign ctermfg=2
+hi ALEWarning     ctermfg=2  cterm=underline
+hi AleErrorSign   ctermfg=1
+hi AleError       ctermfg=1  cterm=underline
 
 " general lang syntax
 hi Comment      ctermfg=8

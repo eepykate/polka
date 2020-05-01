@@ -81,9 +81,9 @@ prompt() {
 		# modified, unstaged
 		[[ "$gout" = *\ M* ]] && col="1"
 		# modified, staged
-		[[ "$gout" = *M\ * ]] && col="2"
+		[[ "$gout" = *M\ * ]] && col="3"
 		# modified, staged & unstaged
-		[[ "$gout" = *MM*  ]] && col="3"
+		[[ "$gout" = *MM*  ]] && col="2"
 	}
 	echo "%(?.%F{${col:-16}}.%F{17})%(!.#.${char:-|}) %f"
 }

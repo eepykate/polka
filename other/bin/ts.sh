@@ -59,20 +59,20 @@ cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
 *.color1:       #$red
 *.color9:       #$red
 
-*.color2:       #$green
-*.color10:      #$green
+*.color2:       #$yellow
+*.color10:      #$yellow
 
-*.color3:       #$yellow
-*.color11:      #$yellow
+*.color3:       #$green
+*.color11:      #$green
 
-*.color4:       #$blue
-*.color12:      #$blue
+*.color4:       #$cyan
+*.color12:      #$cyan
 
-*.color5:       #$purple
-*.color13:      #$purple
+*.color5:       #$blue
+*.color13:      #$blue
 
-*.color6:       #$cyan
-*.color14:      #$cyan
+*.color6:       #$purple
+*.color14:      #$purple
 
 *.color7:       #$fg2
 *.color15:      #$fg1
@@ -123,6 +123,8 @@ sed --follow-symlinks -i \
 	-e "$(( ${dunst_low} + 2 ))s/frame_color.*/frame_color         = \"#$fg1\"/" \
 	\
 	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+
+wm -r
 
 echo " - rofi"
 # Change the theme in rofi
@@ -177,7 +179,6 @@ $wallthing" > ~/bin/x/pap
 # Manually change gtk theme
 #sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
 #sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
-
 
 echo -e "\nSending a notification"
 notify-send "Theme changed to $theme"
