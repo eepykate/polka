@@ -69,6 +69,6 @@ command_not_found_handler() {
 
 # fancy prompt
 setopt prompt_subst
-PROMPT=$'%(?.%F{7}.%F{8})%(!.#.|) %f'
+PROMPT=$'%(?.%F{16}.%F{17})%(!.#.|) %f'
 
 # vim: ft=bash

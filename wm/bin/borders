@@ -4,8 +4,8 @@
 #
 
 outer='0x0D0D0F'   # outer
-inner1='0xa6a9b7'  # focused
-inner2='0x484e5b'  # normal
+inner1='0x7baae8'  # focused
+inner2='0xa6a9b7'  # normal
 
 draw() { chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null; }
 

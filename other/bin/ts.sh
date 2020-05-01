@@ -94,8 +94,8 @@ rc
 echo " - 👀"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
-	-e "s/inner1=.*/inner1='0x$fg2'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
+	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
+	-e "s/inner2=.*/inner2='0x$fg2'  # normal/"      \
 	~/bin/wm/borders
 
 echo " - dunst"
@@ -109,18 +109,18 @@ dunst_low="$(( $(awk '/urgency_low/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/du
 sed --follow-symlinks -i \
 	-e "s/background.*/background          = \"#$bg1\"/" \
 	-e "s/foreground.*/foreground          = \"#$fg1\"/"  \
-	-e "s/frame_color.*/frame_color         = \"#$fg2\"/" \
+	-e "s/frame_color.*/frame_color         = \"#$accent\"/" \
 	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
 sed --follow-symlinks -i \
 	\
 	-e "${dunst_urgent}s/background.*/background          = \"#$bg1\"/" \
 	-e "$(( ${dunst_urgent} + 1 ))s/foreground.*/foreground          = \"#$fg1\"/" \
-	-e "$(( ${dunst_urgent} + 2 ))s/frame_color.*/frame_color         = \"#$fg1\"/" \
+	-e "$(( ${dunst_urgent} + 2 ))s/frame_color.*/frame_color         = \"#$accent2\"/" \
 	\
 	-e "${dunst_low}s/background.*/background          = \"#$bg1\"/" \
 	-e "$(( ${dunst_low} + 1 ))s/foreground.*/foreground          = \"#$fg1\"/" \
-	-e "$(( ${dunst_low} + 2 ))s/frame_color.*/frame_color         = \"#$black\"/" \
+	-e "$(( ${dunst_low} + 2 ))s/frame_color.*/frame_color         = \"#$fg1\"/" \
 	\
 	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
 
