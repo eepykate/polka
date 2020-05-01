@@ -2,6 +2,9 @@
 super + Return
 	st
 
+super + g
+	sddg
+
 super + slash
 	ros ~/opt/scs
 
