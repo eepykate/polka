@@ -2,12 +2,15 @@
 #
 #   Move a file to trash
 #
-# (has GNUisms)
+# (needs GNU mv)
 
 td="$HOME/opt/trash"
 
-case " $* " in
-	*\ -[fr]*\ *) rm -rf "$@"; exit;;
-esac
+for o in "$@"; do
+	case "$o" in
+		--) break;;
+		-[fr]*) rm -rf "$@"; exit;;
+	esac
+done
 
 mv --backup=t "$@" "$td"
