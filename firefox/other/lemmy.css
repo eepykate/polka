@@ -1,0 +1,159 @@
+p, span {
+	font-family: "Roboto Condensed" !important;
+}
+
+
+
+.mx-2 {
+	display: block !important;
+	position: absolute;
+	left: 25px;
+}
+.comments * .mb-1.mt-1 {
+	margin-left: 40px;
+}
+
+/* colours */
+/* dropdowns */
+.custom-select {
+	background-color: var(--bg3) !important;
+	color: var(--fg1) !important;
+	border: none !important;
+	box-shadow: none !important;
+}
+/* logo */
+.navbar-brand {
+	color: var(--fg1) !important;
+}
+.nav-link {
+	color: var(--fg2) !important;
+}
+
+.mb-0 span {
+	color: var(--fg1) !important;
+}
+
+
+.btn-secondary,
+.btn.active {
+	background-color: var(--bg3) !important;
+	color: var(--fg1) !important;
+}
+.btn.false {
+	background: var(--bg4) !important;
+	color: var(--fg2) !important;
+}
+.btn {
+	border: none;
+}
+.btn:focus {
+	box-shadow: none !important;
+}
+
+/* sidebar buttons */
+.card * .btn {
+	background-color: var(--bg1) !important;
+	color: var(--fg1) !important;
+}
+
+body { background: var(--bg1) !important; }
+
+.mt-4 {
+	padding-top: 30px !important;;
+}
+p { color: var(--fg1) !important; }
+li {
+	color: var(--fg1);
+}
+
+/* usernames */
+.mr-2 + span,
+.mr-2 span {
+	color: var(--fg1) !important;
+}
+
+/* next to usernames */
+.text-muted {
+	color: var(--fg2) !important;
+}
+/* user badges */
+.badge {
+	color: var(--fg1) !important;
+	background-color: var(--bg4) !important;
+}
+
+.icon {
+	color: var(--fg2)
+}
+
+/* comment box */
+textarea {
+	background: var(--bg2) !important;
+	color: var(--fg1) !important;
+	border: 2px solid transparent !important;
+	box-shadow: none !important;
+}
+textarea.form-control:hover,
+textarea.form-control:focus {
+	border-color: var(--accent) !important;
+}
+
+
+/* sidebar */
+.card {
+	background-color: var(--bg3) !important;
+	border: none
+}
+
+
+
+
+.post-title * a {
+	color: var(--fg1) !important
+}
+
+.post-title * a:visited {
+	color: var(--fg2) !important
+}
+.upvote:hover,
+.text-info,
+.text-info svg {
+	color: var(--accent) !important;
+}
+.downvote:hover,
+.text-danger,
+.text-danger svg {
+	color: var(--accent2) !important;
+}
+
+
+/* links */
+a {
+	color: var(--accent) !important;
+}
+.md-div * a:visited {
+	color: var(--accent2) !important;
+}
+
+
+
+/* code */
+code {
+	font-family: "Fira Mono" !important;
+	font-weight: bold !important;
+	color: var(--fg2) !important;
+	background-color: var(--bg3);
+	padding: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
