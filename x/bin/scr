@@ -16,11 +16,6 @@
 n="$HOME/opt/x/pics/$(date +%F_%H-%M-%S).png"
 mkdir -p "${n%/*}"
 
-ff() {
-	ffmpeg -y -loglevel error -f x11grab -draw_mouse "$3" \
-		-video_size "${1%%+*}" -i ":0.0+${1#*+}" -vframes 1 "$2"
-}
-
 case $1 in
 	-s)
 		# get combined size of all screens (ex output: 3360x1080)
@@ -34,8 +29,10 @@ case $1 in
 		w="$(sel)" &&
 		n="${n%%.*}-${w%%+*}.png" &&
 		shotgun -g "$w" "$n"
-		# ff "$w" "$n" 0
 		kill $pid
+	;;
+	-f)
+		shotgun -i "$(pfw)" "$n"
 	;;
 	# screenshot current monitor
 	*)
