@@ -3,6 +3,8 @@
 # output focused / unfocused windows
 
 case $1 in
-    focused) bspc query -N -n .local.focused.\!fullscreen;;
-    normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	focused) bspc query -N -n .local.focused.\!fullscreen;;
+	normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	         bspc query -N -n .active.\!focused.\!fullscreen
+
 esac
