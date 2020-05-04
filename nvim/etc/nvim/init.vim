@@ -21,7 +21,6 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 
 " copy, cut & paste
 vmap <C-c> "+ya
-imap <C-c> "+ya
 vmap <C-x> "+c
 vmap <C-v> <ESC>"+pa
 imap <C-v> <ESC>"+pa
