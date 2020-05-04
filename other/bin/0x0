@@ -1,6 +1,5 @@
 #!/bin/sh
 [ -f "$1" ] && op="cat"
 var="$(${op:-echo} "${@:-$(cat -)}" | curl -F file='@-' 'http://0x0.st')"
-echo "$var" | grep -q png && var="https://0x0.arikawa-hi.me/${var##*/}"
 echo "$var"
 printf "%s" "$var" | xclip -sel clip
