@@ -1,5 +1,3 @@
 #!/bin/sh
 [ -f "$1" ] && op="cat"
-var="$(${op:-echo} "${@:-$(cat -)}" | curl -sF file='@-' 'http://0x0.st')"
-echo "$var"
-printf "%s" "$var" | xclip -sel clip
+${op:-echo} "${@:-$(cat -)}" | curl -sF file='@-' 'http://0x0.st' | tee /dev/stderr | xclip -sel clip
