@@ -14,9 +14,7 @@ super + {_,ctrl,shift} + {a,s,w,d}
 	{focus,move,resize} {west,south,north,east}
 
 shift + alt + {d,a}
-	dir={next,prev}       ; \
-	bspc node -d    "$dir"; \
-	bspc desktop -f "$dir"; \
+	bspc node -d "{next,prev}" --follow; \
 	nottop a $(bspc query -D -d focused --names)
 
 ctrl + alt + {d,a}
