@@ -6,7 +6,7 @@
 
 td="$HOME/opt/trash"
 
-for o in "$@"; do
+for o; do
 	case "$o" in
 		--) break;;
 		-[fr]*) rm -rf "$@"; exit;;
