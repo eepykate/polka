@@ -32,14 +32,14 @@ bindkey '^[[B' down-line-or-beginning-search
 #
 #   Autocompletion
 #
-setopt NO_NOMATCH        # disable globbing
-setopt complete_in_word
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu select
-zstyle ':completion:*' special-dirs true
-zstyle ':completion:*' matcher-list \
-	'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-autoload -U compinit && compinit -u
+#setopt NO_NOMATCH        # disable globbing
+#setopt complete_in_word
+#zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+#zstyle ':completion:*' menu select
+#zstyle ':completion:*' special-dirs true
+#zstyle ':completion:*' matcher-list \
+#	'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+#autoload -U compinit && compinit -u
 
 #
 #   Miscellaneous
@@ -49,26 +49,18 @@ setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 . "$ZDOTDIR/aliases"       # Aliases
 
-# custom keybinds
-:> "$XDG_CACHE_HOME/zshbinds"
-bind() {
-	echo "$3() { echo; $2; zle redisplay; }" >> "$XDG_CACHE_HOME/zshbinds"
-	echo "zle -N $3; bindkey $1 $3" >> "$XDG_CACHE_HOME/zshbinds"
-	unset temp
-	. "$XDG_CACHE_HOME/zshbinds"
-}
+kgs() { echo; clear; gs; zle redisplay; }
+zle -N kgs; bindkey ^j kgs
 
-bind ^k "clear; ls" kls
-bind ^j "clear; gs" kgs
+kls() { echo; clear; ls; zle redisplay; }
+zle -N kls; bindkey ^k kls
 
-
+# fancy prompts
 command_not_found_handler() {
-	echo "Attempt to run bad software detected: '$0' (command not found)"
+	echo -e "\e[37mnot found:\e[0m $0"
 	return 1
 }
-
-# fancy prompt
-setopt prompt_subst
+export SUDO_PROMPT=$'\e[37mpass for \e[0m%u '
 PROMPT=$'%(?.%F{16}.%F{8})%(!.#.|) %f'
 
 # vim: ft=bash
