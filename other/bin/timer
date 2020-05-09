@@ -18,17 +18,7 @@ case "$1" in
 esac
 
 {
-	while [ "$seconds" -gt 0 ]; do
-		{
-			secl="$(date -d"0+$seconds sec" +%H:%M:%S)"
-			printf "\r  %s" "$secl"
-			echo "$secl" > "/tmp/timer-$$"
-		} &
-		seconds="$(( seconds - 1 ))"
-		sleep 1
-	done
-	printf "\r%s\n" "Timer Finished"
-	rm "/tmp/timer-$$"
+	sleep "$seconds"
 
 	paplay "$sound" 2>/dev/null &
 	notify-send -u critical "Timer finished" "$2"
