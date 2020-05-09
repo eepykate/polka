@@ -26,7 +26,7 @@
 :root {
 	--font              : Fira Mono;
 	--font-size         : 12px;
-	--font-weight       : medium;
+	--font-weight       : bold;
 	--icon-size         : 16px        !important;
 	--button-size       : 14px        !important;
 	--tab-min-height    : 40px        !important;
@@ -561,7 +561,6 @@ browser[type=content] > html {
 .tabbrowser-tab[fadein]:not([pinned]) { max-width: 90% !important; }
 
 /* add padding to urlbar results */
-.urlbarView { margin: 0px 10% !important; }
 .urlbarView-row { height: 35px !important; }
 .urlbarView-body-inner { border: none !important; }
 .urlbarView-row-inner { margin-top: 3px !important; }
