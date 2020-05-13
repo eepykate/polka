@@ -67,7 +67,7 @@ deps() {
 	[ "$missing" ] && {
 		print "package '$i' is missing the deps:"
 		print "$(for l in $missing; do print " - \033[34m$l\033[0m"; done)"
-		ins $missing
+		insa $missing
 	}
 }
 
