@@ -305,6 +305,7 @@ pre,
     --interactive-muted: var(--fg2);
     --background-primary: var(--bg);
     --background-secondary: var(--bg3);
+	--background-secondary-alt: var(--bg3);
     --background-tertiary: var(--bg1);
     --background-accent: var(--accent);
     --background-floating: var(--bg1);
@@ -469,18 +470,13 @@ Thanks _diamondburned_#4507 */
 .content-yTz4x3 {
 	margin-left: 0 !important;
 }
-
-@media only screen and (max-width: 1200px) {
-	.wrapper-2aW0bm {
-		margin-right: 100px !important;
-	}
-}
-
 .modeMuted-3osy7j {
 	opacity: 0.5 !important;
 }
 .message-2qnXI6 {
 	width: calc(100% - 78px) !important;
 }
-
+.message-2qnXI6 {
+	padding-right: 0px !important;
+}
 
