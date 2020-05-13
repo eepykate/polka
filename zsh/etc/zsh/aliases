@@ -79,7 +79,7 @@ vb() {
 
 d() {
 	case "$(file -ib "$1") $1" in
-		*video*|*gif*) mpv "$1";;
+		*video*|*gif*) mpv "$1" & disown;;
 		*image*)        im "$1";;
 		*audio*)    paplay "$1";;
 		*gzip*)     tar -t "$1";;
