@@ -14,12 +14,14 @@
 	--accent:   #7baae8;
 	--accent2:  #c488ec;
 	--contrast: #ffffff;
-	--red:      #e56f92;
 	/*  ----  */
 
-	--blue:        #02a4fc;
-	--green:    #8cd7aa;
-	--yellow:      #f0d35c;
+	--red:         #e56f92;
+	--purple:      #c488ec;
+	--blue:        #79aaeb;
+	--cyan:        #7acfe4;
+	--green:       #8cd7aa;
+	--yellow:      #e9967e;
 	--border1:     #223344;
 	--border2:     #334455;
 	-moz-tab-size: 2;
