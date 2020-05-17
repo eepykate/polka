@@ -7,7 +7,7 @@ outer='0x0D0D0F'   # outer
 inner1='0x7baae8'  # focused
 inner2='0x484e5b'  # normal
 
-draw() { chwb2 -I "$i" -O "$o" -i "2" -o "8" $@ 2> /dev/null; }
+draw() { chwb2 -I "$i" -O "$o" -i "2" -o "14" $@ 2> /dev/null; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
