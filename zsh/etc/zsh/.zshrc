@@ -32,7 +32,7 @@ bindkey '^[[B' down-line-or-beginning-search
 #
 #   Autocompletion
 #
-#setopt NO_NOMATCH        # disable globbing
+setopt NO_NOMATCH        # disable globbing
 #setopt complete_in_word
 #zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 #zstyle ':completion:*' menu select
