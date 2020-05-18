@@ -27,6 +27,8 @@ case $1 in
 		pid=$!
 
 		w="$(sel)" &&
+		# shotgun is a little too fast and crud's selection is visible
+		sleep 0.05 &&
 		n="${n%%.*}-${w%%+*}.png" &&
 		shotgun -g "$w" "$n"
 		kill $pid
