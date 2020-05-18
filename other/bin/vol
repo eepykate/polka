@@ -3,23 +3,10 @@
 # amixer/playerctl wrapper script for volume/media
 #
 # source:
-#   https://github.com/GaugeK/dots
+#   https://github.com/GaugeK
 #
-#
-
-
-# shellcheck stuff
-
-
-# "'a && b || c' is not if"
-#   Is it even possible for var=content to fail?
-#   If it is, I don't care enough
-#     shellcheck disable=SC2015
-#
-# "double quote variables"
-#   I want $2 in functions to be empty if
-#   the user hasn't supplied it.
-#     shellcheck disable=SC2086
+# shellcheck disable=SC2015
+# shellcheck disable=SC2086
 
 # use gdbus to replace notifications
 # notify <id of notif> <header> <body>
@@ -28,46 +15,44 @@ notify() {
 	gdbus call -e -d "org.freedesktop.Notifications" \
 		-o /org/freedesktop/Notifications \
 		-m org.freedesktop.Notifications.Notify "" \
-		$1 "" "$2" "$3" "[]" "{}" 5000 >/dev/null
+		"$1" "" "$2" "$3" "[]" "{}" 5000 >/dev/null
 }
 
 mute() {
 	# if a command isn't specified toggle mute
 	if [ -z "$1" ]; then
-		[ "$(amixer get Master | grep -io "\[on\|\[off" | head -1)" = "[on" ] &&
-			action="mute" || action="unmute"
+		amixer get Master | grep -qio "off" &&
+			action="unmute" || action="mute"
 	else
 		action="$1"
 	fi
 
-	amixer set Master "${action}" >/dev/null
+	amixer set Master "$action" >/dev/null
 	notif="Volume ${action}d"
 }
 
 mute_window() {
 	# sorry this is so messy lol
-	pulsemixer --id "$(pulsemixer --list-sinks | \
-		grep -i $(ps -p $(xdotool getactivewindow getwindowpid) -o comm=) | \
-		grep -io 'sink-input-[0-9]*' | tail -1)" --toggle-mute
+	pulsemixer --id "$(pulsemixer --list-sinks \
+		| grep -i "$(ps -p "$(xdotool getactivewindow getwindowpid)" -o comm=)" \
+		| grep -io 'sink-input-[0-9]*' | tail -1)" --toggle-mute
 }
 
 volume() {
 	# get the current volume
-	current="$(amixer get Master | grep -io "[0-9][0-9]*%" | \
-		head -1 | tr -d '%')"
+	current="$(amixer get Master | grep -io "[0-9][0-9]*%" \
+		| head -1 | tr -d '%')"
 
-	# if $2 isn't provided set it to 5 (Default up/down percent)
-	[ -n "$2" ] &&
-		number="$2" ||
-		{ [ "$1" != set ] && number="5"; }
+	# default modifier (5%)
+	[ "$2" ] && number="$2" || number="5"
 
-	# get the new volume to set by adding/subtracting the chosen
-	# number from the current volume
-	if [ "$1" = up ]; then
-		number="$((current + number))"
-	elif [ "$1" = down ]; then
-		number="$((current - number))"
-	fi
+	# calculate the new volume
+	[ "$1" =  up  ] && number="$((current + number))"
+	[ "$1" = down ] && number="$((current - number))"
+
+	# handling of invalid numbers
+	[ "$number" -lt  '0'  ] && number="0"
+	[ "$number" -gt '100' ] && number="100"
 
 	amixer set Master "$number%" >/dev/null
 
@@ -78,23 +63,16 @@ media() {
 	# force playerctl to use <x> player
 	# format:
 	# player="<x>"
-	# where <x> is the name of the player (ex: cmus)
-	# (location is /tmp/player, it will get removed every reboot)
 	[ -f /tmp/player ] || touch /tmp/player
 	. /tmp/player
 
 	action="$1"
 
-	# if $1 is p, toggle play/pause
-	if [ "$1" = p ]; then
-		status="$(playerctl -p "$player" status)"
-		{ [ "$status" = Stopped ] || [ "$status" = Paused ]; } &&
-			{ action="play"; action1="Resumed"; } ||
-			{ action="pause"; action1="Paused"; }
-	fi
+	# toggle play/pause
+	[ "$1" = p ] && action="play-pause" && act="toggled pause on"
 
 	playerctl -p "$player" "$action"
-	notif="$action1 $(playerctl -p "$player" metadata xesam:title)"
+	notif="$act $(playerctl -p "$player" metadata xesam:title)"
 }
 
 case $1 in
@@ -106,10 +84,35 @@ case $1 in
 	mw) mute_window;;
 
 	# volume
-	set|up|down) volume $1 $2;;
+	set)
+		[ "$2" ] || { echo "option set requires a number"; exit 1; }
+		volume set "$2"
+	;;
+	up|down) volume $1 $2;;
 
 	# media
 	p|pause|play|stop) media $1;;
+
+	*)
+		cat << EOF
+muting
+ mw      toggle mute on window
+ m       toggle mute
+ mute
+ unmute
+
+volume
+ set     set volume to <number>
+ up      increase volume by number (default: 5)
+ down    decrease volume by number (default: 5)
+
+media
+ p       toggle pause
+ pause
+ play
+ stop
+EOF
+		exit 1
 esac
 
-notify 69 "$notif"
+notify 70 "$notif"
