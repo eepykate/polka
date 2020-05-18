@@ -46,13 +46,13 @@ hi AleError       ctermfg=1  cterm=underline
 
 " general lang syntax
 hi Comment      ctermfg=8
-hi Constant     ctermfg=3
+hi Constant     ctermfg=15
 hi String       ctermfg=7
 hi Character    ctermfg=1
 hi Number       ctermfg=NONE
 hi Boolean      ctermfg=12
 hi Float        ctermfg=4
-hi Identifier   ctermfg=4
+hi Identifier   ctermfg=7
 hi Function     ctermfg=3
 hi Conditional  ctermfg=2
 hi Repeat       ctermfg=1
@@ -66,7 +66,7 @@ hi Macro        ctermfg=1
 hi PreCondit    ctermfg=1
 hi Type         ctermfg=NONE
 hi StorageClass ctermfg=15
-hi PreProc      ctermfg=7
+hi PreProc      ctermfg=16
 hi Structure    ctermfg=5
 hi Special      ctermfg=15
 hi SpecialChar  ctermfg=5
