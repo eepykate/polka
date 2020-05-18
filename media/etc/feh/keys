@@ -1,0 +1,4 @@
+# unbind `o`
+toggle_pointer
+# bind `o` to zoom to 100%
+zoom_default o
