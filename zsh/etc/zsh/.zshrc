@@ -33,13 +33,13 @@ bindkey '^[[B' down-line-or-beginning-search
 #   Autocompletion
 #
 setopt NO_NOMATCH        # disable globbing
-#setopt complete_in_word
-#zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-#zstyle ':completion:*' menu select
-#zstyle ':completion:*' special-dirs true
-#zstyle ':completion:*' matcher-list \
-#	'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-#autoload -U compinit && compinit -u
+setopt complete_in_word
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu select
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' matcher-list \
+	'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+autoload -U compinit && compinit -u
 
 #
 #   Miscellaneous
