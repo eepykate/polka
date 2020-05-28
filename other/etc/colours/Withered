@@ -1,12 +1,12 @@
 #   -----
-bg0="FFF6EF"
+bg0="fff6ef"
 bg1="f8efe8"
-bg2="F2E9E3"
-bg3="E6DDD6"
+bg2="f2e9e3"
+bg3="e6ddd6"
 bg4="$(darken $bg3 0.97)"
-button="4D4D4D16"
+button="4d4d4d16"
 #   -----
-fg1="4D4D4D"
+fg1="4d4d4d"
 fg2="999999"
 disabled="595959"
 #   -----
