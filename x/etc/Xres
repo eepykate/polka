@@ -1,8 +1,8 @@
-*.background:   #0D0D0F
+*.background:   #0d0d0f
 *.foreground:   #daddee
 *.cursorColor:  #daddee
 
-*.color0:       #0D0D0F
+*.color0:       #0d0d0f
 *.color8:       #484e5b
 
 *.color1:       #e56f92
