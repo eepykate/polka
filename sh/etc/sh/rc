@@ -30,6 +30,8 @@ alias ...="cd ../.."
 bind '^l=clear-screen'
 bind -m '^j=^Uclear; git status^M^Y'
 bind -m '^k=^Uclear; ls^M^Y'
+# disable ^s
+stty -ixon
 
 # history
 bind '^[[A=search-history-up'
