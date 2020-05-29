@@ -9,7 +9,7 @@ done
 
 themes="$(ls -1 ~/etc/colours/ | grep -iv 'current\|css')" # List of themes
 if [[ -z $theme ]]; then
-	theme="$(echo -e "$themes" | rofi -dmenu -i -p "Theme?")" \
+	theme="$(echo -e "$themes" | menu -i -p "Theme?")" \
 		|| exit
 fi
 ext() {
@@ -135,16 +135,16 @@ sed --follow-symlinks -i \
 
 wm -r
 
-echo " - rofi"
-# Change the theme in rofi
+echo " - dmenu"
+static const char *colors[SchemeLast][2] = {
+cd ~/opt/git/dmenu
 sed --follow-symlinks -i \
-	-e "s/bg:.*#.*;/bg:         #$bg2;/g" \
-	-e "s/fg1:.*#.*;/fg1:        #$fg1;/" \
-	-e "s/fg2:.*#.*;/fg2:        #$fg2;/" \
-	-e "s/accent:.*#.*;/accent:     #$accent;/"\
-	-e "s/sel:.*#.*;/sel:        #$button;/"\
-	-e "s/contrast:.*#.*;/contrast:   #$contrast;/"\
-	${XDG_CONFIG_HOME:-~/.config}/rofi/theme.rasi
+	-e "s/Norm].*/Norm] = { \"#$fg2\", \"#$bg3\" },/" \
+	-e "s/Sel].*/Sel] = { \"#$contrast\", \"#$accent\" },/" \
+	config.h
+make
+cp dmenu ~/bin/bin/dmenu
+exit
 
 echo " - gtk context menus"
 sed --follow-symlinks -i \

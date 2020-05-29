@@ -1,6 +1,8 @@
 # terminal
 super + Return
 	st
+super + b
+	b
 
 super + g
 	sddg
@@ -12,7 +14,7 @@ super + period
 	rofi-sc
 
 super + space
-	rofi -show run
+	dmenu_run
 
 # copy epic may mays
 super + u
