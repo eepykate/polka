@@ -27,6 +27,7 @@ alias ...="cd ../.."
 
 
 # binds
+bind '^f=edit-line'
 bind '^l=clear-screen'
 bind -m '^j=^Uclear; git status^M^Y'
 bind -m '^k=^Uclear; ls^M^Y'
