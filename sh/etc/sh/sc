@@ -21,13 +21,11 @@ d   zs         ~/etc/zsh
 #   files
 #
 # shells
-f   sc         ~/etc/zsh/sc
-f   scsh       ~/etc/zsh/sc.sh
-f   a          ~/etc/zsh/aliases
-f   aliases    ~/etc/zsh/aliases
-f   z          ~/etc/zsh/.zshrc
-f   pro        ~/etc/zsh/.zprofile
-f   zpro       ~/etc/zsh/.zprofile
+f   sc         ~/etc/sh/sc
+f   scsh       ~/etc/sh/sc.sh
+f   a          ~/etc/sh/aliases
+f   k          ~/etc/sh/rc
+f   pro        ~/etc/sh/profile
 
 # wm
 f   com        ~/etc/picom.conf

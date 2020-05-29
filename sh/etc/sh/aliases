@@ -79,6 +79,7 @@ vb() {
 
 d() {
 	case "$(file -ib "$1") $1" in
+		*dir*)          cd "$1";;
 		*video*|*gif*) mpv "$1" & disown;;
 		*image*)        im "$1";;
 		*audio*)    paplay "$1";;
@@ -97,7 +98,7 @@ hextorgb() { printf "%d %d %d\n" "0x${1:0:2}" "0x${1:2:2}" "0x${1:4:2}"; }
 rgbtohex() { printf "%02X%02X%02X\n" "$@"; }
 
 # shellcheck source=/dev/null
-source "${XDG_CONFIG_HOME:-~/.config}/zsh/sc.sh"
+source "${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh"
 
 
 
