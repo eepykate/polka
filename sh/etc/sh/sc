@@ -22,6 +22,7 @@ d   zs         ~/etc/zsh
 #
 # shells
 f   sc         ~/etc/sh/sc
+f   z          ~/etc/sh/.zshrc
 f   scsh       ~/etc/sh/sc.sh
 f   a          ~/etc/sh/aliases
 f   k          ~/etc/sh/rc

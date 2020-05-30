@@ -28,7 +28,7 @@ export LESS_TERMCAP_md=$'\033[1;34m'       # begin blink
 export LESS_TERMCAP_{me,ue}=$'\033[0m'     # reset bold/blink and underline
 export LESS_TERMCAP_us=$'\033[1;35m'       # begin underline
 
-shortcuts
+( shortcuts & )
 
 # subshell is to hide the info about the fork to the background
 ( sudo /usr/bin/kbdrate -d 200 -r 60 &>/dev/null & )

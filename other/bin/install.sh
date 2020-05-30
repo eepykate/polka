@@ -338,8 +338,7 @@ sed -i \
 
 
 
-echo 'ZDOTDIR=$HOME/etc/zsh
-[[ $UID = 0 ]] && source $HOME/etc/zsh/.zprofile' > /etc/zsh/zshenv
+echo 'ZDOTDIR=$HOME/etc/sh' > /etc/zsh/zshenv
 sed -i 's/load-module module-esound-protocol-unix/#load-module module-esound-protocol-unix/g' /etc/pulse/default.pa
 
 echo "Telling linux to use no more than 10M ram for caching writes"
