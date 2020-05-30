@@ -43,9 +43,12 @@ code,
 }
 
 /* hide sidebar image */
+#channels > div[style*="width: 100%;"],
 [class^="animatedContainer-"] {
 	display: none !important;
 }
+
+
 
 /* use browser scrollbar */
 [class^="scrollbar-"] {
@@ -179,7 +182,7 @@ svg[class*="homeIcon-"] path {
 
 /* visited links */
 [class*="markup-"] a:visited {
-	color: orchid;
+	color: var(--accent2);
 }
 
 
@@ -188,7 +191,7 @@ svg[class*="homeIcon-"] path {
     --header-secondary: var(--fg2);
     --text-normal: var(--fg1);
     --text-muted: var(--fg2);
-    --text-link: cornflowerblue;
+    --text-link: var(--accent);
     --channels-default: var(--fg2);
     --interactive-normal: var(--fg2);
     --interactive-hover: var(--fg1);
@@ -261,13 +264,13 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class*="newMessagesBar-"],
 [class*="selected-"] [class*="childWrapper-"] {
 	color: var(--contrast) !important;
 	background-color: var(--accent) !important;
 }
 
 
-/* generic stuff */
 [class*="bodyInner-"],
 [class*="quickMessage-"],
 [class*="footer-"],
@@ -277,6 +280,15 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg1) !important;
 }
 
+#app-mount [class*="quickMessage-"],
+[class*="roleName-"],
+[class*="headerName"] {
+	color: var(--fg1);
+}
+
+[class*="nameTag-"] {
+	color: var(--fg2);
+}
 
 
 /* hover message timestamp */
