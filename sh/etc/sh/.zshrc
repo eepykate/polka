@@ -21,7 +21,7 @@ bindkey '^f' edit-command-line
 #
 HISTSIZE=999999
 SAVEHIST=999999
-HISTFILE="${XDG_CONFIG_HOME:-~/.config}/zsh/zsh_history"
+HISTFILE="${XDG_CONFIG_HOME:-~/.config}/sh/zsh_history"
 setopt extended_history   # Record timestamp of command in HISTFILE
 setopt hist_ignore_dups   # Ignore duplicated commands history list
 setopt share_history      # Share command history data
