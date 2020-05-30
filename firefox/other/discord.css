@@ -1,86 +1,84 @@
-.messageGroupBlocked, .da-messageGroupBlocked {display:none;}
+/* display info about code blocks */
 code:not(.inline)::before {
     content: attr(class) "\A" !important;
-    font-size: 0.75em;
+    font-size: 9px;
     opacity: 0.5;
 }
-:root {
---selected: var(--bg3);
+
+/* Remove shadow from search results */
+[class*="searchResultMessage-"] {
+	box-shadow: none !important;
 }
 
-.searchResultMessage-2VxO12 { /* Remove shadow from search results */
-	box-shadow: none !important; 
-}
-
-/* Hide ugly gradient coming from the right on some elements */
-.children-19S4PO::after, .resultsGroup-r_nuzN::after, 
-.option-96V44q::after, .searchResult-3pzFAB::before, .searchResult-3pzFAB::after {
+/* Hide ugly fade on some elements */
+[class*="option-"]::after,
+[class*="children-"]::after,
+[class*="resultsGroup-"]::after,
+[class*="searchResult-"]::after,
+[class*="searchResult-"]::before {
 	color: transparent !important;
 	background: none !important;
 }
 
 
-
-*:not(code):not([class*="hljs"]):not(.name-3_Dsmg)
- {
+/* fonts */
+*:not(code):not([class*="hljs"]):not(.name-3_Dsmg) {
 	font-family: "Roboto Condensed" !important;
-	font-size: 13px !important;
+	font-size: 13px !important;    /* boomer font size */
 }
 
-.name-3_Dsmg {
-	font-size: 14px !important;	
+/* channel names */
+[class*="name-"] {
+	font-size: 14px !important;
 }
 
-.codeBlockText-11zCaP, .codeLine-3qsZPQ,
-.codeBlockText-11zCaP *,
-code, .inline {
+code,
+.inline,
+.codeLine-3qsZPQ,
+[class*="codeBlockText-"],
+[class*="codeBlockText-"] * {
 	font-family: Monospace !important;
 	font-weight: bold !important;
 	font-size: 12px !important;
 }
 
-/*.unread-3zKkbm,               /* Unread channel arrow */
-
-hr.divider-32i8lo,            /* hr between messages */
-[data-ref-id="channels"] > div:first-of-type,
-.scrollbar-2rkZSL,            /* Scroll bar - makes it use your native ones */
-.messageGroupBlocked-3wrQQX   /* X blocked messages */
-{
+/* hide sidebar image */
+[class*="bannerImage-"],
+[data-ref-id="channels"] > div:first-of-type {
 	display: none !important;
 }
 
+/* use browser scrollbar */
+[class^="scrollbar-"] {
+	display: none !important;
+}
+
+/* @TODO see what this does */
 .scroller-2wx7Hm,
-.scroller-2FKFPG{
+.scroller-2FKFPG {
 	overflow-y: auto;
 }
 
-a svg.homeIcon-tEMBK1 path {
+/* discord icon (top-left) */
+svg[class*="homeIcon-"] path {
 	color: var(--fg1) !important;
 }
-/*
-.name-3_Dsmg {
-	font-size: 10px !important;	
-}
 
-.content-3at_AU, .wrapper-1ucjTd {
-	height: 22px !important;
-}
- .channels-Ie2l6A {
-	max-width: 160px !important;
-}
-
-* {
-	font-size: 10px !important;
-}
-*/
-
+/* unread server indicator */
 .pill-31IEus .item-2hkk8m {
 	background-color: var(--fg1) !important;
 }
+/* hide unread channel indicator */
+.unread-3zKkbm {
+	display: none !important;
+}
 
 
-
-.guilds-1SWlCJ {
+/*
+ * collapsed sidebar
+ */
+/* servers */
+[class*="guilds-"] {
 	margin-left: -60px;
 	transition: all 200ms;
 	position: fixed;
@@ -90,34 +88,25 @@ a svg.homeIcon-tEMBK1 path {
 	background-color: var(--bg1) !important;
 }
 
-.guilds-1SWlCJ:hover * .pill-31IEus,
-.guilds-1SWlCJ:hover {
-	margin-left: 0px;
-}
-.guilds-1SWlCJ * .pill-31IEus {
+/* align unread server indicator */
+[class*="guilds-"] * [class*="pill-"] {
 	margin-left: 60px;
 }
 
-.channels-Ie2l6A {
-	margin-left: 12px;
-}
-
+/* re-align messages area */
 .base-3dtUhz {
 	margin-left: -60px;
-}
-.bannerVisible-14J9lQ .header-2o-2hj,
-.title-3qD0b-,
-.animatedContainer-1pJv5C {
-	box-shadow: none !important;
-	filter: none !important;
-}
-.title-3qD0b- {
-	margin-left: 40px
+	padding-left: 40px;
 }
 
+/* expand on hover */
+[class*="guilds-"]:hover * [class*="pill-"],
+[class*="guilds-"]:hover {
+	margin-left: 0px;
+}
 
-
-.sidebar-2K8pFh {
+/* channels sidebar */
+[class*="sidebar-"] {
 	transition: all 200ms;
 	position: absolute;
 	top: 0;
@@ -127,91 +116,34 @@ a svg.homeIcon-tEMBK1 path {
 	background-color: var(--bg2) !important;
 }
 
-.sidebar-2K8pFh:hover {
+/* expand on hover */
+[class*="sidebar-"]:hover {
 	left: 0;
 }
-/*
-.sidebar-2K8pFh:not(:hover) * .name-3_Dsmg {
-	font-size: 0px !important;
-	text-align: center;
-	margin-top: 7px;
-}
 
-.sidebar-2K8pFh:not(:hover) * .name-3_Dsmg::first-letter {
-	font-size: 20px !important;
-	font-weight: bold !important;
-}*/
-
-.content-yTz4x3 {
-	margin-left: 40px;
-}
-
-.base-3dtUhz {
-	padding-left: 40px;
-}
-
-.sidebar-2K8pFh:not(:hover) * .children-Bmpf2Q,
-.bannerImage-1jOskm,
-.unread-3zKkbm,
-.sidebar-2K8pFh:not(:hover) * .name-IbjUBS {
-	display: none;
-}
-
-
-.sidebar-2K8pFh:not(:hover) * .content-3at_AU {
-	max-width: 33px;
-	padding-left: 7px;
-}
-
-.sidebar-2K8pFh:not(:hover) * .containerDefault-1ZnADq {
+/* fix alignment of channel icons when collapsed */
+.sidebar-2K8pFh:not(:hover) * [class*="containerDefault"]:not([role]) {
 	position: relative;
 	left: 194px;
 }
-
-.scroller-2FKFPG:not(:hover) {
-	overflow-x: hidden !important;
-}
-
-
-/*.chat-3bRxxu {
-	margin-left: 35px !important;
-}
-
-
-/*.channels-Ie2l6A:not(:hover) * .icon-1_QxNX,
-.channels-Ie2l6A:not(:hover) * .icon-WnO6o2 {
-	position: relative;
-	left: 190px;
-}
-*/
-.sidebar-2K8pFh:not(:hover) * .icon-WnO6o2 {
+/* category icons */
+[class*="sidebar-"]:not(:hover) * .icon-WnO6o2 {
 	position: relative;
 	left: 182px;
 }
 
+/* hide text when collapsed */
+[class^="sidebar-"]:not(:hover) * .children-Bmpf2Q,
+[class^="sidebar-"]:not(:hover) * [class^="name-"] {
+	display: none !important;
+}
 
-.sidebar-2K8pFh {
+/* bring sidebar above top bar */
+[class^="sidebar-"] {
 	z-index: 101 !important;
 }
-
-
-.markup-2BOw-j {
-    font-family: Monospace;
-}
-
-.attachButtonPlus-rUdX-B {
-	fill: var(--fg2) !important;
-}
-
-.attachment-33OFj0,
-.embedInner-1-fpTo,
-pre,
-.theme-dark .card-FDVird::before,
-.wrapper-35wsBm {
-	border: none !important;
-}
-
-.numberBadge-2s8kKX {
+/* ping indicator on channels */
+[class^="numberBadge-"] {
 	background-color: var(--fg1) !important;
 	color: var(--bg1) !important;
 	font-size: 10px !important;
@@ -220,16 +152,11 @@ pre,
 	padding: 0 !important;
 }
 
-.sidebar-2K8pFh:not(:hover) * .numberBadge-2s8kKX {
+[class^="sidebar-"]:not(:hover) * [class^="numberBadge-"] {
 	position: relative;
 	left: -24px;
 	top: -3px;
 }
-
-.animatedContainer-1pJv5C {
-	background-color: transparent !important;
-}
-
 
 .inputDefault-A2ud2y,
 .auditLog-3jNbM6 strong,
@@ -479,4 +406,10 @@ Thanks _diamondburned_#4507 */
 .message-2qnXI6 {
 	padding-right: 0px !important;
 }
+.username-1A8OIy {
+	font-weight: 600;
+}
 
+#channels > div[style*="width: 100%;"] {
+	display: none;
+}
