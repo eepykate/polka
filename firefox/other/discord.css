@@ -115,6 +115,11 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg2) !important;
 }
 
+/* fix channel icon widths */
+[class^="sidebar-"]:not(:hover) * [class^="content-"] {
+	width: 35px !important;
+}
+
 /* expand on hover */
 [class*="sidebar-"]:hover {
 	left: 0;
