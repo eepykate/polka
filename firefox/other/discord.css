@@ -271,6 +271,8 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class*="queryContainer-"],
+[class*="resultsGroup-"],
 [class*="bodyInner-"],
 [class*="quickMessage-"],
 [class*="footer-"],
@@ -280,6 +282,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg1) !important;
 }
 
+#search-results *,
 #app-mount [class*="quickMessage-"],
 [class*="roleName-"],
 [class*="headerName"] {
