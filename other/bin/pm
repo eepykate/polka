@@ -1,6 +1,3 @@
 #!/bin/sh
-opt="$(echo "lock\nsuspend\nhibernate\nreboot\npoweroff" | rofi -dmenu)"
-case $opt in
-    h*|p*|r*|s*) systemctl $opt;;
-    lock) lock;;
-esac
+opt="$(printf "suspend\nhibernate\nreboot\npoweroff" | menu)"
+[ "$opt" ] && systemctl "$opt"
