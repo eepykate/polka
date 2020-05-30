@@ -284,6 +284,8 @@ svg[class*="homeIcon-"] path {
 
 #search-results *,
 #app-mount [class*="quickMessage-"],
+[class*="headerTagUsernameNoNickname-"],
+#app-mount [class*="activityUserPopout-"] *,
 [class*="roleName-"],
 [class*="headerName"] {
 	color: var(--fg1);
