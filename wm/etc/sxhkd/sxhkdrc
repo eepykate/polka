@@ -14,7 +14,7 @@ super + period
 	rofi-sc
 
 super + space
-	dmenu_run
+	launch
 
 # copy epic may mays
 super + u
