@@ -43,8 +43,7 @@ code,
 }
 
 /* hide sidebar image */
-[class*="bannerImage-"],
-[data-ref-id="channels"] > div:first-of-type {
+[class^="animatedContainer-"] {
 	display: none !important;
 }
 
