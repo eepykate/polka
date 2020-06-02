@@ -111,7 +111,7 @@ svg[class*="homeIcon-"] path {
 }
 
 /* channels sidebar */
-[class*="sidebar-"] {
+[class*="content-"] > [class*="sidebar-"] {
 	transition: all 200ms;
 	position: absolute;
 	top: 0;
@@ -127,7 +127,7 @@ svg[class*="homeIcon-"] path {
 }
 
 /* expand on hover */
-[class*="sidebar-"]:hover {
+[class*="content-"] > [class*="sidebar-"]:hover {
 	left: 0;
 }
 
@@ -172,6 +172,10 @@ svg[class*="homeIcon-"] path {
 [class*="modeSelected-"] div [class^="icon-"] path,
 [class*="modeUnread-"] div [class^="icon-"] path {
 	color: var(--fg1) !important;
+}
+
+[class*="modeMuted-"] {
+	opacity: 0.5;
 }
 
 
@@ -282,6 +286,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg1) !important;
 }
 
+[class*="customStatusText-"],
 #search-results *,
 #app-mount [class*="quickMessage-"],
 [class*="headerTagUsernameNoNickname-"],
