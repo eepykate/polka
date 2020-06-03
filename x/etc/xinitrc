@@ -16,8 +16,8 @@ if [ ! "$DBUS_SESSION_BUS_ADDRESS" ]; then
 fi
 
 
-pap           # Wallpaper
 screen.sh     # Custom screen layout
+pap           # Wallpaper
 
 synclient TouchpadOff=1           # Disable touchpad
 xset r rate 200 60 &              # Faster keyboard
@@ -30,9 +30,11 @@ start-pulseaudio-x11   &
 hw 0
 
 sxhkd &
+picom &
+dunst &
 
 #
 #   And finally, start the window manager
 #
 
-exec "${1:-bspwm}"
+exec "${1:-openbox}"
