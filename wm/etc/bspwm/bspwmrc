@@ -25,9 +25,9 @@ _ gapless_monocle           true
 
 _ border_width              16
 _ borderless_monocle        true
-_ normal_border_color       '#0d0d0f'
-_ active_border_color       '#0d0d0f'
-_ focused_border_color      '#0d0d0f'
+_ normal_border_color       '#fafafa'
+_ active_border_color       '#fafafa'
+_ focused_border_color      '#fafafa'
 
 
 # other

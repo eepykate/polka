@@ -3,9 +3,9 @@
 #   double borders
 #
 
-outer='0x0d0d0f'   # outer
-inner1='0x7baae8'  # focused
-inner2='0x484e5b'  # normal
+outer='0xfafafa'   # outer
+inner1='0x6b9e4c'  # focused
+inner2='0xacb1b8'  # normal
 
 draw() { chwb2 -I "$i" -O "$o" -i "2" -o "14" $@ 2> /dev/null; }
 

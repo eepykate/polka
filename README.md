@@ -1,7 +1,3 @@
-<h1 align=center>GaugeK's dotfiles</h1>
-
-# Rices
-
 ## [bspwm] 🌋
 
 ![](https://i.redd.it/bdhajrbjnhm41.png)

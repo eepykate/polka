@@ -29,6 +29,8 @@ start-pulseaudio-x11   &
 
 hw 0
 
+sxhkd &
+
 #
 #   And finally, start the window manager
 #
