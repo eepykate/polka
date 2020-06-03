@@ -129,7 +129,7 @@
       <name>4</name>
       <name>5</name>
     </names>
-    <popupTime>875</popupTime>
+    <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -488,6 +488,7 @@
       <mousebind button="Left" action="DoubleClick">
         <action xmlns="http://openbox.org/3.4/rc" name="ToggleMaximize"/>
       </mousebind>
+      <!--
       <mousebind button="Up" action="Click">
         <action name="if">
           <shaded>no</shaded>
@@ -508,6 +509,7 @@
           </then>
         </action>
       </mousebind>
+		-->
     </context>
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
       <mousebind button="Left" action="Press">
@@ -724,6 +726,11 @@
   <applications>
     <application class="*">
       <decor>yes</decor>
+    </application>
+  </applications>
+  <applications>
+    <application class="feh-nb">
+      <decor>no</decor>
     </application>
   </applications>
   <applications>
