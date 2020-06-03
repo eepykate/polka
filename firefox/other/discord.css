@@ -280,8 +280,9 @@ svg[class*="homeIcon-"] path {
 [class*="bodyInner-"],
 [class*="quickMessage-"],
 [class*="footer-"],
-[class*="inner-"],
-[class*="header-"]:not(header):not(h2),
+[class*="content-"][class*="inner-ZyuQk0"],
+[class*="directionColumn-"][class*="headerTop-"],
+[class*="directionRow-"][class*="header-"],
 [class*="uploadModal-"] {
 	background-color: var(--bg1) !important;
 }
