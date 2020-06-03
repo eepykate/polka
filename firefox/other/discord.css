@@ -275,6 +275,9 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class*="outer-"][class*="interactive-"]:hover,
+[class*="inset-"],
+[class*="layer-"] > [class*="container-"],
 [class*="queryContainer-"],
 [class*="resultsGroup-"],
 [class*="bodyInner-"],
@@ -287,6 +290,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg1) !important;
 }
 
+#app-mount [class*="cooldownWrapper-"],
 [class*="customStatusText-"],
 #search-results *,
 #app-mount [class*="quickMessage-"],
@@ -294,7 +298,7 @@ svg[class*="homeIcon-"] path {
 #app-mount [class*="activityUserPopout-"] *,
 [class*="roleName-"],
 [class*="headerName"] {
-	color: var(--fg1);
+	color: var(--fg1) !important;
 }
 
 [class*="nameTag-"] {
