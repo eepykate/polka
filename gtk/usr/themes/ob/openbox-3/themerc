@@ -37,16 +37,16 @@ window.label.text.justify: center
 #window.inactive.label.text.font: text shadow
 
 ### MENU
-menu.border.width: 2
-menu.separator.width: 2
+menu.border.width: 8
+menu.separator.width: 4
 menu.separator.padding.width: 10
-menu.separator.padding.height: 2
+menu.separator.padding.height: 4
 
 menu.overlap.x: 0
 menu.overlap.y: 0
 
-menu.border.color: #222222
-menu.separator.color: #444444
+menu.border.color: #fafafa
+menu.separator.color: #fafafa
 
 menu.title.text.color: #767676
 menu.items.text.color: #767676
@@ -57,7 +57,7 @@ menu.items.active.disabled.text.color: #767676
 menu.items.bg: flat solid
 menu.items.bg.color: #fafafa
 menu.items.active.bg: flat solid
-menu.items.active.bg.color: #fafafa
+menu.items.active.bg.color: #ebebeb
 menu.title.bg: flat solid
 menu.title.bg.color: #fafafa
 

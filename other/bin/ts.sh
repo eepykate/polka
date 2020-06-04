@@ -114,6 +114,9 @@ sed --follow-symlinks -i \
 	-e "s/\(image\.color: \).*/\1#$fg2/" \
 	-e "s/\(inactive.*bg\.color: \).*/\1#$bg3/" \
 	-e "s/\(inactive.*image\.color: \).*/\1#$bg3/" \
+	-e "s/\(menu.*color: \).*/\1#$bg1/" \
+	-e "s/\(menu.*text.color: \).*/\1#$fg2/" \
+	-e "s/\(menu.*active\.bg\.color: \).*/\1#$bg3/" \
 	~/usr/themes/ob/openbox-3/themerc
 
 openbox --reconfigure
