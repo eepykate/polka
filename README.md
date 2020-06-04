@@ -21,3 +21,7 @@ you're on your own
 ## [bspwm] The blood moon is rising
 
 ![](https://i.imgur.com/WzYQESH.png)
+
+## [bspwm] rainbow
+
+![](https://i.imgur.com/cgGyZ3V.png)
