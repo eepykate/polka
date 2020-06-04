@@ -107,7 +107,7 @@
 
 .tabbrowser-tab .tab-close-button { display: none !important; }
 .tabbrowser-tab:not([pinned="true"]):hover .tab-close-button { display: -moz-box !important; }
-
+.tabbrowser-tab:not([pinned="true"]):hover .tab-text { padding-right: calc( var(--icon-size) + 6px) !important; }
 
 
 
@@ -587,6 +587,6 @@ browser[type=content] > html {
 
 /* fix context menu automatically selecting the first item when window isn't maximized */
 /* @TODO fix hard-coded width */
-#main-window:not([width="1920"]) * #contentAreaContextMenu {
+/*#main-window:not([width="1920"]) * #contentAreaContextMenu {
 	margin: 15px 0 0 15px !important;
-}
+}*/
