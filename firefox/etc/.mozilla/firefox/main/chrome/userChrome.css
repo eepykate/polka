@@ -5,21 +5,21 @@
 
 :root {
 	/*  ----  */
-	--bg0:      #070708;
-	--bg1:      #0d0d0f;
-	--bg2:      #111114;
-	--bg3:      #16161a;
-	--bg4:      #1a1a1f;
-	--button:   #daddee1a;
+	--bg0:      #ffffff;
+	--bg1:      #fafafa;
+	--bg2:      #f2f2f2;
+	--bg3:      #ebebeb;
+	--bg4:      #e3e3e3;
+	--button:   #0000001a;
 	/*  ----  */
-	--fg2:      #a6a9b7;
-	--fg1:      #daddee;
-	--disabled: #696969;
+	--fg2:      #767676;
+	--fg1:      #444444;
+	--disabled: #999999;
 	/*  ----  */
-	--accent:   #7baae8;
-	--accent2:  #c488ec;
+	--accent:   #6b9e4c;
+	--accent2:  #5094b4;
 	--contrast: #ffffff;
-	--red:         #e56f92;
+	--red:         #cd5e79;
 	/*  ----  */
 }
 
@@ -148,8 +148,16 @@
 /*#nav-bar:not([customizing]) {
 	-moz-box-ordinal-group: 0 !important;
   margin-bottom: 4px !important;
-}
+}*/
 
+#urlbar[breakout] {
+	position: unset !important;
+}
+#urlbar[breakout][breakout-extend] {
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 
 
@@ -360,7 +368,7 @@ toolbarbutton#alltabs-button {
 	/* Toolbar */
 	--toolbar-color: var(--fg1) !important;
 	--lwt-text-color: var(--fg1) !important;
-	--toolbar-bgcolor: var(--bg2) !important;
+	--toolbar-bgcolor: var(--bg3) !important;
 	--lwt-accent-color: var(--bg1) !important;
 	--lwt-toolbarbutton-icon-fill: var(--fg1) !important;
 	--lwt-toolbar-field-focus-color: var(--fg1) !important;
@@ -387,7 +395,7 @@ toolbarbutton#alltabs-button {
 }
 
 #navigator-toolbox {
-	background-color: var(--bg2) !important;
+	background-color: var(--bg3) !important;
 }
 
 /* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
@@ -548,7 +556,16 @@ browser[type=content] > html {
 	min-height: var(--tab-min-height) !important;
 }
 
-#urlbar { min-height: 90% !important; }
+#main-window #urlbar {
+	min-height: 90% !important;
+	max-height: 90% !important;
+	height: 90% !important;
+}
+
+#main-window #urlbar #urlbar-input-container {
+	padding-block: 0 !important;
+	padding-inline: 0 !important;
+}
 
 #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
 	height: var(--tab-min-height);
