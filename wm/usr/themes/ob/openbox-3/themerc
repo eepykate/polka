@@ -19,15 +19,15 @@ window.active.label.text.color: #767676
 window.inactive.label.text.color: #767676
 
 window.active.title.bg: flat solid
-window.active.title.bg.color: #fafafa
+window.active.title.bg.color: #6b9e4c
 window.active.label.bg: flat solid
-window.active.label.bg.color: #fafafa
+window.active.label.bg.color: #6b9e4c
 #window.active.handle.bg: texture
 #window.active.grip.bg: texture
 window.inactive.title.bg: flat solid
-window.inactive.title.bg.color: #ebebeb
+window.inactive.title.bg.color: #444444
 window.inactive.label.bg: flat solid
-window.inactive.label.bg.color: #ebebeb
+window.inactive.label.bg.color: #444444
 #window.inactive.handle.bg: texture
 #window.inactive.grip.bg: texture
 
@@ -57,7 +57,7 @@ menu.items.active.disabled.text.color: #767676
 menu.items.bg: flat solid
 menu.items.bg.color: #fafafa
 menu.items.active.bg: flat solid
-menu.items.active.bg.color: #ebebeb
+menu.items.active.bg.color: #767676
 menu.title.bg: flat solid
 menu.title.bg.color: #fafafa
 
@@ -71,27 +71,27 @@ osd.border.width: 0
 
 #osd.label.text.font: text shadow
 window.active.button.unpressed.bg: Flat solid
-window.active.button.unpressed.bg.color: #fafafa
+window.active.button.unpressed.bg.color: #6b9e4c
 window.active.button.unpressed.bg.border.color: #fafafa
-window.active.button.unpressed.image.color: #767676
+window.active.button.unpressed.image.color: #ffffff
 
 window.active.button.pressed.bg: Flat solid
-window.active.button.pressed.bg.color: #fafafa
-window.active.button.pressed.image.color: #767676
+window.active.button.pressed.bg.color: #6b9e4c
+window.active.button.pressed.image.color: #ffffff
 
 window.active.button.disabled.bg: Flat solid
-window.active.button.disabled.bg.color: #fafafa
-window.active.button.disabled.image.color: #767676
+window.active.button.disabled.bg.color: #6b9e4c
+window.active.button.disabled.image.color: #ffffff
 
 
 window.inactive.button.unpressed.bg: Flat solid
-window.inactive.button.unpressed.bg.color: #ebebeb
-window.inactive.button.unpressed.image.color: #ebebeb
+window.inactive.button.unpressed.bg.color: #444444
+window.inactive.button.unpressed.image.color: #444444
 
 window.inactive.button.pressed.bg: Flat solid
-window.inactive.button.pressed.bg.color: #ebebeb
-window.inactive.button.pressed.image.color: #ebebeb
+window.inactive.button.pressed.bg.color: #444444
+window.inactive.button.pressed.image.color: #444444
 
 window.inactive.button.disabled.bg: Flat solid
-window.inactive.button.disabled.bg.color: #ebebeb
-window.inactive.button.disabled.image.color: #ebebeb
+window.inactive.button.disabled.bg.color: #444444
+window.inactive.button.disabled.image.color: #444444

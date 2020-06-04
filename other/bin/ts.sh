@@ -110,13 +110,13 @@ rc
 echo " - openbox"
 sed --follow-symlinks -i \
 	-e "s/\(text\.color: \).*/\1#$fg2/" \
-	-e "s/\(bg\.color: \).*/\1#$bg1/" \
-	-e "s/\(image\.color: \).*/\1#$fg2/" \
-	-e "s/\(inactive.*bg\.color: \).*/\1#$bg3/" \
-	-e "s/\(inactive.*image\.color: \).*/\1#$bg3/" \
+	-e "s/\(bg\.color: \).*/\1#$accent/" \
+	-e "s/\(image\.color: \).*/\1#$contrast/" \
+	-e "s/\(inactive.*bg\.color: \).*/\1#$fg1/" \
+	-e "s/\(inactive.*image\.color: \).*/\1#$fg1/" \
 	-e "s/\(menu.*color: \).*/\1#$bg1/" \
 	-e "s/\(menu.*text.color: \).*/\1#$fg2/" \
-	-e "s/\(menu.*active\.bg\.color: \).*/\1#$bg3/" \
+	-e "s/\(menu.*active\.bg\.color: \).*/\1#$fg2/" \
 	~/usr/themes/ob/openbox-3/themerc
 
 openbox --reconfigure
