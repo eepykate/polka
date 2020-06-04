@@ -1,43 +1,8 @@
 #!/bin/sh
 
-xd() { xdotool search --classname "dropdown" "$@"; }
+pid="$(pgrep tabbed)" || { tabbed -r 2 -n "dropdown" st -w '' & pid=$!;}
 
-[ -f /tmp/tabbed-status ] || touch /tmp/tabbed-status
-status="$(cat /tmp/tabbed-status)"
+pid="$(xdotool search --class "tabbed" | tail -n1)"
+wid="$(printf 0x%x "$pid")"
 
-xd >/dev/null 2>&1 || {
-	tabbed -r 2 -n "dropdown" st -w '' &
-	status="1"
-}
-
-case "$1" in
-	-s|show) status="0";;
-	-h|hide) status="1";;
-esac
-
-if [ "$status" = 1 ]; then
-	action="windowmap" &&
-		echo "0" > /tmp/tabbed-status
-else
-	action="windowunmap" &&
-		echo "1" > /tmp/tabbed-status
-fi
-
-curdes="$(xdotool get_desktop)"
-tabdes="$(xd get_desktop_for_window)"
-
-if [ "$curdes" != "$tabdes" ]; then
-	xd set_desktop_for_window "$curdes"
-	action="windowmap"
-	echo "0" > /tmp/tabbed-status
-fi
-
-set -- $(mattr whxy "$(pfm)")
-
-eval "$(xd getwindowgeometry --shell)"
-
-nx="$(($3 + $(($1 / 2)) - $((WIDTH / 2))))"
-ny="$(($4 + $(($2 / 2)) - $((HEIGHT / 2 ))))"
-
-xd $action
-xd windowmove "$nx" "$ny"
+mapw -t "$wid"
