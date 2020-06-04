@@ -7,6 +7,13 @@ outer='0xfafafa'   # outer
 inner1='0x6b9e4c'  # focused
 inner2='0xacb1b8'  # normal
 
+targets() {
+	case $1 in
+		focused) bspc query -N -n .local.focused.\!fullscreen;;
+		normal)  bspc query -N -n .local.\!focused.\!fullscreen
+	esac
+}
+
 draw() { chwb2 -I "$i" -O "$o" -i "2" -o "14" $@ 2> /dev/null; }
 
 # initial draw, and then subscribe to events
