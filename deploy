@@ -24,18 +24,8 @@ mkdir -p      \
 	~/usr/cache \
 	~/opt 2>/dev/null
 
-for i in $(echo $HOME/opt/dots/*/bin | sed -e "s|$HOME/opt/dots/||g" -e "s|/bin||g"); do
-	cd $HOME/opt/dots/$i/bin || { echo "couldn't cd; exiting" && exit; }
-	mkdir -p "$HOME/bin/$i"
-	for j in $(find . -type d | sed 's|\./||g'); do
-		mkdir -p $HOME/bin/$i/$j
-		ln -sf $(find $PWD/$j/ -maxdepth 1 -type f | sed 's|\./||g') $HOME/bin/$i/$j/
-	done
-done
-
-cp     $HOME/opt/dots/other/bin/app/* ~/bin/app
-rm -rf $HOME/bin/other/app
-ln -sf $HOME/opt/dots/*/etc/* ~/etc/ 2>/dev/null
-ln -sf $HOME/opt/dots/*/usr/* ~/usr/ 2>/dev/null
-cp -r  $HOME/opt/dots/other/usr/fonts/* ~/usr/fonts
+ln -s  $HOME/opt/dots/bin/* ~/bin/ 2>/dev/null
+ln -sf $HOME/opt/dots/etc/* ~/etc/ 2>/dev/null
+ln -sf $HOME/opt/dots/usr/* ~/usr/ 2>/dev/null
+#cp -r  $HOME/opt/dots/usr/fonts/* ~/usr/fonts
 #cp -r  $HOME/opt/dots/firefox/etc/.mozilla ~/etc/
