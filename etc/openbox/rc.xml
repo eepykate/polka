@@ -135,7 +135,7 @@
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
-    <popupShow>Always</popupShow>
+    <popupShow>NonPixel</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
     <popupPosition>Center</popupPosition>
     <!-- 'Center', 'Top', or 'Fixed' -->
