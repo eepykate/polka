@@ -139,7 +139,7 @@ svg[class*="homeIcon-"] path {
 /* category icons */
 [class*="sidebar-"]:not(:hover) * .icon-WnO6o2 {
 	position: relative;
-	left: 182px;
+	left: -10px;
 }
 
 /* hide text when collapsed */
@@ -277,7 +277,7 @@ svg[class*="homeIcon-"] path {
 
 [class*="outer-"][class*="interactive-"]:hover,
 [class*="inset-"],
-[class*="layer-"] > [class*="container-"],
+[class*="content-"] > [class*="container-"],
 [class*="queryContainer-"],
 [class*="resultsGroup-"],
 [class*="bodyInner-"],
