@@ -1,9 +1,9 @@
-*.background:   #121214
+*.background:   #31404d
 *.foreground:   #eaeaee
 *.cursorColor:  #eaeaee
 
-*.color0:       #19191c
-*.color8:       #484e5b
+*.color0:       #43505c
+*.color8:       #5f7282
 
 *.color1:       #ff5061
 *.color9:       #ff5061
