@@ -180,7 +180,7 @@ else
 fi
 
 echo "#!/bin/sh
-$wallthing" > ~/bin/x/pap
+$wallthing" > ~/bin/pap
 
 #
 # tbf I use like 1 gtk app, this doesn't matter
