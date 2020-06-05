@@ -66,6 +66,6 @@ command_not_found_handler() {
 	return 1
 }
 export SUDO_PROMPT=$'\e[37mpass for \e[0m%u '
-PROMPT=$'%(?.%F{16}.%F{8})%(!.#.|) %f'
+PROMPT=$'%(?.%F{16}.%F{7})%(!.#.|) %f'
 
 # vim: ft=bash

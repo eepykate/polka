@@ -58,7 +58,7 @@ cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
 *.foreground:   #$fg1
 *.cursorColor:  #$fg1
 
-*.color0:       #$bg1
+*.color0:       #$bg3
 *.color8:       #$black
 
 *.color1:       #$red
@@ -84,6 +84,7 @@ cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
 
 *.color16:      #$accent
 *.color17:      #$accent2
+*.color18:      #$contrast
 EOF
 
 sed --follow-symlinks -i \

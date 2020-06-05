@@ -9,113 +9,55 @@ set noshowmode
 set laststatus=2
 " ~~~~ Statusline configuration ~~~~
 " ':help statusline' is your friend!
-function! RedrawModeColors(mode) " {{{
+hi Sl1 ctermfg=18   cterm=none ctermbg=16
+hi Sl2 ctermfg=7    cterm=none ctermbg=none
+hi Sl3 ctermfg=8    cterm=NONE ctermbg=NONE
+hi Slrese ctermfg=none cterm=none ctermbg=none
+function! RedrawMode(mode)
 	" Normal mode
 	if a:mode == 'n'
-		hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
-		hi MyStatuslineFilename ctermfg=4 cterm=none ctermbg=0
-		hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=4
+		return 'nor'
 	" Insert mode
 	elseif a:mode == 'i'
-		hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
-		hi MyStatuslineFilename ctermfg=1 cterm=none ctermbg=0
-		hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=1
-	" Replace mode
+		return 'ins'
 	elseif a:mode == 'R'
-		hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
-		hi MyStatuslineFilename ctermfg=3 cterm=none ctermbg=0
-		hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=3
+		return 'rep'
 	" Visual mode
 	elseif a:mode == 'v' || a:mode == 'V' || a:mode == '^V'
-		hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
-		hi MyStatuslineFilename ctermfg=5 cterm=none ctermbg=0
-		hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=5
+		return 'sel'
 	" Command mode
 	elseif a:mode == 'c'
-		hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
-		hi MyStatuslineFilename ctermfg=6 cterm=none ctermbg=0
-		hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=6
+		return 'cmd'
 	" Terminal mode
 	elseif a:mode == 't'
-		hi MyStatuslineAccent ctermfg=8 cterm=NONE ctermbg=NONE
-		hi MyStatuslineFilename ctermfg=1 cterm=none ctermbg=0
-		hi MyStatuslineAccentBody ctermbg=8 cterm=NONE ctermfg=1
+		return 'trm'
 	endif
-	" Return empty string so as not to display anything in the statusline
 	return ''
 endfunction
-" }}}
-function! SetModifiedSymbol(modified) " {{{
+function! SetModifiedSymbol(modified)
 	if a:modified == 1
-		hi MyStatuslineModifiedBody ctermbg=0 cterm=bold ctermfg=1
+		return '[*]'
 	else
-		hi MyStatuslineModifiedBody ctermbg=0 cterm=bold ctermfg=7
+		return ''
 	endif
-	return '*'
 endfunction
-" }}}
-function! SetFiletype(filetype) " {{{
+function! SetFiletype(filetype)
 	if a:filetype == ''
-		return '-'
+		return 'txt'
 	else
 		return a:filetype
 	endif
 endfunction
-" }}}
 
-" Statusbar items
-" ====================================================================
-
-" This will not be displayed, but the function RedrawModeColors will be
-" called every time the mode changes, thus updating the colors used for the
-" components.
-set statusline=%{RedrawModeColors(mode())}
-" Left side items
-" =======================
-set statusline+=%#MyStatuslineFiletype#█
-"set statusline+=%#MyStatuslineAccentBody#\ 
+set statusline=%#Sl1#\ %{RedrawMode(mode())}\ 
 " Filename
-set statusline+=%#MyStatuslineFilename#%.20f
-set statusline+=%#MyStatuslineSeparator#█\ \ 
+set statusline+=%#Sl2#\ %.20f\ 
 " Modified status
-set statusline+=%#MyStatuslineModified#█
-set statusline+=%#MyStatuslineModifiedBody#%{SetModifiedSymbol(&modified)}
-set statusline+=%#MyStatuslineModified#█
-" Right side items
-" =======================
+set statusline+=%#Sl3#%{SetModifiedSymbol(&modified)}
+set statusline+=%#SlRese#
+" right side
 set statusline+=%=
-" Line and Column
-set statusline+=%#MyStatuslineLineCol#█
-set statusline+=%#MyStatuslineLineColBody#%2l
-set statusline+=\/%#MyStatuslineLineColBody#%2c
-set statusline+=%#MyStatuslineLineCol#█
-" Padding
-set statusline+=\ \ 
-" Current scroll percentage and total lines of the file
-"set statusline+=%#MyStatuslinePercentage#█
-"set statusline+=%#MyStatuslinePercentageBody#%P
-"set statusline+=\/\%#MyStatuslinePercentageBody#%L
-"set statusline+=%#MyStatuslinePercentage#█
-" Padding
-"set statusline+=\ 
-" Filetype
-set statusline+=%#MyStatuslineFiletype#█
-set statusline+=%#MyStatuslineFiletypeBody#%{SetFiletype(&filetype)}
-set statusline+=%#MyStatuslineFiletype#█
-
-" Setup the colors
-hi StatusLine          ctermfg=5     ctermbg=NONE     cterm=NONE
-hi StatusLineNC        ctermfg=8     ctermbg=NONE     cterm=bold
-
-hi MyStatuslineSeparator ctermfg=0 cterm=NONE ctermbg=NONE
-
-hi MyStatuslineModified ctermfg=0 cterm=NONE ctermbg=NONE
-
-hi MyStatuslineFiletype ctermbg=NONE cterm=NONE ctermfg=0
-hi MyStatuslineFiletypeBody ctermfg=5 cterm=italic ctermbg=0
-
-hi MyStatuslinePercentage ctermfg=0 cterm=NONE ctermbg=NONE
-hi MyStatuslinePercentageBody ctermbg=0 cterm=none ctermfg=6
-
-hi MyStatuslineLineCol ctermfg=0 cterm=NONE ctermbg=NONE
-hi MyStatuslineLineColBody ctermbg=0 cterm=none ctermfg=2
+" ruler
+set statusline+=\%#Sl2#\ %l,%c
+" filetype
+set statusline+=\ %#Sl1#\ %{SetFiletype(&filetype)}\ 

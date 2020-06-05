@@ -51,7 +51,7 @@ set ignorecase         " Ignore case when searching
 set smartcase          " Ignore case when only lower case is typed
 
 " misc
-set number             " Line numbers
+"set number             " Line numbers
 set cursorline         " Highlight the line that the cursor is on
 set mouse=a            " Mouse support
 color term
@@ -108,7 +108,7 @@ function! ToggleHiddenAll()
 	endif
 endfunction
 
-call ToggleHiddenAll()
+"call ToggleHiddenAll()
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>:<BS>
 

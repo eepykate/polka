@@ -1,0 +1,26 @@
+#   -----
+black="484e5b"
+red="ff5061"
+green="93f552"
+yellow="ffdd44"
+blue="52bdff"
+purple="d286ff"
+cyan="43eeff"
+#   -----
+bg0="0c0c0c"
+bg1="121214"
+bg2="151518"
+bg3="19191c"
+bg4="1c1c1f"
+button="daddee1a"
+#   -----
+fg1="eaeaee"
+fg2="bbbbbf"
+disabled="696969"
+#   -----
+accent="$cyan"
+accent2="$purple"
+contrast="000000"
+#   -----
+wall="a_quiet_mind.jpg"
+#   -----
