@@ -143,7 +143,7 @@ svg[class*="homeIcon-"] path {
 }
 
 /* hide text when collapsed */
-[class^="sidebar-"]:not(:hover) * .children-Bmpf2Q,
+[class^="sidebar-"]:not(:hover) * [class*="children-"],
 [class^="sidebar-"]:not(:hover) * [class^="name-"] {
 	display: none !important;
 }
@@ -207,15 +207,15 @@ svg[class*="homeIcon-"] path {
     --background-tertiary: var(--bg1);
     --background-accent: var(--accent);
     --background-floating: var(--bg1);
-    --background-modifier-hover: rgba(79,84,92,0.16);
-    --background-modifier-active: rgba(79,84,92,0.24);
-    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --background-modifier-hover: var(--bg2);
+    --background-modifier-selected: var(--bg1);
+    --background-modifier-active: var(--bg0);
+    --background-modifier-accent: var(--bg0);
     --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
     --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
     --channeltextarea-background: var(--bg1);
     --activity-card-background: var(--bg2);
     --deprecated-panel-background: var(--bg3);
-	--background-modifier-selected: var(--bg1);
 	--elevation-low: none !important;
 	--background-message-hover: var(--bg3) !important;
 }
