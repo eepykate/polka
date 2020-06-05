@@ -5,21 +5,21 @@
 
 :root {
 	/*  ----  */
-	--bg0:      #ffffff;
-	--bg1:      #fafafa;
-	--bg2:      #f2f2f2;
-	--bg3:      #ebebeb;
-	--bg4:      #e3e3e3;
-	--button:   #0000001a;
+	--bg0:      #2c3945;
+	--bg1:      #31404d;
+	--bg2:      #384754;
+	--bg3:      #43505c;
+	--bg4:      #4b5863;
+	--button:   #bbbbbf1a;
 	/*  ----  */
-	--fg2:      #767676;
-	--fg1:      #444444;
-	--disabled: #999999;
+	--fg2:      #bbbbbf;
+	--fg1:      #eaeaee;
+	--disabled: #696969;
 	/*  ----  */
-	--accent:   #6b9e4c;
-	--accent2:  #5094b4;
-	--contrast: #ffffff;
-	--red:         #cd5e79;
+	--accent:   #43eeff;
+	--accent2:  #d286ff;
+	--contrast: #000000;
+	--red:         #ff5061;
 	/*  ----  */
 }
 
@@ -29,7 +29,7 @@
 	--font-weight       : regular;
 	--icon-size         : 13px        !important;
 	--button-size       : 12px        !important;
-	--tab-min-height    : 40px        !important;
+	--tab-min-height    : 34px        !important;
 	--toolbar-bgimage   : none        !important;
 	--arrowpanel-dimmed : transparent !important;
 }
@@ -205,7 +205,7 @@
 /*.tabbrowser-tab:not([selected=true]):not(:hover) * .tab-icon-image {
 	filter: grayscale(50%) !important;
 }*/
-.tabbrowser-tab { opacity: 0.50 !important; }
+/*.tabbrowser-tab { opacity: 0.50 !important; }*/
 .tabbrowser-tab:hover { opacity: 1 !important; }
 .tabbrowser-tab[selected] { opacity: 1 !important; }
 
@@ -395,7 +395,7 @@ toolbarbutton#alltabs-button {
 }
 
 #navigator-toolbox {
-	background-color: var(--bg3) !important;
+	background-color: var(--fg1) !important;
 }
 
 /* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
@@ -441,6 +441,12 @@ menuitem[disabled="true"] {
 .findbar-textbox,
 .close-icon {
 	color: var(--fg1) !important;
+}
+
+.tab-content:not([selected="true"]) .tab-text,
+.tab-content:not([selected="true"]),
+.close-icon:not([selected="true"]) {
+	color: var(--bg1) !important;
 }
 
 #urlbar:not(:focus-within) #urlbar-background {
