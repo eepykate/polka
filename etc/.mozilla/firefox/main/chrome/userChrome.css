@@ -459,7 +459,7 @@ menuitem[disabled="true"] {
 
 .tab-content:not([selected="true"]) .tab-text,
 .tab-content:not([selected="true"]),
-.close-icon:not([selected="true"]) {
+#titlebar .close-icon:not([selected="true"]) {
 	color: var(--bg1) !important;
 }
 
