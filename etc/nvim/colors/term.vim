@@ -100,7 +100,7 @@ hi cssClassNameDot        ctermfg=3
 hi cssFunctionName        ctermfg=1
 hi cssUnitDecorators      ctermfg=1
 hi cssBackgroundProp      ctermfg=15
-hi cssAttributeSelector   ctermfg=3
+hi cssUnitDecorators      ctermfg=none
 hi cssAttributeSelector   ctermfg=3
 hi cssAttributeSelector   ctermfg=3
 
