@@ -1,5 +1,10 @@
 #!/bin/sh
+
+set -- "$1" $(mattr whxy "$(lsm -p)")
+x="$(( $4 + $2 - ( $2 / 2 ) - ( 1000 / 2 ) ))"
+y="$(( $5 + $3 - ( $3 / 2 ) - (  700 / 2 ) - 17 ))"
+
 case "$1" in
-	http*)  feh -Z -. -g "1000x700" "$1";;
-	*)      feh -Z -. -g "1000x700" --start-at "$1" "$(dirname "$1")";;
+	http*)  feh -Z. -g "1000x700+$x+$y" "$1";;
+	*)      feh -Z. -g "1000x700+$x+$y" --scale-down --start-at "$1" "$(dirname "$1")";;
 esac
