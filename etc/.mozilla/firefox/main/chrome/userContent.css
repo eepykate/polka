@@ -28,6 +28,7 @@
 }
 
 * {
+	scrollbar-color: var(--fg1) var(--bg1) !important;
 	scrollbar-width: thin !important;
 }
 
@@ -41,13 +42,6 @@ from the addons rules every time we update anything here */
 
 /*------ COMMON PART FOR ALL FIREFOX PAGES ------*/
 :root {
-/* These variable changes the scrollbars size and color. If you use the JS method instead, you don't need to change these.
-The scrollbars-width only has 3 acceptable values, auto, thin, and none:
-auto = default OS size | thin = half the width (will be hidden in about: pages) | none = hidden scrollbar */
-		--scrollbars-width: thin;
-		--scrollbars-thumb-color: var(--fg2);
-		--scrollbars-track-color: var(--bg1);
-
 /* This is a little fix for all pages in case you have a dark OS theme, you can use a neutral color
 like #7f7f7f (graish) or #2066dd (bluish) so that the letters can be seen in either a white or dark background for
 text-inputting things. Leave as "none" for default letter color. */
@@ -140,11 +134,6 @@ input[type=number], input[type=search], input[type=tel], input[type=url], textar
 }
 
 /*------ END OF INPUT BOXES TEXT - SCROLLBAR COLORS BELOW ------*/
-:root{
-	scrollbar-color: var(--scrollbars-thumb-color) var(--scrollbars-track-color) !important;
-	scrollbar-width: var(--scrollbars-width) !important}
-
-*|* {scrollbar-width: var(--scrollbars-width) !important}
 /*------ END OF SCROLLBAR COLORS ------*/
 
 /* Ublock Origin element picker window */
