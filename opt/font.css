@@ -5,9 +5,9 @@
 }
 
 
-.repository-content .Box *, /* Github */
-[class*="code"] *,
-[class*="Code"] *,
+.Box-body.data *, /* Github */
+/*[class*="code"] *,
+[class*="Code"] *,*/
 [id*="code"] *,
 [id*="Code"] *,
 code *,
