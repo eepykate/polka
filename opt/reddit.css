@@ -1554,14 +1554,16 @@ body div .thing .tagline .author.admin {
  transition:300ms
 }
 div.thing .tagline .author.moderator:before {
- background:#282!important;
- content:"Mod "
+ background:var(--green)!important;
+ content:"Mod ";
+ color: var(--contrast) !important;
 }
 body div .thing .tagline .author.moderator {
- background:#1A4B17!important
+ background:var(--green)!important;
+ color: var(--contrast) !important;
 }
 body div .thing .tagline .author.moderator:hover {
- background:#282!important;
+ background:var(--green)!important;
  text-decoration:none
 }
 .tagline .moderator:after {
@@ -2780,13 +2782,14 @@ body .stickied .thumbnail.self,
  padding:10px 0px;
  border-radius:15px
 }
+.res-nightmode .tagline .moderator,
 .stickied a.title:link,
 .stickied a.title:visited,
 body:not(.comments-page) .stickied .link .tagline,
 body:not(.comments-page) .stickied .tagline,
 body:not(.comments-page) .stickied .entry .buttons li a,
 body:not(.comments-page) .stickied .entry .buttons li+li {
- color:#2B8B27!important
+ color:var(--green) !important
 }
 .over18 a.title:link,
 .over18 a.title:visited,
