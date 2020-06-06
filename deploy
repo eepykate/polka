@@ -24,7 +24,7 @@ mkdir -p      \
 	~/usr/cache \
 	~/opt 2>/dev/null
 
-ln -s  $HOME/opt/dots/bin/* ~/bin/ 2>/dev/null
+ln -sf $HOME/opt/dots/bin/* ~/bin/ 2>/dev/null
 ln -sf $HOME/opt/dots/etc/* ~/etc/ 2>/dev/null
 ln -sf $HOME/opt/dots/usr/* ~/usr/ 2>/dev/null
 #cp -r  $HOME/opt/dots/usr/fonts/* ~/usr/fonts
