@@ -4,7 +4,7 @@ you're on your own
 
 ## [openbox] a quiet place
 
-![](https://i.imgur.com/RuKUDv2.png)
+![](https://i.imgur.com/ChKXn52.png)
 
 ## [openbox] plant
 
