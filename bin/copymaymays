@@ -1,5 +1,4 @@
-#!/bin/sh
-set -e
+#!/bin/sh -e
 dir="$HOME/opt/x/copy"
-opt="$(ls -1 "$dir" | rofi -dmenu -i)"
+opt="$(ls -1 "$dir" | menu -i)"
 xclip -sel clipboard -t image/png "$dir/$opt"
