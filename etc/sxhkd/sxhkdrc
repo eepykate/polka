@@ -1,6 +1,10 @@
 # terminal
 super + Return
 	st
+
+{alt + x, shift + super + F3}
+	draw
+
 super + b
 	b
 
