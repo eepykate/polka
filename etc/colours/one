@@ -15,7 +15,7 @@ bg4="4b5863"
 button="bbbbbf1a"
 #   -----
 fg1="eaeaee"
-fg2="bbbbbf"
+fg2="c6c6ca"
 disabled="696969"
 #   -----
 accent="$cyan"
