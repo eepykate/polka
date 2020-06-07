@@ -116,7 +116,7 @@
 
 /* small shadow on tabs */
 .tabbrowser-tab[selected="true"] {
-  box-shadow: 0px 8px 9px -1px rgba(0,0,0,0.45);
+	box-shadow: 0px 8px 9px -1px rgba(0,0,0,0.45);
 }
 
 #titlebar {
@@ -166,7 +166,7 @@
 }
 
 #navigator-toolbox:not([customizing]):focus-within #nav-bar {
-  margin-top: 0 !important;
+	margin-top: 0 !important;
 }
 
 /**  Navbar is on the same line as tabs  **/
@@ -191,16 +191,16 @@
 /* Navbar is above tabs */
 /*#nav-bar:not([customizing]) {
 	-moz-box-ordinal-group: 0 !important;
-  margin-bottom: 4px !important;
+	margin-bottom: 4px !important;
 }*/
 
 #urlbar[breakout] {
 	position: unset !important;
 }
 #urlbar[breakout][breakout-extend] {
-  top: 0;
-  left: 0;
-  width: 100%;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 
@@ -292,8 +292,8 @@ toolbarbutton#alltabs-button {
 
 
 /***
-  *  Custom icons
-  *  Enable `svg.context-properties.content.enabled` in about:config
+	*  Custom icons
+	*  Enable `svg.context-properties.content.enabled` in about:config
  ***/
 .toolbarbutton-animatable-image {
 	animation-duration: 0ms !important;
@@ -377,14 +377,14 @@ toolbarbutton#alltabs-button {
 /* Make urlbar megabar appear more compact */
 /* Set the pref browser.urlbar.megabar to true */
 #urlbar.megabar[breakout]{
-  margin-inline-start: 0px !important;
-  width: 100% !important;
-  left: 0 !important;
-  top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
+	margin-inline-start: 0px !important;
+	width: 100% !important;
+	left: 0 !important;
+	top: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
 }
 
 #urlbar.megabar[breakout]:not([open]) {
-	bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important; 
+	bottom: calc((var(--urlbar-toolbar-height) - var(--urlbar-height)) / 2) !important;
 }
 
 .urlbarView.megabar { margin-inline: 0 !important; width: auto !important; }
@@ -576,8 +576,8 @@ browser[type=content] > html {
 }
 
 .toolbarbutton-badge {
-  margin-top:   0px !important;	
-  margin-right: 0px !important;	
+	margin-top:   0px !important;
+	margin-right: 0px !important;
 }
 
 #PanelUI-menu-button {
