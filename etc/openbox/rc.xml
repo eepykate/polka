@@ -43,7 +43,7 @@
   </placement>
   <theme>
     <name>ob</name>
-    <titleLayout>IMC</titleLayout>
+    <titleLayout></titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
