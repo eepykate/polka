@@ -437,8 +437,14 @@ toolbarbutton#alltabs-button {
 	--arrowpanel-color: var(--fg1) !important;
 }
 
-#navigator-toolbox {
+:root:-moz-window-inactive #navigator-toolbox {
 	background-color: var(--fg1) !important;
+}
+#navigator-toolbox {
+	background-color: var(--accent) !important;
+}
+:root:not(:-moz-window-inactive) .tab-content:not([selected="true"]) .tab-label {
+	color: var(--contrast) !important;
 }
 
 /* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
