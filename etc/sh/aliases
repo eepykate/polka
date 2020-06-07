@@ -81,7 +81,7 @@ d() {
 	case "$(file -ib "$1") $1" in
 		*dir*)          cd "$1";;
 		*video*|*gif*) mpv "$1" & disown;;
-		*image*)        im "$1";;
+		*image*)        im "$1" & disown;;
 		*audio*)    paplay "$1";;
 		*gzip*)     tar -t "$1";;
 		*html*)    firefox "$1";;
