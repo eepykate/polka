@@ -1,0 +1,19 @@
+diff --git a/crud.c b/crud.c
+index b9cdf8f..be7a0f7 100644
+--- a/crud.c
++++ b/crud.c
+@@ -110,6 +110,11 @@ WindowSelection make_selection(Selection dimensions) {
+ 
+   XMapWindow(display, window);
+ 
++  XClassHint xhint;
++  xhint.res_class = "crud";
++  xhint.res_name  = "crud";
++  XSetClassHint(display, window, &xhint);
++
+   return (WindowSelection) {
+     .selection = dimensions,
+     .window    = window
+-- 
+2.27.0
+
