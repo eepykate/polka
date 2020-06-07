@@ -63,7 +63,7 @@ v() {
 	if [ ! "$1" ]; then
 		nvim
 	elif [[ ! -e "$1" ]] || [[ "$(stat -c '%U' "$1")" = "$USER" ]]; then
-		( cd "${1%/*}" 2>/dev/null; nvim "${1##*/}"; )
+		nvim "$1"
 	else
 		sudo -E nvim "$1"
 	fi
