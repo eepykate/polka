@@ -51,7 +51,7 @@ endfunction
 
 set statusline=%#Sl1#\ %{RedrawMode(mode())}\ 
 " Filename
-set statusline+=%#Sl2#\ %.20f\ 
+set statusline+=%#Sl2#\ %.20t\ 
 " Modified status
 set statusline+=%#Sl3#%{SetModifiedSymbol(&modified)}
 set statusline+=%#SlRese#
