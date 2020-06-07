@@ -1,14 +1,13 @@
-" Make sure to source this file somewhere at the bottom of your config.
-" ====================================================================
-" ====================================================================
+"
+"  ,=,e
+"   vim statusline
+"   based on lena's
+"
 
-" Do not show mode under the statusline since the statusline itself changes
-" color depending on mode
 set noshowmode
 
 set laststatus=2
-" ~~~~ Statusline configuration ~~~~
-" ':help statusline' is your friend!
+
 hi Sl1 ctermfg=18   cterm=none ctermbg=16
 hi Sl2 ctermfg=7    cterm=none ctermbg=none
 hi Sl3 ctermfg=8    cterm=NONE ctermbg=NONE
@@ -34,6 +33,8 @@ function! RedrawMode(mode)
 	endif
 	return ''
 endfunction
+
+
 function! SetModifiedSymbol(modified)
 	if a:modified == 1
 		return '[*]'
@@ -41,6 +42,8 @@ function! SetModifiedSymbol(modified)
 		return ''
 	endif
 endfunction
+
+
 function! SetFiletype(filetype)
 	if a:filetype == ''
 		return 'txt'

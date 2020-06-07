@@ -1,4 +1,6 @@
-### WINDOW
+#
+#  ,=,e
+#
 border.width: 0
 
 window.client.padding.width: 0
@@ -22,21 +24,15 @@ window.active.title.bg: flat solid
 window.active.title.bg.color: #eaeaee
 window.active.label.bg: flat solid
 window.active.label.bg.color: #eaeaee
-#window.active.handle.bg: texture
-#window.active.grip.bg: texture
 window.inactive.title.bg: flat solid
 window.inactive.title.bg.color: #bbbbbf
 window.inactive.label.bg: flat solid
 window.inactive.label.bg.color: #bbbbbf
-#window.inactive.handle.bg: texture
-#window.inactive.grip.bg: texture
 
 window.label.text.justify: center
 
-#window.active.label.text.font: text shadow
-#window.inactive.label.text.font: text shadow
 
-### MENU
+
 menu.border.width: 8
 menu.separator.width: 4
 menu.separator.padding.width: 10
@@ -63,13 +59,8 @@ menu.title.bg.color: #31404d
 
 menu.title.text.justify: center
 
-#menu.items.font: text shadow
-#menu.title.text.font: text shadow
-
-### OSD
 osd.border.width: 0
 
-#osd.label.text.font: text shadow
 window.active.button.unpressed.bg: Flat solid
 window.active.button.unpressed.bg.color: #eaeaee
 window.active.button.unpressed.bg.border.color: #fafafa
