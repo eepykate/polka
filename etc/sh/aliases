@@ -6,6 +6,10 @@ alias rm="dl"
 alias SU="sudo zsh"
 alias fuck="pkill -9"
 alias ss="sudo systemctl"
+alias s1="sleep 1"
+alias s2="sleep 2"
+alias s3="sleep 3"
+alias s4="sleep 4"
 
 f() { find "${2:-.}" -iname "*$1*"; }
 F() { find "${2:-.}" -name "$1"; }
