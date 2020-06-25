@@ -29,12 +29,12 @@ start-pulseaudio-x11   &
 
 hw 0
 
-sxhkd &
-picom &
-dunst &
+#sxhkd &
+#picom &
+#dunst &
 
 #
 #   And finally, start the window manager
 #
 
-exec "${1:-openbox}"
+exec "${1:-bspwm}"
