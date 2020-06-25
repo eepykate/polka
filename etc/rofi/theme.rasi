@@ -1,4 +1,3 @@
-/* vim: ft=css */
 configuration {
 	width: 350;
 }
@@ -109,3 +108,5 @@ element.selected {
 	border-radius: 0;
 	text-color: @accent;
 }
+/* vim: ft=css
+ */
