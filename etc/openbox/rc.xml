@@ -43,7 +43,7 @@
   </placement>
   <theme>
     <name>ob</name>
-    <titleLayout></titleLayout>
+    <titleLayout/>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -403,8 +403,12 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
+		<keybind key="A-F11">
+			<action name="ToggleFullscreen"/>
+		</keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
+				<dialog>icons</dialog>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
@@ -414,6 +418,7 @@
     </keybind>
     <keybind key="A-S-Tab">
       <action name="PreviousWindow">
+				<dialog>icons</dialog>
         <finalactions>
           <action name="Focus"/>
           <action name="Raise"/>
