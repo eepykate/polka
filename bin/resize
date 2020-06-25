@@ -9,10 +9,10 @@ percent=5
 bspc query -N -n focused.floating > /dev/null && percent=5
 
 case $1 in
-	west)  dim=width;  dir=right; falldir=left;   sign=-;;
-	east)  dim=width;  dir=right; falldir=left;   sign=+;;
-	north) dim=height; dir=top;   falldir=bottom; sign=-;;
-	south) dim=height; dir=top;   falldir=bottom; sign=+
+	west)  dim=width;  dir=right;  falldir=left; sign=-;;
+	east)  dim=width;  dir=right;  falldir=left; sign=+;;
+	north) dim=height; dir=bottom; falldir=top;  sign=-;;
+	south) dim=height; dir=bottom; falldir=top;  sign=+
 esac
 
 # get a percentage of the monitor resolution
