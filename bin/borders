@@ -3,9 +3,9 @@
 #   double borders
 #
 
-outer='0xfafafa'   # outer
-inner1='0x6b9e4c'  # focused
-inner2='0xacb1b8'  # normal
+outer='0x31404d'   # outer
+inner1='0x43eeff'  # focused
+inner2='0x5f7282'  # normal
 
 targets() {
 	case $1 in

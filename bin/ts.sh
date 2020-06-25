@@ -97,30 +97,32 @@ sed --follow-symlinks -i \
 echo "   * Reloading tabbed and st"
 rc
 
-#echo " - 👀"
-#sed --follow-symlinks -i               \
-#	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
-#	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-#	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
-#	~/bin/wm/borders
-#
-#sed --follow-symlinks -i  \
-#	-e "s/border_color.*/border_color       '#$bg1'/" \
-#	-e "s/d_border_color.*/d_border_color      '#$bg1'/" \
-#	"${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc"
-echo " - openbox"
-sed --follow-symlinks -i \
-	-e "s/\(text\.color: \).*/\\1#$contrast/" \
-	-e "s/\(bg\.color: \).*/\\1#$fg1/" \
-	-e "s/\(image\.color: \).*/\\1#$bg1/" \
-	-e "s/\(inactive.*bg\.color: \).*/\\1#$fg2/" \
-	-e "s/\(inactive.*image\.color: \).*/\\1#$fg2/" \
-	-e "s/\(menu.*color: \).*/\\1#$bg1/" \
-	-e "s/\(menu.*text.color: \).*/\\1#$fg2/" \
-	-e "s/\(menu.*active\.bg\.color: \).*/\\1#$bg4/" \
-	~/usr/themes/ob/openbox-3/themerc
+echo " - bspwm"
+sed --follow-symlinks -i               \
+	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
+	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
+	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
+	~/bin/borders
 
-openbox --reconfigure
+sed --follow-symlinks -i  \
+	-e "s/border_color.*/border_color       '#$bg1'/" \
+	-e "s/d_border_color.*/d_border_color      '#$bg1'/" \
+	"${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc"
+wm -r
+
+#echo " - openbox"
+#sed --follow-symlinks -i \
+#	-e "s/\(text\.color: \).*/\\1#$contrast/" \
+#	-e "s/\(bg\.color: \).*/\\1#$fg1/" \
+#	-e "s/\(image\.color: \).*/\\1#$bg1/" \
+#	-e "s/\(inactive.*bg\.color: \).*/\\1#$fg2/" \
+#	-e "s/\(inactive.*image\.color: \).*/\\1#$fg2/" \
+#	-e "s/\(menu.*color: \).*/\\1#$bg1/" \
+#	-e "s/\(menu.*text.color: \).*/\\1#$fg2/" \
+#	-e "s/\(menu.*active\.bg\.color: \).*/\\1#$bg4/" \
+#	~/usr/themes/ob/openbox-3/themerc
+#
+#openbox --reconfigure
 
 echo " - dunst"
 # Replace colours in dunst
