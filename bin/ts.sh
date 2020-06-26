@@ -159,8 +159,8 @@ dunst & disown
 echo " - dmenu"
 cd ~/opt/git/dmenu
 sed --follow-symlinks -i \
-	-e "s/Norm].*/Norm] = { \"#$fg2\", \"#$bg3\" },/" \
-	-e "s/Sel].*/Sel] = { \"#$contrast\", \"#$accent\" },/" \
+	-e "s/Norm].*/Norm] = { \"#$fg2\", \"#$bg1\" },/" \
+	-e "s/Sel].*/Sel] = { \"#$fg1\", \"#$bg4\" },/" \
 	config.h
 make
 cp dmenu ~/bin/bin/dmenu
