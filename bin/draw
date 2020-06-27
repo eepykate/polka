@@ -6,12 +6,12 @@
 eval "$(crud)"
 
 # 100 = term padding
-# 34  = window decoration size
+# 32  = border size * 2
 # 6   = font width
 # 13  = font height
 [ "$W" -ge 106 ]
 [ "$H" -ge 147 ]
-w="$(( (W - 100) / 6 ))"
-h="$(( (H - 100 - 34) / 13 ))"
+w="$(( (W - 100 - 32) / 6 ))"
+h="$(( (H - 100 - 32) / 15 ))"
 
-st -g "${w}x$h+$X+$Y"
+st -c floating -g "${w}x$h+$X+$Y"

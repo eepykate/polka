@@ -3,9 +3,9 @@
 #   double borders
 #
 
-outer='0x31404d'   # outer
-inner1='0x43eeff'  # focused
-inner2='0x5f7282'  # normal
+outer='0x2f3945'   # outer
+inner1='0xfbc2ff'  # focused
+inner2='0x485461'  # normal
 
 targets() {
 	case $1 in
@@ -14,7 +14,7 @@ targets() {
 	esac
 }
 
-draw() { chwb2 -I "$i" -O "$o" -i "2" -o "14" $@ 2> /dev/null; }
+draw() { chwb2 -I "$i" -O "$o" -i "4" -o "6" $@ 2> /dev/null; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |

@@ -1,0 +1,26 @@
+#   -----
+black="4f5d6b"
+red="ff8e8e"
+yellow="ffee99"
+green="adffbd"
+cyan="b5e9ff"
+blue="b0c7ff"
+purple="fbc2ff"
+#   -----
+bg0="29323d"
+bg1="2f3945"
+bg2="343f4c"
+bg3="3e4957"
+bg4="485461"
+#   -----
+fg1="f3f6ff"
+fg2="bcc1d1"
+button="${fg1}1a"
+disabled="696969"
+#   -----
+accent="$purple"
+accent2="$blue"
+contrast="555555"
+#   -----
+wall="cherry-blossom.jpg"
+#   -----

@@ -63,10 +63,11 @@ zle -N kls; bindkey ^k kls
 
 # fancy prompts
 command_not_found_handler() {
-	echo -e "\e[37mnot found:\e[0m $0"
-	return 1
+	echo -e "not found:\e[38;05;16m $0\e[0m"
+	return 127
 }
-export SUDO_PROMPT=$'\e[37mpass for \e[0m%u '
-PROMPT=$'%(?.%F{16}.%F{7})%(!.#.|) %f'
+export SUDO_PROMPT=$'pass for\e[38;05;16m %u\e[0m '
+#PROMPT=$'%(?.%F{16}.%F{7})%(!.#.|) %f'
+PROMPT=$' %1~%(?.%F{16}.%F{17}) | %f'
 
 # vim: ft=bash

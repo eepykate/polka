@@ -45,9 +45,9 @@ hi AleErrorSign   ctermfg=1
 hi AleError       ctermfg=1  cterm=underline
 
 " general lang syntax
-hi Comment      ctermfg=8
+hi Comment      ctermfg=7
 hi Constant     ctermfg=15
-hi String       ctermfg=7
+hi String       ctermfg=16
 hi Character    ctermfg=1
 hi Number       ctermfg=NONE
 hi Boolean      ctermfg=12
@@ -107,10 +107,11 @@ hi cssAttributeSelector   ctermfg=3
 
 " sh
 hi shConditional  ctermfg=7
-hi shDerefSimple  ctermfg=16
+hi shDerefSimple  ctermfg=17
 hi shVariable     ctermfg=15
 hi shStatement    ctermfg=15
-hi shQuote        ctermfg=7
+"hi shQuote        ctermfg=7
+hi! link shQuote String
 hi shFunction     ctermfg=7
 
 

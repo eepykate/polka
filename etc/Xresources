@@ -1,5 +1,5 @@
 st.termname:      st-256color
-st.font:          cherry:pixelsize=11
+st.font:          Roboto Mono:pixelsize=10:style=bold
 st.borderpx:      50
 st.tabspaces:     4
 st.xfps:          60
@@ -9,10 +9,10 @@ st.cwscale:       1.0
 st.chscale:       1.1
 st.blinktimeout:  0.5
 
-tabbed.normbgcolor: #43505c
-tabbed.normfgcolor: #c6c6ca
-tabbed.selfgcolor:  #eaeaee
-tabbed.selbgcolor:  #31404d
+tabbed.normbgcolor: #3e4957
+tabbed.normfgcolor: #bcc1d1
+tabbed.selfgcolor:  #f3f6ff
+tabbed.selbgcolor:  #2f3945
 
 Xft.dpi: 96
 Xft.antialias: true

@@ -34,6 +34,7 @@ sed --follow-symlinks -i \
 	-e "s/--bg2:.*#.*\;/--bg2:      #$bg2\;/" \
 	-e "s/--bg3:.*#.*\;/--bg3:      #$bg3\;/" \
 	-e "s/--bg4:.*#.*\;/--bg4:      #$bg4\;/" \
+	-e "s/--black:.*#.*\;/--black:    #$black\;/" \
 	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
 	-e "s/--fg1:.*#.*\;/--fg1:      #$fg1\;/" \
 	-e "s/--accent:.*#.*\;/--accent:   #$accent\;/" \
@@ -101,7 +102,7 @@ echo " - bspwm"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
+	-e "s/inner2=.*/inner2='0x$bg4'  # normal/"      \
 	~/bin/borders
 
 sed --follow-symlinks -i  \
