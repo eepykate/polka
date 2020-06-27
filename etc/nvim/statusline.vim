@@ -8,9 +8,9 @@ set noshowmode
 
 set laststatus=2
 
-hi Sl1 ctermfg=18   cterm=none ctermbg=16
+hi Sl1 ctermfg=16   cterm=none ctermbg=none
 hi Sl2 ctermfg=7    cterm=none ctermbg=none
-hi Sl3 ctermfg=8    cterm=NONE ctermbg=NONE
+hi Sl3 ctermfg=8    cterm=none ctermbg=none
 hi Slrese ctermfg=none cterm=none ctermbg=none
 function! RedrawMode(mode)
 	" Normal mode
@@ -52,7 +52,7 @@ function! SetFiletype(filetype)
 	endif
 endfunction
 
-set statusline=%#Sl1#\ %{RedrawMode(mode())}\ 
+set statusline=%#Slrese#\ %{RedrawMode(mode())}\ %#Sl1#\|
 " Filename
 set statusline+=%#Sl2#\ %.20t\ 
 " Modified status
@@ -63,4 +63,4 @@ set statusline+=%=
 " ruler
 set statusline+=\%#Sl2#\ %l,%c
 " filetype
-set statusline+=\ %#Sl1#\ %{SetFiletype(&filetype)}\ 
+set statusline+=\ %#Sl1#\|%#Slrese#\ %{SetFiletype(&filetype)}\ 
