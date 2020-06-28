@@ -8,8 +8,8 @@ super + Return
 {alt + x, shift + super + F3}
 	draw
 
-super + b
-	b
+super + v
+	firefox 0.0.0.0:9091
 
 super + g
 	sddg
