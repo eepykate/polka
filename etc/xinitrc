@@ -10,6 +10,15 @@ for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
 done
 unset f
 
+# bind caps lock to control, make l_ctrl do nothing
+cat << EOF | xmodmap /dev/stdin
+	clear lock
+	clear control
+	keycode 37 =
+	add control = Control_L Control_L Control_R
+	keycode 66 = Control_L Control_L NoSymbol NoSymbol
+EOF
+
 # DBus
 if [ ! "$DBUS_SESSION_BUS_ADDRESS" ]; then
 	dbus-launch --exit-with-session "${XDG_CONFIG_HOME:-~/.config}/xinitrc" "$@" &
