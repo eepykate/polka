@@ -15,11 +15,9 @@ tabbed.selfgcolor:  #f3f6ff
 tabbed.selbgcolor:  #2f3945
 
 Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.hintstyle: hintfull
 
 #include "Xres"
