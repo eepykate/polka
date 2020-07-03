@@ -5,7 +5,7 @@
 
 bindkey '^a'       beginning-of-line      # Ctrl-A
 bindkey '^e'       end-of-line            # Ctrl-E
-bindkey '^[[P'     delete-char            # Delete
+bindkey '^[[3~'    delete-char            # Delete
 bindkey '^[[1;5C'  forward-word           # Ctrl-RightArrow
 bindkey '^[[1;5D'  backward-word          # Ctrl-LeftArrow
 bindkey '^[^M'     self-insert-unmeta     # Alt-Return
