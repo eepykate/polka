@@ -6,6 +6,10 @@ you're on your own
 
 (These files are here to study and maybe for you to base something original off, please don't just copy everything)
 
+## [bspwm] add name @TODO
+
+![](https://i.imgur.com/awrkZsB.png)
+
 ## [openbox] a quiet place
 
 ![](https://i.imgur.com/XSQp3IS.png)
