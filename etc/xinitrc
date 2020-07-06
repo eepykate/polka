@@ -1,5 +1,4 @@
 #!/bin/sh
-
 #
 #   Tweaks
 #
@@ -18,6 +17,7 @@ cat << EOF | xmodmap /dev/stdin
 	add control = Control_L Control_L Control_R
 	keycode 66 = Control_L Control_L NoSymbol NoSymbol
 EOF
+xmousepasteblock
 
 # DBus
 if [ ! "$DBUS_SESSION_BUS_ADDRESS" ]; then
