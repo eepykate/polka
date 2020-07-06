@@ -1,39 +1,39 @@
-,=,e ​ ​ ​ a,=,
+<h1 align="center">gk's dotless files</h1>
+<h2 align="center">,=,e ​ ​ ​ a,=,</h2>
 
-dont ask for support
+<p align="center">don't ask for support, you're on your own</p>
+<p align="center">These files are here to study and maybe for you to base something original off, please don't just copy everything</p>
 
-you're on your own
+<h2 align="center">Screenshots</h2>
 
-(These files are here to study and maybe for you to base something original off, please don't just copy everything)
-
-## [bspwm] add name @TODO
+<h3 align="center"> [bspwm] add name @TODO </h3>
 
 ![](https://i.imgur.com/awrkZsB.png)
 
-## [openbox] a quiet place
+<h3 align="center"> [openbox] a quiet place </h3>
 
 ![](https://i.imgur.com/XSQp3IS.png)
 
-## [openbox] plant
+<h3 align="center"> [openbox] plant v2.0 </h3>
 
 ![](https://i.imgur.com/lRU8dYW.png)
 
-## [bspwm] 🌋
+<h3 align="center"> [bspwm] 🌋 </h3>
 
 ![](https://i.redd.it/bdhajrbjnhm41.png)
 
-## [bspwm] 🌿
+<h3 align="center"> [bspwm] 🌿 </h3>
 
 ![](https://i.imgur.com/TTEoDJP.png)
 
-## [bspwm] Rocky
+<h3 align="center"> [bspwm] Rocky </h3>
 
 ![](https://i.imgur.com/sRTB2pH.png)
 
-## [bspwm] The blood moon is rising
+<h3 align="center"> [bspwm] The blood moon is rising </h3>
 
 ![](https://i.imgur.com/WzYQESH.png)
 
-## [bspwm] rainbow
+<h3 align="center"> [bspwm] rainbow </h3>
 
 ![](https://i.imgur.com/cgGyZ3V.png)
