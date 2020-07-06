@@ -44,6 +44,7 @@ code,
 
 /* hide sidebar image */
 #channels > div[style*="width: 100%;"],
+[class*="listContent-"] > div:first-of-type,
 [class^="animatedContainer-"] {
 	display: none !important;
 }
@@ -73,6 +74,11 @@ svg[class*="homeIcon-"] path {
 /* hide unread channel indicator */
 .unread-3zKkbm {
 	display: none !important;
+}
+
+#channels,
+[class*="guilds-"] > div {
+	overflow-y: auto !important;
 }
 
 
@@ -347,7 +353,11 @@ svg[class*="homeIcon-"] path {
 	color: var(--fg2) !important;
 }
 
+[class*="reactionMe-"] {
+	background-color: var(--button) !important;
+}
 
-
-
+[class*="reactionMe-"] [class*="reactionCount-"] {
+	color: var(--fg1) !important;
+}
 
