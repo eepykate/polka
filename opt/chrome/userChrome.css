@@ -5,31 +5,32 @@
 
 :root {
 	/*  ----  */
-	--bg0:      #2c3945;
-	--bg1:      #31404d;
-	--bg2:      #384754;
-	--bg3:      #43505c;
-	--bg4:      #4b5863;
-	--button:   #bbbbbf1a;
+	--bg0:      #29323d;
+	--bg1:      #2f3945;
+	--bg2:      #343f4c;
+	--bg3:      #3e4957;
+	--bg4:      #485461;
+	--button:   #f3f6ff1a;
+	--black:    #4f5d6b;
 	/*  ----  */
-	--fg2:      #c6c6ca;
-	--fg1:      #eaeaee;
+	--fg2:      #bcc1d1;
+	--fg1:      #f3f6ff;
 	--disabled: #696969;
 	/*  ----  */
-	--accent:   #43eeff;
-	--accent2:  #d286ff;
-	--contrast: #000000;
-	--red:         #ff5061;
+	--accent:   #fbc2ff;
+	--accent2:  #b0c7ff;
+	--contrast: #555555;
+	--red:         #ff8e8e;
 	/*  ----  */
 }
 
 :root {
-	--font              : cherry;
-	--font-size         : 11px;
-	--font-weight       : regular;
-	--icon-size         : 13px        !important;
-	--button-size       : 12px        !important;
-	--tab-min-height    : 34px        !important;
+	--font              : Roboto Mono;
+	--font-size         : 10px;
+	--font-weight       : bold;
+	--icon-size         : 15px        !important;
+	--button-size       : 16px        !important;
+	--tab-min-height    : 40px        !important;
 	--toolbar-bgimage   : none        !important;
 	--arrowpanel-dimmed : transparent !important;
 }
@@ -116,7 +117,7 @@
 
 /* small shadow on tabs */
 .tabbrowser-tab[selected="true"] {
-	box-shadow: 0px 8px 9px -1px rgba(0,0,0,0.45);
+	box-shadow: 0px 4px 9px -1px rgba(0,0,0,0.45);
 }
 
 #titlebar {
@@ -124,12 +125,12 @@
 }
 
 /* rounded tabs */
-#navigator-toolbox .tab-background {
+/*#navigator-toolbox .tab-background {
 	border-radius: 5px 5px 0 0 !important;
 }
 
 /* https://github.com/muckSponge/MaterialFox */
-.tab-background::before,
+/*.tab-background::before,
 .tab-background::after {
 	content: "" !important;
 	display: block !important;
@@ -153,7 +154,7 @@
 	right: 0 !important;
 	transform: translateX(8px) !important;
 	box-shadow: -2px 2px 0 2px var(--bg1) !important;
-}
+}*/
 
 
 /***   Tabs-only OneLiner   ***/
@@ -249,9 +250,9 @@
 /*.tabbrowser-tab:not([selected=true]):not(:hover) * .tab-icon-image {
 	filter: grayscale(50%) !important;
 }*/
-/*.tabbrowser-tab { opacity: 0.50 !important; }*/
-.tabbrowser-tab:hover { opacity: 1 !important; }
-.tabbrowser-tab[selected] { opacity: 1 !important; }
+.tabbrowser-tab:not([selected])[pinned] { opacity: 0.60 !important; }
+/*.tabbrowser-tab:hover { opacity: 1 !important; }
+.tabbrowser-tab[selected] { opacity: 1 !important; }*/
 
 
 /* Hide tab icon from non-pinned tabs */
@@ -439,17 +440,21 @@ toolbarbutton#alltabs-button {
 }
 
 :root:-moz-window-inactive #navigator-toolbox {
-	background-color: var(--fg2) !important;
+	background-color: var(--bg4) !important;
 }
 #navigator-toolbox {
-	background-color: var(--fg1) !important;
+	background-color: var(--accent) !important;
 }
 :root:not(:-moz-window-inactive) .tab-content:not([selected="true"]) .tab-label {
-	color: var(--bg1) !important;
+	color: var(--contrast) !important;
+}
+
+.tab-content:not([selected="true"]) .tab-text.tab-label {
+	color: var(--fg2) !important;
 }
 
 /* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
-.tabbrowser-tab[pinned="true"]:only-of-type::after {
+/*.tabbrowser-tab[pinned="true"]:only-of-type::after {
 	content: '';
 	display: block !important;
 	width: 100vw !important;
@@ -463,7 +468,7 @@ toolbarbutton#alltabs-button {
 	padding-right: 1px;
 	z-index: -2;
 	pointer-events: none !important;
-}
+}*/
 
 menu[disabled="true"],
 menuitem[disabled="true"] {
@@ -493,8 +498,6 @@ menuitem[disabled="true"] {
 	color: var(--fg1) !important;
 }
 
-.tab-content:not([selected="true"]) .tab-text,
-.tab-content:not([selected="true"]),
 #titlebar .close-icon:not([selected="true"]) {
 	color: var(--bg1) !important;
 }
@@ -633,6 +636,18 @@ browser[type=content] > html {
 
 /* Tab width */
 .tabbrowser-tab[fadein]:not([pinned]) { max-width: 90% !important; }
+
+.tabbrowser-tab[pinned="true"] {
+  width: var(--tab-min-height) !important;
+}
+
+.tab-content[pinned="true"] {
+	margin: 0 auto;
+}
+
+.tabbrowser-tab[pinned="true"] .tab-text {
+	display: none !important;
+}
 
 /* add padding to urlbar results */
 .urlbarView-row { height: 35px !important; }
