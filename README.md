@@ -6,9 +6,9 @@
 
 <h2 align="center">Screenshots</h2>
 
-<h3 align="center"> [bspwm] add name @TODO </h3>
+<h3 align="center"> [bspwm] cherry blossom </h3>
 
-![](https://i.imgur.com/awrkZsB.png)
+![](https://i.imgur.com/v8OqidV.png)
 
 <h3 align="center"> [openbox] a quiet place </h3>
 
