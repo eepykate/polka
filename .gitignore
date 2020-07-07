@@ -1,1 +1,5 @@
-*
+etc/nvim/plugged
+etc/sh/.zcompdump
+**/*hist*
+etc/sh/sc.sh
+opt/chrome/userChrome.js
