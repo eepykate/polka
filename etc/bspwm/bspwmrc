@@ -54,5 +54,13 @@ s picom
 s dunst
 s sxhkd
 
+cat << EOF | xmodmap /dev/stdin
+	clear lock
+	clear control
+	keycode 37 =
+	add control = Control_L Control_L Control_R
+	keycode 66 = Control_L Control_L NoSymbol NoSymbol
+EOF
+
 # bspwm-specific keybindings
 sxhkd -c "${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm" &
