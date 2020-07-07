@@ -1,21 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-[ "$1" = -y ] &&
+if [ "$1" = y ]; then
 	y=y
-
-[[ ! "$y" ]] && {
-	echo
-	echo "This is made for me, and me alone, please do not"
-	echo "expect this to work on your system, and do not complain"
-	echo "that this doesn't work on your system."
-	echo "I am not responsible for your system breaking"
-	echo "if you proceed any further."
-	echo
-
-	printf '[Make sure this repository is installed as ~/opt/dots, then hit y] '
+else
+	printf '[press the damn button, fool] '
 	read -r y
-}
-[[ $y = y ]] || exit
+fi
+
+[ "$y" = y ] || exit
 
 mkdir -p      \
 	~/bin/app   \
@@ -24,8 +16,6 @@ mkdir -p      \
 	~/usr/cache \
 	~/opt 2>/dev/null
 
-ln -sf $HOME/opt/dots/bin/* ~/bin/ 2>/dev/null
-ln -sf $HOME/opt/dots/etc/* ~/etc/ 2>/dev/null
-ln -sf $HOME/opt/dots/usr/* ~/usr/ 2>/dev/null
-#cp -r  $HOME/opt/dots/usr/fonts/* ~/usr/fonts
-#cp -r  $HOME/opt/dots/firefox/etc/.mozilla ~/etc/
+ln -sf "$PWD/bin/"* ~/bin/ 2>/dev/null
+ln -sf "$PWD/etc/"* ~/etc/ 2>/dev/null
+ln -sf "$PWD/usr/"* ~/usr/ 2>/dev/null
