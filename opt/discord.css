@@ -49,6 +49,10 @@ code,
 	display: none !important;
 }
 
+/* fix channels sidebar getting a fucked offset after visiting the nitro tab */
+.content-98HsJk {
+	position: initial !important;
+}
 
 
 /* use browser scrollbar */
@@ -147,6 +151,12 @@ svg[class*="homeIcon-"] path {
 	position: relative;
 	left: -10px;
 }
+
+[class*="sidebar-"]:not(:hover) * [class*="voiceUser"] {
+	position: relative;
+	left: -30px;
+}
+
 
 /* hide text when collapsed */
 [class^="sidebar-"]:not(:hover) * [class*="children-"],
@@ -360,4 +370,3 @@ svg[class*="homeIcon-"] path {
 [class*="reactionMe-"] [class*="reactionCount-"] {
 	color: var(--fg1) !important;
 }
-
