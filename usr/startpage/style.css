@@ -8,10 +8,10 @@ html {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	font-family: "Fira Mono", sans-serif;
+	font-family: "Roboto Mono", sans-serif;
 	font-weight: bold;
-	font-size: 12px;
-	margin-top: -10px;
+	font-size: 10px;
+	margin-top: -25px;
 }
 
 html, body {
@@ -19,24 +19,24 @@ html, body {
 }
 
 body {
-	width: 270px;
+	width: 220px;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	grid-gap: 10px;
+	grid-gap: 5px;
 }
 
 a, a:visited {
 	text-decoration: none;
 	outline: none;
-	color: var(--fg2);
-	padding: 15px 0;
+	color: var(--fg1);
+	padding: 20px 0;
 	border-radius: 4px;
 	text-align: center;
 	transition: background-color 200ms ease-in-out;
 }
 
 a:hover {
-	color: var(--fg1);
-	background: var(--bg3);
+	color: var(--accent);
+	/*background: var(--bg3);*/
 }
