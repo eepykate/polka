@@ -4,36 +4,42 @@
 #
 
 # Basic X stuff
-for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
-	[ -x "$f" ] && . "$f"
+for f in /etc/X11/xinit/xinitrc.d/*.sh; do
+	. "$f"
 done
 unset f
 
-
 # DBus
-if [ ! "$DBUS_SESSION_BUS_ADDRESS" ]; then
+[ "$DBUS_SESSION_BUS_ADDRESS" ] ||
 	dbus-launch --exit-with-session "${XDG_CONFIG_HOME:-~/.config}/xinitrc" "$@" &
-fi
 
 
-screen.sh     # Custom screen layout
-pap           # Wallpaper
+screen.sh     # change display layout
+pap           # wallpaper
 
-synclient TouchpadOff=1           # Disable touchpad
-xset r rate 200 60 &              # Faster keyboard
+synclient TouchpadOff=1     # disable touchpad
+start-pulseaudio-x11 &      # audio
+xset r rate 200 60   &      # faster keyboard
+unclutter -idle 15   &      # hide cursor after 15 seconds
 
 xrdb "${XDG_CONFIG_HOME:-~/.config}/Xresources"
 
-unclutter -idle 15     &
-start-pulseaudio-x11   &
-
+# delete entries of previously hidden windows
 hw 0
 
-#sxhkd &
-#picom &
-#dunst &
+case "${1:-bspwm}" in
+	# bspwm already has this stuff in the config
+	bspwm) ;;
+	*)
+		sxhkd &
+		picom &
+		dunst &
+	;;
+esac
+
+
 f() {
-cat << EOF | xmodmap /dev/stdin
+cat << EOF | xmodmap -
 	clear lock
 	clear control
 	keycode 37 =
