@@ -117,6 +117,12 @@ endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>:<BS>
 
+" fallback colour scheme for ttys due to using color16 in main one
+if $TERM == 'linux'
+	colorscheme desert
+	set background=dark
+	hi cursorLine cterm=none
+endif
 
 "function! Tabs()
 "  let asd = system("echo $(( RANDOM % 2 ))")

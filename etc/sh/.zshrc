@@ -67,7 +67,9 @@ command_not_found_handler() {
 	return 127
 }
 export SUDO_PROMPT=$'pass for\e[38;05;16m %u\e[0m '
-#PROMPT=$'%(?.%F{16}.%F{7})%(!.#.|) %f'
-PROMPT=$' %1~%(?.%F{16}.%F{17}) | %f'
+PROMPT=$' %1~%F{%(?.16.17)} %(!.|./) %f'
 
-# vim: ft=bash
+[ "$TERM" = linux ] &&
+	PROMPT=$' %1~%F{%(?.4.1)} %(!.|./) %f'
+
+: vim: ft=bash
