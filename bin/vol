@@ -18,6 +18,14 @@ notify() {
 		"$1" "" "$2" "$3" "[]" "{}" 5000 >/dev/null
 }
 
+playerctl() {
+	command playerctl "$@" &
+	{
+		pid=$!
+		sleep 1; kill $pid
+	} >/dev/null 2>&1 &
+}
+
 mute() {
 	# if a command isn't specified toggle mute
 	if [ -z "$1" ]; then
