@@ -1,5 +1,6 @@
 etc/nvim/plugged
 etc/sh/.zcompdump
+etc/gtk-2.0/gtkfilechooser.ini
 **/*hist*
 etc/sh/sc.sh
 opt/chrome/userChrome.js
