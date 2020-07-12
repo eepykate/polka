@@ -32,6 +32,17 @@ hw 0
 #sxhkd &
 #picom &
 #dunst &
+f() {
+cat << EOF | xmodmap /dev/stdin
+	clear lock
+	clear control
+	keycode 37 =
+	add control = Control_L Control_L Control_R
+	keycode 66 = Control_L Control_L NoSymbol NoSymbol
+EOF
+}
+# doesn't work if it's only ran once...
+f; f
 
 xmousepasteblock &
 
