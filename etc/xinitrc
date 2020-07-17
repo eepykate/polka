@@ -30,6 +30,11 @@ hw 0
 case "${1:-bspwm}" in
 	# bspwm already has this stuff in the config
 	bspwm) ;;
+	gnome)
+		export XDG_SESSION_TYPE=x11
+		export GDK_BACKEND=x11
+		set -- gnome-session
+	;;
 	*)
 		sxhkd &
 		picom &
