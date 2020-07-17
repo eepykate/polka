@@ -370,3 +370,42 @@ svg[class*="homeIcon-"] path {
 [class*="reactionMe-"] [class*="reactionCount-"] {
 	color: var(--fg1) !important;
 }
+
+[class*="mentioned-"] {
+	background-color: transparent;
+	position: relative;
+	border-left: 2px solid var(--accent);
+}
+
+[class*="mentioned-"]:hover {
+	background-color: transparent !important;
+}
+
+[class*="mentioned-"]:before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	background-color: var(--accent);
+	opacity: 0.15;
+	z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
