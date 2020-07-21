@@ -27,9 +27,9 @@ _ gapless_monocle           true
 
 _ border_width              16
 _ borderless_monocle        true
-_ normal_border_color       '#2f3945'
-_ active_border_color       '#2f3945'
-_ focused_border_color      '#2f3945'
+_ normal_border_color       '#0f1019'
+_ active_border_color       '#0f1019'
+_ focused_border_color      '#0f1019'
 
 
 # other
@@ -55,6 +55,7 @@ borders &
 s picom
 s dunst
 s sxhkd
+s bar1
 
 # bspwm-specific keybindings
 sxhkd -c "${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm" &

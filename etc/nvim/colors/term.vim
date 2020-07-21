@@ -45,7 +45,7 @@ hi AleErrorSign   ctermfg=1
 hi AleError       ctermfg=1  cterm=underline
 
 " general lang syntax
-hi Comment      ctermfg=7
+hi Comment      ctermfg=8
 hi Constant     ctermfg=15
 hi String       ctermfg=16
 hi Character    ctermfg=1
@@ -113,6 +113,7 @@ hi shStatement    ctermfg=15
 "hi shQuote        ctermfg=7
 hi! link shQuote String
 hi shFunction     ctermfg=7
+hi shHereDoc      ctermfg=15
 
 
 " md

@@ -3,9 +3,9 @@
 #   double borders
 #
 
-outer='0x2f3945'   # outer
-inner1='0xfbc2ff'  # focused
-inner2='0x485461'  # normal
+outer='0x0f1019'   # outer
+inner1='0xa8b67a'  # focused
+inner2='0x1b1c28'  # normal
 
 targets() {
 	case $1 in
@@ -13,12 +13,13 @@ targets() {
 		normal)  bspc query -N -n .local.\!focused.\!fullscreen
 	esac
 }
+bspc config border_width 16
 
-draw() { chwb2 -I "$i" -O "$o" -i "4" -o "6" $@ 2> /dev/null; }
+draw() { chwb2 -I "$inner" -O "$outer" -i "5" -o "6" "$@" 2> /dev/null; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
 	while read -r _; do
-		i=$inner1 o=$outer draw "$(targets focused)"
-		i=$inner2 o=$outer draw "$(targets  normal)"
+		inner=$inner1 draw "$(targets focused)"
+		inner=$inner2 draw "$(targets  normal)"
 	done

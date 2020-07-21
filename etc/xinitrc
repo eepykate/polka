@@ -35,6 +35,9 @@ case "${1:-bspwm}" in
 		export GDK_BACKEND=x11
 		set -- gnome-session
 	;;
+	kde)
+		set -- startplasma-x11
+	;;
 	*)
 		sxhkd &
 		picom &

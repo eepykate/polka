@@ -1,0 +1,26 @@
+#   -----
+black=434366
+red=d26161
+yellow=cfa76a
+green=a8b67a
+cyan=87abc9
+blue=8497cf
+purple=b887cc
+#   -----
+bg0=0c0d14
+bg1=0f1019
+bg2=13141e
+bg3=161723
+bg4=1b1c28
+#   -----
+fg1=bfc1d5
+fg2=808297
+button=${fg1}1a
+disabled=696969
+#   -----
+accent=$green
+accent2=$yellow
+contrast=$bg4
+#   -----
+wall=lights-on-tree.jpg
+#   -----

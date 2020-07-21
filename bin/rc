@@ -3,7 +3,7 @@
 xrdb ${XDG_CONFIG_HOME:-~/.config}/Xresources
 
 #stmessage st tabbed dropdown
-pkill -USR1 st
+killall -USR1 st
 exit
 
 xrdb="$(xrdb -query)"

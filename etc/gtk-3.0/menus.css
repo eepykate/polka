@@ -4,7 +4,7 @@ menu,
 	margin: 4px 0;
 	padding: 4px 0;
 	box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-	background-color: #3e4957;
+	background-color: #161723;
 	border: 1px solid rgba(0, 0, 0, 0.26);
 }
 
@@ -22,7 +22,7 @@ menu menuitem,
 	min-height: 20px;
 	min-width: 40px;
 	padding: 4px 8px;
-	color: #f3f6ff;
+	color: #bfc1d5;
 	font: initial;
 	text-shadow: none;
 }
