@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+#  Use your phone as a mic through mumble
+#
+# Original:
+#   https://github.com/pzmarzly/mic_over_mumble
+#
+# I claim no credit, this is a version with a few changes, notably:
+#  - not requiring the terminal to stay open (run `mic &!`)
+#  - removing functions, the original used way too many
+#   (function > function > pipe into function
+#    which has a name longer than the command)
+
+
+# prepare environment
+mkdir -p "${XDG_DATA_HOME:=$HOME/.local/share}/mic-mumble"
+
+cd "$XDG_DATA_HOME/mic-mumble"
+
+echo "bonjour=true" > murmur.ini
+echo "bandwidth=130000" >> murmur.ini
+
+if [ ! -e ./initdone ]; then
+	echo "You will need to configure Mumble client to use the lowest possible latency."
+	echo "We will start Mumble now. Please complete setup wizard and go to settings to increase quality and decrease latency."
+	echo "Also, mute your microphone (if you have one) in Mumble."
+	echo "Then exit Mumble."
+	mumble >/dev/null 2>&1
+	touch ./initdone
+fi
+
+# set up
+echo "Starting Mumble server (murmurd)..."
+murmurd -ini ./murmur.ini &
+# Murmur forks, so the PID acquired by `$!`
+# wouldn't help us much.
+sleep 5
+
+echo "Starting Mumble client..."
+mumble "mumble://localhost" >/dev/null 2>&1 &
+mumble_pid=$!
+# Mumble is slow to launch, and the
+# user may need to click on OK button.
+sleep 8
+
+echo "Changing PulseAudio configuration..."
+echo "Adding sink..."
+SINK_MODULE_PAID=$(pactl load-module \
+	module-null-sink \
+	sink_name=Loopback_of_Mumble \
+	sink_properties=device.description=Loopback_of_Mumble)
+sleep 1
+SINK_PAID=$(pacmd list-sinks \
+	| grep -F -e "index: " -e "name: " \
+	| awk 'ORS=NR%2?" ":"\n"' \
+	| grep -F -e "Loopback" \
+	| cut -c 5- \
+	| awk '{print $2}')
+
+MUMBLE_CLIENT_PAID=$(pacmd list-sink-inputs \
+	| grep -F -e "index: " -e "media.name = " \
+	| awk 'ORS=NR%2?" ":"\n"' \
+	| grep -F -e "Mumble" \
+	| awk '{print $2}')
+
+pacmd move-sink-input "$MUMBLE_CLIENT_PAID" "$SINK_PAID"
+
+echo "Adding a virtual microphone..."
+SOURCE_MODULE_PAID=$(pactl load-module \
+	module-virtual-source \
+	source_name=VirtualMic \
+	master=Loopback_of_Mumble.monitor \
+	source_properties=device.description=VirtualMic)
+
+pactl set-default-source VirtualMic
+
+echo "Done. Please use pavucontrol to ensure everything works."
+
+wait $mumble_pid
+
+
+echo "Shutting down..."
+sleep 2
+echo "Stopping Mumble server..."
+pkill murmurd
+echo "Restoring PulseAudio configuration..."
+pactl unload-module "$SINK_MODULE_PAID"
+pactl unload-module "$SOURCE_MODULE_PAID"
