@@ -15,7 +15,7 @@ _() { bspc config "$@"; }
 # mouse
 xsetroot -cursor_name       left_ptr
 _ pointer_modifier          mod1
-_ pointer_motion_interval   10
+_ pointer_motion_interval   5
 
 _ focus_follows_pointer     true
 _ pointer_follows_focus     false
