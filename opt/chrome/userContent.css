@@ -1,27 +1,27 @@
 :root {
 	/*  ----  */
-	--bg0:      #29323d;
-	--bg1:      #2f3945;
-	--bg2:      #343f4c;
-	--bg3:      #3e4957;
-	--bg4:      #485461;
-	--button:   #f3f6ff1a;
+	--bg0:      #0c0d14;
+	--bg1:      #0f1019;
+	--bg2:      #13141e;
+	--bg3:      #161723;
+	--bg4:      #1b1c28;
+	--button:   #bfc1d51a;
 	/*  ----  */
-	--fg2:      #bcc1d1;
-	--fg1:      #f3f6ff;
+	--fg2:      #808297;
+	--fg1:      #bfc1d5;
 	--disabled: #696969;
 	/*  ----  */
-	--accent:   #fbc2ff;
-	--accent2:  #b0c7ff;
-	--contrast: #555555;
+	--accent:   #a8b67a;
+	--accent2:  #cfa76a;
+	--contrast: #1b1c28;
 	/*  ----  */
 
-	--red:         #ff8e8e;
-	--purple:      #fbc2ff;
-	--blue:        #b0c7ff;
-	--cyan:        #b5e9ff;
-	--green:       #adffbd;
-	--yellow:      #ffee99;
+	--red:         #d26161;
+	--purple:      #b887cc;
+	--blue:        #8497cf;
+	--cyan:        #87abc9;
+	--green:       #a8b67a;
+	--yellow:      #cfa76a;
 	--border1:     #223344;
 	--border2:     #334455;
 	-moz-tab-size: 2;
