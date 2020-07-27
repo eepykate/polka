@@ -5,7 +5,7 @@
 
 dis="$(lsblk -ro "name,mountpoint,type" \
 	| grep '  part' | cut -d ' ' -f 1     \
-	| rofi -dmenu -p mount)" || exit
+	| menu -p mount)" || exit
 
 mkdir -p "$HOME/opt/mnt/$dis"
 sudo mount "/dev/$dis" "$HOME/opt/mnt/$dis"
