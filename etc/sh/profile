@@ -26,7 +26,7 @@ export PATH="$(find ~/bin/ -type d | sed 's|/$||'| tr '\n' ':')$PATH"
 export LESS=-R
 export LESS_TERMCAP_md=$'\033[1;34m'       # begin blink
 export LESS_TERMCAP_{me,ue}=$'\033[0m'     # reset bold/blink and underline
-export LESS_TERMCAP_us=$'\033[1;35m'       # begin underline
+export LESS_TERMCAP_us=$'\033[0m'          # begin underline
 
 ( shortcuts & )
 
