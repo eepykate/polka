@@ -498,7 +498,7 @@ menuitem[disabled="true"] {
 	color: var(--fg1) !important;
 }
 
-#titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) > * {
+#titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) .tab-content > * {
 	color: var(--bg1) !important;
 }
 
