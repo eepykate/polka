@@ -11,6 +11,7 @@ d   blz        ~/opt/git/blaze
 d   ri         ~/opt/git/ricing
 d   sn         ~/opt/git/shnippets
 d   wp         ~/opt/git/Wallpapers
+d   pfe        ~/opt/git/posixfetch
 d   recs       ~/opt/x/recs
 d   pics       ~/opt/x/pics
 d   fchr       ~/etc/.mozilla/firefox/main/chrome
@@ -47,3 +48,4 @@ f   ucc        ~/etc/.mozilla/firefox/main/chrome/userContent.css
 # other
 f   no         ~/opt/junk/notes
 f   vimrc      ~/etc/nvim/init.vim
+f   pf         ~/opt/git/posixfetch/posixfetch
