@@ -55,7 +55,7 @@ alias ls="ls -h --group-directories-first --color=auto"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
-reset_cursor() { echo -en "\e[4 q"; }
+recu() { echo -en "\e[4 q"; }
 
 mc() { mkdir -p "$1"; cd "$1" || return; }
 bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
@@ -63,7 +63,6 @@ bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 alias td="transmission-daemon"
 tc() { transmission-remote-cli; reset_cursor; }
 v() {
-	# ls -la $1 | grep -i '^[a-z-]* [0-9] root'
 	if [ ! "$1" ]; then
 		nvim
 	elif [[ ! -e "$1" ]] || [[ "$(stat -c '%U' "$1")" = "$USER" ]]; then
@@ -71,7 +70,7 @@ v() {
 	else
 		sudo -E nvim "$1"
 	fi
-	reset_cursor
+	recu
 }
 
 vb() {
