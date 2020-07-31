@@ -62,13 +62,12 @@ bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 
 alias td="transmission-daemon"
 tc() { transmission-remote-cli; reset_cursor; }
+
 v() {
-	if [ ! "$1" ]; then
-		nvim
-	elif [[ ! -e "$1" ]] || [[ "$(stat -c '%U' "$1")" = "$USER" ]]; then
-		nvim "$1"
+	if [[ ! -e "$1" ]] || [[ "$(stat -c '%U' "$1")" = "$USER" ]]; then
+		nvim "$@"
 	else
-		sudo -E nvim "$1"
+		sudo -E nvim "$@"
 	fi
 	recu
 }
