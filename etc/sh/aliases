@@ -47,6 +47,7 @@ command -v compdef &>/dev/null &&
 
 
 
+alias q="dragon"
 alias e="atool -x"
 alias grep="grep --color=auto"
 alias g="grep -i"
