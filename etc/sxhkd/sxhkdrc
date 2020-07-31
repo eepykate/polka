@@ -74,10 +74,10 @@ alt + grave
 	dropdown
 
 # I have this key bound on my mouse
-super + shift + F2
-	h="$(colorpicker -doq | tr -d '#\n' | tr "[[:upper:]]" "[[:lower:]]")"; \
-	echo -n $h | xclip -sel clip;          \
-	notify-send "$h" "<span background=\"#$h\">      </span>"
+#super + shift + F2
+#	h="$(colorpicker -doq | tr -d '#\n' | tr "[[:upper:]]" "[[:lower:]]")"; \
+#	echo -n $h | xclip -sel clip;          \
+#	notify-send "$h" "<span background=\"#$h\">      </span>"
 
 ctrl + alt + {1-9,0}
 	hw {1-9,0}
@@ -122,3 +122,10 @@ super + {p, Tab}
 #
 ctrl + alt + t
 	synclient TouchpadOff={0,1}
+
+#super + shift + F2
+#	pactl set-source-mute Loopback_of_Mumble.monitor false
+
+
+super + shift + F2
+	pactl set-source-mute Loopback_of_Mumble.monitor {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
