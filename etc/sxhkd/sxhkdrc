@@ -87,18 +87,18 @@ ctrl + alt + {1-9,0}
 #   screenshots
 #
 {_,super, shift} + Print
-	scr {_,-f,-s}
+	scr {_,-F,-S}
 
 # mouse bind
 super + shift + F1
-	scr -s
+	scr -S
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/pics/$(ls \
 	-1t $HOME/opt/x/pics/ --ignore old | head -1)
 
 super + {Insert, Home, Prior, End}
-	rec {_,-c -p k, -c -p k -b 7,-s}
+	scr {-r,-c -p k, -c -p k -b 7,-s}
 
 
 #

@@ -7,7 +7,6 @@ d   gi         ~/opt/git
 d   sp         ~/usr/startpage
 d   oth        ~/opt/linux/oth
 d   gst        ~/opt/git/st
-d   reco       ~/opt/git/rec
 d   ri         ~/opt/git/ricing
 d   sn         ~/opt/git/shnippets
 d   wp         ~/opt/git/Wallpapers
@@ -40,7 +39,6 @@ f   ob         ~/etc/openbox/rc.xml
 # X
 f   xin        ~/etc/xinitrc
 f   xres       ~/etc/Xresources
-f   re         ~/bin/rec
 f   gcs        ~/etc/gtk-3.0/gtk.css
 f   uc         ~/etc/.mozilla/firefox/main/chrome/userChrome.css
 f   ucc        ~/etc/.mozilla/firefox/main/chrome/userContent.css
