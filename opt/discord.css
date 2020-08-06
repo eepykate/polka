@@ -5,6 +5,12 @@ code:not(.inline)::before {
     opacity: 0.5;
 }
 
+code:not(.inline)::before {
+    content: attr(class) "\A" !important;
+    font-size: 9px;
+    opacity: 0.5;
+}
+
 /* Remove shadow from search results */
 [class*="searchResultMessage-"] {
 	box-shadow: none !important;
@@ -89,16 +95,18 @@ svg[class*="homeIcon-"] path {
 /*
  * collapsed sidebar
  */
+
 /* servers */
 [class*="guilds-"] {
 	margin-left: -60px;
-	transition: all 200ms;
+	transition: all 0ms;
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	z-index: 102;
 	background-color: var(--bg3) !important;
 }
+
 .scroller-2TZvBN {
 	background-color: var(--bg3) !important;
 }
@@ -122,13 +130,29 @@ svg[class*="homeIcon-"] path {
 
 /* channels sidebar */
 [class*="content-"] > [class*="sidebar-"] {
-	transition: all 200ms;
+	transition: all 0ms;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: -198px;
 	z-index: 2;
 	background-color: var(--bg2) !important;
+}
+
+/* make big */
+[class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
+	font-size: 22px !important;
+	font-family: Monospace !important;
+	font-weight: 900 !important;
+	margin-left: 3px;
+	max-width: 13px !important;
+	min-height: 25px !important;
+}
+
+
+[class^="sidebar-"]:not(:hover) * svg[class^="icon"] ~ [class*="children"],
+[class^="sidebar-"]:not(:hover) * svg[class^="icon"] {
+	display: none;
 }
 
 /* fix channel icon widths */
@@ -159,8 +183,10 @@ svg[class*="homeIcon-"] path {
 
 
 /* hide text when collapsed */
-[class^="sidebar-"]:not(:hover) * [class*="children-"],
-[class^="sidebar-"]:not(:hover) * [class^="name-"] {
+/*[class^="sidebar-"]:not(:hover) * [class*="children-"],
+[class^="sidebar-"]:not(:hover) * [class^="name-"] */
+[class^="sidebar-"]:not(:hover) * [class*="container-"] ~ [class*="children-"],
+[class^="sidebar-"]:not(:hover) * [class*="container-"][class*="name-"] {
 	display: none !important;
 }
 
@@ -388,7 +414,7 @@ svg[class*="homeIcon-"] path {
 	position: absolute;
 	left: 0;
 	background-color: var(--accent);
-	opacity: 0.15;
+	opacity: 0.1;
 	z-index: -1;
 }
 
