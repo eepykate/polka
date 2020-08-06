@@ -29,6 +29,7 @@
 <h3 align="center"> [bspwm] Rocky </h3>
 
 ![](https://i.imgur.com/sRTB2pH.png)
+![](https://i.imgur.com/eqP0327.png)
 
 <h3 align="center"> [bspwm] The blood moon is rising </h3>
 
