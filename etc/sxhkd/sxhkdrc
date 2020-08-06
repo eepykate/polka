@@ -90,15 +90,15 @@ ctrl + alt + {1-9,0}
 	scr {_,-F,-S}
 
 # mouse bind
-super + shift + F1
+XF86Tools
 	scr -S
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/pics/$(ls \
 	-1t $HOME/opt/x/pics/ --ignore old | head -1)
 
-super + {Insert, Home, Prior, End}
-	scr {-r,-c -p k, -c -p k -b 7,-s}
+super + {Insert, Home, End}
+	scr {-r,-c -p k,-s}
 
 
 #
@@ -126,6 +126,14 @@ ctrl + alt + t
 #super + shift + F2
 #	pactl set-source-mute Loopback_of_Mumble.monitor false
 
+#super + shift + F2
+#	pactl set-source-mute Loopback_of_Mumble.monitor {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
+#XF86Launch5
+#	pactl set-source-mute VirtualMic {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
 
-super + shift + F2
-	pactl set-source-mute Loopback_of_Mumble.monitor {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
+super + Prior
+	portal
+
+XF86Launch5
+	pactl set-source-mute Loopback_of_Mumble.monitor {true; paplay /usr/local/sounds/usb-insert.wav, false; paplay /usr/local/sounds/usb-remove.wav}
+	#pactl set-source-mute VirtualMic {true; paplay /usr/local/sounds/usb-insert.wav, false; paplay /usr/local/sounds/usb-remove.wav}
