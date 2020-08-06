@@ -2,7 +2,8 @@
 #   zprofile
 #
 
-export REC_DIR="$HOME/opt/x/recs"
+export REC_DIR="$HOME/opt/x/scr"
+export SCR_DIR="$HOME/opt/x/scr"
 
 export XDG_CONFIG_HOME="$HOME/etc"
 export XDG_CACHE_HOME="$HOME/usr/cache"
