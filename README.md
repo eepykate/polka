@@ -10,7 +10,7 @@
 
 ![](https://i.imgur.com/v8OqidV.png)
 
-<h3 align="center"> [openbox] a quiet place </h3>
+<h3 align="center"> [openbox] a quiet mind </h3>
 
 ![](https://i.imgur.com/XSQp3IS.png)
 
