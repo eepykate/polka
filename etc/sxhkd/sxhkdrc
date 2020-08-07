@@ -5,7 +5,7 @@
 super + Return
 	st
 
-{alt + x, shift + super + F3}
+{alt + x, XF86Launch6}
 	draw
 
 super + v
