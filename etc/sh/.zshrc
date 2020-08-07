@@ -53,6 +53,7 @@ autoload -U compinit && compinit -u
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
+setopt SHwordsplit
 . "$ZDOTDIR/aliases"       # Aliases
 
 kgs() { echo; clear; gs; zle redisplay; }
