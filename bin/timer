@@ -1,8 +1,4 @@
 #!/bin/sh
-#
-#  Source:
-#     github.com/GaugeK/dots
-#
 
 sound="/usr/share/sounds/freedesktop/stereo/complete.oga"
 
@@ -18,6 +14,7 @@ case "$1" in
 esac
 
 {
+	echo "timer set for $1 ${2:+-$2}"
 	sleep "$seconds"
 
 	paplay "$sound" 2>/dev/null &

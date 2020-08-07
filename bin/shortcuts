@@ -4,8 +4,12 @@
 # $2 = name of alias
 # $3 = file or folder to edit / cd to
 
-> ${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh
-sed -e '/^#/d' -e "s|~|$HOME|g"  ${XDG_CONFIG_HOME:-~/.config}/sh/sc | tee \
-	>(grep '^d' | awk '{print "alias "$2"=\"cd "$3"\""}' >> ${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh)  \
-	>(grep '^d' | awk '{print  ""$2"=\""$3"\""}'         >> ${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh)  \
-	>(grep '^f' | awk '{print "alias "$2"=\"v "$3"\""}'  >> ${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh) &>/dev/null
+while read -r line; do
+	set -- ${line//\~/$HOME}
+	case $line in
+		\#*|"") ;;
+		f*) echo "alias $2='v \"$3\"'";;
+		d*) echo "alias $2='cd \"$3\"'"
+			echo "export $2=\"$3\"";;
+	esac
+done < "${XDG_CONFIG_HOME:=$HOME/.config}"/sh/sc > "$XDG_CONFIG_HOME"/sh/sc.sh

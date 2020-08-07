@@ -1,11 +1,13 @@
-#!/bin/sh
+#!/bin/sh -e
 #
 #  mount disk
 #
 
-dis="$(lsblk -ro "name,mountpoint,type" \
-	| grep '  part' | cut -d ' ' -f 1     \
-	| menu -p mount)" || exit
+dis=$(lsblk -ro "name,mountpoint,type" | while read -r l; do
+	case $l in
+		*[0-9]\ \ *) echo "${l%%  *}"
+	esac
+done | menu -p mount)
 
 mkdir -p "$HOME/opt/mnt/$dis"
 sudo mount "/dev/$dis" "$HOME/opt/mnt/$dis"

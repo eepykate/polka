@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 # hide window
 
 dir="$XDG_CACHE_HOME/hw"
@@ -10,12 +9,14 @@ mkdir -p "$dir"
 	exit
 }
 
+read -r win < "$dir/$1"
+
 if [ -e "$dir/$1" ]; then
-	wname "$(cat "$dir/$1")" ||
+	wname "$win" ||
 		rm "$dir/$1"
 else
 	win="$(pfw)"
 	echo "$win" > "$dir/$1"
 fi
 
-mapw -t "$(cat "$dir/$1")"
+mapw -t "$win"

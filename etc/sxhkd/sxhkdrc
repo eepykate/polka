@@ -23,9 +23,8 @@ super + period
 super + space
 	launch
 
-# copy epic may mays
 super + u
-	copymaymays
+	copy
 
 
 # don't send `ctrl + q` events to firefox

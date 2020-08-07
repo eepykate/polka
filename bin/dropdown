@@ -5,4 +5,5 @@ pid="$(pgrep tabbed)" || { tabbed -r 2 -n "dropdown" st -w '' & pid=$!;}
 pid="$(xdotool search --class "tabbed" | tail -n1)"
 wid="$(printf 0x%x "$pid")"
 
+xdotool search --class "tabbed" set_desktop_for_window "$(xdotool get_desktop)"
 mapw -t "$wid"

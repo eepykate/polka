@@ -2,7 +2,6 @@
 #
 #   double borders
 #
-set -x
 
 outer='0x0f1019'   # outer
 inner1='0xa8b67a'  # focused
