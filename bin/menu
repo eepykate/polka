@@ -3,12 +3,10 @@
 #   Use fzf as a replacement for rofi/dmenu.
 #
 
-rm /tmp/*.fzfmenu*
-input=$(mktemp -u --suffix .fzfmenu.input)
-output=$(mktemp -u --suffix .fzfmenu.output)
-mkfifo "$input"
-mkfifo "$output"
-chmod 600 "$input" "$output"
+pgrep -x fzf >/dev/null 2>&1 && exit
+
+rm /tmp/fzfmenu*
+cat > /tmp/fzfmenu
 
 while [ "$1" ]; do
 	case $1 in
@@ -17,10 +15,9 @@ while [ "$1" ]; do
 	shift
 done
 
-args="--no-hscroll --cycle --pointer=\" \" --height=20 --info=hidden"
+args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
 args="$args --layout=reverse --prompt=' $prompt | '"
 args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16'"
 
-st -c floating -e sh -c "cat $input | fzf $args | tee $output" &
-cat > "$input"
-cat "$output"
+st -c floating -e sh -c "cat /tmp/fzfmenu | fzf $args > /tmp/fzfmenuout" &&
+	cat /tmp/fzfmenuout
