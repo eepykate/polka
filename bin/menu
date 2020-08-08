@@ -17,7 +17,7 @@ done
 
 args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
 args="$args --layout=reverse --prompt=' $prompt | '"
-args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16'"
+args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
 st -c floating -e sh -c "cat /tmp/fzfmenu | fzf $args > /tmp/fzfmenuout" &&
 	cat /tmp/fzfmenuout
