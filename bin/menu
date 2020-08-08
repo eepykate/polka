@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+#   Use fzf as a replacement for rofi/dmenu.
+#
+
+rm /tmp/*.fzfmenu*
+input=$(mktemp -u --suffix .fzfmenu.input)
+output=$(mktemp -u --suffix .fzfmenu.output)
+mkfifo "$input"
+mkfifo "$output"
+chmod 600 "$input" "$output"
+
+while [ "$1" ]; do
+	case $1 in
+		-p) prompt="$2"; shift;;
+	esac
+	shift
+done
+
+args="--no-hscroll --cycle --pointer=\" \" --height=20 --info=hidden"
+args="$args --layout=reverse --prompt=' $prompt | '"
+args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16'"
+
+st -c floating -e sh -c "cat $input | fzf $args | tee $output" &
+cat > "$input"
+cat "$output"

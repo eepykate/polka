@@ -1,16 +1,2 @@
-#!/bin/sh
-
-path() {
-	cache="${XDG_CACHE_HOME:-$HOME/.cache}/dmenu_run"
-
-	[ -e "$cache" ] || mkdir -p "$cache"
-
-	IFS=:
-	if stest -dqr -n "$cache" $PATH; then
-		stest -flx $PATH | sort -u | tee "$cache"
-	else
-		cat "$cache"
-	fi
-}
-
-$(path | dmenu "$@") &
+#!/usr/bin/env bash
+find -H ${PATH//:/ } -type f -executable -print | sort | uniq | sed -e 's=.*/==g' | menu | sh &
