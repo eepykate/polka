@@ -141,17 +141,17 @@ svg[class*="homeIcon-"] path {
 
 /* make big */
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
-	font-size: 22px !important;
+	font-size: 18px !important;
 	font-family: Monospace !important;
-	font-weight: 900 !important;
-	margin-left: 3px;
-	max-width: 13px !important;
+	font-weight: 600 !important;
+	margin-left: 4px;
+	max-width: 10px !important;
 	min-height: 25px !important;
 }
 
 
 [class^="sidebar-"]:not(:hover) * svg[class^="icon"] ~ [class*="children"],
-[class^="sidebar-"]:not(:hover) * svg[class^="icon"] {
+[class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"])  svg[class^="icon"] {
 	display: none;
 }
 
