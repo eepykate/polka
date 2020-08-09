@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+act="$(grep -i '^d' ~/etc/sh/sc | grep -o '[^ ]*$' | menu)"
+
+[ "$act" ] && cd "${act//\~/$HOME}" && st -e zsh

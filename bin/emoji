@@ -1,8 +1,6 @@
 #!/bin/sh
 
-chosen=$(grep -v "#" ~/opt/junk/emoji | \
-	rofi -dmenu -columns 2 \
-	-kb-row-select "Tab" -kb-row-tab "" -i)
+chosen=$(grep -v "#" ~/opt/junk/emoji | menu)
 
 [ "$chosen" != "" ] || exit
 

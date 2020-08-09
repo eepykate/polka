@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-file="$(find -L "$1" -type f,l | sed "s|$1/||" | tac | \
-	rofi -dmenu -i -width 700)"
+file="$(find -L "$1" -type f,l | sed "s|$1/||" | tac | menu)"
 [ ! "$file" ] && exit
 op "$1/$file"
