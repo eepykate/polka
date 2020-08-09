@@ -3,7 +3,7 @@
 #   draw a term
 #
 
-eval "$(crud)"
+eval "$(boox 'W=%w\nH=%h\nX=%x\nY=%y')"
 
 # 100 = term padding
 # 32  = border size * 2
