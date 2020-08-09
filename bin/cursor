@@ -1,6 +1,7 @@
 #!/bin/sh
 #
 # teleport cursor
+exit
 
 w="$(xdotool getactivewindow)"
 

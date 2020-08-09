@@ -1,0 +1,26 @@
+#   -----
+black=dab420
+red=dab420
+yellow=dab420
+green=dab420
+cyan=420dab
+blue=420dab
+purple=420dab
+#   -----
+bg0=FFFFF8
+bg1=FCFCF5
+bg2=F7F7ED
+bg3=F2F2E8
+bg4=EDEDE1
+#   -----
+fg1=420420
+fg2=692c37
+button=${fg1}1a
+disabled=ffffff
+#   -----
+accent=$purple
+accent2=$purple
+contrast=$bg4
+#   -----
+wall=purple-yellow-flower.jpg
+#   -----

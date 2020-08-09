@@ -52,6 +52,27 @@ sed --follow-symlinks -i \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
 	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css
 
+# ripcord
+
+cat << EOF > ~/opt/ripcord.json
+{
+    "alternate_base": "#$bg1",
+    "base": "#$bg1",
+    "button": "#$bg4",
+    "chat_timestamp": "#$black",
+    "disabled_button": "#$bg1",
+    "disabled_icon": "#$disabled",
+    "disabled_text": "#$disabled",
+    "highlight": "#$fg1",
+    "highlighted_text": "#$bg1",
+    "icon": "#$fg1",
+    "text": "#$fg1",
+    "unread_badge": "#$bg1",
+    "unread_badge_text": "#$fg1",
+    "window": "#$bg2"
+}
+EOF
+
 echo " - xresources"
 
 cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
@@ -102,7 +123,7 @@ echo " - bspwm"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$bg4'  # normal/"      \
+	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
 	~/bin/borders
 
 sed --follow-symlinks -i  \
