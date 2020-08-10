@@ -11,7 +11,7 @@ bg0=FFFFF8
 bg1=FCFCF5
 bg2=F7F7ED
 bg3=F2F2E8
-bg4=EDEDE1
+bg4=$yellow
 #   -----
 fg1=420420
 fg2=692c37

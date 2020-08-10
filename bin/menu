@@ -19,6 +19,8 @@ args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
 args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
 args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
+export SHELL=/bin/sh
+
 st -c floating -f 'Roboto Mono:pixelsize=14:style=medium' \
-	-e sh -c "cat /tmp/fzfmenu | fzf $args > /tmp/fzfmenuout" &&
+	-e sh -c "sleep 0.05; fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout && sleep 0.05" &&
 	cat /tmp/fzfmenuout
