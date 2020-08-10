@@ -123,7 +123,7 @@ echo " - bspwm"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
+	-e "s/inner2=.*/inner2='0x$bg4'  # normal/"      \
 	~/bin/borders
 
 sed --follow-symlinks -i  \
