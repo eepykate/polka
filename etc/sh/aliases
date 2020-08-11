@@ -166,6 +166,24 @@ inf() {
 	echo; echo
 }
 
+# random hex colour
+rand() {
+	printf "%02X%02X%02X\n" $(shuf -i 0-255 -n 3)
+}
+# preview hex colour
+prev() {
+	[ "$@" ] || {
+		set -- $(cat /dev/stdin)
+	}
+	[ "$n" ] || n=30
+	[ "$n" -ge 220 ] && n=30
+	for i; do
+		printf "\033]4;%s;#%s\007" "$n" "$i"
+		printf "\033[38;05;%sm%s\e[0m   \033[48;05;%sm       \e[0m\n" "$n" "$i" "$n"
+		n=$((n+1))
+	done
+}
+
 calc() {
 	echo "scale=5; $*" | bc
 }
