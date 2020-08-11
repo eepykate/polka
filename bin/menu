@@ -23,5 +23,5 @@ export SHELL=/bin/sh
 
 st -c floating -f 'Roboto Mono:pixelsize=14:style=medium' \
 	-e sh -c "fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" &&
-	sleep 0.1 &&
-	cat /tmp/fzfmenuout
+	cat /tmp/fzfmenuout &&
+	sleep 0.05
