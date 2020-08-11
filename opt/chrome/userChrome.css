@@ -101,8 +101,7 @@
 	margin: 2px 6px 0px 0px !important;
 }
 
-.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image,
-.tabbrowser-tab:not([pinned="true"]):hover .tab-throbber {
+.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-image {
 	display: none;
 }
 
@@ -498,8 +497,10 @@ menuitem[disabled="true"] {
 	color: var(--fg1) !important;
 }
 
+#titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) .tab-throbber::before,
 #titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) .tab-content > * {
 	color: var(--bg1) !important;
+	fill: var(--bg4) !important;
 }
 
 #urlbar:not(:focus-within) #urlbar-background {
