@@ -49,8 +49,7 @@ code,
 }
 
 /* hide sidebar image */
-#channels > div[style*="width: 100%;"],
-[class*="listContent-"] > div:first-of-type,
+#channels > div > div:first-of-type,
 [class^="animatedContainer-"] {
 	display: none !important;
 }
