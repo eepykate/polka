@@ -142,8 +142,8 @@ svg[class*="homeIcon-"] path {
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
 	font-size: 18px !important;
 	font-family: Monospace !important;
-	font-weight: 600 !important;
-	margin-left: 4px;
+	font-weight: 500 !important;
+	margin-left: 3px;
 	max-width: 10px !important;
 	min-height: 25px !important;
 }
@@ -155,11 +155,14 @@ svg[class*="homeIcon-"] path {
 }
 
 /* fix channel icon widths */
-#sidebar:not(:hover) * [class^="content-"] {
+[class^="sidebar-"]:not(:hover) * [class^="content-"] {
 	width: 35px !important;
 }
-[class*="sidebar-"]:not(:hover) [id^="private-channels-"] > * > [class*="avatar-"] {
-	margin-left: 182px;
+
+[class*="sidebar-"]:not(:hover) [id^="private-channels-"] > * {
+	margin-left: 189px;
+	width: 25px;
+	padding-left: 3px;
 }
 
 /* expand on hover */
