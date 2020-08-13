@@ -155,8 +155,11 @@ svg[class*="homeIcon-"] path {
 }
 
 /* fix channel icon widths */
-[class^="sidebar-"]:not(:hover) * [class^="content-"] {
+#sidebar:not(:hover) * [class^="content-"] {
 	width: 35px !important;
+}
+[class*="sidebar-"]:not(:hover) [id^="private-channels-"] > * > [class*="avatar-"] {
+	margin-left: 182px;
 }
 
 /* expand on hover */
@@ -242,7 +245,7 @@ svg[class*="homeIcon-"] path {
     --interactive-hover: var(--fg1);
     --interactive-active: var(--fg1);
     --interactive-muted: var(--fg2);
-    --background-primary: var(--bg);
+    --background-primary: transparent;
     --background-secondary: var(--bg3);
 	--background-secondary-alt: var(--bg3);
     --background-tertiary: var(--bg1);
@@ -322,7 +325,6 @@ svg[class*="homeIcon-"] path {
 [class*="body-"],
 [class*="outer-"][class*="interactive-"]:hover,
 [class*="inset-"],
-[class*="content-"] > [class*="container-"],
 [class*="queryContainer-"],
 [class*="resultsGroup-"],
 [class*="bodyInner-"],
