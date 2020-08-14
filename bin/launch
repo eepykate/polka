@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-find ${PATH//:/ } -type f,l -executable | sort | uniq | sed -e 's|.*/||g' | menu | sh &
+find ${PATH//:/ } -type f,l -executable -maxdepth 1 | sed -e 's|.*/||g' | menu | sh &
