@@ -135,5 +135,6 @@ super + Prior
 
 XF86Launch5
 	pactl set-source-mute VirtualMic {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
+	#pactl set-source-mute Loopback_of_Mumble.monitor {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
 	#pactl set-source-mute Loopback_of_Mumble.monitor {true; paplay /usr/local/sounds/usb-insert.wav, false; paplay /usr/local/sounds/usb-remove.wav}
 	#pactl set-source-mute VirtualMic {true; paplay /usr/local/sounds/usb-insert.wav, false; paplay /usr/local/sounds/usb-remove.wav}

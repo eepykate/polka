@@ -1,7 +1,7 @@
 #   -----
 black=434366
 red=d26161
-yellow=cfa76a
+yellow=cf9b6a
 green=a8b67a
 cyan=83b5c2
 blue=8497cf
@@ -18,9 +18,9 @@ fg2=808297
 button=${fg1}1a
 disabled=696969
 #   -----
-accent=$green
-accent2=$yellow
+accent=$yellow
+accent2=$purple
 contrast=$bg4
 #   -----
-wall=lights-on-tree.jpg
+wall=foto.jpg
 #   -----

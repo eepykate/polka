@@ -8,8 +8,8 @@
 *.color1:       #d26161
 *.color9:       #d26161
 
-*.color2:       #cfa76a
-*.color10:      #cfa76a
+*.color2:       #cf9b6a
+*.color10:      #cf9b6a
 
 *.color3:       #a8b67a
 *.color11:      #a8b67a
@@ -26,6 +26,6 @@
 *.color7:       #808297
 *.color15:      #bfc1d5
 
-*.color16:      #a8b67a
-*.color17:      #cfa76a
+*.color16:      #cf9b6a
+*.color17:      #b887cc
 *.color18:      #1b1c28

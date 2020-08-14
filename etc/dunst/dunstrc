@@ -9,7 +9,7 @@
 	padding             = 25
 	horizontal_padding  = 25
 	frame_width         = 2
-	frame_color         = "#a8b67a"
+	frame_color         = "#cf9b6a"
 	separator_height    = 2
 	separator_color     = frame
 
@@ -46,13 +46,13 @@
 [urgency_normal]
 	background          = "#0f1019"
 	foreground          = "#bfc1d5"
-	frame_color         = "#a8b67a"
+	frame_color         = "#cf9b6a"
 	timeout             = 5
 
 [urgency_critical]
 	background          = "#0f1019"
 	foreground          = "#bfc1d5"
-	frame_color         = "#cfa76a"
+	frame_color         = "#b887cc"
 	timeout             = 0
 
 # vim: ft=conf

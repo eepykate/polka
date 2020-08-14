@@ -4,8 +4,8 @@
 #
 
 outer='0x0f1019'   # outer
-inner1='0xa8b67a'  # focused
-inner2='0x1b1c28'  # normal
+inner1='0xcf9b6a'  # focused
+inner2='0x808297'  # normal
 
 targets() {
 	case $1 in
@@ -13,9 +13,9 @@ targets() {
 		normal)  bspc query -N -n .local.\!focused.\!fullscreen
 	esac
 }
-bspc config border_width 16
+bspc config border_width 12
 
-draw() { chwb2 -I "$inner" -O "$outer" -i "5" -o "6" $* 2> /dev/null; }
+draw() { chwb2 -I "$inner" -O "$outer" -i "2" -o "9" $* 2> /dev/null; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
