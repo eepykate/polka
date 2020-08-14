@@ -73,4 +73,11 @@ PROMPT=$' %1~%F{%(?.16.17)} %(!.|./) %f'
 [ "$TERM" = linux ] &&
 	PROMPT=$' %1~%F{%(?.4.1)} %(!.|./) %f'
 
+
+clear;printf '%7s@%s\n' "$USER" "$HOST"
+printf '  '
+for i in 1 2 3 4 5 6; do
+	printf '\033[7m\033[9%sm▅▅' "$i"
+done
+echo
 : vim: ft=bash
