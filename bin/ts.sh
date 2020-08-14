@@ -124,7 +124,7 @@ sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
 	-e "s/inner2=.*/inner2='0x$bg4'  # normal/"      \
-	~/bin/2bspwm
+	~/bin/borders
 
 sed --follow-symlinks -i  \
 	-e "s/border_color.*/border_color       '#$bg1'/" \

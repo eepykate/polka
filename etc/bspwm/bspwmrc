@@ -51,7 +51,7 @@ bspc rule -a floating       state=floating
 #
 
 s() { pkill "$1"; { sleep 0.1; "$@"; } & }
-2bspwm &
+borders &
 s picom
 s dunst
 s sxhkd
