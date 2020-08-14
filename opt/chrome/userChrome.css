@@ -17,8 +17,8 @@
 	--fg1:      #bfc1d5;
 	--disabled: #696969;
 	/*  ----  */
-	--accent:   #a8b67a;
-	--accent2:  #cfa76a;
+	--accent:   #cf9b6a;
+	--accent2:  #b887cc;
 	--contrast: #1b1c28;
 	--red:         #d26161;
 	/*  ----  */
@@ -115,7 +115,7 @@
 
 
 /* small shadow on tabs */
-.tabbrowser-tab[selected="true"] {
+/*.tabbrowser-tab[selected="true"] {
 	box-shadow: 0px 4px 9px -1px rgba(0,0,0,0.45);
 }
 
@@ -193,14 +193,19 @@
 	-moz-box-ordinal-group: 0 !important;
 	margin-bottom: 4px !important;
 }*/
-
+/*
 #urlbar[breakout] {
 	position: unset !important;
 }
 #urlbar[breakout][breakout-extend] {
-	top: 0;
 	left: 0;
 	width: 100%;
+}*/
+
+#browser { -moz-box-ordinal-group: 0; }
+#urlbar[focused] {
+	top: auto !important;
+	bottom: 0px !important;
 }
 
 
@@ -249,7 +254,7 @@
 /*.tabbrowser-tab:not([selected=true]):not(:hover) * .tab-icon-image {
 	filter: grayscale(50%) !important;
 }*/
-.tabbrowser-tab:not([selected])[pinned] { opacity: 0.60 !important; }
+.tabbrowser-tab:not([selected])[pinned] .tab-icon-image { opacity: 0.60 !important; }
 /*.tabbrowser-tab:hover { opacity: 1 !important; }
 .tabbrowser-tab[selected] { opacity: 1 !important; }*/
 
@@ -394,7 +399,7 @@ toolbarbutton#alltabs-button {
 
 
 /* Align megabar a bit better */
-#navigator-toolbox * #urlbar.megabar { top: 0 !important; }
+/*#navigator-toolbox * #urlbar.megabar { top: 0 !important; }*/
 
 #urlbar:not([open]) #urlbar-input-container { margin-top: 1px !important; }
 #urlbar[open] #urlbar-input-container { margin-top: 3px !important; }
@@ -438,18 +443,50 @@ toolbarbutton#alltabs-button {
 	--arrowpanel-color: var(--fg1) !important;
 }
 
-:root:-moz-window-inactive #navigator-toolbox {
-	background-color: var(--bg4) !important;
-}
-#navigator-toolbox {
-	background-color: var(--accent) !important;
-}
-:root:not(:-moz-window-inactive) .tab-content:not([selected="true"]) .tab-label {
-	color: var(--contrast) !important;
+/* double borders */
+:root:-moz-window-inactive .tabbrowser-tab[pinned="true"]:only-of-type::after,
+:root:-moz-window-inactive #browser,
+:root:-moz-window-inactive .tab-background {
+	border-color: var(--fg2) !important;
 }
 
-.tab-content:not([selected="true"]) .tab-text.tab-label {
-	color: var(--fg2) !important;
+.tab-background:not([selected]) {
+	border-top: 3px solid var(--accent) !important;
+}
+
+.tab-background[selected] {
+	border: 2px solid var(--accent) !important;
+	border-top: none !important;
+}
+
+#browser {
+	border: 2px solid var(--accent);
+	border-bottom: 0px;
+}
+
+.tabbrowser-tab[pinned="true"]:only-of-type::after {
+	content: '';
+	display: block !important;
+	width: 100vw !important;
+	height: var(--tab-min-height) !important;
+	margin: 0 !important;
+	position: absolute;
+	top: 1px;
+	left: 0;
+	bottom: 0;
+	padding-right: 1px;
+	z-index: -2;
+	border-top: 2px solid var(--accent) !important;
+	pointer-events: none !important;
+}
+
+/*
+:root:not(:-moz-window-inactive) .tab-content:not([selected="true"]) .tab-label {
+	color: var(--contrast) !important;
+}*/
+
+.tab-content .tab-text.tab-label {
+	color: var(--fg1) !important;
 }
 
 /* When the only tab is the pinned tab, make the rest of the tab bar the same colour */
@@ -497,11 +534,11 @@ menuitem[disabled="true"] {
 	color: var(--fg1) !important;
 }
 
-#titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) .tab-throbber::before,
+/*#titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) .tab-throbber::before,
 #titlebar:not(:-moz-window-inactive) .tabbrowser-tab:not([selected="true"]) .tab-content > * {
 	color: var(--bg1) !important;
 	fill: var(--bg4) !important;
-}
+}*/
 
 #urlbar:not(:focus-within) #urlbar-background {
 	background-color: transparent !important;
@@ -615,12 +652,12 @@ browser[type=content] > html {
 	height: var(--tab-min-height) !important;
 	min-height: var(--tab-min-height) !important;
 }
-
+/*
 #main-window #urlbar {
 	min-height: 90% !important;
 	max-height: 90% !important;
 	height: 90% !important;
-}
+}*/
 
 #main-window #urlbar #urlbar-input-container {
 	padding-block: 0 !important;
