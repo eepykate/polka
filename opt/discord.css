@@ -323,6 +323,7 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class^="content"] [class^="sidebar"] ~ [class^="container-"],
 [class*="userPopout-"] [class*="activity-"],
 [class*="userPopout-"] [class*="header-"],
 [class*="body-"],
