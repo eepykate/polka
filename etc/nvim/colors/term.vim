@@ -118,11 +118,14 @@ hi shHereDoc      ctermfg=15
 
 " md
 hi htmlItalic             ctermfg=NONE    cterm=italic
-hi htmlBold               ctermfg=7       cterm=bold
-hi markdownLinkText       ctermfg=7       cterm=underline
-hi markdownCode           ctermfg=5
-hi markdownBlockquote     ctermfg=3
-hi markdownCodeDelimiter  ctermfg=5
+hi htmlBold               ctermfg=15      cterm=bold
+hi markdownLinkText       ctermfg=15
+hi markdownURL            ctermfg=16
+hi markdownCode           ctermfg=15
+hi markdownBlockquote     ctermfg=15
+hi markdownCodeDelimiter  ctermfg=17
+hi markdownHeadingDelimiter ctermfg=15
+hi markdownH1             ctermfg=15
 
 
 " vimscript
