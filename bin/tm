@@ -1,0 +1,21 @@
+#!/bin/sh
+# toggle mic
+
+input=$(pactl list sink-inputs | while read -r l; do
+	case $l in
+		Sink\ Input*) i="${l##*#}";;
+		*\"mumble\") echo "$i"; break;;
+	esac
+done)
+
+[ "$input" ] || exit
+touch /tmp/mic
+read -r v < /tmp/mic
+case "$v" in
+	true) a=false; b=unmuted;;
+	*) a=true; b=sa;;
+esac
+echo "$a" > /tmp/mic
+pactl set-sink-input-mute "$input" "$a"
+
+notify-send -t 600 "$b"
