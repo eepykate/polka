@@ -45,7 +45,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list \
 	'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-autoload -U compinit && compinit -u
+autoload -U compinit && compinit -C
 
 #
 #   Miscellaneous
