@@ -149,7 +149,7 @@ svg[class*="homeIcon-"] path {
 }
 
 
-[class^="sidebar-"]:not(:hover) * svg[class^="icon"] ~ [class*="children"],
+[id^="channels-"] ~ [class^="children"],
 [class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"])  svg[class^="icon"] {
 	display: none;
 }
