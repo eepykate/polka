@@ -5,8 +5,8 @@
 super + Return
 	st
 
-{alt + x, XF86Launch6}
-	draw
+#{alt + x, XF86Launch6}
+#	draw
 
 super + v
 	firefox 0.0.0.0:9091
@@ -73,10 +73,10 @@ alt + grave
 	dropdown
 
 # I have this key bound on my mouse
-#super + shift + F2
-#	h="$(colorpicker -doq | tr -d '#\n' | tr "[[:upper:]]" "[[:lower:]]")"; \
-#	echo -n $h | xclip -sel clip;          \
-#	notify-send "$h" "<span background=\"#$h\">      </span>"
+XF86Launch6
+	h="$(colorpicker -doq | tr -d '#\n' | tr "[[:upper:]]" "[[:lower:]]")"; \
+	echo -n $h | xclip -sel clip;          \
+	notify-send "$h" "<span background=\"#$h\">      </span>"
 
 ctrl + alt + {1-9,0}
 	hw {1-9,0}
