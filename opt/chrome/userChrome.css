@@ -459,7 +459,7 @@ toolbarbutton#alltabs-button {
 	border-top: none !important;
 }
 
-#browser {
+#main-window:not([inFullscreen]) #browser {
 	border: 2px solid var(--accent);
 	border-bottom: 0px;
 }
