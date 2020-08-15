@@ -1,8 +1,8 @@
-*.background:   #0f1019
+*.background:   #141321
 *.foreground:   #bfc1d5
 *.cursorColor:  #bfc1d5
 
-*.color0:       #161723
+*.color0:       #1A1929
 *.color8:       #434366
 
 *.color1:       #d26161
@@ -28,4 +28,4 @@
 
 *.color16:      #cf9b6a
 *.color17:      #b887cc
-*.color18:      #1b1c28
+*.color18:      #201E30

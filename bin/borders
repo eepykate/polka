@@ -3,7 +3,7 @@
 #   double borders
 #
 
-outer='0x0f1019'   # outer
+outer='0x141321'   # outer
 inner1='0xcf9b6a'  # focused
 inner2='0x808297'  # normal
 
@@ -22,6 +22,7 @@ draw() { chwb2 -I "$inner" -O "$outer" -i "2" -o "9" $* 2> /dev/null; }
 	while read -r _; do
 		v=$(echo $(xdo id -N firefoxdeveloperedition))
 		v=${v// /\\|}
+		[ "$v" ] || v='abcdefg'
 		inner=$inner1 draw "$(targets focused)"
 		inner=$inner2 draw "$(targets  normal)"
 	done

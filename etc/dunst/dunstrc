@@ -38,19 +38,19 @@
 	context             = ctrl+shift+period
 
 [urgency_low]
-	background          = "#0f1019"
+	background          = "#141321"
 	foreground          = "#bfc1d5"
 	frame_color         = "#bfc1d5"
 	timeout             = 5
 
 [urgency_normal]
-	background          = "#0f1019"
+	background          = "#141321"
 	foreground          = "#bfc1d5"
 	frame_color         = "#cf9b6a"
 	timeout             = 5
 
 [urgency_critical]
-	background          = "#0f1019"
+	background          = "#141321"
 	foreground          = "#bfc1d5"
 	frame_color         = "#b887cc"
 	timeout             = 0

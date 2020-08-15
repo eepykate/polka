@@ -6,6 +6,10 @@
 
 <h2 align="center">Screenshots</h2>
 
+<h3 align="center"> [bspwm] magical sunset </h3>
+
+![](https://i.imgur.com/0NRoejA.png)
+
 <h3 align="center"> [bspwm] cherry blossom </h3>
 
 ![](https://i.imgur.com/v8OqidV.png)

@@ -80,4 +80,4 @@ for i in 1 2 3 4 5 6; do
 	printf '\033[7m\033[9%sm▅▅' "$i"
 done
 echo
-: vim: ft=bash
+# vim: ft=bash

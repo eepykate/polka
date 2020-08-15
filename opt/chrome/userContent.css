@@ -1,10 +1,10 @@
 :root {
 	/*  ----  */
-	--bg0:      #0c0d14;
-	--bg1:      #0f1019;
-	--bg2:      #13141e;
-	--bg3:      #161723;
-	--bg4:      #1b1c28;
+	--bg0:      #11101C;
+	--bg1:      #141321;
+	--bg2:      #161524;
+	--bg3:      #1A1929;
+	--bg4:      #201E30;
 	--button:   #bfc1d51a;
 	/*  ----  */
 	--fg2:      #808297;
@@ -13,7 +13,7 @@
 	/*  ----  */
 	--accent:   #cf9b6a;
 	--accent2:  #b887cc;
-	--contrast: #1b1c28;
+	--contrast: #201E30;
 	/*  ----  */
 
 	--red:         #d26161;
@@ -53,7 +53,7 @@ To use, instead of "none;", type: url("URL-OF-THE-IMAGE-GOES-HERE"); <- Don't fo
 
 /* These change some Firefox pages colors (Mainly used for the 404 error page) */
 	--in-content-page-color: var(--fg2) !important;
-	--in-content-page-background: var(--bg2) !important;
+	--in-content-page-background: var(--bg1) !important;
 	--in-content-text-color: var(--fg2) !important;
 	--in-content-box-background: var(--bg1) !important;
 	--in-content-box-background-hover: var(--bg3) !important;
