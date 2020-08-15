@@ -22,7 +22,7 @@ _ pointer_follows_focus     false
 
 
 # borders/gaps
-_ window_gap                40
+_ window_gap                20
 _ gapless_monocle           true
 
 _ border_width              16

@@ -1,6 +1,6 @@
 st.termname:      st-256color
 st.font:          Roboto Mono:pixelsize=10:style=bold
-st.borderpx:      50
+st.borderpx:      30
 st.tabspaces:     4
 st.xfps:          60
 st.actionfps:     60
