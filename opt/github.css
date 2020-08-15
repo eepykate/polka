@@ -106,8 +106,14 @@
 @-moz-document regexp(".*github.*") {
 }
 @-moz-document domain("github.com"), domain("github.community") {
+	.UnderlineNav,
+	a,
+	.btn,
 	button.btn {
 		box-shadow: none !important;
+	}
+	.BorderGrid-cell {
+		border-color: var(--fg2) !important;
 	}
 	.Box > .bg-gray-dark:nth-child(2):last-of-type {
 		color: var(--text-primary) !important;
