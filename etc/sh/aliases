@@ -58,8 +58,6 @@ alias ls="ls -h --group-directories-first --color=auto"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
 alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
 
-recu() { echo -en "\e[4 q"; }
-
 mc() { mkdir -p "$1"; cd "$1" || return; }
 bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 
@@ -72,8 +70,15 @@ v() {
 	else
 		sudo -E nvim "$@"
 	fi
-	recu
+	printf '\e[4 q'
 }
+#precmd() {
+#	printf "\e[4 q\033k %s \033\\" "${PWD//$HOME/~}"
+#}
+#preexec() {
+#	a="${3//$HOME/~}"
+#	printf "\033k %s \033\\" "${a//\"}"
+#}
 
 vb() {
 	local file
