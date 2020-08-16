@@ -86,7 +86,7 @@ ctrl + alt + {1-9,0}
 #   screenshots
 #
 {_,super, shift} + Print
-	scr {_,-F,-S}
+	scr {-A,-F,-S}
 
 # mouse bind
 XF86Tools
