@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+[ "$t" ] || t=20
+
+for _ in $(seq 1 "$t"); do
+	var=$( { time "$@"; } 2>&1 )
+	var=${var##*real	0m}
+	var=${var//.}
+	var=${var%%s*}
+	var=$((10#$var))
+	jar+="$var "
+done
+
+kar=0
+low=99999
+high=0
+
+for j in $jar; do
+	kar=$(( kar + j ))
+	[ "$j" -gt "$high" ] && high=$j
+	[ "$j" -lt "$low" ] && low=$j
+done
+
+echo "avg: $(( kar / t  ))ms"
+#echo "high: ${high}ms"
+#echo "low: ${low}ms"
