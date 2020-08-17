@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+#   basic POSIX sh rewrites of some process things
+#     (probably linux only)
+#
+
+pg() {  # pgrep
+	[ "$1" = '-x' ] && a="$2" || a="*$1*"
+	for i in /proc/[0-9]*; do
+		read -r c < "$i/comm"
+		case $c in
+			$a) echo "${i##*/}";;
+		esac
+	done
+}
+
+pk() {  # pkill
+	case $1 in
+		-x) v=-x; shift;;
+		-*) p="$1"; shift;;
+	esac
+	kill $p $(pg $v "$1")
+}
+
+ppid() {
+	while read -r line; do
+		case $line in
+			PPid*) echo "${line##*:?}"; break;;
+		esac
+	done < /proc/"$1"/status
+}
+
+pname() {
+	for i; do
+		read -r v < /proc/"$i"/comm
+		echo "$v"
+	done
+}
+
+case $(type "${0##*/}") in
+	*function*) "${0##*/}" "$@"; exit;;
+esac
+
+case $(type "$1") in
+	*function*) "$@";;
+esac
