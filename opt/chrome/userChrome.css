@@ -444,17 +444,6 @@ toolbarbutton#alltabs-button {
 }
 
 /* double borders */
-#main-window:not([width="1440"]):not([width="1920"]) {
-	padding: 10px !important;
-	width: calc(100vw - 20px) !important;
-	height: calc(100vh - 20px) !important;
-}
-
-#main-window:not([inFullscreen]):not([width="1440"]):not([width="1920"]) #browser {
-	border: 2px solid var(--accent);
-	border-bottom: 0px;
-}
-
 :root:-moz-window-inactive .tabbrowser-tab[pinned="true"]:only-of-type::after,
 :root:-moz-window-inactive #browser,
 :root:-moz-window-inactive .tab-background {
@@ -470,7 +459,10 @@ toolbarbutton#alltabs-button {
 	border-top: none !important;
 }
 
-
+#main-window:not([inFullscreen]) #browser {
+	border: 2px solid var(--accent);
+	border-bottom: 0px;
+}
 
 .tabbrowser-tab[pinned="true"]:only-of-type::after {
 	content: '';

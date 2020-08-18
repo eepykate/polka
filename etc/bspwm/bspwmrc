@@ -44,7 +44,6 @@ bspc rule -a feh-nb         state=floating border=off monitor="$(lsm -p)"
 bspc rule -a tabbed         state=floating
 bspc rule -a Gcolor3        state=floating
 bspc rule -a floating       state=floating
-bspc rule -a firefoxdeveloperedition border=off
 
 
 #
