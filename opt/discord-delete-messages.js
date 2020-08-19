@@ -12,8 +12,8 @@ $('body').on('contextmenu', 'div[class*="cozyMessage-"]', function(e) {
 		$(this).find("div[aria-label^='More']").trigger("click");
 		$('#message-actions-delete').trigger("click");
 		function fun() {
-			$("div[class^='backdrop-']").css("display", "none");
-			$("form[class^='modal-']").css("display", "none").find("button[class*='colorRed']").trigger("click");
+			$(".layerContainer-yqaFcK").children().css("display", "none");
+			$("button[class*='colorRed']").trigger("click");
 		}
 		setTimeout(fun, 65);
 	}
