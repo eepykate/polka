@@ -9,7 +9,7 @@ td="$HOME/opt/trash"
 for o; do
 	case "$o" in
 		--) break;;
-		-[fr]*) rm -rf "$@"; exit;;
+		-*) rm "$@"; exit;;
 	esac
 done
 
