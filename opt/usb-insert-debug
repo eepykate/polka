@@ -1,4 +1,0 @@
-#!/bin/zsh
-env >> /tmp/usb_env
-exec /usr/local/bin/usb-insert.real 2>> /tmp/usb_out >> /tmp/usb_out
-

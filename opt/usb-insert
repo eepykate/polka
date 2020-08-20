@@ -1,20 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
+v=$(who)
+user=${v%% *}
+uid=$(id -u "$user")
 
-dar() {
-	display=":$(/usr/bin/ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
-	user=$(w | grep -i "xinit\|x11\|x$" | awk '{print $1}' | sed -n -e 1p)
-	uid=$(id -u $user)
+out=$(printf "%s\n%s\n" "$ID_VENDOR" "$ID_MODEL" | tr '_' ' ')
 
-	sudo -u $user DISPLAY=$display XDG_RUNTIME_DIR=/run/user/$uid DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus "$@"
-}
+export DISPLAY="${display:-:0}" XDG_RUNTIME_DIR=/run/user/"$uid" \
+	DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$uid"/bus \
 
-out="$(printf "Brand:"
-printf "%40s" "${ID_VENDOR_ENC//x20/ }​\n"
-printf "Product:"
-printf "%38s" "${ID_MODEL_ENC//x20/ }​"
-)"
-
-dar /usr/bin/notify-send "New device detected" "$out"
-#dar /usr/bin/notify-send "Device inserted"
-dar /usr/bin/paplay /usr/local/sounds/usb-insert.wav
-
+sudo -Eu "$user" /usr/bin/notify-send "New device detected" "$out"
+sudo -Eu "$user" /usr/bin/paplay /usr/local/sounds/usb-insert.wav
