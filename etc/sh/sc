@@ -24,7 +24,6 @@ f   sc         ~/etc/sh/sc
 f   z          ~/etc/sh/.zshrc
 f   scsh       ~/etc/sh/sc.sh
 f   a          ~/etc/sh/aliases
-f   k          ~/etc/sh/rc
 f   pro        ~/etc/sh/profile
 
 # wm
@@ -33,7 +32,6 @@ f   bs         ~/etc/bspwm/bspwmrc
 f   drc        ~/etc/dunst/dunstrc
 f   sx         ~/etc/sxhkd/sxhkdrc
 f   sb         ~/etc/sxhkd/bspwm
-f   ob         ~/etc/openbox/rc.xml
 
 # X
 f   xin        ~/etc/xinitrc
@@ -45,4 +43,3 @@ f   ucc        ~/etc/.mozilla/firefox/main/chrome/userContent.css
 # other
 f   no         ~/opt/junk/notes
 f   vimrc      ~/etc/nvim/init.vim
-f   pf         ~/opt/git/posixfetch/posixfetch

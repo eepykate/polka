@@ -1,4 +1,0 @@
-#!/bin/sh
-var="$(: | rofi -dmenu -p ddg)" || exit
-var="$(echo "$var" | tr ' ' +)"
-firefox "https://duckduckgo.com/?q=$var"

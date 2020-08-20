@@ -20,6 +20,5 @@ args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
 args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
 st -c floating -f 'Roboto Mono:pixelsize=14:style=medium' \
-	-e sh -c "fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout; sleep 0.02" || exit 1
-sleep 0.02
+	-e sh -c "</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
 cat /tmp/fzfmenuout

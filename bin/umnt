@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/sh -e
 
-dis="$(ls "$HOME/opt/mnt" | menu -p unmount)" || exit
+dis="$(ls "$HOME/opt/mnt" | menu -p unmount)"
 sudo umount "$HOME/opt/mnt/$dis"
 rm -rf "$HOME/opt/mnt/$dis"
+notify-send "Unmounted $dis"

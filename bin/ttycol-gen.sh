@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 {
-	printf '#!/usr/bin/env bash
-export TERM=linux
-for tty in /dev/tty[0-9]; do
-[ -w "$tty" ] || continue\n'
+	printf '#!/usr/bin/env bash\n'
+	printf 'export TERM=linux\n'
+	printf 'for tty in /dev/tty[0-9]; do\n'
+	printf '\t[ -w "$tty" ] || continue\n'
 	xrdb -q | while read -r line; do
 		case $line in
 			*color[0-9]*)
@@ -12,7 +12,7 @@ for tty in /dev/tty[0-9]; do
 				one="${1##*r}"
 				[ "${one%:}" -gt 15 ] && continue
 				hex="$(printf %x "${one%:}")"
-				printf 'echo -en "\\e]P%s%s" > "$tty"\n' "$hex" "${2#?}"
+				printf '\tprintf "\\033]P%s%s" > "$tty"\n' "$hex" "${2#?}"
 			;;
 		esac
 	done

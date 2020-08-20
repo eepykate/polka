@@ -1,4 +1,44 @@
 #!/bin/sh
-# startx using xinit
+# github.com/Earnestly/sx
+# Copyright 2017 Earnestly
+#      MIT License
 
-xinit "${XDG_CONFIG_HOME:-~/.config}/xinitrc" "$@" -- /usr/bin/X vt1 -keeptty
+cleanup() {
+	if [ "$pid" ] && kill -0 "$pid" 2> /dev/null; then
+		kill -s TERM "$pid"
+		wait "$pid"
+		r=$?
+	fi
+
+	if ! stty "$stty"; then
+		stty sane
+	fi
+
+	xauth remove :"$tty"
+	exit "${r:-$?}"
+}
+
+stty=$(stty -g)
+tty=$(tty)
+tty=${tty##*[a-z]}
+tty=$((tty-1))
+
+conf=${XDG_CONFIG_HOME:=$HOME/.config}
+data=${XDG_DATA_HOME:=$HOME/.local/share}/xorg
+
+mkdir -p "$conf" "$data"
+
+export xa=${XAUTHORITY:=$data/xauthority}
+touch "$xa"
+
+trap 'cleanup' EXIT
+xauth add :"$tty" MIT-MAGIC-COOKIE-1 "$(od -An -N16 -tx /dev/urandom | tr -d ' ')"
+
+# Xorg will check if its SIGUSR1 disposition is SIG_IGN and use this state to
+# reply back to the parent process with its own SIGUSR1 as an indication it is
+# ready to accept connections.
+# Taking advantage of this feature allows us to launch our client directly
+# from a SIGUSR1 handler and avoid the need to poll for server readiness.
+trap 'DISPLAY=:$tty "${@:-$conf/xinitrc}"' USR1
+(trap '' USR1 && exec Xorg :"$tty" -keeptty vt"$((tty+1))" -noreset -auth "$xa") &
+pid=$!; wait "$pid"

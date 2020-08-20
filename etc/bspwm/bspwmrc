@@ -3,55 +3,50 @@
 #  bspwmrc
 #
 
+_() { bspc config "$@";  }
+R() { bspc rule -a "$@"; }
+s() { pkill -x "$1"; { sleep 0.1; "$@"; } & }
 
 # desktops
-bspc monitor HDMI-0  -d   1 2 3 4 5 6
-bspc monitor DVI-D-0 -d    7 8 9 10
+bspc monitor -d      1 2 3 4 5 6
+bspc monitor DVI-D-0 -d  7 8 9 0
 # fix ordering
 bspc monitor DVI-D-0 -s HDMI-0
 
-_() { bspc config "$@"; }
-
 # mouse
-xsetroot -cursor_name       left_ptr
-_ pointer_modifier          mod1
-_ pointer_motion_interval   5
-
-_ focus_follows_pointer     true
-_ pointer_follows_focus     false
+xsetroot -cursor_name      left_ptr
+_ pointer_modifier         mod1
+_ focus_follows_pointer    true
+_ pointer_follows_focus    false
+_ pointer_motion_interval  5
 
 
 # borders/gaps
-_ window_gap                20
-_ gapless_monocle           true
+_ window_gap    20
+_ border_width  16
+_ single_monocle      true
+_ gapless_monocle     true
+_ borderless_monocle  true
 
-_ border_width              16
-_ borderless_monocle        true
 _ normal_border_color       '#141321'
 _ active_border_color       '#141321'
 _ focused_border_color      '#141321'
 
 
-# other
-_ single_monocle            true
-
-
 #
 #   rules
 #
-bspc rule -a feh            state=floating
-bspc rule -a feh-nb         state=floating border=off monitor="$(lsm -p)"
-bspc rule -a tabbed         state=floating
-bspc rule -a Gcolor3        state=floating
-bspc rule -a floating       state=floating
+R feh       state=floating
+R feh-nb    state=floating border=off monitor="$(lsm -p)"
+R tabbed    state=floating
+R Gcolor3   state=floating
+R floating  state=floating
 
 
 #
 #   autostart
 #
-
-s() { pkill "$1"; { sleep 0.1; "$@"; } & }
-borders &
+s borders
 s picom
 s dunst
 s sxhkd

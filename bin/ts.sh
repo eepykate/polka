@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 set -x
 
 while [ "$1" ]; do
@@ -8,18 +8,14 @@ while [ "$1" ]; do
 	esac
 done
 
-themes="$(ls -1 ~/etc/colours/ | grep -iv 'current\|css')" # List of themes
-if [[ -z $theme ]]; then
-	theme="$(echo -e "$themes" | menu -i -p "Theme?")" \
-		|| exit
-fi
-ext() {
-	echo "Invalid theme ($theme); exiting"; exit
-}
+c=${XDG_CONFIG_HOME:=$HOME/.config}
+themes="$(ls -1 "$c/colours/" | grep -iv 'current')" # List of themes
+[ "$theme" ] || theme="$(printf %b "$themes" | menu -i -p "Theme?")"
+ln -sf "$theme" "$c/colours/current"
 
 # Define the colours in the theme (for rofi, startpage, firefox, dunst, etc)
-[[ -f "${XDG_CONFIG_HOME:-~/.config}/colours/$theme" ]] &&
-	. "${XDG_CONFIG_HOME:-~/.config}/colours/$theme" ||
+[ -f "$c/colours/$theme" ] &&
+	. "$c/colours/$theme" ||
 	{ echo "Invalid theme '$theme'; exiting"; exit; }
 
 echo -e "Theme chosen: $theme\n"
@@ -49,33 +45,12 @@ sed --follow-symlinks -i \
 	-e "s/--cyan:.*#.*\;/--cyan:        #$cyan\;/" \
 	-e "s/--purple:.*#.*\;/--purple:      #$purple\;/" \
 	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
-	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userChrome.css \
-	${XDG_CONFIG_HOME:-~/.config}/.mozilla/firefox/main/chrome/userContent.css
+	"$c/.mozilla/firefox/main/chrome/userChrome.css" \
+	"$c/.mozilla/firefox/main/chrome/userContent.css"
 
-# ripcord
-
-cat << EOF > ~/opt/ripcord.json
-{
-    "alternate_base": "#$bg1",
-    "base": "#$bg1",
-    "button": "#$bg4",
-    "chat_timestamp": "#$black",
-    "disabled_button": "#$bg1",
-    "disabled_icon": "#$disabled",
-    "disabled_text": "#$disabled",
-    "highlight": "#$fg1",
-    "highlighted_text": "#$bg1",
-    "icon": "#$fg1",
-    "text": "#$fg1",
-    "unread_badge": "#$bg1",
-    "unread_badge_text": "#$fg1",
-    "window": "#$bg2"
-}
-EOF
 
 echo " - xresources"
-
-cat << EOF > ${XDG_CONFIG_HOME:-~/.config}/Xres
+cat << EOF > "$c/Xres"
 *.background:   #$bg1
 *.foreground:   #$fg1
 *.cursorColor:  #$fg1
@@ -114,7 +89,7 @@ sed --follow-symlinks -i \
 	-e "s/normfgcolor.*/normfgcolor: #$fg2/" \
 	-e "s/selbgcolor.*/selbgcolor:  #$bg1/" \
 	-e "s/selfgcolor.*/selfgcolor:  #$fg1/" \
-	${XDG_CONFIG_HOME:-~/.config}/Xresources
+	"$c/Xresources"
 
 echo "   * Reloading tabbed and st"
 rc
@@ -129,73 +104,47 @@ sed --follow-symlinks -i               \
 sed --follow-symlinks -i  \
 	-e "s/border_color.*/border_color       '#$bg1'/" \
 	-e "s/d_border_color.*/d_border_color      '#$bg1'/" \
-	"${XDG_CONFIG_HOME:-~/.config}/bspwm/bspwmrc"
-wm -r
-
-#echo " - openbox"
-#sed --follow-symlinks -i \
-#	-e "s/\(text\.color: \).*/\\1#$contrast/" \
-#	-e "s/\(bg\.color: \).*/\\1#$fg1/" \
-#	-e "s/\(image\.color: \).*/\\1#$bg1/" \
-#	-e "s/\(inactive.*bg\.color: \).*/\\1#$fg2/" \
-#	-e "s/\(inactive.*image\.color: \).*/\\1#$fg2/" \
-#	-e "s/\(menu.*color: \).*/\\1#$bg1/" \
-#	-e "s/\(menu.*text.color: \).*/\\1#$fg2/" \
-#	-e "s/\(menu.*active\.bg\.color: \).*/\\1#$bg4/" \
-#	~/usr/themes/ob/openbox-3/themerc
-#
-#openbox --reconfigure
+	"$c/bspwm/bspwmrc"
 
 echo " - dunst"
-# Replace colours in dunst
-# urgent notifications
-dunst_urgent="$(( $(awk '/urgency_critical/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
-
-# low priority notifications
-dunst_low="$(( $(awk '/urgency_low/ {print NR}' ${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc) + 1 ))"
-
-sed --follow-symlinks -i \
+var="$(sed --follow-symlinks \
+	-e "s/foreground.*/foreground          = \"#$fg1\"/" \
 	-e "s/background.*/background          = \"#$bg1\"/" \
-	-e "s/foreground.*/foreground          = \"#$fg1\"/"  \
 	-e "s/frame_color.*/frame_color         = \"#$accent\"/" \
-	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+	"$c/dunst/dunstrc")"
 
-sed --follow-symlinks -i \
-	\
-	-e "${dunst_urgent}s/background.*/background          = \"#$bg1\"/" \
-	-e "$(( ${dunst_urgent} + 1 ))s/foreground.*/foreground          = \"#$fg1\"/" \
-	-e "$(( ${dunst_urgent} + 2 ))s/frame_color.*/frame_color         = \"#$accent2\"/" \
-	\
-	-e "${dunst_low}s/background.*/background          = \"#$bg1\"/" \
-	-e "$(( ${dunst_low} + 1 ))s/foreground.*/foreground          = \"#$fg1\"/" \
-	-e "$(( ${dunst_low} + 2 ))s/frame_color.*/frame_color         = \"#$fg1\"/" \
-	\
-	${XDG_CONFIG_HOME:-~/.config}/dunst/dunstrc
+printf '%s\n' "$var" | while IFS='' read -r l; do
+	case $l in
+		"[urgency_low]") low=H;;
+		"[urgency_critical]") crit=H;;
+		\[*) low=; crit=;;
+		*frame_color*)
+			[ "$crit" ] && l="${l%%#*}#$accent2\""
+			[ "$low" ] && l="${l%%#*}#$fg1\""
+	esac
+	printf '%s\n' "$l"
+done > "$c/dunst/dunstrc"
 
-pkill -9 dunst
-sleep 0.1
-dunst & disown
+wm -r
 
-#wm -r
-
-echo " - dmenu"
-cd ~/opt/git/dmenu
-sed --follow-symlinks -i \
-	-e "s/Norm].*/Norm] = { \"#$fg2\", \"#$bg1\" },/" \
-	-e "s/Sel].*/Sel] = { \"#$fg1\", \"#$bg4\" },/" \
-	config.h
-make
-cp dmenu ~/bin/bin/dmenu
+#echo " - dmenu"
+#cd ~/opt/git/dmenu
+#sed --follow-symlinks -i \
+#	-e "s/Norm].*/Norm] = { \"#$fg2\", \"#$bg1\" },/" \
+#	-e "s/Sel].*/Sel] = { \"#$fg1\", \"#$bg4\" },/" \
+#	config.h
+#make
+#cp dmenu ~/bin/bin/dmenu
 
 echo " - gtk context menus"
 sed --follow-symlinks -i \
 	-e "s|^	background-color: #.*|	background-color: #$bg3;|" \
 	-e "s|^	color: #.*|	color: #$fg1;|" \
-	${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/menus.css
+	"$c/gtk-3.0/menus.css"
 
 
-echo -e "\nChanging wallpaper"
-	if [[ -f "$HOME/opt/git/Wallpapers/$wall" ]]; then
+printf '\n%s\n' "Changing wallpaper"
+if [ -f "$HOME/opt/git/Wallpapers/$wall" ]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/$wall\""
 	eval $wallthing
 else
@@ -207,28 +156,4 @@ fi
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
 
-#
-# tbf I use like 1 gtk app, this doesn't matter
-#
-
-# Reload gtk theme - probably a major hack
-#temp="$(mktemp)"
-#temp2="$(mktemp)"
-#echo "Net/IconThemeName \"Blank\"" > $temp2
-#xsettingsd -c $temp2 &
-#xse2=$!
-#sleep 0.08; kill $xse2
-
-#echo "Net/ThemeName \"$theme\"" > $temp
-#echo "Net/IconThemeName \"Papirus-Dark\"" >> $temp
-#xsettingsd -c $temp &
-#xse=$!
-#sleep 0.2; kill $xse
-#rm $temp $temp2
-
-# Manually change gtk theme
-#sed --follow-symlinks -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$theme\"/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-2.0/gtkrc-2.0
-#sed --follow-symlinks -i "s/gtk-theme-name=.*/gtk-theme-name=$theme/g" ${XDG_CONFIG_HOME:-~/.config}/gtk-3.0/settings.ini
-
-echo -e "\nSending a notification"
 notify-send "Theme changed to $theme"

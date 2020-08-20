@@ -11,9 +11,6 @@ super + Return
 super + v
 	firefox 0.0.0.0:9091
 
-super + g
-	sddg
-
 super + slash
 	ros ~/opt/scs
 
@@ -28,8 +25,8 @@ super + u
 
 
 # don't send `ctrl + q` events to firefox
-ctrl + q
-	ctrlq
+#ctrl + q
+#	ctrlq
 
 
 super + f

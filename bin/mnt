@@ -11,3 +11,4 @@ done | menu -p mount)
 
 mkdir -p "$HOME/opt/mnt/$dis"
 sudo mount "/dev/$dis" "$HOME/opt/mnt/$dis"
+notify-send "mounted $dis"

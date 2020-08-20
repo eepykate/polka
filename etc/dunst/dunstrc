@@ -1,7 +1,5 @@
 [global]
 	font                = roboto mono bold 10px
-	monitor             = 0
-	follow              = none
 	geometry            = "500x5-40-40"
 	shrink              = true
 

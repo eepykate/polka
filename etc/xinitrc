@@ -3,65 +3,44 @@
 #   Tweaks
 #
 
+wm="${1:-bspwm}"
+c="${XDG_CONFIG_HOME:=$HOME/.config}"
+
 # Basic X stuff
 for f in /etc/X11/xinit/xinitrc.d/*.sh; do
 	. "$f"
-done
-unset f
+done; f=
 
 # DBus
 [ "$DBUS_SESSION_BUS_ADDRESS" ] ||
-	dbus-launch --exit-with-session "${XDG_CONFIG_HOME:-~/.config}/xinitrc" "$@" &
+	dbus-launch --exit-with-session "$c/xinitrc" "$@" &
 
+pap        # wallpaper
+hw 0       # clear hidden windows cache
+rmd &      # remove annoying files that keep appearing in ~
+screen.sh  # change display layout
+start-pulseaudio-x11 &   # audio
+xset r rate 200 60   &   # faster keyboard
+xmousepasteblock     &   # disable middle-click paste
+unclutter -idle 15   &   # hide cursor after 15 seconds
+synclient TouchpadOff=1  # disable touchpad
+xrdb "$c/Xresources"
 
-screen.sh     # change display layout
-pap           # wallpaper
-
-synclient TouchpadOff=1     # disable touchpad
-start-pulseaudio-x11 &      # audio
-xset r rate 200 60   &      # faster keyboard
-unclutter -idle 15   &      # hide cursor after 15 seconds
-
-xrdb "${XDG_CONFIG_HOME:-~/.config}/Xresources"
-
-# delete entries of previously hidden windows
-hw 0
-
-case "${1:-bspwm}" in
-	# bspwm already has this stuff in the config
-	bspwm) ;;
-	gnome)
-		export XDG_SESSION_TYPE=x11
-		export GDK_BACKEND=x11
-		set -- gnome-session
-	;;
-	kde)
-		set -- startplasma-x11
-	;;
-	*)
-		sxhkd &
-		picom &
-		dunst &
-	;;
+case "$wm" in
+	bspwm) ;;  # already in the config
+	gnome) export XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 wm=gnome-session;;
+	kde) wm=startplasma-x11;;
+	*)  sxhkd &  picom &  dunst &
 esac
 
-
-f() {
-cat << EOF | xmodmap -
+D() {
+xmodmap - << EOF
 	clear lock
 	clear control
 	keycode 37 =
 	add control = Control_L Control_L Control_R
 	keycode 66 = Control_L Control_L NoSymbol NoSymbol
 EOF
-}
-# doesn't work if it's only ran once...
-f; f
+};D;D  # doesn't work if it's only ran once...
 
-xmousepasteblock &
-
-#
-#   And finally, start the window manager
-#
-
-exec "${1:-bspwm}"
+exec "$wm"

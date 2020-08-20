@@ -1,9 +1,7 @@
 #!/bin/sh
 
-sound="/usr/share/sounds/freedesktop/stereo/complete.oga"
-
 calc() {
-	seconds="$(echo "${1}*$2" | bc | sed 's/\..*$//')"
+	seconds="$(echo "$1*$2" | bc | sed 's/\..*$//')"
 }
 
 case "$1" in
@@ -13,10 +11,10 @@ case "$1" in
 	*)  calc "$1"       60;;
 esac
 
+echo "timer set for $1 ($seconds) ${2:+- $2}"
 {
-	echo "timer set for $1 ${2:+-$2}"
 	sleep "$seconds"
 
-	paplay "$sound" 2>/dev/null &
+	paplay "/usr/share/sounds/freedesktop/stereo/complete.oga" 2>/dev/null &
 	notify-send -u critical "Timer finished" "$2"
 } &

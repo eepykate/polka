@@ -1,5 +1,5 @@
 #!/bin/sh
 
-act="$(grep -i '^d' ~/etc/sh/sc | grep -o '[^ ]*$' | sed "s|~|$HOME|" | menu)"
+act="$(grep -i '^d' ~/etc/sh/sc | grep -o '[^ ]*$' | menu | sed "s|~|$HOME|" )"
 
 [ "$act" ] && cd "$act" && st -e zsh
