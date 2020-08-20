@@ -19,7 +19,7 @@
 	dmenu               = /usr/bin/rofi -dmenu -p dunst:
 	browser             = ~/bin/app/firefox -new-tab
 
-	idle_threshold      = 120
+	idle_threshold      = 0
 	show_indicators     = false
 	show_age_threshold  = 60
 
