@@ -55,7 +55,7 @@ hi Float        ctermfg=4
 hi Identifier   ctermfg=7
 hi Function     ctermfg=3
 hi Conditional  ctermfg=2
-hi Repeat       ctermfg=1
+hi Repeat       ctermfg=15
 hi Label        ctermfg=4
 hi Operator     ctermfg=16
 hi Keyword      ctermfg=1
@@ -106,7 +106,7 @@ hi cssAttributeSelector   ctermfg=3
 
 
 " sh
-hi shConditional  ctermfg=7
+hi shConditional  ctermfg=15
 hi shDerefSimple  ctermfg=17
 hi shVariable     ctermfg=15
 hi shStatement    ctermfg=15

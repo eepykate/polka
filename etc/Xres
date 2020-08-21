@@ -1,8 +1,8 @@
-*.background:   #141321
+*.background:   #000000
 *.foreground:   #bfc1d5
 *.cursorColor:  #bfc1d5
 
-*.color0:       #1A1929
+*.color0:       #000000
 *.color8:       #434366
 
 *.color1:       #d26161
@@ -23,9 +23,9 @@
 *.color6:       #b887cc
 *.color14:      #b887cc
 
-*.color7:       #808297
+*.color7:       #797b8f
 *.color15:      #bfc1d5
 
-*.color16:      #cf9b6a
+*.color16:      #8497cf
 *.color17:      #b887cc
-*.color18:      #201E30
+*.color18:      #000000
