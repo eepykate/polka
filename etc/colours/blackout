@@ -15,7 +15,7 @@ bg4=0a0a0a
 #   -----
 fg1=bfc1d5
 fg2=797b8f
-button=${fg1}1a
+button=${fg1}0c
 disabled=696969
 #   -----
 accent=$blue
