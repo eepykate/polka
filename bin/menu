@@ -1,7 +1,11 @@
-#!/bin/sh
+#!/bin/sh -x
 #
 #   Use fzf as a replacement for rofi/dmenu.
 #
+
+d=$HOME/opt/menulog/${0##*/}-$$.log
+mkdir -p ${d%/*}
+exec 2> $d
 
 pgrep -x fzf >/dev/null 2>&1 && exit
 
@@ -20,5 +24,6 @@ args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
 args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
 st -c floating -f 'Roboto Mono:pixelsize=14:style=medium' \
-	-e sh -c "</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
+	-e sh -c "</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || { echo failed >&2; exit 1; }
 cat /tmp/fzfmenuout
+cat /tmp/fzfmenuout >&2
