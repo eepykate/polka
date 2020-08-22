@@ -24,6 +24,11 @@ nnoremap <A-Up> :m .-2<CR>==
 inoremap <A-Down> <Esc>:m .+1<CR>==gi
 inoremap <A-Up> <Esc>:m .-2<CR>==gi
 
+inoremap <C-e> <Esc>$a
+inoremap <C-a> <Esc>^i
+nnoremap <C-e> <Esc>$a
+nnoremap <C-a> <Esc>^i
+
 " copy, cut & paste
 vmap <C-c> "+ya
 vmap <C-x> "+c
@@ -47,7 +52,9 @@ nmap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 set tabstop=2          " Number of visual spaces per Tab
 set softtabstop=2      " Number of spaces in tab when editing
 set shiftwidth=2       " Number of spaces to use for autoindent
-set copyindent         " Copy the indentation from the previous line
+"set copyindent         " Copy the indentation from the previous line
+set nocopyindent
+set nosmartindent
 
 " search
 set incsearch          " Search as characters are typed
@@ -60,6 +67,8 @@ set smartcase          " Ignore case when only lower case is typed
 set cursorline         " Highlight the line that the cursor is on
 set mouse=a            " Mouse support
 color term
+"
+let b:sh_indent_options = { 'default': 0 }
 
 
 
@@ -68,9 +77,7 @@ color term
 "   Plugins
 "
 call plug#begin()
-	" Plug 'vim-syntastic/syntastic'
 	Plug 'dense-analysis/ale'
-	" Plug 'maxboisvert/vim-simple-complete'
 call plug#end()
 
 
