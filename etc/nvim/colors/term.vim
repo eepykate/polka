@@ -75,7 +75,7 @@ hi Ignore       ctermfg=1
 hi Error        ctermfg=1     cterm=bold
 hi Todo         ctermfg=3     cterm=bold
 hi Statement    ctermfg=NONE  cterm=bold
-hi Delimiter    ctermfg=7
+hi Delimiter    ctermfg=16
 hi Title        ctermfg=4
 
 "
@@ -112,7 +112,7 @@ hi shVariable     ctermfg=15
 hi shStatement    ctermfg=15
 "hi shQuote        ctermfg=7
 hi! link shQuote String
-hi shFunction     ctermfg=7
+hi shFunction     ctermfg=16
 hi shHereDoc      ctermfg=15
 
 
