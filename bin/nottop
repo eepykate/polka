@@ -2,6 +2,4 @@
 
 [ "$1" = a ] && a='Window moved to desktop' || a='Desktop switched to'
 
-gdbus call -e -d "org.freedesktop.Notifications" -o /org/freedesktop/Notifications \
-	-m org.freedesktop.Notifications.Notify "" 419 "" "$a $2" \
-	"" "[]" "{}" 750
+dunstify -r 20 -t 1000 "$a $2" \
