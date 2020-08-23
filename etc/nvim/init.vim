@@ -27,7 +27,7 @@ inoremap <A-Up> <Esc>:m .-2<CR>==gi
 inoremap <C-e> <Esc>$a
 inoremap <C-a> <Esc>^i
 nnoremap <C-e> <Esc>$a
-nnoremap <C-a> <Esc>^i
+"nnoremap <C-a> <Esc>^i
 
 " copy, cut & paste
 vmap <C-c> "+ya

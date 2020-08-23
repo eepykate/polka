@@ -83,7 +83,7 @@ ctrl + alt + {1-9,0}
 #   screenshots
 #
 {_,super, shift} + Print
-	scr {-A,-F,-S}
+	scr {-G$(6r focused),-F,-S}
 
 # mouse bind
 XF86Tools
