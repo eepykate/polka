@@ -301,6 +301,8 @@ svg[class*="homeIcon-"] path {
 	color: var(--fg1) !important;
 }
 
+[class*="toolbar"] > a:last-of-type, /* help icon */
+/* channel # and mute channel icon */
 [class*="title-"] > * > [class^="icon"]:first-of-type {
 	visibility: hidden;
 	width: 0;
