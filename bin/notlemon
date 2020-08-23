@@ -1,0 +1,59 @@
+#!/bin/sh
+
+f=/tmp/barfifo
+
+pgrep -x "${0##*/}" | grep -qiv $$ &&
+	[ -p $f ] && {
+	echo "$@" > $f
+	exit
+}
+
+
+rm $f
+mkfifo $f
+echo "$*" > $f &
+
+. ~/etc/colours/current
+
+set -- $(6r dims $(6r primary))
+
+w="300"
+h="60"
+#x="$(( $3 + ($1 - w - h)))"
+#y="$h"
+x=$(($3+( ($1-w)/2 )))
+y=$(($4+( ($2-h)/2 )))
+
+# show
+s() {
+	pkill -9 -f customsleep
+	xdo show $(xdo id -n lemonbar)
+}
+
+# hide
+h() {
+	i=$(date +"%s%2N")
+	(bash -c 'exec -a customsleep sleep 0.8')
+	[ "$(date +"%s%2N")" -gt $((i+79)) ] &&
+		xdo hide $(xdo id -n lemonbar)
+}
+
+while read -r l < $f; do
+	s
+	set -- "${l%%--*}" "${l#*--}"
+	printf '%b\n' "%{F-}%{+u}%{+o}%{B#ff$accent}%{O3}%{B-}%{O$(((h-12)/2))}$1%{O500}%{r}$2%{O$(((h-12)/2))}%{B#ff$accent}%{O3}%{B-}%{-o}%{-u}"
+	unset l
+	(h &)
+done | lemonbar -b -d -p \
+	-g "${w}x$h+$x+$y" \
+	-u 3 \
+	-U "#ff$accent" \
+	-f "Roboto Mono:pixelsize=12:style=bold" \
+	-f "Noto Sans Mono:pixelsize=12" \
+	-B "#ff$bg1" \
+	-F "#ff$fg1"
+#pid=$!
+#sleep $time &
+#wait "$!"
+#kill -9 $pid
+#rm $f

@@ -36,7 +36,7 @@ mute() {
 	fi
 
 	amixer set Master "$action" >/dev/null
-	notif="Volume ${action}d"
+	notif="vol ${action}d"
 }
 
 mute_window() {
@@ -48,8 +48,12 @@ mute_window() {
 
 volume() {
 	# get the current volume
-	current="$(amixer get Master | grep -io "[0-9][0-9]*%" \
-		| head -1 | tr -d '%')"
+	amixer=$(amixer get Master)
+	current=${amixer##*[0-9] \[}
+	current=${current%%%*}
+	mute=${amixer##*\[}
+	[ "$1" = get ] && [ "$mute" != 'on]' ] && printf '%s\n' "$current [muted]" && exit
+	[ "$1" = get ] && printf '%s\n' "$current" && exit
 
 	# default modifier (5%)
 	[ "$2" ] && number="$2" || number="5"
@@ -64,7 +68,7 @@ volume() {
 
 	amixer set Master "$number%" >/dev/null
 
-	notif="Volume set to $number%"
+	notif="vol set to $number"
 }
 
 media() {
@@ -92,6 +96,9 @@ case $1 in
 	mw) mute_window;;
 
 	# volume
+	get)
+		volume get
+	;;
 	set)
 		[ "$2" ] || { echo "option set requires a number"; exit 1; }
 		volume set "$2"
@@ -110,6 +117,7 @@ muting
  unmute
 
 volume
+ get     get current volume
  set     set volume to <number>
  up      increase volume by number (default: 5)
  down    decrease volume by number (default: 5)
@@ -123,4 +131,5 @@ EOF
 		exit 1
 esac
 
-notify 70 "$notif"
+#notify 70 "$notif"
+notvol "$notif"

@@ -1,5 +1,17 @@
 #!/bin/sh
 
-[ "$1" = a ] && a='Window moved to desktop' || a='Desktop switched to'
+[ "$1" = a ] && a='moved to' || a='switched to'
 
-dunstify -r 20 -t 1000 "$a $2" \
+. ~/etc/colours/current
+
+des() {
+	#cur="$(( $(xdotool get_desktop) + 1 ))"
+	num="$(xdotool get_num_desktops)"
+	for i in $(seq $((num-1))) 0; do
+		[ "$1" = "$i" ] && printf %s "%{F#ff$fg1}$i " ||
+			printf %s "%{F#aa$fg2}$i "
+	done
+	printf %s '%{F-}'
+}
+
+notlemon "$a" -- "$(des $2)"
