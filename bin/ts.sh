@@ -148,7 +148,7 @@ if [ -f "$HOME/opt/git/Wallpapers/$wall" ]; then
 	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/$wall\""
 	eval $wallthing
 else
-	walgen "#$wall"
+	walgen "#$wall" "0.08"
 	wallthing="feh --bg-tile --no-fehbg \"$HOME/opt/git/Wallpapers/tile.png\""
 	sleep 0.6
 fi
