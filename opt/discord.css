@@ -301,7 +301,7 @@ svg[class*="homeIcon-"] path {
 	color: var(--fg1) !important;
 }
 
-[class*="title-"] > * > [class^="icon"] {
+[class*="title-"] > * > [class^="icon"]:first-of-type {
 	visibility: hidden;
 	width: 0;
 }
@@ -484,6 +484,10 @@ svg[class*="homeIcon-"] path {
 .hljs .hljs-meta,
 .hljs .hljs-comment {
 	color: var(--fg2) !important;
+}
+
+[class*="systemMessage"] * [class*="anchorUnderlineOnHover"] {
+	font-weight: bold !important;
 }
 
 [class*="reactionMe-"] {
