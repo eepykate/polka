@@ -12,7 +12,20 @@ code.hljs:not(.inline)::before {
 	line-height: 20px;
 	overflow-x: hidden;
 	scrollbar-width: none;
-	color: var(--fg2);
+	color: var(--black);
+}
+
+#app-mount * {
+	scrollbar-width: none !important;
+}
+
+[class*="unreadMentionsIndicatorBottom"],
+[class*="channelTextArea"] * [class*="inner"] > div:not([class*="textArea"]) {
+	display: none;
+}
+
+form > div > div[class*="channelText"] * [class*="textArea"] {
+	margin: 0 40px;
 }
 
 code:not(.inline) {
@@ -148,6 +161,18 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg3) !important;
 }
 
+/* server ping */
+[class*="guilds"]:not(:hover) * [class*="lowerBadge"] > div {
+	background-color: var(--red) !important;
+	width: 50px;
+	margin-right: -4px;
+	font-size: 5px !important;
+	max-height: 10px !important;
+	min-height: 10px !important;
+	border-radius: 30px;
+	margin-bottom: 19px !important;
+}
+
 .scroller-2TZvBN {
 	background-color: var(--bg3) !important;
 }
@@ -182,7 +207,7 @@ svg[class*="homeIcon-"] path {
 
 /* make big */
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
-	font-size: 18px !important;
+	font-size: 16px !important;
 	font-family: Monospace !important;
 	font-weight: 500 !important;
 	margin-left: 3px;
@@ -270,13 +295,23 @@ svg[class*="homeIcon-"] path {
 }
 
 /* selected and unread servers */
-[class*="modeSelected-"] div [class^="icon-"] path,
-[class*="modeUnread-"] div [class^="icon-"] path {
+/*[class*="modeSelected-"] div [class^="icon-"] path,
+[class*="modeUnread-"] div [class^="icon-"] path*/
+[id^="channels"] * path{
 	color: var(--fg1) !important;
 }
 
+[class*="title-"] > * > [class^="icon"] {
+	visibility: hidden;
+	width: 0;
+}
+
+[class*="containerDefault"] > div:not([class*="modeSelected-"]):not([class*="modeUnread-"]) {
+	opacity: 0.66;
+}
+
 [class*="modeMuted-"] {
-	opacity: 0.5;
+	opacity: 0.4;
 }
 
 
@@ -294,11 +329,11 @@ svg[class*="homeIcon-"] path {
 .theme-dark {
 	--elevation-low: none !important;
 	--text-normal:  var(--fg1);
-	--text-muted:   var(--fg2);
+	--text-muted:   var(--black);
 	--text-link:    var(--accent);
 	--header-secondary:    var(--fg2);
 	--header-primary:      var(--fg1);
-	--channels-default:    var(--fg2);
+	--channels-default:    var(--fg1);
 	--interactive-normal:  var(--fg2);
 	--interactive-hover:   var(--fg1);
 	--interactive-active:  var(--fg1);
@@ -365,7 +400,8 @@ svg[class*="homeIcon-"] path {
 /* input placeholder text & edited indicator */
 [class*="edited-"],
 [class*="placeholder-"] {
-	opacity: 0.3 !important;
+	opacity: 1 !important;
+	color: var(--black) !important;
 }
 
 
