@@ -32,7 +32,9 @@ code:not(.inline) {
 	max-width: 90ch;
 	border: 2px solid var(--accent);
 	border-radius: 0;
-	box-shadow: 0 0 0 6px var(--button);
+	box-shadow: 
+		0 0 4px 2px var(--accento),
+		inset 0 0 4px 1px var(--accento);
 	margin: 11px 5px 11px 5px !important;
 	padding: 12px;
 }

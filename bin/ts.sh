@@ -34,6 +34,7 @@ sed --follow-symlinks -i \
 	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
 	-e "s/--fg1:.*#.*\;/--fg1:      #$fg1\;/" \
 	-e "s/--accent:.*#.*\;/--accent:   #$accent\;/" \
+	-e "s/--accento:.*#.*\;/--accento:  #${accent}66\;/" \
 	-e "s/--accent2:.*#.*\;/--accent2:  #$accent2\;/" \
 	-e "s/--border:.*#.*\;/--border:   #$border\;/" \
 	-e "s/--button:.*#.*\;/--button:   #$button\;/" \
