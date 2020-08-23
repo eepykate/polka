@@ -93,8 +93,8 @@ super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/scr/$(ls \
 	-1t $HOME/opt/x/scr/ --ignore old | head -1)
 
-super + {Insert, Home, End}
-	scr {-r,-c -p k,-s}
+super + {Insert, Home, Prior, End}
+	scr {-r,-c -p k,-m s -c,-s}
 
 
 #
