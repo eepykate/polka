@@ -25,8 +25,8 @@ super + u
 
 
 # don't send `ctrl + q` events to firefox
-#ctrl + q
-#	ctrlq
+ctrl + q
+	ctrlq
 
 
 super + f
