@@ -7,8 +7,10 @@
 	--bg4:      #0e0e0e;
 	--button:   #bfc1d520;
 	/*  ----  */
-	--fg2:      #797b8f;
 	--fg1:      #bfc1d5;
+	--fg2:      #797b8f;
+	--fg1o:     #bfc1d588;
+	--fg2o:     #797b8f99;
 	--disabled: #696969;
 	/*  ----  */
 	--accent:   #8497cf;

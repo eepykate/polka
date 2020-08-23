@@ -15,6 +15,20 @@ code.hljs:not(.inline)::before {
 	color: var(--black);
 }
 
+code::before {
+	text-shadow: none;
+}
+
+code:not(.inline) [class*="meta"],
+code:not(.inline) [class*="comment"] {
+	text-shadow: 0px 0px 5px var(--fg2o);
+}
+
+code:not(.inline),
+code:not(.inline) * {
+	text-shadow: 0px 0px 5px var(--fg1o);
+}
+
 #app-mount * {
 	scrollbar-width: none !important;
 }
@@ -39,9 +53,13 @@ code:not(.inline) {
 	padding: 12px;
 }
 #app-mount code.inline {
-	border: 1px solid var(--accent) !important;
+	text-shadow: 0px 0px 4px var(--fg1o);
+	box-shadow: 
+		0 0 2px 2px var(--accento),
+		inset 0 0 2px 1px var(--accento);
+	outline: 1px solid var(--accent);
 	border-radius: 0;
-	padding: 0px 3px;
+	padding: 0px 5px;
 	margin: 0;
 	font-weight: 500 !important;
 /*	box-shadow: 0 0 0 6px var(--button);

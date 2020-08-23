@@ -31,8 +31,10 @@ sed --follow-symlinks -i \
 	-e "s/--bg3:.*#.*\;/--bg3:      #$bg3\;/" \
 	-e "s/--bg4:.*#.*\;/--bg4:      #$bg4\;/" \
 	-e "s/--black:.*#.*\;/--black:    #$black\;/" \
-	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
 	-e "s/--fg1:.*#.*\;/--fg1:      #$fg1\;/" \
+	-e "s/--fg1o:.*#.*\;/--fg1o:     #${fg1}88\;/" \
+	-e "s/--fg2o:.*#.*\;/--fg2o:     #${fg2}99\;/" \
+	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
 	-e "s/--accent:.*#.*\;/--accent:   #$accent\;/" \
 	-e "s/--accento:.*#.*\;/--accento:  #${accent}66\;/" \
 	-e "s/--accent2:.*#.*\;/--accent2:  #$accent2\;/" \
