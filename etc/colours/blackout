@@ -9,13 +9,13 @@ purple=b887cc
 #   -----
 bg0=000000
 bg1=000000
-bg2=030303
-bg3=070707
-bg4=0a0a0a
+bg2=050505
+bg3=0a0a0a
+bg4=0e0e0e
 #   -----
 fg1=bfc1d5
 fg2=797b8f
-button=${fg1}0c
+button=${fg1}20
 disabled=696969
 #   -----
 accent=$blue

@@ -255,7 +255,7 @@ svg[class*="homeIcon-"] path {
     --background-accent: var(--accent);
     --background-floating: var(--bg1);
     --background-modifier-hover: var(--bg2);
-    --background-modifier-selected: var(--button);
+    --background-modifier-selected: var(--bg4);
     --background-modifier-active: var(--bg0);
     --background-modifier-accent: var(--bg0);
     --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
