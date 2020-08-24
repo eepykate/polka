@@ -55,6 +55,8 @@ set shiftwidth=2       " Number of spaces to use for autoindent
 "set copyindent         " Copy the indentation from the previous line
 set nocopyindent
 set nosmartindent
+" disable the crappy counter-intuitive autocomment/autoindent
+set paste
 
 " search
 set incsearch          " Search as characters are typed
