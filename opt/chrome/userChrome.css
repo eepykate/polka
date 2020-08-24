@@ -447,7 +447,7 @@ toolbarbutton#alltabs-button {
 :root:-moz-window-inactive .tabbrowser-tab[pinned="true"]:only-of-type::after,
 :root:-moz-window-inactive #browser,
 :root:-moz-window-inactive .tab-background {
-	border-color: var(--fg2) !important;
+	border-color: var(--black) !important;
 }
 
 .tab-background:not([selected]) {
