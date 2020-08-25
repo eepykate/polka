@@ -51,7 +51,7 @@ kgs() { echo; clear; git status; zle redisplay; }
 zle -N kgs; bindkey ^j kgs
 
 # ls on ^k
-kls() { echo; clear; ls; zle redisplay; }
+kls() { echo; clear; ls -A; zle redisplay; }
 zle -N kls; bindkey ^k kls
 
 #
