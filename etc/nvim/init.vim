@@ -104,7 +104,7 @@ source $HOME/etc/nvim/statusline.vim
 hi bl ctermfg=8
 hi gr ctermfg=7
 set laststatus=0
-set rulerformat=%=%#bl#%l,%c\ \ %#gr#%t
+set rulerformat=%40(%=%#bl#%l,%c\ \ %#gr#%t%)
 
 " Hide UI Elements
 let s:hidden_all = 0
