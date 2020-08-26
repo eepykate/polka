@@ -32,17 +32,11 @@ alias gl="git log --all --decorate --oneline --graph"
 
 # pacman/yay
 
-alias p="sudo pacman"
-alias i="sudo pacman -S"
-alias ia="yay -S"
-alias r="sudo pacman -Rs"
-alias in="pacman -Si"
-alias s="pacman -Ssq"
-alias sa="yay -Ss"
-alias src="sudo pacman -Ss"
-alias ins="sudo pacman -S"
-alias rem="sudo pacman -Rs"
-alias upd="sudo pacman -Syu"
+alias i="sudo cpm i"
+alias r="sudo cpm r"
+alias in="cpm I"
+alias s="cpm s"
+alias up="sudo cpu update"
 
 command -v compdef &>/dev/null &&
 	compdef _ins ins

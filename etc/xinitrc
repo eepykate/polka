@@ -7,9 +7,9 @@ wm="${1:-bspwm}"
 c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 # Basic X stuff
-for f in /etc/X11/xinit/xinitrc.d/*.sh; do
-	. "$f"
-done; f=
+#for f in /etc/X11/xinit/xinitrc.d/*.sh; do
+#	. "$f"
+#done; f=
 
 # DBus
 [ "$DBUS_SESSION_BUS_ADDRESS" ] ||

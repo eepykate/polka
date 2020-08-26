@@ -43,8 +43,8 @@ load() { autoload -U "$1"; zle -N "$1"; bindkey "$2" "$1"; }
 load edit-command-line '^f'
 
 # arrow keys search history
-load  up-line-or-beginning-search  '^[[A'
-load down-line-or-beginning-search '^[[B'
+load  up-line-or-beginning-search  '^[OA'
+load down-line-or-beginning-search '^[OB'
 
 # git status on ^j
 kgs() { echo; clear; git status; zle redisplay; }
