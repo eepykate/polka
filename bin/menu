@@ -7,7 +7,7 @@ d=$HOME/opt/menulog/${0##*/}-$$.log
 mkdir -p ${d%/*}
 exec 2> $d
 
-pgrep -x fzf |: && exit
+pgrep -x fzf >/dev/null && exit
 
 rm /tmp/fzfmenu*
 cat > /tmp/fzfmenu
@@ -19,11 +19,7 @@ while [ "$1" ]; do
 	shift
 done
 
-args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
-args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
-args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
-
-st -c floating -f 'Terminus (ttf):pixelsize=14:style=medium' \
-	-e sh -c "</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || { echo failed >&2; exit 1; }
+st -c floating -f 'terminus (ttf):pixelsize=14' -e sh -c \
+	"</dev/tty fzf --no-hscroll --cycle --pointer=' ' --height=20 --info=hidden --layout=reverse --prompt=' $prompt | ' --no-bold --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15' < /tmp/fzfmenu > /tmp/fzfmenuout" || { echo failed >&2; exit 1; }
 cat /tmp/fzfmenuout
 cat /tmp/fzfmenuout >&2
