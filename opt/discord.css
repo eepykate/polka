@@ -66,6 +66,13 @@ code:not(.inline) {
 	margin: 11px 5px 11px 5px !important;*/
 }
 
+[class*="markup"][class*="messageContent"] {
+    margin-top: -1px;
+    padding-top: 1px;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+}
+
 .mentionsBadge-7f5lud {
 	display: block !important;
 }
