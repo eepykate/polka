@@ -20,7 +20,7 @@ draw() { chwb2 -I "$inner" -O "$outer" -i "2" -o "9" $* 2> /dev/null; }
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
 	while read -r _; do
-		v=$(echo $(xdo id -N firefoxdeveloperedition))
+		v=$(echo $(xdo id -N Firefox))
 		v=${v// /\\|}
 		[ "$v" ] || v='abcdefg'
 		inner=$inner1 draw "$(targets focused)"
