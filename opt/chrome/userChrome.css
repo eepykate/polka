@@ -364,7 +364,10 @@ toolbarbutton#alltabs-button {
 	line-height: 16px !important;
 }
 
-.tab-text { margin-top: 2px !important; }
+.tab-text {
+	margin-top: 2px !important;
+  margin-left: 1px !important; /* fix fonts getting cut off */
+}
 
 
 
