@@ -101,6 +101,10 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 " statusline
 source $HOME/etc/nvim/statusline.vim
+hi bl ctermfg=8
+hi gr ctermfg=7
+set laststatus=0
+set rulerformat=%=%#bl#%l,%c\ \ %#gr#%t
 
 " Hide UI Elements
 let s:hidden_all = 0

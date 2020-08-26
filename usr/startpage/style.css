@@ -8,10 +8,9 @@ html {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	font-family: "Roboto Mono", sans-serif;
-	font-weight: bold;
-	font-size: 10px;
-	margin-bottom: -25px;
+	font-family: "terminus (ttf)", sans-serif;
+	font-weight: normal;
+	font-size: 12px;
 }
 
 html, body {
@@ -19,6 +18,7 @@ html, body {
 }
 
 body {
+	margin-bottom: -10px;
 	width: 220px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);

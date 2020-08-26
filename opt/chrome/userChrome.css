@@ -25,9 +25,9 @@
 }
 
 :root {
-	--font              : Roboto Mono;
-	--font-size         : 10px;
-	--font-weight       : bold;
+	--font              : "terminus (ttf)";
+	--font-size         : 12px;
+	--font-weight       : normal;
 	--icon-size         : 15px        !important;
 	--button-size       : 16px        !important;
 	--tab-min-height    : 36px        !important;

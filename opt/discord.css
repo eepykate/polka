@@ -1,7 +1,7 @@
 /* display info about code blocks */
 code.hljs:not(.inline)::before {
 	content: attr(class) !important;
-	font-size: 10px;
+	font-size: 12px;
 	float: right;
 	display: block;
 	width: auto;
@@ -19,6 +19,7 @@ code::before {
 	text-shadow: none;
 }
 
+/*
 code:not(.inline) [class*="meta"],
 code:not(.inline) [class*="comment"] {
 	text-shadow: 0px 0px 5px var(--fg2o);
@@ -27,7 +28,7 @@ code:not(.inline) [class*="comment"] {
 code:not(.inline),
 code:not(.inline) * {
 	text-shadow: 0px 0px 5px var(--fg1o);
-}
+}*/
 
 #app-mount * {
 	scrollbar-width: none !important;
@@ -46,17 +47,15 @@ code:not(.inline) {
 	max-width: 90ch;
 	border: 2px solid var(--accent);
 	border-radius: 0;
-	box-shadow: 
-		0 0 4px 2px var(--accento),
-		inset 0 0 4px 1px var(--accento);
+	box-shadow: 0 0 0px 8px var(--button);
 	margin: 11px 5px 11px 5px !important;
 	padding: 12px;
 }
 #app-mount code.inline {
 	text-shadow: 0px 0px 4px var(--fg1o);
-	box-shadow: 
+	/*box-shadow:
 		0 0 2px 2px var(--accento),
-		inset 0 0 2px 1px var(--accento);
+		inset 0 0 2px 1px var(--accento);*/
 	outline: 1px solid var(--accent);
 	border-radius: 0;
 	padding: 0px 5px;
@@ -125,8 +124,8 @@ code,
 [class^="codeLine-"],
 [class*="codeBlockText-"],
 [class*="codeBlockText-"] * {
-	font-family: Monospace !important;
-	font-weight: bold !important;
+	font-family: "terminus (ttf)" !important;
+	font-weight: normal !important;
 	font-size: 12px !important;
 }
 
@@ -235,10 +234,10 @@ svg[class*="homeIcon-"] path {
 /* make big */
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
 	font-size: 16px !important;
-	font-family: Monospace !important;
+	font-family: "terminus (ttf)" !important;
 	font-weight: 500 !important;
-	margin-left: 3px;
-	max-width: 10px !important;
+	margin-left: 5px;
+	max-width: 8px !important;
 	min-height: 25px !important;
 }
 
@@ -249,7 +248,7 @@ svg[class*="homeIcon-"] path {
 	left: -2px !important;
 	top: -7px !important;
 	font-weight: bold !important;
-	font-family: Monospace !important;
+	font-family: "terminus (ttf)" !important;
 }
 
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
@@ -310,7 +309,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--fg1) !important;
 	color: var(--bg1) !important;
 	font-size: 10px !important;
-	font-family: monospace !important;
+	font-family: "terminus (ttf)" !important;
 	font-weight: 500 !important;
 	padding: 0 !important;
 }

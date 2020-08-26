@@ -19,7 +19,7 @@ pap        # wallpaper
 hw 0       # clear hidden windows cache
 rmd &      # remove annoying files that keep appearing in ~
 screen.sh  # change display layout
-start-pulseaudio-x11 &   # audio
+pulseaudio -D &          # audio
 xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds

@@ -23,7 +23,7 @@ args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
 args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
 args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
-st -c floating -f 'Roboto Mono:pixelsize=14:style=medium' \
+st -c floating -f 'Terminus (ttf):pixelsize=14:style=medium' \
 	-e sh -c "</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || { echo failed >&2; exit 1; }
 cat /tmp/fzfmenuout
 cat /tmp/fzfmenuout >&2

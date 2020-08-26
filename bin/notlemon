@@ -48,7 +48,7 @@ done | lemonbar -b -d -p \
 	-g "${w}x$h+$x+$y" \
 	-u 3 \
 	-U "#ff$accent" \
-	-f "Roboto Mono:pixelsize=12:style=bold" \
+	-f "terminus (ttf):pixelsize=12" \
 	-f "Noto Sans Mono:pixelsize=12" \
 	-B "#ff$bg1" \
 	-F "#ff$fg1"

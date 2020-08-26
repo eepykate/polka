@@ -1,5 +1,5 @@
 [global]
-	font                = roboto mono bold 10px
+	font                = terminus (ttf) 12px
 	geometry            = "500x5-40-40"
 	shrink              = true
 
