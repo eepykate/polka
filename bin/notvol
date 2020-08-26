@@ -6,8 +6,8 @@ bar() {
 	raw=$(vol get)
 	vol=${raw%% *}
 	[ "$raw" != "$vol" ] && fg1=$red
-	vol=$((vol/5))
-	for i in $(seq 20); do
+	vol=$((vol/6))
+	for i in $(seq 16); do
 		[ "$i" -le "$vol" ] && op=ff
 		#[ "$i"  =  "$vol" ] && op=dd
 		[ "$i" -gt "$vol" ] && op=bb
