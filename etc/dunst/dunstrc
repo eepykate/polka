@@ -23,8 +23,8 @@
 	show_indicators     = false
 	show_age_threshold  = 60
 
-	icon_position       = left
-	max_icon_size       = 32
+	#icon_position       = left
+	#max_icon_size       = 32
 
 [experimental]
 	per_monitor_dpi     = true
