@@ -368,7 +368,9 @@ toolbarbutton#alltabs-button {
 	margin-top: 2px !important;
   margin-left: 1px !important; /* fix fonts getting cut off */
 }
-
+.urlbarView-url {
+	padding-left: 2px !important;
+}
 
 
 
