@@ -14,8 +14,8 @@ command_not_found_handler() {
 	return 127
 }
 
-export PROMPT=' %1~%F{%(?.16.17)} %(!.|./) %f' \
-  SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
+PROMPT=' %1~%F{%(?.16.17)} %(!.|./) %f'
+export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 
 [ "$TERM" = linux ] &&
 	PROMPT=$' %1~%F{%(?.4.1)} %(!.|./) %f'
