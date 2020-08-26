@@ -35,7 +35,7 @@ h() {
 	i=$(date +"%s%2N")
 	(bash -c 'exec -a customsleep sleep 0.8')
 	[ "$(date +"%s%2N")" -gt $((i+79)) ] &&
-		xdo hide $(xdo id -n lemonbar)
+		xdo hide $(xdo id -n lemonbar || printf 'kjahsdjah858347hasd7')
 }
 
 while read -r l < $f; do
