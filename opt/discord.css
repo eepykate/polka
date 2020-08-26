@@ -324,8 +324,13 @@ svg[class*="homeIcon-"] path {
 /* selected and unread servers */
 /*[class*="modeSelected-"] div [class^="icon-"] path,
 [class*="modeUnread-"] div [class^="icon-"] path*/
-[id^="channels"] * path{
+[id^="channels"] * path {
 	color: var(--fg1) !important;
+}
+
+[class*="iconServer"] path {
+    color: var(--red) !important;
+    opacity: 1 !important;
 }
 
 /* move search to the right */
@@ -340,7 +345,7 @@ svg[class*="homeIcon-"] path {
 	width: 0;
 }
 
-[class*="containerDefault"] > div:not([class*="modeSelected-"]):not([class*="modeUnread-"]) {
+[class*="containerDefault"] > div:not([class*="modeSelected-"]):not([class*="modeUnread-"]):not([class*="list-"]) {
 	opacity: 0.66;
 }
 
