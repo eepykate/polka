@@ -29,13 +29,13 @@ playerctl() {
 mute() {
 	# if a command isn't specified toggle mute
 	if [ -z "$1" ]; then
-		amixer get Master | grep -qio "off" &&
+		amixer -D pulse get Master | grep -qio "off" &&
 			action="unmute" || action="mute"
 	else
 		action="$1"
 	fi
 
-	amixer set Master "$action" >/dev/null
+	amixer -D pulse set Master "$action" >/dev/null
 	notif="vol ${action}d"
 }
 
@@ -48,7 +48,7 @@ mute_window() {
 
 volume() {
 	# get the current volume
-	amixer=$(amixer get Master)
+	amixer=$(amixer -D pulse get Master)
 	current=${amixer##*[0-9] \[}
 	current=${current%%%*}
 	mute=${amixer##*\[}
@@ -66,7 +66,7 @@ volume() {
 	[ "$number" -lt  '0'  ] && number="0"
 	[ "$number" -gt '100' ] && number="100"
 
-	amixer set Master "$number%" >/dev/null
+	amixer -D pulse set Master "$number%" >/dev/null
 
 	notif="vol set to $number"
 }
