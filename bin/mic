@@ -25,7 +25,7 @@ if [ ! -e ./initdone ]; then
 	echo "We will start Mumble now. Please complete setup wizard and go to settings to increase quality and decrease latency."
 	echo "Also, mute your microphone (if you have one) in Mumble."
 	echo "Then exit Mumble."
-	mumble >/dev/null 2>&1
+	mumble |:
 	touch ./initdone
 fi
 
@@ -37,7 +37,7 @@ murmurd -ini ./murmur.ini &
 sleep 5
 
 echo "Starting Mumble client..."
-mumble "mumble://localhost" >/dev/null 2>&1 &
+mumble "mumble://localhost" |: &
 mumble_pid=$!
 # Mumble is slow to launch, and the
 # user may need to click on OK button.

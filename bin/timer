@@ -15,6 +15,6 @@ echo "timer set for $1 ($seconds) ${2:+- $2}"
 {
 	sleep "$seconds"
 
-	paplay "/usr/share/sounds/freedesktop/stereo/complete.oga" 2>/dev/null &
+	paplay "/usr/share/sounds/freedesktop/stereo/complete.oga" |: &
 	notify-send -u critical "Timer finished" "$2"
 } &

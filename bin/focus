@@ -4,7 +4,7 @@
 #
 
 # exit when fullscreen
-bspc query -N -n focused.fullscreen > /dev/null && exit
+bspc query -N -n focused.fullscreen && exit
 
 case $1 in
 	east)  arg=xy; op=-gt;;

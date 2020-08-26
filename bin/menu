@@ -7,7 +7,7 @@ d=$HOME/opt/menulog/${0##*/}-$$.log
 mkdir -p ${d%/*}
 exec 2> $d
 
-pgrep -x fzf >/dev/null 2>&1 && exit
+pgrep -x fzf |: && exit
 
 rm /tmp/fzfmenu*
 cat > /tmp/fzfmenu

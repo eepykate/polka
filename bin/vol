@@ -15,7 +15,7 @@ notify() {
 	gdbus call -e -d "org.freedesktop.Notifications" \
 		-o /org/freedesktop/Notifications \
 		-m org.freedesktop.Notifications.Notify "" \
-		"$1" "" "$2" "$3" "[]" "{}" 5000 >/dev/null
+		"$1" "" "$2" "$3" "[]" "{}" 5000 |:
 }
 
 playerctl() {
@@ -23,7 +23,7 @@ playerctl() {
 	{
 		pid=$!
 		sleep 1; kill $pid
-	} >/dev/null 2>&1 &
+	} |: &
 }
 
 mute() {
@@ -35,7 +35,7 @@ mute() {
 		action="$1"
 	fi
 
-	amixer -D pulse set Master "$action" >/dev/null
+	amixer -D pulse set Master "$action" |:
 	notif="vol ${action}d"
 }
 
@@ -66,7 +66,7 @@ volume() {
 	[ "$number" -lt  '0'  ] && number="0"
 	[ "$number" -gt '100' ] && number="100"
 
-	amixer -D pulse set Master "$number%" >/dev/null
+	amixer -D pulse set Master "$number%" |:
 
 	notif="vol set to $number"
 }
