@@ -1,5 +1,3 @@
-hi clear
-
 let g:colors_name='term'
 
 set numberwidth=1
