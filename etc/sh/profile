@@ -8,6 +8,9 @@ export \
 	XDG_CONFIG_HOME="$HOME/etc" \
 	XDG_CACHE_HOME="$HOME/usr/cache"
 
+systemctl --user import-environment \
+	XDG_DATA_HOME XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME
+
 export \
 	EDITOR="nvim" \
 	GNUPGHOME="$HOME/opt" \
