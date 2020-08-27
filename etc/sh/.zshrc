@@ -14,7 +14,15 @@ command_not_found_handler() {
 	return 127
 }
 
-PROMPT=' %1~%F{%(?.16.17)} %(!.|./) %f'
+precmd() {
+	( {
+		sleep 0.01
+		v="         ${PWD##*/}"
+		printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[${#v}D${v}\033[u"
+	} & )
+}
+
+PROMPT=' %F{%(?.16.17)}♡ %f'
 export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 
 [ "$TERM" = linux ] &&
@@ -46,12 +54,16 @@ load edit-command-line '^f'
 load  up-line-or-beginning-search  '^[OA'
 load down-line-or-beginning-search '^[OB'
 
+cle() { echoti clear; zle redisplay; ( { sleep 0.05; precmd; } & ) }
+zle -N cle
+bindkey '^l' cle
+
 # git status on ^j
-kgs() { echo; clear; git status; zle redisplay; }
+kgs() { echo; clear; git status; zle redisplay; precmd; }
 zle -N kgs; bindkey ^j kgs
 
 # ls on ^k
-kls() { echo; clear; ls -A; zle redisplay; }
+kls() { echo; clear; ls -A; zle redisplay; precmd; }
 zle -N kls; bindkey ^k kls
 
 #

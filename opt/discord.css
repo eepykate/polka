@@ -124,7 +124,7 @@ code,
 [class^="codeLine-"],
 [class*="codeBlockText-"],
 [class*="codeBlockText-"] * {
-	font-family: "terminus (ttf)" !important;
+	font-family: font !important;
 	font-weight: normal !important;
 	font-size: 12px !important;
 }
@@ -234,10 +234,10 @@ svg[class*="homeIcon-"] path {
 /* make big */
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
 	font-size: 16px !important;
-	font-family: "terminus (ttf)" !important;
+	font-family: Roboto Mono !important;
 	font-weight: 500 !important;
-	margin-left: 5px;
-	max-width: 8px !important;
+	margin-left: 3px;
+	max-width: 10px !important;
 	min-height: 25px !important;
 }
 
@@ -248,7 +248,7 @@ svg[class*="homeIcon-"] path {
 	left: -2px !important;
 	top: -7px !important;
 	font-weight: bold !important;
-	font-family: "terminus (ttf)" !important;
+	font-family: font !important;
 }
 
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
@@ -309,7 +309,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--fg1) !important;
 	color: var(--bg1) !important;
 	font-size: 10px !important;
-	font-family: "terminus (ttf)" !important;
+	font-family: font !important;
 	font-weight: 500 !important;
 	padding: 0 !important;
 }
