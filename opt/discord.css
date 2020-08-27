@@ -5,7 +5,7 @@ code.hljs:not(.inline)::before {
 	float: right;
 	display: block;
 	width: auto;
-	max-width:  70px;
+	max-width:  80px;
 	text-align: right;
 	min-width:  auto;
 	margin-top: -110px;
