@@ -59,11 +59,11 @@ alias td="transmission-daemon"
 tc() { transmission-remote-cli; reset_cursor; }
 
 v() {
-	if [[ "$(stat -c '%U' "$1" "${1%/*}")" =~ "$USER" ]] || ! [[ "$1" ]]; then
+	if [[ "$(stat -c '%U' "$1" "${1%/*}" 2>/n)" =~ "$USER" ]] || ! [[ "$1" ]]; then
 		nvim "$@"
 	else
 		sudo -E nvim "$@"
-	fi 2>/n
+	fi
 	printf '\e[4 q'
 }
 #precmd() {
