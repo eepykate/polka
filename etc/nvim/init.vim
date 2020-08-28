@@ -37,7 +37,9 @@ autocmd BufWinLeave * call  clearmatches()
 call plug#begin()
 	Plug 'dense-analysis/ale'
 	Plug 'machakann/vim-sandwich'
+	Plug 'airblade/vim-gitgutter'
 call plug#end()
+set updatetime=500
 
 
 " statusline
