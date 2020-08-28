@@ -1,13 +1,9 @@
-#!/bin/sh -x
+#!/bin/sh
 #
 #   Use fzf as a replacement for rofi/dmenu.
 #
 
-d=$HOME/opt/menulog/${0##*/}-$$.log
-mkdir -p ${d%/*}
-exec 2> $d
-
-pgrep -x fzf >/dev/null && exit
+pgrep -x fzf >/dev/null && exit 1
 
 rm /tmp/fzfmenu*
 cat > /tmp/fzfmenu
@@ -20,6 +16,5 @@ while [ "$1" ]; do
 done
 
 st -c floating -e sh -c \
-	"</dev/tty fzf --no-hscroll --cycle --pointer=' ' --height=20 --info=hidden --layout=reverse --prompt=' $prompt | ' --no-bold --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15' < /tmp/fzfmenu > /tmp/fzfmenuout" || { echo failed >&2; exit 1; }
+	"</dev/tty fzf --no-hscroll --cycle --pointer=' ' --height=20 --info=hidden --layout=reverse --prompt=' $prompt | ' --no-bold --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15' < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
 cat /tmp/fzfmenuout
-cat /tmp/fzfmenuout >&2
