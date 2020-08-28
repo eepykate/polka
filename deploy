@@ -1,4 +1,5 @@
 #!/bin/sh
+exec 2>/dev/null
 
 if [ "$1" = y ]; then
 	y=y
@@ -14,8 +15,8 @@ mkdir -p      \
 	~/bin/bin   \
 	~/etc       \
 	~/usr/cache \
-	~/opt 2>/dev/null
+	~/opt
 
-ln -sf "$PWD/bin/"* ~/bin/ 2>/dev/null
-ln -sf "$PWD/etc/"* ~/etc/ 2>/dev/null
-ln -sf "$PWD/usr/"* ~/usr/ 2>/dev/null
+ln -sf "$PWD/bin/"* ~/bin/
+ln -sf "$PWD/etc/"* ~/etc/
+ln -sf "$PWD/usr/"* ~/usr/

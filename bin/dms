@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-
+#!/bin/sh -e
+#  dmenu search
 file="$(find -L "$1" -type f,l,d | sed "s|$1/||" | tac | menu)"
-[ ! "$file" ] && exit
+[ ! "$file" ]
 op "$1/$file"

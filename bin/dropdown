@@ -1,4 +1,5 @@
 #!/bin/sh
+#  dropdown term
 
 pid="$(pgrep tabbed)" || { tabbed -r 2 -n "dropdown" st -w '' & pid=$!;}
 

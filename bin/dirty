@@ -1,5 +1,5 @@
 #!/bin/sh
-# print dirty git repos
+#  print dirty git repos
 
 for i in ~/opt/dots ~/opt/git/*; do
 	cd "$i"; echo "${i##*/}"

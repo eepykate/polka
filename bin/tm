@@ -1,5 +1,5 @@
 #!/bin/sh
-# toggle mic
+#  toggle mic
 
 input=$(pactl list sink-inputs | while read -r l; do
 	case $l in

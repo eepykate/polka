@@ -1,14 +1,9 @@
 #!/bin/sh -e
-#
 #  mount disk
-#
 
-dis=$(lsblk -ro "name,mountpoint,type" | while read -r l; do
-	case $l in
-		*[0-9]\ \ *) echo "${l%%  *}"
-	esac
-done | menu -p mount)
+set -- $(lsblk -ro name,mountpoint,fstype \
+	| grep -i '  [a-rt-z]' | menu -p mount)
 
-mkdir -p "$HOME/opt/mnt/$dis"
-sudo mount "/dev/$dis" "$HOME/opt/mnt/$dis"
-notify-send "mounted $dis"
+mkdir -p "$HOME/opt/mnt/$1"
+sudo mount "/dev/$1" "$HOME/opt/mnt/$1"
+notify-send "mounted $1"

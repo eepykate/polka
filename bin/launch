@@ -1,2 +1,7 @@
-#!/usr/bin/env bash
-find ${PATH//:/ } -type f,l -executable -maxdepth 1 | sed -e 's|.*/||g' | sort -n | uniq | menu | sh &
+#!/bin/sh
+
+IFS=:
+set -- $PATH
+
+find "$@" -type f,l -printf '%f\n' -executable \
+	| sort | uniq | menu | sh &

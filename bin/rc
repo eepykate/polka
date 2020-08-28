@@ -1,4 +1,2 @@
-#!/usr/bin/env bash
-
-xrdb "${XDG_CONFIG_HOME:-~/.config}/Xresources"
-/bin/pkill -x -USR1 st
+#!/bin/sh
+pkill -x -10 st

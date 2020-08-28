@@ -1,4 +1,5 @@
 #!/bin/sh
+#  simple timer
 
 calc() {
 	seconds="$(echo "$1*$2" | bc | sed 's/\..*$//')"

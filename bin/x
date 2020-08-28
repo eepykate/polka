@@ -20,8 +20,7 @@ cleanup() {
 
 stty=$(stty -g)
 tty=$(tty)
-tty=${tty##*[a-z]}
-tty=$((tty-1))
+tty=$((${tty##*[a-z]}-1))
 
 conf=${XDG_CONFIG_HOME:=$HOME/.config}
 data=${XDG_DATA_HOME:=$HOME/.local/share}/xorg

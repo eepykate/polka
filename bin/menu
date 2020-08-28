@@ -1,7 +1,5 @@
 #!/bin/sh
-#
-#   Use fzf as a replacement for rofi/dmenu.
-#
+#  fzf dmenu alternative
 
 pgrep -x fzf >/dev/null && exit 1
 
@@ -14,7 +12,10 @@ while [ "$1" ]; do
 	esac
 	shift
 done
+args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
+args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
+args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
 st -c floating -e sh -c \
-	"</dev/tty fzf --no-hscroll --cycle --pointer=' ' --height=20 --info=hidden --layout=reverse --prompt=' $prompt | ' --no-bold --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15' < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
+	"</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
 cat /tmp/fzfmenuout

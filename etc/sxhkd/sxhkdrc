@@ -12,7 +12,7 @@ super + v
 	firefox 0.0.0.0:9091
 
 super + slash
-	ros ~/opt/scs
+	dms ~/opt/scs
 
 super + period
 	dmsc

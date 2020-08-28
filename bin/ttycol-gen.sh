@@ -5,16 +5,10 @@
 	printf 'export TERM=linux\n'
 	printf 'for tty in /dev/tty[0-9]; do\n'
 	printf '\t[ -w "$tty" ] || continue\n'
-	xrdb -q | while read -r line; do
-		case $line in
-			*color[0-9]*)
-				set -- c${line#*c}
-				one="${1##*r}"
-				[ "${one%:}" -gt 15 ] && continue
-				hex="$(printf %x "${one%:}")"
-				printf '\tprintf "\\033]P%s%s" > "$tty"\n' "$hex" "${2#?}"
-			;;
-		esac
+	. ~/etc/colours/current
+	for i in 0$bg1 1$red 2$yellow 3$green 4$cyan 5$blue 6$purple 7$fg1; do
+		printf '\tprintf "\\033]P%s%s" > "$tty"\n' "${i%??????}" "${i#?}"
+		printf '\tprintf "\\033]P%X%s" > "$tty"\n' "$((${i%??????}+8))" "${i#?}"
 	done
 	printf 'done\n'
 } > "$HOME/bin/ttycol.sh"

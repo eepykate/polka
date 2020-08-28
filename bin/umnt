@@ -1,4 +1,5 @@
 #!/bin/sh -e
+#  unmount disk
 
 fe() {
 	while read -r l; do
@@ -8,9 +9,9 @@ fe() {
 	done
 }
 
-dis=$(lsblk -o 'name,mountpoint' | grep -e ' /' | tr -d '─└├' | fe | menu)
+set -- $(lsblk -ro 'name,mountpoint' | grep -e ' /' | fe | menu)
 
-[ -e "/dev/${dis%% *}" ] || exit 1
-sudo umount "${dis#* }"
-rmdir "$HOME/opt/mnt/${dis%% *}"
-notify-send "Unmounted ${dis%% *}" "${dis#* }"
+[ -e "/dev/$1" ] || exit 1
+sudo umount "$2"
+rmdir "$HOME/opt/mnt/$1"
+notify-send "Unmounted $1" "$2"

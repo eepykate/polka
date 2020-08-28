@@ -52,8 +52,3 @@ done | lemonbar -b -d -p \
 	-f "Noto Sans Mono:pixelsize=12" \
 	-B "#ff$bg1" \
 	-F "#ff$fg1"
-#pid=$!
-#sleep $time &
-#wait "$!"
-#kill -9 $pid
-#rm $f

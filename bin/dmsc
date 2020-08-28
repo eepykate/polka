@@ -1,4 +1,6 @@
 #!/bin/sh
+#  dmenu shortcuts
+# open a saved dir in a new term
 
 act="$(grep -i '^d' ~/etc/sh/sc | grep -o '[^ ]*$' | menu | sed "s|~|$HOME|" )"
 

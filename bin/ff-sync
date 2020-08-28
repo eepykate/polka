@@ -1,20 +1,15 @@
 #!/bin/sh -efu
 
-date -Im >> ~/opt/ff-sync-log
-
 set -- "$1" "static-$1" "/dev/shm/firefox-$1-$USER"
-
-IFS=
 cd ~/etc/.mozilla/firefox
-
 [ -e "$3" ] || mkdir -m0700 "$3"
 
-[ "$(readlink $1)" != "$3" ] && {
-	mv $1 $2
+[ "$(readlink "$1")" != "$3" ] && {
+	mv "$1" "$2"
 	ln -s "$3" "$1"
 }
 
-if [ -e $1/.unpacked ]; then
+if [ -e "$1/.unpacked" ]; then
 	rsync -av --delete --exclude .unpacked "$1/" "$2/"
 else
 	rsync -av "$2/" "$1/"

@@ -1,15 +1,14 @@
 #!/bin/sh
-# hide window
+#  hide window
 
 dir="$XDG_CACHE_HOME/hw"
 mkdir -p "$dir"
+read -r win < "$dir/$1"
 
 [ "$1" = 0 ] && {
 	rm "$dir"/*
 	exit
 }
-
-read -r win < "$dir/$1"
 
 if [ -e "$dir/$1" ]; then
 	wname "$win" ||
