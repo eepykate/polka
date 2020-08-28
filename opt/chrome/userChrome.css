@@ -25,8 +25,8 @@
 }
 
 :root {
-	--font              : font;
-	--font-size         : 10px;
+	--font              : "terminus (ttf)";
+	--font-size         : 12px;
 	--font-weight       : normal;
 	--icon-size         : 15px        !important;
 	--button-size       : 16px        !important;
