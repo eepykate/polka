@@ -95,6 +95,13 @@ nnoremap <C-s> :w<CR>
 " toggle numbers sidebar
 nnoremap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 
+" redd.it/cw6q13
+vnoremap <silent> ( xi()<esc>P
+vnoremap <silent> [ xi[]<esc>P
+vnoremap <silent> { xi{}<esc>P
+vnoremap <silent> ' xi''<esc>P
+vnoremap <silent> " xi""<esc>P
+
 " Output the current syntax group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
