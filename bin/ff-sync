@@ -1,0 +1,20 @@
+#!/bin/sh -efu
+
+date -Im >> ~/opt/ff-sync-log
+
+IFS=
+cd ~/etc/.mozilla/firefox
+
+[ -e ${volatile:=/dev/shm/firefox-$1-$USER} ] || mkdir -m0700 $volatile
+
+[ "$(readlink $1)" != "$volatile" ] && {
+	mv $1 $1-static
+	ln -s $volatile $1
+}
+
+if [ -e $1/.unpacked ]; then
+	rsync -av --delete --exclude .unpacked ./$1 ./$1-static
+else
+	rsync -av ./$1-static ./$1
+	touch $1/.unpacked
+fi
