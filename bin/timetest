@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[ "$t" ] || t=20
+: ${t:=20}
 
 for _ in $(seq 1 "$t"); do
 	var=$( { time "$@"; } 2>&1 )
@@ -21,6 +21,6 @@ for j in $jar; do
 	[ "$j" -lt "$low" ] && low=$j
 done
 
-echo "avg: $(( kar / t  ))ms"
-#echo "high: ${high}ms"
-#echo "low: ${low}ms"
+echo "avg:  $(( kar / t  ))ms"
+echo "high: ${high}ms"
+echo "low:  ${low}ms"
