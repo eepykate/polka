@@ -33,5 +33,5 @@ export LS_COLORS="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31"\
 export PATH="$(find ~/bin/ -type d | sed 's|/$||'| tr '\n' ':')$PATH"
 
 ( shortcuts |: & )
-( ff-sync main |: & )
+#( ff-sync main |: & )
 ( sudo /usr/bin/kbdrate -d 200 -r 60 |: & )
