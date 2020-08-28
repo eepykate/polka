@@ -15,11 +15,10 @@ command_not_found_handler() {
 }
 
 precmd() {
-	( {
-		sleep 0.01
-		v="         ${PWD##*/}"
-		printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[${#v}D${v}\033[u"
-	} & )
+	v="$(printf " %.0s" $(seq 1 ${#p}))"
+	p="${PWD##*/}"
+	v=$v$p
+	printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[$((${#v}-1))D${v}\033[u"
 }
 
 PROMPT=' %F{%(?.16.17)}♡ %f'
@@ -54,16 +53,16 @@ load edit-command-line '^f'
 load  up-line-or-beginning-search  '^[OA'
 load down-line-or-beginning-search '^[OB'
 
-cle() { echoti clear; zle redisplay; ( { sleep 0.05; precmd; } & ) }
+cle() { clear; zle redisplay; { sleep 0.02; p= precmd; } &! }
 zle -N cle
 bindkey '^l' cle
 
 # git status on ^j
-kgs() { echo; clear; git status; zle redisplay; precmd; }
+kgs() { clear; git status; zle redisplay; p= precmd; }
 zle -N kgs; bindkey ^j kgs
 
 # ls on ^k
-kls() { echo; clear; ls -A; zle redisplay; precmd; }
+kls() { clear; ls -A; zle redisplay; { sleep 0.02; p= precmd; } &! }
 zle -N kls; bindkey ^k kls
 
 #
