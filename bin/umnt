@@ -12,4 +12,5 @@ dis=$(lsblk -o 'name,mountpoint' | grep -e ' /' | tr -d '─└├' | fe | menu)
 
 [ -e "/dev/${dis%% *}" ] || exit 1
 sudo umount "${dis#* }"
+rmdir "$HOME/opt/mnt/${dis%% *}"
 notify-send "Unmounted ${dis%% *}" "${dis#* }"
