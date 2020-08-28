@@ -1,6 +1,7 @@
 #!/bin/sh -e
 
-dis="$(ls "$HOME/opt/mnt" | menu -p unmount)"
-sudo umount "$HOME/opt/mnt/$dis"
-rm -rf "$HOME/opt/mnt/$dis"
-notify-send "Unmounted $dis"
+dis=$(lsblk -o 'name,mountpoint' | grep -e ' /' \
+	| tr -d '─└├' | grep -iv ' /$\|boot' | menu)
+[ "$dis" ] || exit 1
+sudo umount "${dis#* }"
+notify-send "Unmounted ${dis%% *}" "${dis#* }"
