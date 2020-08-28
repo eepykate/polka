@@ -1,0 +1,8 @@
+#!/bin/sh
+# print dirty git repos
+
+for i in ~/opt/dots ~/opt/git/*; do
+	cd "$i"; echo "${i##*/}"
+	git status --porcelain 2>/n | grep -qiv '^??' ||
+		 printf '\033[1A\033[2K'
+done
