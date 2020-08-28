@@ -1,7 +1,15 @@
 #!/bin/sh -e
 
-dis=$(lsblk -o 'name,mountpoint' | grep -e ' /' \
-	| tr -d '─└├' | grep -iv ' /$\|boot' | menu)
-[ "$dis" ] || exit 1
+fe() {
+	while read -r l; do
+		set -- $l
+		grep -iq "$2" /etc/fstab ||
+			printf '%s\n' "$1 $2"
+	done
+}
+
+dis=$(lsblk -o 'name,mountpoint' | grep -e ' /' | tr -d '─└├' | fe | menu)
+
+[ -e "/dev/${dis%% *}" ] || exit 1
 sudo umount "${dis#* }"
 notify-send "Unmounted ${dis%% *}" "${dis#* }"
