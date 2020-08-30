@@ -34,13 +34,13 @@ fi
 
 # set up
 echo "Starting Mumble server (murmurd)..."
-nice -n 14 murmurd -ini ./murmur.ini &
+murmurd -ini ./murmur.ini &
 # Murmur forks, so the PID acquired by `$!`
 # wouldn't help us much.
 sleep 5
 
 echo "Starting Mumble client..."
-nice -n 14 mumble "mumble://localhost" |: &
+mumble "mumble://localhost" |: &
 mumble_pid=$!
 # Mumble is slow to launch, and the
 # user may need to click on OK button.
