@@ -1,2 +1,3 @@
 #!/bin/sh
-pkill -x -10 st
+xrdb ~/etc/Xresources
+pkill -USR1 -x st
