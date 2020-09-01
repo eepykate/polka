@@ -19,7 +19,7 @@
 	dmenu               = /usr/bin/rofi -dmenu -p dunst:
 	browser             = ~/bin/app/firefox -new-tab
 
-	idle_threshold      = 0
+	idle_threshold      = 999999999999999999999
 	show_indicators     = false
 	show_age_threshold  = 60
 
@@ -54,4 +54,15 @@
 	frame_color         = "#b887cc"
 	timeout             = 0
 
+[stuff]
+	appname = dunstify
+	summary = "[sw][wi][in][td][co][hw]*"
+	set_transient = yes
+	history_ignore = yes
+
+[stuff2]
+	appname = dunstify
+	summary = "vol*"
+	set_transient = yes
+	history_ignore = yes
 # vim: ft=conf

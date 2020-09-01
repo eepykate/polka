@@ -1,4 +1,5 @@
 #!/bin/sh
+exit
 
 f=/tmp/barfifo
 

@@ -7,12 +7,14 @@ bar() {
 	vol=${raw%% *}
 	[ "$raw" != "$vol" ] && fg1=$red
 	vol=$((vol/5))
-	for i in $(seq 20); do
-		[ "$i" -le "$vol" ] && op=ff
-		#[ "$i"  =  "$vol" ] && op=dd
-		[ "$i" -gt "$vol" ] && op=bb
-		printf '%s' "%{F#$op$fg1}█" && continue
+	i=1
+	printf "<span background='#$fg1'>"
+	while [ "$i" -le 20 ]; do
+		[ "$i" = "$vol" ] && printf "</span><span background='#$fg2'>"
+		printf ' '
+		i=$((i+1))
 	done
+	printf "</span>"
 }
 
-notlemon "$1" -- "$(bar)"
+dunstify -u low -t 700 -r 9955 "$1" "$(bar)"
