@@ -8,9 +8,6 @@ export \
 	XDG_CONFIG_HOME="$HOME/etc" \
 	XDG_CACHE_HOME="$HOME/usr/cache"
 
-systemctl --user import-environment \
-	XDG_DATA_HOME XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME
-
 export \
 	EDITOR="nvim" \
 	GNUPGHOME="$HOME/opt" \
@@ -27,7 +24,7 @@ export LESS=-R \
 	LESS_TERMCAP_md='[35m'
 
 # nix lol
-. $HOME/opt/.nix-profile/etc/profile.d/nix.sh
+. "$HOME/opt/.nix-profile/etc/profile.d/nix.sh"
 
 # colours lol
 export LS_COLORS="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31"\
@@ -35,6 +32,7 @@ export LS_COLORS="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31"\
 
 export PATH="$(find ~/bin/ -type d | sed 's|/$||'| tr '\n' ':')$PATH"
 
+( rmd |: & )
 ( shortcuts |: & )
-#( ff-sync main |: & )
+( ff-sync main |: & )
 ( sudo /usr/bin/kbdrate -d 200 -r 60 |: & )

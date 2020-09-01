@@ -17,7 +17,6 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 pap        # wallpaper
 hw 0       # clear hidden windows cache
-rmd &      # remove annoying files that keep appearing in ~
 screen.sh  # change display layout
 pulseaudio -D &          # audio
 xset r rate 200 60   &   # faster keyboard
