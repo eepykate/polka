@@ -5,7 +5,7 @@ code.hljs:not(.inline)::before {
 	float: right;
 	display: block;
 	width: auto;
-	max-width:  80px;
+	max-width:  70px;
 	text-align: right;
 	min-width:  auto;
 	margin-top: -110px;
@@ -52,24 +52,24 @@ code:not(.inline) {
 	padding: 12px;
 }
 #app-mount code.inline {
-	text-shadow: 0px 0px 4px var(--fg1o);
-	/*box-shadow:
+	/*text-shadow: 0px 0px 4px var(--fg1o);
+	box-shadow:
 		0 0 2px 2px var(--accento),
 		inset 0 0 2px 1px var(--accento);*/
 	outline: 1px solid var(--accent);
 	border-radius: 0;
-	padding: 0px 5px;
-	margin: 0;
+	padding-left: 4px;
+	margin: 0 2px;
 	font-weight: 500 !important;
 /*	box-shadow: 0 0 0 6px var(--button);
 	margin: 11px 5px 11px 5px !important;*/
 }
 
 [class*="markup"][class*="messageContent"] {
-    margin-top: -1px;
-    padding-top: 1px;
-    margin-bottom: -1px;
-    padding-bottom: 1px;
+	margin-top: -1px;
+	padding-top: 1px;
+	margin-bottom: -1px;
+	padding-bottom: 1px;
 }
 
 .mentionsBadge-7f5lud {
@@ -124,7 +124,7 @@ code,
 [class^="codeLine-"],
 [class*="codeBlockText-"],
 [class*="codeBlockText-"] * {
-	font-family: font !important;
+	font-family: "font" !important;
 	font-weight: normal !important;
 	font-size: 12px !important;
 }
@@ -233,12 +233,13 @@ svg[class*="homeIcon-"] path {
 
 /* make big */
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
-	font-size: 16px !important;
-	font-family: Roboto Mono !important;
-	font-weight: 500 !important;
-	margin-left: 3px;
-	max-width: 10px !important;
+	font-size: 14px !important;
+	font-family: "Roboto Mono" !important;
+	font-weight: 400 !important;
+	margin-left: 4px;
+	max-width: 8px !important;
 	min-height: 25px !important;
+	text-align: center !important;
 }
 
 [class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
@@ -248,7 +249,7 @@ svg[class*="homeIcon-"] path {
 	left: -2px !important;
 	top: -7px !important;
 	font-weight: bold !important;
-	font-family: font !important;
+	font-family: "terminus (ttf)" !important;
 }
 
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
@@ -309,7 +310,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--fg1) !important;
 	color: var(--bg1) !important;
 	font-size: 10px !important;
-	font-family: font !important;
+	font-family: "terminus (ttf)" !important;
 	font-weight: 500 !important;
 	padding: 0 !important;
 }
@@ -328,8 +329,8 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="iconServer"] path {
-    color: var(--red) !important;
-    opacity: 1 !important;
+	color: var(--red) !important;
+	opacity: 1 !important;
 }
 
 /* move search to the right */
