@@ -1,5 +1,5 @@
 while :;do
-        read -rt "0"
-        time=$(date +'%R')
-        printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[${#time}D${time}\033[u"
+	read -rt "0"
+	time=$(date +'%R')
+	printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[${#time}D${time}\033[u"
 done &

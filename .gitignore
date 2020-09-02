@@ -1,8 +1,9 @@
-etc/nvim/plugged
-etc/sh/.zcompdump
-etc/gtk-2.0/gtkfilechooser.ini
+**/userChrome.js
+**/plugged
+**/gtkfilechooser.ini
+**/sc.sh
 **/*hist*
-etc/sh/sc.sh
-opt/chrome/userChrome.js
+**/.zcompdump
 usr/themes
 usr/icons
+etc/colours/current
