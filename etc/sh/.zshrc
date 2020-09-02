@@ -30,9 +30,9 @@ export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 	PROMPT=$' %1~%F{%(?.4.1)} %(!.|./) %f'
 
 
-printf '%7s@%s\n' "$USER" "$HOST"
-printf '  \033[7m\033[91m▅▅\033[92m▅▅\033[93m▅▅'
-printf '\033[94m▅▅\033[95m▅▅\033[96m▅▅\033[0m\n'
+#printf '%7s@%s\n' "$USER" "$HOST"
+#printf '  \033[7m\033[91m▅▅\033[92m▅▅\033[93m▅▅'
+#printf '\033[94m▅▅\033[95m▅▅\033[96m▅▅\033[0m\n'
 
 #
 #   Keybinds
