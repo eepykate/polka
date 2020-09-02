@@ -5,12 +5,12 @@
 bar() {
 	raw=$(vol get)
 	vol=${raw%% *}
-	[ "$raw" != "$vol" ] && fg1=$red
+	[ "$raw" != "$vol" ] && fg2=$red
 	vol=$((vol/5))
 	i=1
-	printf "<span background='#$fg1'>"
+	printf "<span background='#$fg2'>"
 	while [ "$i" -le 20 ]; do
-		[ "$i" = "$vol" ] && printf "</span><span background='#$fg2'>"
+		[ "$i" = "$vol" ] && printf "</span><span background='#$bg4'>"
 		printf ' '
 		i=$((i+1))
 	done
