@@ -16,8 +16,10 @@ command_not_found_handler() {
 
 precmd() {
 	# ugly af :(
-	v=$(printf " %.0s" $(seq 1 "$(( ${#p} - ${#PWD##*/} ))"))${PWD##*/}
-	p=${PWD##*/}
+	[ "$PWD" = "$HOME" ] && v=' ~' || {
+		v=$(printf " %.0s" $(seq 1 "$(( ${#p} - ${#PWD##*/} ))"))${PWD##*/}
+		p=${PWD##*/}
+	}
 	printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[$((${#v}-1))D${v}\033[u"
 }
 
