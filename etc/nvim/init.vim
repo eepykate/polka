@@ -39,7 +39,7 @@ call plug#begin()
 	Plug 'machakann/vim-sandwich'
 	Plug 'airblade/vim-gitgutter'
 call plug#end()
-set updatetime=500
+set updatetime=100
 
 
 " statusline
