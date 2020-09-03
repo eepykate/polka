@@ -19,16 +19,16 @@ hi PmenuThumb   ctermbg=8      ctermfg=8      cterm=NONE
 hi WildMenu     ctermbg=NONE   ctermfg=4      cterm=NONE
 
 " search
-hi Search       ctermfg=6    ctermbg=NONE  cterm=underline
-hi MatchParen   ctermfg=3    ctermbg=NONE  cterm=underline
+hi Search       ctermfg=16   ctermbg=NONE  cterm=underline
+hi MatchParen   ctermfg=16   ctermbg=NONE  cterm=underline
 
 " other
 hi DiffAdd         ctermfg=3
 hi DiffChange      ctermfg=2
 hi DiffDelete      ctermfg=1
-hi GitGutterAdd         ctermfg=3
-hi GitGutterChange      ctermfg=2
-hi GitGutterDelete      ctermfg=1
+hi GitGutterAdd         ctermfg=16
+hi GitGutterChange      ctermfg=16
+hi GitGutterDelete      ctermfg=17
 hi Visual       ctermbg=8      ctermfg=15
 hi Normal       ctermbg=NONE   ctermfg=15     cterm=NONE
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0      cterm=NONE
@@ -86,23 +86,19 @@ hi Title        ctermfg=4
 "   lang-specific syntax adjustments
 "
 
-" diff
-hi DiffAdd      ctermfg=2
-hi DiffDelete   ctermfg=1
-hi DiffChange   ctermfg=1
-
 " css
 hi cssUrl                 ctermfg=1      cterm=italic
 hi cssBraces              ctermfg=15
-hi cssTagName             ctermfg=1
-hi cssImportant           ctermfg=5
+hi cssTagName             ctermfg=16
+hi cssImportant           ctermfg=17
 hi cssClassName           ctermfg=3
-hi cssAttrRegion          ctermfg=1
+hi cssAttrRegion          ctermfg=16
 hi cssIdentifier          ctermfg=4
-hi cssDefinition          ctermfg=1
+hi cssDefinition          ctermfg=16
 hi cssClassNameDot        ctermfg=3
-hi cssFunctionName        ctermfg=1
-hi cssUnitDecorators      ctermfg=1
+hi cssFunctionName        ctermfg=16
+hi cssPseudoClassId       ctermfg=16
+hi cssUnitDecorators      ctermfg=16
 hi cssBackgroundProp      ctermfg=15
 hi cssUnitDecorators      ctermfg=none
 hi cssAttributeSelector   ctermfg=3
@@ -123,6 +119,8 @@ hi shHereDoc      ctermfg=15
 " md
 hi htmlItalic             ctermfg=NONE    cterm=italic
 hi htmlBold               ctermfg=15      cterm=bold
+hi htmlTag                ctermfg=15
+hi htmlEndTag             ctermfg=15
 hi markdownLinkText       ctermfg=15
 hi markdownURL            ctermfg=16
 hi markdownCode           ctermfg=15

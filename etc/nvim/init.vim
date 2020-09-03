@@ -109,8 +109,10 @@ inoremap <C-v> <ESC>"+pa
 inoremap <C-s> <ESC>:w<CR>a
 nnoremap <C-s> :w<CR>
 
-" toggle numbers sidebar
-nnoremap <C-N><C-N> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
+" toggle sidebars
+nnoremap <silent> <C-n> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
+nnoremap <silent> <C-m> :GitGutterToggle <CR>
+nnoremap <silent> <C-b> :ALEToggle <CR>
 
 " Output the current syntax group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
