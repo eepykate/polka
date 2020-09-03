@@ -1,42 +1,27 @@
-/*
- * CSS rewritten by https://github.com/phisch
- * */
-
-
 html {
+	font: bold 10px monospace;
+	background: var(--bg1);
+	/* align to center */
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
-	font-family: "Roboto Mono", sans-serif;
-	font-weight: bold;
-	font-size: 10px;
-}
-
-html, body {
-	background: var(--bg1);
 }
 
 body {
 	margin-bottom: -10px;
-	width: 220px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-gap: 5px;
+	/* flow horizontally */
+	display: flex;
 }
 
-a, a:visited {
+div > * {
+	display: block;
 	text-decoration: none;
-	outline: none;
-	color: var(--fg1);
-	padding: 20px 0;
-	border-radius: 4px;
+	padding: 10px 0;
 	text-align: center;
-	transition: background-color 200ms ease-in-out;
 }
 
-a:hover {
-	color: var(--accent);
-	/*background: var(--bg3);*/
-}
+div     { margin: 0 40px;       }
+a       { color: var(--fg1);    }
+span    { color: var(--accent); }
+a:hover { color: var(--accent); }
