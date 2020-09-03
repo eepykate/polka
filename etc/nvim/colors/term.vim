@@ -23,6 +23,12 @@ hi Search       ctermfg=6    ctermbg=NONE  cterm=underline
 hi MatchParen   ctermfg=3    ctermbg=NONE  cterm=underline
 
 " other
+hi DiffAdd         ctermfg=3
+hi DiffChange      ctermfg=2
+hi DiffDelete      ctermfg=1
+hi GitGutterAdd         ctermfg=3
+hi GitGutterChange      ctermfg=2
+hi GitGutterDelete      ctermfg=1
 hi Visual       ctermbg=8      ctermfg=15
 hi Normal       ctermbg=NONE   ctermfg=15     cterm=NONE
 hi EndOfBuffer  ctermbg=NONE   ctermfg=0      cterm=NONE
