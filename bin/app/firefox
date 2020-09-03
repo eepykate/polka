@@ -1,3 +1,0 @@
-#!/bin/sh
-
-HOME="$HOME/etc/" firefox-developer-edition "$@"
