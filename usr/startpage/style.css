@@ -17,11 +17,10 @@ body {
 div > * {
 	display: block;
 	text-decoration: none;
-	padding: 10px 0;
+	padding: 10px 40px;
 	text-align: center;
 }
 
-div     { margin: 0 40px;       }
 a       { color: var(--fg1);    }
 span    { color: var(--accent); }
 a:hover { color: var(--accent); }
