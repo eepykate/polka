@@ -5,13 +5,15 @@ v='[a-fA-F0-9]'
 
 # if the selection is a hex value of the correct length,
 # use that, otherwise select a pixel
-hex=$(xclip -clip p -o | tr -d '#')
+hex=$(xclip -clip p -o)
 
 [[ "$hex" =~ ^$v$v$v$v$v$v$ ]] ||
-	hex="$(colorpicker -doq | tr -d '#\n' | tr "[:upper:]" "[:lower:]")"
+	hex="$(colorpicker -doq)"
+
+hex=$(tr '[:upper:]' '[:lower:]' <<< "$hex" | tr -d '#\n')
 
 # copy the hex, then clear selection
-xclip -sel clip <<< "$hex"
+echo -n "$hex" | xclip -sel clip
 :| xclip -sel prim
 
 # send notification with the hex value and preview
