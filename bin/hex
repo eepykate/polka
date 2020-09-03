@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#  preview hex
+
+v='[a-fA-F0-9]'
+
+# if the selection is a hex value of the correct length,
+# use that, otherwise select a pixel
+hex=$(xclip -clip p -o | tr -d '#')
+
+[[ "$hex" =~ ^$v$v$v$v$v$v$ ]] ||
+	hex="$(colorpicker -doq | tr -d '#\n' | tr "[:upper:]" "[:lower:]")"
+
+# copy the hex, then clear selection
+xclip -sel clip <<< "$hex"
+:| xclip -sel prim
+
+# send notification with the hex value and preview
+notify-send "$hex" "<span background='#$hex'>      </span>"

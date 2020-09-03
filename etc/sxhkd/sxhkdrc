@@ -71,10 +71,7 @@ alt + grave
 
 # I have this key bound on my mouse
 XF86Launch6
-	h=$(xclip -clip p -o | tr -d '#'); \
-	[ "${#h}" != 6 ] && h="$(colorpicker -doq | tr -d '#\n' | tr "[[:upper:]]" "[[:lower:]]")"; \
-	echo -n $h | xclip -sel clip;          \
-	notify-send "$h" "<span background=\"#$h\">      </span>"
+	hex
 
 ctrl + alt + {1-9,0}
 	hw {1-9,0}
