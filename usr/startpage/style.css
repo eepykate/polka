@@ -8,9 +8,9 @@ html {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	font-family: "font", sans-serif;
-	font-weight: normal;
-	font-size: 12px;
+	font-family: "Roboto Mono", sans-serif;
+	font-weight: bold;
+	font-size: 10px;
 }
 
 html, body {

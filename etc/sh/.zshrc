@@ -23,7 +23,7 @@ precmd() {
 	printf '\033[7%b' "\033[8\033[s\033[0;9999H\033[$((${#v}-1))D${v}\033[u"
 }
 
-PROMPT=' %F{%(?.16.17)}♡ %f'
+PROMPT='%F{%(?.16.17)} † %f'
 export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 
 [ "$TERM" = linux ] &&

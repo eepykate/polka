@@ -1,7 +1,8 @@
 /* display info about code blocks */
 code.hljs:not(.inline)::before {
 	content: attr(class) !important;
-	font-size: 12px;
+	font-size: 10px;
+	font-weight: bold;
 	float: right;
 	display: block;
 	width: auto;
@@ -124,9 +125,9 @@ code,
 [class^="codeLine-"],
 [class*="codeBlockText-"],
 [class*="codeBlockText-"] * {
-	font-family: "font" !important;
-	font-weight: normal !important;
-	font-size: 12px !important;
+	font-family: "Roboto Mono" !important;
+	font-weight: 600 !important;
+	font-size: 10px !important;
 }
 
 /* hide sidebar image */
@@ -249,7 +250,7 @@ svg[class*="homeIcon-"] path {
 	left: -2px !important;
 	top: -7px !important;
 	font-weight: bold !important;
-	font-family: "terminus (ttf)" !important;
+	font-family: "Roboto Mono" !important;
 }
 
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
@@ -310,7 +311,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--fg1) !important;
 	color: var(--bg1) !important;
 	font-size: 10px !important;
-	font-family: "terminus (ttf)" !important;
+	font-family: "Roboto Mono" !important;
 	font-weight: 500 !important;
 	padding: 0 !important;
 }

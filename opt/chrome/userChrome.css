@@ -25,9 +25,9 @@
 }
 
 :root {
-	--font              : "font";
+	--font              : "Roboto Mono";
 	--font-size         : 10px;
-	--font-weight       : normal;
+	--font-weight       : bold;
 	--icon-size         : 15px        !important;
 	--button-size       : 16px        !important;
 	--tab-min-height    : 36px        !important;
