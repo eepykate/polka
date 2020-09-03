@@ -30,13 +30,11 @@ alias gca="git commit --amend"
 alias gl="git log --all --decorate --oneline --graph"
 
 
-# pacman/yay
-
 alias i="sudo cpm i"
 alias r="sudo cpm r"
-alias in="cpm I"
 alias s="cpm s"
-alias up="sudo cpu update"
+alias in="cpm I"
+alias up="sudo cpm upgrade"
 
 command -v compdef &>/dev/null &&
 	compdef _ins ins
@@ -57,6 +55,10 @@ bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 
 alias td="transmission-daemon"
 tc() { transmission-remote-cli; reset_cursor; }
+
+et() {  # elapsed time
+	ps -o command,etime $(pgrep "$1")
+}
 
 v() {
 	nvim "$@"
