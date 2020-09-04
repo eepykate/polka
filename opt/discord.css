@@ -568,3 +568,7 @@ svg[class*="homeIcon-"] path {
 [style*="179, 110, 247"] { color: var(--purple) !important; }
 [style*="247, 110, 213"] { color: var(--purple) !important; }
 [style*="247, 163, 110"] { color: var(--accent) !important; }
+
+[id^="private-channels"] [class*="muted-"] {
+    display: none;
+}
