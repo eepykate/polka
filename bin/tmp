@@ -1,9 +1,9 @@
 #!/bin/sh
 #  make a tmp dir
 
+trap 'rm -rf "$dir"' INT HUP TERM EXIT
 dir="${XDG_CACHE_HOME:=$HOME/.cache}/tmp-$$"
 
 mkdir -p "$dir"
 cd "$dir"
 $SHELL
-rm -rf "$dir"
