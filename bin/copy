@@ -4,6 +4,6 @@ var="$(cut -d' ' -f1 "$file" | menu)"
 
 while read -r line; do
 	case $line in
-		"$var"*) printf %b "${line#* }" | xclip -sel clip; exit;;
+		"$var "*) printf %b "${line#* }" | xclip -sel clip; exit;;
 	esac
 done < "$file"
