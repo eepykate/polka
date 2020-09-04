@@ -11,7 +11,7 @@ fe() {
 
 set -- $(lsblk -ro 'name,mountpoint' | grep -e ' /' | fe | menu)
 
-[ -e "/dev/$1" ] || exit 1
+[ "$1" ]
 sudo umount "$2"
 rmdir "$HOME/opt/mnt/$1"
 notify-send "Unmounted $1" "$2"
