@@ -1,0 +1,3 @@
+#!/bin/sh
+#  count lines in shell script
+grep -icv '^[[:space:]]*#\|^$' "$@"
