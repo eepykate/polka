@@ -7,9 +7,9 @@ bar() {
 	vol=${raw%% *}
 	[ "$raw" != "$vol" ] && fg2=$red
 	vol=$((vol/5))
-	i=1
+	i=0
 	printf "<span background='#$fg2'>"
-	while [ "$i" -le 20 ]; do
+	while [ "$i" -lt 20 ]; do
 		[ "$i" = "$vol" ] && printf "</span><span background='#$bg4'>"
 		printf ' '
 		i=$((i+1))
