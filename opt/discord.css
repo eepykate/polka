@@ -283,9 +283,9 @@ svg[class*="homeIcon-"] path {
 	left: 194px;
 }
 /* category icons */
-[class*="sidebar-"]:not(:hover) * .icon-WnO6o2 {
-	position: relative;
-	left: -10px;
+[class*="sidebar-"]:not(:hover) * .arrow-gKvcEx {
+	position: absolute;
+	left: 10px;
 }
 
 [class*="sidebar-"]:not(:hover) * [class*="voiceUser"] {
@@ -570,5 +570,5 @@ svg[class*="homeIcon-"] path {
 [style*="247, 163, 110"] { color: var(--accent) !important; }
 
 [id^="private-channels"] [class*="muted-"] {
-    display: none;
+	display: none;
 }
