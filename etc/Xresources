@@ -1,45 +1,66 @@
-st.termname:      st-256color
-st.font:          Roboto Mono:pixelsize=10:style=bold
-st.borderpx:      30
-st.tabspaces:     4
-st.xfps:          60
-st.actionfps:     60
-st.bellvolume:    0
-st.cwscale:       1.0
-st.chscale:       1.0
-st.blinktimeout:  0.5
-
-tabbed.normbgcolor: #0a0a0a
-tabbed.normfgcolor: #797b8f
-tabbed.selfgcolor:  #bfc1d5
-tabbed.selbgcolor:  #000000
-
 Xft.dpi: 96
 Xft.antialias: 1
 Xft.autohint: 0
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-URxvt.cursorUnderline: 1
-
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
+!
+!  URxvt
+!
 
 URxvt.font: xft:Roboto Mono:bold:pixelsize=10
 URxvt.letterSpace: -1
-URxvt.scrollBar: false
+URxvt.internalBorder: 30
+
+! underline cursor
+URxvt.cursorUnderline: 1
+
+! apparently helps with speed
+URxvt.skipBuiltinGlyphs: true
+
+! copypasting
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! ctrl-shift thing
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!  mouse
+! consistent selection behavior
+URxvt.perl-ext: default,-selection
+
+! clickable links
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
-URxvt*skipBuiltinGlyphs: true
-URxvt*internalBorder: 30
 
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.keysym.Control-Meta-c: builtin-string:
-URxvt.keysym.Control-Meta-v: builtin-string:
+! disable the hideous scrollbar
+URxvt.scrollBar: false
+
+! don't automatically jump to the bottom when new text appears
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+
+! don't try to scroll in apps like 'less'
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+! st.termname:      st-256color
+! st.font:          Roboto Mono:pixelsize=10:style=bold
+! st.borderpx:      30
+! st.tabspaces:     4
+! st.xfps:          60
+! st.actionfps:     60
+! st.bellvolume:    0
+! st.cwscale:       1.0
+! st.chscale:       1.0
+! st.blinktimeout:  0.5
+!
+! tabbed.normbgcolor: #0a0a0a
+! tabbed.normfgcolor: #797b8f
+! tabbed.selfgcolor:  #bfc1d5
+! tabbed.selbgcolor:  #000000
 
 #include "Xres"
