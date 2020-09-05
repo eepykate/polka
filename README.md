@@ -8,7 +8,7 @@
 
 <h3 align="center"> [bspwm] magical sunset </h3>
 
-![](https://i.imgur.com/VbxGGbp.png)
+![](https://i.imgur.com/RSA68Q4.png)
 
 <h3 align="center"> [bspwm] cherry blossom </h3>
 
