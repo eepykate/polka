@@ -5,7 +5,7 @@ v='[a-fA-F0-9]'
 
 # if the selection is a hex value of the correct length,
 # use that, otherwise select a pixel
-hex=$(xclip -clip p -o)
+hex=$(xclip -clip p -o | tr -d '#:; ')
 
 [[ "$hex" =~ ^$v$v$v$v$v$v$ ]] ||
 	hex="$(colorpicker -doq)"
