@@ -38,12 +38,12 @@ URxvt.matcher.button: 1
 ! disable the hideous scrollbar
 URxvt.scrollBar: false
 
-! don't automatically jump to the bottom when new text appears
+! dont automatically jump to the bottom when new text appears
 URxvt.scrollTtyOutput: false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress: true
 
-! don't try to scroll in apps like 'less'
+! dont try to scroll in apps like less
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
