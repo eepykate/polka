@@ -132,3 +132,6 @@ hi markdownH1             ctermfg=15
 
 " vimscript
 hi vimNotation    ctermfg=7
+
+
+hi xdefaultsLabel ctermfg=16
