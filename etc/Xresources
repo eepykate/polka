@@ -20,4 +20,26 @@ Xft.autohint: 0
 Xft.hinting: 1
 Xft.hintstyle: hintfull
 
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.cursorUnderline: 1
+
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
+URxvt.font: xft:Roboto Mono:bold:pixelsize=10
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt*skipBuiltinGlyphs: true
+URxvt*internalBorder: 30
+
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+
 #include "Xres"

@@ -16,6 +16,10 @@ args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
 args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
 args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
-st -c floating -e sh -c \
-	"</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
+. ~/etc/colours/current
+
+bspc rule -a \* -o state=floating
+
+urxvt -e sh -c \
+	"</dev/tty printf '\033]4;16;#$accent\007'; fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
 cat /tmp/fzfmenuout

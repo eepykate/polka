@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export RXVT_SOCKET="${XDG_DATA_HOME:=$HOME/.local/share}/rxvt"
+
+urxvtc "$@"
+[ $? -eq 2 ] && {
+	urxvtd -q -o -f
+	urxvtc "$@"
+}
+:

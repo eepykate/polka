@@ -3,7 +3,7 @@
 #
 
 super + Return
-	st
+	term
 
 #{alt + x, XF86Launch6}
 #	draw
@@ -66,8 +66,8 @@ ctrl + alt + s
 	ts.sh
 
 
-alt + grave
-	dropdown
+#alt + grave
+#	dropdown
 
 # I have this key bound on my mouse
 XF86Launch6

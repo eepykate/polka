@@ -1,3 +1,35 @@
 #!/bin/sh
 xrdb ~/etc/Xresources
-pkill -USR1 -x st
+. ~/etc/colours/current
+
+_() {
+	printf '\033]4;%s;%s\007' "$(($1+8))" "#$2"
+	printf '\033]4;%s;%s\007' "$1" "#$2"
+}
+
+for tty in /dev/pts/[0-9]*; do
+	[ -w $tty ] || continue
+
+	{
+		_ 1 "$red"
+		_ 2 "$yellow"
+		_ 3 "$green"
+		_ 4 "$cyan"
+		_ 5 "$blue"
+		_ 6 "$purple"
+
+		printf '\033]11;%s\007' "#$bg1"  # bg
+		printf '\033]708;%s\007' "#$bg1" # padding
+		printf '\033]4;0;%s\007' "#$bg1"
+		printf '\033]4;8;%s\007' "#$black"
+
+		printf '\033]10;%s\007' "#$fg1"  # fg
+		printf '\033]4;7;%s\007' "#$fg2"
+		printf '\033]4;15;%s\007' "#$fg1"
+
+		# annaisms
+		printf '\033]4;16;%s\007' "#$accent"
+		printf '\033]4;17;%s\007' "#$accent2"
+		printf '\033]4;18;%s\007' "#$contrast"
+	} > "$tty"
+done

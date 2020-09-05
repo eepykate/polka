@@ -13,7 +13,7 @@ bspc monitor DVI-D-0 -d  7 8 9 0
 # fix ordering
 bspc monitor DVI-D-0 -s HDMI-0
 # focus first/last desktops
-bspc desktop -f ^10 -f ^1
+#bspc desktop -f ^10 -f ^1
 
 # mouse
 xsetroot -cursor_name      left_ptr
