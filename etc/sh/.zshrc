@@ -40,8 +40,8 @@ export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 bindkey '^a'       beginning-of-line      # Ctrl-A
 bindkey '^e'       end-of-line            # Ctrl-E
 bindkey '^[[3~'    delete-char            # Delete
-bindkey '^[[1;5C'  forward-word           # Ctrl-RightArrow
-bindkey '^[[1;5D'  backward-word          # Ctrl-LeftArrow
+bindkey '^[Oc'     forward-word           # Ctrl-RightArrow
+bindkey '^[Od'     backward-word          # Ctrl-LeftArrow
 bindkey '^[^M'     self-insert-unmeta     # Alt-Return
 bindkey '^[[Z'     reverse-menu-complete  # Shift-Tab
 bindkey '^r'       history-incremental-search-backward  # Ctrl-E
