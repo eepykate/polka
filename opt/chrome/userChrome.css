@@ -464,9 +464,12 @@ toolbarbutton#alltabs-button {
 	border-top: none !important;
 }
 
-#main-window:not([inFullscreen]) #browser {
-	border: 2px solid var(--accent);
-	border-bottom: 0px;
+@media (min-width: 0px) and (max-width: 1439px),
+    (min-width: 1441px) and (max-width: 1919px) {
+	#main-window:not([inFullscreen]) #browser {
+		border: 2px solid var(--accent);
+		border-bottom: 0px;
+	}
 }
 
 .tabbrowser-tab[pinned="true"]:only-of-type::after {
