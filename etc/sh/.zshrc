@@ -10,7 +10,7 @@ setopt SHwordsplit
 
 # fancy prompts
 command_not_found_handler() {
-	printf 'not found:\033[38;05;16m %s\033[0m\n' "$0"
+	printf 'not found:\033[38;05;16m %s\033[0m\n' "$0" >&2
 	return 127
 }
 
