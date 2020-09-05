@@ -6,7 +6,7 @@ _() { HOME="$HOME/opt/apps" exec "$@"; }
 _wrap()      { _ "$@"; }
 _minecraft() { _ minecraft-launcher "$@"; }
 _firefox()   { HOME="$HOME/etc" exec firefox "$@"; }
-_boox()      { boox "$@"; exec sleep 0.05; }
+_boox()      { boox "$@"; exec sleep 0.1; }
 
 [ "$1" = deploy ] && {
 	grep -o '^_[a-z]\+' "$0" | while read -r i; do
