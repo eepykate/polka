@@ -38,6 +38,6 @@ xauth add :"$tty" MIT-MAGIC-COOKIE-1 "$(od -An -N16 -tx /dev/urandom | tr -d ' '
 # ready to accept connections.
 # Taking advantage of this feature allows us to launch our client directly
 # from a SIGUSR1 handler and avoid the need to poll for server readiness.
-trap 'DISPLAY=:$tty "${@:-$conf/xinitrc}"' USR1
+trap 'DISPLAY=:$tty "$conf/xinitrc" "$@"' USR1
 (trap '' USR1 && exec Xorg :"$tty" -keeptty vt"$((tty+1))" -noreset -auth "$xa") &
 pid=$!; wait "$pid"
