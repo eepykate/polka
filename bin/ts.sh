@@ -139,11 +139,38 @@ wm -r
 #make
 #cp dmenu ~/bin/bin/dmenu
 
-echo " - gtk context menus"
-sed --follow-symlinks -i \
-	-e "s|^	background-color: #.*|	background-color: #$bg3;|" \
-	-e "s|^	color: #.*|	color: #$fg1;|" \
-	"$c/gtk-3.0/menus.css"
+#echo " - gtk context menus"
+#sed --follow-symlinks -i \
+#	-e "s|^	background-color: #.*|	background-color: #$bg3;|" \
+#	-e "s|^	color: #.*|	color: #$fg1;|" \
+#	"$c/gtk-3.0/menus.css"
+
+echo " - gtk [phocus]"
+cd ~/opt/git/gtk && {
+	cat << EOF > scss/gtk-3.0/_colors.scss
+\$background-1: #$bg1;
+\$background-2: #$bg2;
+\$background-3: #$bg3;
+
+\$accent-1: #$red;
+\$accent-2: #$yellow;
+\$accent-3: #$yellow;
+\$accent-4: #$green;
+\$accent-5: #$cyan;
+\$accent-6: #$blue;
+\$accent-7: #$purple;
+\$accent-8: #$purple;
+
+\$primary-accent: #$accent;
+\$secondary-accent: #$accent2;
+
+\$foreground-color: #$fg1;
+
+// TODO: is there a better way to do this? this is for example used in gnome-calculator for the result top-border
+@define-color borders #{"" +\$background-2};
+EOF
+	make
+}
 
 
 printf '\n%s\n' "Changing wallpaper"
