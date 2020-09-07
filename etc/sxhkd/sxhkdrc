@@ -5,6 +5,9 @@
 super + Return
 	term
 
+super + g
+	killmen
+
 #{alt + x, XF86Launch6}
 #	draw
 
