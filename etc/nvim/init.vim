@@ -62,6 +62,8 @@ endif
 "   Keybinds
 "
 
+set pastetoggle=<F2>
+
 " There's got to be a more efficient way of doing this, but whatever
 
 " move up/down better on long lines
