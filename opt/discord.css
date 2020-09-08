@@ -319,6 +319,14 @@ svg[class*="homeIcon-"] path {
 	margin-top: 20px;
 }
 
+[class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
+	font-family: "roboto mono";
+	font-weight: 900;
+	margin-left: 29px;
+	margin-top: 9px;
+	content: '-'
+}
+
 [class*="iconVisibility-"] [id] {
 	margin-left: 5px;
 	min-width: 15px !important;
@@ -455,7 +463,7 @@ svg[class*="homeIcon-"] path {
 	width: 0;
 }
 
-[class*="containerDefault"] > div:not([class*="modeSelected-"]):not([class*="modeUnread-"]):not([class*="list-"]) {
+[class*="containerDefault"] > div:not([class*="clickable-"]):not([class*="modeSelected-"]):not([class*="modeUnread-"]):not([class*="list-"]) {
 	opacity: 0.66;
 }
 
