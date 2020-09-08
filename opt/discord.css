@@ -303,7 +303,10 @@ svg[class*="homeIcon-"] path {
 	max-height: 30px !important;
 }
 
-/* make big */
+/* make smol */
+[class*="containerDefault-"] {
+	padding-top: 0;
+}
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
 	font-size: 0px !important;
 }
@@ -325,11 +328,22 @@ svg[class*="homeIcon-"] path {
 	display: none;
 }
 
-[class*="containerDefault-"],
+[class*="containerDefault-"] > [class*="list"] > *,
+[class*="containerDefault-"] > div:not([class*="list"]),
 [class*="containerDefault-"] [class*="content-"],
 [class*="mainContent-"] {
-	max-height: 24px !important;
+	max-height: 24px;
 	background-color: transparent !important;
+}
+
+[class*="sidebar"]:not(:hover) [class*="avatarContainer-"] {
+	margin-left: 18px;
+}
+
+[class*="sidebar"] [class*="avatarContainer-"] {
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
 }
 
 [class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
