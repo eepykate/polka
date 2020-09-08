@@ -1,4 +1,5 @@
 /* profile picture next to name */
+[class*="cozy-"][class*="zalgo-"],
 [id^="chat-messages"] {
 	padding-left: 6px !important;
 	padding-right: 10px !important;
