@@ -364,6 +364,10 @@ svg[class*="homeIcon-"] path {
 	font-family: "Roboto Mono" !important;
 }
 
+[id^='members-'] * [class*="content"] {
+	margin-left: 20px;
+}
+
 [class^="sidebar-"] svg[class*="button"],
 [class^="sidebar-"]:not(:hover) > section > div,
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
