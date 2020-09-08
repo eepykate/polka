@@ -1,3 +1,45 @@
+/* profile picture next to name */
+[id^="chat-messages"] {
+	padding-left: 6px !important;
+	padding-right: 10px !important;
+}
+
+.threads-avatar-hack {
+	left: 6px;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	border-radius: 6px;
+}
+
+.threads-header-hack {
+	margin-left: 23px;
+}
+
+/* simple edit indicator */
+#app-mount [class^="edited-"] {
+	font-size: 0px !important;
+}
+
+[class^="edited-"]::before {
+	content: '*';
+	font-size: 16px;
+	color: var(--fg2);
+	opacity: 0.6;
+}
+
+/* move hover timestamp to the right */
+[id^="chat-messages"] [class*="timestampVisibleOnHover-"] {
+	position: absolute;
+	display: block;
+	left: unset !important;
+	right: 6px !important;
+	width: unset !important;
+	padding: 1px 7px;
+	background-color: var(--bg3) !important;
+	color: var(--fg2) !important;
+}
+
 /* display info about code blocks */
 code.hljs:not(.inline)::before {
 	content: attr(class) !important;
@@ -48,8 +90,8 @@ code:not(.inline) {
 	max-width: 90ch;
 	border: 2px solid var(--accent);
 	border-radius: 0;
-	box-shadow: 0 0 0px 8px var(--button);
-	margin: 11px 5px 11px 5px !important;
+	box-shadow: 0 0 0px 8px var(--bg4);
+	margin: 11px 5px 11px 10px !important;
 	padding: 12px;
 }
 #app-mount code.inline {
@@ -200,6 +242,11 @@ svg[class*="homeIcon-"] path {
 	margin-bottom: 19px !important;
 }
 
+/* focused server */
+[class*="guilds-"]:not(:hover) [class*="blobContainer-"][tabindex="0"] * [class*="numberBadge-"] {
+	display: none !important;
+}
+
 .scroller-2TZvBN {
 	background-color: var(--bg3) !important;
 }
@@ -254,7 +301,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
-[class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"])  svg[class^="icon"] {
+[class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"]) svg[class^="icon"] {
 	visibility: hidden;
 	max-width: 0;
 	padding: 0;
@@ -353,6 +400,9 @@ svg[class*="homeIcon-"] path {
 [class*="modeMuted-"] {
 	opacity: 0.4;
 }
+[id^="private-channels"] [class*="muted-"] {
+	display: none;
+}
 
 
 
@@ -414,6 +464,13 @@ svg[class*="homeIcon-"] path {
 
 [class^="chatContent"] [class^="channelTextArea"] {
 	margin-bottom: 15px;
+}
+
+[class*="channelTextArea"] * [class*="inner-"],
+[class*="channelTextArea"] * [class*="textArea"] {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding: 0 !important;
 }
 
 [class^="chatContent"] div[class^="typing"] {
@@ -568,7 +625,3 @@ svg[class*="homeIcon-"] path {
 [style*="179, 110, 247"] { color: var(--purple) !important; }
 [style*="247, 110, 213"] { color: var(--purple) !important; }
 [style*="247, 163, 110"] { color: var(--accent) !important; }
-
-[id^="private-channels"] [class*="muted-"] {
-	display: none;
-}
