@@ -260,7 +260,7 @@ svg[class*="homeIcon-"] path {
 /* re-align messages area */
 .base-3dtUhz {
 	margin-left: -60px;
-	padding-left: 40px;
+	padding-left: 20px;
 }
 
 /* expand on hover */
@@ -275,38 +275,85 @@ svg[class*="homeIcon-"] path {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: -198px;
+	left: -218px;
 	z-index: 2;
 	background-color: var(--bg2) !important;
 }
 
+[class*="sidebar-"]:not(:hover) [class*="privateChannels-"] {
+	margin-left: 20px;
+}
+
+[class*="privateChannels-"] [class*="avatar-"] svg > foreignObject {
+	mask: none !important;
+}
+
+[class*="privateChannels-"] [class*="avatar-"] > div,
+[class*="privateChannels-"] [class*="avatar-"] .mask-1l8v16 {
+	max-width: 20px;
+	max-height: 20px;
+}
+
+.avatar-3uk_u9 {
+	max-width: 10px;
+}
+
+[id^="private-channels-"] [class*="layout"],
+[id^="private-channels-"] {
+	max-height: 30px !important;
+}
+
 /* make big */
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
-	font-size: 14px !important;
-	font-family: "Roboto Mono" !important;
-	font-weight: 400 !important;
-	margin-left: 4px;
-	max-width: 8px !important;
-	min-height: 25px !important;
-	text-align: center !important;
+	font-size: 0px !important;
+}
+
+[class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
+	display: block;
+	content: '⚫';
+	font-size: 10px;
+	margin-left: 8px;
+	margin-top: 20px;
+}
+
+[class*="iconVisibility-"] [id] {
+	margin-left: 5px;
+	min-width: 15px !important;
+}
+
+[class*="mainContent-"] [class*="icon"] {
+	display: none;
+}
+
+[class*="containerDefault-"],
+[class*="containerDefault-"] [class*="content-"],
+[class*="mainContent-"] {
+	max-height: 24px !important;
+	background-color: transparent !important;
 }
 
 [class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
 	background-color: transparent !important;
 	color: var(--accent) !important;
 	visibility: visible;
-	left: -2px !important;
-	top: -7px !important;
+	left: 2px !important;
+	top: -6px !important;
 	font-weight: bold !important;
 	font-family: "Roboto Mono" !important;
 }
 
+[class^="sidebar-"] svg[class*="button"],
+[class^="sidebar-"]:not(:hover) > section > div,
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
 [class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"]) svg[class^="icon"] {
 	visibility: hidden;
 	max-width: 0;
 	padding: 0;
 	margin: 0;
+}
+
+[class*="modeSelected-"] [class*="name-"] {
+	color: var(--accent);
 }
 
 /* fix channel icon widths */
@@ -441,7 +488,7 @@ svg[class*="homeIcon-"] path {
 	--channeltextarea-background:   var(--bg1);
 	--activity-card-background:     var(--bg2);
 	--deprecated-panel-background:  var(--bg3);
-	--background-modifier-selected: var(--bg4);
+	--background-modifier-selected: transparent;
 	--background-message-hover:     var(--bg3) !important;
 	--elevation-high: 0 8px 16px rgba(0,0,0,0.24);
 	--guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
