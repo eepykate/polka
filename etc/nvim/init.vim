@@ -47,7 +47,7 @@ source $HOME/etc/nvim/statusline.vim
 hi bl ctermfg=8
 hi gr ctermfg=7
 set laststatus=0
-set rulerformat=%(%=%#bl#%l,%c\ \ %#gr#%t%)
+set rulerformat=%30(%=%#bl#%l,%c\ \ %#gr#%t%)
 
 " fallback colour scheme for ttys due to using color16 in main one
 if $TERM == 'linux'
