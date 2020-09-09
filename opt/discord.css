@@ -334,6 +334,13 @@ svg[class*="homeIcon-"] path {
 	font-size: 0px !important;
 }
 
+[class^="sidebar-"]:hover * .name-3_Dsmg::before {
+	display: inline;
+	content: '⚫';
+	margin-right: 4px;
+	margin-left: -2px;
+}
+
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
 	display: block;
 	content: '⚫';
