@@ -19,7 +19,7 @@ You might want to check out [declutter-home](https://github.com/vizs/declutter-h
 for more information.
 
  - **WM:** bspwm
- - **Term:** [st](https://github.com/6gk/st)
+ - **Term:** urxvtd
  - **Distro:** ubuntu
  - **Browser:** firefox
  - **Screenshots:** [scr](https://github.com/6gk/scr) (and recording)
