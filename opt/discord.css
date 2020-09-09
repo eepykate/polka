@@ -279,7 +279,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="membersWrap-"]:hover {
-	margin-right: 0px;
+	margin-right: 1px;
 	margin-left: -192px;
 }
 
@@ -504,7 +504,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="containerDefault"] > div:not([class*="clickable-"]):not([class*="modeSelected-"]):not([class*="modeUnread-"]):not([class*="list-"]) {
-	opacity: 0.66;
+	opacity: 0.5;
 }
 
 [class*="modeMuted-"] {
