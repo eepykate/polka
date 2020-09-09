@@ -269,6 +269,29 @@ svg[class*="homeIcon-"] path {
 	margin-left: 0px;
 }
 
+/* members sidebar */
+[class*="membersWrap-"] {
+	margin-right: -192px;
+}
+
+[class*="membersWrap-"]:not(:hover) [id^='members-'] {
+	margin-left: 1px;
+}
+
+[class*="membersWrap-"]:hover {
+	margin-right: 0px;
+	margin-left: -192px;
+}
+
+[class*="membersWrap-"]:not(:hover) [class*="membersGroup"] {
+	margin-left: 200px;
+}
+
+[class*="membersGroup"] {
+	padding-top: 4px;
+	height: 24px;
+}
+
 /* channels sidebar */
 [class*="content-"] > [class*="sidebar-"] {
 	transition: all 0ms;
@@ -314,8 +337,8 @@ svg[class*="homeIcon-"] path {
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
 	display: block;
 	content: '⚫';
-	font-size: 10px;
-	margin-left: 8px;
+	font-size: 14px;
+	margin-left: 7px;
 	margin-top: 20px;
 }
 
@@ -323,13 +346,19 @@ svg[class*="homeIcon-"] path {
 	font-family: "roboto mono";
 	font-weight: 900;
 	margin-left: 29px;
-	margin-top: 9px;
+	margin-top: 6px;
 	content: '-'
+}
+
+[class*="sidebar"]:hover [class*="iconVisibility"],
+[class*="sidebar"]:hover [class*="content-"] {
+	margin-left: 0;
+	padding-left: 2px;
 }
 
 [class*="iconVisibility-"] [id] {
 	margin-left: 5px;
-	min-width: 15px !important;
+	min-width: 50px !important;
 }
 
 [class*="mainContent-"] [class*="icon"] {
@@ -340,7 +369,7 @@ svg[class*="homeIcon-"] path {
 [class*="containerDefault-"] > div:not([class*="list"]),
 [class*="containerDefault-"] [class*="content-"],
 [class*="mainContent-"] {
-	max-height: 24px;
+	max-height: 27px;
 	background-color: transparent !important;
 }
 
