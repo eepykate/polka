@@ -58,9 +58,4 @@ st.cwscale:       1.0
 st.chscale:       1.0
 st.blinktimeout:  0.5
 
-tabbed.normbgcolor: #0a0a0a
-tabbed.normfgcolor: #797b8f
-tabbed.selfgcolor:  #bfc1d5
-tabbed.selbgcolor:  #000000
-
-#include "Xres"
+#include "res.col"

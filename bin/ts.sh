@@ -1,5 +1,4 @@
 #!/bin/sh
-set -x
 
 while [ "$1" ]; do
 	case "$1" in
@@ -53,7 +52,7 @@ sed --follow-symlinks -i \
 
 
 echo " - xresources"
-cat << EOF > "$c/Xres"
+cat << EOF > "$c/xorg/res.col"
 *.background:   #$bg1
 *.foreground:   #$fg1
 *.cursorColor:  #$fg1
@@ -85,14 +84,13 @@ cat << EOF > "$c/Xres"
 *.color16:      #$accent
 *.color17:      #$accent2
 *.color18:      #$contrast
-EOF
 
-sed --follow-symlinks -i \
-	-e "s/normbgcolor.*/normbgcolor: #$bg3/" \
-	-e "s/normfgcolor.*/normfgcolor: #$fg2/" \
-	-e "s/selbgcolor.*/selbgcolor:  #$bg1/" \
-	-e "s/selfgcolor.*/selfgcolor:  #$fg1/" \
-	"$c/Xresources"
+
+tabbed.selbgcolor:   #$bg1
+tabbed.selfgcolor:   #$fg1
+tabbed.normfgcolor:  #$fg2
+tabbed.normbgcolor:  #$bg3
+EOF
 
 echo "   * Reloading tabbed and st"
 rc

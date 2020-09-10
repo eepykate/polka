@@ -29,3 +29,9 @@
 *.color16:      #8497cf
 *.color17:      #b887cc
 *.color18:      #0e0e0e
+
+
+tabbed.selbgcolor:   #000000
+tabbed.selfgcolor:   #bfc1d5
+tabbed.normfgcolor:  #797b8f
+tabbed.normbgcolor:  #0a0a0a

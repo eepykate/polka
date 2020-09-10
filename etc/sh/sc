@@ -32,8 +32,8 @@ sx      ~/etc/sxhkd/sxhkdrc
 sb      ~/etc/sxhkd/bspwm
 
 # X
-xin     ~/etc/xinitrc
-xres    ~/etc/Xresources
+xin     ~/etc/xorg/rc
+xres    ~/etc/xorg/res
 gcs     ~/etc/gtk-3.0/gtk.css
 uc      ~/etc/.mozilla/firefox/main/chrome/userChrome.css
 ucc     ~/etc/.mozilla/firefox/main/chrome/userContent.css
