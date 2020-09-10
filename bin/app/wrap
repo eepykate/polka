@@ -1,24 +1,32 @@
 #!/bin/sh
 
+# remove script location from $PATH to prevent recursion
 PATH=$(echo "$PATH" | sed "s|${0%/*}:||")
+bin=${0##*/}
 
-_() { HOME="$HOME/opt/apps" exec "$@"; }
-_wrap()      { _ "$@"; }
-_minecraft() { _ minecraft-launcher "$@"; }
-_firefox()   { HOME="$HOME/etc" exec firefox "$@"; }
+# main functions
+_()     { HOME="$HOME/opt/apps" exec "$@"; }
+_wrap() { _ "$@"; }
+
+# special app-specific functions
 _boox()      { boox "$@"; exec sleep 0.1; }
-_apt()       { exec sudo apt "$@" 2>/dev/null; }
+_minecraft() { _ minecraft-launcher "$@"; }
+_apt()       { exec sudo apt "$@" 2>/dev/null;  }
+_firefox()   { HOME="$HOME/etc" exec firefox "$@"; }
 
+# make the symlinks
 [ "$1" = deploy ] && {
-	grep -o '^_[a-z]\+' "$0" | while read -r i; do
-		[ "${i#_}" = wrap ] && continue
-		ln -s "wrap" "${0%/*}/${i#_}"
+	for i in apt boox firefox go minecraft steam; do
+		ln -s wrap "${0%/*}/$i"
 	done
-	exit
+	exit 0
 }
 
-case "$(command -v "_${0##*/}")" in
+case "$(command -v "_$bin")" in
+	# wrap <command>
 	_wrap) _ "$@";;
-	""|/*) _ "${0##*/}" "$@";;
-	*) "_${0##*/}" "$@";;
+	# command symlinked to wrap without a special case
+	""|/*) _ "$bin" "$@";;
+	# command symlinked to wrap with a special function
+	*) "_$bin" "$@";;
 esac
