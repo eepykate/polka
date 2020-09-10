@@ -19,3 +19,4 @@ mkdir -p  \
 ln -sf "$PWD/bin/"* ~/bin/
 ln -sf "$PWD/etc/"* ~/etc/
 ln -sf "$PWD/usr/"* ~/usr/
+:
