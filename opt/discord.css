@@ -279,7 +279,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="membersWrap-"]:hover {
-	margin-right: 1px;
+	margin-right: 0px;
 	margin-left: -192px;
 }
 
@@ -404,8 +404,11 @@ svg[class*="homeIcon-"] path {
 	margin-left: 20px;
 }
 
+[class^="sidebar-"]:not(:hover) > section > div {
+	display: none;
+}
+
 [class^="sidebar-"] svg[class*="button"],
-[class^="sidebar-"]:not(:hover) > section > div,
 [class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
 [class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"]) svg[class^="icon"] {
 	visibility: hidden;
