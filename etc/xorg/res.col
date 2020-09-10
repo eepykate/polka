@@ -1,3 +1,5 @@
+URxvt.font:   xft:Roboto Mono:bold:pixelsize=10
+
 *.background:   #000000
 *.foreground:   #bfc1d5
 *.cursorColor:  #bfc1d5

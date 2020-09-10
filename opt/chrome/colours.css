@@ -1,0 +1,37 @@
+:root {
+	/*  ----  */
+	--bg0:      #000000;
+	--bg1:      #000000;
+	--bg2:      #050505;
+	--bg3:      #0a0a0a;
+	--bg4:      #0e0e0e;
+	--button:   #bfc1d520;
+	--black:    #434366;
+	/*  ----  */
+	--fg1:      #bfc1d5;
+	--fg2:      #797b8f;
+	--fg1o:     #bfc1d588;
+	--fg2o:     #797b8f99;
+	--disabled: #696969;
+	/*  ----  */
+	--accent:   #8497cf;
+	--accento:  #8497cf66;
+	--accent2:  #b887cc;
+	--contrast: #0e0e0e;
+	/*  ----  */
+	--red:      #d26161;
+	--yellow:   #cf9b6a;
+	--green:    #a8b67a;
+	--cyan:     #83b5c2;
+	--blue:     #8497cf;
+	--purple:   #b887cc;
+	/*  ----  */
+
+	--font:     "Roboto Mono";
+	--font-size: 10px;
+	--font-weight: bold;
+
+	--font2:     "Roboto Condensed";
+	--font2-size: 13px;
+	--font2-weight: normal;
+}

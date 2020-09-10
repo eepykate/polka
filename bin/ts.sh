@@ -8,7 +8,7 @@ while [ "$1" ]; do
 done
 
 c=${XDG_CONFIG_HOME:=$HOME/.config}
-themes="$(ls -1 "$c/colours/" | grep -iv 'current')" # List of themes
+themes="$(ls -1 "$c/colours/" | grep -iv 'current\|meta')" # List of themes
 [ "$theme" ] || theme="$(printf %b "$themes" | menu -i -p "Theme?")"
 ln -sf "$theme" "$c/colours/current"
 
@@ -17,42 +17,58 @@ ln -sf "$theme" "$c/colours/current"
 	. "$c/colours/$theme" ||
 	{ echo "Invalid theme '$theme'; exiting"; exit; }
 
-echo -e "Theme chosen: $theme\n"
+. "$c/colours/meta"
+
+echo "Theme chosen: $theme"
 
 echo "Changing colours in:"
 
 echo " - firefox"
 # Change the colour variables in firefox and my startpage
-sed --follow-symlinks -i \
-	-e "s/--bg0:.*#.*\;/--bg0:      #$bg0\;/" \
-	-e "s/--bg1:.*#.*\;/--bg1:      #$bg1\;/" \
-	-e "s/--bg2:.*#.*\;/--bg2:      #$bg2\;/" \
-	-e "s/--bg3:.*#.*\;/--bg3:      #$bg3\;/" \
-	-e "s/--bg4:.*#.*\;/--bg4:      #$bg4\;/" \
-	-e "s/--black:.*#.*\;/--black:    #$black\;/" \
-	-e "s/--fg1:.*#.*\;/--fg1:      #$fg1\;/" \
-	-e "s/--fg1o:.*#.*\;/--fg1o:     #${fg1}88\;/" \
-	-e "s/--fg2o:.*#.*\;/--fg2o:     #${fg2}99\;/" \
-	-e "s/--fg2:.*#.*\;/--fg2:      #$fg2\;/" \
-	-e "s/--accent:.*#.*\;/--accent:   #$accent\;/" \
-	-e "s/--accento:.*#.*\;/--accento:  #${accent}66\;/" \
-	-e "s/--accent2:.*#.*\;/--accent2:  #$accent2\;/" \
-	-e "s/--border:.*#.*\;/--border:   #$border\;/" \
-	-e "s/--button:.*#.*\;/--button:   #$button\;/" \
-	-e "s/--contrast:.*#.*\;/--contrast: #$contrast\;/" \
-	-e "s/--red:.*#.*\;/--red:         #$red\;/" \
-	-e "s/--green:.*#.*\;/--green:       #$green\;/" \
-	-e "s/--yellow:.*#.*\;/--yellow:      #$yellow\;/" \
-	-e "s/--blue:.*#.*\;/--blue:        #$blue\;/" \
-	-e "s/--cyan:.*#.*\;/--cyan:        #$cyan\;/" \
-	-e "s/--purple:.*#.*\;/--purple:      #$purple\;/" \
-	-e "s/--disabled:.*#.*\;/--disabled: #$disabled\;/" \
-	"$c/.mozilla/firefox/main/chrome/userChrome.css" \
-	"$c/.mozilla/firefox/main/chrome/userContent.css"
+cat << EOF > "$HOME/etc/.mozilla/firefox/main/chrome/colours.css"
+:root {
+	/*  ----  */
+	--bg0:      #$bg0;
+	--bg1:      #$bg1;
+	--bg2:      #$bg2;
+	--bg3:      #$bg3;
+	--bg4:      #$bg4;
+	--button:   #${fg1}20;
+	--black:    #$black;
+	/*  ----  */
+	--fg1:      #$fg1;
+	--fg2:      #$fg2;
+	--fg1o:     #${fg1}88;
+	--fg2o:     #${fg2}99;
+	--disabled: #$disabled;
+	/*  ----  */
+	--accent:   #$accent;
+	--accento:  #${accent}66;
+	--accent2:  #$accent2;
+	--contrast: #$contrast;
+	/*  ----  */
+	--red:      #$red;
+	--yellow:   #$yellow;
+	--green:    #$green;
+	--cyan:     #$cyan;
+	--blue:     #$blue;
+	--purple:   #$purple;
+	/*  ----  */
 
+	--font:     "$font";
+	--font-size: ${fontsize}px;
+	--font-weight: $fontweight;
+
+	--font2:     "$font2";
+	--font2-size: ${font2size}px;
+	--font2-weight: $font2weight;
+}
+EOF
 
 echo " - xresources"
 cat << EOF > "$c/xorg/res.col"
+URxvt.font:   xft:$font:$fontweight:pixelsize=$fontsize
+
 *.background:   #$bg1
 *.foreground:   #$fg1
 *.cursorColor:  #$fg1

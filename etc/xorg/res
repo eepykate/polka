@@ -8,7 +8,6 @@ Xft.hintstyle: hintfull
 !  URxvt
 !
 
-URxvt.font: xft:Roboto Mono:bold:pixelsize=10
 URxvt.letterSpace: -1
 URxvt.internalBorder: 30
 

@@ -1,33 +1,11 @@
+@import url(colours.css);
+
 /*
  *    GaugeK's userChrome.css
  *    github.com/GaugeK/dots
  */
 
 :root {
-	/*  ----  */
-	--bg0:      #000000;
-	--bg1:      #000000;
-	--bg2:      #050505;
-	--bg3:      #0a0a0a;
-	--bg4:      #0e0e0e;
-	--button:   #bfc1d520;
-	--black:    #434366;
-	/*  ----  */
-	--fg2:      #797b8f;
-	--fg1:      #bfc1d5;
-	--disabled: #696969;
-	/*  ----  */
-	--accent:   #8497cf;
-	--accent2:  #b887cc;
-	--contrast: #0e0e0e;
-	--red:         #d26161;
-	/*  ----  */
-}
-
-:root {
-	--font              : "Roboto Mono";
-	--font-size         : 10px;
-	--font-weight       : bold;
 	--icon-size         : 15px        !important;
 	--button-size       : 16px        !important;
 	--tab-min-height    : 36px        !important;
@@ -446,6 +424,11 @@ toolbarbutton#alltabs-button {
 	/* Popups */
 	--arrowpanel-background: var(--bg1) !important;
 	--arrowpanel-color: var(--fg1) !important;
+}
+
+::selection {
+	background-color: var(--fg1) !important;
+	color: var(--bg1) !important;
 }
 
 /* double borders */

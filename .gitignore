@@ -4,6 +4,7 @@
 **/sc.sh
 **/*hist*
 **/.zcompdump
+opt/chrome/colours.css
 usr/themes
 usr/icons
 etc/colours/current

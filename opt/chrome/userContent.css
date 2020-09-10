@@ -1,35 +1,4 @@
-:root {
-	/*  ----  */
-	--bg0:      #000000;
-	--bg1:      #000000;
-	--bg2:      #050505;
-	--bg3:      #0a0a0a;
-	--bg4:      #0e0e0e;
-	--button:   #bfc1d520;
-	--black:    #434366;
-	/*  ----  */
-	--fg1:      #bfc1d5;
-	--fg2:      #797b8f;
-	--fg1o:     #bfc1d588;
-	--fg2o:     #797b8f99;
-	--disabled: #696969;
-	/*  ----  */
-	--accent:   #8497cf;
-	--accento:  #8497cf66;
-	--accent2:  #b887cc;
-	--contrast: #0e0e0e;
-	/*  ----  */
-
-	--red:         #d26161;
-	--purple:      #b887cc;
-	--blue:        #8497cf;
-	--cyan:        #83b5c2;
-	--green:       #a8b67a;
-	--yellow:      #cf9b6a;
-	--border1:     #223344;
-	--border2:     #334455;
-	-moz-tab-size: 2;
-}
+@import url(colours.css);
 
 * {
 	scrollbar-color: var(--fg1) var(--bg1);

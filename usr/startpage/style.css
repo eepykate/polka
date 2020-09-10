@@ -1,5 +1,5 @@
 html {
-	font: bold 10px monospace;
+	font: var(--font-weight) var(--font-size) var(--font);
 	background: var(--bg1);
 	/* align to center */
 	height: 100%;

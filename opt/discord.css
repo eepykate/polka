@@ -24,7 +24,7 @@
 
 [class^="edited-"]::before {
 	content: '*';
-	font-size: 16px;
+	font-size: var(--font2-size);
 	color: var(--fg2);
 	opacity: 0.6;
 }
@@ -44,8 +44,8 @@
 /* display info about code blocks */
 code.hljs:not(.inline)::before {
 	content: attr(class) !important;
-	font-size: 10px;
-	font-weight: bold;
+	font-size: var(--font);
+	font-weight: var(--font-weight);
 	float: right;
 	display: block;
 	width: auto;
@@ -104,7 +104,7 @@ code:not(.inline) {
 	border-radius: 0;
 	padding-left: 4px;
 	margin: 0px 2px;
-	font-weight: 600 !important;
+	font-weight: var(--font-weight) !important;
 /*	box-shadow: 0 0 0 6px var(--button);
 	margin: 11px 5px 11px 5px !important;*/
 }
@@ -154,13 +154,13 @@ code:not(.inline)::before {
 
 /* fonts */
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg) {
-	font-family: "Roboto Condensed" !important;
-	font-size: 13px !important;    /* boomer font size */
+	font-family: var(--font2) !important;
+	font-size: var(--font2-size) !important;
 }
 
 /* channel names */
 [class*="name-"] {
-	font-size: 14px !important;
+	font-size: var(--font2-size) !important;
 }
 
 code,
@@ -168,9 +168,9 @@ code,
 [class^="codeLine-"],
 [class*="codeBlockText-"],
 [class*="codeBlockText-"] * {
-	font-family: "Roboto Mono" !important;
-	font-weight: 600 !important;
-	font-size: 10px !important;
+	font-family: var(--font) !important;
+	font-weight: var(--font-weight) !important;
+	font-size: var(--font-size) !important;
 }
 
 /* hide sidebar image */
@@ -344,14 +344,14 @@ svg[class*="homeIcon-"] path {
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
 	display: block;
 	content: '⚫';
-	font-size: 14px;
+	font-size: var(--font2-size);
 	margin-left: 7px;
 	margin-top: 20px;
 }
 
 [class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
-	font-family: "roboto mono";
-	font-weight: 900;
+	font-family: var(--font);
+	font-weight: var(--font-weight);
 	margin-left: 29px;
 	margin-top: 6px;
 	content: '-'
@@ -396,8 +396,8 @@ svg[class*="homeIcon-"] path {
 	visibility: visible;
 	left: 2px !important;
 	top: -6px !important;
-	font-weight: bold !important;
-	font-family: "Roboto Mono" !important;
+	font-weight: var(--font-weight) !important;
+	font-family: var(--font) !important;
 }
 
 [id^='members-'] * [class*="content"] {
@@ -470,9 +470,9 @@ svg[class*="homeIcon-"] path {
 [class^="numberBadge-"] {
 	background-color: var(--fg1) !important;
 	color: var(--bg1) !important;
-	font-size: 10px !important;
-	font-family: "Roboto Mono" !important;
-	font-weight: 500 !important;
+	font-size: var(--font-size) !important;
+	font-family: var(--font) !important;
+	font-weight: var(--font-weight) !important;
 	padding: 0 !important;
 }
 
