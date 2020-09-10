@@ -1,21 +1,20 @@
 #!/bin/sh
 exec 2>/dev/null
 
-if [ "$1" = y ]; then
-	y=y
-else
+[ "$1" = y ] || {
 	printf '[press the damn button, fool] '
 	read -r y
-fi
+}
 
-[ "$y" = y ] || exit
+[ "${1:-$y}" = y ] || exit
 
-mkdir -p      \
+mkdir -p  \
+	~/etc       \
 	~/bin/app   \
 	~/bin/bin   \
-	~/etc       \
-	~/usr/cache \
-	~/opt
+	~/opt/junk  \
+	~/opt/apps  \
+	~/usr/cache
 
 ln -sf "$PWD/bin/"* ~/bin/
 ln -sf "$PWD/etc/"* ~/etc/
