@@ -6,3 +6,7 @@
 	new = 3
 	meta = 7
 	frag = 4
+[color]
+	pager = no
+[core]
+	pager = nvim -R
