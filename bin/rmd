@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ "$(pgrep rmd | wc -l)" -gt 1 ] && exit
+
+while :; do
+	set --
+	for i in ~/.npm ~/go ~/.cache ~/.config ~/.nv ~/.pki ~/.bash* ~/.local; do
+		[ -e "$i" ] && set -- "$@" "$i"
+	done
+	[ "$1" ] && rm -rf -- "$@"
+	sleep 120
+done
