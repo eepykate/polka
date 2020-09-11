@@ -23,7 +23,7 @@ xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
-xrdb "$c/Xresources"
+xrdb "$c/xorg/res"
 
 case "$wm" in
 	bspwm) ;;  # already in the config
@@ -35,10 +35,7 @@ esac
 D() {
 xmodmap - << EOF
 	clear lock
-	clear control
-	keycode 37 =
-	add control = Control_L Control_L Control_R
-	keycode 66 = Control_L Control_L NoSymbol NoSymbol
+	keycode 66 =
 EOF
 };D;D  # doesn't work if it's only ran once...
 
