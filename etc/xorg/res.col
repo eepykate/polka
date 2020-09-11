@@ -1,4 +1,4 @@
-URxvt.font:   xft:Roboto Mono:bold:pixelsize=10
+st.font:      Roboto Mono:pixelsize=10:style=bold
 
 *.background:   #000000
 *.foreground:   #bfc1d5

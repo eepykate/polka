@@ -8,12 +8,6 @@ unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
 . "$ZDOTDIR/aliases"       # Aliases
 setopt SHwordsplit
 
-. ~/etc/colours/current
-printf '%b%b%b' \
-	"\033]4;16;#$accent\007" \
-	"\033]4;17;#$accent2\007" \
-	"\033]4;18;#$contrast\007" \
-
 # fancy prompts
 command_not_found_handler() {
 	printf 'not found:\033[38;05;16m %s\033[0m\n' "$0" >&2
@@ -40,8 +34,8 @@ export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 bindkey '^a'       beginning-of-line      # Ctrl-A
 bindkey '^e'       end-of-line            # Ctrl-E
 bindkey '^[[3~'    delete-char            # Delete
-bindkey '^[Oc'     forward-word           # Ctrl-RightArrow
-bindkey '^[Od'     backward-word          # Ctrl-LeftArrow
+bindkey '^[[1;5C'  forward-word           # Ctrl-RightArrow
+bindkey '^[[1;5D'  backward-word          # Ctrl-LeftArrow
 bindkey '^[^M'     self-insert-unmeta     # Alt-Return
 bindkey '^[[Z'     reverse-menu-complete  # Shift-Tab
 bindkey '^r'       history-incremental-search-backward  # Ctrl-E

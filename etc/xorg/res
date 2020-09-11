@@ -47,7 +47,6 @@ URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
 st.termname:      st-256color
-st.font:          Roboto Mono:pixelsize=10:style=bold
 st.borderpx:      30
 st.tabspaces:     4
 st.xfps:          60

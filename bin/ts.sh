@@ -67,7 +67,7 @@ EOF
 
 echo " - xresources"
 cat << EOF > "$c/xorg/res.col"
-URxvt.font:   xft:$font:$fontweight:pixelsize=$fontsize
+st.font:  $font:pixelsize=$fontsize:style=$fontweight
 
 *.background:   #$bg1
 *.foreground:   #$fg1

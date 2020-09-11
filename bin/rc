@@ -1,5 +1,8 @@
 #!/bin/sh
 xrdb ~/etc/xorg/res
+
+stmessage st
+exit
 . ~/etc/colours/current
 
 _() {
