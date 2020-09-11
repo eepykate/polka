@@ -1,7 +1,7 @@
 #!/bin/sh
 #  fzf dmenu alternative
 
-pgrep -x fzf >/dev/null && exit 1
+[ "$(pgrep -x ${0##*/})" = "$$" ] || exit 1
 
 rm /tmp/fzfmenu*
 cat > /tmp/fzfmenu
@@ -19,5 +19,5 @@ args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 . ~/etc/colours/current
 
 st -c floating -e sh -c \
-	"</dev/tty printf '\033]4;16;#$accent\007'; fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
+	"</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
 cat /tmp/fzfmenuout
