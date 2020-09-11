@@ -56,6 +56,9 @@ if $TERM == 'linux'
 	hi cursorLine cterm=none
 endif
 
+let g:ale_sign_error = '▍'
+let g:ale_sign_warning = '▍'
+
 let g:gitgutter_sign_added              = '▍'
 let g:gitgutter_sign_modified           = '▍'
 let g:gitgutter_sign_modified_removed   = '▍'
