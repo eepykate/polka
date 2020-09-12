@@ -14,15 +14,15 @@ command_not_found_handler() {
 	return 127
 }
 
-topdir() {
-	v=${(%):-%1~}
-	printf '\033[7%b%b' \
-		"\033[8\033[s\033[0;$((COLUMNS-${#OLDPWD##*/}))H\033[K" \
-		"\033[0;$((COLUMNS-${#v}))H${v}\033[u"
-}
+#topdir() {
+#	v=${(%):-%1~}
+#	printf '\033[7%b%b' \
+#		"\033[8\033[s\033[0;$((COLUMNS-${#OLDPWD##*/}))H\033[K" \
+#		"\033[0;$((COLUMNS-${#v}))H${v}\033[u"
+#}
 
 setopt prompt_subst
-PROMPT='$(topdir)%F{%(?.16.17)} > %f'
+PROMPT='%F{%(?.16.17)} > %f'
 export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 
 [ "$TERM" = linux ] &&
