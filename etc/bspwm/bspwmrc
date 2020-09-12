@@ -39,7 +39,7 @@ _ focused_border_color      '#000000'
 #   rules
 #
 R feh       state=floating
-R feh-nb    state=floating border=off monitor="$(lsm -p)"
+R freeze    state=floating border=off monitor="$(6r names -p)"
 R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating

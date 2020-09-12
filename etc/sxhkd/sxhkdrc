@@ -83,12 +83,14 @@ ctrl + alt + {1-9,0}
 #
 #   screenshots
 #
-{_,super, shift} + Print
-	scr {-G$(6r focused),-F,-S}
+{_,super} + Print
+	scr {-G$(6r focused),-F}
 
-# mouse bind
-XF86Tools
-	scr -S
+# selection
+{shift + Print, XF86Tools}
+	freeze & \
+	scr -S; \
+	pkill -f '[ /]freeze'
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/scr/$(ls \
