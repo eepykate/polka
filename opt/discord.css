@@ -248,6 +248,7 @@ svg[class*="homeIcon-"] path {
 	display: none !important;
 }
 
+[class*="categorySection"] [class*="header-"], /* emoji list */
 .scroller-2TZvBN {
 	background-color: var(--bg3) !important;
 }
@@ -275,7 +276,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="membersWrap-"]:not(:hover) [id^='members-'] {
-	margin-left: 1px;
+	margin-left: 0px;
 }
 
 [class*="membersWrap-"]:hover {
@@ -623,6 +624,7 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class*="modal-"],
 [class^="content"] [class^="sidebar"] ~ [class^="container-"],
 [class*="userPopout-"] [class*="activity-"],
 [class*="userPopout-"] [class*="header-"],
