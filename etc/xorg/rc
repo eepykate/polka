@@ -13,7 +13,7 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 # DBus
 [ "$DBUS_SESSION_BUS_ADDRESS" ] ||
-	dbus-launch --exit-with-session "$c/xinitrc" "$@" &
+	dbus-launch --exit-with-session "$c/xorg/rc" "$@" &
 
 pap        # wallpaper
 hw 0       # clear hidden windows cache
@@ -29,6 +29,7 @@ case "$wm" in
 	bspwm) ;;  # already in the config
 	gnome) export XDG_SESSION_TYPE=x11 GDK_BACKEND=x11 wm=gnome-session;;
 	kde) wm=startplasma-x11;;
+	xfce) wm=startxfce4; sxhkd &;;
 	*)  sxhkd &  picom &  dunst &
 esac
 
