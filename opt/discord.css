@@ -154,7 +154,7 @@ code:not(.inline)::before {
 
 /* fonts */
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg) {
-	font-family: var(--font2) !important;
+	font-family: var(--font2), "Dejavu Sans" !important;
 	font-size: var(--font2-size) !important;
 }
 
