@@ -1,7 +1,5 @@
 #!/bin/sh
-#
 #  focus window
-#
 
 # exit when fullscreen
 bspc query -N -n focused.fullscreen && exit

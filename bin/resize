@@ -1,7 +1,5 @@
 #!/bin/sh
-#
 #  resize window
-#
 
 case $1 in
 	# dimension  direction  fallback-dir  sign

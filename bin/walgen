@@ -1,7 +1,5 @@
 #!/bin/sh
-#
 #  Generate a wallpaper with some static
-#
 
 fi="$HOME/opt/git/Wallpapers/tile.png"
 

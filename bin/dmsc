@@ -1,7 +1,0 @@
-#!/bin/sh
-#  dmenu shortcuts
-# open a saved dir in a new term
-
-act="$(grep -i '^d' ~/etc/sh/sc | grep -o '[^ ]*$' | menu | sed "s|~|$HOME|" )"
-
-[ "$act" ] && cd "$act" && st -e zsh

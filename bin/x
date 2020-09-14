@@ -10,9 +10,7 @@ cleanup() {
 		r=$?
 	fi
 
-	if ! stty "$stty"; then
-		stty sane
-	fi
+	stty "$stty" || stty sane
 
 	xauth remove :"$tty"
 	exit "${r:-$?}"

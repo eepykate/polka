@@ -1,6 +1,8 @@
 #!/bin/sh
 #  toggle mic
 
+# @TODO CLEAN UP
+
 input=$(pactl list sink-inputs | while read -r l; do
 	case $l in
 		Sink\ Input*) i="${l##*#}";;

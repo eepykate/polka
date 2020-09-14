@@ -26,12 +26,6 @@ super + space
 super + u
 	copy
 
-
-# don't send `ctrl + q` events to firefox
-ctrl + q
-	ctrlq
-
-
 super + f
 	firefox
 
