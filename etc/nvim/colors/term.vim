@@ -2,6 +2,12 @@ let g:colors_name='term'
 
 set numberwidth=1
 
+" netrw file browser
+hi Question     ctermfg=6
+hi netrwExe     ctermfg=3
+hi netrwDir     ctermfg=5
+hi netrwClassify ctermfg=8
+
 " bars
 hi LineNr       ctermfg=8
 hi StatusLine   ctermfg=15
