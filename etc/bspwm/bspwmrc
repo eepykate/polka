@@ -17,7 +17,7 @@ pgrep sxhkd || bspc desktop -f ^10 -f ^1
 
 # mouse
 xsetroot -cursor_name      left_ptr
-_ pointer_modifier         mod1
+_ pointer_modifier         mod4
 _ focus_follows_pointer    true
 _ pointer_follows_focus    false
 _ pointer_motion_interval  5
