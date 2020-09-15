@@ -1,18 +1,19 @@
-#!/bin/sh -efu
-exit
+#!/bin/sh -e
 
-set -- "$1" "static-$1" "/dev/shm/firefox-$1-$USER"
+static="static-$1"
+mem="/dev/shm/firefox-$1-$USER"
+
 cd ~/etc/.mozilla/firefox
-[ -e "$3" ] || mkdir -m0700 "$3"
+[ -e "$mem" ] || mkdir -m0700 "$mem"
 
-[ "$(readlink "$1")" != "$3" ] && {
-	mv "$1" "$2"
-	ln -s "$3" "$1"
+[ "$(readlink "$1")" != "$mem" ] && {
+	mv "$1" "$static"
+	ln -s "$mem" "$1"
 }
 
-if [ -e "$1/.unpacked" ]; then
-	rsync -av --delete --exclude .unpacked "$1/" "$2/"
+if [ -e "$1/unpacked" ]; then
+	rsync -av --delete --exclude unpacked "$1/" "$static/"
 else
-	rsync -av "$2/" "$1/"
-	touch "$1/.unpacked"
+	rsync -av "$static/" "$1/"
+	touch "$1/unpacked"
 fi
