@@ -1,4 +1,4 @@
-st.font:  Roboto Mono:pixelsize=10:style=bold
+st.font:  Ubuntu Mono:pixelsize=12:style=Bold
 
 *.background:   #000000
 *.foreground:   #bfc1d5
