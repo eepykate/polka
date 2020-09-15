@@ -1,0 +1,27 @@
+#!/bin/sh
+#  simple script to download from multiple places
+
+out=${2:-${1##*/}}
+
+# add missing https
+case $1 in
+	http*) ;;
+	*) set -- "https://$1" "$2"
+esac
+
+case $1 in
+	# raw/web preview github urls
+	*github*raw*|*github*blob*) curl -Ls "$(echo "$1" | sed 's|/blob/|/raw/|')" -o "$out";;
+
+	# git repos
+	*.git|*github.com*|*gitlab*) git clone "$1" $2;;
+
+	# youtube
+	*youtu.be*|*youtube.com*) youtube-dl --add-metadata \
+		-f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' \
+		--geo-bypass \
+		--embed-subs --ignore-errors -o "${2:-%(title)s.mp4}" "$1";;
+
+	# other
+	*) curl -Ls "$1" -o "$out";;
+esac
