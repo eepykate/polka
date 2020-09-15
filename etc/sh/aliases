@@ -18,6 +18,7 @@ F() { find "${2:-.}" -name "$1"; }
 
 alias ga="git add"
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gp="git push"
 alias gs="git status"
 alias gc="git commit"
