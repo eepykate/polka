@@ -188,12 +188,12 @@ EOF
 
 
 printf '\n%s\n' "Changing wallpaper"
-if [ -f "$HOME/opt/git/Wallpapers/$wall" ]; then
-	wallthing="feh --bg-fill --no-fehbg \"$HOME/opt/git/Wallpapers/$wall\""
+if [ -f "$HOME/src/walls/$wall" ]; then
+	wallthing="feh --bg-fill --no-fehbg '$HOME/src/walls/$wall'"
 	eval $wallthing
 else
 	walgen "#$wall" 08
-	wallthing="feh --bg-tile --no-fehbg \"$HOME/opt/git/Wallpapers/tile.png\""
+	wallthing="feh --bg-tile --no-fehbg '$HOME/src/walls/tile.png'"
 	sleep 0.6
 fi
 
