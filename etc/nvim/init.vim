@@ -29,7 +29,9 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call  clearmatches()
 
-
+" toggle spellchecker
+inoremap <silent> <C-d> <esc>:setlocal spell! spelllang=en<CR>a
+nnoremap <silent> <C-d> :setlocal spell! spelllang=en<CR>
 
 "
 "   Plugins
