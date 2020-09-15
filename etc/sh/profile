@@ -18,6 +18,9 @@ export \
 	XAUTHORITY="/run/user/$UID/xauth" \
 	GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
+# disable dbind accessibility bus warning - https://unix.stackexchange.com/a/532589
+export NO_AT_BRIDGE=1
+
 export \
 	PAGER='nvim -R' \
 	MANPAGER='nvim -c "set ft=man" -'
