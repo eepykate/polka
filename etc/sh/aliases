@@ -2,8 +2,7 @@
 #   aliases
 #     ---
 
-alias rm="dl"
-alias SU="sudo zsh"
+alias rm="del"
 alias fuck="pkill -9"
 alias ss="sudo systemctl"
 alias s1="sleep 1"
@@ -17,7 +16,6 @@ F() { find "${2:-.}" -name "$1"; }
 
 # Git
 
-alias w="which"
 alias ga="git add"
 alias gd="git diff"
 alias gp="git push"
@@ -30,21 +28,19 @@ alias gca="git commit --amend"
 alias gl="git log --all --decorate --oneline --graph"
 
 
-alias i="sudo cpm i"
-alias r="sudo cpm r"
+alias i="cpm i"
+alias r="cpm r"
 alias s="cpm s"
 alias in="cpm I"
-alias up="sudo cpm upgrade"
+alias up="cpm upgrade"
 
 command -v compdef &>/dev/null &&
 	compdef _ins ins
 
-
-
-alias q="dragon --and-exit"
-alias e="atool -x"
-alias grep="grep --color=auto"
 alias g="grep -i"
+alias q="dragon --and-exit"
+alias grep="grep --color=auto"
+alias td="transmission-daemon"
 alias ci="xclip -selection clipboard -t image/png"
 alias ls="ls -h --group-directories-first --color=auto"
 alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
@@ -53,7 +49,6 @@ alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudi
 mc() { mkdir -p "$1"; cd "$1" || return; }
 bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
 
-alias td="transmission-daemon"
 tc() { transmission-remote-cli; reset_cursor; }
 
 et() {  # elapsed time
@@ -105,17 +100,11 @@ hextorgb() { printf "%d %d %d\n" "0x${1:0:2}" "0x${1:2:2}" "0x${1:4:2}"; }
 rgbtohex() { printf "%02X%02X%02X\n" "$@"; }
 
 # shellcheck source=/dev/null
-source "${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh"
-
-
-
-
+. "${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh"
 
 # tar
-
-c() {
-	tar -czvf "${1##*/}.tar.gz" "$@"
-}
+alias e="atool -x"
+c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
 # ffmpeg
 

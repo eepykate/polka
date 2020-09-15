@@ -5,6 +5,6 @@ set -- $(lsblk -ro name,mountpoint,fstype \
 	| grep -i '  [a-rt-z]' | menu -p mount)
 
 [ "$1" ]
-mkdir -p "$HOME/opt/mnt/$1"
-sudo mount "/dev/$1" "$HOME/opt/mnt/$1"
+mkdir -p "$HOME/mnt/$1"
+sudo mount "/dev/$1" "$HOME/mnt/$1"
 notify-send "mounted $1"

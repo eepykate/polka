@@ -8,8 +8,12 @@ exec 2>/dev/null
 
 [ "${1:-$y}" = y ] || exit
 
+ln -sf "$HOME/etc/.mozilla/firefox" "$HOME/etc/firefox"
+
 mkdir -p  \
-	~/etc       \
+	~/etc   \
+	~/src   \
+	~/tmp   \
 	~/bin/app   \
 	~/bin/bin   \
 	~/opt/junk  \

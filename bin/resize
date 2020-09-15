@@ -10,7 +10,8 @@ case $1 in
 esac
 
 # 5% of monitor res
-set -- "$@" "$4$(($(mattr ${1%%[ie]*} "$(pfm)") * 5 / 100 ))"
+#set -- "$@" "$4$(($(mattr ${1%%[ie]*} "$(pfm)") * 5 / 100 ))"
+set -- "$@" "${4}40"
 
 [ "$1" = width  ] && { x=$5; y=0; }
 [ "$1" = height ] && { y=$5; x=0; }

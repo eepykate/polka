@@ -1,4 +1,5 @@
 #!/bin/sh -efu
+exit
 
 set -- "$1" "static-$1" "/dev/shm/firefox-$1-$USER"
 cd ~/etc/.mozilla/firefox
