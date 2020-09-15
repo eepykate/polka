@@ -396,6 +396,12 @@ toolbarbutton#alltabs-button {
 
 
 /*** Change colours of a few items ***/
+menuseparator {
+	border-bottom: 1px solid var(--black) !important;
+	opacity: 0.5;
+	-moz-default-appearance: none !important;
+}
+
 :root {
 	/* Toolbar */
 	--toolbar-color: var(--fg1) !important;
