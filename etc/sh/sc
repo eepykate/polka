@@ -12,7 +12,7 @@ pics    ~/opt/x/scr
 recs    ~/opt/x/scr
 
 oth     ~/opt/linux/oth
-sp      ~/usr/startpage
+sp      ~/etc/startpage
 fchr    ~/etc/firefox/main/chrome
 
 #  files
