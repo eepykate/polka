@@ -160,7 +160,7 @@ wm -r
 #	"$c/gtk-3.0/menus.css"
 
 echo " - gtk [phocus]"
-cd ~/opt/git/gtk && {
+cd ~/src/phocus && {
 	cat << EOF > scss/gtk-3.0/_colors.scss
 \$background-1: #$bg1;
 \$background-2: #$bg2;
