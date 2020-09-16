@@ -93,7 +93,8 @@ t() {
 # open file depending on if it's owned by root
 : "${EDITOR:=nvim}"
 v() {
-	if [ ! "$1" ] || [ -w "$1" ] || [ -w "${1%/*}" ]; then
+	[[ "$1" =~ .*/.* ]] || local curdir="./"
+	if [ ! "$1" ] || [ -w "$1" ] || [ -w "${1%/*}" ] || [ -w "$curdir" ]; then
 		$EDITOR "$@"
 	else
 		sudo $EDITOR "$@"
