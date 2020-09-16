@@ -82,6 +82,7 @@ d() {
 
 # quickly view contents of file based on term height
 t() {
+	[ -f "$1" ] || return
 	var=$(wc -l "$1")
 	if [ "${var%% *}" -ge $((LINES-4)) ]; then
 		less "$1"
