@@ -3,8 +3,7 @@
 **/gtkfilechooser.ini
 **/sc.sh
 **/*hist*
-**/.zcompdump
-opt/chrome/colours.css
+**/*compdump*
 usr/themes
 usr/icons
 etc/colours/current
