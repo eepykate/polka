@@ -705,3 +705,7 @@ browser[type=content] > html {
 /*#main-window:not([width="1920"]) * #contentAreaContextMenu {
 	margin: 15px 0 0 15px !important;
 }*/
+
+#tabbrowser-tabs * {
+	transition: 0ms !important;
+}
