@@ -120,6 +120,7 @@ hi shDerefSimple  ctermfg=17
 hi shVariable     ctermfg=15
 hi shStatement    ctermfg=15
 hi shAlias        ctermfg=15
+hi shSetList      ctermfg=15
 "hi shQuote        ctermfg=7
 hi! link shQuote String
 hi shFunction     ctermfg=16
