@@ -560,30 +560,24 @@ svg[class*="homeIcon-"] path {
 	align-items: initial;
 }
 
-[class^="textAreaSlate-"] {
-    position: unset !important;
+[class*="scrollerSpacer-"] {
+	height: 10px;
 }
 
 [class^="chatContent"] [class^="channelTextArea"] {
 	margin-bottom: 15px;
 }
 
-[class*="channelTextArea"] * [class*="inner-"],
-[class*="channelTextArea"] * [class*="textArea"] {
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	padding: 0 !important;
+[class*="typing-"] {
+	left: -10px;
 }
 
-[class^="chatContent"] div[class^="typing"] {
+[class*="typing-"],
+[class*="channelTextArea"] [class*="textArea-"],
+#chat-messages,
+[class*="autocomplete-"] {
 	max-width: 1000px;
 	width: 100%;
-	transition: all 150ms linear;
-	background-color: transparent !important;
-	top: -10px;
-	height: 0;
-	position: relative;
-	overflow: visible;
 	margin: 0 auto;
 }
 
@@ -612,6 +606,7 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class*="focusLock-"] [class*="root-"],
 [class*="modal-"],
 [class^="content"] [class^="sidebar"] ~ [class^="container-"],
 [class*="userPopout-"] [class*="activity-"],
