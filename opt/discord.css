@@ -83,10 +83,6 @@ code:not(.inline) * {
 	display: none;
 }
 
-form > div > div[class*="channelText"] * [class*="textArea"] {
-	margin: 0 40px;
-}
-
 code:not(.inline) {
 	max-width: 90ch;
 	border: 2px solid var(--accent);
@@ -119,11 +115,6 @@ code:not(.inline) {
 .mentionsBadge-7f5lud {
 	display: block !important;
 }
-
-* {
-	line-height: 140%;
-}
-
 
 code {
 	background-color: var(--bg1) !important;
@@ -569,11 +560,8 @@ svg[class*="homeIcon-"] path {
 	align-items: initial;
 }
 
-[class^="chatContent"] > div > div > div > div, 
-[class^="chatContent"] [class^="channelTextArea"] {
-	max-width: 1000px;
-	width: 100%;
-	margin: 0 auto;
+[class^="textAreaSlate-"] {
+    position: unset !important;
 }
 
 [class^="chatContent"] [class^="channelTextArea"] {
