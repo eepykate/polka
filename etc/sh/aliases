@@ -1,138 +1,154 @@
-#     ---
-#   aliases
-#     ---
+#  ~/etc/sh/aliases
 
-alias rm="del"
-alias fuck="pkill -9"
+alias td="transmission-daemon"
+
+# root
 alias ss="sudo systemctl"
-alias s1="sleep 1"
-alias s2="sleep 2"
-alias s3="sleep 3"
-alias s4="sleep 4"
 
-f() { find "${2:-.}" -iname "*$1*"; }
-F() { find "${2:-.}" -name "$1"; }
+# package manager
+# github.com/willeccles/cpm
+alias \
+	i="cpm i"  \
+	r="cpm r"  \
+	s="cpm s"  \
+	in="cpm I" \
+	up="cpm U"
 
-
-# Git
-
-alias ga="git add"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gp="git push"
-alias gs="git status"
-alias gc="git commit"
-alias gaa="git add -A"
-alias gpf="git push -f"
-alias gcm="git commit -m"
-alias gca="git commit --amend"
+# git
+alias \
+	ga="git add"  \
+	gd="git diff"  \
+	gp="git push"   \
+	gs="git status"  \
+	gc="git commit"   \
+	gaa="git add -A"   \
+	gpf="git push -f"   \
+	gcm="git commit -m"  \
+	gds="git diff --staged"  \
+	gca="git commit --amend"
 alias gl="git log --all --decorate --oneline --graph"
 
-
-alias i="cpm i"
-alias r="cpm r"
-alias s="cpm s"
-alias in="cpm I"
-alias up="cpm upgrade"
-
-command -v compdef &>/dev/null &&
-	compdef _ins ins
-
-alias g="grep -i"
-alias q="dragon --and-exit"
-alias grep="grep --color=auto"
-alias td="transmission-daemon"
-alias ci="xclip -selection clipboard -t image/png"
+# standard utils
 alias ls="ls -h --group-directories-first --color=auto"
-alias yt="youtube-dl --add-metadata --embed-thumbnail --embed-subs --ignore-errors -o '%(upload_date)s-%(title)s.%(ext)s'"
-alias yta="youtube-dl --add-metadata --ignore-errors --extract-audio -f bestaudio/best --audio-format mp3"
+alias grep="grep --color=auto"
 
-mc() { mkdir -p "$1"; cd "$1" || return; }
-bk() { cp -r "$1" "$1_$(date +%Y-%m-%d_%H:%M:%S).bk"; }
+alias \
+	rm="del"   \
+	g="grep -i" \
+	s1="sleep 1" \
+	s2="sleep 2" \
+	s3="sleep 3" \
+	s4="sleep 4" \
+	fuck="pkill -9"
 
-tc() { transmission-remote-cli; reset_cursor; }
+calc() { echo "scale=5; $*" | bc; }
 
-et() {  # elapsed time
-	ps -o command,etime $(pgrep "$1")
-}
+# elapsed time
+et() { ps -o command,etime $(pgrep "$1"); }
 
-v() {
-	nvim "$@"
-	#if [[ "$(stat -c '%U' "$1" "${1%/*}" 2>/n)" =~ "$USER" ]] || ! [[ "$1" ]]; then
-	#	nvim "$@"
-	#else
-	#	sudo -E nvim "$@"
-	#fi
-	printf '\e[4 q'
-}
-#precmd() {
-#	printf "\e[4 q\033k %s \033\\" "${PWD//$HOME/~}"
-#}
-#preexec() {
-#	a="${3//$HOME/~}"
-#	printf "\033k %s \033\\" "${a//\"}"
-#}
+#
+#  files/dirs
+#
 
-vb() {
-	local file
-	file="$(find "$HOME/bin" -type f,l | fzf)" &&
-		[[ -n "$file" ]] &&
-		v "$file"
-}
-
-d() {
-	case "$(file -ib "$1") $1" in
-		*dir*)          cd "$1";;
-		*video*|*gif*) mpv "$1" & disown;;
-		*image*)        im "$1" & disown;;
-		*audio*)    paplay "$1";;
-		*gzip*)     tar -t "$1";;
-		*html*)    firefox "$1";;
-		*http*)
-			curl -Ls "$1" -o "/tmp/${1##*/}"
-			d     "/tmp/${1##*/}"
-			rm -f "/tmp/${1##*/}";;
-		# everything else
-		*)             v "$1";;
-	esac
-}
-
-hextorgb() { printf "%d %d %d\n" "0x${1:0:2}" "0x${1:2:2}" "0x${1:4:2}"; }
-rgbtohex() { printf "%02X%02X%02X\n" "$@"; }
-
-# shellcheck source=/dev/null
+# file shortcuts
 . "${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh"
 
-# tar
+# drag and drop
+alias q="dragon --and-exit"
+
+# copy image
+alias ci="xclip -selection clipboard -t image/png"
+
+# rough find
+f() { find "${2:-.}" -iname "*$1*"; }
+# exact find
+F() { find "${2:-.}" -name "$1"; }
+
+# backup
+# zstd decompresses fast
+bk() { tar -I zstd -cvf "${1%/}.tar.zst" "$1"; }
+
 alias e="atool -x"
 c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
-# ffmpeg
-
-cgif() {
-	local max_width="1000" i
-	i="$(ffmpeg -i "$1" 2>&1 | grep -io "[1-9][0-9]*x" | sed 's/[a-z]//g')"
-	[ "$i" -ge "$max_width" ] && i="$max_width"
-	local f="fps=10,scale=$i:-1:flags=lanczos"
-	ffmpeg -i "$1" -vf "$f,palettegen" -y "/tmp/palette.png" -loglevel error
-	ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "$f [x]; [x][1:v] paletteuse" \
-		-y "${1%.*}.gif" -loglevel error
+# open videos/images
+d() {
+	case "$(file -ib "$1") $1" in
+		*mp4|*mkv|*webm|video*|image/gif*) mpv "$@" &!;;
+		*png|*jpeg|*jpg|image*) im "$@" &!;;
+		*) echo "invalid format"; return 1;;
+	esac
 }
 
+# quickly view contents of file based on term height
+t() {
+	var=$(wc -l "$1")
+	if [ "${var%% *}" -ge $((LINES-4)) ]; then
+		less "$1"
+	else
+		cat "$1"
+	fi
+}
+
+# open file depending on if it's owned by root
+: "${EDITOR:=nvim}"
+v() {
+	if [ ! "$1" ] || [ -w "$1" ] || [ -w "${1%/*}" ]; then
+		$EDITOR "$@"
+	else
+		sudo $EDITOR "$@"
+	fi
+	# reset cursor
+	printf '\e[4 q'
+}
+
+#
+#  ffmpeg
+#
+
+# convert to gif
+cgif() {
+	eval "$(ffprobe -v quiet -show_streams "$1" | grep '^[wh]')"
+
+	[ "$width" -gt "1000" ] &&
+		echo "video width ($width) greater than 1000, shrinking" &&
+		width=1000
+
+	f="fps=15,scale=$width:-1:flags=lanczos"
+
+	echo "Generating the palette"
+	ffmpeg -i "$1" -vf "$f,palettegen" -y "/tmp/palette.png" -loglevel error
+
+	echo "Generating the gif"
+	ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "$f [x]; [x][1:v] paletteuse" \
+		-y "${1%.*}.gif" -loglevel error || return $!
+}
+
+# lower res to 720p
 c720() {
-	ffmpeg -i "$1"          \
-		-y                    \
-	  -vf "scale=1280:720"  \
-	  -b 3M                 \
-	  -vcodec h264_nvenc    \
+	ffmpeg -y -i "$1" -b:v 4M \
+		-c:v h264_nvenc    \
+		-vf "scale=1280:-1" \
 	  "${1%.*}-720.mp4"
 }
 
 
+#
+#  colours
+#
 
+hextorgb() {
+	printf "%d %d %d\n" \
+		"0x${1:0:2}" \
+		"0x${1:2:2}" \
+		"0x${1:4:2}"
+}
 
-# fun
+rgbtohex() {
+	printf "%02X%02X%02X\n" "$@"
+}
 
+# display term colours
 c07() {
 	for i in 0 1 2 3 4 5 6 7; do
 		printf '\033[%sm   ' "$1$i"
@@ -140,9 +156,32 @@ c07() {
 }
 
 blocks() {
+	echo
 	c07 4
 	c07 10
+	echo
 }
+
+# random hex colour
+rand() {
+	printf "%02X%02X%02X\n" $(shuf -i 0-255 -n 3)
+}
+
+# preview hex colour
+prev() {
+	[ "$@" ] || { set -- $(cat /dev/stdin); }
+	[ "$n" ] && [ "$n" -le 220 ] || n=30
+	for i; do
+		printf "\033]4;%s;#%s\007" "$n" "$i"
+		printf "\033[38;05;%sm%s\033[0m   \033[48;05;%sm       \033[0m\n" \
+			"$n" "$i" "$n"
+		n=$((n+1))
+	done
+}
+
+#
+#  other
+#
 
 notthing() {
 	notify-send -u critical -t 99999999 '      urgent      ​'; \
@@ -150,37 +189,13 @@ notthing() {
 	notify-send -u low -t 99999999 'low'
 }
 
-inf() {
-	echo
-	printf "    %s\e[38;05;16m@\e[0m%s\n" "$USER" "$HOST"
-	printf "\e[38;05;16m os:\e[0m  "
-		printf "%8s\n" "$(source /etc/os-release; printf "%s\n" "$NAME")"
-	printf "\e[38;05;16m pkgs:\e[0m"
-		printf "%8s\n" "$(pacman -Qq | wc -l)"
-	for i in {0..7}; do echo -n "\e[9${i}m▄\e[0m ";	done
-	echo; echo
-}
-
-# random hex colour
-rand() {
-	printf "%02X%02X%02X\n" $(shuf -i 0-255 -n 3)
-}
-# preview hex colour
-prev() {
-	[ "$@" ] || {
-		set -- $(cat /dev/stdin)
-	}
-	[ "$n" ] || n=30
-	[ "$n" -ge 220 ] && n=30
-	for i; do
-		printf "\033]4;%s;#%s\007" "$n" "$i"
-		printf "\033[38;05;%sm%s\e[0m   \033[48;05;%sm       \e[0m\n" "$n" "$i" "$n"
-		n=$((n+1))
-	done
-}
-
-calc() {
-	echo "scale=5; $*" | bc
-}
+# window titles
+#precmd() {
+#	printf "\e[4 q\033k %s \033\\" "${PWD//$HOME/~}"
+#}
+#preexec() {
+#	a="${3//$HOME/~}"
+#	printf "\033k %s \033\\" "${a//\"}"
+#}
 
 # vim: ft=bash
