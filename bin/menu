@@ -1,23 +1,21 @@
 #!/bin/sh
 #  fzf dmenu alternative
 
-[ "$(pgrep -x ${0##*/})" = "$$" ] || exit 1
+[ "$(pgrep -x "${0##*/}")" = "$$" ] || exit 1
 
-rm /tmp/fzfmenu*
-cat > /tmp/fzfmenu
+in=/tmp/fzfmenu  out=/tmp/fzfmenuout
+
+rm $in $out
+cat > $in
 
 while [ "$1" ]; do
-	case $1 in
-		-p) prompt="$2"; shift;;
-	esac
+	[ "$1" = -p ] && prompt=" $2" && break
 	shift
 done
-args="--no-hscroll --cycle --pointer=' ' --height=20 --info=hidden"
-args="$args --layout=reverse --prompt=' $prompt | ' --no-bold"
-args="$args --color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
-. ~/etc/colours/current
+args="--cycle --pointer=' ' --no-info --reverse"
+colours="--color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
-st -c floating -e sh -c \
-	"</dev/tty fzf $args < /tmp/fzfmenu > /tmp/fzfmenuout" || exit 1
-cat /tmp/fzfmenuout
+st -g 48x16 -c floating -e sh -c \
+	"</dev/tty fzf  --prompt='$prompt | ' $args $colours < $in > $out" || exit 1
+cat $out
