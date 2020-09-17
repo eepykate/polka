@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ "$(pgrep rmd)" = "$$" ] || exit
+[ "$(pgrep -x rmd)" = "$$" ] || exit
 
 while :; do
 	set --
