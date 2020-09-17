@@ -202,6 +202,26 @@ sed -i --follow-symlinks \
 	-e "s/#$h/#$bg1/" \
 	~/usr/icons/Papirus/16x16/places/folder.svg
 
+echo " - ripcord"
+cat << EOF > "$HOME/tmp/ripcord.json"
+{
+	"base": "#$bg1",
+	"window": "#$bg1",
+	"unread_badge": "#$bg1",
+	"alternate_base": "#$bg2",
+	"button": "#$bg4",
+	"highlight": "#$bg4",
+	"disabled_button": "#$bg4",
+	"chat_timestamp": "#$black",
+	"disabled_text": "#$black",
+	"unread_badge_text": "#$black",
+	"highlighted_text": "#$accent",
+	"icon": "#$fg1",
+	"text": "#$fg1",
+	"disabled_icon": "#$fg2"
+}
+EOF
+
 
 echo " - Changing wallpaper"
 if [ -f "$HOME/src/walls/$wall" ]; then

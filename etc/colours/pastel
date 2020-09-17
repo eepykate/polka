@@ -1,0 +1,26 @@
+#   -----
+black=494970
+red=eb9797
+yellow=eec299
+green=d6e4ab
+cyan=b3e8e8
+blue=b6d0fd
+purple=d6b1f0
+#   -----
+bg0=12151e
+bg1=151823
+bg2=1a1d28
+bg3=1e212e
+bg4=232733
+#   -----
+fg1=d6d8eb
+fg2=9294a8
+button=${fg1}20
+disabled=696969
+#   -----
+accent=$blue
+accent2=$purple
+contrast=$bg4
+#   -----
+wall=white-cherry-blossom.jpg
+#   -----

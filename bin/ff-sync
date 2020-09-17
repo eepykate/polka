@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+date -Im | tr 'T' ' ' >> /tmp/ff-log
+
 static="static-$1"
 mem="/dev/shm/firefox-$1-$USER"
 

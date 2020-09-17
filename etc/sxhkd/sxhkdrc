@@ -6,7 +6,7 @@ super + Return
 	st
 
 super + g
-	killmen
+	ripcord
 
 #{alt + x, XF86Launch6}
 #	draw
@@ -82,9 +82,10 @@ ctrl + alt + {1-9,0}
 
 # selection
 {shift + Print, XF86Tools}
-	freeze & \
-	scr -S; \
-	pkill -f '[ /]freeze'
+	scr -S
+#	freeze & \
+#	scr -S; \
+#	pkill -f '[ /]freeze'
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/scr/$(ls \

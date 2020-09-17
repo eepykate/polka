@@ -7,8 +7,8 @@ super + {r,m}
 super + {_,shift} + Escape
 	wm {restart,quit}
 
-super + {c,x}
-	bspc node -t "~{floating,fullscreen}"
+super + c
+	bspc node -t "~floating"
 
 super + {_,ctrl,shift} + {a,s,w,d}
 	{focus,move,resize} {west,south,north,east}

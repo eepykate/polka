@@ -18,6 +18,7 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 pap        # wallpaper
 hw 0       # clear hidden windows cache
 screen.sh  # change display layout
+stalonetray &
 pulseaudio -D &          # audio
 xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste

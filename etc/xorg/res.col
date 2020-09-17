@@ -1,39 +1,39 @@
 st.font:  Ubuntu Mono:pixelsize=12:style=Bold
 
-*.background:   #000000
-*.foreground:   #bfc1d5
-*.cursorColor:  #bfc1d5
+*.background:   #151823
+*.foreground:   #d6d8eb
+*.cursorColor:  #d6d8eb
 
-*.color0:       #0a0a0a
-*.color8:       #434366
+*.color0:       #1e212e
+*.color8:       #494970
 
-*.color1:       #d26161
-*.color9:       #d26161
+*.color1:       #eb9797
+*.color9:       #eb9797
 
-*.color2:       #cf9b6a
-*.color10:      #cf9b6a
+*.color2:       #eec299
+*.color10:      #eec299
 
-*.color3:       #a8b67a
-*.color11:      #a8b67a
+*.color3:       #d6e4ab
+*.color11:      #d6e4ab
 
-*.color4:       #83b5c2
-*.color12:      #83b5c2
+*.color4:       #b3e8e8
+*.color12:      #b3e8e8
 
-*.color5:       #8497cf
-*.color13:      #8497cf
+*.color5:       #b6d0fd
+*.color13:      #b6d0fd
 
-*.color6:       #b887cc
-*.color14:      #b887cc
+*.color6:       #d6b1f0
+*.color14:      #d6b1f0
 
-*.color7:       #797b8f
-*.color15:      #bfc1d5
+*.color7:       #9294a8
+*.color15:      #d6d8eb
 
-*.color16:      #8497cf
-*.color17:      #b887cc
-*.color18:      #0e0e0e
+*.color16:      #b6d0fd
+*.color17:      #d6b1f0
+*.color18:      #232733
 
 
-tabbed.selbgcolor:   #000000
-tabbed.selfgcolor:   #bfc1d5
-tabbed.normfgcolor:  #797b8f
-tabbed.normbgcolor:  #0a0a0a
+tabbed.selbgcolor:   #151823
+tabbed.selfgcolor:   #d6d8eb
+tabbed.normfgcolor:  #9294a8
+tabbed.normbgcolor:  #1e212e
