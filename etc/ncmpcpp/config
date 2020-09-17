@@ -1,5 +1,5 @@
 # Files
-mpd_music_dir = ~/opt/Music
+mpd_music_dir = ~/opt/mus
 lyrics_directory  = ~/etc/ncmpcpp/lyrics
 ncmpcpp_directory  = ~/etc/ncmpcpp
 mpd_host = "localhost"
@@ -9,13 +9,13 @@ mpd_crossfade_time = "5"
 
 visualizer_color = cyan, green, yellow, magenta, red
 playlist_display_mode = columns
-progressbar_look = "▂▂ "  # ━━─
+progressbar_look = "▂▂▂"  # ━━─
 header_visibility = no
 statusbar_visibility = no
 titles_visibility = no
 colors_enabled = yes
 main_window_color = 16
-progressbar_color = white
+progressbar_color = 9
 progressbar_elapsed_color = 17
 seek_time = 5
 volume_change_step = 5
@@ -28,10 +28,12 @@ message_delay_time = 1
 current_item_prefix = "$(16_black)"
 current_item_suffix = "$/r$(end)"
 
-now_playing_prefix = "  ​"
-now_playing_suffix = "$(17)* $9"
+now_playing_prefix = "$(17)"
+now_playing_suffix = "$9"
+#now_playing_suffix = "$(17) *    $9"
 
 song_status_format = $/b{%t}|{%f}
 song_list_format = "%a  -  %t$R$(end) "
 song_library_format = $/b{{%a - %t} (%b)}|{%f}
-song_columns_list_format = "(50)[08]{ar} (50)[16]{t}"
+#song_columns_list_format = "(50)[08]{ar} (50)[16]{t}"
+song_columns_list_format = "(4f)[]{} (90)[]{t}"
