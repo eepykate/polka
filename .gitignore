@@ -4,6 +4,7 @@
 **/sc.sh
 **/*hist*
 **/*compdump*
+**/*log
 usr/themes
 usr/icons
 etc/colours/current
