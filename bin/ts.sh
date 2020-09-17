@@ -12,7 +12,6 @@ themes="$(ls -1 "$c/colours/" | grep -iv 'current\|meta')" # List of themes
 [ "$theme" ] || theme="$(printf %b "$themes" | menu -i -p "Theme?")"
 ln -sf "$theme" "$c/colours/current"
 
-# Define the colours in the theme (for rofi, startpage, firefox, dunst, etc)
 [ -f "$c/colours/$theme" ] &&
 	. "$c/colours/$theme" ||
 	{ echo "Invalid theme '$theme'; exiting"; exit; }
@@ -125,19 +124,20 @@ sed --follow-symlinks -i  \
 
 echo " - dunst"
 var="$(sed --follow-symlinks \
-	-e "s/foreground.*/foreground          = \"#$fg1\"/" \
+	-e "s/foreground.*/foreground          = \"#$fg2\"/" \
 	-e "s/background.*/background          = \"#$bg1\"/" \
-	-e "s/frame_color.*/frame_color         = \"#$accent\"/" \
+	-e "s/frame_color.*/frame_color         = \"#$bg3\"/" \
 	"$c/dunst/dunstrc")"
 
 printf '%s\n' "$var" | while IFS='' read -r l; do
 	case $l in
+		*font*=*) l="${l%%=*}= $font $fontweight ${fontsize}px";;
 		"[urgency_low]") low=H;;
 		"[urgency_critical]") crit=H;;
 		\[*) low=; crit=;;
-		*frame_color*)
-			[ "$crit" ] && l="${l%%#*}#$accent2\""
-			[ "$low" ] && l="${l%%#*}#$fg1\""
+		*foreground*)
+			[ "$crit" ] && l="${l%%#*}#$fg1\""
+			[ "$low"  ] && l="${l%%#*}#${fg2}bb\""
 	esac
 	printf '%s\n' "$l"
 done > "$c/dunst/dunstrc"

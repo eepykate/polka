@@ -5,7 +5,7 @@
 
 _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
-s() { pkill -x "$1"; { sleep 0.1; "$@"; } & }
+s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 
 # desktops
 bspc monitor -d      1 2 3 4 5 6
@@ -25,7 +25,7 @@ _ pointer_motion_interval  5
 
 # borders/gaps
 _ window_gap    20
-_ border_width  16
+_ border_width  0
 _ single_monocle      true
 _ gapless_monocle     true
 _ borderless_monocle  true
@@ -48,7 +48,6 @@ R floating  state=floating
 #
 #   autostart
 #
-s borders
 s picom
 s dunst
 s sxhkd

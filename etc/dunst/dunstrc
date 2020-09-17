@@ -1,31 +1,32 @@
 [global]
-	font                = Roboto Mono Bold 10px
-	geometry            = "500x5-40-40"
-	shrink              = true
+	font       = Ubuntu Mono Bold 12px
+	geometry   = "500x5-40-40"
+	shrink     = true
+
+	markup     = full
+	format     = "%s\n%b"
+	alignment  = center
+	word_wrap  = true
+
+	dmenu      = /usr/bin/rofi -dmenu -p dunst:
+	browser    = ~/bin/app/firefox -new-tab
+
+	icon_position  = left
+	max_icon_size  = 32
+	icon_path      = /dev/null
+
 
 	# borders
 	padding             = 25
-	horizontal_padding  = 25
-	frame_width         = 2
-	frame_color         = "#b6d0fd"
+	frame_width         = 0
+	frame_color         = "#1e212e"
 	separator_height    = 2
 	separator_color     = frame
+	horizontal_padding  = 25
 
-	markup              = full
-	format              = "%s\n%b"
-	alignment           = center
-	word_wrap           = true
-
-	dmenu               = /usr/bin/rofi -dmenu -p dunst:
-	browser             = ~/bin/app/firefox -new-tab
-
-	idle_threshold      = 999999999999999999999
+	idle_threshold      = 0
 	show_indicators     = false
 	show_age_threshold  = 60
-
-	icon_position       = left
-	max_icon_size       = 32
-	icon_path           = /dev/null
 
 [experimental]
 	per_monitor_dpi     = true
@@ -38,20 +39,20 @@
 
 [urgency_low]
 	background          = "#151823"
-	foreground          = "#d6d8eb"
-	frame_color         = "#d6d8eb"
+	foreground          = "#9294a8bb"
+	frame_color         = "#1e212e"
 	timeout             = 5
 
 [urgency_normal]
 	background          = "#151823"
-	foreground          = "#d6d8eb"
-	frame_color         = "#b6d0fd"
+	foreground          = "#9294a8"
+	frame_color         = "#1e212e"
 	timeout             = 5
 
 [urgency_critical]
 	background          = "#151823"
 	foreground          = "#d6d8eb"
-	frame_color         = "#d6b1f0"
+	frame_color         = "#1e212e"
 	timeout             = 0
 
 [stuff]
