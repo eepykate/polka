@@ -1,6 +1,8 @@
 #!/bin/sh
 #  preview hex
 
+[ "$(pgrep -x hex)" = "$$" ] || exit
+
 # if the selection is a hex value of the correct length,
 # use that, otherwise select a pixel
 hex=$(xclip -o | tr -d "#:;='()\" ")
