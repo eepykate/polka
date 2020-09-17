@@ -5,8 +5,7 @@
 super + Return
 	st
 
-super + g
-	ripcord
+# super + [xg] are free
 
 #{alt + x, XF86Launch6}
 #	draw
