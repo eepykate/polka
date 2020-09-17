@@ -124,7 +124,7 @@ sed --follow-symlinks -i  \
 
 echo " - dunst"
 var="$(sed --follow-symlinks \
-	-e "s/foreground.*/foreground          = \"#$fg2\"/" \
+	-e "s/foreground.*/foreground          = \"#${fg1}cf\"/" \
 	-e "s/background.*/background          = \"#$bg1\"/" \
 	-e "s/frame_color.*/frame_color         = \"#$bg3\"/" \
 	"$c/dunst/dunstrc")"
