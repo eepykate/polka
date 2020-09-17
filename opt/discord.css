@@ -1,3 +1,15 @@
+/* move typing indicator above textbox */
+[class*="chatContent-"] > [class*="form-"] {
+	display: flex !important;
+}
+
+#app-mount [class*="typing-"] {
+	order: 0;
+	z-index: 999;
+	top: 0px;
+	margin-top: -12px;
+}
+
 /* profile picture next to name */
 [class*="cozy-"][class*="zalgo-"],
 [id^="chat-messages"] {
@@ -557,12 +569,16 @@ svg[class*="homeIcon-"] path {
 	height: 10px;
 }
 
+[class*="textArea-"] {
+	bottom: -4px !important;
+}
+
 [class^="chatContent"] [class^="channelTextArea"] {
 	margin-bottom: 0;
 }
 
 [class*="typing-"] {
-	left: -5px;
+	left: 2px;
 }
 
 [class*="typing-"],
