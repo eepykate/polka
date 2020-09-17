@@ -186,8 +186,24 @@ EOF
 	make
 }
 
+echo " - icons"
+h='[a-zA-Z0-9]'
+h=$h$h$h$h$h$h
+sed -i --follow-symlinks \
+	-e "s/\"fill:#[a-zA-Z0-9]\+/\"fill:#$accent/" \
+	~/usr/icons/Papirus/16x16/places/folder-blue.svg
 
-printf '\n%s\n' "Changing wallpaper"
+sed -i --follow-symlinks \
+	-e "3s/#$h/#$(darken "$accent" 0.9)/" \
+	-e "6s/#$h/#$accent/" \
+	~/usr/icons/Papirus/*/places/folder-blue.svg
+
+sed -i --follow-symlinks \
+	-e "s/#$h/#$bg1/" \
+	~/usr/icons/Papirus/16x16/places/folder.svg
+
+
+echo " - Changing wallpaper"
 if [ -f "$HOME/src/walls/$wall" ]; then
 	wallthing="feh --bg-fill --no-fehbg '$HOME/src/walls/$wall'"
 	eval $wallthing
