@@ -1,6 +1,7 @@
 #  ~/etc/sh/aliases
 
 alias td="transmission-daemon"
+alias sy="systemctl --user"
 
 # root
 alias ss="sudo systemctl"
