@@ -14,15 +14,10 @@
 	});
 
 	function addButton(text, onclick, cssObj) {
-		cssObj = cssObj || {
-			position: "fixed",
-			"top": "4px",
-			left: "4px",
-		};
 		let button = document.createElement("button"),
 		btnStyle = button.style;
 		button.setAttribute("id", "butt");
-		document.body.appendChild(button);
+		document.getElementById("guser").appendChild(button);
 		button.innerHTML = text;
 		// Settin function for button when it is clicked.
 		button.onclick = selectReadFn;

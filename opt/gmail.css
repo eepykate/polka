@@ -48,14 +48,21 @@ img[src$='star_on_sm_2.gif'] {
 
 #ac-list,
 #ac-list *,
-textarea,
-button,
-select,
 input {
 	background-color: var(--bg3);
+	border: 0;
+	padding: 5px 8px;
+}
+
+textarea,
+select,
+input[type=submit] {
+	background-color: transparent;
 	border: 2px solid transparent;
-	padding: 3px 8px;
+	padding: 0px 4px;
 	border-radius: 2px;
+	color: var(--fg2) !important;
+	font-size: 12px;
 }
 
 body > table:last-of-type td[width="5"] ~ td td {
@@ -101,3 +108,29 @@ table.th > tbody > tr > td:first-of-type input {
 	margin: 0;
 	opacity: 0;
 }
+
+#guser {
+	display: flex;
+	flex-wrap: wrap;
+	float: right;
+}
+
+#butt::after {
+	content: ' | ';
+}
+
+#butt {
+	order: -1;
+	font-size: 11.5px;
+	background-color: transparent;
+	border: 0;
+	padding-right: 4px;
+}
+
+/* footers */
+[value="Go"] + .searchPageLink,
+table.th + table,
+table.ft {
+	display: none;
+}
+
