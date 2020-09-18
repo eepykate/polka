@@ -724,11 +724,12 @@ svg[class*="homeIcon-"] path {
 }
 
 /* change role colours */
-[style*="110, 247, 247"] { color: var(--cyan)   !important; }
-[style*="110, 144, 247"] { color: var(--blue)   !important; }
+[style*="247, 110, 110"] { color: var(--red)    !important; }
+[style*="247, 213, 100"] { color: var(--yellow) !important; }
 [style*="179, 247, 110"] { color: var(--green)  !important; }
 [style*="110, 247, 144"] { color: var(--green)  !important; }
-[style*="247, 213, 100"] { color: var(--yellow) !important; }
+[style*="110, 247, 247"] { color: var(--cyan)   !important; }
+[style*="110, 144, 247"] { color: var(--blue)   !important; }
 [style*="179, 110, 247"] { color: var(--purple) !important; }
 [style*="247, 110, 213"] { color: var(--purple) !important; }
 [style*="247, 163, 110"] { color: var(--accent) !important; }
