@@ -21,9 +21,10 @@ span font + font {
 	opacity: 0.8;
 }
 
+#ac-list .selected b,
 a:link,
 a:visited {
-	color: var(--accent);
+	color: var(--accent) !important;
 }
 
 .gbh,
@@ -37,6 +38,17 @@ img[src$='star_on_sm_2.gif'] {
 	padding-left: 14px;
 }
 
+#ac-list .selected b,
+#ac-list .selected {
+	background-color: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0;
+}
+
+#ac-list,
+#ac-list *,
+textarea,
 select,
 input {
 	background-color: var(--bg3);

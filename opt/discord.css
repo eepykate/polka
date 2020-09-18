@@ -8,6 +8,7 @@
 	z-index: 999;
 	top: 0px;
 	margin-top: -12px;
+	background-color: var(--bg1);
 }
 
 /* profile picture next to name */
