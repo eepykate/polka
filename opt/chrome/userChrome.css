@@ -623,6 +623,14 @@ browser[type=content] > html {
 
 
 /* Change size of a few items */
+#urlbar[breakout][breakout-extend][open]:not([usertyping]) {
+	padding-top: 6px;
+}
+
+#urlbar[breakout][breakout-extend]:not([open]) {
+  top: 0 !important;
+}
+
 #navigator-toolbox * #urlbar-zoom-button {
 	width: auto !important;
 	max-width: 100px !important;
