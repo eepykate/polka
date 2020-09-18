@@ -1,0 +1,90 @@
+#guser a,
+#guser nobr a,
+* {
+	color: var(--fg1) !important;
+	text-decoration: none !important;
+	scrollbar-width: none;
+}
+
+select {
+	-moz-appearance: none;
+}
+
+tr,
+body,
+td {
+	background-color: var(--bg1);
+}
+
+span font + font {
+	color: var(--fg2);
+	opacity: 0.8;
+}
+
+a:link,
+a:visited {
+	color: var(--accent);
+}
+
+.gbh,
+#gbar,
+#guser ~ table > tbody > tr > td[rowspan="3"],
+img[src$='star_on_sm_2.gif'] {
+	display: none;
+}
+
+#guser ~ table > tbody > tr + tr td {
+	padding-left: 14px;
+}
+
+select,
+input {
+	background-color: var(--bg3);
+	border: 2px solid transparent;
+	padding: 3px 8px;
+	border-radius: 2px;
+}
+
+body > table:last-of-type td[width="5"] ~ td td {
+	border-bottom: none !important;
+}
+
+tr[bgcolor="#E8EEF7"] > td {
+	padding: 7px 4px;
+}
+
+
+tr[bgcolor="#E8EEF7"] > td:first-of-type {
+	position: absolute;
+	background-color: transparent;
+	width: calc(25% - 50px);
+	min-width: 140px;
+	height: 100%;
+	max-height: 32px;
+	margin: 0;
+	padding: 0;
+}
+
+tr[bgcolor="#E8EEF7"] > td:first-of-type + td {
+	z-index: 999 !important;
+	position: relative !important;
+	background: transparent;
+	pointer-events: none;
+}
+
+tr[bgcolor="#E8EEF7"] > td:first-of-type input:checked {
+	border-radius: 0 !important;
+	background: var(--bg4) !important;
+	z-index: 90 !important;
+	opacity: 1;
+	-moz-appearance:none;
+}
+
+tr[bgcolor="#E8EEF7"] > td:first-of-type input {
+	width: 100%;
+	height: 10%;
+	min-height: 100%;
+	max-height: unset;
+	margin: 0;
+	opacity: 0;
+}
