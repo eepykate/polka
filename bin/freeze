@@ -1,0 +1,10 @@
+#!/bin/sh
+#  simulate a screen freeze
+
+: "${XDG_CACHE_HOME:=$HOME/.cache}"
+
+shotgun /tmp/pic.png   & pid=$!
+6r primary > /tmp/dims &  pi=$!
+wait $pid $pi
+read -r w h x _ < /tmp/dims
+feh --class freeze -g "$((w+x))x$((h+2))+0+-1" /tmp/pic.png

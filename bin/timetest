@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+: "${t:=20}"
+
+i=0 avg=0 high=0 low=99999
+while [ "$i" -lt "$t" ]; do
+	i=$((i+1))
+
+	var=$( { time "$@"; } 2>&1 )
+	var=${var##*real	}
+	var=${var//[m.]}
+	var=${var%%s*}
+
+	# remove leading zeros
+	var=$(( 10#$var ))
+
+	avg=$(( avg + var ))
+	[ "$var" -gt "$high" ] && high=$var
+	[ "$var" -lt "$low" ] && low=$var
+done
+
+echo "avg:  $(( avg / t  ))ms"
+echo "high: ${high}ms"
+echo "low:  ${low}ms"

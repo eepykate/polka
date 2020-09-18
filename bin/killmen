@@ -1,0 +1,13 @@
+#!/bin/sh -e
+#  kill menu
+
+m() {
+	n=/dev/null
+	command -v menu  >$n && { menu; return $?; }
+	command -v rofi  >$n && { rofi -dmenu; return $?; }
+	command -v dmenu >$n && { dmenu; return $?; }
+}
+
+set -- $(pgrep . -l | m)
+
+[ "$1" ] && kill -9 "$1"

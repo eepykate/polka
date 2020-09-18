@@ -1,0 +1,107 @@
+#!/bin/sh
+#  crappier xrandr wrapper
+
+eq() {  # [ a = b ] with globbing
+	case $1 in
+		# if the second argument is in the first, exit normally
+		*$2*) return
+		# if it doesn't match, reverse the output of `:`, which makes an error
+	esac;! :
+}
+
+output() {
+	xrandr --current | while read -r line; do
+		eq "$line" "$@" && printf '%s\n' "$line"
+	done
+}
+
+# print the first word
+word() {
+	while IFS='' read -r l; do
+		echo "${l%% *}"
+	done
+}
+
+focused() {
+	[ "$1" = -f ] && format=-f
+	# get the dimensions of the focused monitor
+	eval "$(xdotool getwindowfocus getwindowgeometry --shell)"
+	# get the maximum size of all the combined monitors
+	max=$(output " current")
+	max=${max##*ent }
+	set -- ${max%%,*} 0 0
+	# check if the focused window takes up the full size of all
+	# monitors (most likely the root window), then print the primary monitor
+	[ "$WIDTH" = "$1" ] && [ "$HEIGHT" = "$3" ] &&
+		{ primary $format; exit; }
+	output " connected" | while read -r line; do
+		IFS='x+('
+		set -- $line
+		# remove junk added by the custom IFS
+		set -- "${1##* }" "$2" "$3" "$4"
+		[ "$X" -le 0 ] && [ "$Y" -le 0 ] || {
+			# Width
+			[ "$X" -ge "$3" ] && [ "$X" -lt "$(($3+$1))" ] || continue
+			# Height
+			[ "$Y" -ge "$4" ] && [ "$Y" -lt "$(($4+$2))" ] || continue
+		}
+		[ "$format" = -f ] && printf '%s\n' "$1x$2+$3+$4" ||
+			printf '%s\n' "$1 $2 $3 $4"
+		exit
+	done
+}
+
+names() {
+	case $1 in
+		-p) output " primary"  | word;;
+		*) output " connected" | word;;
+	esac
+}
+
+primary() {
+	var=$(output primary)
+	var=${var##*primary }
+	[ "$1" = -f ] && printf '%s\n' "${var%% (*}" || {
+		IFS='x+'
+		set -- ${var%% (*}
+		echo "$@"
+	}
+}
+
+dims() {
+	IFS='x+('
+	[ "$1" = -f ] && f=] && shift
+	for i; do
+		var=$(output "$i")
+		var=${var##*primary }
+		set -- ${var##*connected }
+		[ "$f" ] && printf '%s\n' "$1x$2+$3+$4" || printf '%s\n' "$1 $2 $3 $4"
+	done
+}
+
+_() {
+	case $1 in
+		dims|primary|names|output|focused) "$@"; exit $?;;
+	esac
+}
+
+case $1 in
+	-h|-?|--help) cat << EOF
+
+[34mrrrrrr[0m - crappier xrandr wrapper
+
+usage:
+ - 'names [-p]'          show monitor names (-p = only primary)
+ - 'dims  [-f] <mons>'   get WHXY of monitors
+ - 'primary [-f]'        print geometry of primary monitor
+ - 'focused [-f]'        print geometry of focused monitor, needs xdotool
+
+-f = formatted (example: 800x600+0+0)
+otherwise, print like '800 600 0 0'
+
+EOF
+	exit
+esac
+
+_ "${0##*/}" "$@"
+_ "$@"
