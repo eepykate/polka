@@ -5,7 +5,7 @@
 
 # if the selection is a hex value of the correct length,
 # use that, otherwise select a pixel
-hex=$(xclip -o | tr -d "#:;='()\" ")
+hex=$(xclip -o | tr -d "#:;,.='()\" ")
 
 v='[a-fA-F0-9]'
 case $hex in
