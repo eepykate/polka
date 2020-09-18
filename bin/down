@@ -1,27 +1,50 @@
 #!/bin/sh
 #  simple script to download from multiple places
 
-out=${2:-${1##*/}}
+fun() {
+	out=${2:-${1##*/}}
 
-# add missing https
-case $1 in
-	http*) ;;
-	*) set -- "https://$1" "$2"
-esac
+	# change filename if already existing
+	[ -e "$out" ] && out=$out-0 &&
+		while [ -e "$out" ]; do
+			out=${out%-*}-$(( ${out##*-} + 1 ))
+		done
 
-case $1 in
-	# raw/web preview github urls
-	*github*raw*|*github*blob*) curl -Ls "$(echo "$1" | sed 's|/blob/|/raw/|')" -o "$out";;
+	# print url
+	printf '\n%b\n' "\033[35m${1#http*://}\033[0m"
 
-	# git repos
-	*.git|*github.com*|*gitlab*) git clone "$1" $2;;
+	# add missing https
+	case $1 in
+		http*) ;;
+		*) set -- "https://$1" "$2"
+	esac
 
-	# youtube
-	*youtu.be*|*youtube.com*) youtube-dl --add-metadata \
-		-f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' \
-		--geo-bypass \
-		--embed-subs --ignore-errors -o "${2:-%(title)s.mp4}" "$1";;
+	case $1 in
+		# individual file github urls
+		*github*/raw/*|*github*/blob/*)
+			curl -L#o "$out"  "$(echo "$1" | sed 's|/blob/|/raw/|')";;
 
-	# other
-	*) curl -Ls "$1" -o "$out";;
-esac
+		# git repos
+		*.git|*github.com*|*gitlab*) git clone "$1" $2;;
+
+		# youtube
+		*youtu.be*|*youtube.com*) youtube-dl "$1" \
+			--geo-bypass --embed-subs --add-metadata \
+			--ignore-errors -o "${2:-%(title)s.mp4}" \
+			-f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]';;
+
+		# unsplash
+		*unsplash.com*) v=${1%/download*}
+			curl -L#o "${v##*/}.jpeg" "$v/download?force=true";;
+
+		# other
+		*) curl -L#o "$out"  "$1";;
+	esac
+}
+
+# multiple urls
+if [ "$1" = m ] || [ $# -ge 3 ]; then
+	shift; for i; do fun "${i%/}"; done
+else  # single url
+	fun "${1%/}" "$2"
+fi
