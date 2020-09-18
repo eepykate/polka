@@ -1,30 +1,9 @@
-<h1 align="center">gk's dotless files</h1>
-<h2 align="center">,=,e ​ ​ ​ a,=,</h2>
+<div align="center"> <img src="./opt/svg.svg"> </div>
 
-Dotless files? What?
+Yep, no dotfiles here. Check out [declutter-home](https://github.com/vizs/declutter-home)
+for more.
 
-Yes, I don't actually have any dotfiles in my home dir.  
-Why? Why not. It looks a lot cleaner.
-
-| normal         | for me      | variable          |
-|----------------|-------------|-------------------|
-| ~/.config      | ~/etc       | `XDG_CONFIG_HOME` |
-| ~/.local/share | ~/usr       | `XDG_DATA_HOME`   |
-| ~/.cache       | ~/usr/cache | `XDG_CACHE_HOME`  |
-
-For other apps that make dotfiles in ~ I spoof my home dir to be ~/opt/apps,
-with the exception of firefox, which is in ~/etc.
-
-You might want to check out [declutter-home](https://github.com/vizs/declutter-home)
-for more information.
-
- - **WM:** bspwm
- - **Term:** st
- - **Distro:** ubuntu
- - **Browser:** firefox
- - **Screenshots:** [scr](https://github.com/6gk/scr) (and recording)
-
-<h2 align="center">Screenshots</h2>
+<h2 align="center"> Screenshots </h2>
 
 <h3 align="center"> [bspwm] magical sunset </h3>
 
