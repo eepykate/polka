@@ -446,6 +446,21 @@ menuseparator {
 	color: var(--bg1) !important;
 }
 
+/* hide tab bar when only one is visible */
+[id^="scrollbutton"],
+#tabbrowser-arrowscrollbox > *:not(.tabbrowser-tab),
+.tabbrowser-tab:only-of-type {
+  display: none !important;
+}
+
+#navigator-toolbox #titlebar,
+#navigator-toolbox #TabsToolbar,
+#navigator-toolbox #tabbrowser-arrowscrollbox,
+#navigator-toolbox #tabbrowser-tabs {
+	min-height: 0 !important;
+	height: auto !important;
+}
+
 /* double borders */
 /*
 :root:-moz-window-inactive .tabbrowser-tab[pinned="true"]:only-of-type::after,
