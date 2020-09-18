@@ -51,7 +51,8 @@ et() { ps -o command,etime $(pgrep "$1"); }
 #
 
 # file shortcuts
-. "${XDG_CONFIG_HOME:-~/.config}/sh/sc.sh"
+v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
+[ -e "$v" ] && . "$v"
 
 # drag and drop
 alias q="dragon --and-exit"
