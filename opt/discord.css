@@ -326,21 +326,30 @@ svg[class*="homeIcon-"] path {
 }
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
 	font-size: 0px !important;
+	display: inline-block !important;
 }
 
 [class^="sidebar-"]:hover * .name-3_Dsmg::before {
-	display: inline;
-	content: '⚫';
-	margin-right: 4px;
-	margin-left: -2px;
+	display: inline-block !important;
+	content: '●';
+	font-family: "Dejavu Sans";
+	font-size: calc(var(--font2-size) /1.5);
+	margin-right: 7px;
+	margin-left: 6px;
+	vertical-align: 2px;
 }
 
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
 	display: block;
-	content: '⚫';
-	font-size: var(--font2-size);
-	margin-left: 7px;
+	content: '●';
+	font-family: "Dejavu Sans";
+	font-size: calc(var(--font2-size) /1.5);
+	margin-left: 8px;
 	margin-top: 20px;
+}
+
+[class^="sidebar-"] [aria-label*="(voice"] .name-3_Dsmg::before {
+	content: '■';
 }
 
 [class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
@@ -353,7 +362,7 @@ svg[class*="homeIcon-"] path {
 
 [class*="sidebar"]:hover [class*="iconVisibility"],
 [class*="sidebar"]:hover [class*="content-"] {
-	margin-left: 0;
+	margin-left: -4px;
 	padding-left: 2px;
 }
 
@@ -403,8 +412,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class^="sidebar-"] svg[class*="button"],
-[class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"],
-[class^="sidebar-"]:not(:hover) * [class*="content-"]:not([aria-label*="voice channel"]) svg[class^="icon"] {
+[class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"] {
 	visibility: hidden;
 	max-width: 0;
 	padding: 0;
