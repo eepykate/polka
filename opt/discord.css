@@ -329,7 +329,7 @@ svg[class*="homeIcon-"] path {
 	display: inline-block !important;
 }
 
-[class^="sidebar-"]:hover * .name-3_Dsmg::before {
+[class^="sidebar-"] * .name-3_Dsmg::before {
 	display: inline-block !important;
 	content: '●';
 	font-family: "Dejavu Sans";
@@ -340,12 +340,8 @@ svg[class*="homeIcon-"] path {
 }
 
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
-	display: block;
-	content: '●';
-	font-family: "Dejavu Sans";
-	font-size: calc(var(--font2-size) /1.5);
 	margin-left: 8px;
-	margin-top: 20px;
+	vertical-align: -1px;
 }
 
 [class^="sidebar-"] [aria-label*="(voice"] .name-3_Dsmg::before {
