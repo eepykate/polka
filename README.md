@@ -1,7 +1,6 @@
 <div align="center"> <img src="./opt/svg.svg"> </div>
 
-Yep, no dotfiles here. Check out [declutter-home](https://github.com/vizs/declutter-home)
-for more.
+<p align="center">Yep, no dotfiles here. Check out <a href="https://github.com/vizs/declutter-home">declutter-home</a> for more.</p>
 
 <h2 align="center"> Screenshots </h2>
 
