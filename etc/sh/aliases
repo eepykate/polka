@@ -97,7 +97,7 @@ t() {
 : "${EDITOR:=nvim}"
 v() {
 	[[ "$1" =~ .*/.* ]] || local curdir="./"
-	if [ ! "$1" ] || [ -w "$1" ] || [ -w "${1%/*}" ] || [ -w "$curdir" ]; then
+	if [ ! "$1" ] || [[ "$1" =~ 'http.*' ]] || [ -w "$1" ] || [ -w "${1%/*}" ] || [ -w "$curdir" ]; then
 		$EDITOR "$@"
 	else
 		sudo $EDITOR "$@"
