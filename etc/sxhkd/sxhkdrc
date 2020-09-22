@@ -77,7 +77,7 @@ ctrl + alt + {1-9,0}
 #   screenshots
 #
 {_,super} + Print
-	scr {-G$(6r focused),-F}
+	scr {-G$(6r focused -f),-F}
 
 # selection
 {shift + Print, XF86Tools}
@@ -88,7 +88,7 @@ ctrl + alt + {1-9,0}
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/scr/$(ls \
-	-1t $HOME/opt/x/scr/ --ignore old | head -1)
+	-1t $HOME/opt/scr --ignore old | head -1)
 
 super + {Insert, Home, Prior, End}
 	scr {-r,-c -p k,-m s -c,-s}

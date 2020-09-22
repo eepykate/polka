@@ -7,9 +7,9 @@ dots    ~/opt/dots
 wp      ~/src/walls
 fet     ~/src/fetsh
 
-scrs    ~/opt/x/scr
-pics    ~/opt/x/scr
-recs    ~/opt/x/scr
+scrs    ~/opt/scr
+pics    ~/opt/scr
+recs    ~/opt/scr
 
 oth     ~/opt/linux/oth
 sp      ~/etc/startpage

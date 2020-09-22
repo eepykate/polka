@@ -16,8 +16,8 @@ export \
 	EDITOR="nvim" \
 	GNUPGHOME="$HOME/opt" \
 	LESSHISTFILE="/dev/null"  \
-	SCR_DIR="$HOME/opt/x/scr" \
-	REC_DIR="$HOME/opt/x/scr" \
+	SCR_DIR="$HOME/opt/scr" \
+	REC_DIR="$HOME/opt/scr" \
 	XAUTHORITY="/run/user/$UID/xauth" \
 	GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 
