@@ -237,9 +237,6 @@ svg[class*="homeIcon-"] path {
 }
 
 /* focused server */
-[class*="guilds-"]:not(:hover) [class*="blobContainer-"][tabindex="0"] * [class*="numberBadge-"] {
-	display: none !important;
-}
 
 [class*="categorySection"] [class*="header-"], /* emoji list */
 .scroller-2TZvBN {
@@ -282,8 +279,10 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="membersGroup"] {
-	padding-top: 4px;
-	height: 24px;
+	margin-top: 8px;
+	padding-top: 0px;
+	height: 20px;
+	margin-bottom: -4px;
 }
 
 /* channels sidebar */
@@ -393,7 +392,7 @@ svg[class*="homeIcon-"] path {
 	background-color: transparent !important;
 	color: var(--accent) !important;
 	visibility: visible;
-	left: 2px !important;
+	left: -32px !important;
 	top: -6px !important;
 	font-weight: var(--font-weight) !important;
 	font-family: var(--font) !important;
