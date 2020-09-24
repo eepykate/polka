@@ -84,8 +84,8 @@ c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 # open videos/images
 d() {
 	case "$(file -ib "$1")" in
-		*mp4|*mkv|*webm|video*|image/gif*) mpv "$@" &!;;
-		*png|*jpeg|*jpg|image*) im "$@" &!;;
+		*mp4|*mkv|*webm|video*|image/gif*) mpv "$@" & disown;;
+		*png|*jpeg|*jpg|image*) im "$@" & disown;;
 		*) echo "invalid format"; return 1;;
 	esac
 }
@@ -103,7 +103,7 @@ t() {
 
 v() {
 	# edit file based on write perms
-	if [ ! "$1" ] || [ -w "$1" ] || [ -w "$(dirname "$1")" ] || eq "$1" "http*"; then
+	if [ ! "$1" ] || eq "$1" '-*' || [ -w "$1" ] || [ -w "$(dirname "$1")" ] || eq "$1" "http*"; then
 		$EDITOR "$@"
 	else
 		sudo $EDITOR "$@"

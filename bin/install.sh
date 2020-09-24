@@ -91,8 +91,8 @@ git clone https://github.com/BanchouBoo/boox "\$HOME/opt/git/boox"
 	make install
 CMD
 
-_ changing shell to zsh
-chsh -s /bin/zsh "$user"
+#_ changing shell to zsh
+#chsh -s /bin/zsh "$user"
 
 _ getting rid of the annoying beep
 rmmod pcspkr
@@ -136,7 +136,15 @@ sed -i \
 	/etc/systemd/journald.conf
 
 
-printf 'ZDOTDIR=$HOME/etc/sh' > /etc/zsh/zshenv
+#printf 'ZDOTDIR=$HOME/etc/sh' > /etc/zsh/zshenv
+cat << EOF > /etc/bash.bashrc
+export \
+	XDG_DATA_HOME=\$HOME/usr \
+	XDG_CONFIG_HOME=\$HOME/etc \
+	XDG_CACHE_HOME=\$HOME/usr/cache
+
+[ -e "\$XDG_CONFIG_HOME/sh/bashrc" ] && . "\$XDG_CONFIG_HOME/sh/bashrc"
+EOF
 
 sed -i 's/\(.*esound-protocol-unix\)/#\1/g' /etc/pulse/default.pa
 

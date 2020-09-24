@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+#  ~/etc/sh/bashrc
+
+# login shells
+[[ "$0" =~ -.* ]] && . "$XDG_CONFIG_HOME/sh/profile"
+
+. "$XDG_CONFIG_HOME/sh/aliases"
+
+# cd without typing cd
+shopt -s autocd
+
+# lazy git / ls
+bind -x '"\C-j": clear; git status -sb; _prompt'
+bind -x '"\C-k": clear; ls -A; _prompt'
+
+# cycle autocomplete
+bind '"\t":   menu-complete'
+bind '"\e[Z": menu-complete-backward'
+
+# open command in editor
+bind '"\C-f": edit-and-execute-command'
+
+# history
+HISTFILE="$XDG_CONFIG_HOME/sh/bash-history"
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+#
+#  prompt
+#
+
+# readable colours when using the tty, which doesn't have annaisms
+[[ "$TERM" = linux ]] &&
+	accent=$'\033[34m'      accent2=$'\033[31m' ||
+	accent=$'\033[38;5;16m' accent2=$'\033[38;5;17m'
+
+# cute sudo
+export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
+
+# cute cnf
+command_not_found_handle() {
+	printf 'not found: %s%s\033[0m\n' "$accent" "$1" >&2
+	return 127
+}
+
+# main prompt
+PS1='\[$col\] > \[\033[0m\]'
+PROMPT_COMMAND=_prompt
+
+_prompt() {
+	## exit status
+	case $? in
+		0) col=$accent;;
+		*) col=$accent2
+	esac
+
+	## git
+	git=' '
+	timeout 0.04 git rev-parse &>/dev/null && {
+		out=$(git status --porcelain)
+		git='*'
+		[[ "$out" =~ .*^.[M].* ]] && git=$'\e[37m*'
+		[[ "$out" =~ .*^[MA].* ]] && git=$'\e[38;5;16m*'
+	}
+
+	## display dir in top-right
+	eq "$PWD" "$HOME" && v='~' || v=${PWD##*/}
+	op=${OLDPWD##*/}
+
+	# save cursor pos, move cursor to the top-right
+	# then delete the previous contents
+	# then print the new dir and restore cursor pos
+	printf '%b%b%b' \
+		"\033[s\033[0;9999H" \
+		"\033[${#op}D\033[K" \
+		"\033[999C\033[${#v}D${git}${v}\033[u"
+}
