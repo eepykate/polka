@@ -2,6 +2,7 @@
 #  simple script to download from multiple places
 
 fun() {
+	[ "$1" = m ] && return
 	out=${2:-${1##*/}}
 
 	# change filename if already existing
@@ -43,8 +44,8 @@ fun() {
 }
 
 # multiple urls
-if [ "$1" = m ] || [ $# -ge 3 ]; then
-	shift; for i; do fun "${i%/}"; done
-else  # single url
+if [ $# -le 2 ]; then
 	fun "${1%/}" "$2"
+else
+	for i; do fun "$i"; done
 fi
