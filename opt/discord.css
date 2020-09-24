@@ -5,7 +5,7 @@
 
 #app-mount [class*="typing-"] {
 	order: 0;
-	z-index: 999;
+	z-index: 0;
 	top: 0px;
 	margin-top: -12px;
 	background-color: var(--bg1);
