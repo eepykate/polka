@@ -1,9 +1,10 @@
 #  ~/etc/sh/aliases
 
-alias td="transmission-daemon"
-alias sy="systemctl --user"
+command -v shlib >/dev/null && . shlib
 
-# root
+alias td="transmission-daemon"
+
+alias sy="systemctl --user"
 alias ss="sudo systemctl"
 
 # package manager
@@ -17,16 +18,23 @@ alias \
 
 # git
 alias \
-	ga="git add"  \
+	ga="git add"   \
 	gd="git diff"  \
-	gp="git push"   \
-	gs="git status"  \
-	gc="git commit"   \
-	gaa="git add -A"   \
-	gpf="git push -f"   \
-	gcm="git commit -m"  \
-	gds="git diff --staged"  \
+	gr="git reset" \
+	gaa="git add -A"
+
+alias \
+	gc="git commit"    \
+	gcm="git commit -m" \
 	gca="git commit --amend"
+
+alias \
+	gp="git push"  \
+	gpf="git push -f"
+
+alias gds="git diff --staged"
+
+# short and informative git log
 alias gl="git log --all --decorate --oneline --graph"
 
 # standard utils
@@ -75,7 +83,7 @@ c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
 # open videos/images
 d() {
-	case "$(file -ib "$1") $1" in
+	case "$(file -ib "$1")" in
 		*mp4|*mkv|*webm|video*|image/gif*) mpv "$@" &!;;
 		*png|*jpeg|*jpg|image*) im "$@" &!;;
 		*) echo "invalid format"; return 1;;
@@ -93,15 +101,14 @@ t() {
 	fi
 }
 
-# open file depending on if it's owned by root
-: "${EDITOR:=nvim}"
 v() {
-	[[ "$1" =~ .*/.* ]] || local curdir="./"
-	if [ ! "$1" ] || [[ "$1" =~ 'http.*' ]] || [ -w "$1" ] || [ -w "${1%/*}" ] || [ -w "$curdir" ]; then
+	# edit file based on write perms
+	if [ ! "$1" ] || [ -w "$1" ] || [ -w "$(dirname "$1")" ] || eq "$1" "http*"; then
 		$EDITOR "$@"
 	else
 		sudo $EDITOR "$@"
 	fi
+
 	# reset cursor
 	printf '\e[4 q'
 }
@@ -125,7 +132,7 @@ cgif() {
 
 	echo "Generating the gif"
 	ffmpeg -i "$1" -i "/tmp/palette.png" -lavfi "$f [x]; [x][1:v] paletteuse" \
-		-y "${1%.*}.gif" -loglevel error || return $!
+		-y "${1%.*}.gif" -loglevel error
 }
 
 # lower res to 720p
@@ -174,12 +181,10 @@ rand() {
 # preview hex colour
 prev() {
 	[ "$@" ] || { set -- $(cat /dev/stdin); }
-	[ "$n" ] && [ "$n" -le 220 ] || n=30
 	for i; do
-		printf "\033]4;%s;#%s\007" "$n" "$i"
-		printf "\033[38;05;%sm%s\033[0m   \033[48;05;%sm       \033[0m\n" \
-			"$n" "$i" "$n"
-		n=$((n+1))
+		i=${i###}
+		printf "\033[38;2;%s;%s;%sm%s    \033[7m       \033[0m\n" \
+			$(hextorgb $i) "$i"
 	done
 }
 
@@ -188,9 +193,9 @@ prev() {
 #
 
 notthing() {
-	notify-send -u critical -t 99999999 '      urgent      ​'; \
-	notify-send -t 99999999 '      normal      ​'; \
-	notify-send -u low -t 99999999 'low'
+	for i in critical normal low; do
+		notify-send -t 40000 -u "$i"   "  $i  ​"
+	done
 }
 
 # window titles
@@ -202,4 +207,4 @@ notthing() {
 #	printf "\033k %s \033\\" "${a//\"}"
 #}
 
-# vim: ft=bash
+# vim: ft=sh
