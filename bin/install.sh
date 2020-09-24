@@ -138,12 +138,7 @@ sed -i \
 
 #printf 'ZDOTDIR=$HOME/etc/sh' > /etc/zsh/zshenv
 cat << EOF > /etc/bash.bashrc
-export \
-	XDG_DATA_HOME=\$HOME/usr \
-	XDG_CONFIG_HOME=\$HOME/etc \
-	XDG_CACHE_HOME=\$HOME/usr/cache
-
-[ -e "\$XDG_CONFIG_HOME/sh/bashrc" ] && . "\$XDG_CONFIG_HOME/sh/bashrc"
+[ -e "\${XDG_CONFIG_HOME/sh/bashrc:=\$HOME/etc}" ] && . "\$XDG_CONFIG_HOME/sh/bashrc"
 EOF
 
 sed -i 's/\(.*esound-protocol-unix\)/#\1/g' /etc/pulse/default.pa
