@@ -1,7 +1,5 @@
-#
-#   ,=,e
-#   zshrc
-#
+#  ~/etc/sh/zshrc
+
 set -k                     # Allow comments in shell
 setopt auto_cd             # cd by just typing the directory name
 unsetopt flowcontrol       # Disable Ctrl-S + Ctrl-Q
@@ -29,8 +27,9 @@ export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 	PROMPT=' %1~%F{%(?.4.1)} %(!.|./) %f'
 
 #
-#   Keybinds
+#  Keybinds
 #
+
 bindkey '^a'       beginning-of-line      # Ctrl-A
 bindkey '^e'       end-of-line            # Ctrl-E
 bindkey '^[[3~'    delete-char            # Delete
@@ -54,7 +53,7 @@ zle -N cle
 bindkey '^l' cle
 
 # git status on ^j
-kgs() { clear; git status; zle redisplay; }
+kgs() { clear; git status -sb; zle redisplay; }
 zle -N kgs; bindkey ^j kgs
 
 # ls on ^k
@@ -62,8 +61,9 @@ kls() { clear; ls -A; zle redisplay; }
 zle -N kls; bindkey ^k kls
 
 #
-#   History
+#  History
 #
+
 HISTSIZE=999999
 SAVEHIST=999999
 HISTFILE="${ZDOTDIR:-$HOME}/zsh_history"
@@ -72,8 +72,9 @@ setopt hist_ignore_dups   # Ignore duplicated commands history list
 setopt share_history      # Save command history before exiting
 
 #
-#   Autocompletion
+#  Autocompletion
 #
+
 setopt NO_NOMATCH   # disable some globbing
 setopt complete_in_word
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
