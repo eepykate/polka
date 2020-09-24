@@ -5,7 +5,7 @@ for more.
 
 <h2 align="center"> Screenshots </h2>
 
-<h3 align="center"> [bspwm] clean and content </h3>
+<h3 align="center"> [bspwm] calm and content </h3>
 
 ![](https://i.imgur.com/P2SWk4c.png)
 
