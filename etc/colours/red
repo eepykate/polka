@@ -1,0 +1,26 @@
+#   -----
+black=ff8888
+red=ffffff
+yellow=ffffff
+green=ffffff
+cyan=ffffff
+blue=ffffff
+purple=ffffff
+#   -----
+bg0=ff0000
+bg1=ff0000
+bg2=ff0000
+bg3=ff0000
+bg4=ff0000
+#   -----
+fg1=ffffff
+fg2=ffffff
+button=${fg1}20
+disabled=696969
+#   -----
+accent=$blue
+accent2=$purple
+contrast=$bg4
+#   -----
+wall=ff0000
+#   -----
