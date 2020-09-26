@@ -1,0 +1,28 @@
+#!/bin/sh
+
+dewit() {
+	printf '\n\033[34m $ %s \033[0m\n\n' "$*"
+	"$@"
+}
+
+dewit git submodule update --init --recursive
+set -e
+if [ -e "Makefile" ]; then
+	[ "$1" = install ] &&
+		dewit exec sudo make install
+
+	dewit make "$@"
+elif [ -e "meson.build" ]; then
+	[ "$1" = install ] &&
+		dewit exec sudo ninja -C build install
+
+	dewit meson build
+	dewit exec ninja -C build
+elif [ -e "make.sh" ]; then
+	chmod +x make.sh
+	dewit ./make.sh "$@"
+elif [ -e "autogen.sh" ]; then
+	dewit ./autogen.sh
+	dewit ./configure
+	dewit exec make
+fi
