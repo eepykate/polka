@@ -30,6 +30,25 @@
 	margin-left: 23px;
 }
 
+/* when searching */
+[class*="searchResultMessage"][class*="hit-"] .threads-avatar-hack {
+	top: 9px !important;
+}
+
+[class*="channelSeparator-"]::before,
+[class*="searchResult"][class*="expanded-"],
+[class*=".searchResultMessage"] {
+	border: 0px !important;
+}
+
+[class*="searchResults"] [class*="messageGroupCozy"] {
+	padding: 3px;
+	margin-left: 5px;
+	border: 0px solid transparent !important;
+	background-color: var(--bg3);
+}
+
+
 /* simple edit indicator */
 #app-mount [class^="edited-"] {
 	font-size: 0px !important;
@@ -599,7 +618,7 @@ svg[class*="homeIcon-"] path {
 	background-color: var(--bg3) !important;
 }
 
-[class*="selectorSelected"] {
+[class*="autocomplete-"] [class*="selected"] {
 	background-color: var(--bg1) !important;
 }
 
