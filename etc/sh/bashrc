@@ -13,6 +13,10 @@ shopt -s autocd
 bind -x '"\C-j": clear; git status -sb; _prompt'
 bind -x '"\C-k": clear; ls -A; _prompt'
 
+# non-greedy ^w
+stty werase undef
+bind '"\C-w": unix-filename-rubout'
+
 # cycle autocomplete
 bind '"\t":   menu-complete'
 bind '"\e[Z": menu-complete-backward'
@@ -44,7 +48,7 @@ command_not_found_handle() {
 }
 
 # main prompt
-PS1='\[$col\] > \[\033[0m\]'
+PS1='\[\033[0m\]\[$col\] > \[\033[0m\]'
 PROMPT_COMMAND=_prompt
 
 _prompt() {
