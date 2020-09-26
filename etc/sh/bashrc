@@ -10,7 +10,7 @@
 shopt -s autocd
 
 # lazy git / ls
-bind -x '"\C-j": clear; git status -sb; _prompt'
+bind -x '"\C-n": clear; git status -sb; _prompt'
 bind -x '"\C-k": clear; ls -A; _prompt'
 
 # non-greedy ^w
