@@ -8,7 +8,7 @@ Xft.hintstyle: hintfull
 !  URxvt
 !
 
-URxvt.letterSpace: -1
+!URxvt.letterSpace: -1
 URxvt.internalBorder: 30
 
 ! underline cursor
