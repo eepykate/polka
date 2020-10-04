@@ -1,3 +1,9 @@
+* {
+	font: var(--font2-weight) var(--font2);
+	font-size: var(--font2-size);
+	outline: none;
+}
+
 #guser a,
 #guser nobr a,
 * {
@@ -97,7 +103,8 @@ table.th > tbody > tr > td:first-of-type input:checked {
 	background: var(--bg4) !important;
 	z-index: 90 !important;
 	opacity: 1;
-	-moz-appearance:none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
 table.th > tbody > tr > td:first-of-type input {
@@ -133,4 +140,3 @@ table.th + table,
 table.ft {
 	display: none;
 }
-
