@@ -27,6 +27,7 @@ fun() {
 
 		# git repos
 		*.git|*github.com*|*gitlab*) git clone "$1" $2;;
+		[a-zA-Z0-9_]*/*[a-zA-Z0-9_]) git clone "https://github.com/${1##http*://}" $2;;
 
 		# youtube
 		*youtu.be*|*youtube.com*) youtube-dl "$1" \

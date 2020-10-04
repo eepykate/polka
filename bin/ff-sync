@@ -1,4 +1,5 @@
 #!/bin/sh -e
+exit
 
 date -Im | tr 'T' ' ' >> /tmp/ff-log
 

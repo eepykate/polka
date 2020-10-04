@@ -1,4 +1,4 @@
-html {
+body {
 	font: var(--font-weight) var(--font-size) var(--font);
 	background: var(--bg1);
 	/* align to center */
@@ -8,8 +8,8 @@ html {
 	justify-content: center;
 }
 
-body {
-	margin-bottom: -10px;
+nobody {
+	margin-top: -10px;
 	/* flow horizontally */
 	display: flex;
 }

@@ -81,13 +81,21 @@ bk() { tar -I zstd -cvf "${1%/}_$(date -Id).tar.zst" "$1"; }
 alias e="atool -x"
 c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
-# open videos/images
 d() {
-	case "$(file -ib "$1")" in
-		*mp4|*mkv|*webm|video*|image/gif*) mpv "$@" & disown;;
-		*png|*jpeg|*jpg|image*) im "$@" & disown;;
-		*) echo "invalid format"; return 1;;
-	esac
+	unset asda
+	for i in "$*" "$*"* *"$*" *"$*"*; do
+		[[ -e "$i" ]] || continue
+		case $(file -ib "$i") in
+			video*|image/gif*) mpv "$i";;
+			inode/dir*) cd "$i";;
+			image*) im "$i";;
+			text*) cat "$i";;
+			*) return 1;;
+		esac
+		act=nonzero
+		break
+	done
+	[ "$act" ] || return 1
 }
 
 # quickly view contents of file based on term height
@@ -138,6 +146,7 @@ cgif() {
 # lower res to 720p
 c720() {
 	ffmpeg -y -i "$1" -b:v 4M \
+		-r 30 \
 		-c:v h264_nvenc    \
 		-vf "scale=1280:-1" \
 	  "${1%.*}-720.mp4"

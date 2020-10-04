@@ -27,8 +27,8 @@ bind '"\C-f": edit-and-execute-command'
 
 # history
 HISTFILE="$XDG_CONFIG_HOME/sh/bash-history"
-HISTSIZE=9999999
-HISTFILESIZE=9999999
+HISTSIZE=
+HISTFILESIZE=
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
@@ -46,6 +46,7 @@ export SUDO_PROMPT=$'pass for\033[38;05;16m %u\033[0m '
 
 # cute cnf
 command_not_found_handle() {
+	d "$@" && return
 	printf 'not found: %s%s\033[0m\n' "$bash_shell_accent" "$1" >&2
 	return 127
 }

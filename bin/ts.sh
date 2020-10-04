@@ -163,9 +163,10 @@ echo " - gtk [phocus]"
 cd ~/src/phocus && {
 	cat << EOF > scss/gtk-3.0/_colors.scss
 \$background-1: #$bg1;
-\$background-2: #$bg2;
-\$background-3: #$bg3;
+\$background-2: #$bg3;
+\$background-3: #$bg1;
 
+\$contrast: #$contrast;
 \$accent-1: #$red;
 \$accent-2: #$yellow;
 \$accent-3: #$yellow;

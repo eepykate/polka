@@ -1,6 +1,7 @@
 #!/bin/sh
 #  upload file to 0x0.st
 unset type
+[ -L "$1" ] && set -- "$(readlink "$1")"
 case $(file -ib "${1:-}") in
 	*x-shellscript*) type=';type=text/plain'
 esac

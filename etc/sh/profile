@@ -3,42 +3,58 @@
 #
 
 export \
-	XDG_CRAP_DIR="$HOME/opt"  \
-	XDG_DATA_HOME="$HOME/usr"  \
-	XDG_CONFIG_HOME="$HOME/etc" \
-	XDG_CACHE_HOME="$HOME/usr/cache"
-
-systemctl --user import-environment \
-	XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME
+	null="/dev/null" \
+	opt="$HOME/opt"  \
+	data="$HOME/usr" \
+	conf="$HOME/etc" \
+	cache="$HOME/usr/cache"
 
 export \
-	MANGOHUD=1 \
+	XDG_DATA_HOME="$data"   \
+	XDG_CACHE_HOME="$cache" \
+	XDG_CONFIG_HOME="$conf"
+
+# garbage dotfile apps
+export \
+	GOPATH="$cache/go"   \
+	LESSHISTFILE="$null" \
+	XAUTHORITY="$cache/xauth"  \
+	GNUPGHOME="$opt/apps/gpg" \
+	WEECHAT_HOME="$conf/weechat"  \
+	GTK2_RC_FILES="$conf/gtk-2.0/gtkrc-2.0"
+
+# user
+export \
+	MANGOHUD=1  \
 	EDITOR="nvim" \
-	GNUPGHOME="$HOME/opt" \
-	SCR_DIR="$HOME/opt/scr" \
-	REC_DIR="$HOME/opt/scr"  \
-	LESSHISTFILE="/dev/null"  \
-	WEECHAT_HOME="$HOME/etc/weechat" \
-	XAUTHORITY="/run/user/$UID/xauth" \
-	GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
+	SCR_DIR="$opt/scr" \
+	REC_DIR="$opt/scr"
+
+export \
+	PAGER="nvim -R" \
+	MANPAGER="nvim -c 'set ft=man' -"
+
+export PATH="$(find ~/bin -type d | tr '\n' ':')$PATH"
 
 # disable dbind accessibility bus warning - https://unix.stackexchange.com/a/532589
 export NO_AT_BRIDGE=1
 
-export \
-	PAGER='nvim -R' \
-	MANPAGER='nvim -c "set ft=man" -'
+# colours lol
+ls="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31:*.css=32"
+lstar="*.gz=31:*.tar=31:*.xz=31:*.zip=31:*.zst=31"
+lsimg="*.gif=34:*.jpeg=34:*.jpg=34:*.png=34:*.webp=34"
+lsvid="*.avi=35:*.mkv=35:*.mp4=35:*.webm=35"
+
+export LS_COLORS="$ls:$lstar:$lsimg:$lsvid"
 
 # nix lol
 . "$HOME/opt/.nix-profile/etc/profile.d/nix.sh"
 
-# colours lol
-export LS_COLORS="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31"\
-":*.css=32:*.tar=31:*.gz=31:*.xz=31:*.zip=31:*.mp4=34:*.webm=34:*.png=36:"
+star() { { "$@"; } >$null 2>&1 & }
+systemctl --user import-environment data cache conf
+star kiwmi  # (https://github.com/buffet/kiwmi)
+star rmd
+star shortcuts
+star sudo kbdrate -d 200 -r 60
 
-export PATH="$(find ~/bin -type d | tr '\n' ':')$PATH"
-
-( rmd |: & )
-( shortcuts |: & )
-( ff-sync main |: & )
-( sudo /usr/bin/kbdrate -d 200 -r 60 |: & )
+# vim: ft=sh

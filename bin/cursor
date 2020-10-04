@@ -1,4 +1,5 @@
 #!/bin/sh -e
+exit
 #  move cursor to focused window
 
 # pipe then read for clean variable names

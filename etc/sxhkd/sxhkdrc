@@ -11,7 +11,7 @@ super + Return
 #	draw
 
 super + v
-	firefox 0.0.0.0:9091
+	chromium 0.0.0.0:9091
 
 super + slash
 	dms ~/opt/scs
@@ -26,10 +26,7 @@ super + u
 	copy
 
 super + f
-	firefox
-
-ctrl + alt + f
-	firefox --private-window
+	chromium
 
 
 # power menu
@@ -77,11 +74,11 @@ ctrl + alt + {1-9,0}
 #   screenshots
 #
 {_,super} + Print
-	scr {-G$(6r focused -f),-F}
+	scr {-G$(6r f -f),-F}
 
 # selection
 {shift + Print, XF86Tools}
-	scr -S
+	freeze & scr -S; pkill -f freeze
 #	freeze & \
 #	scr -S; \
 #	pkill -f '[ /]freeze'
@@ -123,9 +120,19 @@ ctrl + alt + t
 #	pactl set-source-mute Loopback_of_Mumble.monitor {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
 #XF86Launch5
 #	pactl set-source-mute VirtualMic {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
+#
+super + g
+	pkill -x ydotool
 
 super + Prior
 	portal
 
 XF86Launch5
-	tm      # toggle mic
+	ydotool click 2; \
+	ydotool mousemove 1098 87 & sleep 0.05; ydotool click 1 & \
+	sleep 0.06; ydotool mousemove 1098 100 & sleep 0.05; ydotool click 1
+	#tm
+	#ydotool mousemove 1234 196; ydotool click 1
+	#tm      # toggle mic
+	#clicker
+	#xdotool mousemove 2280 205; sleep 0.2; xdotool click --clearmodifiers 1
