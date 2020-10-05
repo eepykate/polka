@@ -1,6 +1,6 @@
 * {
-	font: var(--font2-weight) var(--font2);
-	font-size: var(--font2-size);
+	font-family: var(--font2);
+	font-size: var(--font2-size) !important;
 	outline: none;
 }
 
