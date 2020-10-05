@@ -83,6 +83,7 @@ c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
 d() {
 	unset asda
+	shopt -s nocaseglob
 	for i in "$*" "$*"* *"$*" *"$*"*; do
 		[[ -e "$i" ]] || continue
 		case $(file -ib "$i") in
