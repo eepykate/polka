@@ -1,3 +1,8 @@
+/* rm scrollbar */
+*::-webkit-scrollbar {
+	width: 0 !important;
+}
+
 /* move typing indicator above textbox */
 [class*="chatContent-"] > [class*="form-"] {
 	display: flex !important;
@@ -20,7 +25,7 @@
 
 .threads-avatar-hack {
 	left: 6px;
-	top: 0;
+	top: -3px;
 	width: 20px;
 	height: 20px;
 	border-radius: 6px;
@@ -233,6 +238,8 @@ svg[class*="homeIcon-"] path {
  * collapsed sidebar
  */
 
+@media (max-width: 1100px) {
+
 /* servers */
 [class*="guilds-"] {
 	margin-left: -60px;
@@ -338,35 +345,22 @@ svg[class*="homeIcon-"] path {
 [id^="private-channels-"] {
 	max-height: 30px !important;
 }
-
-/* make smol */
-[class*="containerDefault-"] {
-	padding-top: 0;
-}
+	
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
 	font-size: 0px !important;
 	display: inline-block !important;
 }
-
-[class^="sidebar-"] * .name-3_Dsmg::before {
-	display: inline-block !important;
-	content: '●';
-	font-family: "Dejavu Sans";
-	font-size: calc(var(--font2-size) /1.5);
-	margin-right: 7px;
-	margin-left: 6px;
-	vertical-align: 2px;
-}
-
 [class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
 	margin-left: 8px;
 	vertical-align: -1px;
 }
-
-[class^="sidebar-"] [aria-label*="(voice"] .name-3_Dsmg::before {
-	content: '■';
+[class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
+	font-family: var(--font);
+	font-weight: var(--font-weight);
+	margin-left: 29px;
+	margin-top: 6px;
+	content: '-'
 }
-
 [class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
 	font-family: var(--font);
 	font-weight: var(--font-weight);
@@ -380,35 +374,11 @@ svg[class*="homeIcon-"] path {
 	margin-left: -4px;
 	padding-left: 2px;
 }
-
-[class*="iconVisibility-"] [id] {
-	margin-left: 5px;
-	min-width: 50px !important;
-}
-
-[class*="mainContent-"] [class*="icon"] {
-	display: none;
-}
-
-[class*="containerDefault-"] > [class*="list"] > *,
-[class*="containerDefault-"] > div:not([class*="list"]),
-[class*="containerDefault-"] [class*="content-"],
-[class*="mainContent-"] {
-	max-height: 27px;
-	background-color: transparent !important;
-}
-
 [class*="sidebar"]:not(:hover) [class*="avatarContainer-"] {
 	margin-left: 18px;
 }
 
-[class*="sidebar"] [class*="avatarContainer-"] {
-	margin-left: -10px;
-	width: 20px;
-	height: 20px;
-}
-
-[class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
+  [class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
 	background-color: transparent !important;
 	color: var(--accent) !important;
 	visibility: visible;
@@ -417,11 +387,7 @@ svg[class*="homeIcon-"] path {
 	font-weight: var(--font-weight) !important;
 	font-family: var(--font) !important;
 }
-
-[id^='members-'] * [class*="content"] {
-	margin-left: 20px;
-}
-
+  
 [class^="sidebar-"]:not(:hover) > section > div {
 	display: none;
 }
@@ -433,11 +399,6 @@ svg[class*="homeIcon-"] path {
 	padding: 0;
 	margin: 0;
 }
-
-[class*="modeSelected-"] [class*="name-"] {
-	color: var(--accent);
-}
-
 /* fix channel icon widths */
 [class^="sidebar-"]:not(:hover) * [class^="content-"] {
 	width: 35px !important;
@@ -448,12 +409,6 @@ svg[class*="homeIcon-"] path {
 	width: 25px;
 	padding-left: 3px;
 }
-
-/* expand on hover */
-[class*="content-"] > [class*="sidebar-"]:hover {
-	left: 0;
-}
-
 /* fix alignment of channel icons when collapsed */
 .sidebar-2K8pFh:not(:hover) * [class*="containerDefault"]:not([role]) {
 	position: relative;
@@ -473,8 +428,6 @@ svg[class*="homeIcon-"] path {
 	position: relative;
 	left: -30px;
 }
-
-
 /* hide text when collapsed */
 /*[class^="sidebar-"]:not(:hover) * [class*="children-"],
 [class^="sidebar-"]:not(:hover) * [class^="name-"] */
@@ -482,6 +435,76 @@ svg[class*="homeIcon-"] path {
 [class^="sidebar-"]:not(:hover) * [class*="container-"][class*="name-"] {
 	display: none !important;
 }
+[id^='members-'] * [class*="content"] {
+	margin-left: 20px;
+}
+}
+
+[class*="containerDefault-"]:not(:hover) [class*="children-"] > [class*="iconItem-"] {
+	display: none !important;
+}
+
+
+
+/* make smol */
+[class*="containerDefault-"] {
+	padding-top: 0;
+}
+
+[class^="sidebar-"] * .name-3_Dsmg::before {
+	display: inline-block !important;
+	content: '●';
+	font-family: "Dejavu Sans";
+	font-size: calc(var(--font2-size) /1.5);
+	margin-right: 7px;
+	margin-left: 6px;
+	vertical-align: 2px;
+}
+
+
+[class^="sidebar-"] [aria-label*="(voice"] .name-3_Dsmg::before {
+	content: '■';
+}
+
+
+
+[class*="iconVisibility-"] [id] {
+	margin-left: 5px;
+	min-width: 50px !important;
+}
+
+[class*="mainContent-"] [class*="icon"] {
+	display: none;
+}
+
+[class*="containerDefault-"] > [class*="list"] > *,
+[class*="containerDefault-"] > div:not([class*="list"]),
+[class*="containerDefault-"] [class*="content-"],
+[class*="mainContent-"] {
+	max-height: 27px;
+	background-color: transparent !important;
+}
+
+
+[class*="sidebar"] [class*="avatarContainer-"] {
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+}
+
+
+[class*="modeSelected-"] [class*="name-"] {
+	color: var(--accent);
+}
+
+
+/* expand on hover */
+[class*="content-"] > [class*="sidebar-"]:hover {
+	left: 0;
+}
+
+
+
 
 /* bring sidebar above top bar */
 [class^="sidebar-"] {
@@ -539,7 +562,6 @@ svg[class*="homeIcon-"] path {
 }
 
 
-
 [class*="message-"]:hover {
 	background-color: var(--bg3)
 }
@@ -554,10 +576,10 @@ svg[class*="homeIcon-"] path {
 	--elevation-low: none !important;
 	--text-normal:  var(--fg1);
 	--text-muted:   var(--black);
-	--text-link:    var(--accent);
-	--header-secondary:    var(--fg2);
-	--header-primary:      var(--fg1);
-	--channels-default:    var(--fg1);
+	--text-link:	var(--accent);
+	--header-secondary:	var(--fg2);
+	--header-primary:	  var(--fg1);
+	--channels-default:	var(--fg1);
 	--interactive-normal:  var(--fg2);
 	--interactive-hover:   var(--fg1);
 	--interactive-active:  var(--fg1);
@@ -565,17 +587,17 @@ svg[class*="homeIcon-"] path {
 	--background-primary: transparent;
 	--background-secondary: var(--bg3);
 	--background-tertiary:  var(--bg1);
-	--background-accent:    var(--accent);
+	--background-accent:	var(--accent);
 	--background-floating:  var(--bg1);
-	--background-secondary-alt:     var(--bg3);
-	--background-modifier-hover:    var(--bg2);
+	--background-secondary-alt:	 var(--bg3);
+	--background-modifier-hover:	var(--bg2);
 	--background-modifier-active:   var(--bg0);
 	--background-modifier-accent:   var(--bg0);
 	--channeltextarea-background:   var(--bg1);
-	--activity-card-background:     var(--bg2);
+	--activity-card-background:	 var(--bg2);
 	--deprecated-panel-background:  var(--bg3);
 	--background-modifier-selected: transparent;
-	--background-message-hover:     var(--bg3) !important;
+	--background-message-hover:	 var(--bg3) !important;
 	--elevation-high: 0 8px 16px rgba(0,0,0,0.24);
 	--guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 }
