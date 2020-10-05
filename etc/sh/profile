@@ -42,8 +42,8 @@ export NO_AT_BRIDGE=1
 # colours lol
 ls="di=35:ln=36:pi=42:ex=33:tw=0:ow=0:st=0:*.md=31:*.css=32"
 lstar="*.gz=31:*.tar=31:*.xz=31:*.zip=31:*.zst=31"
-lsimg="*.gif=34:*.jpeg=34:*.jpg=34:*.png=34:*.webp=34"
-lsvid="*.avi=35:*.mkv=35:*.mp4=35:*.webm=35"
+lsimg="*.gif=36:*.jpeg=36:*.jpg=36:*.png=36:*.webp=36"
+lsvid="*.avi=34:*.mkv=34:*.mp4=34:*.webm=34"
 
 export LS_COLORS="$ls:$lstar:$lsimg:$lsvid"
 
