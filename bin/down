@@ -14,11 +14,18 @@ fun() {
 	# print url
 	printf '\n%b\n' "\033[35m${1#http*://}\033[0m"
 
+	# shorthand git
+	v=//${1#*/}
+	v=${v%/*}
+	[ "$v" = / ] && { git clone "https://github.com/$1" $2; return; }
+
 	# add missing https
 	case $1 in
 		http*) ;;
 		*) set -- "https://$1" "$2"
 	esac
+
+
 
 	case $1 in
 		# individual file github urls
@@ -27,7 +34,6 @@ fun() {
 
 		# git repos
 		*.git|*github.com*|*gitlab*) git clone "$1" $2;;
-		[a-zA-Z0-9_]*/*[a-zA-Z0-9_]) git clone "https://github.com/${1##http*://}" $2;;
 
 		# youtube
 		*youtu.be*|*youtube.com*) youtube-dl "$1" \
