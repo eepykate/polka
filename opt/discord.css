@@ -379,7 +379,7 @@ svg[class*="homeIcon-"] path {
 	margin-left: 18px;
 }
 
-  [class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
+[class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
 	background-color: transparent !important;
 	color: var(--accent) !important;
 	visibility: visible;
@@ -523,7 +523,7 @@ svg[class*="homeIcon-"] path {
 
 [class^="sidebar-"]:not(:hover) * [class^="numberBadge-"] {
 	position: relative;
-	left: -24px;
+	left: 0px;
 	top: -3px;
 }
 
