@@ -23,7 +23,8 @@
 	padding-right: 10px !important;
 }
 
-.threads-avatar-hack {
+[class*="zalgo-"] > [class*="contents-"] > img:first-of-type,
+[class*="message-"] [class*="avatar-"] {
 	left: 6px;
 	top: -3px;
 	width: 20px;
@@ -31,14 +32,14 @@
 	border-radius: 6px;
 }
 
-.threads-header-hack {
+[class*="header-"] [class*="username-"] {
 	margin-left: 23px;
 }
 
 /* when searching */
-#pinned-messages .threads-avatar-hack,
-[class*="searchResultMessage"][class*="hit-"] .threads-avatar-hack {
-	top: 9px !important;
+[id*="pinned-message"] > [class*="contents-"] > img:first-of-type,
+[class*="hit-"] > * > [class*="contents-"] > img:first-of-type {
+	top: 8px !important;
 }
 
 [class*="channelSeparator-"]::before,
@@ -576,10 +577,10 @@ svg[class*="homeIcon-"] path {
 	--elevation-low: none !important;
 	--text-normal:  var(--fg1);
 	--text-muted:   var(--black);
-	--text-link:	var(--accent);
-	--header-secondary:	var(--fg2);
-	--header-primary:	  var(--fg1);
-	--channels-default:	var(--fg1);
+	--text-link:    var(--accent);
+	--header-secondary:    var(--fg2);
+	--header-primary:      var(--fg1);
+	--channels-default:    var(--fg1);
 	--interactive-normal:  var(--fg2);
 	--interactive-hover:   var(--fg1);
 	--interactive-active:  var(--fg1);
@@ -587,17 +588,17 @@ svg[class*="homeIcon-"] path {
 	--background-primary: transparent;
 	--background-secondary: var(--bg3);
 	--background-tertiary:  var(--bg1);
-	--background-accent:	var(--accent);
+	--background-accent:    var(--accent);
 	--background-floating:  var(--bg1);
-	--background-secondary-alt:	 var(--bg3);
-	--background-modifier-hover:	var(--bg2);
+	--background-secondary-alt:     var(--bg3);
+	--background-modifier-hover:    var(--bg2);
 	--background-modifier-active:   var(--bg0);
 	--background-modifier-accent:   var(--bg0);
 	--channeltextarea-background:   var(--bg1);
-	--activity-card-background:	 var(--bg2);
+	--activity-card-background:     var(--bg2);
 	--deprecated-panel-background:  var(--bg3);
 	--background-modifier-selected: transparent;
-	--background-message-hover:	 var(--bg3) !important;
+	--background-message-hover:     var(--bg3) !important;
 	--elevation-high: 0 8px 16px rgba(0,0,0,0.24);
 	--guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
 }
