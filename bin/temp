@@ -1,5 +1,5 @@
 #!/bin/sh
-#  make a tmp dir
+#  make a temp dir
 
 trap 'rm -rf "$dir"' INT HUP TERM EXIT
 dir="${XDG_CACHE_HOME:=$HOME/.cache}/tmp-$$"
@@ -9,7 +9,7 @@ cd "$dir"
 
 HOME=$dir \
 	XDG_DATA_HOME=$dir/usr \
-	XDG_CACHE_HOME=$dir/var \
 	XDG_CONFIG_HOME=$dir/etc \
+	XDG_CACHE_HOME=$dir/usr/cache \
 	_JAVA_OPTIONS=-Duser.home=$dir \
 	$SHELL
