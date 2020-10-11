@@ -50,7 +50,7 @@ export LS_COLORS="$ls:$lstar:$lsimg:$lsvid"
 # nix lol
 . "$HOME/opt/.nix-profile/etc/profile.d/nix.sh"
 
-star() { { "$@"; } >$null 2>&1 & }
+star() { ( "$@" & ) &>$null; }
 systemctl --user import-environment data cache conf
 star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
