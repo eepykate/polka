@@ -7,9 +7,5 @@ dir="${XDG_CACHE_HOME:=$HOME/.cache}/tmp-$$"
 mkdir -p "$dir"
 cd "$dir"
 
-HOME=$dir \
-	XDG_DATA_HOME=$dir/usr \
-	XDG_CONFIG_HOME=$dir/etc \
-	XDG_CACHE_HOME=$dir/usr/cache \
-	_JAVA_OPTIONS=-Duser.home=$dir \
+_JAVA_OPTIONS=-Duser.home=$dir \
 	$SHELL
