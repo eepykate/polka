@@ -276,7 +276,7 @@ svg[class*="homeIcon-"] path {
 }
 
 /* server ping */
-[class*="guilds"]:not(:hover) * [class*="lowerBadge"] > div {
+[class*="guilds"]:not(:hover) [class*="blobContainer"]:not([tabindex="0"]) [class*="lowerBadge"] > div {
 	background-color: var(--red) !important;
 	width: 50px;
 	margin-right: -4px;
