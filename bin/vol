@@ -11,31 +11,32 @@
 # use gdbus to replace notifications
 # notify <id of notif> <header> <body>
 # body is optional
+
 notify() {
 	gdbus call -e -d "org.freedesktop.Notifications" \
 		-o /org/freedesktop/Notifications \
 		-m org.freedesktop.Notifications.Notify "" \
-		"$1" "" "$2" "$3" "[]" "{}" 5000 |:
+		"$1" "" "$2" "$3" "[]" "{}" 5000 >$n 2>&1
 }
 
 playerctl() {
+	# playerctl sometimes runs and hangs, so set a timeout then kill it
 	command playerctl "$@" &
 	{
 		pid=$!
 		sleep 1; kill $pid
-	} |: &
+	} >$n 2>&1 &
 }
 
-mute() {
-	# if a command isn't specified toggle mute
-	if [ -z "$1" ]; then
-		amixer -D pulse get Master | grep -qio "off" &&
-			action="unmute" || action="mute"
-	else
-		action="$1"
-	fi
+n=/dev/null
 
-	amixer -D pulse set Master "$action" |:
+mute() {
+	action="$1"
+	# if a command isn't specified toggle mute
+	[ ! "$1" ] && amixer -D pulse get Master | grep -qio off &&
+		action=unmute || action=mute
+
+	amixer -D pulse set Master "$action" >$n 2>&1
 	notif="vol ${action}d"
 }
 
@@ -52,21 +53,24 @@ volume() {
 	current=${amixer##*[0-9] \[}
 	current=${current%%%*}
 	mute=${amixer##*\[}
-	[ "$1" = get ] && [ "$mute" != 'on]' ] && printf '%s\n' "$current [muted]" && exit
-	[ "$1" = get ] && printf '%s\n' "$current" && exit
+
+	[ "$1" = get ] && {
+		[ "$mute" != 'on]' ] && exec printf '%s\n' "$current [muted]"
+		exec printf '%s\n' "$current"
+	}
 
 	# default modifier (5%)
-	[ "$2" ] && number="$2" || number="5"
+	number=${2:-5}
 
 	# calculate the new volume
 	[ "$1" =  up  ] && number="$((current + number))"
 	[ "$1" = down ] && number="$((current - number))"
 
 	# handling of invalid numbers
-	[ "$number" -lt  '0'  ] && number="0"
-	[ "$number" -gt '100' ] && number="100"
+	[ "$number" -lt  0  ] && number=0
+	[ "$number" -gt 100 ] && number=100
 
-	amixer -D pulse set Master "$number%" |:
+	amixer -D pulse set Master "$number%" >$n 2>&1
 
 	notif="vol set to $number"
 }
@@ -81,7 +85,7 @@ media() {
 	action="$1"
 
 	# toggle play/pause
-	[ "$1" = p ] && action="play-pause" && act="toggled pause on"
+	[ "$1" = p ] && action=play-pause && act="toggled pause on"
 
 	playerctl -p "$player" "$action"
 	notif="$act $(playerctl -p "$player" metadata xesam:title)"
@@ -96,14 +100,12 @@ case $1 in
 	mw) mute_window;;
 
 	# volume
-	get)
-		volume get
-	;;
+	up|down) volume $1 $2;;
+	get) volume get;;
 	set)
-		[ "$2" ] || { echo "option set requires a number"; exit 1; }
+		[ "$2" ] || { echo "option 'set' requires a number"; exit 1; }
 		volume set "$2"
 	;;
-	up|down) volume $1 $2;;
 
 	# media
 	p|pause|play|stop) media $1;;
