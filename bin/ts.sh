@@ -124,17 +124,22 @@ sed --follow-symlinks -i  \
 
 echo " - dunst"
 var="$(sed --follow-symlinks \
-	-e "s/foreground.*/foreground          = \"#${fg1}cf\"/" \
-	-e "s/background.*/background          = \"#$bg1\"/" \
-	-e "s/frame_color.*/frame_color         = \"#$bg3\"/" \
+	-e "s/\(foreground.*\)=/\1= \"#${fg1}cf\"/" \
+	-e "s/\(background.*\)=/\1= \"#$bg1\"/" \
+	-e "s/\(frame_color.*\)=/\1= \"#$bg3\"/" \
 	"$c/dunst/dunstrc")"
 
 printf '%s\n' "$var" | while IFS='' read -r l; do
 	case $l in
 		*font*=*) l="${l%%=*}= $font $fontweight ${fontsize}px";;
+		"[mike]") mike=H;;
+		"[mic]") mic=H;;
 		"[urgency_low]") low=H;;
 		"[urgency_critical]") crit=H;;
 		\[*) low=; crit=;;
+		*background*)
+			[ "$mike" ] && l="${l%%#*}#$blue\"" && unset mike
+			[ "$mic" ] && l="${l%%#*}#$red\"" && unset mic;;
 		*foreground*)
 			[ "$crit" ] && l="${l%%#*}#$fg1\""
 			[ "$low"  ] && l="${l%%#*}#${fg2}bb\""

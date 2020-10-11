@@ -20,4 +20,5 @@ esac
 echo "$a" > /tmp/mic
 pactl set-sink-input-mute "$input" "$a"
 
-notify-send -t 600 "$b"
+[ "$b" = sa ] && exec dunstify -r 20 -t 800 'tm' "$b"
+exec dunstify -r 20 -t 6666 'tm' "$b"
