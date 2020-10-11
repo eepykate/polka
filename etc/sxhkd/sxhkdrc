@@ -100,6 +100,9 @@ XF86Audio{Prev,Next,Play,Stop,Mute}
 XF86Audio{Raise,Lower}Volume
 	vol {up,down}
 
+shift + XF86Audio{Raise,Lower}Volume
+	vol {up,down} 1
+
 super + {p, Tab}
 	vol {p, mw}
 
