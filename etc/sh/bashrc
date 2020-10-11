@@ -6,12 +6,14 @@
 
 . "$XDG_CONFIG_HOME/sh/aliases"
 
+stty -ixon
+
 # cd without typing cd
 shopt -s autocd
 
 # lazy git / ls
-bind -x '"\C-n": clear; git status -sb; _prompt'
-bind -x '"\C-k": clear; ls -A; _prompt'
+bind -x '"\C-n": clear; git status -sb'
+bind -x '"\C-k": clear; ls -A'
 
 # non-greedy ^w
 stty werase undef
@@ -61,6 +63,8 @@ _prompt() {
 		0) bash_shell_col=$bash_shell_accent;;
 		*) bash_shell_col=$bash_shell_accent2
 	esac
+
+	stty echo
 
 	## git
 	git=' '
