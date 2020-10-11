@@ -16,7 +16,7 @@ _firefox()   { HOME="$HOME/etc" exec firefox "$@"; }
 
 # make the symlinks
 [ "$1" = deploy ] && {
-	for i in apt boox firefox go minecraft steam; do
+	for i in apt boox firefox go minecraft steam nix-shell; do
 		ln -s wrap "${0%/*}/$i"
 	done
 	exit 0

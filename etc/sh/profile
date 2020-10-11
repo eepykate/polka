@@ -34,8 +34,6 @@ export \
 	PAGER="nvim -R" \
 	MANPAGER="nvim -c 'set ft=man' -"
 
-export PATH="$(find ~/bin -type d | tr '\n' ':')$PATH"
-
 # disable dbind accessibility bus warning - https://unix.stackexchange.com/a/532589
 export NO_AT_BRIDGE=1
 
@@ -49,6 +47,7 @@ export LS_COLORS="$ls:$lstar:$lsimg:$lsvid"
 
 # nix lol
 . "$HOME/opt/.nix-profile/etc/profile.d/nix.sh"
+export PATH="$(find ~/bin -type d | tr '\n' ':')$PATH"
 
 star() { ( "$@" & ) &>$null; }
 systemctl --user import-environment data cache conf

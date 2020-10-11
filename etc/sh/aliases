@@ -14,7 +14,8 @@ alias \
 	r="cpm r"  \
 	s="cpm s"  \
 	in="cpm I" \
-	up="cpm U"
+	up="cpm U" \
+	ni="nix-env -iA"
 
 # git
 alias \
