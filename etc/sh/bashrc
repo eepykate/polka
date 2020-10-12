@@ -7,6 +7,7 @@
 . "$XDG_CONFIG_HOME/sh/aliases"
 
 stty -ixon
+shopt -s extglob
 
 # cd without typing cd
 shopt -s autocd
