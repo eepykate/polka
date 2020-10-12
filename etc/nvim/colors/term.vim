@@ -17,6 +17,7 @@ hi netrwClassify ctermfg=8
 " bars
 hi LineNr       ctermfg=8
 hi StatusLine   ctermfg=15
+hi VertSplit    ctermbg=8 ctermfg=0
 
 " selected line/column
 hi StatusLineNC ctermfg=15
