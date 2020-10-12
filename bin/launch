@@ -1,7 +1,9 @@
 #!/bin/sh
 
-IFS=:
+TERM='' IFS=:
 set -- $PATH
 
+# final pipe to cat is so the script/command doesn't think it's being ran in a terminal
+
 find "$@" -type f,l -printf '%f\n' -executable \
-	| sort | uniq | menu | sh &
+	| sort | uniq | menu | sh | cat &

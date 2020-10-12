@@ -13,9 +13,10 @@ while [ "$1" ]; do
 	shift
 done
 
-args="--cycle --pointer=' ' --no-info --reverse"
+args="--cycle --pointer=' ' --no-info --reverse --print-query"
 colours="--color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 
 st -g 48x16 -c floating -e sh -c \
 	"{ </dev/tty fzf --prompt='$prompt | ' $args $colours < $in; sleep 0.05; } > $out" || exit 1
+[ "$(cat $out | wc -l)" -gt 1 ] && exec tail -n+2 $out
 cat $out
