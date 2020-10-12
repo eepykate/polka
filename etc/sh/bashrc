@@ -18,7 +18,7 @@ bind -x '"\C-k": clear; ls -A'
 
 # non-greedy ^w
 stty werase undef
-bind '"\C-w": unix-filename-rubout'
+bind '"\C-w": backward-kill-word'
 
 # cycle autocomplete
 # @TODO @FIXME: buggy when pasting tabs :(
