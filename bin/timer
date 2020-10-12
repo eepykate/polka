@@ -12,11 +12,12 @@ case $1 in
 	*)  calc "$1"       60;;
 esac
 
-a="Timer set for $1 ($seconds) ${2:+- $2}"
-[ -t 1 ] && echo "$a" || notify-send "$a"
+a=$1; shift
+b="Timer set for $a ($seconds) ${1:+- $*}"
+[ -t 1 ] && echo "$b" || notify-send "$b"
 {
 	sleep "$seconds"
 
-	notify-send -u critical "Timer finished" "$2"
+	notify-send -u critical "Timer finished" "$*"
 	paplay /usr/share/sounds/freedesktop/stereo/complete.oga
 } &
