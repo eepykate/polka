@@ -12,7 +12,8 @@ case $1 in
 	*)  calc "$1"       60;;
 esac
 
-echo "Timer set for $1 ($seconds) ${2:+- $2}"
+a="Timer set for $1 ($seconds) ${2:+- $2}"
+[ -t 1 ] && echo "$a" || notify-send "$a"
 {
 	sleep "$seconds"
 
