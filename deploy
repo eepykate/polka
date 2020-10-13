@@ -2,7 +2,7 @@
 exec 2>/dev/null
 
 [ "$1" = y ] || {
-	printf '[press the damn button, fool] '
+	printf 'button: '
 	read -r y
 }
 
