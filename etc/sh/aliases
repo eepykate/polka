@@ -116,7 +116,7 @@ v() {
 	if [ ! "$1" ] || eq "$1" '-*' || [ -w "$1" ] || [ -w "$(dirname "$1")" ] || eq "$1" "http*"; then
 		$EDITOR "$@"
 	else
-		sudo $EDITOR "$@"
+		sudo -E $EDITOR "$@"
 	fi
 
 	# reset cursor
