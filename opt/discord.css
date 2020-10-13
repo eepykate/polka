@@ -259,10 +259,10 @@ svg[class*="homeIcon-"] path {
 
 
 /*
- * collapsed sidebar
- */
+* collapsed sidebar
+*/
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
 
 /* servers */
 [class*="guilds-"] {
@@ -411,7 +411,7 @@ svg[class*="homeIcon-"] path {
 	font-weight: var(--font-weight) !important;
 	font-family: var(--font) !important;
 }
-  
+
 [class^="sidebar-"]:not(:hover) > section > div {
 	display: none;
 }
@@ -478,16 +478,18 @@ svg[class*="homeIcon-"] path {
 [class^="sidebar-"] * .name-3_Dsmg::before {
 	display: inline-block !important;
 	content: '●';
-	font-family: "Dejavu Sans";
-	font-size: calc(var(--font2-size) /1.5);
+	font-family: "Nimbus Sans";
+	font-size: var(--font2-size);
 	margin-right: 7px;
 	margin-left: 6px;
-	vertical-align: 2px;
+	vertical-align: 1px;
 }
 
 
 [class^="sidebar-"] [aria-label*="(voice"] .name-3_Dsmg::before {
 	content: '■';
+	font-size: calc(var(--font2-size)/1.5);
+	margin-left: 8px;
 }
 
 
@@ -656,7 +658,7 @@ svg[class*="homeIcon-"] path {
 #chat-messages,
 [class*="autocomplete-"] {
 	max-width: 1000px;
-	width: 100%;
+	width: calc(100% - 20px);
 	margin: 0 auto;
 }
 
