@@ -1,7 +1,7 @@
 #!/bin/sh
 
 dewit() {
-	printf '\n\033[34m $ %s \033[0m\n\n' "$*"
+	printf '\033[35m $ %s \033[0m\n' "$*"
 	"$@"
 }
 
@@ -22,6 +22,9 @@ elif [ -e "meson.build" ]; then
 elif [ -e "make.sh" ]; then
 	chmod +x make.sh
 	dewit ./make.sh "$@"
+elif [ -e "configure" ]; then
+	dewit ./configure
+	dewit exec make
 elif [ -e "autogen.sh" ]; then
 	dewit ./autogen.sh
 	dewit ./configure
