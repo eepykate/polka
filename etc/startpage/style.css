@@ -6,10 +6,10 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0;
 }
 
 nobody {
-	margin-top: -10px;
 	/* flow horizontally */
 	display: flex;
 }
