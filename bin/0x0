@@ -1,12 +1,11 @@
 #!/bin/sh
 #  upload file to 0x0.st
-unset type
-[ -L "$1" ] && set -- "$(readlink "$1")"
-case $(file -ib "${1:-}") in
-	*x-diff*|*x-shellscript*) type=';type=text/plain'
-esac
-[ -f "$1" ] && op="cat"
-${op:-echo} "${@:-$(cat -)}" \
-	| curl -sF file="@-$type" 'http://0x0.st' \
+
+# prevent filetypes like text/x-shellscript or text/x-diff
+# autodownloading in some browsers
+type=
+file -ibL "$1" | grep -q '^text/' && type=';type=text/plain'
+
+curl -sF file="@${1:--}$type" 'http://0x0.st' \
 	| tee /dev/stderr \
 	| xclip -r -sel clip
