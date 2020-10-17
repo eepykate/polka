@@ -78,7 +78,7 @@ Print
 
 # selection
 {shift + Print, XF86Tools}
-	freeze & scr -S; pkill -f freeze
+	freeze & scr -S; pkill freeze
 #	freeze & \
 #	scr -S; \
 #	pkill -f '[ /]freeze'
