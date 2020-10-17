@@ -20,5 +20,5 @@ while [ "$i" -lt "$t" ]; do
 done
 
 echo "avg:  $(( avg / t  ))ms"
-echo "high: ${high}ms"
 echo "low:  ${low}ms"
+echo "high: ${high}ms"
