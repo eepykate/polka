@@ -3,7 +3,7 @@
 unset type
 [ -L "$1" ] && set -- "$(readlink "$1")"
 case $(file -ib "${1:-}") in
-	*x-shellscript*) type=';type=text/plain'
+	*x-diff*|*x-shellscript*) type=';type=text/plain'
 esac
 [ -f "$1" ] && op="cat"
 ${op:-echo} "${@:-$(cat -)}" \
