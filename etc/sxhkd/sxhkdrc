@@ -11,7 +11,7 @@ super + Return
 #	draw
 
 super + v
-	chromium 0.0.0.0:9091
+	firefox 0.0.0.0:9091
 
 super + slash
 	dms ~/opt/scs
@@ -26,7 +26,7 @@ super + u
 	copy
 
 super + f
-	chromium
+	firefox
 
 
 # power menu
@@ -87,7 +87,7 @@ super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/scr/$(ls \
 	-1t $HOME/opt/scr --ignore old | head -1)
 
-super + {Insert, Home, Prior, Next, End}
+super + {Insert, Home, Next, Prior, End}
 	scr {_,-c -pwnd,-c -e,-c -pro -a -r60 -b8,-s}
 
 
@@ -125,17 +125,13 @@ ctrl + alt + t
 #	pactl set-source-mute VirtualMic {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
 #
 super + g
-	pkill -x ydotool
+	pkill -x terrafk
 
 super + Prior
 	portal
 
 XF86Launch5
+	tm
 	ydotool click 2; \
-	ydotool mousemove 1098 87 & sleep 0.05; ydotool click 1 & \
-	sleep 0.06; ydotool mousemove 1098 100 & sleep 0.05; ydotool click 1
-	#tm
-	#ydotool mousemove 1234 196; ydotool click 1
-	#tm      # toggle mic
-	#clicker
-	#xdotool mousemove 2280 205; sleep 0.2; xdotool click --clearmodifiers 1
+	ydotool mousemove 1100 87 & sleep 0.05; ydotool click 1 & \
+	sleep 0.07; ydotool mousemove 1100 100; ydotool click 1
