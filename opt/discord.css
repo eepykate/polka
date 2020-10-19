@@ -1,3 +1,7 @@
+[id^="private-channels-"][class*="selected-"] [class*="layout-"] {
+	background-color: var(--bg1) !important;
+}
+
 [class*="role-"] {
 	border: none !important;
 	overflow: hidden;
@@ -370,13 +374,16 @@ svg[class*="homeIcon-"] path {
 	max-height: 30px !important;
 }
 	
-[class^="sidebar-"]:not(:hover) * .name-3_Dsmg {
+[class^="sidebar-"]:not(:hover) .name-3_Dsmg {
 	font-size: 0px !important;
 	display: inline-block !important;
 }
-[class^="sidebar-"]:not(:hover) * .name-3_Dsmg::before {
+[class^="sidebar-"]:not(:hover) .name-3_Dsmg::before {
 	margin-left: 8px;
-	vertical-align: -1px;
+	vertical-align: -4px;
+}
+[class^="sidebar-"]:not(:hover) [aria-label*="(voice"] .name-3_Dsmg::before {
+	vertical-align: -2px;
 }
 [class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
 	font-family: var(--font);
@@ -462,6 +469,10 @@ svg[class*="homeIcon-"] path {
 [id^='members-'] * [class*="content"] {
 	margin-left: 20px;
 }
+
+[class^="sidebar-"]:hover [aria-label*="(voice"] .name-3_Dsmg::before {
+	margin-left: 7px;
+}
 }
 
 [class*="containerDefault-"]:not(:hover) [class*="children-"] > [class*="iconItem-"] {
@@ -485,11 +496,10 @@ svg[class*="homeIcon-"] path {
 	vertical-align: 1px;
 }
 
-
 [class^="sidebar-"] [aria-label*="(voice"] .name-3_Dsmg::before {
 	content: '■';
 	font-size: calc(var(--font2-size)/1.5);
-	margin-left: 8px;
+	margin-left: 9px;
 }
 
 
