@@ -83,20 +83,33 @@ alias e="atool -x"
 c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
 d() {
-	unset asda
 	shopt -s nocaseglob
-	for i in "$*" "$*"* *"$*" *"$*"*; do
+	unset asda vid img act
+
+	for arg; do
+	# check if argument is an exact filename, or at the start/end/middle
+	# of a filename, in that order
+	for i in "$arg" "$arg"* *"$arg" *"$arg"*; do
 		[[ -e "$i" ]] || continue
+
 		case $(file -ib "$i") in
-			video*|image/gif*) mpv "$i";;
-			inode/dir*) cd "$i";;
-			image*) im "$i";;
-			text*) cat "$i";;
-			*) return 1;;
+			# add to array then call the command as to use the native album
+			# feature in mpv/feh instead of making multiple windows
+			video*|image/gif*) vid+=("$i");;
+			image*)            img+=("$i");;
+
+			text*)      cat "$i";;
+			*)  break;;
 		esac
+
 		act=nonzero
 		break
 	done
+	done
+
+	[ "$img" ] && im "${img[@]}"
+	[ "$vid" ] && mpv "${vid[@]}" --loop
+
 	[ "$act" ] || return 1
 }
 
