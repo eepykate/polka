@@ -261,6 +261,10 @@ svg[class*="homeIcon-"] path {
 	overflow-y: auto !important;
 }
 
+[class*="guilds-"] > [class*="scroller"] {
+	background-color: var(--bg3) !important;
+}
+
 
 /*
 * collapsed sidebar
@@ -276,7 +280,6 @@ svg[class*="homeIcon-"] path {
 	top: 0;
 	bottom: 0;
 	z-index: 102;
-	background-color: var(--bg3) !important;
 }
 
 /* server ping */
