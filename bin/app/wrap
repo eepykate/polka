@@ -11,7 +11,7 @@ _wrap() { _ "$@"; }
 # special app-specific functions
 _boox()      { boox "$@"; exec sleep 0.1; }
 _minecraft() { _ minecraft-launcher "$@"; }
-_apt()       { exec sudo apt "$@"; }
+_apt()       { { sudo apt "$@" 3>&1 1>&2 2>&3 | grep -iv '^$\|stable cli interface'; } 3>&1 1>&2 2>&3; }
 _firefox()   { HOME="$HOME/etc" exec firefox "$@"; }
 
 # make the symlinks
