@@ -6,6 +6,8 @@ super + Return
 	st
 
 # super + [xg] are free
+super + g
+	sudo systemctl restart systemd-resolved; notify-send 'restarted resolved'
 
 #{alt + x, XF86Launch6}
 #	draw
