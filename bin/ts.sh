@@ -124,9 +124,9 @@ sed --follow-symlinks -i  \
 
 echo " - dunst"
 var="$(sed --follow-symlinks \
-	-e "s/\(foreground.*\)=/\1= \"#${fg1}cf\"/" \
-	-e "s/\(background.*\)=/\1= \"#$bg1\"/" \
-	-e "s/\(frame_color.*\)=/\1= \"#$bg3\"/" \
+	-e "s/\(foreground.*\)=.*/\1= \"#${fg1}cf\"/" \
+	-e "s/\(background.*\)=.*/\1= \"#$bg1\"/" \
+	-e "s/\(frame_color.*\)=.*/\1= \"#$bg3\"/" \
 	"$c/dunst/dunstrc")"
 
 printf '%s\n' "$var" | while IFS='' read -r l; do
@@ -146,6 +146,7 @@ printf '%s\n' "$var" | while IFS='' read -r l; do
 	esac
 	printf '%s\n' "$l"
 done > "$c/dunst/dunstrc"
+exit
 
 wm -r
 

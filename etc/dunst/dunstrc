@@ -19,7 +19,7 @@
 	# borders
 	padding             = 25
 	frame_width         = 0
-	frame_color         = "#1e212e" "#1e212e"
+	frame_color         = "#1e212e"
 	separator_height    = 2
 	separator_color     = frame
 	horizontal_padding  = 25
@@ -38,21 +38,21 @@
 	context             = ctrl+shift+period
 
 [urgency_low]
-	background          = "#151823" "#151823"
+	background          = "#151823"
 	foreground          = "#9294a8bb"
-	frame_color         = "#1e212e" "#1e212e"
+	frame_color         = "#1e212e"
 	timeout             = 5
 
 [urgency_normal]
-	background          = "#151823" "#151823"
-	foreground          = "#d6d8ebcf" "#d6d8ebcf"
-	frame_color         = "#1e212e" "#1e212e"
+	background          = "#151823"
+	foreground          = "#d6d8ebcf"
+	frame_color         = "#1e212e"
 	timeout             = 5
 
 [urgency_critical]
-	background          = "#151823" "#151823"
+	background          = "#151823"
 	foreground          = "#d6d8eb"
-	frame_color         = "#1e212e" "#1e212e"
+	frame_color         = "#1e212e"
 	timeout             = 0
 
 [stuff]
