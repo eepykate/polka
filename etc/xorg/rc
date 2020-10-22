@@ -36,7 +36,8 @@ esac
 D() {
 xmodmap - << EOF
 	clear lock
-	keycode 66 =
+	add control = Control_L Control_L Control_R
+	keycode 66 = Control_L Control_L NoSymbol NoSymbol
 EOF
 };D;D  # doesn't work if it's only ran once...
 
