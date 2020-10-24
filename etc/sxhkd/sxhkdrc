@@ -66,7 +66,7 @@ ctrl + alt + s
 
 # I have this key bound on my mouse
 XF86Launch6
-	hex
+	picker
 
 ctrl + alt + {1-9,0}
 	hw {1-9,0}

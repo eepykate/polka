@@ -1,0 +1,126 @@
+#!/bin/sh
+#  SHade - colour stuff
+
+help() {
+	cat << EOF
+
+[35mSHade[m - colour stuff
+
+[35mhex[m
+ convert rgb to hex
+
+[35mrgb[m
+ convert hex to rgb
+
+[35mdarken[m
+ darken a hex value with an optional second argument for multipliers,
+ the default is 80(%)
+
+[35mpicker[m
+ preview (using a notification) a hex/rgb value from selection, or select a pixel
+
+[35mpreview[m
+ supply a number between 1-500 to generate random numbers
+ or hex values, also reads from stdin
+
+[35mrandom[m
+ generate x random numbers (default 1)
+
+only the first 3 characters are required, everything after is optional
+
+you can also symlink to the argument you want to use it as its own command
+
+EOF
+}
+
+# to hex
+hex() {
+	printf "%02X%02X%02X\n" "$@"
+}
+
+# to rgb
+rgb() {
+	for i; do
+		a=${i%??}
+		printf "%d %d %d\n" \
+			"0x${a%??}" \
+			"0x${a#??}" \
+			"0x${1#????}"
+	done
+}
+
+
+# darken
+dar() {
+	# default multiplier
+	multi=${2:-80}
+	set -- $(rgb "$1")
+
+	for i; do
+		a=$(( i*multi/100 ))
+
+		[ "$a" -gt 255 ] && a=255
+		printf '%02x' "$a"
+	done
+	printf "\n"
+}
+
+# picker
+pic() {
+	# if the selection is a hex/rgb value, use that,
+	# otherwise select a pixel
+	hex=$(xclip -o | sed 's/rgb//' | tr -d "#:;,.='()\"")
+	set -- $hex
+
+	v='[a-fA-F0-9]'
+	case $1$2$3 in
+		# for hexes
+		$v$v$v$v$v$v) hex=$1$2$3;;
+		# for rgb
+		*) [ $# = 3 ] && hex=$(printf "%02X%02X%02X\n" "$@") ||
+			# select a pixel
+			hex=$(colorpicker -doq)
+	esac
+
+	hex=$(printf %s "$hex" | tr '[:upper:]' '[:lower:]' | tr -d '#\n')
+
+	# copy the hex, then clear selection
+	printf %s "$hex" | xclip -sel clip
+	xclip -i /dev/null
+
+	# send notification with the hex value and a preview (pango markup)
+	notify-send "$hex" "<span background='#$hex'>      </span>"
+}
+
+# preview
+pre() {
+	# read from stdin
+	[ "$@" ] || set -- $(cat /dev/stdin)
+
+	# generate x random numbers
+	[ "$1" -ge 1 ] 2>/dev/null && [ "$1" -lt 500 ] && set -- $(ran $1)
+
+	for i; do
+		# delete leading pound
+		i=${i###}
+		printf "\033[38;2;%s;%s;%sm%s    \033[7m       \033[0m\n" \
+			$(rgb $i) "$i"
+	done
+}
+
+# random
+ran() {
+	printf "%02X%02X%02X\n" $(shuf -i 0-255 -n $(( ${1:-1}*3 )) )
+}
+
+
+_() {
+	v=$1; shift
+	case $v in
+		""|h|-[h\?]|-|--help|help) help me; exit;;
+		hex* | rgb* | dar* | pic* | pre* | ran*) ${v%${v#???}} "$@"; exit;;
+	esac
+}
+
+_ "${0##*/}" "$@"
+_ "${@:-}"
