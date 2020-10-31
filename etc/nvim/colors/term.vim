@@ -116,6 +116,7 @@ hi cssAttributeSelector   ctermfg=3
 
 
 " sh
+hi shOperator     ctermfg=17
 hi shConditional  ctermfg=15
 hi shDerefSimple  ctermfg=17
 hi shVariable     ctermfg=15
