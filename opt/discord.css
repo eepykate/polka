@@ -297,7 +297,7 @@ svg[class*="homeIcon-"] path {
 /* focused server */
 
 [class*="categorySection"] [class*="header-"], /* emoji list */
-.scroller-2TZvBN {
+[class^="tree-"] > [class*="scroller-"] {
 	background-color: var(--bg3) !important;
 }
 
@@ -382,20 +382,15 @@ svg[class*="homeIcon-"] path {
 	display: inline-block !important;
 }
 [class^="sidebar-"]:not(:hover) .name-3_Dsmg::before {
-	margin-left: 8px;
-	vertical-align: -4px;
-}
-[class^="sidebar-"]:not(:hover) [aria-label*="(voice"] .name-3_Dsmg::before {
+	margin-left: 12px;
 	vertical-align: -2px;
 }
-[class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
-	font-family: var(--font);
-	font-weight: var(--font-weight);
-	margin-left: 29px;
-	margin-top: 6px;
-	content: '-'
+[class^="sidebar-"]:not(:hover) [aria-label*="(voice"] .name-3_Dsmg::before {
+	vertical-align: -1px;
+	margin-left: 13px;
 }
-[class^="sidebar-"]:not(:hover) [id^='channels-'][aria-label*="(category)"]::before {
+
+[class^="sidebar-"]:not(:hover) [aria-label*="(category)"]::before {
 	font-family: var(--font);
 	font-weight: var(--font-weight);
 	margin-left: 29px;
@@ -405,8 +400,8 @@ svg[class*="homeIcon-"] path {
 
 [class*="sidebar"]:hover [class*="iconVisibility"],
 [class*="sidebar"]:hover [class*="content-"] {
-	margin-left: -4px;
-	padding-left: 2px;
+	margin-left: -2px;
+	padding-left: 1.3px;
 }
 [class*="sidebar"]:not(:hover) [class*="avatarContainer-"] {
 	margin-left: 18px;
@@ -469,13 +464,22 @@ svg[class*="homeIcon-"] path {
 [class^="sidebar-"]:not(:hover) * [class*="container-"][class*="name-"] {
 	display: none !important;
 }
-[id^='members-'] * [class*="content"] {
-	margin-left: 20px;
+[class^='member-'] {
+	margin-left: 0px;
+}
+
+[class^='member-'] [class^="avatar-"] {
+   margin-right: 30px;
 }
 
 [class^="sidebar-"]:hover [aria-label*="(voice"] .name-3_Dsmg::before {
 	margin-left: 7px;
 }
+/*
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+*/
 }
 
 [class*="containerDefault-"]:not(:hover) [class*="children-"] > [class*="iconItem-"] {
@@ -601,6 +605,7 @@ svg[class*="homeIcon-"] path {
 }
 
 
+[class^="tree-"] > [class*="scroller-"],
 [class*="message-"]:hover {
 	background-color: var(--bg3)
 }
@@ -668,7 +673,7 @@ svg[class*="homeIcon-"] path {
 
 [class*="typing-"],
 [class*="channelTextArea"] [class*="textArea-"],
-#chat-messages,
+[class^="messagesWrapper-"] > * > [class*="scroller"],
 [class*="autocomplete-"] {
 	max-width: 1000px;
 	width: calc(100% - 20px);
