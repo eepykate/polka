@@ -83,7 +83,6 @@ alias e="atool -x"
 c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
 d() {
-	shopt -s nocaseglob
 	unset asda vid img act
 
 	for arg; do

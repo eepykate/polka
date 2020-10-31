@@ -67,6 +67,7 @@ zle -N kls; bindkey ^k kls
 HISTSIZE=999999
 SAVEHIST=999999
 HISTFILE="${ZDOTDIR:-$HOME}/zsh_history"
+setopt histignorespace
 setopt extended_history   # Record timestamp of command in HISTFILE
 setopt hist_ignore_dups   # Ignore duplicated commands history list
 setopt share_history      # Save command history before exiting

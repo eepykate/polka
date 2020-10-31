@@ -25,7 +25,6 @@ export \
 
 # user
 export \
-	MANGOHUD=1  \
 	EDITOR="nvim" \
 	scr_dir="$opt/scr" \
 	rec_dir="$opt/scr"
