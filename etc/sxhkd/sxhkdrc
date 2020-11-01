@@ -5,16 +5,6 @@
 super + Return
 	st
 
-# super + [xg] are free
-super + g
-	sudo systemctl restart systemd-resolved; notify-send 'restarted resolved'
-
-#{alt + x, XF86Launch6}
-#	draw
-
-super + v
-	firefox 0.0.0.0:9091
-
 super + slash
 	dms ~/opt/scs
 
@@ -24,11 +14,11 @@ super + period
 super + space
 	launch
 
-super + u
-	copy
+super + {j,y,u,i}
+	{react, memeaker, copy, emoji}
 
 super + f
-	firefox
+	chromium
 
 
 # power menu
@@ -39,10 +29,6 @@ super + h
 # un/mount drives
 ctrl + alt + {m,u}
 	{_,u}mnt
-
-
-super + i
-	emoji
 
 
 # restart wifi
@@ -60,15 +46,11 @@ super + t
 ctrl + alt + s
 	ts.sh
 
-
-#alt + grave
-#	dropdown
-
 # I have this key bound on my mouse
 XF86Launch6
 	picker
 
-ctrl + alt + {1-9,0}
+super + shift + {1-9,0}
 	hw {1-9,0}
 
 
@@ -81,9 +63,6 @@ Print
 # selection
 {shift + Print, XF86Tools}
 	freeze & scr -S; pkill freeze
-#	freeze & \
-#	scr -S; \
-#	pkill -f '[ /]freeze'
 
 super + z
 	xclip -selection clipboard -t image/png $HOME/opt/x/scr/$(ls \
@@ -108,32 +87,9 @@ shift + XF86Audio{Raise,Lower}Volume
 super + {p, Tab}
 	vol {p, mw}
 
-#super + s
-#	players.sh
-
 
 #
 #   laptop
 #
 ctrl + alt + t
 	synclient TouchpadOff={0,1}
-
-#super + shift + F2
-#	pactl set-source-mute Loopback_of_Mumble.monitor false
-
-#super + shift + F2
-#	pactl set-source-mute Loopback_of_Mumble.monitor {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
-#XF86Launch5
-#	pactl set-source-mute VirtualMic {true; notify-send -t 1000 "sa", false; notify-send -t 1000 "unmuted"}
-#
-super + g
-	pkill -x terrafk
-
-super + Prior
-	portal
-
-XF86Launch5
-	tm
-	ydotool click 2; \
-	ydotool mousemove 1100 87 & sleep 0.05; ydotool click 1 & \
-	sleep 0.07; ydotool mousemove 1100 100; ydotool click 1
