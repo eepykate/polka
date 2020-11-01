@@ -32,4 +32,4 @@ super + {1-9,0}
 	nottop no $a
 
 alt {_,shift} + Tab
-	bspc node -f {next, prev};
+	bspc node -f {next, prev}.!hidden.window
