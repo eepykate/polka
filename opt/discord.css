@@ -397,11 +397,16 @@ svg[class*="homeIcon-"] path {
 	margin-top: 6px;
 	content: '-'
 }
+	
+[class^="sidebar-"]:hover [aria-label*="(category)"] {
+	padding-left: 1px;
+}
+	
 
 [class*="sidebar"]:hover [class*="iconVisibility"],
 [class*="sidebar"]:hover [class*="content-"] {
 	margin-left: -2px;
-	padding-left: 1.3px;
+	padding-left: 1.4px;
 }
 [class*="sidebar"]:not(:hover) [class*="avatarContainer-"] {
 	margin-left: 18px;
@@ -417,6 +422,7 @@ svg[class*="homeIcon-"] path {
 	font-family: var(--font) !important;
 }
 
+[class^="sidebar-"]:not(:hover) [class^="children-"],
 [class^="sidebar-"]:not(:hover) > section > div {
 	display: none;
 }
