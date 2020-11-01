@@ -51,6 +51,7 @@ R floating  state=floating
 s picom
 s dunst
 s sxhkd
+[ -e "$XDG_CONFIG_HOME/bspwm/other" ] && . "$XDG_CONFIG_HOME/bspwm/other"
 
 # bspwm-specific keybindings
 sxhkd -c "${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm" &
