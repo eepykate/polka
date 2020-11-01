@@ -78,6 +78,8 @@ set pastetoggle=<F2>
 nnoremap <silent> <C-w> :Rex<CR>
 " There's got to be a more efficient way of doing this, but whatever
 
+map Q <Nop>
+
 " move up/down better on long lines
 noremap k gk
 noremap j gj
