@@ -8,7 +8,7 @@
 	alignment  = center
 	word_wrap  = true
 
-	dmenu      = /usr/bin/rofi -dmenu -p dunst:
+	dmenu      = menu:
 	browser    = ~/bin/app/firefox -new-tab
 
 	icon_position  = left
