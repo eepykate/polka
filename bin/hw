@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 #  hide window
 
 dir="$XDG_CACHE_HOME/hw"
@@ -18,4 +18,6 @@ else
 	echo "$win" > "$dir/$1"
 fi
 
-mapw -t "$win"
+#mapw -t "$win"
+bspc node "$win" -g hidden -t floating
+bspc node "$win" -d "$(bspc query -D -d)" -f
