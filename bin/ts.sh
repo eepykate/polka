@@ -170,6 +170,7 @@ cd ~/src/phocus && {
 \$background-1: #$bg1;
 \$background-2: #$bg3;
 \$background-3: #$bg1;
+\$chromebg: #${chrome:-$bg4};
 
 \$contrast: #$contrast;
 \$accent-1: #$red;
