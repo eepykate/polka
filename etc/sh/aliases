@@ -176,6 +176,13 @@ comb() {
 #  other
 #
 
+blocks() {
+	for i in 4 10; do
+		printf "\e[$i%sm   \e[m"  {1..7}
+		echo
+	done
+}
+
 notthing() {
 	for i in critical normal low; do
 		notify-send -t 40000 -u "$i"   "  $i  ​"
