@@ -69,7 +69,7 @@ super + z
 	-1t $HOME/opt/scr --ignore old | head -1)
 
 super + {Insert, Home, Next, Prior, End}
-	scr {_,-c -pwnd,-c -e,-c -pro -a -r60 -b8,-s}
+	scr {_,-c -pwnd,-c -e,-c -pro -a -r60,-s}
 
 
 #
