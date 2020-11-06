@@ -146,7 +146,6 @@ printf '%s\n' "$var" | while IFS='' read -r l; do
 	esac
 	printf '%s\n' "$l"
 done > "$c/dunst/dunstrc"
-exit
 
 wm -r
 
