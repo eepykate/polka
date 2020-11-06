@@ -1,6 +1,6 @@
 #!/bin/sh
 
-f() { feh -Z. -g 1000x700 "$@"; }
+f() { feh -Z. -g 1000x700 --conversion-timeout 3 "$@"; }
 [ "$#" -gt 1 ] && { f "$@"; exit; }
 
 case "$1" in
