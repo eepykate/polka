@@ -1,6 +1,6 @@
 #!/bin/sh
 #  Use your phone as a mic through mumble
-
+#
 # github.com/pzmarzly/mic_over_mumble
 #    Copyright 2018 Pawel Zmarzly
 #          MIT License
@@ -11,6 +11,39 @@
 #   (function > function > pipe into function
 #    which has a name longer than the command)
 # shellcheck disable=SC2086
+
+#  toggle mic
+[ "$1" = toggle ] && {
+	input=$(pactl list sink-inputs | grep -i 'media.name = "Mumble' -B20 \
+		| grep -o 'Input #[0-9]\+')
+
+	[ "$input" ] || exit
+	touch /tmp/mic
+	read -r v < /tmp/mic
+
+	case $v in
+		true) a=false; b=unmuted c=6666;;
+		*) a=true; b=muted c=800
+	esac
+
+	echo "$a" > /tmp/mic
+	pactl set-sink-input-mute "${input##*#}" "$a"
+
+	exec dunstify -r 20 -t "$c" "$b"
+
+	## dunstrc:
+	# [mike]
+	# 	background     = "#b6d0fd"
+	# 	summary        = "muted"
+	# 	format         = " ​ "
+	# 	history_ignore = yes
+	#
+	# [mic]
+	# 	background     = "#eb9797"
+	# 	summary        = "unmuted"
+	# 	format         = "​        ​"
+	# 	history_ignore = yes
+}
 
 exec 2>/dev/null
 trap 'pkill mumble' 2

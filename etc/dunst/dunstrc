@@ -72,10 +72,12 @@
 	summary        = "muted"
 	format         = " ​ "
 	history_ignore = yes
+	set_transient  = yes
 
 [mic]
 	background     = "#eb9797"
 	summary        = "unmuted"
 	format         = "​        ​"
 	history_ignore = yes
+	set_transient  = yes
 # vim: ft=conf
