@@ -3,7 +3,10 @@
 # it's up to you to find the files, good luck :)
 
 d=$HOME/opt/posix
-[ -f "$d/$1" ] && exec nvim -R "$d/$1"
+
+for i in "$d/"*/[0-9][0-9]-"$1"* "$d/"*"/$1"*; do
+	[ -f "$i" ] && exec nvim -R "$i"
+done
 
 # lmao annaisms, enjoy your black text
 printf 'spec not found: \033[38;5;16m%s\033[m\n' "$1"

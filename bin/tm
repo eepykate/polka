@@ -1,24 +1,32 @@
 #!/bin/sh
 #  toggle mic
 
-# @TODO CLEAN UP
-
-input=$(pactl list sink-inputs | while read -r l; do
-	case $l in
-		Sink\ Input*) i="${l##*#}";;
-		*\"mumble\") echo "$i"; break;;
-	esac
-done)
+input=$(pactl list sink-inputs | grep -i 'media.name = "Mumble' -B20 \
+	| grep -o 'Input #[0-9]\+')
 
 [ "$input" ] || exit
 touch /tmp/mic
 read -r v < /tmp/mic
-case "$v" in
-	true) a=false; b=unmuted;;
-	*) a=true; b=sa;;
-esac
-echo "$a" > /tmp/mic
-pactl set-sink-input-mute "$input" "$a"
 
-[ "$b" = sa ] && exec dunstify -r 20 -t 800 'tm' "$b"
-exec dunstify -r 20 -t 6666 'tm' "$b"
+case $v in
+	true) a=false; b=unmuted c=6666;;
+	*) a=true; b=muted c=800
+esac
+
+echo "$a" > /tmp/mic
+pactl set-sink-input-mute "${input##*#}" "$a"
+
+exec dunstify -r 20 -t "$c" "$b"
+
+## dunstrc:
+# [mike]
+# 	background     = "#b6d0fd"
+# 	summary        = "muted"
+# 	format         = " ​ "
+# 	history_ignore = yes
+#
+# [mic]
+# 	background     = "#eb9797"
+# 	summary        = "unmuted"
+# 	format         = "​        ​"
+# 	history_ignore = yes

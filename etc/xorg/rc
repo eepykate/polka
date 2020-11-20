@@ -37,7 +37,7 @@ D() {
 xmodmap - << EOF
 	clear lock
 	add control = Control_L Control_L Control_R
-	keycode 66 = Control_L Control_L NoSymbol NoSymbol
+	keycode 66 = Escape Escape NoSymbol Escape
 EOF
 };D;D  # doesn't work if it's only ran once...
 

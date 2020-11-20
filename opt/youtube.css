@@ -1,0 +1,38 @@
+* {
+	--yt-spec-brand-background-solid:  var(--bg1) !important;
+	--yt-dark-surface-100: var(--bg1) !important;
+	--yt-spec-brand-background-primary: var(--bg1) !important;
+	--ytd-moderation-panel-background: var(--bg1) !important;
+	--yt-dark-surface-300: var(--bg1) !important;
+	--yt-spec-general-background-a: var(--bg1) !important;
+
+	--yt-spec-call-to-action: var(--accent) !important;
+
+	--yt-spec-icon-inactive: var(--fg2) !important;
+	--yt-spec-icon-disabled: var(--black) !important;
+	--iron-icon-fill-color: var(--fg2) !important;
+	--yt-spec-text-primary: var(--fg1) !important;
+	--yt-spec-brand-icon-active: var(--fg1) !important;
+	--yt-spec-text-secondary: var(--fg2) !important;
+	--ytd-metadata-line-color: var(--fg2) !important;
+	--yt-endpoint-visited-color: var(--fg2) !important;
+	--yt-spec-brand-icon-inactive: var(--fg2) !important;
+}
+
+
+[aria-label="Unlike"] svg,
+[aria-label*="like this"][aria-pressed="true"] svg path {
+	fill: var(--accent) !important;
+}
+
+#youtube-paths > * {
+	fill: var(--fg1) !important;
+}
+
+.ytd-topbar-logo-renderer > path {
+	fill: var(--accent) !important;
+}
+
+.ytd-topbar-logo-renderer > polygon {
+	fill: var(--contrast)
+}

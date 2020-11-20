@@ -134,4 +134,5 @@ EOF
 esac
 
 #notify 70 "$notif"
+echo "$notif"
 notvol "$notif"

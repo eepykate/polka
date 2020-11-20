@@ -19,8 +19,10 @@ set smartcase          " Ignore case when only lower case is typed
 " misc
 set cursorline         " Highlight the line that the cursor is on
 set mouse=a            " Mouse support
-color term
+set fcs=eob:\ 
+color simple
 
+cnoreabbrev rm !del %<CR>:next<CR>
 
 " whitespace at the end of the line
 hi!  ExtraWhitespace ctermbg=red guibg=red
@@ -32,6 +34,7 @@ autocmd BufWinLeave * call  clearmatches()
 " toggle spellchecker
 inoremap <silent> <C-d> <esc>:setlocal spell! spelllang=en<CR>a
 nnoremap <silent> <C-d> :setlocal spell! spelllang=en<CR>
+set spellcapcheck=
 
 "
 "   Plugins
@@ -102,15 +105,15 @@ vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 
 " move line
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-k> <Esc>:m .-2<CR>==gi
 
-nnoremap <A-Down> :m .+1<CR>==
-nnoremap <A-Up> :m .-2<CR>==
-inoremap <A-Down> <Esc>:m .+1<CR>==gi
-inoremap <A-Up> <Esc>:m .-2<CR>==gi
+nnoremap <C-Down> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
+inoremap <C-Down> <Esc>:m .+1<CR>==gi
+inoremap <C-Up> <Esc>:m .-2<CR>==gi
 
 inoremap <C-e> <Esc>$a
 inoremap <C-a> <Esc>^i

@@ -89,7 +89,8 @@ pic() {
 	xclip -i /dev/null
 
 	# send notification with the hex value and a preview (pango markup)
-	notify-send "$hex" "<span background='#$hex'>      </span>"
+	notify-send "$hex" "<span background='#$hex'>        
+        </span>"
 }
 
 # preview

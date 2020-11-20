@@ -1,7 +1,7 @@
 #!/bin/sh -e
 #  copy an emoji
 
-chosen=$(grep -v "#" ~/opt/junk/emoji | menu)
+chosen=$(grep -v "#" ~/opt/emoji | menu)
 
 set -- $chosen
 

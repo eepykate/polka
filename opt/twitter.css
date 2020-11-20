@@ -1,0 +1,53 @@
+.r-pm9dpa, /* popup */
+.r-1w6e6rj, /* home tweet box thing */
+.r-14lw9ot, /*main tweet line */
+.r-e84r5y, /* a separator */
+.r-1u4rsef, /* right sidebar */
+html, body
+{
+	background-color: var(--bg1) !important;
+}
+
+* {
+	border-color: transparent !important;
+}
+
+textarea,
+svg,
+span {
+	color: var(--fg1) !important;
+}
+.r-1re7ezh,
+::placeholder,
+input {
+	color: var(--fg2) !important;
+}
+
+.r-1q3imqu { /* tweet button hover */
+	background-color: var(--bg4) !important;
+}
+
+.r-urgr8i /* tweet button */ {
+	background-color: var(--bg3) !important;
+}
+
+
+.r-m5arl1 {  /* reply line */
+	border-color: var(--fg1) !important;
+	background-color: var(--fg1) !important;
+}
+
+.r-6t5ypu.r-vrwoeq span,
+.r-6t5ypu.r-vrwoeq { /* polls/video timestamp */
+	background-color: var(--accent) !important;
+	color: var(--contrast) !important;
+}
+
+.r-rjfia .r-hkyrab span /* polls */ {
+	color: var(--contrast) !important;
+	text-shadow:
+	 -1px -1px 0px var(--accent),  
+	  1px -1px 0px var(--accent),
+	  -1px 1px 0px var(--accent),
+	   1px 1px 0px var(--accent);
+}

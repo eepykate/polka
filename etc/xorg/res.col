@@ -5,7 +5,7 @@ st.font:  Ubuntu Mono:pixelsize=12:style=Bold
 *.cursorColor:  #d6d8eb
 
 *.color0:       #1e212e
-*.color8:       #494970
+*.color8:       #5c5c80
 
 *.color1:       #eb9797
 *.color9:       #eb9797

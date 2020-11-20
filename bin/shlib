@@ -31,3 +31,6 @@ ex() { command -v "$@" >/dev/null 2>&1; }
 
 # echo but safer (bash doesn't expand escape sequences)
 prin() { printf '%b\n' "$*"; }
+
+war() { printf '%b\n' "$*" >&2; }
+die() { printf '%b\n' "$*" >&2; exit 1; }

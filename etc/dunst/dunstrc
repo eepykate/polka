@@ -69,17 +69,13 @@
 
 [mike]
 	background     = "#b6d0fd"
-	summary        = "tm"
-	body           = "sa"
-	format         = %b
-	set_transient  = yes
+	summary        = "muted"
+	format         = " ​ "
 	history_ignore = yes
 
 [mic]
 	background     = "#eb9797"
-	summary        = "tm"
-	body           = "unmuted"
-	format         = AAAAAAAAA
-	set_transient  = yes
+	summary        = "unmuted"
+	format         = "​        ​"
 	history_ignore = yes
 # vim: ft=conf

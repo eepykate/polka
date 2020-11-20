@@ -19,7 +19,6 @@ fchr    ~/etc/firefox/main/chrome
 # shells
 sc      ~/etc/sh/sc
 z       ~/etc/sh/.zshrc
-b       ~/etc/sh/bashrc
 a       ~/etc/sh/aliases
 pro     ~/etc/sh/profile
 

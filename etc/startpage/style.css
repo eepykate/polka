@@ -21,6 +21,5 @@ div > * {
 	text-align: center;
 }
 
-a       { color: var(--fg1);    }
-span    { color: var(--accent); }
-a:hover { color: var(--accent); }
+a { color: var(--fg1); }
+span, a:hover { color: var(--fg2); }

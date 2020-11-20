@@ -5,7 +5,7 @@
 
 outer='0x151823'   # outer
 inner1='0xb6d0fd'  # focused
-inner2='0x494970'  # normal
+inner2='0x5c5c80'  # normal
 
 targets() {
 	case $1 in

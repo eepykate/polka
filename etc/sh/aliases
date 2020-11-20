@@ -6,6 +6,7 @@ alias td="transmission-daemon"
 
 alias sy="systemctl --user"
 alias ss="sudo systemctl"
+alias sss="sudo systemctl status"
 
 # package manager
 # github.com/willeccles/cpm
@@ -48,13 +49,32 @@ alias \
 	s1="sleep 1" \
 	s2="sleep 2" \
 	s3="sleep 3" \
-	s4="sleep 4" \
-	fuck="pkill -9"
+	s4="sleep 4"
+
+alias b='bg;disown'
 
 calc() { echo "scale=5; $*" | bc; }
 
+fuck() {
+	for i; do
+		pkill -9 "$i" || ! echo "killing '$i' failed with exit code $?"
+	done
+}
+
 # elapsed time
-et() { ps -o command,etime $(pgrep "$1"); }
+et() {
+	pids=
+	for i; do
+		# pid then fallback to name
+		[ "$i" -ge 1 ] 2>/dev/null && pids="$pids $i" ||
+			pids="$pids $(pgrep "$i")"
+
+		pids=${pids# }
+	done
+
+	[ "$pids" ] || ! echo "no such processes: $*" &&
+		ps -o 'comm=,etime=' ${pids:-999999}
+}
 
 #
 #  files/dirs
@@ -112,27 +132,16 @@ d() {
 	[ "$act" ] || return 1
 }
 
-# quickly view contents of file based on term height
-t() {
-	[ -f "$1" ] || return
-	var=$(wc -l "$1")
-	if [ "${var%% *}" -ge $((LINES-4)) ]; then
-		less "$1"
-	else
-		cat "$1"
-	fi
-}
-
 v() {
 	# edit file based on write perms
-	if [ ! "$1" ] || eq "$1" '-*' || [ -w "$1" ] || [ -w "$(dirname "$1")" ] || eq "$1" "http*"; then
+	if [[ "$1" =~ (http.*|-.*) ]] || [[ -w "$1" ]] || [[ -w "$(dirname "$1")" ]]; then
 		$EDITOR "$@"
 	else
 		sudo -E $EDITOR "$@"
 	fi
 
 	# reset cursor
-	printf '\e[4 q'
+	#printf '\e[4 q'
 }
 
 #
@@ -159,10 +168,8 @@ cgif() {
 
 # lower res to 720p
 c720() {
-	ffmpeg -y -i "$1" -b:v 4M \
-		-r 30 \
-		-c:v h264_nvenc    \
-		-vf "scale=1280:-1" \
+	ffmpeg -y -i "$1" \
+		-b:v 4M -r 30 -c:v h264_nvenc -vf "scale=-1:720" \
 	  "${1%.*}-720.mp4"
 }
 
@@ -176,9 +183,30 @@ comb() {
 #  other
 #
 
+blank() {
+	# hide cursor
+	printf '\e[?25l'
+	clear
+
+	# make the background black
+	# st
+	printf '%.s %b %.s %b %.s %b'  \
+		st: '\033]4;256;#000000\007' \
+		urxvt: '\033]11;#000000\007' \
+		padding: '\033]708;#000000\007'
+
+	# making a c program on the fly :)
+	command -v pause >/dev/null 2>&1 || {
+		printf 'int main() { pause(); }' \
+			| cc -xc -o "$HOME/bin/bin/pause"
+		chmod +x "$HOME/bin/bin/pause"
+	}
+	pause
+}
+
 blocks() {
 	for i in 4 10; do
-		printf "\e[$i%sm   \e[m"  {1..7}
+		printf "\e[$i%sm   \e[m"  {0..7}
 		echo
 	done
 }
@@ -189,13 +217,33 @@ notthing() {
 	done
 }
 
-# window titles
-#precmd() {
-#	printf "\e[4 q\033k %s \033\\" "${PWD//$HOME/~}"
-#}
-#preexec() {
-#	a="${3//$HOME/~}"
-#	printf "\033k %s \033\\" "${a//\"}"
-#}
+ml() {  # mem limit
+	mem=$(echo "$1" | tr 'gmkb' 'GMKB'); shift
+	case $1 in
+		c[0-9][0-9]*) cpu="-p CPUQuota=${1#?}%"; shift
+	esac
+
+	# put systemd-run under nopasswd and add this to sudoers to keep the env:
+	# Defaults!/usr/bin/systemd-run !env_reset
+	sudo systemd-run --uid="$(id -u)" --scope -p MemoryLimit="$mem" $cpu "$@"
+}
+
+
+mc() { # mouse move
+	xdotool click ${1:-1}
+}
+
+mm() { # mouse move
+	xdotool mousemove_relative -- $1 ${2:-0}
+}
+
+## window titles
+# precmd() {
+# 	printf "\e[4 q\033k %s \033\\" "${PWD//$HOME/~}"
+# }
+# preexec() {
+# 	a="${3//$HOME/~}"
+# 	printf "\033k %s \033\\" "${a//\"}"
+# }
 
 # vim: ft=sh
