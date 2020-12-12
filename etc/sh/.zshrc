@@ -22,6 +22,9 @@ bindkey '^r'       history-incremental-search-backward  # ^e
 
 load() { autoload -U "$1"; zle -N "$1"; bindkey "$2" "$1"; }
 
+nop() { :; }
+load nop '^[[O'
+
 # open current command in EDITOR
 load edit-command-line '^f'
 

@@ -1,8 +1,10 @@
 #!/bin/sh
-xrdb ~/etc/xorg/res
 
-stmessage st
+xrdb ~/etc/xorg/res
+pgrep -x st | xargs kill -USR1
+
 exit
+
 . ~/etc/colours/current
 
 _() {

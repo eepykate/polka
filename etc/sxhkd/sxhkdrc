@@ -5,12 +5,6 @@
 super + {alt + space, Return}
 	st
 
-super + slash
-	dms ~/opt/scs
-
-super + period
-	dmsc
-
 super + space
 	launch
 
@@ -31,11 +25,6 @@ ctrl + alt + {m,u}
 	{_,u}mnt
 
 
-# restart wifi
-ctrl + alt + w
-	nmcli networking off && sleep 0.5 && nmcli networking on
-
-
 # send a notif of the time and battery
 super + t
 	notify-send "$(date "+%F (%a) - %H:%M")" \
@@ -46,12 +35,12 @@ super + t
 ctrl + alt + s
 	ts.sh
 
-# I have this key bound on my mouse
+# mousebind
 XF86Launch6
 	picker
 
-super + shift + {1-9,0}
-	hw {1-9,0}
+super + shift + {0-9}
+	hw {0-9}
 
 
 #

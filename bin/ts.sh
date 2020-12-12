@@ -72,7 +72,7 @@ st.font:  $font:pixelsize=$fontsize:style=$fontweight
 *.foreground:   #$fg1
 *.cursorColor:  #$fg1
 
-*.color0:       #$bg3
+*.color0:       #$bg1
 *.color8:       #$black
 
 *.color1:       #$red

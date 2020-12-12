@@ -6,6 +6,7 @@
 _() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
+sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
 
 # desktops
 bspc monitor -d      1 2 3 4 5 6
@@ -51,8 +52,8 @@ R floating  state=floating
 #   autostart
 #
 pgrep sxhkd || {  # dropdown htop/shell
-	# start out of sight
-	bspc rule -a taskman desktop=6 hidden=on -o
+	# start invisible
+	bspc rule -a taskman hidden=on -o
 	st -c taskman -e sh -c 'while :; do sudo -E htop; zsh; done' &
 
 	# on reboots stuff sometimes takes a while to start
@@ -64,8 +65,5 @@ pgrep sxhkd || {  # dropdown htop/shell
 
 s picom
 s dunst
-s sxhkd
-[ -e "${XDG_CONFIG_HOME:=~/.config}/bspwm/other" ] && . "$XDG_CONFIG_HOME/bspwm/other"
-
-# bspwm-specific keybindings
-sxhkd -c "$XDG_CONFIG_HOME/sxhkd/bspwm" &
+s sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"
+[ -e "$bs/other" ] && . "$bs/other"

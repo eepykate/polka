@@ -43,5 +43,7 @@ EOF
 }; { D;D; } &  # doesn't work if it's only ran once...
 
 obs --startreplaybuffer &
+st -e sh -c "echo no path; exec zsh" &
+$HOME/bin/bin/st -e sh -c "echo absolute path; exec zsh" &
 
 exec "$wm"
