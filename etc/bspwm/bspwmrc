@@ -38,6 +38,8 @@ _ focused_border_color      '#151823'
 #
 #   rules
 #
+R taskman   locked=on
+R obs       desktop=6
 R feh       state=floating
 R freeze    state=floating border=off monitor="$(6r names -p)"
 R tabbed    state=floating
@@ -48,10 +50,22 @@ R floating  state=floating
 #
 #   autostart
 #
+pgrep sxhkd || {  # dropdown htop/shell
+	# start out of sight
+	bspc rule -a taskman desktop=6 hidden=on -o
+	st -c taskman -e sh -c 'while :; do sudo -E htop; zsh; done' &
+
+	# on reboots stuff sometimes takes a while to start
+	sleep 5
+
+	# pid > xdotool wid > wmutils wid
+	printf 0x%x "$(xdotool search --pid $!)" > "$XDG_CACHE_HOME/hw/1"
+} &
+
 s picom
 s dunst
 s sxhkd
-[ -e "$XDG_CONFIG_HOME/bspwm/other" ] && . "$XDG_CONFIG_HOME/bspwm/other"
+[ -e "${XDG_CONFIG_HOME:=~/.config}/bspwm/other" ] && . "$XDG_CONFIG_HOME/bspwm/other"
 
 # bspwm-specific keybindings
-sxhkd -c "${XDG_CONFIG_HOME:-~/.config}/sxhkd/bspwm" &
+sxhkd -c "$XDG_CONFIG_HOME/sxhkd/bspwm" &

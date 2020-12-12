@@ -16,7 +16,7 @@ notify() {
 	gdbus call -e -d "org.freedesktop.Notifications" \
 		-o /org/freedesktop/Notifications \
 		-m org.freedesktop.Notifications.Notify "" \
-		"$1" "" "$2" "$3" "[]" "{}" 5000 >$n 2>&1
+		"$1" "" "$2" "$3" "[]" "{}" 800 >$n 2>&1
 }
 
 playerctl() {
@@ -41,10 +41,22 @@ mute() {
 }
 
 mute_window() {
-	# sorry this is so messy lol
-	pulsemixer --id "$(pulsemixer --list-sinks \
-		| grep -i "$(ps -p "$(xdotool getactivewindow getwindowpid)" -o comm=)" \
-		| grep -io 'sink-input-[0-9]*' | tail -1)" --toggle-mute
+	set -e
+	# binary name
+	cmd=$(readlink "/proc/$(xdotool getactivewindow getwindowpid)/exe")
+	cmd=${cmd##*/}
+
+	# pulseaudio ID
+	set -- $(pactl list sink-inputs | grep -iB28 "\.binary.*${cmd%%.*}" \
+		| sed -n 's/^.*\(Mute: \|#\)//p')
+
+	# more helpful notification, prevent windows having different states
+	[ "$2" = yes ] && human=unmuted mute=0 || human=muted mute=1
+
+	for id; do
+		pactl set-sink-input-mute "${id###}" $mute && notify 451 "$human $cmd"
+	done
+	exit
 }
 
 volume() {

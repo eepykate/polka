@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 #  hide window
 
 dir="$XDG_CACHE_HOME/hw"
@@ -6,7 +6,7 @@ mkdir -p "$dir"
 read -r win < "$dir/$1"
 
 [ "$1" = 0 ] && {
-	rm "$dir"/*
+	rm "$dir"/[2-9]
 	exit
 }
 

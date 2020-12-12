@@ -136,9 +136,16 @@ sed -i \
 	/etc/systemd/journald.conf
 
 
-#printf 'ZDOTDIR=$HOME/etc/sh' > /etc/zsh/zshenv
 cat << EOF > /etc/bash.bashrc
 [ -e "\${XDG_CONFIG_HOME/sh/bashrc:=\$HOME/etc}" ] && . "\$XDG_CONFIG_HOME/sh/bashrc"
+EOF
+cat << EOF > /etc/zsh/zshenv
+# Global Order: zshenv, zprofile, zshrc, zlogin
+[ "$ZDOTDIR" ] || export ZDOTDIR="$HOME/etc/sh"
+
+: ${XDG_CONFIG_HOME:=$HOME/etc} \
+	${XDG_DATA_HOME:=$HOME/usr} ${XDG_CACHE_HOME:=$HOME/usr/cache}
+export XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME
 EOF
 
 sed -i 's/\(.*esound-protocol-unix\)/#\1/g' /etc/pulse/default.pa

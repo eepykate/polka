@@ -19,6 +19,10 @@ elif [ -e "meson.build" ]; then
 
 	dewit meson build
 	dewit exec ninja -C build
+elif [ -e "CMakeLists.txt" ]; then
+	dewit cmake .
+elif [ -e "Cargo.toml" ]; then
+	dewit cargo build --release
 elif [ -e "make.sh" ]; then
 	chmod +x make.sh
 	dewit ./make.sh "$@"

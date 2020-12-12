@@ -59,6 +59,7 @@ if $TERM == 'linux'
 	colorscheme desert
 	set background=dark
 	hi cursorLine cterm=none
+	hi matchparen cterm=none ctermfg=15 ctermbg=0
 endif
 
 let g:ale_sign_error = '▍'
@@ -81,7 +82,9 @@ set pastetoggle=<F2>
 nnoremap <silent> <C-w> :Rex<CR>
 " There's got to be a more efficient way of doing this, but whatever
 
-map Q <Nop>
+noremap Q :prev <CR>
+
+noremap E :next <CR>
 
 " move up/down better on long lines
 noremap k gk

@@ -13,6 +13,7 @@ bg2="f2f2f2"
 bg3="ebebeb"
 bg4="e3e3e3"
 button="0000001a"
+chrome="ccd0d2"
 #   -----
 fg1="444444"
 fg2="767676"
@@ -23,7 +24,7 @@ accent2="$cyan"
 contrast="ffffff"
 red="cd5e79"
 #   -----
-wall="plant-2.jpg"
+wall="plant.jpg"
 #   -----
 
 # vim:ft=sh

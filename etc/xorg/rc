@@ -15,9 +15,9 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 [ "$DBUS_SESSION_BUS_ADDRESS" ] ||
 	dbus-launch --exit-with-session "$c/xorg/rc" "$@" &
 
-pap        # wallpaper
-hw 0       # clear hidden windows cache
-screen.sh  # change display layout
+pap       & # wallpaper
+hw 0      & # clear hidden windows cache
+screen.sh & # change display layout
 pulseaudio -D &          # audio
 xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste
@@ -33,12 +33,15 @@ case "$wm" in
 	*)  sxhkd &  picom &  dunst &
 esac
 
+#setxkbmap -option caps:escape
 D() {
 xmodmap - << EOF
 	clear lock
 	add control = Control_L Control_L Control_R
 	keycode 66 = Escape Escape NoSymbol Escape
 EOF
-};D;D  # doesn't work if it's only ran once...
+}; { D;D; } &  # doesn't work if it's only ran once...
+
+obs --startreplaybuffer &
 
 exec "$wm"

@@ -164,6 +164,30 @@ wm -r
 #	-e "s|^	color: #.*|	color: #$fg1;|" \
 #	"$c/gtk-3.0/menus.css"
 
+echo " - gtk [font]"
+cat << EOF > ${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini
+[Settings]
+gtk-application-prefer-dark-theme=0
+gtk-button-images=1
+gtk-cursor-theme-name=cursor
+gtk-cursor-theme-size=0
+gtk-decoration-layout=icon:minimize,maximize,close
+gtk-enable-animations=1
+gtk-enable-event-sounds=1
+gtk-enable-input-feedback-sounds=1
+gtk-font-name=$font, $fontsize
+gtk-icon-theme-name=Papirus-Dark
+gtk-menu-images=1
+gtk-primary-button-warps-slider=0
+gtk-theme-name=phocus
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
+gtk-xft-antialias=1
+gtk-xft-hinting=1
+gtk-xft-hintstyle=hintfull
+gtk-xft-rgba=rgb
+EOF
+
 echo " - gtk [phocus]"
 cd ~/src/phocus && {
 	cat << EOF > scss/gtk-3.0/_colors.scss

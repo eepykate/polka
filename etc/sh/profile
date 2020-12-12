@@ -3,11 +3,12 @@
 #
 
 export \
-	null="/dev/null" \
-	opt="$HOME/opt"  \
-	data="$HOME/usr" \
-	conf="$HOME/etc" \
-	cache="$HOME/usr/cache"
+	null=/dev/null \
+	opt=$HOME/opt  \
+	data=$HOME/usr \
+	conf=$HOME/etc \
+	apps=$HOME/opt/apps \
+	cache=$HOME/usr/cache
 
 export \
 	XDG_DATA_HOME="$data"   \
@@ -45,14 +46,19 @@ lsvid="*.avi=34:*.mkv=34:*.mp4=34:*.webm=34"
 export LS_COLORS="$ls:$lstar:$lsimg:$lsvid"
 
 # nix lol
-HOME=$HOME/opt/apps . ~/opt/apps/.nix-profile/etc/profile.d/nix.sh
-export PATH="$(find ~/bin -type d | tr '\n' ':')$PATH"
+export \
+	NIX_PATH=$apps/.nix-defexpr/channels \
+	NIX_PROFILES="/nix/var/nix/profiles/default $HOME/.nix-profile" \
+	NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
-star() { ( "$@" & ) &>$null; }
+export PATH="$(find ~/bin -type d | tr '\n' ':')$apps/.nix-profile/bin:$PATH"
+
+star() { ( "$@" & ) >$null 2>&1; }
 systemctl --user import-environment data cache conf
 star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
 star shortcuts
 star sudo kbdrate -d 200 -r 60
+star archi
 
 # vim: ft=sh

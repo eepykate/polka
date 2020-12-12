@@ -15,8 +15,7 @@ fun() {
 	printf '\n%b\n' "\033[35m${1#http*://}\033[0m"
 
 	# shorthand git
-	v=//${1#*/}
-	v=${v%/*}
+	v=$(echo "$1" | tr -cd /)
 	[ "$v" = / ] && { git clone "https://github.com/$1" $2; return; }
 
 	# add missing https
@@ -24,7 +23,6 @@ fun() {
 		http*) ;;
 		*) set -- "https://$1" "$2"
 	esac
-
 
 
 	case $1 in
@@ -43,7 +41,7 @@ fun() {
 
 		# unsplash
 		*unsplash.com*) v=${1%/download*}
-			curl -L#o "${v##*/}.jpeg" "$v/download?force=true";;
+			curl -L#o "${2:-${v##*/}.jpeg}" "$v/download?force=true";;
 
 		# other
 		*) curl -L#o "$out"  "$1";;

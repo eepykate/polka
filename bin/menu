@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 #  fzf dmenu alternative
 
 exec 2>>"$HOME/usr/cache/menu.log"
@@ -7,8 +7,9 @@ exec 2>>"$HOME/usr/cache/menu.log"
 
 in=/tmp/fzfmenu  out=/tmp/fzfmenuout
 
+
 : > $out
-cat > $in
+[ -t 0 ] || cat > $in
 
 while [ "$1" ]; do
 	[ "$1" = -p ] && prompt=" $2" && break

@@ -1,10 +1,9 @@
 #!/bin/sh
-#
-#   Move a file to trash
-#
+#  simple trasher
 # (needs GNU mv)
 
 td="$HOME/opt/trash"
+mkdir -p "$td"
 
 for o; do
 	case "$o" in

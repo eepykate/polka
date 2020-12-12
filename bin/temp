@@ -7,5 +7,7 @@ dir="${XDG_CACHE_HOME:=$HOME/.cache}/tmp-$$"
 mkdir -p "$dir"
 cd "$dir"
 
+[ "$1" = r ] && unset XDG_CONFIG_HOME XDG_DATA_HOME XDG_CACHE_HOME
+
 _JAVA_OPTIONS=-Duser.home=$dir \
-	$SHELL
+	HOME="$dir" $SHELL

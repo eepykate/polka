@@ -134,7 +134,7 @@ d() {
 
 v() {
 	# edit file based on write perms
-	if [[ "$1" =~ (http.*|-.*) ]] || [[ -w "$1" ]] || [[ -w "$(dirname "$1")" ]]; then
+	if [[ "$1" =~ (^http|^-) ]] || [[ -w "$1" ]] || [[ -w "$(dirname "$1")" ]]; then
 		$EDITOR "$@"
 	else
 		sudo -E $EDITOR "$@"

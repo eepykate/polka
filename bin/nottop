@@ -1,4 +1,11 @@
 #!/bin/sh
-exit
 [ "$1" = a ] && a='window moved to' || a='switched to'
-dunstify -u low -t 700 -r 9966 "$a $2"
+
+var=$(pgrep "${0##*/}")
+var=${var%$$*}
+[ "$var" ] &&
+kill $var
+
+dunstify -u low -r 9966 "$a $2"
+sleep 0.5
+dunstify -C 9966

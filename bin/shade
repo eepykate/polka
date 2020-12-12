@@ -69,7 +69,8 @@ dar() {
 pic() {
 	# if the selection is a hex/rgb value, use that,
 	# otherwise select a pixel
-	hex=$(xclip -o | sed 's/rgb//' | tr -d "#:;,.='()\"")
+	pkill -x colorpicker
+	hex=$(xclip -o | sed 's/rgb//' | tr "#:;,.='()\"" ' ')
 	set -- $hex
 
 	v='[a-fA-F0-9]'

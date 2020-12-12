@@ -11,8 +11,14 @@ _wrap() { _ "$@"; }
 # special app-specific functions
 _boox()      { boox "$@"; exec sleep 0.1; }
 _minecraft() { _ mangohud --dlsym minecraft-launcher "$@"; }
-_steam()     { _ steam "${@:--console}"; }
-_apt()       { { sudo apt "$@" 3>&1 1>&2 2>&3 | grep -iv '^$\|stable cli interface'; } 3>&1 1>&2 2>&3; }
+_steam()     { _ lo steam "$@"; }
+_apt()       {
+	if [ -t 1 ]; then
+		sudo apt "$@"
+	else
+		{ sudo apt "$@" 3>&1 1>&2 2>&3 | grep -iv '^$\|stable cli interface'; } 3>&1 1>&2 2>&3
+	fi
+}
 
 # make the symlinks
 [ "$1" = deploy ] && {
