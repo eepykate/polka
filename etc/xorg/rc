@@ -18,7 +18,7 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 pap       & # wallpaper
 hw 0      & # clear hidden windows cache
 screen.sh & # change display layout
-pulseaudio -D &          # audio
+#pulseaudio -D &         # audio
 xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
@@ -43,7 +43,5 @@ EOF
 }; { D;D; } &  # doesn't work if it's only ran once...
 
 obs --startreplaybuffer &
-st -e sh -c "echo no path; exec zsh" &
-$HOME/bin/bin/st -e sh -c "echo absolute path; exec zsh" &
 
 exec "$wm"
