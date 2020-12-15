@@ -19,6 +19,7 @@ set smartcase          " Ignore case when only lower case is typed
 " misc
 set cursorline         " Highlight the line that the cursor is on
 set mouse=a            " Mouse support
+set linebreak          " Don't wrap the middle of a word
 set fcs=eob:\ 
 color simple
 
