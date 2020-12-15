@@ -54,7 +54,7 @@ Print
 	freeze & scr -S; pkill freeze
 
 super + {Insert, Home, Next, Prior, End}
-	scr {_,-c -pwnd,-c -e,-c -pro -a -r60,-s}
+	scr {_,-c -pwnd,-c -e -b6,-c -pro -a -r60,-s}
 
 
 #
