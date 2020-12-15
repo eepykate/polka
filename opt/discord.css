@@ -1,3 +1,270 @@
+[class*="containerDefault-"]:not(:hover) [class*="children-"] > [class*="iconItem-"] {
+	display: none !important;
+}
+
+
+
+/* make smol */
+.containerDefault--pIXnN {
+	padding-top: 0;
+}
+/* categories */
+.containerDefault-3tr_sE {
+	padding-top: 0.2rem;
+	height: 1.6rem;
+	margin-bottom: 0.3rem;
+}
+
+[class^="sidebar-"] [class*="mainContent"] > svg {
+	display: none;
+}
+
+[class^="sidebar-"] [class*="mainContent"]:not([aria-label*="(category"]) > [class*="name-"]:before {
+	display: inline-block !important;
+	content: '●';
+	font-family: "Nimbus Sans";
+	font-size: var(--font2-size);
+	margin-right: 0.5rem;
+	margin-left: 0.7rem;
+	vertical-align: 0.1rem;
+}
+
+[class^="sidebar-"] [class*="mainContent"][aria-label*="(voice"] > [class*="name-"]::before {
+	content: '■';
+	font-size: calc(var(--font2-size)/1.5);
+	margin-left: 0.8rem !important;
+}
+
+/*
+* collapsed sidebar
+*/
+
+@media (max-width: 1200px) {
+
+/* servers */
+[class*="guilds-"] {
+	margin-left: -4.6rem;
+	transition: all 0ms;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 102;
+}
+
+/* server ping */
+[class*="guilds"]:not(:hover) [class*="blobContainer"]:not([tabindex="0"]) [class*="lowerBadge"] > div {
+	background-color: var(--red) !important;
+	width: 50px;
+	margin-right: -4px;
+	font-size: 5px !important;
+	max-height: 10px !important;
+	min-height: 10px !important;
+	border-radius: 30px;
+	margin-bottom: 19px !important;
+}
+
+[class^="sidebar-"]:not(:hover) * [class*="numberBadge"] {
+	background-color: transparent !important;
+	color: var(--accent) !important;
+	visibility: visible;
+	left: -32px !important;
+	top: -6px !important;
+	font-weight: var(--font-weight) !important;
+	font-family: var(--font) !important;
+}
+
+/* focused server */
+
+[class*="categorySection"] [class*="header-"], /* emoji list */
+[class^="tree-"] > [class*="scroller-"] {
+	background-color: var(--bg3) !important;
+}
+
+/* align unread server indicator */
+[class*="guilds-"] * [class*="pill-"] {
+	margin-left: 4.6rem;
+}
+
+/* re-align messages area */
+.base-3dtUhz {
+	margin-left: -4.7rem;
+	padding-left: 1.7rem;
+}
+
+/* expand on hover */
+[class*="guilds-"]:hover * [class*="pill-"],
+[class*="guilds-"]:hover {
+	margin-left: 0;
+}
+
+/* members sidebar */
+[class*="membersWrap-"] {
+	margin-right: -14.8rem;
+}
+
+[class*="membersWrap-"]:not(:hover) [id^='members-'] {
+	margin-left: 0;
+}
+
+[class*="membersWrap-"]:hover {
+	margin-right: 0;
+	margin-left: -14.8rem;
+}
+
+[class*="membersWrap-"]:not(:hover) [class*="membersGroup"] {
+	margin-left: -14.8rem;
+}
+
+[class*="membersGroup"] {
+	padding-top: 0.5rem;
+	margin-bottom: 0.2rem;
+	margin-left: -0.5rem;
+	height: 1.8rem;
+}
+
+/* channels sidebar */
+[class*="content-"] > [class*="sidebar-"] {
+	transition: all 0ms;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: -16.2rem;
+	z-index: 2;
+	background-color: var(--bg2) !important;
+}
+
+[class*="sidebar-"]:not(:hover) [class*="privateChannels-"] {
+	margin-left: 1.4rem;
+}
+
+[class*="privateChannels-"] [class*="avatar-"] svg > foreignObject {
+	mask: none !important;
+}
+
+[class*="privateChannels-"] [class*="avatar-"] > div,
+[class*="privateChannels-"] [class*="avatar-"] .mask-1l8v16 {
+	max-width: 1.7rem;
+	max-height: 1.7rem;
+}
+
+.avatar-3uk_u9 {
+	max-width: 1.3rem;
+}
+
+[id^="private-channels-"] [class*="layout"],
+[id^="private-channels-"] {
+	max-height: 2.3rem !important;
+	margin-left: 0.25rem;
+}
+
+[id^="private-channels-"] [class*="layout"] {
+	padding-left: 0.4rem !important
+}
+
+[class^="sidebar-"]:not(:hover) .name-3_Dsmg {
+	font-size: 0 !important;
+	display: inline-block !important;
+}
+/*
+[class^="sidebar-"]:not(:hover) .name-3_Dsmg::before {
+	margin-left: 12px;
+	vertical-align: -2px;
+}
+[class^="sidebar-"]:not(:hover) [aria-label*="(voice"] > [class*="name"]::before {
+	margin-left: 13px;
+}*/
+
+[class^="sidebar-"]:not(:hover) [aria-label*="(category)"]::before {
+	font-family: var(--font);
+	font-weight: var(--font-weight);
+	margin-left: 1.9rem;
+	margin-top: 0.4rem;
+	content: '-'
+}
+
+[class^="sidebar-"]:hover [aria-label*="(category)"] {
+	padding-left: 0.3rem;
+}
+
+
+[class*="sidebar"]:hover [class*="iconVisibility"],
+[class*="sidebar"]:hover [class*="content-"] {
+	margin-left: -0.11rem;
+	padding-left: 0.1rem;
+}
+[class*="sidebar"]:not(:hover) [class*="avatarContainer-"] {
+	margin-left: 1.35rem;
+}
+
+
+[class^="sidebar-"]:not(:hover) [class^="children-"],
+[class^="sidebar-"]:not(:hover) > section > div {
+	display: none;
+}
+
+[class^="sidebar-"] svg[class*="button"],
+[class^="sidebar-"]:not(:hover) [id^="channels-"] ~ [class^="children"] {
+	visibility: hidden;
+	max-width: 0;
+	padding: 0;
+	margin: 0;
+}
+/* fix channel icon widths */
+[class^="sidebar-"]:not(:hover) * [class^="content-"] {
+	width: 2.5rem !important;
+}
+
+[class*="sidebar-"]:not(:hover) [id^="private-channels-"] > * {
+	margin-left: 14.6rem;
+}
+/* fix alignment of channel icons when collapsed */
+.sidebar-2K8pFh:not(:hover) * [class*="containerDefault"]:not([role]) {
+	position: relative;
+	left: 14.95rem;
+}
+/* category icons */
+[class*="sidebar-"]:not(:hover) * .arrow-gKvcEx {
+	position: absolute;
+	left: 0.8rem;
+}
+
+[class*="sidebar-"]:hover * [class*="voiceUser"] {
+	max-width: calc(100% * 1.2);
+	margin-left: -3.2rem;
+}
+
+[class*="sidebar-"]:not(:hover) * [class*="voiceUser"] {
+	position: relative;
+	left: -2.7rem;
+}
+/* hide text when collapsed */
+/*[class^="sidebar-"]:not(:hover) * [class*="children-"],
+[class^="sidebar-"]:not(:hover) * [class^="name-"] */
+[class^="sidebar-"]:not(:hover) * [class*="container-"] ~ [class*="children-"],
+[class^="sidebar-"]:not(:hover) * [class*="container-"][class*="name-"] {
+	display: none !important;
+}
+[class^='member-'] {
+	margin-left: 0;
+}
+
+[class^='member-'] [class^="avatar-"] {
+   margin-right: 2rem;
+}
+
+/*
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+*/
+}
+
+[class="groupStart-23k01U"] {
+	margin: 0 !important;
+	display: none !important;
+}
+
+[class*="userPopout"],
 .container-3XJ8ns {
 	background-color: var(--bg1);
 	box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.2)
@@ -43,9 +310,14 @@
 #app-mount [class*="typing-"] {
 	order: 0;
 	z-index: 0;
-	top: 0px;
-	margin-top: -12px;
+	top: 0;
+	margin-top: -1rem;
 	background-color: var(--bg1);
+}
+
+[class*="jumoToPresent"],
+[class*="channelTextArea-"] > [class*="container"] /* reply button */ {
+	z-index: 999 !important;
 }
 
 /* profile picture next to name */
@@ -55,8 +327,8 @@
 
 [class*="cozy-"][class*="zalgo-"],
 [id^="chat-messages"] {
-	padding-left: 6px !important;
-	padding-right: 10px !important;
+	padding-left: 0.5rem !important;
+	padding-right: 0.9rem !important;
 }
 
 [class*="replyAvatar-"] {
@@ -65,49 +337,53 @@
 
 [class*="zalgo-"] > [class*="contents-"] > img:first-of-type,
 [class*="message-"] [class*="avatar-"] {
-	left: 6px;
-	top: -3px;
-	width: 20px;
-	height: 20px;
+	left: 0.5rem;
+	top: -0.3rem;
+	width: 1.6rem;
+	height: 1.6rem;
 	border-radius: 6px;
 }
 
+/* searching / pins */
+
+[class*="messagesPopoutWrap"] [class*="zalgo-"] > [class*="contents-"] > img:first-of-type,
+[id*="pinned-message"] > [class*="contents-"] > img:first-of-type,
+[class*="searchResultMessage-"][class*="hit-"] [class*="avatar"] {
+	top: 0.5rem !important;
+}
+
+
+/* the pfp of the person replying (NOT THE REPLYEE) */
 [class*="repliedMessage-"] + [class*="contents"] > img {
-	top: 19px !important;
+	top: 1.5rem !important;
 }
 
 [class*="repliedMessage-"] + [class*="contents"] [class*="username-"]:not(:first-of-type) {
 	margin-left: 0 !important;
 }
-
+/* name of person in chat */
 [class*="header-"] :not([class*="headerTag"]) > [class*="username-"] {
-	margin-left: 23px;
+	margin-left: 1.9rem;
 }
 
-/* when searching */
-[class*="messagesPopoutWrap"] [class*="zalgo-"] > [class*="contents-"] > img:first-of-type,
-[id*="pinned-message"] > [class*="contents-"] > img:first-of-type,
-[class*="hit-"] > * > [class*="contents-"] > img:first-of-type {
-	top: 8px !important;
-}
 
 [class*="channelSeparator-"]::before,
 [class*="searchResult"][class*="expanded-"],
 [class*=".searchResultMessage"] {
-	border: 0px !important;
+	border: 0 !important;
 }
 
 [class*="searchResults"] [class*="messageGroupCozy"] {
-	padding: 3px;
-	margin-left: 5px;
-	border: 0px solid transparent !important;
+	padding: 0.1rem;
+	margin-left: 0.2rem;
+	border: 0 solid transparent !important;
 	background-color: var(--bg3);
 }
 
 
 /* simple edit indicator */
 #app-mount [class^="edited-"] {
-	font-size: 0px !important;
+	font-size: 0 !important;
 }
 
 [class^="edited-"]::before {
@@ -122,9 +398,9 @@
 	position: absolute;
 	display: block;
 	left: unset !important;
-	right: 6px !important;
+	right: 0.5rem !important;
 	width: unset !important;
-	padding: 1px 7px;
+	padding: 0.1rem 0.6rem;
 	background-color: var(--bg3) !important;
 	color: var(--fg2) !important;
 }
@@ -137,15 +413,20 @@ code.hljs:not(.inline)::before {
 	float: right;
 	display: block;
 	width: auto;
-	max-width:  70px;
+	max-width:  6rem;
 	text-align: right;
 	min-width:  auto;
-	margin-top: -110px;
-	line-height: 20px;
+	margin-top: -8.5rem;
+	line-height: 1.6rem;
 	overflow-x: hidden;
 	scrollbar-width: none;
 	color: var(--fg2);
 	opacity: 0.6;
+}
+
+/* padding at bottom of chat */
+[class*="scrollerSpacer"] {
+	height: 0.9rem;
 }
 
 /*
@@ -173,22 +454,22 @@ code:not(.inline) {
 	max-width: 90ch;
 	border-radius: 2px;
 	background-color: var(--bg3) !important;
-	padding: 12px;
+	padding: 1rem;
 	border: none !important;
 }
 #app-mount code.inline {
 	border-radius: 2px;
-	padding: 4px 4px;
+	padding: 0.3rem;
 	background-color: var(--bg3) !important;
 	font-weight: var(--font-weight) !important;
 }
-
+/* Likely does nothing?
 [class*="markup"][class*="messageContent"] {
 	margin-top: -2px;
 	padding-top: 2px;
 	margin-bottom: -2px;
 	padding-bottom: 2px;
-}
+}*/
 
 .mentionsBadge-7f5lud {
 	display: block !important;
@@ -223,7 +504,7 @@ code:not(.inline)::before {
 
 /* fonts */
 *:not(code):not([class*="hljs"]):not(.name-3_Dsmg) {
-	font-family: var(--font2), "Dejavu Sans" !important;
+	font-family: var(--font2) !important;
 	font-size: var(--font2-size) !important;
 }
 
@@ -319,8 +600,8 @@ svg[class*="homeIcon-"] path {
 
 [class^="sidebar-"]:not(:hover) * [class^="numberBadge-"] {
 	position: relative;
-	left: 0px;
-	top: -3px;
+	left: 0;
+	top: -3;
 }
 
 /* selected and unread servers */
@@ -368,7 +649,9 @@ svg[class*="homeIcon-"] path {
 [class*="markup-"] a:visited {
 	color: var(--accent2);
 }
-
+[class*="resultFocused"] {
+	background-color: var(--bg1);
+}
 
 .theme-dark {
 	--elevation-low: none !important;
@@ -409,12 +692,13 @@ svg[class*="homeIcon-"] path {
 	align-items: initial;
 }
 
+/* Likely does nothing?
 [class*="scrollerSpacer-"] {
 	height: 10px;
-}
+}*/
 
 [class*="textArea-"] {
-	bottom: -4px !important;
+	bottom: -3px !important;
 }
 
 [class^="chatContent"] [class^="channelTextArea"] {
@@ -422,7 +706,7 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="typing-"] {
-	left: 2px;
+	left: 0.1rem;
 }
 
 [class*="typing-"],
@@ -430,7 +714,7 @@ svg[class*="homeIcon-"] path {
 [class^="messagesWrapper-"] > * > [class*="scroller"],
 [class*="autocomplete-"] {
 	max-width: 1000px;
-	width: calc(100% - 20px);
+	width: calc(100% - 1.8rem);
 	margin: 0 auto;
 }
 
@@ -498,7 +782,7 @@ svg[class*="homeIcon-"] path {
 
 /* hover message timestamp */
 [class*="timestampCozyAlt-"] {
-	font-size: 9px !important;
+	font-size: 0.8rem !important;
 }
 
 
@@ -508,8 +792,8 @@ svg[class*="homeIcon-"] path {
 }
 
 [class*="reaction-"] {
-	height: 20px !important;
-	margin-top: 4px;
+	height: 1.4rem !important;
+	margin-top: 0.15rem;
 }
 
 
