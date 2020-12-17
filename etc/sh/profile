@@ -57,8 +57,8 @@ star() { ( "$@" & ) >$null 2>&1; }
 systemctl --user import-environment data cache conf
 star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
-star shortcuts
 star sudo kbdrate -d 200 -r 60
 star archi
+shortcuts
 
 # vim: ft=sh

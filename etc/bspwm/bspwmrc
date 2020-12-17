@@ -3,7 +3,7 @@
 #  bspwmrc
 #
 
-_() { bspc config "$@";  }
+c() { bspc config "$@";  }
 R() { bspc rule -a "$@"; }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
@@ -16,24 +16,27 @@ bspc monitor DVI-D-0 -s HDMI-0
 # focus first/last desktops
 pgrep sxhkd || bspc desktop -f ^10 -f ^1
 
+c ignore_ewmh_fullscreen all
+c ignore_ewmh_focus true
+
 # mouse
 xsetroot -cursor_name      left_ptr
-_ pointer_modifier         mod4
-_ focus_follows_pointer    true
-_ pointer_follows_focus    false
-_ pointer_motion_interval  5
+c pointer_modifier         mod4
+c focus_follows_pointer    true
+c pointer_follows_focus    false
+c pointer_motion_interval  5
 
 
 # borders/gaps
-_ window_gap    20
-_ border_width  0
-_ single_monocle      true
-_ gapless_monocle     true
-_ borderless_monocle  true
+c window_gap    20
+c border_width  0
+c single_monocle      true
+c gapless_monocle     true
+c borderless_monocle  true
 
-_ normal_border_color       '#151823'
-_ active_border_color       '#151823'
-_ focused_border_color      '#151823'
+c normal_border_color       '#151823'
+c active_border_color       '#151823'
+c focused_border_color      '#151823'
 
 
 #
@@ -65,5 +68,5 @@ pgrep sxhkd || {  # dropdown htop/shell
 
 s picom
 s dunst
-s sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"
+s sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"  "$sx/other"
 [ -e "$bs/other" ] && . "$bs/other"

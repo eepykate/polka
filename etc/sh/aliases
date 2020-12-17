@@ -73,7 +73,7 @@ et() {
 	done
 
 	[ "$pids" ] || ! echo "no such processes: $*" &&
-		ps -o 'comm=,etime=' ${pids:-999999}
+		ps -o 'etime=,comm=' ${pids:-999999}
 }
 
 #
