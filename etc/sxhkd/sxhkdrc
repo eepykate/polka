@@ -37,7 +37,7 @@ ctrl + alt + s
 
 # mousebind
 XF86Launch6
-	picker
+	shade picker
 
 super + shift + {0-9}
 	hw {0-9}

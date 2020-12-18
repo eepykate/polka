@@ -23,7 +23,7 @@ set linebreak          " Don't wrap the middle of a word
 set fcs=eob:\ 
 color simple
 
-cnoreabbrev rm !del %<CR>:next<CR>
+"cnoreabbrev rm !del %<CR>:next<CR>
 
 " whitespace at the end of the line
 hi!  ExtraWhitespace ctermbg=red guibg=red

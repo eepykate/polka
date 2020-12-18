@@ -6,6 +6,9 @@
 **/plugged
 **/sc.sh
 **/userChrome.js
+**/.uuid
+**/LICENSE*
+**/*ttf
 
 etc/colours/current
 etc/mpv

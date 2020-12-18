@@ -2,6 +2,8 @@
 #   profile
 #
 
+systemctl --user import-environment >/dev/null 2>&1
+
 export \
 	null=/dev/null \
 	opt=$HOME/opt  \
@@ -51,6 +53,7 @@ export \
 	NIX_PROFILES="/nix/var/nix/profiles/default $HOME/.nix-profile" \
 	NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games"
 export PATH="$(find ~/bin -type d | tr '\n' ':')$apps/.nix-profile/bin:$PATH"
 
 star() { ( "$@" & ) >$null 2>&1; }
