@@ -1,7 +1,6 @@
-<div align="center"> <img src="./opt/svg.svg"> </div>
+<div align="center"> <a href="https://github.com/buffet/kiwmi"> <img src="./opt/svg.svg"> </a> </div>
 
-Yep, no dotfiles here. Check out [declutter-home](https://github.com/vizs/declutter-home)
-for more.
+<div align="center"> <a href="https://github.com/buffet/kiwmi"> ⭐ 🥝 star kiwmi ⭐ 🥝 </a> </div>
 
 <h2 align="center"> Screenshots </h2>
 
