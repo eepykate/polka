@@ -3,8 +3,8 @@
 #  bspwmrc
 #
 
-c() { bspc config "$@";  }
-R() { bspc rule -a "$@"; }
+c() { bspc config "$@" &  }
+R() { bspc rule -a "$@" & }
 s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
 
@@ -13,8 +13,6 @@ bspc monitor -d      1 2 3 4 5 6
 bspc monitor DVI-D-0 -d  7 8 9 0
 # fix ordering
 bspc monitor DVI-D-0 -s HDMI-0
-# focus first/last desktops
-pgrep sxhkd || bspc desktop -f ^10 -f ^1
 
 c ignore_ewmh_fullscreen all
 c ignore_ewmh_focus true
@@ -49,12 +47,17 @@ R freeze    state=floating border=off monitor="$(6r names -p)"
 R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating
+R menu      state=floating sticky=on layer=above
 
 
 #
 #   autostart
 #
-pgrep sxhkd || {  # dropdown htop/shell
+pgrep sxhkd || {
+	# focus first/last desktops
+	bspc desktop -f ^10 -f ^1
+
+	## dropdown htop/shell
 	# start invisible
 	bspc rule -a taskman hidden=on -o
 	st -c taskman -e sh -c 'while :; do sudo -E htop; zsh; done' &

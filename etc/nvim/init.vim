@@ -80,7 +80,7 @@ let g:gitgutter_sign_removed_above_and_below = '▍'
 
 set pastetoggle=<F2>
 
-nnoremap <silent> <C-w> :Rex<CR>
+"nnoremap <silent> <C-w> :Rex<CR>
 " There's got to be a more efficient way of doing this, but whatever
 
 noremap Q :prev <CR>

@@ -1,5 +1,3 @@
-@import url("menus.css");
-
 *:not(.path-bar-button):not(.rubberband):not(separator) {
 	border: none;
 }

@@ -2,7 +2,7 @@
 #  focus window
 
 # exit when fullscreen
-bspc query -N -n focused.fullscreen && exit
+bspc query -N -n focused.fullscreen || pgrep -x menu && exit
 
 case $1 in
 	east)  arg=xy; op=-gt;;

@@ -1,0 +1,29 @@
+/* blocked messages */
+[class="groupStart-23k01U"] {
+	margin: 0 !important;
+	display: none !important;
+}
+
+/* role backgrounds instead of outlines */
+[class*="role-"] {
+	border: none !important;
+	overflow: hidden;
+}
+
+[class*="roleRemoveIcon-"] {
+	z-index: 999;
+	position: absolute;
+}
+
+[class*="role-"] > [class*="roleCircle-"]::after {
+	background-color: inherit;
+	content: '';
+	display: block;
+	position: relative;
+	min-width: 230px;
+	height: 69px;
+	opacity: 0.2;
+	right: -100px;
+	z-index: 0;
+	pointer-events: none;
+}

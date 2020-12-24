@@ -198,7 +198,7 @@ blank() {
 	# making a c program on the fly :)
 	command -v pause >/dev/null 2>&1 || {
 		printf 'int main() { pause(); }' \
-			| cc -xc -o "$HOME/bin/bin/pause"
+			| cc -xc -o "$HOME/bin/bin/pause" - >/dev/null 2>&1
 		chmod +x "$HOME/bin/bin/pause"
 	}
 	pause

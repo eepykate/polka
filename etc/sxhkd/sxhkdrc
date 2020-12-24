@@ -8,8 +8,8 @@ super + {alt + space, Return}
 super + space
 	launch
 
-super + {j,y,u,i}
-	{react, memeaker, copy, emoji}
+super + {u,i}
+	{copy, emoji}
 
 super + f
 	chromium
@@ -54,7 +54,7 @@ Print
 	freeze & scr -S; pkill freeze
 
 super + {Insert, Home, Next, Prior, End}
-	scr {_,-c -pwnd,-c -e -b6,-c -pro -a -r60,-s}
+	scr {_,-c -pwnd -b8,-c -e -b6,-c -pro -a -r60 -b12,-s}
 
 
 #

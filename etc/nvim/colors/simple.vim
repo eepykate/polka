@@ -16,7 +16,7 @@ hi NetrwClassify ctermfg=none
 
 " bars
 hi LineNr       ctermfg=8
-hi CursorLineNr ctermfg=7
+hi CursorLineNr ctermfg=16
 hi StatusLine   ctermfg=15
 hi VertSplit    ctermbg=8 ctermfg=0
 
@@ -32,8 +32,8 @@ hi PmenuThumb   ctermbg=8      ctermfg=8      cterm=none
 hi WildMenu     ctermbg=none   ctermfg=4      cterm=none
 
 " search
-hi Search       ctermfg=7   ctermbg=none  cterm=underline
-hi MatchParen   ctermfg=7   ctermbg=none  cterm=underline
+hi Search       ctermfg=16   ctermbg=none  cterm=underline
+hi MatchParen   ctermfg=16   ctermbg=none  cterm=underline
 
 " other
 hi GitGutterAdd     ctermfg=16
@@ -59,9 +59,9 @@ hi AleErrorSign   ctermfg=1
 hi AleError       ctermfg=1  cterm=underline
 
 " general lang syntax
-hi Comment      ctermfg=8
+hi Comment      ctermfg=7
 hi Constant     ctermfg=15
-hi String       ctermfg=7
+hi String       ctermfg=16
 hi Character    ctermfg=1
 hi Number       ctermfg=none
 hi Boolean      ctermfg=none
@@ -122,15 +122,15 @@ hi htmlBold               ctermfg=15      cterm=bold
 hi htmlTag                ctermfg=15
 hi htmlEndTag             ctermfg=15
 hi markdownLinkText       ctermfg=15
-hi markdownURL            ctermfg=7
+hi markdownURL            ctermfg=16
 hi markdownCode           ctermfg=15
 hi markdownBlockquote     ctermfg=15
-hi markdownCodeDelimiter  ctermfg=7
+hi markdownCodeDelimiter  ctermfg=16
 hi markdownHeadingDelimiter ctermfg=15
 hi markdownH1             ctermfg=15
 
 
 " vimscript
-hi vimNotation    ctermfg=7
+hi vimNotation    ctermfg=16
 
 hi xdefaultsLabel ctermfg=16

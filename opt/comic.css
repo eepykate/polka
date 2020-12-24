@@ -1,0 +1,12 @@
+* {
+	font-family: "Comic Sans MS",  "Font Awesome 5 Free" !important;
+}
+
+.material-icons-extended {
+	font-family: "Material Icons Extended" !important;
+}
+
+code, .inline, pre, code *, pre * {
+	font-family: "Ubuntu Mono" !important;
+	font-weight: 700;
+}
