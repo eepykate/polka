@@ -6,7 +6,7 @@ dewit() {
 }
 
 PATH=$(echo "$PATH" | sed "s|${0%/*}:||")
-dewit git submodule update --init --recursive
+git rev-parse --git-dir 2>/dev/null && dewit git submodule update --init --recursive
 set -e
 if [ -e "Makefile" ]; then
 	[ "$1" = install ] &&
