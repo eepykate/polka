@@ -76,6 +76,11 @@ et() {
 		ps -o 'etime=,comm=' ${pids:-999999}
 }
 
+af() {  # after
+	while pgrep "$1" >/dev/null; do sleep "${sleep:-6}"; done
+	shift; "$@"
+}
+
 #
 #  files/dirs
 #
