@@ -22,12 +22,14 @@ colours="--color='bg+:0,gutter:-1,fg+:15,fg:7,prompt:16,hl:7,hl+:15'"
 c='bspc config' hover=focus_follows_pointer click=click_to_focus
 $c $hover false
 $c $click none
+{ sleep 0.15; bspc rule -a '*' focus=off; } &
 
 st -g 48x16 -c menu -e sh -c \
 	"fzf --prompt='$prompt | ' $args $colours < $in > $out"
 
 $c $hover true
 $c $click button1
+wait; bspc rule -r tail
 
 [ "$(wc -l < $out)" -gt 1 ] && exec tail -n+2 $out
 cat $out
