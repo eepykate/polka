@@ -96,8 +96,14 @@ f() { find "${2:-.}" -iname "*$1*"; }
 F() { find "${2:-.}" -name "$1"; }
 
 # backup
-# zstd decompresses fast
-bk() { tar -I zstd -cvf "${1%/}_$(date -Id).tar.zst" "$1"; }
+# apparently zstd decompresses fast
+bk() {
+	if [ $# = 1 ] && ! [ -d "$1" ]; then
+		cp -- "$1" "$1_$(date -Id)"
+	else
+		tar -I zstd -cvf "${1%/}_$(date -Id).tar.zst" "$@"
+	fi
+}
 
 alias e="atool -x"
 c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
