@@ -1,0 +1,11 @@
+#!/bin/sh
+#  /usr/lib/systemd/system-sleep/00sleep
+
+case $1 in
+	# sleeping
+	pre)  pkill ArchiSteamFarm;;  # pkill obs;;
+
+	# waking
+	post) su d -c 'archi &'
+	      #su d -c 'env -i zsh -c "XAUTHORITY=$HOME/usr/cache/xauth DISPLAY=:0 obs --startreplaybuffer &"'
+esac

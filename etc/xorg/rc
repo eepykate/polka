@@ -42,6 +42,6 @@ xmodmap - << EOF
 EOF
 }; { D;D; } &  # doesn't work if it's only ran once...
 
-obs --startreplaybuffer &
+#obs --startreplaybuffer &
 
 exec "$wm"
