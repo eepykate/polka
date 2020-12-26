@@ -11,6 +11,15 @@ super + space
 super + y
 	keepassxc
 
+XF86Launch5
+	mic toggle
+
+alt + ctrl + space
+	xdotool keyup space; xdotool key --clearmodifiers ctrl+Return
+
+alt + shift + space
+	xdotool keyup space; xdotool key --clearmodifiers Shift+Return
+
 alt + space
 	xdotool keyup space; xdotool key --clearmodifiers Return
 

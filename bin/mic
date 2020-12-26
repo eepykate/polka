@@ -46,6 +46,7 @@
 }
 
 exec 2>/dev/null
+[ "$(pgrep -x "${0##*/}")" = $$ ] || exit 1
 trap 'pkill mumble' 2
 
 # prepare environment

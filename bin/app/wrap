@@ -12,6 +12,7 @@ _wrap() { _ "$@"; }
 _boox()      { boox "$@"; exec sleep 0.1; }
 _minecraft() { _ mangohud --dlsym minecraft-launcher "$@"; }
 _steam()     { _ lo steam "$@"; }
+_pacman()    { sudo pacman "$@"; }
 _apt()       {
 	if [ -t 1 ]; then
 		sudo apt "$@"
