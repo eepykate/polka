@@ -8,6 +8,12 @@ super + {alt + space, Return}
 super + space
 	launch
 
+super + y
+	keepassxc
+
+alt + space
+	xdotool keyup space; xdotool key --clearmodifiers Return
+
 super + {u,i}
 	{copy, emoji}
 
