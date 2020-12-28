@@ -62,7 +62,7 @@ star sudo kbdrate -d 200 -r 60
 star archi
 shortcuts
 
-test -e /tmp/session || x
-:>/tmp/session
+#test -e /tmp/session || x
+#:>/tmp/session
 
 # vim: ft=sh
