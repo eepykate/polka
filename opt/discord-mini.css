@@ -27,3 +27,23 @@
 	z-index: 0;
 	pointer-events: none;
 }
+
+/* display info about code blocks */
+code.hljs:not(.inline) { max-width: 560px; padding: 12px; }
+code.hljs:not(.inline)::before {
+	content: attr(class) !important;
+	font-size: var(--font);
+	font-weight: var(--font-weight);
+	float: right;
+	display: block;
+	width: auto;
+	max-width:  6rem;
+	text-align: right;
+	min-width:  auto;
+	margin-top: -8.5rem;
+	line-height: 1.6rem;
+	overflow-x: hidden;
+	scrollbar-width: none;
+	color: var(--fg2);
+	opacity: 0.6;
+}

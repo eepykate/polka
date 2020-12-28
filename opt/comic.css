@@ -1,5 +1,5 @@
 * {
-	font-family: "Comic Sans MS",  "Font Awesome 5 Free" !important;
+	font-family: "Comic Sans MS",  "Font Awesome 5 Free", "eg-header-icomoon" !important;
 }
 
 .material-icons-extended {
@@ -7,6 +7,12 @@
 }
 
 code, .inline, pre, code *, pre * {
-	font-family: "Ubuntu Mono" !important;
-	font-weight: 700;
+	font-family: "Comic Mono" !important;
+	font-weight: 600;
+	font-size: 12px;
+}
+
+/* google:tm: */
+span.bold {
+	font-weight: bold !important;
 }
