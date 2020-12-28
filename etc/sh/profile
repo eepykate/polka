@@ -2,8 +2,6 @@
 #   profile
 #
 
-systemctl --user import-environment >/dev/null 2>&1
-
 export \
 	null=/dev/null \
 	opt=$HOME/opt  \
@@ -53,15 +51,18 @@ export \
 	NIX_PROFILES="/nix/var/nix/profiles/default $HOME/.nix-profile" \
 	NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games"
+PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/sbin:/sbin:/usr/games"
 export PATH="$(find ~/bin -type d | tr '\n' ':')$apps/.nix-profile/bin:$PATH"
 
 star() { ( "$@" & ) >$null 2>&1; }
-systemctl --user import-environment data cache conf
+systemctl --user import-environment >/dev/null 2>&1
 star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
 star sudo kbdrate -d 200 -r 60
 star archi
 shortcuts
+
+test -e /tmp/session || x
+:>/tmp/session
 
 # vim: ft=sh

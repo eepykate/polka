@@ -1,8 +1,23 @@
 #!/bin/sh
 #  focus window
 
+c='bspc config' hover=focus_follows_pointer click=click_to_focus ewmh=ignore_ewmh_focus
+case $1 in
+	off)
+		$c $hover false
+		$c $click none
+		$c $ewmh true
+		sleep 0.05; exec bspc rule -a '*' focus=off
+	;;
+	on)
+		$c $hover true
+		$c $click button1
+		$c $ewmh false
+		exec bspc rule -r tail
+esac
+
 # exit when fullscreen
-bspc query -N -n focused.fullscreen || pgrep -x menu && exit
+bspc query -N -n focused.fullscreen || pgrep -x menu || pgrep -f 'st.*-c menu' && exit
 
 case $1 in
 	east)  arg=xy; op=-gt;;

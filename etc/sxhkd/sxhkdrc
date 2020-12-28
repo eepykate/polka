@@ -5,6 +5,9 @@
 super + {alt + space, Return}
 	st
 
+super + g
+	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
+
 super + space
 	launch
 

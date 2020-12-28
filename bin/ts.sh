@@ -64,51 +64,114 @@ cat << EOF > "$HOME/etc/.mozilla/firefox/main/chrome/colours.css"
 }
 EOF
 
-echo " - xresources"
-cat << EOF > "$c/xorg/res.col"
-st.font:  $font:pixelsize=$fontsize:style=$fontweight
+#echo " - xresources"
+#cat << EOF > "$c/xorg/res.col"
+#st.font:  $font:pixelsize=$fontsize:style=$fontweight
+#
+#*.background:   #$bg1
+#*.foreground:   #$fg1
+#*.cursorColor:  #$fg1
+#
+#*.color0:       #$bg1
+#*.color8:       #$black
+#
+#*.color1:       #$red
+#*.color9:       #$red
+#
+#*.color2:       #$yellow
+#*.color10:      #$yellow
+#
+#*.color3:       #$green
+#*.color11:      #$green
+#
+#*.color4:       #$cyan
+#*.color12:      #$cyan
+#
+#*.color5:       #$blue
+#*.color13:      #$blue
+#
+#*.color6:       #$purple
+#*.color14:      #$purple
+#
+#*.color7:       #$fg2
+#*.color15:      #$fg1
+#
+#*.color16:      #$accent
+#*.color17:      #$accent2
+#*.color18:      #$contrast
+#
+#
+#tabbed.selbgcolor:   #$bg1
+#tabbed.selfgcolor:   #$fg1
+#tabbed.normfgcolor:  #$fg2
+#tabbed.normbgcolor:  #$bg3
+#EOF
 
-*.background:   #$bg1
-*.foreground:   #$fg1
-*.cursorColor:  #$fg1
+cd "$HOME/src/st" 2>/dev/null && {
+	echo " - st"
 
-*.color0:       #$bg1
-*.color8:       #$black
+cat << EOF > generated.h
+/*
+ * appearance
+ *
+ * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+ */
 
-*.color1:       #$red
-*.color9:       #$red
+static char *font = "$font:pixelsize=$fontsize:style=$fontweight";
 
-*.color2:       #$yellow
-*.color10:      #$yellow
+/* Terminal colors (16 first used in escape sequence) */
+static const char *colorname[] = {
+	/* 8 normal colors */
+	"#$bg1",
+	"#$red",
+	"#$yellow",
+	"#$green",
+	"#$cyan",
+	"#$blue",
+	"#$purple",
+	"#$fg2",
 
-*.color3:       #$green
-*.color11:      #$green
+	/* 8 bright colors */
+	"#$black",
+	"#$red",
+	"#$yellow",
+	"#$green",
+	"#$cyan",
+	"#$blue",
+	"#$purple",
+	"#$fg1",
 
-*.color4:       #$cyan
-*.color12:      #$cyan
+	/* annaisms :) */
+	"#$accent",
+	"#$accent2",
+	"#$contrast",
 
-*.color5:       #$blue
-*.color13:      #$blue
+	[255] = 0,
 
-*.color6:       #$purple
-*.color14:      #$purple
-
-*.color7:       #$fg2
-*.color15:      #$fg1
-
-*.color16:      #$accent
-*.color17:      #$accent2
-*.color18:      #$contrast
-
-
-tabbed.selbgcolor:   #$bg1
-tabbed.selfgcolor:   #$fg1
-tabbed.normfgcolor:  #$fg2
-tabbed.normbgcolor:  #$bg3
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#$bg1",
+	"#$fg1"
+};
 EOF
 
-echo "   * Reloading tabbed and st"
-rc
+	sudo make clean install >/dev/null 2>&1 &
+}
+
+cd "$HOME/src/dmenu" 2>/dev/null && {
+	echo " - dmenu"
+
+	sed -i --follow-symlinks \
+		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "$fontsize*1.2" | bc):style=$fontweight\" /" \
+		-e "s/\(SchemeNorm\] *= *{ \)[^}]*/\1\"#$fg2\", \"#$bg1\" /" \
+		-e "s/\(SchemeSel\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg3\" /"  \
+		`# fuzzy highlight` \
+		-e "s/\(SchemeSelHighlight\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg3\" /"  \
+		-e "s/\(SchemeNormHighlight\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg1\" /"  \
+		config.h
+
+	sudo make clean install >/dev/null 2>&1 &
+}
+
 
 echo " - bspwm"
 sed --follow-symlinks -i               \

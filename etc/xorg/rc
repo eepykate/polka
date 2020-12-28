@@ -15,9 +15,9 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 [ "$DBUS_SESSION_BUS_ADDRESS" ] ||
 	dbus-launch --exit-with-session "$c/xorg/rc" "$@" &
 
-pap       & # wallpaper
 hw 0      & # clear hidden windows cache
-screen.sh & # change display layout
+screen.sh   # change display layout
+pap       & # wallpaper
 pulseaudio -D &          # audio
 xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste

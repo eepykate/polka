@@ -1,5 +1,5 @@
 [global]
-	font       = Ubuntu Mono Bold 12px
+	font       = Ubuntu Mono bold 12px
 	geometry   = "500x5-40-40"
 	shrink     = true
 

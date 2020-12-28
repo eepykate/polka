@@ -15,7 +15,7 @@ bspc monitor DVI-D-0 -d  7 8 9 0
 bspc monitor DVI-D-0 -s HDMI-0
 
 c ignore_ewmh_fullscreen all
-c ignore_ewmh_focus true
+#c ignore_ewmh_focus true
 
 # mouse
 xsetroot -cursor_name      left_ptr
@@ -42,12 +42,13 @@ c focused_border_color      '#151823'
 #
 R taskman   locked=on
 R obs       desktop=6
+R Steam     desktop=5
 R feh       state=floating
-R freeze    state=floating border=off monitor="$(6r names -p)"
 R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating
-R menu      state=floating sticky=on layer=above
+R menu      state=floating sticky=on layer=normal
+R freeze    state=floating border=off monitor="$(6r names -p)" layer=above
 
 
 #

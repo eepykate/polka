@@ -4,7 +4,7 @@
 
 while :; do
 	set --
-	for i in ~/.cargo ~/.nvidia-settings-rc ~/.npm ~/go ~/.cache ~/.config ~/.nv ~/.pki ~/.bash* ~/.local; do
+	for i in ~/.thumbnails ~/.cargo ~/.nvidia-settings-rc ~/.npm ~/go ~/.cache ~/.config ~/.nv ~/.pki ~/.bash* ~/.local; do
 		[ -e "$i" ] && set -- "$@" "$i"
 	done
 	[ "$1" ] && rm -rf -- "$@"

@@ -31,7 +31,7 @@ fun() {
 			curl -L#o "$out"  "$(echo "$1" | sed 's|/blob/|/raw/|')";;
 
 		# git repos
-		*.git|*github.com*|*gitlab*) git clone "$1" $2;;
+		*.git|*git.*|*github.com*|*gitlab*) git clone "$1" $2;;
 
 		# youtube
 		*youtu.be*|*youtube.com*) youtube-dl "$1" \
