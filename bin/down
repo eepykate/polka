@@ -5,6 +5,9 @@ fun() {
 	[ "$1" = m ] && return
 	out=${2:-${1##*/}}
 
+	# dirs
+	[ -d "$out" ] && out=$2/${1##*/}
+
 	# change filename if already existing
 	[ -e "$out" ] && out=$out-0 &&
 		while [ -e "$out" ]; do
