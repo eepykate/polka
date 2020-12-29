@@ -9,7 +9,7 @@ done
 
 c=${XDG_CONFIG_HOME:=$HOME/.config}
 themes="$(ls -1 "$c/colours/" | grep -iv 'current\|meta')" # List of themes
-[ "$theme" ] || theme="$(printf %b "$themes" | menu -i -p "Theme?")"
+[ "$theme" ] || theme="$(printf %b "$themes" | menu -p "Theme?")"
 ln -sf "$theme" "$c/colours/current"
 
 [ -f "$c/colours/$theme" ] &&
@@ -161,7 +161,7 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 	echo " - dmenu"
 
 	sed -i --follow-symlinks \
-		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "$fontsize*1.2" | bc):style=$fontweight\" /" \
+		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "$fontsize*1.2" | bc):style=$fontweight\", \"Blobmoji:pixelsize=$(echo "$fontsize*1.2" | bc)\" /" \
 		-e "s/\(SchemeNorm\] *= *{ \)[^}]*/\1\"#$fg2\", \"#$bg1\" /" \
 		-e "s/\(SchemeSel\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg3\" /"  \
 		`# fuzzy highlight` \
