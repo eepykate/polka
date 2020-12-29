@@ -1,0 +1,13 @@
+_prompt() {
+	a=${PWD#$HOME}/  a=${a//\/\//\/}  a=${a//\//\\\\}
+	## C:\> == home
+	[[ "$PWD" =~ $HOME.* ]] && PS1="C:$a> " || PS1="C:\\System32$a> "
+
+	## C:\Users\user\> == home
+	# [[ "$PWD" =~ $HOME.* ]] && PS1="C:\\\\Users\\\\$USER$a> " || PS1="C:\\System32$a> "
+}
+
+case $(ps -o comm= -p $$) in
+	bash) PROMPT_COMMAND=_prompt;;
+	zsh)  setopt prompt_subst;  PS1='$(_prompt; echo "$PS1")'
+esac
