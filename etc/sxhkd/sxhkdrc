@@ -26,8 +26,8 @@ alt + shift + space
 alt + space
 	xdotool keyup space; xdotool key --clearmodifiers Return
 
-super + {u,i}
-	{copy, emoji}
+super + u
+	copy
 
 super + f
 	chromium
