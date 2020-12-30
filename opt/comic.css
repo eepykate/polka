@@ -1,11 +1,11 @@
 * {
-	font-family: "Comic Sans MS",  "Font Awesome 5 Free", "eg-header-icomoon" !important;
+	font-family: "Comic Sans MS",  FontAwesome, "Font Awesome 5 Free", "Font Awesome 5 Pro", "eg-header-icomoon" !important;
 }
 
 .material-icons-extended {
 	font-family: "Material Icons Extended" !important;
 }
-
+table.tab-size *,  /* github */
 code, .inline, pre, code *, pre * {
 	font-family: "Comic Mono" !important;
 	font-weight: 600;

@@ -29,7 +29,6 @@
 }
 
 /* display info about code blocks */
-code.hljs:not(.inline) { max-width: 560px; padding: 12px; }
 code.hljs:not(.inline)::before {
 	content: attr(class) !important;
 	font-size: var(--font);
@@ -46,4 +45,11 @@ code.hljs:not(.inline)::before {
 	scrollbar-width: none;
 	color: var(--fg2);
 	opacity: 0.6;
+}
+/* subtle styling */
+code.hljs:not(.inline) {
+	max-width: 560px;
+	padding: 12px;
+	border: none;
+	background-color: #f8f8f8;
 }
