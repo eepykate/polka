@@ -88,7 +88,7 @@ hi Underliend   ctermfg=none  cterm=underline
 hi Ignore       ctermfg=none
 hi Error        ctermfg=none  cterm=bold
 hi Todo         ctermfg=none  cterm=bold
-hi Statement    ctermfg=none  cterm=bold
+hi Statement    ctermfg=none
 hi Delimiter    ctermfg=none
 hi Title        ctermfg=none
 
