@@ -32,9 +32,9 @@ c single_monocle      true
 c gapless_monocle     true
 c borderless_monocle  true
 
-c normal_border_color       '#151823'
-c active_border_color       '#151823'
-c focused_border_color      '#151823'
+c normal_border_color       '#ffffff'
+c active_border_color       '#ff0000'
+c focused_border_color      '#ff0000'
 
 
 #
@@ -48,7 +48,7 @@ R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating
 R menu      state=floating sticky=on layer=normal
-R freeze    state=floating border=off monitor="$(6r names -p)" layer=above
+R freeze    state=floating border=off monitor="$(6r names -p)" layer=above focus=off
 
 
 #

@@ -23,6 +23,9 @@ ctrl + alt + space
 ctrl + shift + space
 	xdotool keyup space; xdotool key --clearmodifiers Shift+Return
 
+alt + shift + space
+	xdotool keyup space; xdotool key --clearmodifiers alt+Return
+
 ctrl + space
 	xdotool keyup space; xdotool key --clearmodifiers Return
 

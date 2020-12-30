@@ -173,17 +173,17 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 } &
 
 
-echo " - bspwm"
-sed --follow-symlinks -i               \
-	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
-	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
-	~/bin/borders
-
-sed --follow-symlinks -i  \
-	-e "s/border_color.*/border_color       '#$bg1'/" \
-	-e "s/d_border_color.*/d_border_color      '#$bg1'/" \
-	"$c/bspwm/bspwmrc"
+#echo " - bspwm"
+#sed --follow-symlinks -i               \
+#	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
+#	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
+#	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
+#	~/bin/borders
+#
+#sed --follow-symlinks -i  \
+#	-e "s/border_color.*/border_color       '#$bg1'/" \
+#	-e "s/d_border_color.*/d_border_color      '#$bg1'/" \
+#	"$c/bspwm/bspwmrc"
 
 echo " - dunst"
 var="$(sed --follow-symlinks \
