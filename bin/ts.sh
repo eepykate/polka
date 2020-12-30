@@ -154,8 +154,8 @@ static const char *colorname[] = {
 };
 EOF
 
-	sudo make clean install >/dev/null 2>&1 &
-}
+	sudo make clean install >/dev/null 2>&1
+} &
 
 cd "$HOME/src/dmenu" 2>/dev/null && {
 	echo " - dmenu"
@@ -169,8 +169,8 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 		-e "s/\(SchemeNormHighlight\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg1\" /"  \
 		config.h
 
-	sudo make clean install >/dev/null 2>&1 &
-}
+	sudo make clean install >/dev/null 2>&1
+} &
 
 
 echo " - bspwm"
@@ -210,7 +210,7 @@ printf '%s\n' "$var" | while IFS='' read -r l; do
 	printf '%s\n' "$l"
 done > "$c/dunst/dunstrc"
 
-wm -r
+wm -r &
 
 #echo " - dmenu"
 #cd ~/opt/git/dmenu
@@ -227,7 +227,7 @@ wm -r
 #	-e "s|^	color: #.*|	color: #$fg1;|" \
 #	"$c/gtk-3.0/menus.css"
 
-echo " - gtk [font]"
+echo " - gtk [config (font)]"
 cat << EOF > ${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini
 [Settings]
 gtk-application-prefer-dark-theme=0
@@ -251,8 +251,8 @@ gtk-xft-hintstyle=hintfull
 gtk-xft-rgba=rgb
 EOF
 
-echo " - gtk [phocus]"
-cd ~/src/phocus && {
+command -v sass >/dev/null && cd ~/src/phocus && {
+	echo " - gtk [phocus]"
 	cat << EOF > scss/gtk-3.0/_colors.scss
 \$background-1: #$bg1;
 \$background-2: #$bg3;
@@ -277,37 +277,41 @@ cd ~/src/phocus && {
 // TODO: is there a better way to do this? this is for example used in gnome-calculator for the result top-border
 @define-color borders #{"" +\$background-2};
 EOF
-	make
+	make >/dev/null 2>&1
+} &
+
+[ -e "$HOME/usr/icons/Papirus" ] && {
+	echo " - icons"
+	h='[a-zA-Z0-9]'
+	h=$h$h$h$h$h$h
+	sed -i --follow-symlinks \
+		-e "s/\"fill:#[a-zA-Z0-9]\+/\"fill:#$accent/" \
+		~/usr/icons/Papirus/16x16/places/folder-blue.svg
+
+	sed -i --follow-symlinks \
+		-e "3s/#$h/#$(darken "$accent" 0.9)/" \
+		-e "6s/#$h/#$accent/" \
+		~/usr/icons/Papirus/*/places/folder-blue.svg
+
+	sed -i --follow-symlinks \
+		-e "s/#$h/#$bg1/" \
+		~/usr/icons/Papirus/16x16/places/folder.svg
 }
-
-echo " - icons"
-h='[a-zA-Z0-9]'
-h=$h$h$h$h$h$h
-sed -i --follow-symlinks \
-	-e "s/\"fill:#[a-zA-Z0-9]\+/\"fill:#$accent/" \
-	~/usr/icons/Papirus/16x16/places/folder-blue.svg
-
-sed -i --follow-symlinks \
-	-e "3s/#$h/#$(darken "$accent" 0.9)/" \
-	-e "6s/#$h/#$accent/" \
-	~/usr/icons/Papirus/*/places/folder-blue.svg
-
-sed -i --follow-symlinks \
-	-e "s/#$h/#$bg1/" \
-	~/usr/icons/Papirus/16x16/places/folder.svg
 
 
 echo " - Changing wallpaper"
 if [ -f "$HOME/src/walls/$wall" ]; then
 	wallthing="feh --bg-fill --no-fehbg '$HOME/src/walls/$wall'"
-	eval $wallthing
+	$wallthing
 else
+	mkdir -p ~/src/walls
 	walgen "#$wall" 08
 	wallthing="feh --bg-tile --no-fehbg '$HOME/src/walls/tile.png'"
 	sleep 0.6
-fi
+fi &
 
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
 
+wait
 notify-send "Theme changed to $theme"
