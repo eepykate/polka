@@ -46,10 +46,22 @@ code.hljs:not(.inline)::before {
 	color: var(--fg2);
 	opacity: 0.6;
 }
-/* subtle styling */
+/* subtle code block styling */
 code.hljs:not(.inline) {
 	max-width: 560px;
 	padding: 12px;
 	border: none;
 	background-color: #f8f8f8;
+}
+
+/* change width of messages area */
+[class*="jumpToPresentBar-"],
+[class*="typing-"],
+[class*="channelTextArea"],
+[class^="messagesWrapper-"] > * > [class*="scroller"],
+[class*="autocomplete-"] {
+	max-width: 1000px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
 }
