@@ -26,11 +26,13 @@ nop() { :; }
 load nop '^[[O'
 
 # open current command in EDITOR
-load edit-command-line '^f'
+load edit-command-line '^x'
 
 # arrow keys search history
 load  up-line-or-beginning-search  '^[[A'
+load  up-line-or-beginning-search  '^s'
 load down-line-or-beginning-search '^[[B'
+load down-line-or-beginning-search '^f'
 
 # git status on ^j
 kgs() { clear; git status -sb; zle redisplay; }

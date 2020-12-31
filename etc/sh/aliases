@@ -76,6 +76,9 @@ et() {
 		ps -o 'etime=,comm=' ${pids:-999999}
 }
 
+# "exec" and exit (for gui things)
+ec() { "$@" &! exit; }
+
 af() {  # after
 	while pgrep "$1" >/dev/null; do sleep "${sleep:-2}"; done
 	shift; "$@"
@@ -90,10 +93,10 @@ v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
 [ -e "$v" ] && . "$v"
 
 # drag and drop
-alias q="dragon --and-exit"
+alias -g q="dragon --and-exit"
 
 # copy image
-alias ci="xclip -selection clipboard -t image/png"
+alias -g ci="xclip -selection clipboard -t image/png"
 
 # rough find
 f() { find "${2:-.}" -iname "*$1*"; }

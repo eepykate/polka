@@ -2,7 +2,7 @@
 #  ,=,e
 #
 
-super + {alt + space, Return}
+super + {alt + space, Return, e}
 	st
 
 super + g
