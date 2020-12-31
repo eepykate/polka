@@ -72,5 +72,6 @@ pgrep sxhkd || {
 
 s picom
 s dunst
+s swallow
 s sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"  "$sx/other"
 [ -e "$bs/other" ] && . "$bs/other"
