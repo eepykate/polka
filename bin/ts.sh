@@ -308,7 +308,7 @@ else
 	walgen "#$wall" 08
 	wallthing="feh --bg-tile --no-fehbg '$HOME/src/walls/tile.png'"
 	sleep 0.6
-fi &
+fi
 
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
