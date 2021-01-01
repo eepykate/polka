@@ -20,17 +20,17 @@ super + y
 XF86Launch5
 	mic toggle
 
-ctrl + alt + space
-	xdotool keyup space; xdotool key --clearmodifiers ctrl+Return
-
-ctrl + shift + space
-	xdotool keyup space; xdotool key --clearmodifiers Shift+Return
-
-alt + shift + space
-	xdotool keyup space; xdotool key --clearmodifiers alt+Return
-
-ctrl + space
-	xdotool keyup space; xdotool key --clearmodifiers Return
+#ctrl + alt + space
+#	xdotool keyup space; xdotool key --clearmodifiers ctrl+Return
+#
+#ctrl + shift + space
+#	xdotool keyup space; xdotool key --clearmodifiers Shift+Return
+#
+#alt + shift + space
+#	xdotool keyup space; xdotool key --clearmodifiers alt+Return
+#
+#ctrl + space
+#	xdotool keyup space; xdotool key --clearmodifiers Return
 
 super + u
 	copy
