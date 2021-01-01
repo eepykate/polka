@@ -49,6 +49,7 @@ R Gcolor3   state=floating
 R floating  state=floating
 R menu      state=floating sticky=on layer=normal
 R freeze    state=floating border=off monitor="$(6r names -p)" layer=above focus=off
+R Surphace  state=floating border=off rectangle=3360x1080+0+0
 
 
 #
@@ -72,6 +73,6 @@ pgrep sxhkd || {
 
 s picom
 s dunst
-s swallow
+#s swallow
 s sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"  "$sx/other"
 [ -e "$bs/other" ] && . "$bs/other"

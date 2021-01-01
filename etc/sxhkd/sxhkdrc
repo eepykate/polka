@@ -5,8 +5,11 @@
 super + {alt + space, Return, e}
 	st
 
+#super + g
+#	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
+
 super + g
-	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
+	surphace
 
 super + space
 	launch
