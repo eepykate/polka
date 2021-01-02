@@ -19,7 +19,7 @@
 
 (defalias
 	lts (tap-hold-next 150 spc (layer-toggle superspace))
-	ltc (layer-toggle coolcaps)
+	ltm (layer-toggle merrymod)
 )
 
 (deflayer base
@@ -35,14 +35,14 @@
   bspc p    o    i    u    y    t    r    e    w    q    _    _    _
   ret  l    k    j    h    g    f    d    s    a    _    _    _
   _    m    n    b    v    c    x    z    _    _    _    _
-  _    @ltc bspc           _              _    _    _    _
+  _    @ltm bspc           _              _    _    _    _
 )
 
-(deflayer coolcaps
+(deflayer merrymod
   P0   -    =    P0   P0   P0   P0   P0   P0   P0   P0   P0   P0   P0
   P0   [    ]    \    P0   P0   P0   P0   P0   P0   P0   P0   P0   P0
-  P0   ;    '    /    P0   P0   P0   P0   P0   P0   P0   P0   P0
-  lsft ,    .    bspc P0   P0   P0   P0   P0   P0   P0   P0
+  P0   ;    '    bspc P0   P0   P0   P0   P0   P0   P0   P0   P0
+  lsft ,    .    /    P0   P0   P0   P0   P0   P0   P0   P0
   P0   P0   del            P0             P0   P0   P0   P0
 )
 
