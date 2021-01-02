@@ -19,7 +19,7 @@
 
 
 (defalias
-	ltc (tap-hold-next 200 esc (layer-toggle coolcaps))
+	ltc (tap-hold-next 130 esc (layer-toggle coolcaps))
 )
 
 (deflayer base
@@ -32,7 +32,7 @@
 
 (deflayer coolcaps
   _    C-1  C-2  C-3  C-4  C-5  C-6  C-7  C-8  C-9  C-0  _    _    _
-  _    _    up   C-e  _    _    _    _    _    _    _    _    _    _
+  _    _    up   C-e  _    C-t  _    _    _    _    _    _    _    _
   _    left down right _   _    _    C-j  C-k  C-l  _    _    _
   _    _    _    C-c  C-v  _    _    _    _    _    _    _
   _    _    bspc           ret            _    _    _    _
