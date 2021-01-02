@@ -40,8 +40,8 @@
 
 (deflayer merrymod
   P0   -    =    P0   P0   P0   P0   P0   P0   P0   P0   P0   P0   P0
-  P0   [    ]    \    P0   P0   P0   P0   P0   P0   P0   P0   P0   P0
-  P0   ;    '    bspc P0   P0   P0   P0   P0   P0   P0   P0   P0
+  P0   [    ]    \    up   P0   P0   P0   P0   P0   P0   P0   P0   P0
+  P0   ;    '    left down right P0  P0   P0   P0   P0   P0   P0
   lsft ,    .    /    P0   P0   P0   P0   P0   P0   P0   P0
   P0   P0   del            P0             P0   P0   P0   P0
 )
