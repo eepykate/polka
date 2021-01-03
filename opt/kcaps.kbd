@@ -1,3 +1,5 @@
+;; my (old) kmonad config (github.com/david-janssen/kmonad)
+;; also made with a lot of help from elkowar (github.com/elkowar)
 (defcfg
   input (device-file "/dev/input/by-id/usb-HID_Keyboard_HID_Keyboard-event-kbd")
   output (uinput-sink "kmonad-input")
