@@ -3,7 +3,9 @@
 TERM='' IFS=:
 set -- $PATH
 
-# final pipe to cat is so the script/command doesn't think it's being ran in a terminal
+comm=$(find "$@" -type f,l -printf '%f\n' -executable \
+	| sort | uniq | menu)
 
-find "$@" -type f,l -printf '%f\n' -executable \
-	| sort | uniq | menu | sh | cat &
+# final pipe to cat is so the script/command doesn't think it's being ran in a terminal
+echo "$comm" | sh | { echo "[$(date +%Y-%m-%d_%H-%M-%S)]  $comm"; cat; } >> \
+	"${XDG_CACHE_HOME:=$HOME/.cache}/menulogverbose" 2>&1

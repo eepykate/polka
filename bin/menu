@@ -1,1 +1,7 @@
-/usr/local/bin/dmenu
+#!/bin/sh
+
+dmenu "$@" | {
+	read -r opt
+	echo "[$(date +%Y-%m-%d_%H-%M-%S)]  $opt" >> ~/opt/menulog
+	echo "$opt"
+}
