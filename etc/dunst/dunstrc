@@ -1,5 +1,5 @@
 [global]
-	font       = Ubuntu Mono regular 12px
+	font       = Ubuntu Mono bold 12px
 	geometry   = "500x5-40-40"
 	shrink     = true
 
@@ -19,7 +19,7 @@
 	# borders
 	padding             = 25
 	frame_width         = 0
-	frame_color         = "#f2f2f2"
+	frame_color         = "#1e212e"
 	separator_height    = 2
 	separator_color     = frame
 	horizontal_padding  = 25
@@ -38,21 +38,21 @@
 	context             = ctrl+shift+period
 
 [urgency_low]
-	background          = "#ffffff"
-	foreground          = "#767676bb"
-	frame_color         = "#f2f2f2"
+	background          = "#151823"
+	foreground          = "#9294a8bb"
+	frame_color         = "#1e212e"
 	timeout             = 5
 
 [urgency_normal]
-	background          = "#ffffff"
-	foreground          = "#444444cf"
-	frame_color         = "#f2f2f2"
+	background          = "#151823"
+	foreground          = "#d6d8ebcf"
+	frame_color         = "#1e212e"
 	timeout             = 5
 
 [urgency_critical]
-	background          = "#ffffff"
-	foreground          = "#444444"
-	frame_color         = "#f2f2f2"
+	background          = "#151823"
+	foreground          = "#d6d8eb"
+	frame_color         = "#1e212e"
 	timeout             = 0
 
 [stuff]
@@ -68,14 +68,14 @@
 	history_ignore = yes
 
 [mike]
-	background     = "#4973b7"
+	background     = "#b6d0fd"
 	summary        = "muted"
 	format         = " ​ "
 	history_ignore = yes
 	set_transient  = yes
 
 [mic]
-	background     = "#cd5e79"
+	background     = "#eb9797"
 	summary        = "unmuted"
 	format         = "​        ​"
 	history_ignore = yes

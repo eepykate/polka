@@ -31,8 +31,6 @@
 /* display info about code blocks */
 code.hljs:not(.inline)::before {
 	content: attr(class) !important;
-	font-size: var(--font);
-	font-weight: var(--font-weight);
 	float: right;
 	display: block;
 	width: auto;
@@ -45,13 +43,13 @@ code.hljs:not(.inline)::before {
 	scrollbar-width: none;
 	color: var(--fg2);
 	opacity: 0.6;
+	font-size: 0.8rem;
 }
 /* subtle code block styling */
 code.hljs:not(.inline) {
 	max-width: 560px;
 	padding: 12px;
 	border: none;
-	background-color: #f8f8f8;
 }
 
 /* change width of messages area */
@@ -64,4 +62,15 @@ code.hljs:not(.inline) {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+pre > code .hljs-comment {
+	color: var(--text-muted) !important;
+}
+
+pre > code,
+pre > code * {
+	color: var(--header-secondary) !important;
+	font-weight: normal !important;
+	font-size: 0.77rem !important;
 }

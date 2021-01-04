@@ -23,5 +23,6 @@ accent=$blue
 accent2=$purple
 contrast=$bg4
 #   -----
-wall=white-cherry-blossom.jpg
+#wall=white-cherry-blossom.jpg
+wall=$chrome
 #   -----
