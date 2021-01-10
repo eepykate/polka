@@ -18,7 +18,7 @@ fun() {
 	printf '\n%b\n' "\033[35m${1#http*://}\033[0m"
 
 	# shorthand git
-	v=$(echo "$1" | tr -cd /)
+	v=$(echo "$1" | tr -cd /.)
 	[ "$v" = / ] && { git clone "https://github.com/$1" $2; return; }
 
 	# add missing https
