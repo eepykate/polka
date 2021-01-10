@@ -1,7 +1,9 @@
 /* blocked messages */
 [class="groupStart-23k01U"] {
 	margin: 0 !important;
-	display: none !important;
+	padding: 0 !important;
+	max-height: 0 !important;
+	opacity: 0;
 }
 
 /* role backgrounds instead of outlines */
@@ -52,6 +54,18 @@ code.hljs:not(.inline) {
 	border: none;
 }
 
+/* remove the ugly syntax highlighting */
+pre > code .hljs-comment {
+	color: var(--text-muted) !important;
+}
+
+pre > code,
+pre > code * {
+	color: var(--header-secondary) !important;
+	font-weight: normal !important;
+	font-size: 0.77rem !important;
+}
+
 /* change width of messages area */
 [class*="jumpToPresentBar-"],
 [class*="typing-"],
@@ -62,15 +76,4 @@ code.hljs:not(.inline) {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-pre > code .hljs-comment {
-	color: var(--text-muted) !important;
-}
-
-pre > code,
-pre > code * {
-	color: var(--header-secondary) !important;
-	font-weight: normal !important;
-	font-size: 0.77rem !important;
 }
