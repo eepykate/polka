@@ -2,8 +2,6 @@
 #   profile
 #
 
-systemctl --user import-environment
-
 export \
 	null=/dev/null \
 	opt=$HOME/opt  \
@@ -16,6 +14,8 @@ export \
 	XDG_DATA_HOME="$data"   \
 	XDG_CACHE_HOME="$cache" \
 	XDG_CONFIG_HOME="$conf"
+
+systemctl --user import-environment
 
 # garbage dotfile apps
 export \

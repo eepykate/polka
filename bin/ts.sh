@@ -161,7 +161,7 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 	echo " - dmenu"
 
 	sed -i --follow-symlinks \
-		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "$fontsize*1.2" | bc):style=$fontweight\", \"Blobmoji:pixelsize=$(echo "$fontsize*1.2" | bc)\" /" \
+		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "scale=0;$fontsize*1.1" | bc):style=$fontweight\" /" \
 		-e "s/\(SchemeNorm\] *= *{ \)[^}]*/\1\"#$fg2\", \"#$bg1\" /" \
 		-e "s/\(SchemeSel\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg3\" /"  \
 		`# fuzzy highlight` \

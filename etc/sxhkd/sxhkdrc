@@ -2,13 +2,17 @@
 #  ,=,e
 #
 
+ctrl + alt + {1,2,3}
+	kb
+
 super + {alt + space, Return, e}
 	st
 
-#super + g
-#	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
-
 super + g
+	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
+	#xdotool keyup super; eval "$(xdotool getmouselocation --shell)"; xdotool mousemove_relative 46 376; sleep 0.05; xdotool click 1 click 1; sleep 0.1; xdotool mousemove 2121 842 click 1; xdotool mousemove $X $Y
+
+super + b
 	surphace
 
 super + space
@@ -60,7 +64,7 @@ ctrl + alt + s
 	ts.sh
 
 # mousebind
-XF86Launch6
+{XF86Launch6,super + k}
 	shade picker
 
 super + shift + {0-9}
