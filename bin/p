@@ -4,7 +4,7 @@
 
 d=$HOME/opt/posix
 
-for i in "$d/"*/[0-9][0-9]-"$1"* "$d/"*"/$1"*; do
+for i in "$d"/*/"$1" "$d/"*/[0-9][0-9]-"$1"* "$d/"*"/$1"*; do
 	[ -f "$i" ] && exec nvim -R "$i"
 done
 
