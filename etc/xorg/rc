@@ -19,7 +19,7 @@ hw 0      & # clear hidden windows cache
 screen.sh   # change display layout
 pap       & # wallpaper
 #pulseaudio -D &          # audio
-xset r rate 200 60   &   # faster keyboard
+#xset r rate 200 60   &   # faster keyboard
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
@@ -43,5 +43,11 @@ esac
 #}; { D;D; } &  # doesn't work if it's only ran once...
 
 #obs --startreplaybuffer &
+
+{
+	sudo kmonad ~/opt/dots/opt/kmirror.kbd &! sleep 0.6; xset r rate 200 60
+	kid=$(xinput | sed -n 's/.*kmonad.*id=\([0-9]\+\).*/\1/p')
+	xinput --test-xi2 --root $kid | awk '/RawKeyPress/ {getline;getline;print $2}' >> ~/opt/key-presses
+} &
 
 exec "$wm"

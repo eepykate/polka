@@ -53,7 +53,7 @@ trap 'pkill mumble' 2
 mkdir -p "${XDG_DATA_HOME:=$HOME/.local/share}/mic-mumble"
 
 cd "$XDG_DATA_HOME/mic-mumble" || exit 1
-rm murmur*   # idk it sometimes doesnt work without this.. :shrug:
+#rm murmur*   # idk it sometimes doesnt work without this.. :shrug:
 
 echo "bonjour=true" > murmur.ini
 echo "bandwidth=130000" >> murmur.ini

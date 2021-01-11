@@ -80,8 +80,8 @@ et() {
 ec() { "$@" &! exit; }
 
 af() {  # after
-	while pgrep "$1" >/dev/null; do sleep "${sleep:-2}"; done
-	shift; "$@"
+	echo "$s" | grep -qx '[msh0-9.]\+' || s=2
+	while "$@" >/dev/null; do sleep "$s"; done
 }
 
 #
