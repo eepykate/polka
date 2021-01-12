@@ -61,22 +61,14 @@ pgrep sxhkd || {
 
 	## dropdown htop/shell
 	# start invisible
-	bspc rule -a Mumble  hidden=on -o
-	bspc rule -a Hexchat hidden=on -o
 	bspc rule -a taskman hidden=on -o
-
 	st -c taskman -e sh -c 'while :; do sudo -E htop; zsh; done' &
-	mic &
-	hexchat &
 
 	# on reboots stuff sometimes takes a while to start
-	sleep 8
+	sleep 5
 
 	# pid > xdotool wid > wmutils wid
-	i=; for pro in taskman mumble hexchat; do
-		i=$((i+1))
-		printf 0x%x "$(xdotool search --pid $(pgrep -f $pro) | head -n1)" > "$XDG_CACHE_HOME/hw/$i"
-	done
+	printf 0x%x "$(xdotool search --pid $!)" > "$XDG_CACHE_HOME/hw/1"
 } &
 
 s picom

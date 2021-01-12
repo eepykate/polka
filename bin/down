@@ -17,9 +17,19 @@ fun() {
 	# print url
 	printf '\n%b\n' "\033[35m${1#http*://}\033[0m"
 
-	# shorthand git
+	# shorthand git | ex: user/repo
 	v=$(echo "$1" | tr -cd /.)
 	[ "$v" = / ] && { git clone "https://github.com/$1" $2; return; }
+
+	# search for most popular repo | ex: repo
+	[ "$v" = '' ] && {
+		# get first search result
+		repo=$(curl -s https://api.github.com/search/repositories?q="$1" \
+			| grep -i "full_name.*/$1\"" | head -n1 | sed -n 's/.*: "\(.*\)".*/\1/p')
+
+		[ "$repo" ] && git clone "https://github.com/$repo" $2
+		return
+	}
 
 	# add missing https
 	case $1 in

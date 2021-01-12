@@ -107,7 +107,7 @@ F() { find "${2:-.}" -name "$1"; }
 # apparently zstd decompresses fast
 bk() {
 	if [ $# = 1 ] && ! [ -d "$1" ]; then
-		cp -- "$1" "$1_$(date -Id)"
+		cp -- "$1" "$1_$(date -Id-%s)"
 	else
 		tar -I zstd -cvf "${1%/}_$(date -Id).tar.zst" "$@"
 	fi
