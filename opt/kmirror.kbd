@@ -1,7 +1,11 @@
 ;; my kmonad config (github.com/david-janssen/kmonad)
 ;; made with a lot of help from elkowar (github.com/elkowar)
 (defcfg
-  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+	;;; PS/2
+  ;; input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+	;;; usb (default rollover)
+  input (device-file "/dev/input/by-id/usb-HID_Keyboard_HID_Keyboard-event-kbd")
+
   output (uinput-sink "kmonad-input")
 
   fallthrough true
@@ -36,10 +40,10 @@
 )
 
 (deflayer coolcaps
-  @bsd C-1  C-2  C-3  C-4  C-5  C-6  C-7  C-8  C-9  C-0  _    _    _
-  _    _    up   C-e  _    C-t  _    _    _    _    _    _    _    _
-  _    left down right _   pgup home C-j  C-k  C-l  _    _    _
-  _    _    bspc C-c  C-v  pgdn end  _    _    _    _    _
+  @bsd C-1    C-2  C-3  C-4  C-5  C-6  C-7  C-8  C-9  C-0  _    _    _
+  _    _      up   C-e  _    C-t  _    _    _    _    _    _    _    _
+  _    left   down right _   pgup home C-j  C-k  C-l  _    _    _
+  _    C-bspc bspc C-c  C-v  pgdn end  _    _    _    _    _
   _    _    _              ret            _    _    _    _
 )
 

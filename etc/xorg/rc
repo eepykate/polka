@@ -44,10 +44,15 @@ esac
 
 #obs --startreplaybuffer &
 
-{
+{  # disable mouse accel
+	mouse=$(xinput | sed -n 's/.*Mouse.*id=\([0-9]*\).*/\1/p' | head -n1)
+	xinput set-prop "$mouse" 'libinput Accel Speed' -0.82
+} &
+
+{  # keyboard mapping | git.io/kmonad
 	sudo kmonad ~/opt/dots/opt/kmirror.kbd &! sleep 0.6; xset r rate 200 60
 	kid=$(xinput | sed -n 's/.*kmonad.*id=\([0-9]\+\).*/\1/p')
-	xinput --test-xi2 --root $kid | awk '/RawKeyPress/ {getline;getline;print $2}' >> ~/opt/key-presses
+	keylogger start
 } &
 
 exec "$wm"

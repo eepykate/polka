@@ -42,7 +42,7 @@ kgs() { clear; git status -sb; zle redisplay; }
 zle -N kgs; bindkey ^j kgs
 
 # ls on ^k
-kls() { clear; ls -A; zle redisplay; }
+kls() { clear; ls -A1; zle redisplay; }
 zle -N kls; bindkey ^k kls
 
 #
