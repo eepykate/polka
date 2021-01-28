@@ -2,10 +2,17 @@
 [class="groupStart-23k01U"] > div,
 [class="groupStart-23k01U"] {
 	margin: 0 !important;
-	padding: 0 !important;
+	margin-left: -5.5rem !important;
 	max-height: 0 !important;
+	top: -9px;
 	opacity: 0;
+	z-index: 0 !important;
 }
+[class*="blockedAction"] {
+	cursor: n-resize !important;
+}
+
+[class*="timestampVisibleOnHover"] { opacity: 1; }
 
 /* role backgrounds instead of outlines */
 [class*="role-"] {
@@ -13,23 +20,21 @@
 	overflow: hidden;
 }
 
-[class*="roleRemoveIcon-"] {
-	z-index: 999;
-	position: absolute;
-}
-
 [class*="role-"] > [class*="roleCircle-"]::after {
 	background-color: inherit;
 	content: '';
 	display: block;
-	position: relative;
+	position: relative !important;
 	min-width: 230px;
 	height: 69px;
 	opacity: 0.2;
 	right: -100px;
-	z-index: 0;
+	z-index: -1;
 	pointer-events: none;
 }
+
+[class*="roleRemoveIcon-"] { position: absolute; }
+[class*="role-"] { z-index: 0 !important; }
 
 /* display info about code blocks */
 code.hljs:not(.inline)::before {

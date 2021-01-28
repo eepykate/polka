@@ -23,7 +23,8 @@ alias \
 	ga="git add"   \
 	gd="git diff"  \
 	gr="git reset" \
-	gaa="git add -A"
+	gaa="git add -A" \
+	gds="git diff --staged"
 
 alias \
 	gc="git commit"    \
@@ -34,7 +35,6 @@ alias \
 	gp="git push"  \
 	gpf="git push -f"
 
-alias gds="git diff --staged"
 
 # short and informative git log
 alias gl="git log --all --decorate --oneline --graph"
