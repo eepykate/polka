@@ -1,10 +1,9 @@
 #!/bin/sh -e
 #  copy an emoji
 
-chosen=$(grep -v "#" ~/opt/emoji | menu)
+chosen=$(sed -n 's/^[^ ]* \+//p' ~/opt/emoji | menu)
+[ "$chosen" ]
+set -- $(grep -- "$chosen" ~/opt/emoji)
 
-set -- $chosen
-
-[ "$1" ]
 printf %s "$1" | xclip -selection clipboard
 notify-send "copied '$1'"

@@ -74,7 +74,7 @@ super + shift + {0-9}
 #
 #   screenshots
 #
-Print
+{Print,ctrl alt w}
 	scr -G$(6r f -f)
 
 # selection
