@@ -74,5 +74,6 @@ pgrep sxhkd || {
 s picom
 s dunst
 #s swallow
-s sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"  "$sx/other"
+s sxhkd -c "$sx/other"  # give priority to binds in this file
+sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"
 [ -e "$bs/other" ] && . "$bs/other"

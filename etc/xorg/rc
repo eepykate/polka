@@ -15,9 +15,10 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 [ "$DBUS_SESSION_BUS_ADDRESS" ] ||
 	dbus-launch --exit-with-session "$c/xorg/rc" "$@" &
 
-hw 0      & # clear hidden windows cache
-screen.sh   # change display layout
-pap       & # wallpaper
+dsync init &
+hw 0       & # clear hidden windows cache
+screen.sh    # change display layout
+pap        & # wallpaper
 #pulseaudio -D &          # audio
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
@@ -49,9 +50,8 @@ esac
 } &
 
 {  # keyboard mapping | git.io/kmonad
-	sudo kmonad ~/opt/dots/opt/kmirror.kbd &! sleep 0.6; xset r rate 200 60
+	sudo kmonad ~/opt/dots/opt/kmirror.kbd & sleep 2; xset r rate 200 60
 	kid=$(xinput | sed -n 's/.*kmonad.*id=\([0-9]\+\).*/\1/p')
-	xset r rate 200 60
 	keylogger start
 } &
 

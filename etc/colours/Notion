@@ -1,4 +1,4 @@
-black="acb1b8"
+black="aaaeb5"
 red="b54a65"
 green="6b9e4c"
 yellow="c97d4e"
@@ -15,8 +15,8 @@ bg4="ebebeb"
 button="0000001a"
 chrome="dde0e3"
 #   -----
-fg1="444444"
-fg2="767676"
+fg1="5b5f66"
+fg2="83878c"
 disabled="999999"
 #   -----
 accent="$blue"

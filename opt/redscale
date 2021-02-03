@@ -1,0 +1,14 @@
+uniform float      opacity;
+uniform bool       invert_color;
+uniform sampler2D  tex;
+
+void
+main()
+{
+    vec4   c;
+    float  y;
+
+    c = texture2D(tex, gl_TexCoord[0].xy);
+    y = dot(c.rgb, vec3(0.1, 1.0, 0.2));
+    gl_FragColor = vec4(y, 0, 0, 1.0);
+}

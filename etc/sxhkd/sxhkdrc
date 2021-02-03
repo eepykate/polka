@@ -12,14 +12,14 @@ super + g
 	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
 	#xdotool keyup super; eval "$(xdotool getmouselocation --shell)"; xdotool mousemove_relative 46 376; sleep 0.05; xdotool click 1 click 1; sleep 0.1; xdotool mousemove 2121 842 click 1; xdotool mousemove $X $Y
 
-super + b
-	surphace
+#super + b
+#	surphace
 
 super + space
 	launch
 
 super + y
-	keepassxc
+	keepassxc; dsync
 
 XF86Launch5
 	mic toggle
@@ -36,8 +36,8 @@ XF86Launch5
 #ctrl + space
 #	xdotool keyup space; xdotool key --clearmodifiers Return
 
-super + u
-	copy
+super + {u,i}
+	{copy,emoji}
 
 super + f
 	chromium

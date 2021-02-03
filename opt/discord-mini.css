@@ -1,3 +1,11 @@
+.sidebar-2K8pFh {
+	width: 180px !important;
+}
+
+[class*="username-"]:not([style]) {
+	opacity: 0.8;
+}
+
 /* blocked messages */
 [class="groupStart-23k01U"] > div,
 [class="groupStart-23k01U"] {
@@ -10,6 +18,8 @@
 	opacity: 0;
 	z-index: 0 !important;
 }
+
+[class="groupStart-23k01U"] [class*="blockedSystemMessage"] { padding: 0 !important; }
 [class*="blockedAction"] {
 	cursor: n-resize !important;
 	min-width: 999px;
@@ -21,6 +31,7 @@
 [class*="role-"] {
 	border: none !important;
 	overflow: hidden;
+	z-index: 0 !important;
 }
 
 [class*="role-"] > [class*="roleCircle-"]::after {
@@ -37,7 +48,6 @@
 }
 
 [class*="roleRemoveIcon-"] { position: absolute; }
-[class*="role-"] { z-index: 0 !important; }
 
 /* display info about code blocks */
 code.hljs:not(.inline)::before {
@@ -45,16 +55,15 @@ code.hljs:not(.inline)::before {
 	float: right;
 	display: block;
 	width: auto;
-	max-width:  6rem;
-	text-align: right;
+	max-width:  6.6em !important;
 	min-width:  auto;
-	margin-top: -8.5rem;
-	line-height: 1.6rem;
+	margin-top: -8.6em !important;
+	line-height: 1.6em !important;
 	overflow-x: hidden;
 	scrollbar-width: none;
-	color: var(--fg2);
+	text-align: right;
+	font-size: 1em;
 	opacity: 0.6;
-	font-size: 0.8rem;
 }
 /* subtle code block styling */
 code.hljs:not(.inline) {

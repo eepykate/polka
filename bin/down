@@ -8,11 +8,11 @@ fun() {
 	# dirs
 	[ -d "$out" ] && out=$2/${1##*/}
 
-	# change filename if already existing
-	[ -e "$out" ] && out=$out-0 &&
-		while [ -e "$out" ]; do
-			out=${out%-*}-$(( ${out##*-} + 1 ))
-		done
+	# # change filename if already existing
+	# ! [ "$2" ] && [ -e "$out" ] && out=$out-0 &&
+	# 	while [ -e "$out" ]; do
+	# 		out=${out%-*}-$(( ${out##*-} + 1 ))
+	# 	done
 
 	# print url
 	printf '\n%b\n' "\033[35m${1#http*://}\033[0m"
@@ -43,6 +43,10 @@ fun() {
 		# individual file github urls
 		*github*/raw/*|*github*/blob/*)
 			curl -L#o "$out"  "${1//\/blob\//\/raw\/}";;
+
+		# diff urls
+		*github*/commit/*|*github*/commits/*)
+			curl -L#o "$out"  "${1%.diff}.diff";;
 
 		# git repos
 		*.git|*git.*|*github.com*|*gitlab*) git clone "$1" $2;;

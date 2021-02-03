@@ -93,7 +93,7 @@ v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
 [ -e "$v" ] && . "$v"
 
 # drag and drop
-alias -g q="dragon --and-exit"
+q() { dragon --and-exit "$@"; }
 
 # copy image
 alias -g ci="xclip -selection clipboard -t image/png"
