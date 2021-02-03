@@ -97,9 +97,9 @@ command_not_found_handler() {
 	return 127
 }
 
-export SUDO_PROMPT=$'pass for\033[38;05;${acc}m %u\033[0m '
-
 case $TERM in
 	linux) acc=4  acc2=1  PROMPT=' %1~%F{%(?.4.1)} %(!.|./) %f';;
 	*)     acc=16 acc2=17 PROMPT=$'%{\e[?25h\e[4 q%}%{$(topdir)%}%F{%(?.$acc.$acc2)} > %f'
 esac
+
+export SUDO_PROMPT=$'pass for\033[38;05;'"${acc}m %u"$'\033[0m '

@@ -3,13 +3,16 @@
 [class="groupStart-23k01U"] {
 	margin: 0 !important;
 	margin-left: -5.5rem !important;
+	padding: 0;
 	max-height: 0 !important;
+	max-width: 250px;
 	top: -9px;
 	opacity: 0;
 	z-index: 0 !important;
 }
 [class*="blockedAction"] {
 	cursor: n-resize !important;
+	min-width: 999px;
 }
 
 [class*="timestampVisibleOnHover"] { opacity: 1; }
