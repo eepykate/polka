@@ -9,8 +9,8 @@
 }
 table.tab-size *,  /* github */
 code, .inline, pre, code *, pre * {
-	font-family: "Comic Mono" !important;
-	font-weight: 600;
+	font-family: "Ubuntu Mono" !important;
+	font-weight: 500;
 	font-size: 12px;
 }
 

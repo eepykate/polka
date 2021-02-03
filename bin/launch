@@ -3,6 +3,9 @@
 TERM='' IFS=:
 set -- $PATH
 
+# due to it being easier to get the selection than the clipboard, sync
+{ xclip -sel clip -o | xclip -sel prim; } &
+
 comm=$(find "$@" -type f,l -printf '%f\n' -executable \
 	| sort | uniq | menu)
 

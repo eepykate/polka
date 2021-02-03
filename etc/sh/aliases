@@ -55,6 +55,14 @@ alias b='bg;disown'
 
 calc() { echo "scale=5; $*" | bc; }
 
+pk() {
+	arg=; for i; do
+		[[ "$i" =~ ^- ]] && arg+=$i
+		[[ "$i" =~ ^[0-9]*$ ]] && { kill $arg $i; continue; }
+		pkill $arg $i
+	done
+}
+
 fuck() {
 	for i; do
 		pkill -9 "$i" || ! echo "killing '$i' failed with exit code $?"
@@ -107,13 +115,16 @@ F() { find "${2:-.}" -name "$1"; }
 # apparently zstd decompresses fast
 bk() {
 	if [ $# = 1 ] && ! [ -d "$1" ]; then
-		cp -- "$1" "$1_$(date -Id-%s)"
+		cp -- "$1" "$1_$(date +%s)"
 	else
 		tar -I zstd -cvf "${1%/}_$(date -Id).tar.zst" "$@"
 	fi
 }
 
-alias e="atool -x"
+e() {
+	a=$1; shift
+	atool -x "${a%.crdownload}" "$@"
+}
 c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
 
 d() {

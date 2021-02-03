@@ -1,0 +1,16 @@
+#!/bin/sh
+
+local=$(date "+%F (%a) - %H:%M:%S")
+day=$(date +%d)
+
+for i in Asia/Calcutta Europe/Berlin America/New_York America/Los_Angeles; do
+	export TZ=$i
+	[ "$(date +%d)" = "$day" ] && j=T || j=Y
+	eval ${i#${i%?}}=\"$j,$(date "+%H:%M")\"
+done
+
+
+notify-send "$local" \
+	"ist $a  |  cet $n
+est $k  |  pst $s
+$(acpi)"

@@ -55,9 +55,7 @@ ctrl + alt + {m,u}
 
 # send a notif of the time and battery
 super + t
-	notify-send "$(date "+%F (%a) - %H:%M")" \
-	"$(acpi)"
-
+	datew
 
 # change theme
 ctrl + alt + s
