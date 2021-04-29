@@ -124,9 +124,10 @@ inoremap <C-a> <Esc>^i
 nnoremap <C-e> <Esc>$a
 
 " copy, cut & paste
-vnoremap <C-c> "+ya
-vnoremap <C-x> "+c
-vnoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+vnoremap <S-y> "+c
+vnoremap <C-v> "+p
+"nnoremap <p> "+p
 inoremap <C-v> <ESC>"+pa
 
 inoremap <C-s> <ESC>:w<CR>a

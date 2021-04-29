@@ -42,16 +42,16 @@ kgs() { clear; git status -sb; zle redisplay; }
 zle -N kgs; bindkey ^j kgs
 
 # ls on ^k
-kls() { clear; ls -A1; zle redisplay; }
+kls() { clear; ls -A; zle redisplay; }
 zle -N kls; bindkey ^k kls
 
 #
 #  history
 #
 
-HISTSIZE=999999
-SAVEHIST=999999
-HISTFILE="${ZDOTDIR:-$HOME}/zsh-history"
+export HISTSIZE=999999 \
+	SAVEHIST=999999 \
+	HISTFILE="${ZDOTDIR:-$HOME}/zsh-history"
 setopt histignorespace
 setopt extended_history  # record timestamp of command in HISTFILE
 setopt hist_ignore_dups  # ignore duplicated commands in history

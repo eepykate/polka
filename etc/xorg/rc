@@ -6,24 +6,17 @@
 wm="${1:-bspwm}"
 c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
-# Basic X stuff
-#for f in /etc/X11/xinit/xinitrc.d/*.sh; do
-#	. "$f"
-#done; f=
-
-# DBus
-[ "$DBUS_SESSION_BUS_ADDRESS" ] ||
-	dbus-launch --exit-with-session "$c/xorg/rc" "$@" &
+# /etc/X11/xinit/xinitrc.d/*.sh
+# [ "$DBUS_SESSION_BUS_ADDRESS" ] || dbus-launch --exit-with-session ...
 
 dsync init &
 hw 0       & # clear hidden windows cache
 screen.sh    # change display layout
 pap        & # wallpaper
-#pulseaudio -D &          # audio
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
-xrdb "$c/xorg/res"
+xrdb "$c/xorg/res" &
 
 case "$wm" in
 	bspwm) ;;  # already in the config
@@ -33,26 +26,11 @@ case "$wm" in
 	*)  sxhkd &  picom &  dunst &
 esac
 
-#setxkbmap -option caps:escape
-#D() {
-#xmodmap - << EOF
-#	clear lock
-#	add control = Control_L Control_L Control_R
-#	keycode 66 = Escape Escape NoSymbol Escape
-#EOF
-#}; { D;D; } &  # doesn't work if it's only ran once...
-
-#obs --startreplaybuffer &
-
-{  # disable mouse accel
-	mouse=$(xinput | sed -n 's/.*Mouse.*id=\([0-9]*\).*/\1/p' | head -n1)
-	xinput set-prop "$mouse" 'libinput Accel Speed' -0.82
-} &
-
 {  # keyboard mapping | git.io/kmonad
-	sudo kmonad ~/opt/dots/opt/kmirror.kbd & sleep 2; xset r rate 200 60
-	kid=$(xinput | sed -n 's/.*kmonad.*id=\([0-9]\+\).*/\1/p')
-	keylogger start
+	sleep 3
+	sudo kmonad ~/opt/dots/opt/keyboard.kbd & sleep 2; xset r rate 200 60
 } &
 
-exec "$wm"
+{ sleep 5; qbittorrent; } &
+
+"$wm"

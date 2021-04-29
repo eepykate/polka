@@ -2,12 +2,12 @@
 #  simulate a screen freeze
 
 shotgun /tmp/pic.png
-6r primary | {
+xrandr | grep -o '[0-9][0-9]\+ x [0-9]\+' | head -n1 | {
 	# vars are local to subshell, so i have to trap from the subshell
 	trap 'pkill -USR2 dunst; kill $pid' TERM EXIT
-	read -r w h x _
+	read -r w _ h x _
 	pkill -USR1 dunst
-	feh --class freeze -g "$((w+x))x$((h+2))+0+-1" /tmp/pic.png &
+	feh --class freeze -g "${w}x$((h+2))+0+-1" /tmp/pic.png &
 	pid=$!
 	wait $pid
 }

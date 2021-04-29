@@ -2,9 +2,12 @@
 
 : "${t:=20}"
 
+# "cache" so the "first" run isn't a lot slower than all the next ones
+{ time "$@"; } >/dev/null 2>&1
 i=0 avg=0 high=0 low=99999
 while [ "$i" -lt "$t" ]; do
 	i=$((i+1))
+	printf "\r%s" "$i"
 
 	var=$( { time "$@"; } 2>&1 )
 	var=${var##*real	}
@@ -19,6 +22,6 @@ while [ "$i" -lt "$t" ]; do
 	[ "$var" -lt "$low" ] && low=$var
 done
 
-echo "avg:  $(( avg / t  ))ms"
+printf "\ravg:  %sms" "$(( avg / t  ))"
 echo "low:  ${low}ms"
 echo "high: ${high}ms"

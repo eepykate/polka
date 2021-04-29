@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=Torrent
-Exec=transadd %U
+#Exec=transadd %U
+Exec=qbittorrent %U
 MimeType=application/x-bittorrent;x-scheme-handler/magnet;

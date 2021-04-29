@@ -13,9 +13,8 @@ export \
 export \
 	XDG_DATA_HOME="$data"   \
 	XDG_CACHE_HOME="$cache" \
-	XDG_CONFIG_HOME="$conf"
-
-systemctl --user import-environment
+	XDG_CONFIG_HOME="$conf" \
+	JAVA_HOME=$apps
 
 # garbage dotfile apps
 export \
@@ -30,7 +29,9 @@ export \
 export \
 	EDITOR="nvim" \
 	scr_dir="$opt/scr" \
-	rec_dir="$opt/scr"
+	rec_dir="$opt/scr" \
+	scr_file='$(date +%s.%3N).png' \
+	rec_file='$(date +%s.%3N).mp4'
 
 export \
 	PAGER="nvim -R" \
@@ -62,9 +63,8 @@ star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
 star sudo kbdrate -d 200 -r 60
 star archi
-shortcuts
+star shortcuts
 
-#test -e /tmp/session || x
-#:>/tmp/session
+test -e /tmp/session || { :>/tmp/session; x; }
 
 # vim: ft=sh

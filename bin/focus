@@ -1,45 +1,11 @@
 #!/bin/sh
 #  focus window
 
-c='bspc config' hover=focus_follows_pointer click=click_to_focus ewmh=ignore_ewmh_focus
-case $1 in
-	off)
-		$c $hover false
-		$c $click none
-		$c $ewmh true
-		sleep 0.05; exec bspc rule -a '*' focus=off
-	;;
-	on)
-		$c $hover true
-		$c $click button1
-		$c $ewmh false
-		exec bspc rule -r tail
-esac
+# issues with this method (simple bspc node -f):
+#  - https://i.imgur.com/BoBAHcu.png
+#  - less than perfect focusing of floating windows (even with directional_focus_tightness)
 
-# exit when fullscreen
-bspc query -N -n focused.fullscreen || pgrep -x menu || pgrep -f 'st.*-c menu' && exit
+# issue with previous method (super cool script by github.com/turquoise-hexagon)
+#  - https://i.imgur.com/svQPkKH.png
 
-case $1 in
-	east)  arg=xy; op=-gt;;
-	west)  arg=xy; op=-lt;;
-	north) arg=yx; op=-lt;;
-	south) arg=yx; op=-gt
-esac
-
-# get the coordinates of all windows on the current desktop
-wattr "i$arg" $(targets focused) $(targets normal) | {
-	read -r cur cur_1 cur_2
-
-	# sort the coordinates to find the closest window
-	while read -r win win_1 win_2; do
-		[ "$win_1" "$op" "$cur_1" ] && {
-			win_1=$((win_1 - cur_1)); win_1=${win_1#-}
-			win_2=$((win_2 - cur_2)); win_2=${win_2#-}
-
-			[ $((! min_1 || win_1 < min_1 || win_1 == min_1 && win_2 < min_2)) -eq 1 ] &&
-				{ min_1=$win_1; min_2=$win_2; focus=$win; }
-		}
-	done
-
-	bspc node "$focus" -f && cursor
-}
+bspc node -f $1.local #|| bspc monitor -f $1

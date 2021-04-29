@@ -161,7 +161,7 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 	echo " - dmenu"
 
 	sed -i --follow-symlinks \
-		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "scale=0;$fontsize*1.1" | bc):style=$fontweight\" /" \
+		-e "s/\(fonts\[\] *= *{ \)[^}]*/\1\"$font:pixelsize=$(echo "$fontsize*1.05" | bc):style=$fontweight\" /" \
 		-e "s/\(SchemeNorm\] *= *{ \)[^}]*/\1\"#$fg2\", \"#$bg1\" /" \
 		-e "s/\(SchemeSel\] *= *{ \)[^}]*/\1\"#$fg1\", \"#$bg3\" /"  \
 		`# fuzzy highlight` \
@@ -173,17 +173,17 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 } &
 
 
-#echo " - bspwm"
-#sed --follow-symlinks -i               \
-#	-e "s/outer=.*/outer='0x$bg1'   # outer/"      \
-#	-e "s/inner1=.*/inner1='0x$accent'  # focused/"      \
-#	-e "s/inner2=.*/inner2='0x$black'  # normal/"      \
-#	~/bin/borders
-#
-#sed --follow-symlinks -i  \
-#	-e "s/border_color.*/border_color       '#$bg1'/" \
-#	-e "s/d_border_color.*/d_border_color      '#$bg1'/" \
-#	"$c/bspwm/bspwmrc"
+echo " - bspwm"
+sed --follow-symlinks -i               \
+	-e "s/outer=.*/outer='0x$bg3'   # outer/"      \
+	-e "s/inner1=.*/inner1='0x$black'  # focused/"      \
+	-e "s/inner2=.*/inner2='0x${chrome:-$bg4}'  # normal/"      \
+	~/bin/borders
+
+sed --follow-symlinks -i  \
+	-e "s/border_color.*/border_color       '#$bg3'/" \
+	-e "s/d_border_color.*/d_border_color      '#$bg3'/" \
+	"$c/bspwm/bspwmrc"
 
 echo " - dunst"
 var="$(sed --follow-symlinks \

@@ -8,18 +8,18 @@ ctrl + alt + {1,2,3}
 super + {alt + space, Return, e}
 	st
 
-super + g
-	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
+#super + g
+#	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
 	#xdotool keyup super; eval "$(xdotool getmouselocation --shell)"; xdotool mousemove_relative 46 376; sleep 0.05; xdotool click 1 click 1; sleep 0.1; xdotool mousemove 2121 842 click 1; xdotool mousemove $X $Y
 
-#super + b
-#	surphace
+super + b
+	surphace
 
 super + space
 	launch
 
 super + y
-	keepassxc; dsync
+	keepassxc
 
 XF86Launch5
 	mic toggle
@@ -65,19 +65,29 @@ ctrl + alt + s
 {XF86Launch6,super + k}
 	shade picker
 
-super + shift + {0-9}
-	hw {0-9}
+#super + shift + 2
+#	pgrep mumble && hw 2
+#
+#super + shift + 4
+#	pgrep -x 'keepassxc' && hw 4
+
+super + shift + {0,1-9}
+	hw {0,1-9}
 
 
 #
 #   screenshots
 #
+Scroll_Lock
+	scr -G$(6r f -f)  "$HOME/tmp/dlh/$(date +%s).png"
+
 {Print,ctrl alt w}
 	scr -G$(6r f -f)
 
 # selection
 {shift + Print, XF86Tools}
 	freeze & scr -S; pkill freeze
+	#scr -S
 
 super + {Insert, Home, Next, Prior, End}
 	scr {_,-c -pwnd -b8,-c -e -b6,-c -pro -a -r60 -b12,-s}
@@ -104,3 +114,8 @@ super + {p, Tab}
 #
 ctrl + alt + t
 	synclient TouchpadOff={0,1}
+
+
+
+super + shift + grave
+	setxkbmap {us dvorak-l; sleep 0.2; xkbset sticky -twokey -latchlock; xkbset exp 1 =sticky,us; xkbset -sticky}

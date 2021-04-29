@@ -117,11 +117,13 @@ bk() {
 	if [ $# = 1 ] && ! [ -d "$1" ]; then
 		cp -- "$1" "$1_$(date +%s)"
 	else
-		tar -I zstd -cvf "${1%/}_$(date -Id).tar.zst" "$@"
+		tar -I zstd -cvf "${1%/}_$(date +%s).tar.zst" "$@"
 	fi
 }
 
 e() {
+	test -e "$1" || return 1
+	[[ "$1" =~ .*\.crdownload ]] && s=1 af test -e "$1"
 	a=$1; shift
 	atool -x "${a%.crdownload}" "$@"
 }
@@ -202,6 +204,8 @@ c720() {
 comb() {
 	montage "$@" -geometry +0+0 -tile 1x output.png
 }
+
+alias is=inkscape
 
 
 #

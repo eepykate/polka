@@ -1,7 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env sh
 #
 #  bspwmrc
 #
+# yes, using env rather than a direct /bin/sh is intentional,
+# but I won't say the reason :)
 
 c() { bspc config "$@" &  }
 R() { bspc rule -a "$@" & }
@@ -26,21 +28,22 @@ c pointer_motion_interval  5
 
 
 # borders/gaps
-c window_gap    20
+c window_gap    15
 c border_width  0
 c single_monocle      true
 c gapless_monocle     true
 c borderless_monocle  true
 
-c normal_border_color       '#ffffff'
-c active_border_color       '#ff0000'
-c focused_border_color      '#ff0000'
+c normal_border_color       '#222242'
+c active_border_color       '#222242'
+c focused_border_color      '#222242'
 
 
 #
 #   rules
 #
 R taskman   locked=on
+R yeetfocus state=floating focus=on rectangle=1x1+1+1 border=off
 R obs       desktop=6
 R Steam     desktop=5
 R feh       state=floating
@@ -48,8 +51,12 @@ R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating
 R menu      state=floating sticky=on layer=normal
-R freeze    state=floating border=off monitor="$(6r names -p)" layer=above focus=off
-R Surphace  state=floating border=off rectangle=3360x1080+0+0
+R freeze    state=floating border=off monitor=HDMI-0 layer=above focus=off
+R Surphace  state=floating border=off rectangle=3360x3024+0+0
+R conky     state=floating layer=above sticky=true focus=off manage=off
+R Dragon    sticky=true
+R qBittorrent desktop=5
+R qbittorrent desktop=5
 
 
 #
@@ -62,7 +69,7 @@ pgrep sxhkd || {
 	## dropdown htop/shell
 	# start invisible
 	bspc rule -a taskman hidden=on -o
-	st -c taskman -e sh -c 'while :; do sudo -E htop; zsh; done' &
+	st -c taskman -e bash -c 'while :; do sudo -E htop; zsh; done' &
 
 	# on reboots stuff sometimes takes a while to start
 	sleep 5
@@ -74,6 +81,7 @@ pgrep sxhkd || {
 s picom
 s dunst
 #s swallow
+s borders
 s sxhkd -c "$sx/other"  # give priority to binds in this file
 sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"
 [ -e "$bs/other" ] && . "$bs/other"

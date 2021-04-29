@@ -1,48 +1,37 @@
 #!/bin/sh
-# Originally by github.com/windelicato
-#   modified by github.com/6gk
+# move window
+#  by (github) windelicato, Chrysostomus, 6gk
 
-size=${2:-'40'}
-dir=$1
+dir=$1  size=${2:-40}  rot1=270  rot2=270
 
-transplanter() { bspc node "$dir" -p south && bspc node -n "$dir"; }
-northplanter() { bspc node north -p north && bspc node -n north; }
-
-rootplanter() {
-	bspc node @/ -p "$dir" && bspc node -n @/ || bspc node -s next.local && bspc node -n @/
-	bspc node @/ -p cancel
+# If the window is floating, move it
+bspc query -T -n | grep -q '"state":"floating"' && {
+	case "$dir" in
+		north) switch="-y" sign="-";;
+		east)  switch="-x" sign="+";;
+		south) switch="-y" sign="+";;
+		west)  switch="-x" sign="-";;
+	esac
+	exec xdo move $switch "$sign$size"
 }
 
-# Find current window mode
-# If the window is floating, move it
-if bspc query -T -n | grep -q '"state":"floating"'; then
-	# only parse input if window is floating,tiled windows accept input as is
-	case "$dir" in
-		west) switch="-x"; sign="-";;
-		east) switch="-x"; sign="+";;
-		north) switch="-y"; sign="-";;
-		*) switch="-y"; sign="+";;
-	esac
-	xdo move $switch "$sign$size"
-else  # Otherwise, window is tiled: switch with window in given direction
-	if [ "$(bspc query -N -n .local.\!floating | wc -l)" != 2 ]; then
-		case "$dir" in
-			north) northplanter || rootplanter;;
-			*) transplanter || rootplanter
-		esac
-	else
-		case "$dir" in
-			east)  set -- east  west south;;
-			west)  set -- west  east north;;
-			south) set -- south north west;;
-			north) set -- north south west 270 90;;
-		esac
-	fi
+# Otherwise, the window is tiled: switch with window in given direction
+if [ "$(bspc query -N -n .local.\!floating | wc -l)" != 2 ]; then
+	[ "$dir" = north ] && odir=north || odir=south
 
-	bspc node -s "$1" || bspc query -N -n "$2".local ||
-	if bspc query -N -n "$3".local ; then
-		bspc node @/ -R "${4:-90}"
-	else
-		bspc node @/ -R "${5:-270}"
-	fi
+	bspc node "$dir.local" -p "$odir" && bspc node -n "$dir.local" ||
+		{ bspc node @/ -p "$dir" && bspc node -n @/ ||
+		bspc node -s next.local && bspc node -n @/; }
+	bspc node @/ -p cancel
+else
+	case "$dir" in
+		north)  opdir=south  nxdir=east   rot2=90;;
+		east)   opdir=west   nxdir=south  rot1=90;;
+		south)  opdir=north  nxdir=west   rot1=90;;
+		west)   opdir=east   nxdir=north  rot1=90;;
+	esac
+
+	bspc node -s "$dir.local" || bspc query -N -n "$opdir".local ||
+		{ bspc query -N -n "$nxdir".local && rot=$rot1 || rot=$rot2; }
+	bspc node @/ -R "$rot"
 fi

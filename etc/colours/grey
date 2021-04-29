@@ -1,0 +1,28 @@
+#   -----
+black=5c5c5c
+red=F69499
+yellow=F6DD94
+green=B4F694
+cyan=94F2F6
+blue=94C2F6
+purple=D39FF5
+#   -----
+bg0=121212
+bg1=171717
+bg2=1a1a1a
+bg3=1e1e1e
+bg4=232323
+chrome=2d2d2d
+#   -----
+fg1=e8e8e8
+fg2=999999
+button=${fg1}20
+disabled=696969
+#   -----
+accent=$blue
+accent2=$purple
+contrast=$bg4
+#   -----
+wall=wooden-star-crop.jpg
+#wall=$chrome
+#   -----

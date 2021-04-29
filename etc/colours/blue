@@ -1,0 +1,28 @@
+#   -----
+black=60608f
+red=f69499
+yellow=f6dd94
+green=b4f694
+cyan=94f2f6
+blue=94c2f6
+purple=d39ff5
+#   -----
+bg0=18182b
+bg1=191932
+bg2=1d1d3b
+bg3=222242
+bg4=2c2c4a
+chrome=303052
+#   -----
+fg1=ccccdc
+fg2=8a8aa8
+button=${fg1}20
+disabled=696969
+#   -----
+accent=$blue
+accent2=$purple
+contrast=$bg4
+#   -----
+wall=paint-dark-blue-crop.jpg
+#wall=$chrome
+#   -----

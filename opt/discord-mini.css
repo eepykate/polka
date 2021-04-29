@@ -2,21 +2,27 @@
 	width: 180px !important;
 }
 
-[class*="username-"]:not([style]) {
+/*[class*="username-"]:not([style]) {
 	opacity: 0.8 ;
-}
+}*/
 
 /* blocked messages */
 [class="groupStart-23k01U"] > div,
 [class="groupStart-23k01U"] {
 	margin: 0 !important;
-	margin-left: -5.5rem !important;
+	margin-left: -6.5rem !important;
 	padding: 0;
 	max-height: 0 !important;
 	max-width: 250px;
 	top: -9px;
 	opacity: 0;
 	z-index: 0 !important;
+}
+
+.groupStart-23k01U:not([class*="expanded"]) [class*="blockedMessageText-"],
+.groupStart-23k01U:not([class*="expanded"]) > * > .contents-2mQqc9 {
+	font-size: 5px !important;
+	margin-left: 15px;
 }
 
 [class="groupStart-23k01U"] [class*="blockedSystemMessage"] { padding: 0 !important; }
@@ -85,6 +91,7 @@ pre > code * {
 }
 
 /* change width of messages area */
+[class*="standardSidebarView"],
 [class*="jumpToPresentBar-"],
 [class*="typing-"],
 [class*="channelTextArea"],

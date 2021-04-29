@@ -28,6 +28,7 @@ bs      ~/etc/bspwm/bspwmrc
 drc     ~/etc/dunst/dunstrc
 sx      ~/etc/sxhkd/sxhkdrc
 sb      ~/etc/sxhkd/bspwm
+so      ~/etc/sxhkd/other
 
 # X
 xin     ~/etc/xorg/rc

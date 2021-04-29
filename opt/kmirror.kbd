@@ -18,33 +18,21 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rmet cmp  rctl
+  lctl lmet lalt           spc            ralt rmet cmp  rctl esc
 )
 
 
 
 (defalias
-	lts (tap-hold-next 180 spc (layer-toggle superspace))
-	ltc (tap-hold-next 180 esc (layer-toggle coolcaps))
 	ltm (layer-toggle merrymod)
-	bsd (layer-switch based)
-	bas (layer-switch base)
 )
 
 (deflayer base
+  esc  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @ltc _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-(deflayer coolcaps
-  @bsd C-1    C-2  C-3  C-4  C-5  C-6  C-7  C-8  C-9  C-0  _    _    _
-  _    _      up   C-e  _    C-t  _    _    _    _    _    _    _    _
-  _    left   down right _   pgup home C-j  C-k  C-l  _    _    _
-  _    C-bspc bspc C-c  C-v  pgdn end  _    _    _    _    _
-  _    _    _              ret            _    _    _    _
+  _    _    _              _              _    _    _    _    grv
 )
 
 (deflayer superspace
@@ -52,7 +40,7 @@
   bspc p    o    i    u    y    t    r    e    w    q    _    _    _
   ret  l    k    j    h    g    f    d    s    a    _    _    _
   _    m    n    b    v    c    x    z    _    _    _    _
-  _    @ltm bspc           _              _    _    _    _
+  _    @ltm bspc          ret             _    _    _    _    _
 )
 
 (deflayer merrymod
@@ -60,13 +48,5 @@
   P0   [    ]    \    up   P0   P0   P0   P0   P0   P0   P0   P0   P0
   P0   ;    '    left down right P0  P0   P0   P0   P0   P0   P0
   lctl ,    .    /    P0   P0   P0   P0   P0   P0   P0   P0
-  lsft P0   lalt           P0             P0   P0   P0   P0
-)
-
-(deflayer based
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  spc  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _             @lts            _    _    _    _
+  lsft P0   lalt           P0             P0   P0   P0   P0    _
 )

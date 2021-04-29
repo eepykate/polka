@@ -6,9 +6,10 @@ set -- $PATH
 # due to it being easier to get the selection than the clipboard, sync
 { xclip -sel clip -o | xclip -sel prim; } &
 
-comm=$(find "$@" -type f,l -printf '%f\n' -executable \
+var=$(find "$@" -type f,l -printf '%f\n' -executable \
 	| sort | uniq | menu)
 
-# final pipe to cat is so the script/command doesn't think it's being ran in a terminal
-echo "$comm" | sh | { echo "[$(date +%Y-%m-%d_%H-%M-%S)]  $comm"; cat; } >> \
-	"${XDG_CACHE_HOME:=$HOME/.cache}/menulogverbose" 2>&1
+echo ": $(date +%s):0;$var" >> "${ZDOTDIR:-$HOME}/zsh-history"
+exec zsh -ic ". ~/etc/sh/aliases; $var"
+#zsh -ic "$comm | cat" # echo "[$(date +%Y-%m-%d_%H-%M-%S)]  $comm" >> \
+#	"${XDG_CACHE_HOME:=$HOME/.cache}/menulogverbose" 2>&1

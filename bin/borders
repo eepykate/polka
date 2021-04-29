@@ -3,26 +3,28 @@
 #   double borders
 #
 
-outer='0x151823'   # outer
-inner1='0xb6d0fd'  # focused
-inner2='0x5c5c80'  # normal
+outer='0x222242'   # outer
+inner1='0x60608f'  # focused
+inner2='0x303052'  # normal
+
+trap 'bspc config border_width 0; kill -9 -$$' INT TERM
 
 targets() {
 	case $1 in
 		focused) bspc query -N -n .local.focused.\!fullscreen;;
-		normal)  bspc query -N -n .local.\!focused.\!fullscreen
-	esac | grep -iv "$v"
+		normal)  bspc query -N -n .\!focused.\!fullscreen
+	esac #| grep -iv "$v"
 }
-bspc config border_width 12
+bspc config border_width 10
 
-draw() { chwb2 -I "$inner" -O "$outer" -i "2" -o "9" $* |:; }
+draw() { chwb2 -I "$inner" -O "$outer" -i "4" -o "9" $*; }
 
 # initial draw, and then subscribe to events
 { echo; bspc subscribe node_geometry node_focus; } |
 	while read -r _; do
-		v=$(echo $(xdo id -N Firefox))
-		v=${v// /\\|}
+		#v=$(echo $(xdo id -N Firefox))
+		#v=${v// /\\|}
 		[ "$v" ] || v='abcdefg'
-		inner=$inner1 draw "$(targets focused)"
-		inner=$inner2 draw "$(targets  normal)"
+		inner=$inner1 draw $(targets focused)
+		inner=$inner2 draw $(targets  normal)
 	done

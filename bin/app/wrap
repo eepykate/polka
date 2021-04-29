@@ -13,7 +13,9 @@ _boox()      { boox "$@"; exec sleep 0.1; }
 _minecraft() { _ mangohud --dlsym minecraft-launcher "$@"; }
 _steam()     { _ lo steam "$@"; }
 _pacman()    { sudo pacman "$@"; }
-_chromium()  { GTK_THEME=phocus chromium "$@"; }
+#_chromium()  { GTK_THEME=phocus chromium --enable-features=VaapiVideoDecoder --enable-accelerated-video-decode --ignore-gpu-blocklist "$@"; }
+_chromium()  { GTK_THEME=phocus chromium --enable-features=VaapiVideoDecoder --use-gl=desktop --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy "$@"; }
+_edge()      { GTK_THEME=phocus microsoft-edge-dev "$@"; }
 _apt()       {
 	if [ -t 1 ]; then
 		sudo apt "$@"

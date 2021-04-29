@@ -67,12 +67,10 @@ f() {
 		set -- $line
 		# remove junk added by the custom IFS
 		set -- "${1##* }" "$2" "$3" "$4"
-		[ "$X" -le 0 ] && [ "$Y" -le 0 ] || {
-			# Width
-			[ "$X" -ge "$3" ] && [ "$X" -lt "$(($3+$1))" ] || continue
-			# Height
-			[ "$Y" -ge "$4" ] && [ "$Y" -lt "$(($4+$2))" ] || continue
-		}
+		# Width
+		[ "$X" -ge "$3" ] && [ "$X" -lt "$(($3+$1))" ] || continue
+		# Height
+		[ "$Y" -ge "$4" ] && [ "$Y" -lt "$(($4+$2))" ] || continue
 		[ "$format" = -f ] && printf '%s\n' "$1x$2+$3+$4" ||
 			printf '%s\n' "$1 $2 $3 $4"
 		exit
