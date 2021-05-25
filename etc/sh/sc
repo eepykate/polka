@@ -10,6 +10,8 @@ fet     ~/src/fetsh
 scrs    ~/opt/scr
 pics    ~/opt/scr
 recs    ~/opt/scr
+tu      ~/opt/turtles
+em      ~/opt/emotes
 
 oth     ~/opt/linux/oth
 sp      ~/etc/startpage

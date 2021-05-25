@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 #
 #  bspwmrc
 #
@@ -12,9 +12,9 @@ sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
 
 # desktops
 bspc monitor -d      1 2 3 4 5 6
-bspc monitor DVI-D-0 -d  7 8 9 0
-# fix ordering
-bspc monitor DVI-D-0 -s HDMI-0
+#bspc monitor DVI-D-0 -d  7 8 9 0
+## fix ordering
+#bspc monitor DVI-D-0 -s HDMI-0
 
 c ignore_ewmh_fullscreen all
 #c ignore_ewmh_focus true

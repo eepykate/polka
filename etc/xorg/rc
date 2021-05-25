@@ -13,6 +13,7 @@ dsync init &
 hw 0       & # clear hidden windows cache
 screen.sh    # change display layout
 pap        & # wallpaper
+clipwatch  &
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
@@ -28,7 +29,7 @@ esac
 
 {  # keyboard mapping | git.io/kmonad
 	sleep 3
-	sudo kmonad ~/opt/dots/opt/keyboard.kbd & sleep 2; xset r rate 200 60
+	sudo kmonad ~/opt/dots/opt/keyboard.kbd & #sleep 2; xset r rate 200 60
 } &
 
 { sleep 5; qbittorrent; } &

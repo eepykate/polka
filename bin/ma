@@ -8,7 +8,7 @@ dewit() {
 PATH=$(echo "$PATH" | sed "s|${0%/*}:||")
 git rev-parse --git-dir >/dev/null 2>&1 && dewit git submodule update --init --recursive
 set -e
-if [ -e "Makefile" ]; then
+if [ -e "Makefile" ] || [ -e "makefile" ]; then
 	[ "$1" = install ] || [ "$SUDO_USER" ] &&
 		dewit exec sudo make install
 

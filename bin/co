@@ -1,2 +1,2 @@
 #!/bin/sh
-exec xclip -sel clip "$@"
+test -t 0 && exec xclip -sel clip "$@" || printf %s "$(cat)" | xclip -sel clip "$@"

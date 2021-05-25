@@ -13,11 +13,13 @@
 # shellcheck disable=SC2086
 
 #  toggle mic
+{ [ "$1" = on ]  && echo true > /tmp/mic; } ||
+{ [ "$1" = off ] && echo false > /tmp/mic; } && set -- toggle
 [ "$1" = toggle ] && {
 	input=$(pactl list sink-inputs | grep -i 'media.name = "Mumble' -B20 \
 		| grep -o 'Input #[0-9]\+')
 
-	[ "$input" ] || exit
+	[ "$input" ] || { notify-send "mic is not running"; exit 1; }
 	touch /tmp/mic
 	read -r v < /tmp/mic
 

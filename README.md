@@ -4,9 +4,16 @@
 
 <h2 align="center"> Screenshots </h2>
 
+<h3 align="center"> [bspwm] Current </h3>
+<div align="center"> Not really anything new here, but might as well post </h3>
+
+![](https://i.imgur.com/MQSUbo9.png)
+
 <h3 align="center"> [bspwm] calm and content </h3>
 
 ![](https://i.imgur.com/P2SWk4c.png)
+
+![with discord](https://i.imgur.com/7SaGxHF.png)
 
 <h3 align="center"> [bspwm] magical sunset </h3>
 

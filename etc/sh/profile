@@ -65,6 +65,7 @@ star sudo kbdrate -d 200 -r 60
 star archi
 star shortcuts
 
+sudo rm /etc/systemd/system/getty@tty1.service.d/override.conf 2>/dev/null
 test -e /tmp/session || { :>/tmp/session; x; }
 
 # vim: ft=sh

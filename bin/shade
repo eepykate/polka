@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh
 #  SHade - colour stuff
 
 help() {
@@ -67,10 +67,6 @@ dar() {
 
 # picker
 pic() {
-	# not colours but fite me
-	hex=$(xclip -o)
-	echo "$hex" | grep -q '^http\|^[0-9]\+-[0-9]\+$' || [ "$hex" -gt 1111111111 ] 2>/dev/null && exec notify-send "$(snowflake $hex)"
-
 	# if the selection is a hex/rgb value, use that,
 	# otherwise select a pixel
 	pkill -x colorpicker
@@ -84,10 +80,10 @@ pic() {
 		$v$v$v$v$v$v) hex=$1$2$3;;
 		# for rgb
 		*)
-			if [ "$1" -lt 256 ] && [ "$2" -lt 256 ] && [ "$3" -lt 256 ]; then  # 255, 200, 255
+			if [ "$1" -lt 256 ] 2>/dev/null && [ "$2" -lt 256 ] && [ "$3" -lt 256 ]; then  # 255, 200, 255
 				hex=$(printf "%02X%02X%02X\n" "$@")
 			elif [ $# = 6 ]; then   # 1.0, 0.855, 1.0
-				calc() { echo "scale=5; $1/3.92156*1000" | bc; }
+				calc() { echo "scale=5; $1/3.92156*1000" | bc || echo 8888; }
 				hex=$(printf "%02X%02X%02X\n" "$(calc $1.$2)" "$(calc $3.$4)" "$(calc $5.$6)")
 			else
 				# select a pixel
@@ -98,9 +94,37 @@ pic() {
 	hex=$(printf %s "$hex" | tr '[:upper:]' '[:lower:]' | tr -d '#\n')
 
 	# copy the hex, then clear selection
-	printf %s "$hex" | xclip -sel clip
-	xclip -i /dev/null
+	date +%s > /tmp/sde
+	printf %s "$hex" | xclip -sel clip; xclip -i /dev/null
 
+	# send notification with the hex value and a preview (pango markup)
+	notify-send "$hex" "<span background='#$hex'>        
+        </span>"
+}
+
+npr() {
+	# duped from ^ because lazy
+	# TODO: make ^ use this
+	hex=$(echo "$1" | sed 's/rgb//' | tr "#:;,.='()\"" ' ')
+	set -- $hex
+
+	v='[a-fA-F0-9]'
+
+	case $1$2$3 in
+		# for hexes
+		$v$v$v$v$v$v) hex=$1$2$3;;
+		# for rgb
+		*)
+			if [ "$1" -lt 256 ] 2>/dev/null && [ "$2" -lt 256 ] && [ "$3" -lt 256 ]; then  # 255, 200, 255
+				hex=$(printf "%02X%02X%02X\n" "$@")
+			elif [ $# = 6 ] && [ "$1$2$3$4$5$6" -ge 0 ] 2>/dev/null; then   # 1.0, 0.855, 1.0
+				calc() { echo "scale=5; $1/3.92156*1000" | bc; }
+				hex=$(printf "%02X%02X%02X\n" "$(calc $1.$2)" "$(calc $3.$4)" "$(calc $5.$6)")
+			else
+				exit
+			fi
+	esac
+	[ "${#hex}" = 6 ] || exit 1
 	# send notification with the hex value and a preview (pango markup)
 	notify-send "$hex" "<span background='#$hex'>        
         </span>"
@@ -132,7 +156,7 @@ _() {
 	v=$1; shift
 	case $v in
 		""|h|-[h\?]|-|--help|help) help me; exit;;
-		hex* | rgb* | dar* | pic* | pre* | ran*) ${v%${v#???}} "$@"; exit;;
+		hex* | rgb* | dar* | pic* | npr* | pre* | ran*) ${v%${v#???}} "$@"; exit;;
 	esac
 }
 

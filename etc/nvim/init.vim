@@ -44,6 +44,7 @@ call plug#begin()
 	Plug 'dense-analysis/ale'
 	Plug 'machakann/vim-sandwich'
 	Plug 'airblade/vim-gitgutter'
+	Plug 'elkowar/kmonad.vim'
 call plug#end()
 set updatetime=100
 

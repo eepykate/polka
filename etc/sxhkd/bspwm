@@ -5,7 +5,8 @@ super + {n,m}
 	bspc desktop -l {tiled,monocle}
 
 super + {_,shift} + Escape
-	wm {restart,quit}
+	{wm restart,:}
+	#wm {restart,quit}
 
 super + r
 	bspc node -t "~floating"

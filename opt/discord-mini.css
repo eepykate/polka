@@ -1,13 +1,29 @@
+.theme-light {
+	--text-normal: #4a4a4a !important;
+}
+
 .sidebar-2K8pFh {
 	width: 180px !important;
 }
 
+
+/* emoji */
+.layer-v9HyYc[style*="position: absolute;"]:not([class*="disabled"]) {
+	top: 200px !important;
+}
 /*[class*="username-"]:not([style]) {
 	opacity: 0.8 ;
 }*/
+/*[class="groupStart-23k01U"] > div,*/
+[class="groupStart-23k01U"] {
+	/* display: none; makes it jumpy when the blocked person makes
+	 *  the top unread and you open the channel */
+	max-height: 0px !important;
+	opacity: 0;
+}
 
-/* blocked messages */
-[class="groupStart-23k01U"] > div,
+
+/*[class="groupStart-23k01U"] > div,
 [class="groupStart-23k01U"] {
 	margin: 0 !important;
 	margin-left: -6.5rem !important;
@@ -18,7 +34,7 @@
 	opacity: 0;
 	z-index: 0 !important;
 }
-
+/*
 .groupStart-23k01U:not([class*="expanded"]) [class*="blockedMessageText-"],
 .groupStart-23k01U:not([class*="expanded"]) > * > .contents-2mQqc9 {
 	font-size: 5px !important;
@@ -29,7 +45,7 @@
 [class*="blockedAction"] {
 	cursor: n-resize !important;
 	min-width: 999px;
-}
+}*/
 
 [class*="timestampVisibleOnHover"] { opacity: 1; }
 
@@ -61,14 +77,14 @@ code.hljs:not(.inline)::before {
 	float: right;
 	display: block;
 	width: auto;
-	max-width:  6.6em !important;
+	max-width:  5.3rem !important;
 	min-width:  auto;
-	margin-top: -8.6em !important;
-	line-height: 1.6em !important;
+	margin-top: -8.6rem !important;
+	line-height: 1.6rem !important;
 	overflow-x: hidden;
 	scrollbar-width: none;
 	text-align: right;
-	font-size: 1em;
+	font-size: 0.8rem;
 	opacity: 0.6;
 }
 /* subtle code block styling */

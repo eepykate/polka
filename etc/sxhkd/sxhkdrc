@@ -2,7 +2,7 @@
 #  ,=,e
 #
 
-ctrl + alt + {1,2,3}
+ctrl + alt + 3
 	kb
 
 super + {alt + space, Return, e}
@@ -21,8 +21,20 @@ super + space
 super + y
 	keepassxc
 
-XF86Launch5
+{XF86Launch5,super BackSpace}
 	mic toggle
+
+button9
+	mic on
+
+@button9
+	mic off
+
+ctrl + shift + 1
+	mic on
+
+ctrl + shift + 2
+	mic off
 
 #ctrl + alt + space
 #	xdotool keyup space; xdotool key --clearmodifiers ctrl+Return
@@ -40,7 +52,7 @@ super + {u,i}
 	{copy,emoji}
 
 super + f
-	chromium
+	firefox -P main
 
 
 # power menu
@@ -67,12 +79,15 @@ ctrl + alt + s
 
 #super + shift + 2
 #	pgrep mumble && hw 2
-#
-#super + shift + 4
-#	pgrep -x 'keepassxc' && hw 4
 
-super + shift + {0,1-9}
-	hw {0,1-9}
+super + shift + 1
+	pgrep -f 'st.* -c taskman' && hw 1
+
+super + shift + 4
+	pgrep -x 'keepassxc' && hw 4
+
+super + shift + {0,2,3,5-9}
+	hw {0,2,3,5-9}
 
 
 #
@@ -90,7 +105,7 @@ Scroll_Lock
 	#scr -S
 
 super + {Insert, Home, Next, Prior, End}
-	scr {_,-c -pwnd -b8,-c -e -b6,-c -pro -a -r60 -b12,-s}
+	scr {_,-c -pwnd -b12,-c -e -b6,-c -pro -a -r60 -b12,-s}
 
 
 #
