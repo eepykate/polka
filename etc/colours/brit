@@ -1,0 +1,29 @@
+#   -----
+black=777a80
+borders=98a1b4
+red=9e1d1f
+yellow=88842a
+green=6a8835
+cyan=226088
+blue=2e2e9e
+purple=872a88
+#   -----
+bg0=ffffff
+bg1=fafafa
+bg2=f8f8f8
+bg3=f1f1f1
+bg4=eeeeee
+chrome=cccccc
+#   -----
+fg1=444444
+fg2=666666
+button=${fg1}20
+disabled=696969
+#   -----
+accent=$blue
+accent2=$red
+contrast=$bg1
+#   -----
+wall=tea.jpg
+#wall=$chrome
+#   -----

@@ -103,3 +103,23 @@ case $TERM in
 esac
 
 export SUDO_PROMPT=$'pass for\033[38;05;'"${acc}m %u"$'\033[0m '
+
+[ "$TERM" = rxvt-unicode-256color ] && {
+. ~/etc/colours/current
+printf '%b%b%b' \
+	"\033]4;16;#$accent\007" \
+	"\033]4;17;#$accent2\007" \
+	"\033]4;18;#$contrast\007"
+	t() {
+cat << EOF
+     ( (
+     ))))
+  _ .---.
+ ( |\`---'|    Would you like a cup
+  \\|     |       of tea, sir?
+  : .___, :
+   \`-----'
+EOF
+};t
+No() { echo "That is not an option.  Would you like a cup of tea, sir?"; }
+};:
