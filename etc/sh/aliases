@@ -118,9 +118,9 @@ F() { find "${2:-.}" -name "$1"; }
 # apparently zstd decompresses fast
 bk() {
 	if [ $# = 1 ] && ! [ -d "$1" ]; then
-		cp -- "$1" "$1_$(date +%s)"
+		cp -- "$1" "$1_$(date +%s).backup"
 	else
-		tar -I zstd -cvf "${1%/}_$(date +%s).tar.zst" "$@"
+		tar -I zstd -cvf "${1%/}_$(date +%s).tzst.backup" "$@"
 	fi
 }
 
@@ -128,9 +128,12 @@ e() {
 	test -e "$1" || return 1
 	[[ "$1" =~ .*\.crdownload ]] && s=1 af test -e "$1"
 	a=$1; shift
-	atool -x "${a%.crdownload}" "$@"
+	case $(file -ib "$a") in
+		*zstd*) tar -Izstd\ -T0 -xvf "$a";;
+		*) atool -x "${a%.crdownload}" "$@"
+	esac
 }
-c() { tar -czvf "${1##*/}.tar.gz" "$@"; }
+c() { tar -Izstd\ -T0 -cvf "${1##*/}.tar.zst" "$@"; }
 
 d() {
 	unset asda vid img act
