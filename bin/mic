@@ -15,21 +15,28 @@
 #  toggle mic
 { [ "$1" = on ]  && echo true > /tmp/mic; } ||
 { [ "$1" = off ] && echo false > /tmp/mic; } && set -- toggle
-[ "$1" = toggle ] && {
-	input=$(pactl list sink-inputs | grep -i 'media.name = "Mumble' -B20 \
-		| grep -o 'Input #[0-9]\+')
+[ "$1" = toggle ] || [ "$1" = query ] && {
+	#input=$(pactl list sink-inputs | grep -i 'media.name = "Mumble' -B20 \
+	#	| grep -o 'Input #[0-9]\+')
+	input=$(pactl list sources | grep -i '\bName: alsa.*Antlion' -B3 \
+		| grep -o 'Source #[0-9]\+')
 
 	[ "$input" ] || { notify-send "mic is not running"; exit 1; }
 	touch /tmp/mic
 	read -r v < /tmp/mic
 
 	case $v in
-		true) a=false; b=unmuted c=6666;;
-		*) a=true; b=muted c=800
+		true) a=false b=unmuted c=1200;;
+		*) a=true b=muted c=800
 	esac
 
-	echo "$a" > /tmp/mic
-	pactl set-sink-input-mute "${input##*#}" "$a"
+	if [ "$1" = query ]; then
+		[ "$v" = true ] && b=muted || b=unmuted; c=300
+	else
+		echo "$a" > /tmp/mic
+		#pactl set-sink-input-mute "${input##*#}" "$a"
+		pactl set-source-mute "${input##*#}" "$a"
+	fi
 
 	exec dunstify -r 20 -t "$c" "$b"
 

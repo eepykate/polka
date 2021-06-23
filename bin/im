@@ -5,5 +5,5 @@ f() { feh -Z. -g 1000x700 "$@"; }
 
 case "$1" in
 	http*) f "$1";;
-	*)     f --scale-down --start-at "$1" "$(dirname "$1")";;
+	*)     f --start-at "$1" "$(dirname "$1")";;
 esac

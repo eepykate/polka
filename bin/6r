@@ -27,7 +27,7 @@ EOF
 
 o() {
 	xrandr --current | while read -r line; do
-		eq "$line" "$@" && printf '%s\n' "$line"
+		eq "$line" "$@" && l=${line%% inv*} l=${l%% lef*} l=${l%% rig*} && printf '%s\n' "$l"
 	done
 }
 
@@ -64,9 +64,10 @@ f() {
 		{ p $format; exit; }
 	o " connected" | while read -r line; do
 		IFS='x+('
-		set -- $line
+		set -- ${line}
 		# remove junk added by the custom IFS
 		set -- "${1##* }" "$2" "$3" "$4"
+		#echo "1: $2\n2: $2\n3: $3\n4: $4\n*: $*"
 		# Width
 		[ "$X" -ge "$3" ] && [ "$X" -lt "$(($3+$1))" ] || continue
 		# Height

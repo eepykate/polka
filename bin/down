@@ -41,7 +41,7 @@ fun() {
 
 	case $1 in
 		# individual file github urls
-		*github*/raw/*|*github*/blob/*)
+		*github*/raw/* | *github*/blob/* | *github*/releases/download/*)
 			curl -L#o "$out"  "${1//\/blob\//\/raw\/}";;
 
 		# diff urls
@@ -70,6 +70,8 @@ fun() {
 # multiple urls
 if [ $# -le 2 ]; then
 	fun "${1%/}" "$2"
+elif [ "$1" = e ]; then
+	fun "https://cdn.discordapp.com/emojis/$2" "$3-$2"
 else
 	for i; do fun "$i"; done
 fi

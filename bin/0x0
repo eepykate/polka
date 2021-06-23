@@ -6,6 +6,6 @@
 type=
 ! [ -t 0 ] || file -ibL "$1" | grep -q '^text/' && type=';type=text/plain'
 
-curl -sF file="@${1:--}$type" 'http://0x0.st' \
+curl -sF file="@${1:--}$type" 'https://0x0.st' \
 	| tee /dev/stderr \
 	| xclip -r -sel clip
