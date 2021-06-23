@@ -13,8 +13,7 @@ export \
 export \
 	XDG_DATA_HOME="$data"   \
 	XDG_CACHE_HOME="$cache" \
-	XDG_CONFIG_HOME="$conf" \
-	JAVA_HOME=$apps
+	XDG_CONFIG_HOME="$conf"
 
 # garbage dotfile apps
 export \

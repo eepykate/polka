@@ -3,6 +3,8 @@ h       ~
 gi      ~/src
 dl      ~/tmp
 dots    ~/opt/dots
+bks     ~/opt/bks
+db      ~/opt/bks
 
 wp      ~/src/walls
 fet     ~/src/fetsh
@@ -11,7 +13,7 @@ scrs    ~/opt/scr
 pics    ~/opt/scr
 recs    ~/opt/scr
 tu      ~/opt/turtles
-em      ~/opt/emotes
+em      ~/opt/discord/emotes
 
 oth     ~/opt/linux/oth
 sp      ~/etc/startpage

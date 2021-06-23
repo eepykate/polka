@@ -1,5 +1,5 @@
 [global]
-	font       = JuliaMono bold 12px
+	font       = Ubuntu Mono bold 12px
 	geometry   = "500x5-40-40"
 	shrink     = true
 
@@ -85,11 +85,15 @@
 	appname = Firefox
 	#summary = "*(#*)"
 	#body   = "*discord.com*"
-	format = 
+	#format = 
 	script = /home/d/bin/discordsound
 
 [email]
 	appname = Firefox
 	summary = "*Notifier for Gmail*"
+	format  = "%b"
+
+[nosum]
+	summary = "summary"
 	format  = "%b"
 # vim: ft=conf

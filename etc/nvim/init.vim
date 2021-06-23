@@ -3,6 +3,8 @@
 "  init.vim
 "
 
+set clipboard^=unnamed,unnamedplus
+
 " indentation
 set tabstop=2          " Number of visual spaces per Tab
 set softtabstop=2      " Number of spaces in tab when editing
@@ -114,6 +116,10 @@ nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+"inoremap <A-j> <Esc>:m .+1<CR>==gi
+"inoremap <A-k> <Esc>:m .-2<CR>==gi
 
 nnoremap <C-Down> :m .+1<CR>==
 nnoremap <C-Up> :m .-2<CR>==
@@ -130,6 +136,21 @@ vnoremap <S-y> "+c
 vnoremap <C-v> "+p
 "nnoremap <p> "+p
 inoremap <C-v> <ESC>"+pa
+
+let mapleader = ","
+let g:mapleader = ","
+nnoremap x "_x
+vnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+nnoremap <leader>d "+d
+nnoremap <leader>D "+D
+vnoremap <leader>d "+d
+
+nnoremap <leader>d "+d
+nnoremap <leader>D "+D
+vnoremap <leader>d "+d
 
 inoremap <C-s> <ESC>:w<CR>a
 nnoremap <C-s> :w<CR>

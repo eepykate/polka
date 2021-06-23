@@ -7,13 +7,14 @@ ctrl + alt + 3
 
 super + {alt + space, Return, e}
 	st
+	#term -pixmap '/home/d/src/walls/uk.png;style=scale'
 
 #super + g
 #	st -g 60x8 -c menu -e sh -c 'printf "[%s] %s\n" "$(date +%Y-%m-%d_%H-%M-%S)" "$(head -n1)" >> ~/opt/notes'
 	#xdotool keyup super; eval "$(xdotool getmouselocation --shell)"; xdotool mousemove_relative 46 376; sleep 0.05; xdotool click 1 click 1; sleep 0.1; xdotool mousemove 2121 842 click 1; xdotool mousemove $X $Y
 
-super + b
-	surphace
+#super + b
+#	surphace
 
 super + space
 	launch
@@ -24,11 +25,14 @@ super + y
 {XF86Launch5,super BackSpace}
 	mic toggle
 
-button9
-	mic on
+super ctrl BackSpace
+	mic query
 
-@button9
-	mic off
+#button9
+#	mic on
+#
+#@button9
+#	mic off
 
 ctrl + shift + 1
 	mic on
@@ -80,14 +84,11 @@ ctrl + alt + s
 #super + shift + 2
 #	pgrep mumble && hw 2
 
-super + shift + 1
-	pgrep -f 'st.* -c taskman' && hw 1
+super + shift + {0,1-9}
+	hw {0,1-9}
 
-super + shift + 4
-	pgrep -x 'keepassxc' && hw 4
-
-super + shift + {0,2,3,5-9}
-	hw {0,2,3,5-9}
+alt + shift + {0,1-9}
+	hw {0,1-9} c
 
 
 #

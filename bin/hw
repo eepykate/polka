@@ -5,17 +5,21 @@ dir="$XDG_CACHE_HOME/hw"
 mkdir -p "$dir"
 read -r win < "$dir/$1"
 
-[ "$1" = 0 ] && {
-	rm "$dir"/[2-9]
-	exit
-}
+read -r del < "$dir/0"
+[ "$1" = 0 ] && exec echo true > "$dir/0"
+[ "$del" = true ] && exec rm "$dir/"$1 "$dir/0"
 
-if [ -e "$dir/$1" ]; then
+#[ "$1" = 0 ] && {
+#	rm "$dir"/[2-9]
+#	exit
+#}
+
+if [ "$2" = c ]; then
+	[ "$(wname "$win")" ] || win="$(pfw)"
+	echo "$win" > "$dir/$1"
+else
 	wname "$win" ||
 		rm "$dir/$1"
-else
-	win="$(pfw)"
-	echo "$win" > "$dir/$1"
 fi
 
 #mapw -t "$win"

@@ -14,8 +14,10 @@ setopt SHwordsplit       # disable zsh's stupid variable auto-quoting
 bindkey '^a'       beginning-of-line      # ^a
 bindkey '^e'       end-of-line            # ^e
 bindkey '^[[3~'    delete-char            # delete
-bindkey '^[[1;5C'  forward-word           # ^right
-bindkey '^[[1;5D'  backward-word          # ^left
+bindkey '^[[1;5C'  forward-word           # ^right [st]
+bindkey '^[[1;5D'  backward-word          # ^left  [st]
+bindkey '^[Oc'     forward-word           # ^right [urxvt]
+bindkey '^[Od'     backward-word          # ^left  [urxvt]
 bindkey '^[^M'     self-insert-unmeta     # alt-return
 bindkey '^[[Z'     reverse-menu-complete  # shift-tab
 bindkey '^r'       history-incremental-search-backward  # ^e

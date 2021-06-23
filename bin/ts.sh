@@ -64,48 +64,50 @@ cat << EOF > "$HOME/etc/.mozilla/firefox/main/chrome/colours.css"
 }
 EOF
 
-#echo " - xresources"
-#cat << EOF > "$c/xorg/res.col"
-#st.font:  $font:pixelsize=$fontsize:style=$fontweight
-#
-#*.background:   #$bg1
-#*.foreground:   #$fg1
-#*.cursorColor:  #$fg1
-#
-#*.color0:       #$bg1
-#*.color8:       #$black
-#
-#*.color1:       #$red
-#*.color9:       #$red
-#
-#*.color2:       #$yellow
-#*.color10:      #$yellow
-#
-#*.color3:       #$green
-#*.color11:      #$green
-#
-#*.color4:       #$cyan
-#*.color12:      #$cyan
-#
-#*.color5:       #$blue
-#*.color13:      #$blue
-#
-#*.color6:       #$purple
-#*.color14:      #$purple
-#
-#*.color7:       #$fg2
-#*.color15:      #$fg1
-#
-#*.color16:      #$accent
-#*.color17:      #$accent2
-#*.color18:      #$contrast
-#
-#
-#tabbed.selbgcolor:   #$bg1
-#tabbed.selfgcolor:   #$fg1
-#tabbed.normfgcolor:  #$fg2
-#tabbed.normbgcolor:  #$bg3
-#EOF
+echo " - xresources"
+cat << EOF > "$c/xorg/res.col"
+st.font:  $font:pixelsize=$fontsize:style=$fontweight
+URxvt.font:   xft:$font:$fontweight:pixelsize=$fontsize
+
+*.background:   #$bg1
+*.foreground:   #$fg1
+*.cursorColor:  #$black
+
+*.color0:       #$bg1
+*.color8:       #$black
+
+*.color1:       #$red
+*.color9:       #$red
+
+*.color2:       #$yellow
+*.color10:      #$yellow
+
+*.color3:       #$green
+*.color11:      #$green
+
+*.color4:       #$cyan
+*.color12:      #$cyan
+
+*.color5:       #$blue
+*.color13:      #$blue
+
+*.color6:       #$purple
+*.color14:      #$purple
+
+*.color7:       #$fg2
+*.color15:      #$fg1
+
+*.color16:      #$accent
+*.color17:      #$accent2
+*.color18:      #$contrast
+
+
+tabbed.selbgcolor:   #$bg1
+tabbed.selfgcolor:   #$fg1
+tabbed.normfgcolor:  #$fg2
+tabbed.normbgcolor:  #$bg3
+EOF
+xrdb "${XDG_CONFIG_HOME:-$HOME/.config}/xorg/res" &
 
 cd "$HOME/src/st" 2>/dev/null && {
 	echo " - st"
@@ -176,7 +178,7 @@ cd "$HOME/src/dmenu" 2>/dev/null && {
 echo " - bspwm"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg3'   # outer/"      \
-	-e "s/inner1=.*/inner1='0x$black'  # focused/"      \
+	-e "s/inner1=.*/inner1='0x${borders:-$black}'  # focused/"      \
 	-e "s/inner2=.*/inner2='0x${chrome:-$bg4}'  # normal/"      \
 	~/bin/borders
 
@@ -303,7 +305,6 @@ EOF
 echo " - Changing wallpaper"
 if [ -f "$HOME/src/walls/$wall" ]; then
 	wallthing="feh --bg-fill --no-fehbg '$HOME/src/walls/$wall'"
-	$wallthing
 else
 	mkdir -p ~/src/walls
 	walgen "#$wall" 08
@@ -313,6 +314,7 @@ fi
 
 echo "#!/bin/sh
 $wallthing" > ~/bin/pap
+pap
 
 wait
 notify-send "Theme changed to $theme"

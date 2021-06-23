@@ -47,6 +47,8 @@ URxvt.scrollTtyKeypress: true
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
+URxvt.geometry: 92x23
+
 st.termname:      st-256color
 st.borderpx:      30
 st.tabspaces:     4

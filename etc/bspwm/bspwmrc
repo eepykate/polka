@@ -12,12 +12,13 @@ sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
 
 # desktops
 bspc monitor -d      1 2 3 4 5 6
-#bspc monitor DVI-D-0 -d  7 8 9 0
+bspc monitor DVI-D-0 -d  7 8 9 0
 ## fix ordering
-#bspc monitor DVI-D-0 -s HDMI-0
+bspc monitor DVI-D-0 -s HDMI-0
 
 c ignore_ewmh_fullscreen all
 #c ignore_ewmh_focus true
+#c ignore_ewmh_struts true
 
 # mouse
 xsetroot -cursor_name      left_ptr
@@ -54,7 +55,7 @@ R menu      state=floating sticky=on layer=normal
 R freeze    state=floating border=off monitor=HDMI-0 layer=above focus=off
 R Surphace  state=floating border=off rectangle=3360x3024+0+0
 R conky     state=floating layer=above sticky=true focus=off manage=off
-R Dragon    sticky=true
+R Dragon    sticky=true focus=off
 R qBittorrent desktop=5
 R qbittorrent desktop=5
 
@@ -64,11 +65,12 @@ R qbittorrent desktop=5
 #
 pgrep sxhkd || {
 	# focus first/last desktops
-	bspc desktop -f ^10 -f ^1
+	bspc desktop -f ^4 -f ^5
 
 	## dropdown htop/shell
+	sleep 2
 	# start invisible
-	bspc rule -a taskman hidden=on -o
+	bspc rule -a taskman hidden=on
 	st -c taskman -e bash -c 'while :; do sudo -E htop; zsh; done' &
 
 	# on reboots stuff sometimes takes a while to start

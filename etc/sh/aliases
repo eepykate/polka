@@ -2,7 +2,9 @@
 
 command -v shlib >/dev/null && . shlib
 
-alias td="transmission-daemon"
+grd() {
+	HOME=$HOME/opt/apps ./gradlew "-Duser.home=$HOME/opt/apps" "$@"
+}
 
 alias sy="systemctl --user"
 alias ss="sudo systemctl"
@@ -46,6 +48,7 @@ alias grep="grep --color=auto"
 alias \
 	rm="del"   \
 	g="grep -i" \
+	sr="sort -n" \
 	s1="sleep 1" \
 	s2="sleep 2" \
 	s3="sleep 3" \
@@ -53,7 +56,7 @@ alias \
 
 alias b='bg;disown'
 
-calc() { echo "scale=5; $*" | bc; }
+calc() { [[ "$*" =~ % ]] || s='scale=5;'; echo "$s $*" | bc; }
 
 pk() {
 	arg=; for i; do
@@ -138,10 +141,10 @@ d() {
 	for i in "$arg" "$arg"* *"$arg" *"$arg"*; do
 		[[ -e "$i" ]] || continue
 
-		case $(file -ib "$i") in
+		case $(file -b --mime-type "$i") in
 			# add to array then call the command as to use the native album
 			# feature in mpv/feh instead of making multiple windows
-			video*|image/gif*) vid+=("$i");;
+			audio*|video*|image/gif*|*json) vid+=("$i");;
 			image*)            img+=("$i");;
 
 			text*)      cat "$i";;
@@ -154,7 +157,7 @@ d() {
 	done
 
 	[ "$img" ] && im "${img[@]}"
-	[ "$vid" ] && mpv "${vid[@]}" --loop
+	[ "$vid" ] && mpv "${vid[@]}" --loop --force-window
 
 	[ "$act" ] || return 1
 }
