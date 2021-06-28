@@ -59,3 +59,8 @@
 <h3 align="center"> [DWM.exe] EPIC MINIMAL DOOM SETUP </h3>
 
 ![](https://i.imgur.com/Az4tZsS.jpg)
+
+<h3 align="center"> [DWM/Cairo/Bee] 🐝 Bee yourself 🐝 </h3>
+
+![](https://i.imgur.com/KM8You5.png)
+![](https://i.imgur.com/I1bfFfj.png)
