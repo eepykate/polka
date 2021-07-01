@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#  Expat MIT license, 6gk/gk/gtk
 
 : "${t:=10}"
 
