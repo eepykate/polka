@@ -11,8 +11,6 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 hw 0; hw \* & # clear hidden windows cache
 clipwatch   &
-screen.sh    # change display layout
-gsync init really &
 xmousepasteblock     &   # disable middle-click paste
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
@@ -32,5 +30,6 @@ esac
 } &
 
 { sleep 5; qbittorrent; } &
+screen.sh    # change display layout
 
 "$wm"

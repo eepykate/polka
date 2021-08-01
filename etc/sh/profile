@@ -18,19 +18,23 @@ export \
 # garbage dotfile apps
 export \
 	GOPATH="$cache/go"   \
+	CARGO_HOME="$cache/cargo" \
 	LESSHISTFILE="$null" \
 	XAUTHORITY="$cache/xauth"  \
 	GNUPGHOME="$opt/apps/gpg" \
 	WEECHAT_HOME="$conf/weechat"  \
-	GTK2_RC_FILES="$conf/gtk-2.0/gtkrc-2.0"
+	GTK2_RC_FILES="$conf/gtk-2.0/gtkrc-2.0" \
+	NVIM_LOG_FILE=/dev/null
 
 # user
 export \
 	EDITOR="nvim" \
 	scr_dir="$opt/scr" \
 	rec_dir="$opt/scr" \
+	audrey_dir="$opt/scr" \
 	scr_file='$(date +%s.%3N).png' \
-	rec_file='$(date +%s.%3N).mp4'
+	rec_file='$(date +%s.%3N).mp4' \
+	audrey_file='$(date +%s.%3N).mp3'
 
 export \
 	PAGER="nvim -R" \
@@ -54,17 +58,18 @@ export \
 	NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/sbin:/sbin:/usr/games"
-export PATH="$(find ~/bin -type d | tr '\n' ':')$apps/.nix-profile/bin:$PATH"
+export PATH="$(find ~/bin -maxdepth 1 -type d | tr '\n' ':')$apps/.nix-profile/bin:$PATH"
 
 star() { ( "$@" & ) >$null 2>&1; }
 systemctl --user import-environment >/dev/null 2>&1
 star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
 star sudo kbdrate -d 200 -r 60
-star archi
+#star archi
 star shortcuts
+star sudo cpupower frequency-set --governor performance
 
-sudo rm /etc/systemd/system/getty@tty1.service.d/override.conf 2>/dev/null
-test -e /tmp/session || { :>/tmp/session; x; }
+#sudo rm /etc/systemd/system/getty@tty1.service.d/override.conf 2>/dev/null
+[ -e /tmp/session ] || { :>/tmp/session; x; }
 
 # vim: ft=sh

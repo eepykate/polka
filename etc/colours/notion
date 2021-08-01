@@ -6,6 +6,7 @@ blue="4973b7"
 purple="b45aaa"
 cyan="5094b4"
 
+borders=89bbd2
 #   -----
 bg0="ffffff"
 bg1="ffffff"
@@ -19,7 +20,7 @@ fg1="5b5f66"
 fg2="83878c"
 disabled="999999"
 #   -----
-accent="$blue"
+accent="$cyan"
 accent2="$purple"
 contrast="ffffff"
 red="cd5e79"

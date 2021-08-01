@@ -1,0 +1,90 @@
+/*
+     RAINBOW
+     RAINBOW
+     RAINBOW
+     RAINBOW
+     RAINBOW
+     RAINBOW
+*/
+
+:root {
+  --red: #ffb0b0;
+	--yellow: #fff7c6;
+	--green: #cfffd2;
+	--cyan: #c0ffff;
+	--blue: #cbd4ff;
+	--pink: #ffbfef;
+	--accent: var(--blue);
+  --1red: #f04141;
+	--1yellow: #b29d21;
+	--1green: #30ba39;
+	--1cyan: #42b4b4;
+	--1blue: #4665ff;
+	--1pink: #ff31cb;
+}
+
+@keyframes rainbow {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
+}
+
+#titlebar {
+	background: linear-gradient(
+		to right,
+		var(--red),
+		var(--yellow),
+		var(--green),
+		var(--cyan),
+		var(--blue),
+		var(--pink),
+		var(--red),
+		var(--yellow),
+		var(--green)
+	);
+	background-size: 400% 100% !important;
+}
+
+#titlebar:not(:-moz-window-inactive) {
+	animation: rainbow 3s linear infinite !important;
+}
+
+/* 	-webkit-background-clip: text !important; */
+/* 	background-clip: text !important; */
+/* 	color: transparent !important; */
+
+
+
+
+/* Hide tab borders */
+/*#navigator-toolbox {
+	--tabs-border: transparent !important;
+	--tabs-border-color: transparent !important;
+	border-bottom: 0px transparent !important;
+}
+
+#urlbar-background, #searchbar,
+.tab-background {
+	border: 0px none transparent !important;
+}
+
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+	border-left: 0px transparent !important;
+}
+
+.tabbrowser-tabs {
+	border:none !important;
+	opacity: 0 !important;
+}
+
+/* Remove border under navbar */
+/*#navigator-toolbox::after {
+	border-bottom: 0px !important;
+}
+/* Remove border above navbar */
+/*#navigator-toolbox::after {
+	border-top: 0px !important;
+}*/

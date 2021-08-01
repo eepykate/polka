@@ -35,9 +35,9 @@ c single_monocle      true
 c gapless_monocle     true
 c borderless_monocle  true
 
-c normal_border_color       '#222242'
-c active_border_color       '#222242'
-c focused_border_color      '#222242'
+c normal_border_color       '#f2f2f2'
+c active_border_color       '#f2f2f2'
+c focused_border_color      '#f2f2f2'
 
 
 #
@@ -57,7 +57,6 @@ R Surphace  state=floating border=off rectangle=3360x3024+0+0
 R conky     state=floating layer=above sticky=true focus=off manage=off
 R Dragon    sticky=true focus=off
 R qBittorrent desktop=5
-R qbittorrent desktop=5
 
 
 #
@@ -68,13 +67,13 @@ pgrep sxhkd || {
 	bspc desktop -f ^4 -f ^5
 
 	## dropdown htop/shell
-	sleep 2
+	sleep 3
 	# start invisible
-	bspc rule -a taskman hidden=on
+	bspc rule -a taskman hidden=on -o
 	st -c taskman -e bash -c 'while :; do sudo -E htop; zsh; done' &
 
 	# on reboots stuff sometimes takes a while to start
-	sleep 5
+	sleep 8
 
 	# pid > xdotool wid > wmutils wid
 	printf 0x%x "$(xdotool search --pid $!)" > "$XDG_CACHE_HOME/hw/1"
@@ -83,7 +82,7 @@ pgrep sxhkd || {
 s picom
 s dunst
 #s swallow
-s borders
+#s borders
 s sxhkd -c "$sx/other"  # give priority to binds in this file
 sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"
 [ -e "$bs/other" ] && . "$bs/other"

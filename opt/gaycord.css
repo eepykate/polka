@@ -1,0 +1,110 @@
+.theme-light {
+	--text-normal: #4a4a4a !important;
+	--text-normal: #d74be1 !important;
+	--interactive-normal: magenta;
+	--interactive-hover: magenta;
+	--interactive-active: magenta;
+	--interactive-muted: #ffcbff;
+	--channels-default: #ae77aecf;
+
+	--red: #ff6d6d;
+	--yellow: #b29d21;
+	--green: #30ba39;
+	--cyan: #42b4b4;
+	--blue: #778eff;
+	--pink: #ff6efa;
+
+	--1red: #f99;
+	--1yellow: #ebdd8e;
+	--1green: #7dee84;
+	--1cyan: #52d2d2;
+	--1blue: #aab8ff;
+	--1pink: #f5a5e1;
+
+	--accent: var(--blue);
+	--channeltextarea-background: transparent !important;
+}
+
+[class*="repliedTextContent-"] {
+	color: #cacacab8 !important;
+}
+
+@keyframes rainbow {
+	0%{
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
+}
+.searchBar-3dMhjb,
+#app-mount [id*="chat"] a {
+	background: linear-gradient(
+		to right,
+		var(--1red),
+		var(--1yellow),
+		var(--1green),
+		var(--1cyan),
+		var(--1blue),
+		var(--1pink),
+		var(--1red),
+		var(--1yellow),
+		var(--1green),
+		var(--1cyan)
+	);
+	color: #fff;
+	background-size: 300% 100%;
+}
+
+/*[class*="textArea"] [data-slate-string="true"],*/
+[class*="typing-"],
+[class*="embed-"] [class*="embedTitle"],
+[class*="title-"],
+.messageContent-2qWWxC,
+blockquote {
+	background: linear-gradient(
+		to right,
+		var(--red),
+		var(--yellow),
+		var(--green),
+		var(--cyan),
+		var(--blue),
+		var(--pink),
+		var(--red),
+		var(--yellow),
+		var(--green),
+		var(--cyan)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	background-size: 300% 100%;
+}
+
+.searchBar-3dMhjb:not(:-moz-window-inactive),
+#app-mount [id*="chat"] a:not(:-moz-window-inactive),
+[class*="typing-"]:not(:-moz-window-inactive),
+[class*="embed-"] [class*="embedTitle"]:not(:-moz-window-inactive),
+[class*="title-"]:not(:-moz-window-inactive),
+.messageContent-2qWWxC:not(:-moz-window-inactive),
+blockquote:not(:-moz-window-inactive) {
+	animation: rainbow 3s linear infinite;
+}
+code.hljs, code, .hljs * {
+	color: var(--text-normal) !important;
+}
+
+[class*="roleColor-rz2vM0"]:not([style]),
+[class*="username"]:not([style]) {
+	color: magenta;
+}
+[class*="icon-"],
+.membersGroup-v9BXpm,
+[class*="title-"] [class*="icon-"] {
+	color: magenta !important;
+}
+
+.searchBar-3dMhjb * [data-block="true"],
+.searchBar-3dMhjb {
+	color: white !important;
+}

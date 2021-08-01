@@ -1,0 +1,4 @@
+#!/bin/sh
+opt="$(printf "suspend\nreboot\npoweroff" | menu)"
+[ "$opt" ] && sudo systemctl "$opt"
+#[ "$opt" = reboot ] && sudo cp /etc/systemd/system/getty@tty1.service.d/override.conf{.backup,}

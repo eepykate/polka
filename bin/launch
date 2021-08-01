@@ -10,6 +10,10 @@ var=$(find "$@" -type f,l -printf '%f\n' -executable \
 	| sort | uniq | menu)
 
 echo ": $(date +%s):0;$var" >> "${ZDOTDIR:-$HOME}/zsh-history"
-exec zsh -ic ". ~/etc/sh/aliases; $var"
+bash << EOF
+. ~/etc/sh/aliases
+$var
+EOF
+#zsh -c ". ~/etc/sh/aliases; $var" &
 #zsh -ic "$comm | cat" # echo "[$(date +%Y-%m-%d_%H-%M-%S)]  $comm" >> \
 #	"${XDG_CACHE_HOME:=$HOME/.cache}/menulogverbose" 2>&1

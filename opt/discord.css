@@ -1,156 +1,157 @@
-img.emoji[alt*="AMOGUS"],
-img.emoji[alt*="amongus"],
-img.emoji[alt*="amogus"] {
-	object-position: -99999px 99999px;
-	background-image: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1mYW1pbHk9IidDb21pYyBTYW5zIE1TJyIgbGV0dGVyLXNwYWNpbmc9IjAiIHdvcmQtc3BhY2luZz0iMCIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjZmYxODE4Ij48dGV4dCB5PSIyLjciIGZvbnQtc2l6ZT0iMy44OSIgdHJhbnNmb3JtPSJtYXRyaXgoMy44NjgzMiAwIDAgMy44NjgzMiAuOTggLS44OSkiPjx0c3BhbiB4PSIwIiB5PSI3LjU5IiBzdHJva2Utd2lkdGg9Ii4wMiI+ZHVtPC90c3Bhbj48L3RleHQ+PHRleHQgeD0iMi4wMiIgeT0iNC4wNiIgZm9udC1zaXplPSI0LjMxIiB0cmFuc2Zvcm09Im1hdHJpeCgzLjg2ODMyIDAgMCAzLjg2ODMyIC45OCAtLjg5KSI+PHRzcGFuIHg9IjIuMDIiIHk9IjQuMDYiIHN0cm9rZS13aWR0aD0iLjAyIj5hbTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IHg9Ii4wNyIgeT0iNC4wNiIgZm9udC1zaXplPSI0LjMxIiB0cmFuc2Zvcm09Im1hdHJpeCgzLjg2ODMyIDAgMCAzLjg2ODMyIC45OCAtLjg5KSI+PHRzcGFuIHg9Ii4wNyIgeT0iNC4wNiIgc3Ryb2tlLXdpZHRoPSIuMDIiPmk8L3RzcGFuPjwvdGV4dD48L2c+PC9zdmc+Cg==');
-	background-size: 100%;
-}
-
-img.emoji[alt*="AMOGUS"] ~ [class*="reactionTooltipText-"]::before,
-img.emoji[alt*="amogus"] ~ [class*="reactionTooltipText-"]::before,
-img.emoji[alt*="amongus"] ~ [class*="reactionTooltipText-"]::before {
-	content: 'shame list:';
-	display: block;
+/** hide 'blocked messages' notice **/
+/* using the . selector will match items which have additional classes
+ *  this only applies if it's the only class an element has */
+[class="groupStart-23k01U"] > div,
+[class="groupStart-23k01U"] {
+	/* display: none; makes it jumpy when the blocked person makes
+	 *  the top unread and you open the channel */
+	margin:     0 !important;
+	max-height: 0 !important;
+	opacity:    0;
 }
 
 
-/* hide ping indicator in bottom server */
-/*.wrapper-3Njo_c:last-of-type .lowerBadge-29hYVK {
+/** remove junk buttons **/
+.channelTextArea-rNsIhG > .container-JHR0NT,        /* annoying sticker popup */
+.selected-3LIHYU:not(:hover) .children-3rEycc,      /* cog on focused channel */
+.containerDefault-3tr_sE:not(:hover) .children-L002ao > button[aria-label="Create Channel"],
+.toolbar-1t6TWx > div[aria-label^="Mute channel"],  /* mute channel button */
+.toolbar-1t6TWx > a[href*="support.discord.com"],   /* help button */
+.buttons-3JBrkn > *:not(:nth-child(4))              /* nitro gift, gifs, stickers */
+{
+	display: none !important;
+}
+
+
+/** move search to the right **/
+.search-36MZv- { order: 2 !important; }
+
+
+/** hide ping indicator in bottom server **/
+.wrapper-3Njo_c:last-of-type .lowerBadge-29hYVK {
 	display: none !important;
 }
 .wrapper-3Njo_c:last-of-type svg > foreignObject[mask] {
 	border-radius: 16px;
+	mask:          none !important;
 }
-*/
 /*mask: url(#e39d00ea-e646-4d47-a368-2bca44fd2d03) !important;*/
-/*mask: none !important;*/
-
-.theme-light {
-	--text-normal: #4a4a4a !important;
-}
-
-.sidebar-2K8pFh {
-	width: 180px !important;
-}
 
 
-/* emoji */
-[id*="popout_"] [class*="emojiPicker-"]
-/*[class*="emojiPicker"]*/ {
-	height: 600px !important;
-}
-
-[class*="layerContainer-"] > [id*="popout"]
-/*.layer-v9HyYc[style*="position: absolute;"]:not([class*="disabled"])*/ {
-	top: 110px !important;
-}
-/*[class*="username-"]:not([style]) {
-	opacity: 0.8 ;
-}*/
-/*[class="groupStart-23k01U"] > div,*/
-	/* display: none; makes it jumpy when the blocked person makes
-	 *  the top unread and you open the channel */
-/*[class="groupStart-23k01U"] {
-	max-height: 0px !important;
-	opacity: 0;
-}
+/** move reaction popup out of the way & make it bigger **/
+[id*="popout_"] [class*="emojiPicker-"]     { height: 600px !important; }
+[class*="layerContainer-"] > [id*="popout"] { top: 110px    !important; }
 
 
-/*[class="groupStart-23k01U"] > div,
-[class="groupStart-23k01U"] {
-	margin: 0 !important;
-	margin-left: -6.5rem !important;
-	padding: 0;
-	max-height: 0 !important;
-	max-width: 250px;
-	top: -9px;
-	opacity: 0;
-	z-index: 0 !important;
-}
-/*
-.groupStart-23k01U:not([class*="expanded"]) [class*="blockedMessageText-"],
-.groupStart-23k01U:not([class*="expanded"]) > * > .contents-2mQqc9 {
-	font-size: 5px !important;
-	margin-left: 15px;
-}
-
-[class="groupStart-23k01U"] [class*="blockedSystemMessage"] { padding: 0 !important; }
-[class*="blockedAction"] {
-	cursor: n-resize !important;
-	min-width: 999px;
-}*/
-
-[class*="timestampVisibleOnHover"] { opacity: 1; }
-
-/* role backgrounds instead of outlines */
+/** role backgrounds instead of outlines **/
+[class*="roleRemoveIcon-"] { position: absolute; }
 [class*="role-"] {
-	border: none !important;
+	border:   none;
 	overflow: hidden;
-	z-index: 0 !important;
+	z-index:  0;
 }
-
 [class*="role-"] > [class*="roleCircle-"]::after {
 	background-color: inherit;
-	content: '';
-	display: block;
-	position: relative !important;
-	min-width: 230px;
-	height: 69px;
-	opacity: 0.2;
-	right: -100px;
-	z-index: -1;
 	pointer-events: none;
+	display:   block;
+	content:   '';
+	opacity:   0.2;
+	z-index:   -1;
+	right:     -100px;
+	min-width: 230px;
+	height:    69px;
+	position:  relative;
 }
 
-[class*="roleRemoveIcon-"] { position: absolute; }
 
-/* display info about code blocks */
+/** code block stuff **/
+/* display language in top-right */
 code.hljs:not(.inline)::before {
-	content: attr(class) !important;
-	float: right;
-	display: block;
-	width: auto;
-	max-width:  5.3rem !important;
-	min-width:  auto;
-	margin-top: -8.6rem !important;
-	line-height: 1.6rem !important;
-	overflow-x: hidden;
-	scrollbar-width: none;
-	text-align: right;
-	font-size: 0.8rem;
-	opacity: 0.6;
+	content:     attr(class);
+	float:       right;
+	max-width:   5.3rem;
+	margin-top:  -8.6rem;
+	line-height: 1.6rem;
+	text-align:  right;
+	font-size:   0.8rem;
+	opacity:     0.6;
 }
-/* subtle code block styling */
+/* slightly cleaner */
 code.hljs:not(.inline) {
 	max-width: 560px;
-	padding: 12px;
-	border: none;
+	padding:   12px;
+	border:    none;
 }
-
-/* remove the ugly syntax highlighting */
+/* remove ugly syntax highlighting */
+pre > code,
+pre > code * {
+	color:       var(--header-secondary) !important;
+	font-weight: normal !important;
+	font-size:   0.77rem !important;
+}
+/* only highlight comments */
 pre > code .hljs-comment {
 	color: var(--text-muted) !important;
 }
 
-pre > code,
-pre > code * {
-	color: var(--header-secondary) !important;
-	font-weight: normal !important;
-	font-size: 0.77rem !important;
-}
 
-/* change width of messages area */
+/** more compact **/
+/* limit width of messages area to 1000px */
 [class*="standardSidebarView"],
 [class*="jumpToPresentBar-"],
 [class*="typing-"],
 [class*="channelTextArea"],
 [class^="messagesWrapper-"] > * > [class*="scroller"],
 [class*="autocomplete-"] {
-	max-width: 1000px;
-	width: 100%;
-	margin-left: auto;
+	width:        100%;
+	max-width:    1000px;
+	margin-left:  auto;
 	margin-right: auto;
 }
-:root {
-	--elevation-low: 0 0px 0 rgba(6,6,7,0.1),0 1.5px 0 rgba(6,6,7,0.025),0 2px 0 rgba(6,6,7,0.025);
+/* smaller sidebar */
+.sidebar-2K8pFh { width: 180px !important; }
+
+
+/** less contrast **/
+/* default usernames & text colour */
+[class*="username-"]:not([style]),
+.theme-light {
+	color:         #222 !important;
+	--text-normal: #4a4a4a !important;
+	/* make shadow on the top bar less harsh */
+	--elevation-low:
+		0 0px 0 rgba(6,6,7,0.1),
+		0 1.5px 0 rgba(6,6,7,0.025),
+		0 2px 0 rgba(6,6,7,0.025);
 }
+
+
+/** fix copypasting on firefox **/
+[class*="systemMessage"] span /* parent element of time          */,
+[class*="systemMessage"] i    /* invisible separator around time */,
+[id*="chat-messages-"] [class*="header-"] i /* [time] / user:    */ {
+	font-size: 0;
+	position:  inherit;
+	display:   inline-block;
+}
+[class*="systemMessage"] [class*="content-"] /* where the text bit is - next to icon */ {
+	position: inherit;
+	display:  inline;
+}
+
+/** always show time on messages **/
+[class*="timestampVisibleOnHover"] { opacity: 1; }
+
+
+
+
+/** remove a*****s emotes **/
+/*img[src*="/dumpy"],
+img.emoji[alt*="AMOGUS"],
+img.emoji[alt*="Twerk"],
+img.emoji[alt*="amongus"],
+img.emoji[alt*="amogus"] {
+	object-position:  -999in -999in;
+	background-size:  100%;
+	background-image: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1mYW1pbHk9IidDb21pYyBTYW5zIE1TJyIgbGV0dGVyLXNwYWNpbmc9IjAiIHdvcmQtc3BhY2luZz0iMCIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjZmYxODE4Ij48dGV4dCB5PSIyLjciIGZvbnQtc2l6ZT0iMy44OSIgdHJhbnNmb3JtPSJtYXRyaXgoMy44NjgzMiAwIDAgMy44NjgzMiAuOTggLS44OSkiPjx0c3BhbiB4PSIwIiB5PSI3LjU5IiBzdHJva2Utd2lkdGg9Ii4wMiI+ZHVtPC90c3Bhbj48L3RleHQ+PHRleHQgeD0iMi4wMiIgeT0iNC4wNiIgZm9udC1zaXplPSI0LjMxIiB0cmFuc2Zvcm09Im1hdHJpeCgzLjg2ODMyIDAgMCAzLjg2ODMyIC45OCAtLjg5KSI+PHRzcGFuIHg9IjIuMDIiIHk9IjQuMDYiIHN0cm9rZS13aWR0aD0iLjAyIj5hbTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IHg9Ii4wNyIgeT0iNC4wNiIgZm9udC1zaXplPSI0LjMxIiB0cmFuc2Zvcm09Im1hdHJpeCgzLjg2ODMyIDAgMCAzLjg2ODMyIC45OCAtLjg5KSI+PHRzcGFuIHg9Ii4wNyIgeT0iNC4wNiIgc3Ryb2tlLXdpZHRoPSIuMDIiPmk8L3RzcGFuPjwvdGV4dD48L2c+PC9zdmc+Cg==');
+}*/

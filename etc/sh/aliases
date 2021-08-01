@@ -17,7 +17,7 @@ alias \
 	r="cpm r"  \
 	s="cpm s"  \
 	in="cpm I" \
-	up="cpm U" \
+	up="time cpm U" \
 	ni="nix-env -iA"
 
 # git
@@ -49,13 +49,17 @@ alias \
 	rm="del"   \
 	g="grep -i" \
 	sr="sort -n" \
+	ta="tail -n1" \
+	he="head -n1" \
 	s1="sleep 1" \
 	s2="sleep 2" \
 	s3="sleep 3" \
-	s4="sleep 4"
+	s4="sleep 4" \
+	lc="wc -l"
 
 alias b='bg;disown'
 
+tc() { tail -n1 "$@" | xclip -sel clip; }
 calc() { [[ "$*" =~ % ]] || s='scale=5;'; echo "$s $*" | bc; }
 
 pk() {
@@ -107,7 +111,7 @@ v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
 q() { dragon --and-exit "$@"; }
 
 # copy image
-alias -g ci="xclip -selection clipboard -t image/png"
+alias ci="xclip -selection clipboard -t image/png"
 
 # rough find
 f() { find "${2:-.}" -iname "*$1*"; }
@@ -211,7 +215,7 @@ comb() {
 	montage "$@" -geometry +0+0 -tile 1x output.png
 }
 
-alias is=inkscape
+is() { inkscape "$@" &! }
 
 
 #

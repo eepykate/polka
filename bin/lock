@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 trap 'kill -9 -$$ %1 %2' EXIT INT
+arg=; [ "$1" ] || arg=-b
 
-# helps with removing focus - basically hide the terminal window
+# unfocus by making a 1x1 hidden window
 bspc rule -a yeetfocus state=floating focus=on rectangle=1x1+1+1 border=off
 st -c yeetfocus -g 1x1 -e pause   &
 
 #{ sleep 1; xset dpms force off; } &
-unclutter -idle 0 -jitter 99999   &  # hide cursor
+unclutter -idle 1 -jitter 99999   &  # hide cursor
 pkill -USR1 dunst
-xtrlock ${1--b}
+xtrlock $arg
 pkill -USR2 dunst

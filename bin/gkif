@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+tim="$(date +%s)"  dir="${XDG_CACHE_HOME:-$HOME/.cache}/gkif"
+mkdir -p "$dir"
+
+# don't send notifications (stop interruptions)
+pkill -USR1 dunst
+
+# record
+pixfmt=yuv444p scr -c -e -n -r50 -x '-t 6 -c:v hevc_nvenc' -b12 "$dir/00.mp4" || { notify-send "failed"; pkill -USR2 dunst; exit 1; }
+
+# re-enable notifications
+pkill -USR2 dunst
+
+# trim -> convert to gif -> open dragandrop dialog
+#notify-send "trimming video" &&
+#eval "$(ffprobe -v quiet -show_streams ~/file.mp4 | grep '^[wh]')" &&
+ffmpeg -y -v error -sseof -3 -i "$dir/00.mp4" -b:v 12M -c:v hevc_nvenc -pix_fmt yuv444p "$dir/000.mp4" &
+
+#notify-send "generating palette" &&
+ffmpeg -y -v error -i "$dir/00.mp4" -vf "fps=50,palettegen" "/tmp/palette.png" &
+
+wait
+
+notify-send "converting to gif" &&
+ffmpeg -y -v error -i "$dir/000.mp4" -i "/tmp/palette.png" \
+	-lavfi "fps=50 [x]; [x][1:v] paletteuse" "$dir/$tim.gif" &&
+	dragon --and-exit "$dir/$tim.gif"

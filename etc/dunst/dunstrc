@@ -17,9 +17,10 @@
 
 
 	# borders
+	corner_radius       = 4
 	padding             = 25
 	frame_width         = 0
-	frame_color         = "#222242"
+	frame_color         = "#f2f2f2"
 	separator_height    = 2
 	separator_color     = frame
 	horizontal_padding  = 25
@@ -38,21 +39,21 @@
 	context             = ctrl+shift+period
 
 [urgency_low]
-	background          = "#191932"
-	foreground          = "#8a8aa8bb"
-	frame_color         = "#222242"
+	background          = "#ffffff"
+	foreground          = "#83878cbb"
+	frame_color         = "#f2f2f2"
 	timeout             = 7
 
 [urgency_normal]
-	background          = "#191932"
-	foreground          = "#ccccdccf"
-	frame_color         = "#222242"
+	background          = "#ffffff"
+	foreground          = "#5b5f66cf"
+	frame_color         = "#f2f2f2"
 	timeout             = 7
 
 [urgency_critical]
-	background          = "#191932"
-	foreground          = "#ccccdc"
-	frame_color         = "#222242"
+	background          = "#ffffff"
+	foreground          = "#5b5f66"
+	frame_color         = "#f2f2f2"
 	timeout             = 0
 
 [stuff]
@@ -68,14 +69,14 @@
 	history_ignore = yes
 
 [mike]
-	background     = "#94c2f6"
+	background     = "#4973b7"
 	summary        = "muted"
 	format         = " ​ "
 	history_ignore = yes
 	set_transient  = yes
 
 [mic]
-	background     = "#f69499"
+	background     = "#cd5e79"
 	summary        = "unmuted"
 	format         = "​        ​"
 	history_ignore = yes
@@ -83,9 +84,11 @@
 
 [discord]
 	appname = Firefox
+	#appname = Brave
 	#summary = "*(#*)"
-	#body   = "*discord.com*"
+	#body    = "*discord.com*"
 	#format = 
+	timeout = 7
 	script = /home/d/bin/discordsound
 
 [email]
@@ -93,7 +96,14 @@
 	summary = "*Notifier for Gmail*"
 	format  = "%b"
 
+[iceice]
+	appname = Firefox
+	body = "*Highlight*265441058383593474*"
+	new_icon = 
+	format = ""
+
 [nosum]
 	summary = "summary"
 	format  = "%b"
+
 # vim: ft=conf

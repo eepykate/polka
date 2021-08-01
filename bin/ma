@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
+TIMEFORMAT=%R
 dewit() {
 	printf '\033[35m $ %s \033[0m\n' "$*"
-	"$@"
+	time "$@"
 }
 
 PATH=$(echo "$PATH" | sed "s|${0%/*}:||")

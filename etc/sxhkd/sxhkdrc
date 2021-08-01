@@ -34,11 +34,8 @@ super ctrl BackSpace
 #@button9
 #	mic off
 
-ctrl + shift + 1
-	mic on
-
-ctrl + shift + 2
-	mic off
+ctrl + shift + {1,2,3}
+	mic {on,off,query}
 
 #ctrl + alt + space
 #	xdotool keyup space; xdotool key --clearmodifiers ctrl+Return
@@ -61,7 +58,7 @@ super + f
 
 # power menu
 super + h
-	pm
+	pome
 
 
 # un/mount drives
@@ -108,6 +105,8 @@ Scroll_Lock
 super + {Insert, Home, Next, Prior, End}
 	scr {_,-c -pwnd -b12,-c -e -b6,-c -pro -a -r60 -b12,-s}
 
+super {Pause, Scroll_Lock}
+	{audrey, gkif}
 
 #
 #   media
@@ -125,13 +124,21 @@ super + {p, Tab}
 	vol {p, mw}
 
 
-#
-#   laptop
-#
+
 ctrl + alt + t
 	synclient TouchpadOff={0,1}
 
 
 
 super + shift + grave
-	setxkbmap {us dvorak-l; sleep 0.2; xkbset sticky -twokey -latchlock; xkbset exp 1 =sticky,us; xkbset -sticky}
+	setxkbmap {us dvorak-l; notify-send dvlh; sleep 0.2; xkbset sticky -twokey -latchlock; xkbset exp 1 =sticky,us; notify-send qwerty; xkbset -sticky}
+
+# desaturate monitor
+super 0
+	nvidia-settings  -a '[DPY:HDMI-0]'/DigitalVibrance={-1023,0}
+super control 0
+	nvidia-settings  -a '[DPY:DVI-D-0]'/DigitalVibrance={-1023,0}
+
+# invert monitor
+super {_,control} minus
+	xrandr-invert-colors -s {0,1 &; xrandr-invert-colors -s 2}
