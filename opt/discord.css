@@ -1,3 +1,39 @@
+/** foot punch, yeah! **/
+#user-context-kick > div::before {
+	content: 'Footpunch';
+	background-color: inherit;
+	z-index: 555;
+	position: absolute;
+	left: 40px;
+}
+#user-context-kick > div {
+	max-width: min-content !important;
+	white-space: nowrap;
+	overflow: hidden;
+	text-indent: -31px;
+	margin-left: 72px;
+}
+
+
+
+/** change message replies **/
+[class*="repliedMessage-"]::before { --spine-width: 0; }
+[class*="repliedMessage-"] {
+	left: -25px !important;
+	--background-tertiary: transparent !important;
+}
+[class*="replyBadge-"] > [class*="replyIcon-"] {
+	transform: scaleX(-1);
+	opacity: 0.6;
+	margin-left: -14px;
+}
+
+[class*="repliedMessage-"] > [class*="repliedTextPreview-"] {
+	opacity: 0.9;
+}
+
+
+
 /** hide 'blocked messages' notice **/
 /* using the . selector will match items which have additional classes
  *  this only applies if it's the only class an element has */
@@ -12,6 +48,8 @@
 
 
 /** remove junk buttons **/
+.content-3YMskv > .wrapper-2jXpOf, /* "Active Threads" mod button */
+#channels .content-3YMskv > div[style*="height:"]:nth-of-type(2), /* "Active Threads" mod button */
 .channelTextArea-rNsIhG > .container-JHR0NT,        /* annoying sticker popup */
 .selected-3LIHYU:not(:hover) .children-3rEycc,      /* cog on focused channel */
 .containerDefault-3tr_sE:not(:hover) .children-L002ao > button[aria-label="Create Channel"],
@@ -21,14 +59,22 @@
 {
 	display: none !important;
 }
-
+/* attach file button */ 
+[class*="attachWrapper-"] * {
+	max-width: 0 !important;
+}
+[class*="attachWrapper-"] {
+	width: 9px !important;
+	position: absolute;
+	margin-left: -17px;
+}
 
 /** move search to the right **/
 .search-36MZv- { order: 2 !important; }
 
 
 /** hide ping indicator in bottom server **/
-.wrapper-3Njo_c:last-of-type .lowerBadge-29hYVK {
+/*.wrapper-3Njo_c:last-of-type .lowerBadge-29hYVK {
 	display: none !important;
 }
 .wrapper-3Njo_c:last-of-type svg > foreignObject[mask] {
@@ -44,11 +90,13 @@
 
 
 /** role backgrounds instead of outlines **/
+/* implimented by default on 2021-08-04/05 */
 [class*="roleRemoveIcon-"] { position: absolute; }
 [class*="role-"] {
 	border:   none;
 	overflow: hidden;
 	z-index:  0;
+	background-color: transparent !important;
 }
 [class*="role-"] > [class*="roleCircle-"]::after {
 	background-color: inherit;
@@ -114,7 +162,7 @@ pre > code .hljs-comment {
 
 /** less contrast **/
 /* default usernames & text colour */
-[class*="username-"]:not([style]),
+[class*="chatContent-"] [class*="username-"]:not([style]),
 .theme-light {
 	color:         #222 !important;
 	--text-normal: #4a4a4a !important;

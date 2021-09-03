@@ -10,7 +10,7 @@ _wrap() { _ "$@"; }
 
 # special app-specific functions
 _boox()      { boox "$@"; exec sleep 0.1; }
-_minecraft() { _ mangohud --dlsym minecraft-launcher "$@"; }
+_minecraft() { cd ~/opt/mmc; mangohud --dlsym ./multimc "$@"; }
 _steam()     { _ lo steam "$@"; }
 _pacman()    { sudo pacman "$@"; }
 #_chromium()  { GTK_THEME=phocus chromium --enable-features=VaapiVideoDecoder --enable-accelerated-video-decode --ignore-gpu-blocklist "$@"; }

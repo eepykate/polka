@@ -19,7 +19,7 @@ elif [ -e "meson.build" ]; then
 		dewit exec sudo ninja -C build install
 
 	dewit meson build
-	dewit exec ninja -C build
+	dewit ninja -C build
 elif [ -e "PKGBUILD" ]; then
 	dewit makepkg -si "$@"
 elif [ -e "CMakeLists.txt" ]; then
@@ -31,9 +31,9 @@ elif [ -e "make.sh" ]; then
 	dewit ./make.sh "$@"
 elif [ -e "configure" ]; then
 	dewit ./configure
-	dewit exec make "$@"
+	dewit make "$@"
 elif [ -e "autogen.sh" ]; then
 	dewit ./autogen.sh
 	dewit ./configure
-	dewit exec make "$@"
+	dewit make "$@"
 fi

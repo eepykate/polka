@@ -8,12 +8,13 @@ export \
 	data=$HOME/usr \
 	conf=$HOME/etc \
 	apps=$HOME/opt/apps \
-	cache=$HOME/usr/cache
+	cache=$HOME/tmp/cache
 
 export \
 	XDG_DATA_HOME="$data"   \
 	XDG_CACHE_HOME="$cache" \
-	XDG_CONFIG_HOME="$conf"
+	XDG_CONFIG_HOME="$conf" \
+	LC_TIME=en_CA
 
 # garbage dotfile apps
 export \
@@ -57,11 +58,10 @@ export \
 	NIX_PROFILES="/nix/var/nix/profiles/default $HOME/.nix-profile" \
 	NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
-PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/sbin:/sbin:/usr/games"
-export PATH="$(find ~/bin -maxdepth 1 -type d | tr '\n' ':')$apps/.nix-profile/bin:$PATH"
+export PATH="$(find ~/bin -maxdepth 1 -type d | tr '\n' ':')$apps/.nix-profile/bin:/usr/local/bin:/usr/bin:/bin"
 
 star() { ( "$@" & ) >$null 2>&1; }
-systemctl --user import-environment >/dev/null 2>&1
+star systemctl --user import-environment >/dev/null 2>&1
 star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
 star sudo kbdrate -d 200 -r 60

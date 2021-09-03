@@ -53,7 +53,7 @@ fun() {
 		*.git|*git.*|*github.com*|*gitlab*) git clone "$1" $2;;
 
 		# youtube
-		*youtu.be*|*youtube.com*) youtube-dl "$1" \
+		*youtu.be*|*youtube.com*) yt-dlp "$1" \
 			--geo-bypass --embed-subs --add-metadata \
 			--ignore-errors -o "${2:-%(title)s.mp4}" \
 			-f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]';;

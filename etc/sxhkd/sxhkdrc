@@ -28,13 +28,16 @@ super + y
 super ctrl BackSpace
 	mic query
 
+{_,@}Pause
+	mic {on,off}
+
 #button9
 #	mic on
 #
 #@button9
 #	mic off
 
-ctrl + shift + {1,2,3}
+ctrl + shift + {1,2,Escape}
 	mic {on,off,query}
 
 #ctrl + alt + space
@@ -81,6 +84,13 @@ ctrl + alt + s
 #super + shift + 2
 #	pgrep mumble && hw 2
 
+#{super,alt} + shift + 1
+#	if pgrep -f '[s]t -c taskman'; then \
+#		hw 1; \
+#	else \
+#		st -c taskman -e bash -c 'while :; do sudo -E htop -d 10; zsh; done' & \
+#	fi
+
 super + shift + {0,1-9}
 	hw {0,1-9}
 
@@ -101,6 +111,12 @@ Scroll_Lock
 {shift + Print, XF86Tools}
 	freeze & scr -S; pkill freeze
 	#scr -S
+
+alt {Print,ctrl x}
+	v=$HOME/opt/scr/$(date +%s.%3N); \
+	donotcopy=1 scr -S "$v.png" && \
+	pinsel -o "$v-e.png" < "$v.png" && \
+	xclip -sel clip -t image/png "$v-e.png"
 
 super + {Insert, Home, Next, Prior, End}
 	scr {_,-c -pwnd -b12,-c -e -b6,-c -pro -a -r60 -b12,-s}
@@ -142,3 +158,11 @@ super control 0
 # invert monitor
 super {_,control} minus
 	xrandr-invert-colors -s {0,1 &; xrandr-invert-colors -s 2}
+
+
+
+{super l,ctrl Pause}
+	lock
+
+ctrl shift Pause
+	lock butdontblank

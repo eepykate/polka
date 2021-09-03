@@ -1,13 +1,6 @@
 #!/bin/sh
 #  crappier xrandr wrapper
 
-eq() {  # [ a = b ] with globbing
-	case $1 in
-		*$2*) ;;
-		*) return 1
-	esac
-}
-
 help() {
 	cat << EOF
 
@@ -23,6 +16,13 @@ usage:
 otherwise, print like '800 600 0 0'
 
 EOF
+}
+
+eq() {  # [ a = b ] with globbing
+	case $1 in
+		*$2*) ;;
+		*) return 1
+	esac
 }
 
 o() {

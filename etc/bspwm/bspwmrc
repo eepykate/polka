@@ -29,7 +29,7 @@ c pointer_motion_interval  5
 
 
 # borders/gaps
-c window_gap    15
+c window_gap    20
 c border_width  0
 c single_monocle      true
 c gapless_monocle     true
@@ -43,11 +43,12 @@ c focused_border_color      '#f2f2f2'
 #
 #   rules
 #
-R taskman   locked=on
+R taskman   locked=on state=floating
 R yeetfocus state=floating focus=on rectangle=1x1+1+1 border=off
 R obs       desktop=6
 R Steam     desktop=5
 R feh       state=floating
+R Pinsel    state=floating
 R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating
@@ -67,13 +68,14 @@ pgrep sxhkd || {
 	bspc desktop -f ^4 -f ^5
 
 	## dropdown htop/shell
-	sleep 3
+	sleep 0.7
 	# start invisible
 	bspc rule -a taskman hidden=on -o
-	st -c taskman -e bash -c 'while :; do sudo -E htop; zsh; done' &
+	cp ~/src/htop/htoprc ~/etc/htop
+	st -c taskman -e bash -c 'while :; do sudo -E htop -d 10; zsh; done' &
 
 	# on reboots stuff sometimes takes a while to start
-	sleep 8
+	sleep 2
 
 	# pid > xdotool wid > wmutils wid
 	printf 0x%x "$(xdotool search --pid $!)" > "$XDG_CACHE_HOME/hw/1"

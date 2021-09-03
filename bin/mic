@@ -26,8 +26,8 @@
 	read -r v < /tmp/mic
 
 	case $v in
-		true) a=false b=unmuted c=1200;;
-		*) a=true b=muted c=800
+		true) a=false b=unmuted c=1200 d= h=00aaff;;
+		*) a=true b=muted c=800 d=- h=ff0000
 	esac
 
 	if [ "$1" = query ]; then
@@ -38,7 +38,11 @@
 		pactl set-source-mute "${input##*#}" "$a"
 	fi
 
-	exec dunstify -r 20 -t "$c" "$b"
+	xset ${d}led
+
+	#exec dunstify -r 20 -t "$c" "$b"
+	#exec micbar "$a"
+	#exec sudo python $HOME/src/g403-led/g403-led.py solid "$h"
 
 	## dunstrc:
 	# [mike]
@@ -53,6 +57,8 @@
 	# 	format         = "​        ​"
 	# 	history_ignore = yes
 }
+
+exit
 
 exec 2>/dev/null
 [ "$(pgrep -x "${0##*/}")" = $$ ] || exit 1

@@ -22,7 +22,7 @@
 	--1pink: #f5a5e1;
 
 	--accent: var(--blue);
-	--channeltextarea-background: transparent !important;
+/*	--channeltextarea-background: transparent !important;*/
 }
 
 [class*="repliedTextContent-"] {
@@ -38,7 +38,7 @@
 	}
 }
 .searchBar-3dMhjb,
-#app-mount [id*="chat"] a {
+#app-mount [id*="chat"] a:not([class*="imageWrapper"]):not([class*="metadataDownload"]) {
 	background: linear-gradient(
 		to right,
 		var(--1red),
@@ -82,7 +82,7 @@ blockquote {
 }
 
 .searchBar-3dMhjb:not(:-moz-window-inactive),
-#app-mount [id*="chat"] a:not(:-moz-window-inactive),
+#app-mount [id*="chat"] a:not(:-moz-window-inactive):not([class*="imageWrapper"]):not([class*="metadataDownload"]),
 [class*="typing-"]:not(:-moz-window-inactive),
 [class*="embed-"] [class*="embedTitle"]:not(:-moz-window-inactive),
 [class*="title-"]:not(:-moz-window-inactive),

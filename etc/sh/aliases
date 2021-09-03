@@ -60,7 +60,7 @@ alias \
 alias b='bg;disown'
 
 tc() { tail -n1 "$@" | xclip -sel clip; }
-calc() { [[ "$*" =~ % ]] || s='scale=5;'; echo "$s $*" | bc; }
+calc() { [[ "$*" =~ % ]] && s= || s='scale=5;'; echo "$s $*" | bc; }
 
 pk() {
 	arg=; for i; do
@@ -72,7 +72,7 @@ pk() {
 
 fuck() {
 	for i; do
-		pkill -9 "$i" || ! echo "killing '$i' failed with exit code $?"
+		pkill -i -9 "$i" || ! echo "killing '$i' failed with exit code $?"
 	done
 }
 
@@ -107,6 +107,8 @@ af() {  # after
 v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
 [ -e "$v" ] && . "$v"
 
+alias qmv="EDITOR='nvim -c \"set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab\"' qmv -oswap"
+
 # drag and drop
 q() { dragon --and-exit "$@"; }
 
@@ -130,11 +132,11 @@ bk() {
 
 e() {
 	test -e "$1" || return 1
-	[[ "$1" =~ .*\.crdownload ]] && s=1 af test -e "$1"
-	a=$1; shift
+	[[ "$1" =~ .*\.crdownload\|.*\.part ]] && s=1 af test -e "$1"
+	a=${1%.crdownload} a=${a%.part}; shift
 	case $(file -ib "$a") in
 		*zstd*) tar -Izstd\ -T0 -xvf "$a";;
-		*) atool -x "${a%.crdownload}" "$@"
+		*) atool -x "$a" "$@"
 	esac
 }
 c() { tar -Izstd\ -T0 -cvf "${1##*/}.tar.zst" "$@"; }
@@ -215,7 +217,13 @@ comb() {
 	montage "$@" -geometry +0+0 -tile 1x output.png
 }
 
-is() { inkscape "$@" &! }
+is() {
+	a=$1;[[ "$1" =~ http.* ]] && {
+		set -- ~/tmp/a.svg
+		curl -Ls "$a" -o "$1"
+	}
+	inkscape "$@" &!
+}
 
 
 #

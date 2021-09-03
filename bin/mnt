@@ -1,7 +1,7 @@
 #!/bin/sh -e
 #  mount disk
 
-set -- $(lsblk -ro name,mountpoint,fstype \
+set -- $(lsblk -ro name,mountpoint,fstype,label \
 	| grep -i '  [a-rt-z]' | menu -p mount)
 
 [ "$1" ]

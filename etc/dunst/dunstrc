@@ -70,17 +70,21 @@
 
 [mike]
 	background     = "#4973b7"
-	summary        = "muted"
 	format         = " ​ "
+	#format         = ""
+	summary        = "muted"
 	history_ignore = yes
 	set_transient  = yes
+	#script = micbar off
 
 [mic]
 	background     = "#cd5e79"
-	summary        = "unmuted"
 	format         = "​        ​"
+	#format         = ""
+	summary        = "unmuted"
 	history_ignore = yes
 	set_transient  = yes
+	#script = micbar on
 
 [discord]
 	appname = Firefox

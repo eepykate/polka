@@ -8,12 +8,15 @@ c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 # /etc/X11/xinit/xinitrc.d/*.sh
 # [ "$DBUS_SESSION_BUS_ADDRESS" ] || dbus-launch --exit-with-session ...
+#eval export $(gnome-keyring-daemon --start)
 
 hw 0; hw \* & # clear hidden windows cache
 clipwatch   &
 xmousepasteblock     &   # disable middle-click paste
+pulseaudio -D
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
+gsync &
 xrdb "$c/xorg/res" &
 
 case "$wm" in
@@ -29,7 +32,8 @@ esac
 	sudo kmonad ~/opt/dots/opt/keyboard.kbd & #sleep 2; xset r rate 200 60
 } &
 
-{ sleep 5; qbittorrent; } &
-screen.sh    # change display layout
+#{ sleep 5; qbittorrent; } &
+screen.sh &  # change display layout
+sleep 0.3
 
 "$wm"

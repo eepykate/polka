@@ -1,0 +1,14 @@
+#!/bin/sh
+
+case $1 in
+	0|off|false) ;;
+	1|on|true)   exec pkill -9 "${0##*/}|lemonbar";;
+esac
+
+IFS=' +x'
+monitor=$(xrandr --current)
+monitor=${monitor##*primary }
+set -- ${monitor%%(*}
+
+printf '%s\n' "%{B#ff0000}%{O9999}" |
+	lemonbar -d -p -g "15x15+$(($3+$1-19))+$(($4+4))"
