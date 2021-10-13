@@ -16,7 +16,7 @@ xmousepasteblock     &   # disable middle-click paste
 pulseaudio -D
 unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
-gsync &
+{ sleep 20; gsync; } &
 xrdb "$c/xorg/res" &
 
 case "$wm" in
@@ -32,8 +32,12 @@ esac
 	sudo kmonad ~/opt/dots/opt/keyboard.kbd & #sleep 2; xset r rate 200 60
 } &
 
-#{ sleep 5; qbittorrent; } &
 screen.sh &  # change display layout
 sleep 0.3
+
+#{ sleep 5; torrent; } &
+torrent &
+{ sleep 5; obs --startreplaybuffer; } &
+#st -e sudo s-tui &
 
 "$wm"

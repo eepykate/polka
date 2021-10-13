@@ -6,7 +6,7 @@ ctrl + alt + 3
 	kb
 
 super + {alt + space, Return, e}
-	st
+	date +%s > ~/tmp/cache/sttimes;	st
 	#term -pixmap '/home/d/src/walls/uk.png;style=scale'
 
 #super + g
@@ -22,7 +22,7 @@ super + space
 super + y
 	keepassxc
 
-{XF86Launch5,super BackSpace}
+{XF86Tools,super BackSpace}
 	mic toggle
 
 super ctrl BackSpace
@@ -56,7 +56,9 @@ super + {u,i}
 	{copy,emoji}
 
 super + f
-	firefox -P main
+	lo /usr/lib/firefox/firefox -P main
+	#taskset -c 8,9,10,11 firefox -P main
+	#firefox -P main
 
 
 # power menu
@@ -108,9 +110,18 @@ Scroll_Lock
 	scr -G$(6r f -f)
 
 # selection
-{shift + Print, XF86Tools}
+{shift + Print, XF86Launch5}
 	freeze & scr -S; pkill freeze
 	#scr -S
+
+super backslash
+	if pgrep scr; then \
+		scr -s; dragon --and-exit "$(ls -c ~/opt/scr/* | head -n1)"; \
+	else \
+		scr -e -r30 -c; \
+	fi
+#super bracketright
+#	scr -s; dragon --and-exit ~/opt/scr/"$(ls -c ~/opt/scr | head -n1)"
 
 alt {Print,ctrl x}
 	v=$HOME/opt/scr/$(date +%s.%3N); \

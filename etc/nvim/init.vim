@@ -11,6 +11,7 @@ set softtabstop=2      " Number of spaces in tab when editing
 set shiftwidth=2       " Number of spaces to use for autoindent
 set nocopyindent
 set nosmartindent
+"set expandtab
 
 " search
 set incsearch          " Search as characters are typed

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+sudo cp /etc/systemd/system/getty@tty1.service.d/override.conf{.backup,}
+sudo systemctl reboot

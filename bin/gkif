@@ -7,7 +7,7 @@ mkdir -p "$dir"
 pkill -USR1 dunst
 
 # record
-pixfmt=yuv444p scr -c -e -n -r50 -x '-t 6 -c:v hevc_nvenc' -b12 "$dir/00.mp4" || { notify-send "failed"; pkill -USR2 dunst; exit 1; }
+pixfmt=yuv444p scr -c -e -n -r50 -x '-threads 4 -t 3 -c:v h264' -b12 "$dir/00.mp4" || { notify-send "failed"; pkill -USR2 dunst; exit 1; }
 
 # re-enable notifications
 pkill -USR2 dunst
@@ -15,14 +15,16 @@ pkill -USR2 dunst
 # trim -> convert to gif -> open dragandrop dialog
 #notify-send "trimming video" &&
 #eval "$(ffprobe -v quiet -show_streams ~/file.mp4 | grep '^[wh]')" &&
-ffmpeg -y -v error -sseof -3 -i "$dir/00.mp4" -b:v 12M -c:v hevc_nvenc -pix_fmt yuv444p "$dir/000.mp4" &
 
-#notify-send "generating palette" &&
-ffmpeg -y -v error -i "$dir/00.mp4" -vf "fps=50,palettegen" "/tmp/palette.png" &
+#ffmpeg -y -v error -sseof -3 -i "$dir/00.mp4" -b:v 12M -c:v hevc_nvenc -pix_fmt yuv444p "$dir/000.mp4"
 
-wait
-
+##notify-send "generating palette" &&
+ffmpeg -y -v error -i "$dir/00.mp4" -vf "fps=50,palettegen" "/tmp/palette.png"
+#
+#wait
+#
 notify-send "converting to gif" &&
-ffmpeg -y -v error -i "$dir/000.mp4" -i "/tmp/palette.png" \
+ffmpeg -y -v error -i "$dir/00.mp4" -i "/tmp/palette.png" \
 	-lavfi "fps=50 [x]; [x][1:v] paletteuse" "$dir/$tim.gif" &&
-	dragon --and-exit "$dir/$tim.gif"
+#gifski "$dir/00.mp4" -r 50 --fast -o "$dir/$tim.gif"
+dragon --and-exit "$dir/$tim.gif"

@@ -13,9 +13,10 @@ scrs    ~/opt/scr
 pics    ~/opt/scr
 recs    ~/opt/scr
 tu      ~/opt/turtles
-em      ~/opt/discord/emotes
+em      /hd/discord/emotes
 
-oth     ~/opt/linux/oth
+oth     /hd/linuxdistros
+dw      /hd/media/DoctorWho
 sp      ~/etc/startpage
 fchr    ~/etc/firefox/main/chrome
 

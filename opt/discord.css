@@ -1,3 +1,4 @@
+@-moz-document regexp("https://discord.com/(?!developers).*") {
 /** foot punch, yeah! **/
 #user-context-kick > div::before {
 	content: 'Footpunch';
@@ -14,6 +15,9 @@
 	margin-left: 72px;
 }
 
+.theme-light {
+	--text-normal: #444 !important
+}
 
 
 /** change message replies **/
@@ -48,6 +52,7 @@
 
 
 /** remove junk buttons **/
+[class*="unreadMentionsBar-"], /* no bloody idea */
 .content-3YMskv > .wrapper-2jXpOf, /* "Active Threads" mod button */
 #channels .content-3YMskv > div[style*="height:"]:nth-of-type(2), /* "Active Threads" mod button */
 .channelTextArea-rNsIhG > .container-JHR0NT,        /* annoying sticker popup */
@@ -56,6 +61,11 @@
 .toolbar-1t6TWx > div[aria-label^="Mute channel"],  /* mute channel button */
 .toolbar-1t6TWx > a[href*="support.discord.com"],   /* help button */
 .buttons-3JBrkn > *:not(:nth-child(4))              /* nitro gift, gifs, stickers */
+{
+	display: none !important;
+}
+[aria-label="Servers sidebar"] .none-2Eo-qx > .listItem-GuPuDH:nth-of-type(6), /* "download apps" button */
+[aria-label="Servers sidebar"] .none-2Eo-qx > .listItem-GuPuDH:nth-of-type(7) /* "download apps" button */
 {
 	display: none !important;
 }
@@ -113,7 +123,7 @@
 
 
 /** code block stuff **/
-/* display language in top-right */
+/* display language in top-right of code blocks */
 code.hljs:not(.inline)::before {
 	content:     attr(class);
 	float:       right;
@@ -162,10 +172,10 @@ pre > code .hljs-comment {
 
 /** less contrast **/
 /* default usernames & text colour */
-[class*="chatContent-"] [class*="username-"]:not([style]),
+.theme-light [class*="chatContent-"] [class*="username-"]:not([style]),
 .theme-light {
-	color:         #222 !important;
-	--text-normal: #4a4a4a !important;
+	/*color:         #222 !important;*/
+	/*--text-normal: #4a4a4a !important;*/
 	/* make shadow on the top bar less harsh */
 	--elevation-low:
 		0 0px 0 rgba(6,6,7,0.1),
@@ -192,6 +202,11 @@ pre > code .hljs-comment {
 
 
 
+[class*="username-"][style="color: rgb(255, 255, 191);"] {
+	color: #ff7270 !important;
+}
+
+
 
 /** remove a*****s emotes **/
 /*img[src*="/dumpy"],
@@ -203,3 +218,4 @@ img.emoji[alt*="amogus"] {
 	background-size:  100%;
 	background-image: url('data:image/svg+xml;base64, PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZm9udC13ZWlnaHQ9IjcwMCIgZm9udC1mYW1pbHk9IidDb21pYyBTYW5zIE1TJyIgbGV0dGVyLXNwYWNpbmc9IjAiIHdvcmQtc3BhY2luZz0iMCIgc3Ryb2tlLXdpZHRoPSIwIiBmaWxsPSIjZmYxODE4Ij48dGV4dCB5PSIyLjciIGZvbnQtc2l6ZT0iMy44OSIgdHJhbnNmb3JtPSJtYXRyaXgoMy44NjgzMiAwIDAgMy44NjgzMiAuOTggLS44OSkiPjx0c3BhbiB4PSIwIiB5PSI3LjU5IiBzdHJva2Utd2lkdGg9Ii4wMiI+ZHVtPC90c3Bhbj48L3RleHQ+PHRleHQgeD0iMi4wMiIgeT0iNC4wNiIgZm9udC1zaXplPSI0LjMxIiB0cmFuc2Zvcm09Im1hdHJpeCgzLjg2ODMyIDAgMCAzLjg2ODMyIC45OCAtLjg5KSI+PHRzcGFuIHg9IjIuMDIiIHk9IjQuMDYiIHN0cm9rZS13aWR0aD0iLjAyIj5hbTwvdHNwYW4+PC90ZXh0Pjx0ZXh0IHg9Ii4wNyIgeT0iNC4wNiIgZm9udC1zaXplPSI0LjMxIiB0cmFuc2Zvcm09Im1hdHJpeCgzLjg2ODMyIDAgMCAzLjg2ODMyIC45OCAtLjg5KSI+PHRzcGFuIHg9Ii4wNyIgeT0iNC4wNiIgc3Ryb2tlLXdpZHRoPSIuMDIiPmk8L3RzcGFuPjwvdGV4dD48L2c+PC9zdmc+Cg==');
 }*/
+}

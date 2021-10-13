@@ -55,7 +55,7 @@ fun() {
 		# youtube
 		*youtu.be*|*youtube.com*) yt-dlp "$1" \
 			--geo-bypass --embed-subs --add-metadata \
-			--ignore-errors -o "${2:-%(title)s.mp4}" \
+			--ignore-errors -o "${2:-%(title)s}" \
 			-f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]';;
 
 		# unsplash

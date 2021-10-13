@@ -11,10 +11,10 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
 
 # desktops
-bspc monitor -d      1 2 3 4 5 6
-bspc monitor DVI-D-0 -d  7 8 9 0
+bspc monitor HDMI-0  -d 1 2 3 4 5 6
+bspc monitor DVI-D-0 -d 7 8 9 0
 ## fix ordering
-bspc monitor DVI-D-0 -s HDMI-0
+#bspc monitor DVI-D-0 -s HDMI-0
 
 c ignore_ewmh_fullscreen all
 #c ignore_ewmh_focus true
@@ -45,7 +45,7 @@ c focused_border_color      '#f2f2f2'
 #
 R taskman   locked=on state=floating
 R yeetfocus state=floating focus=on rectangle=1x1+1+1 border=off
-R obs       desktop=6
+R obs       desktop=9
 R Steam     desktop=5
 R feh       state=floating
 R Pinsel    state=floating
@@ -57,7 +57,8 @@ R freeze    state=floating border=off monitor=HDMI-0 layer=above focus=off
 R Surphace  state=floating border=off rectangle=3360x3024+0+0
 R conky     state=floating layer=above sticky=true focus=off manage=off
 R Dragon    sticky=true focus=off
-R qBittorrent desktop=5
+R qBittorrent desktop=6
+#R mpv       desktop=0
 
 
 #
@@ -65,7 +66,7 @@ R qBittorrent desktop=5
 #
 pgrep sxhkd || {
 	# focus first/last desktops
-	bspc desktop -f ^4 -f ^5
+	bspc desktop -f 0 -f 1
 
 	## dropdown htop/shell
 	sleep 0.7

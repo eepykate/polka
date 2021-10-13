@@ -3,14 +3,22 @@
 local=$(date "+%F (%a) - %H:%M:%S")
 day=$(date +%j)
 set --
-for i in Asia/Calcutta Europe/Berlin America/New_York America/Los_Angeles Australia/Perth Pacific/Auckland; do
-	export TZ=$i
+for time in \
+	'wat Australia/Perth'     \
+	'nzt Pacific/Auckland'    \
+	'ist Asia/Calcutta'       \
+	'cet Europe/Berlin'       \
+	'est America/New_York'    \
+	'pst America/Los_Angeles'
+do
+	export TZ=${time#* } name=${time% *}
 	[ "$(date +%j)" -ge "$day" ] && j=T || j=Y
-	set -- "$@" "$j,$(date "+%H:%M")"
+
+	eval "$name='$name $j,$(date "+%H:%M")'"
 done
 
 notify-send "$local" \
-	"wat $5  |  nzt $6
-ist $1  |  cet $2
-est $3  |  pst $4
+"$wat  |  $nzt
+$ist  |  $cet
+$est  |  $pst
 $(acpi)"

@@ -94,9 +94,23 @@ et() {
 # "exec" and exit (for gui things)
 ec() { "$@" &! exit; }
 
+afi() {  # affinity
+	for i in $(pgrep "$2"); do
+		( sudo taskset -pac "$1"  "$i" & )
+	done >/dev/null 2>&1
+}
+
 af() {  # after
-	echo "$s" | grep -qx '[msh0-9.]\+' || s=2
+	echo "$s" | grep -qx '[msh0-9.]\+' || s=1
 	while "$@" >/dev/null; do sleep "$s"; done
+}
+
+wh() {  # when
+	af pgrep -x "$1";  "$@"
+}
+
+np() {
+	af pgrep -x "$1";  n "${2:-$1 done}" "$3"
 }
 
 #
@@ -107,7 +121,7 @@ af() {  # after
 v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
 [ -e "$v" ] && . "$v"
 
-alias qmv="EDITOR='nvim -c \"set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab\"' qmv -oswap"
+alias qmv="EDITOR='nvim -c \"set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab\"' qmv"
 
 # drag and drop
 q() { dragon --and-exit "$@"; }
@@ -236,11 +250,10 @@ blank() {
 	clear
 
 	# make the background black
-	# st
-	printf '%.s %b %.s %b %.s %b'  \
-		st: '\033]4;256;#000000\007' \
-		urxvt: '\033]11;#000000\007' \
-		padding: '\033]708;#000000\007'
+	printf '%.s %b'  \
+		st:      '\033]4;256;#000000\007' \
+		urxvt:   '\033]11;#000000\007'    \
+		^border: '\033]708;#000000\007'
 
 	# making a c program on the fly :)
 	command -v pause >/dev/null 2>&1 || {

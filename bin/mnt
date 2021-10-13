@@ -1,10 +1,19 @@
 #!/bin/sh -e
 #  mount disk
 
-set -- $(lsblk -ro name,mountpoint,fstype,label \
-	| grep -i '  [a-rt-z]' | menu -p mount)
+lsblk -Pbo name,type,size,mountpoint,fstype,label | while read -r a; do
+	eval "$a"
 
-[ "$1" ]
-mkdir -p "$HOME/mnt/$1"
-sudo mount "/dev/$1" "$HOME/mnt/$1"
-notify-send "mounted $1"
+	[ "$FSTYPE" ] && [ ! "$MOUNTPOINT" ] &&
+		printf "%-4s - %s %s %s\n" \
+		"$NAME" \
+		"$(numfmt --to=iec "$SIZE")" \
+		"$FSTYPE," \
+		"$LABEL"
+
+done | {
+	disk=$(menu -p mount) disk=${disk%% *}
+	mkdir -p "$HOME/mnt/$disk"
+	sudo mount "/dev/$disk" "$HOME/mnt/$disk" -o "umask=000"
+	notify-send "mounted $disk"
+}

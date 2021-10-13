@@ -10,5 +10,7 @@ st -c yeetfocus -g 1x1 -e pause   &
 #{ sleep 1; xset dpms force off; } &
 unclutter -idle 1 -jitter 99999   &  # hide cursor
 pkill -USR1 dunst
+xset dpms 15 15 15
 sudo xtrlock $arg
+sleep 0.1; xset dpms 600 600 600
 pkill -USR2 dunst

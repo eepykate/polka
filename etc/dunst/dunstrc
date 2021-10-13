@@ -93,7 +93,7 @@
 	#body    = "*discord.com*"
 	#format = 
 	timeout = 7
-	script = /home/d/bin/discordsound
+	script = /home/mirror/bin/discordsound
 
 [email]
 	appname = Firefox
