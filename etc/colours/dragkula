@@ -1,0 +1,31 @@
+black="c5c5c5"
+red="dc7474"
+green="dc7474"
+yellow="dc7474"
+blue="dc7474"
+purple="dc7474"
+cyan="dc7474"
+
+borders="dc7474"
+#   -----
+bg0="e3e3e3"
+bg1="e3e3e3"
+bg2="e3e3e3"
+bg3="c5c5c5"
+bg4="c5c5c5"
+button="c5c5c5"
+chrome="c5c5c5"
+#   -----
+fg1="464646"
+fg2="888888"
+disabled="aaaaaa"
+#   -----
+accent="dc7474"
+accent2="dc7474"
+contrast="ffffff"
+red="dc7474"
+#   -----
+wall="ffffff"
+#   -----
+
+# vim:ft=sh
