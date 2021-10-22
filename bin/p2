@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo cpupower frequency-set -u 2.8G
+notify-send "powersave"

@@ -2,18 +2,15 @@
 #  Expat MIT license, 6gk/gk/gtk
 
 : "${t:=10}"
+TIMEFORMAT=%R
 
-# "cache" so the "first" run isn't a lot slower than all the next ones
-#{ time "$@"; } >/dev/null 2>&1
 i=0 avg=0 high=0 low=99999
 while [ "$i" -lt "$t" ]; do
 	i=$((i+1))
 	#printf "\r%s" "$i" >/dev/stderr
 
 	var=$( { time "$@"; } 2>&1 )
-	var=${var##*real	}
-	var=${var//[m.]}
-	var=${var%%s*}
+	var=${var//.}
 
 	# remove leading zeros
 	var=$(( 10#$var ))
@@ -22,7 +19,8 @@ while [ "$i" -lt "$t" ]; do
 	[ "$var" -gt "$high" ] && high=$var
 	[ "$var" -lt "$low" ] && low=$var
 	# wait so the times are more consistent and accurate to real-world usage
-	#sleep 0.5
+	# without this, subsequent times are generally much lower & less reflective.
+	sleep 0.5
 done
 
 #echo -e "\r$avg | $((avg/t)) | $*"

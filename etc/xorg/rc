@@ -39,5 +39,6 @@ sleep 0.3
 torrent &
 { sleep 5; obs --startreplaybuffer; } &
 #st -e sudo s-tui &
+p2
 
 "$wm"

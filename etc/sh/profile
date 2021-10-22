@@ -47,6 +47,9 @@ export \
 # disable dbind accessibility bus warning - https://unix.stackexchange.com/a/532589
 export NO_AT_BRIDGE=1
 
+
+export QT_QPA_PLATFORMTHEME=gtk2
+
 # colours lol
 ls="di=35:ln=36:pi=42:tw=0:ow=0:st=0:*.md=31:*.css=32:ex=33"
 lstar="*.gz=31:*.tar=31:*.xz=31:*.zip=31:*.zst=31"

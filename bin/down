@@ -70,6 +70,8 @@ fun() {
 # multiple urls
 if [ $# -le 2 ]; then
 	fun "${1%/}" "$2"
+elif [ "$2" = -b ]; then
+	git clone "$@"
 elif [ "$1" = e ]; then
 	fun "https://cdn.discordapp.com/emojis/$2" "$3-$2" &&
 		mime=$(file -b --mime-type "$3-$2") &&
