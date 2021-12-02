@@ -35,10 +35,12 @@ esac
 screen.sh &  # change display layout
 sleep 0.3
 
-#{ sleep 5; torrent; } &
-torrent &
-{ sleep 5; obs --startreplaybuffer; } &
+{ sleep 3; torrent; } &
+#{ sleep 3; obs --startreplaybuffer; } &
+{ sleep 3; firefox -P main; } &
+#torrent &
 #st -e sudo s-tui &
-p2
+#st -e re &
+#p1 &
 
 "$wm"

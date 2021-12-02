@@ -26,7 +26,7 @@ elif [ -e "meson.build" ]; then
 	dewit meson build
 	dewit ninja -C build
 elif [ -e "PKGBUILD" ]; then
-	dewit makepkg -si --skippgpcheck "$@"
+	dewit makepkg -si --skippgpcheck --noconfirm "$@"
 elif [ -e "CMakeLists.txt" ]; then
 	dewit cmake . "$@"
 elif [ -e "Cargo.toml" ]; then

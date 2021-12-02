@@ -13,7 +13,7 @@ lsblk -Pbo name,type,size,mountpoint,fstype,label | while read -r a; do
 
 done | {
 	disk=$(menu -p mount) disk=${disk%% *}
-	mkdir -p "$HOME/mnt/$disk"
-	sudo mount "/dev/$disk" "$HOME/mnt/$disk" -o "umask=000"
+	mkdir -p "$HOME/dev/$disk"
+	sudo mount "/dev/$disk" "$HOME/dev/$disk" -o "umask=000"
 	notify-send "mounted $disk"
 }

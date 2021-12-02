@@ -10,5 +10,6 @@ opt=$(printf "suspend\nreboot\nreboot --firmware\nreboot (windows)\npoweroff" | 
 	printf "\x07\x00Windows\x20\x00" | iconv -f UTF-8 -t UTF-16LE | sudo tee $refivars
 }
 
+[ "$opt" = suspend ]&&pkill -9 obs&&sleep 0.2&&{ sleep 20; timer 0 obs; } &:
 sudo systemctl ${opt%%(*}
 #[ "$opt" = reboot ] && sudo cp /etc/systemd/system/getty@tty1.service.d/override.conf{.backup,}

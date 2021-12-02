@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #  unmount disk
-set -ex
+set -e
 
 lsblk -Pbo name,type,size,mountpoint,fstype,label | while read -r a; do
 	eval "$a"
@@ -17,5 +17,5 @@ done | menu -p unmount | {
 	read -r disk _ _ _ _ mp; mp=${mp//[\[\]]} mp=${mp//\~/$HOME} mp=/${mp#*/}
 	sudo umount "$mp"
 	notify-send "unmounted $disk" "[$mp]"
-	sudo rmdir "$HOME/mnt/$disk"
+	sudo rmdir "$HOME/dev/$disk"
 }

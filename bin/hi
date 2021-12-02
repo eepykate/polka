@@ -4,5 +4,6 @@
 var=$(zsh -ic "fc -R; fc -nl 1 | grep -- '$*' | grep -iv '"'hist$\|^hi\|\\$\|^v\b\|^rm\b\|^cp\b\|^mv\b'"' | tail -n1")
 
 notify-send "cmd: $var"
-echo ": $(date +%s):0;$var # hist" >> "${ZDOTDIR:-$HOME}/zsh-history"
+echo ": $(date +%s):0;$var" >> "${ZDOTDIR:-$HOME}/zsh-history"
+#echo ": $(date +%s):0;$var # hist" >> "${ZDOTDIR:-$HOME}/zsh-history"
 zsh -ic ". ~/etc/sh/aliases; $var"

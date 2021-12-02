@@ -17,7 +17,7 @@ do
 	eval "$name='$name $j,$(date "+%H:%M")'"
 done
 
-notify-send "$local" \
+notify-send -t 3000 "$local" \
 "$wat  |  $nzt
 $ist  |  $cet
 $est  |  $pst

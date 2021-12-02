@@ -60,6 +60,7 @@ alias \
 alias b='bg;disown'
 
 tc() { tail -n1 "$@" | xclip -sel clip; }
+hc() { head -n1 "$@" | xclip -sel clip; }
 calc() { [[ "$*" =~ % ]] && s= || s='scale=5;'; echo "$s $*" | bc; }
 
 pk() {
@@ -95,9 +96,19 @@ et() {
 ec() { "$@" &! exit; }
 
 afi() {  # affinity
-	for i in $(pgrep "$2"); do
-		( sudo taskset -pac "$1"  "$i" & )
-	done >/dev/null 2>&1
+	pids=;cpus=$1;shift
+	for i; do
+		# pid then fallback to name
+		[ "$i" -ge 1 ] 2>/dev/null && pids="$pids $i" ||
+			pids="$pids $(pgrep -i "$i")"
+
+		pids=${pids# }
+	done
+
+	[ "$pids" ] || ! echo "no such processes: $*" &&
+		for i in $pids; do
+			( sudo taskset -pac "$cpus"  "$i" & )
+		done >/dev/null 2>&1
 }
 
 af() {  # after
@@ -244,6 +255,7 @@ is() {
 #  other
 #
 
+alias vv=blank
 blank() {
 	# hide cursor
 	printf '\e[?25l'

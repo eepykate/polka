@@ -11,8 +11,8 @@ s() { pkill -x "$1"; { sleep 0.1; "$@" & }; }
 sx=$XDG_CONFIG_HOME/sxhkd  bs=$XDG_CONFIG_HOME/bspwm
 
 # desktops
-bspc monitor HDMI-0  -d 1 2 3 4 5 6
-bspc monitor DVI-D-0 -d 7 8 9 0
+bspc monitor DP-0   -d 1 2 3 4 5 6
+bspc monitor HDMI-0 -d 7 8 9 0
 ## fix ordering
 #bspc monitor DVI-D-0 -s HDMI-0
 
@@ -29,7 +29,7 @@ c pointer_motion_interval  5
 
 
 # borders/gaps
-c window_gap    20
+c window_gap    15
 c border_width  0
 c single_monocle      true
 c gapless_monocle     true
@@ -53,7 +53,7 @@ R tabbed    state=floating
 R Gcolor3   state=floating
 R floating  state=floating
 R menu      state=floating sticky=on layer=normal
-R freeze    state=floating border=off monitor=HDMI-0 layer=above focus=off
+R freeze    state=floating border=off monitor=DP-0 layer=above focus=off
 R Surphace  state=floating border=off rectangle=3360x3024+0+0
 R conky     state=floating layer=above sticky=true focus=off manage=off
 R Dragon    sticky=true focus=off
@@ -85,7 +85,7 @@ pgrep sxhkd || {
 s picom
 s dunst
 #s swallow
-#s borders
+s borders
 s sxhkd -c "$sx/other"  # give priority to binds in this file
 sxhkd -c "$sx/sxhkdrc"  "$sx/bspwm"
 [ -e "$bs/other" ] && . "$bs/other"

@@ -1,5 +1,5 @@
-st.font:  Ubuntu Mono:pixelsize=12:style=bold
-URxvt.font:   xft:Ubuntu Mono:bold:pixelsize=12
+st.font:  Ubuntu Mono:pixelsize=16:style=Medium
+URxvt.font:   xft:Ubuntu Mono:Medium:pixelsize=16
 
 *.background:   #ffffff
 *.foreground:   #5b5f66

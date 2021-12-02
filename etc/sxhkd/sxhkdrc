@@ -22,8 +22,11 @@ super + space
 super + y
 	keepassxc
 
-{XF86Tools,super BackSpace}
+{XF86Launch7,super BackSpace}
 	mic toggle
+
+XF86Tools
+	kb
 
 super ctrl BackSpace
 	mic query
@@ -56,9 +59,15 @@ super + {u,i}
 	{copy,emoji}
 
 super + f
-	lo /usr/lib/firefox/firefox -P main
+	GTK_THEME=Materia-light-compact lo /usr/lib/firefox/firefox -P main
 	#taskset -c 8,9,10,11 firefox -P main
 	#firefox -P main
+
+super g
+	pavucontrol -t 3
+
+super b
+	nvidia-settings
 
 
 # power menu
@@ -141,11 +150,8 @@ super {Pause, Scroll_Lock}
 XF86Audio{Prev,Next,Play,Stop,Mute}
 	vol {prev, next, p, stop, m}
 
-XF86Audio{Raise,Lower}Volume
-	vol {up,down}
-
-shift + XF86Audio{Raise,Lower}Volume
-	vol {up,down} 1
+{_,shift,control} XF86Audio{Raise,Lower}Volume
+	q={2,1,5}; vol {up,down} $q
 
 super + {p, Tab}
 	vol {p, mw}
@@ -162,9 +168,9 @@ super + shift + grave
 
 # desaturate monitor
 super 0
-	nvidia-settings  -a '[DPY:HDMI-0]'/DigitalVibrance={-1023,0}
+	nvidia-settings  -a '[DPY:DP-0]'/DigitalVibrance={-1023,0}
 super control 0
-	nvidia-settings  -a '[DPY:DVI-D-0]'/DigitalVibrance={-1023,0}
+	nvidia-settings  -a '[DPY:HDMI-0]'/DigitalVibrance={-1023,0}
 
 # invert monitor
 super {_,control} minus
@@ -177,3 +183,14 @@ super {_,control} minus
 
 ctrl shift Pause
 	lock butdontblank
+
+
+# fuck you dunst tbh
+ctrl shift period
+	dunstctl context
+
+ctrl shift grave
+	dunstctl history-pop
+
+ctrl alt z
+	surphace

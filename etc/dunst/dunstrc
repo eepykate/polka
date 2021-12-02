@@ -1,7 +1,12 @@
 [global]
-	font       = Ubuntu Mono bold 12px
-	geometry   = "500x5-40-40"
+	font       = Ubuntu Mono Medium 16px
+	#geometry   = "500x5-40-40"
 	shrink     = true
+
+	width      = (0, 500)
+	origin     = bottom-right
+	offset     = 40x40
+	follow     = none
 
 	markup     = full
 	format     = "%s\n%b"
@@ -29,14 +34,17 @@
 	show_indicators     = false
 	show_age_threshold  = 60
 
-[experimental]
-	per_monitor_dpi     = true
-
-[shortcuts]
 	#close              = ctrl+space
 	#close_all          = ctrl+shift+space
-	history             = ctrl+shift+grave
-	context             = ctrl+shift+period
+	#history            = ctrl+shift+grave
+	#context            = ctrl+shift+period
+
+	mouse_left_click    = do_action
+	mouse_middle_click  = close_current
+	mouse_right_click   = context
+
+[experimental]
+	per_monitor_dpi     = true
 
 [urgency_low]
 	background          = "#ffffff"
@@ -103,8 +111,8 @@
 [iceice]
 	appname = Firefox
 	body = "*Highlight*265441058383593474*"
-	new_icon = 
-	format = ""
+	new_icon = /dev/null
+	format = " "
 
 [nosum]
 	summary = "summary"

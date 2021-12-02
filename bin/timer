@@ -1,26 +1,26 @@
-#!/bin/sh
+#!/bin/sh -x
 #  simple timer
 sound=/usr/share/sounds/freedesktop/stereo/complete.oga
 
+t=${1:-1h}; [ "$1" ] || set -- 1h 'command thing' ;shift
 calc() {
 	seconds=$(echo "$1*$2" | bc)
 }
 
-case $1 in
-	0|0s) shift; notify-send -u critical "$*"; exec paplay "$sound";;
-	*h) calc "${1%?}" 3600;;
-	*m) calc "${1%?}"   60;;
-	*s) seconds="${1%?}"  ;;
-	*)  calc "$1"       60;;
+case $t in
+	0|0s) notify-send -u critical "$*"; exec paplay "$sound";;
+	*h) calc "${t%?}" 3600;;
+	*m) calc "${t%?}"   60;;
+	*s) seconds="${t%?}"  ;;
+	*)  calc "$t"       60;;
 esac
 
-a=$1; shift
-b="Timer set for $a ($seconds) ${1:+- $*}"
+b="Timer set for $t ($seconds) ${1:+- $*}"
 notify-send "$b"
 {
 	sleep "$seconds"
 
-	notify-send -u critical "Timer finished" "$*"
+	notify-send -u critical "Timer finished" "$*" &
 	paplay "$sound"
 	n tmr "timer done: $*"
 } &

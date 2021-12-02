@@ -19,7 +19,7 @@
 	#input=$(pactl list sink-inputs | grep -i 'media.name = "Mumble' -B20 \
 	#	| grep -o 'Input #[0-9]\+')
 	#input=$(pactl list sources | grep -i '\bName: alsa_input.pci-0000_00_1b.0.analog-stereo' -B3 \
-	input=$(pactl list sources | grep -i '\bName: alsa.*Antlion' -B3 \
+	input=$(pactl list sources | grep -i '\bName: alsa_input.*MH752' -B3 \
 		| grep -o 'Source #[0-9]\+')
 
 	[ "$input" ] || { notify-send "mic is not running"; exit 1; }
