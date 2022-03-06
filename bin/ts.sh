@@ -179,7 +179,7 @@ echo " - bspwm"
 sed --follow-symlinks -i               \
 	-e "s/outer=.*/outer='0x$bg3'   # outer/"      \
 	-e "s/inner1=.*/inner1='0x${borders:-$black}'  # focused/"      \
-	-e "s/inner2=.*/inner2='0x${chrome:-$bg4}'  # normal/"      \
+	-e "s/inner2=.*/inner2='0x${unborders:-${chrome:-$bg4}}'  # normal/"      \
 	~/bin/borders
 
 sed --follow-symlinks -i  \
@@ -312,9 +312,9 @@ else
 	sleep 0.6
 fi
 
-echo "#!/bin/sh
-$wallthing" > ~/bin/pap
-pap
+#echo "#!/bin/sh
+#$wallthing" > ~/bin/pap
+#pap
 
 wait
 notify-send "Theme changed to $theme"

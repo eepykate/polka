@@ -1,19 +1,21 @@
 #!/bin/sh -e
 #  mount disk
 
-lsblk -Pbo name,type,size,mountpoint,fstype,label | while read -r a; do
+lsblk -Po name,size,mountpoint,fstype,label | while read -r a; do
 	eval "$a"
 
 	[ "$FSTYPE" ] && [ ! "$MOUNTPOINT" ] &&
 		printf "%-4s - %s %s %s\n" \
 		"$NAME" \
-		"$(numfmt --to=iec "$SIZE")" \
+		"$SIZE" \
 		"$FSTYPE," \
-		"$LABEL"
+		"${LABEL:-unnamed}"
 
-done | {
-	disk=$(menu -p mount) disk=${disk%% *}
-	mkdir -p "$HOME/dev/$disk"
-	sudo mount "/dev/$disk" "$HOME/dev/$disk" -o "umask=000"
-	notify-send "mounted $disk"
+done | menu -p mount | {
+	read -r disk _
+	eval "$(lsblk -Polabel "/dev/$disk")"
+	[ "$LABEL" = Windows ] && dir=/win || dir=$HOME/dev/$disk
+	mkdir -p "$dir"
+	sudo mount -o "umask=000"  "/dev/$disk"  "$dir"
+	notify-send "mounted $disk ($LABEL)"  "[$dir]"
 }

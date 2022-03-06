@@ -7,14 +7,14 @@ wm="${1:-bspwm}"
 c="${XDG_CONFIG_HOME:=$HOME/.config}"
 
 # /etc/X11/xinit/xinitrc.d/*.sh
-# [ "$DBUS_SESSION_BUS_ADDRESS" ] || dbus-launch --exit-with-session ...
+[ "$DBUS_SESSION_BUS_ADDRESS" ] || dbus-launch --exit-with-session $$
 #eval export $(gnome-keyring-daemon --start)
 
 hw 0; hw \* & # clear hidden windows cache
 clipwatch   &
 xmousepasteblock     &   # disable middle-click paste
 pulseaudio -D
-unclutter -idle 15   &   # hide cursor after 15 seconds
+#unclutter -idle 15   &   # hide cursor after 15 seconds
 synclient TouchpadOff=1  # disable touchpad
 { sleep 20; gsync; } &
 xrdb "$c/xorg/res" &
@@ -37,7 +37,7 @@ sleep 0.3
 
 { sleep 3; torrent; } &
 #{ sleep 3; obs --startreplaybuffer; } &
-{ sleep 3; firefox -P main; } &
+{ sleep 1; firefox -P main; } &
 #torrent &
 #st -e sudo s-tui &
 #st -e re &

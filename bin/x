@@ -1,19 +1,24 @@
 #!/bin/sh
 # github.com/Earnestly/sx
 # Copyright 2017 Earnestly
-#      MIT License
+#	  MIT License
 
 cleanup() {
 	if [ "$pid" ] && kill -0 "$pid" 2> /dev/null; then
-		kill -s TERM "$pid"
+		kill "$pid"
 		wait "$pid"
-		r=$?
+		xorg=$?
 	fi
 
-	stty "$stty" || stty sane
+	if ! stty "$stty"; then
+		stty sane
+	fi
 
 	xauth remove :"$tty"
-	exit "${r:-$?}"
+
+	if [ "$1" = exit ]; then
+		exit "${xorg:-0}"
+	fi
 }
 
 stty=$(stty -g)
@@ -22,20 +27,22 @@ tty=$((${tty##*[a-z]}-1))
 
 conf=${XDG_CONFIG_HOME:=$HOME/.config}/xorg
 data=${XDG_DATA_HOME:=$HOME/.local/share}/xorg
+mkdir -p -- "$conf" "$data"
 
-mkdir -p "$conf" "$data"
+export XAUTHORITY="${XAUTHORITY:-$data/xauthority}"
+touch -- "$XAUTHORITY"
 
-export xa=${XAUTHORITY:=$data/xauthority}
-touch "$xa"
-
-trap 'cleanup' EXIT
 xauth add :"$tty" MIT-MAGIC-COOKIE-1 "$(od -An -N16 -tx /dev/urandom | tr -d ' ')"
 
-# Xorg will check if its SIGUSR1 disposition is SIG_IGN and use this state to
-# reply back to the parent process with its own SIGUSR1 as an indication it is
-# ready to accept connections.
-# Taking advantage of this feature allows us to launch our client directly
-# from a SIGUSR1 handler and avoid the need to poll for server readiness.
-trap 'DISPLAY=:$tty "$conf/rc" "$@"' USR1
-(trap '' USR1 && exec Xorg :"$tty" -keeptty vt"$((tty+1))" -noreset -auth "$xa") &
-pid=$!; wait "$pid"
+trap 'cleanup; trap - INT; kill -INT "$$"' INT
+trap 'cleanup exit' EXIT HUP TERM QUIT
+
+# Xorg will check whether it inherited a USR1 with a disposition of SIG_IGN and
+# use this state to reply back to the parent process with its own USR1.
+# This is done to indicate that the server is ready to accept connections.
+# Taking advantage of this feature allows launching the client directly from a
+# USR1 signal trap which obviates the need to poll for server readiness.
+trap 'DISPLAY=:$tty exec "${@:-$conf/rc}" & wait "$!"' USR1
+
+(trap '' USR1 && exec Xorg :"$tty" -keeptty vt"$((tty+1))" -noreset -auth "$XAUTHORITY") & pid=$!
+wait "$pid"

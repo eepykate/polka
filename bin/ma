@@ -41,4 +41,9 @@ elif [ -e "autogen.sh" ]; then
 	dewit ./autogen.sh
 	dewit ./configure
 	dewit make "$@"
+elif [ -e "./gradlew" ]; then
+	chmod +x gradlew
+	export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+	export HOME=$HOME/opt/apps
+	dewit ./gradlew "-Duser.home=$HOME/opt/apps" "$@"
 fi

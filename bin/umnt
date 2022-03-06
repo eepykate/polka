@@ -2,20 +2,21 @@
 #  unmount disk
 set -e
 
-lsblk -Pbo name,type,size,mountpoint,fstype,label | while read -r a; do
+lsblk -Po NAME,SIZE,MOUNTPOINT,FSTYPE,LABEL | while read -r a; do
 	eval "$a"
 
 	[ "$MOUNTPOINT" ] && ! grep -iq "\s$MOUNTPOINT\s" /etc/fstab &&
 		printf "%-4s - %s %s %s  [%s]\n" \
 			"$NAME" \
-			"$(numfmt --to=iec "$SIZE")" \
+			"$SIZE" \
 			"$FSTYPE," \
-			"${LABEL:-null}" \
+			"${LABEL:-unnamed}" \
 			"${MOUNTPOINT//$HOME/\~}"
 
 done | menu -p unmount | {
-	read -r disk _ _ _ _ mp; mp=${mp//[\[\]]} mp=${mp//\~/$HOME} mp=/${mp#*/}
-	sudo umount "$mp"
-	notify-send "unmounted $disk" "[$mp]"
-	sudo rmdir "$HOME/dev/$disk"
+	read -r disk _
+	eval "$(lsblk -Po LABEL,MOUNTPOINT "/dev/$disk")"
+	sudo umount "$MOUNTPOINT"
+	notify-send "unmounted $disk ($LABEL)"  "[$MOUNTPOINT]"
+	sudo rmdir "$HOME/dev/$disk" ||:
 }

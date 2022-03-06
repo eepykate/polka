@@ -11,10 +11,13 @@ esac
 
 # 5% of monitor res
 #set -- "$@" "$4$(($(mattr ${1%%[ie]*} "$(pfm)") * 5 / 100 ))"
-set -- "$@" "${4}40"
+a=${4}40
+#[ "$(bspc query -T -n focused | jq -r '.client .state')" = floating ] && {
+#	[ "$1" = width ] && a=${4}32 || a=${4}18
+#}
 
-[ "$1" = width  ] && { x=$5; y=0; }
-[ "$1" = height ] && { y=$5; x=0; }
+[ "$1" = width  ] && { x=$a; y=0; }
+[ "$1" = height ] && { y=$a; x=0; }
 
 # try to resize in one direction
 # fall back to the other if it fails

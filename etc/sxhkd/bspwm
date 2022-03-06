@@ -1,3 +1,5 @@
+XF86Tools
+	bspc node -c
 {alt,super} + q
 	bspc node -{c,k}
 
@@ -34,3 +36,8 @@ super + {1-6,v,c,x,z}
 
 alt {_,shift} + Tab
 	bspc node -f {next, prev}.!hidden.window
+
+super shift {z,x}
+	bspc node @^1:focused:/ -s @^2:focused:/ || \
+	bspc node @^1:focused:/ -d ^2:focused || \
+	bspc node @^2:focused:/ -d ^1:focused

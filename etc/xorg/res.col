@@ -2,39 +2,39 @@ st.font:  Ubuntu Mono:pixelsize=16:style=Medium
 URxvt.font:   xft:Ubuntu Mono:Medium:pixelsize=16
 
 *.background:   #ffffff
-*.foreground:   #5b5f66
+*.foreground:   #828791
 *.cursorColor:  #aaaeb5
 
 *.color0:       #ffffff
 *.color8:       #aaaeb5
 
-*.color1:       #cd5e79
-*.color9:       #cd5e79
+*.color1:       #eb9e9b
+*.color9:       #eb9e9b
 
-*.color2:       #c97d4e
-*.color10:      #c97d4e
+*.color2:       #edc278
+*.color10:      #edc278
 
-*.color3:       #6b9e4c
-*.color11:      #6b9e4c
+*.color3:       #c4de80
+*.color11:      #c4de80
 
-*.color4:       #5094b4
-*.color12:      #5094b4
+*.color4:       #8fc5e6
+*.color12:      #8fc5e6
 
-*.color5:       #4973b7
-*.color13:      #4973b7
+*.color5:       #8fc5e6
+*.color13:      #8fc5e6
 
-*.color6:       #b45aaa
-*.color14:      #b45aaa
+*.color6:       #eea8e9
+*.color14:      #eea8e9
 
-*.color7:       #83878c
-*.color15:      #5b5f66
+*.color7:       #B1B6BD
+*.color15:      #828791
 
-*.color16:      #5094b4
-*.color17:      #b45aaa
+*.color16:      #eea8e9
+*.color17:      #edc278
 *.color18:      #ffffff
 
 
 tabbed.selbgcolor:   #ffffff
-tabbed.selfgcolor:   #5b5f66
-tabbed.normfgcolor:  #83878c
+tabbed.selfgcolor:   #828791
+tabbed.normfgcolor:  #B1B6BD
 tabbed.normbgcolor:  #f2f2f2

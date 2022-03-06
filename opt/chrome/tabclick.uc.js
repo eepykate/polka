@@ -2,7 +2,7 @@
 // @name                 Tab Click
 // @version              1.0
 // @description          Double click the active tab to focus the urlbar
-// @author               https://reddit.com/user/otto251
+// @author               https://github.com/6gk
 // @license              https://creativecommons.org/share-your-work/public-domain/cc0/
 // @compatibility        Created 2019-07-04. Tested on Firefox 69.0b1
 // ==/UserScript==

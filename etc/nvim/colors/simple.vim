@@ -16,7 +16,7 @@ hi NetrwClassify ctermfg=none
 
 " bars
 hi LineNr       ctermfg=8
-hi CursorLineNr ctermfg=16
+hi CursorLineNr ctermfg=16 cterm=none
 hi StatusLine   ctermfg=15
 hi VertSplit    ctermbg=8 ctermfg=0
 
@@ -66,7 +66,7 @@ hi Character    ctermfg=1
 hi Number       ctermfg=none
 hi Boolean      ctermfg=none
 hi Float        ctermfg=none
-hi Identifier   ctermfg=none
+hi Identifier   ctermfg=none cterm=none
 hi Function     ctermfg=none
 hi Conditional  ctermfg=none
 hi Repeat       ctermfg=15

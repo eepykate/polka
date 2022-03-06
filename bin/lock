@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
 trap 'kill -9 -$$ %1 %2' EXIT INT
-arg=; [ "$1" ] || arg=-b
+arg=; [ "$1" ] || { arg=-b; } #vol pause & }
 
 # unfocus by making a 1x1 hidden window
 bspc rule -a yeetfocus state=floating focus=on rectangle=1x1+1+1 border=off
 st -c yeetfocus -g 1x1 -e pause   &
 
 #{ sleep 1; xset dpms force off; } &
-unclutter -idle 1 -jitter 99999   &  # hide cursor
+#unclutter -idle 1 -jitter 99999   &  # hide cursor
 pkill -USR1 dunst
-xset dpms 15 15 15
+xset dpms 6 6 6
+p3 s
 sudo xtrlock $arg
-sleep 0.1; xset dpms 600 600 600
+p1 s
+xset dpms 600 600 600
 pkill -USR2 dunst
+kill %1 %2

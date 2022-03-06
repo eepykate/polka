@@ -25,7 +25,7 @@ xsetroot -cursor_name      left_ptr
 c pointer_modifier         mod4
 c focus_follows_pointer    true
 c pointer_follows_focus    false
-c pointer_motion_interval  5
+c pointer_motion_interval  2
 
 
 # borders/gaps
@@ -48,6 +48,7 @@ R yeetfocus state=floating focus=on rectangle=1x1+1+1 border=off
 R obs       desktop=9
 R Steam     desktop=5
 R feh       state=floating
+R Iwgtk     state=floating
 R Pinsel    state=floating
 R tabbed    state=floating
 R Gcolor3   state=floating
@@ -57,6 +58,7 @@ R freeze    state=floating border=off monitor=DP-0 layer=above focus=off
 R Surphace  state=floating border=off rectangle=3360x3024+0+0
 R conky     state=floating layer=above sticky=true focus=off manage=off
 R Dragon    sticky=true focus=off
+R d6        desktop=6
 R qBittorrent desktop=6
 #R mpv       desktop=0
 
@@ -83,6 +85,7 @@ pgrep sxhkd || {
 } &
 
 s picom
+s clipwatch
 s dunst
 #s swallow
 s borders

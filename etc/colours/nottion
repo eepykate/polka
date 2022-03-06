@@ -1,0 +1,31 @@
+black="aaaeb5"
+red="eb9e9b"
+green="c4de80"
+yellow="edc278"
+blue="8fc5e6"
+purple="eea8e9"
+cyan="8fc5e6"
+
+borders=f4baf0
+unborders=d6d8db
+#   -----
+bg0="ffffff"
+bg1="ffffff"
+bg2="fafafa"
+bg3="f2f2f2"
+bg4="ebebeb"
+button="0000001a"
+chrome="dde0e3"
+#   -----
+fg1="828791"
+fg2="B1B6BD"
+disabled="999999"
+#   -----
+accent="$purple"
+accent2="$yellow"
+contrast="ffffff"
+#   -----
+wall="flower-pink-bundle2.jpg"
+#   -----
+
+# vim:ft=sh

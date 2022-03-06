@@ -64,7 +64,7 @@ export \
 	NIX_PROFILES="/nix/var/nix/profiles/default $HOME/.nix-profile" \
 	NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
-export PATH="$(find ~/bin -maxdepth 1 -type d | tr '\n' ':')$apps/.nix-profile/bin:/usr/local/bin:/usr/bin:/bin"
+export PATH="$(find ~/bin -maxdepth 1 -type d | tr '\n' ':')/usr/local/bin:/usr/bin"
 
 star() { ( "$@" & ) >$null 2>&1; }
 star systemctl --user import-environment >/dev/null 2>&1
@@ -75,7 +75,7 @@ star sudo kbdrate -d 200 -r 60
 star shortcuts
 star sudo cpupower frequency-set --governor performance
 
-#sudo rm /etc/systemd/system/getty@tty1.service.d/override.conf 2>/dev/null
-[ -e /tmp/session ] || { :>/tmp/session; sleep 1; x; }
+sudo rm /etc/systemd/system/getty@tty1.service.d/autologin.conf 2>/dev/null
+! [ -e /tmp/session ] && [ "$(tty)" = /dev/tty1 ] && :>/tmp/session && sleep 1 && x
 
 # vim: ft=sh

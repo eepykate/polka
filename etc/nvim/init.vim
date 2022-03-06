@@ -48,6 +48,7 @@ call plug#begin()
 	Plug 'machakann/vim-sandwich'
 	Plug 'airblade/vim-gitgutter'
 	Plug 'elkowar/kmonad.vim'
+	Plug 'tpope/vim-dadbod'
 call plug#end()
 set updatetime=100
 
@@ -161,9 +162,16 @@ nnoremap <silent> <C-n> :let [&nu, &rnu] = [!&rnu, &nu+&rnu==1] <CR>
 nnoremap <silent> <C-m> :GitGutterToggle <CR>
 nnoremap <silent> <C-b> :ALEToggle <CR>
 
+inoremap <silent> <C-d> <ESC> :w !bash <CR>
+nnoremap <silent> <C-d> :w !bash <CR>
+
 " Output the current syntax group
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 nnoremap K :vert Man<CR>
+
+runtime rename.vim
+autocmd BufNewFile,BufRead,BufEnter * syn match matchURL /http[s]\?:\/\/[[:alnum:]%\/_#.-]*/
+hi matchURL cterm=underline ctermfg=12

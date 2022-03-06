@@ -6,7 +6,7 @@ set -- $PATH
 # due to it being easier to get the selection than the clipboard, sync
 { xclip -sel clip -o | xclip -sel prim; } &
 
-var=$(find "$@" -type f,l -printf '%f\n' -executable \
+var=$(find "$@" -type f,l -printf '%f\n' -executable -maxdepth 1 \
 	| sort | uniq | menu)
 
 echo ": $(date +%s):0;$var" >> "${ZDOTDIR:-$HOME}/zsh-history"

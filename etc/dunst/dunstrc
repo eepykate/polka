@@ -14,7 +14,7 @@
 	word_wrap  = true
 
 	dmenu      = menu
-	browser    = chromium
+	browser    = xdg-open
 
 	icon_position  = left
 	max_icon_size  = 64
@@ -48,19 +48,19 @@
 
 [urgency_low]
 	background          = "#ffffff"
-	foreground          = "#83878cbb"
+	foreground          = "#B1B6BDbb"
 	frame_color         = "#f2f2f2"
 	timeout             = 7
 
 [urgency_normal]
 	background          = "#ffffff"
-	foreground          = "#5b5f66cf"
+	foreground          = "#828791cf"
 	frame_color         = "#f2f2f2"
 	timeout             = 7
 
 [urgency_critical]
 	background          = "#ffffff"
-	foreground          = "#5b5f66"
+	foreground          = "#828791"
 	frame_color         = "#f2f2f2"
 	timeout             = 0
 
@@ -77,7 +77,7 @@
 	history_ignore = yes
 
 [mike]
-	background     = "#4973b7"
+	background     = "#8fc5e6"
 	format         = " ​ "
 	#format         = ""
 	summary        = "muted"
@@ -86,7 +86,7 @@
 	#script = micbar off
 
 [mic]
-	background     = "#cd5e79"
+	background     = "#eb9e9b"
 	format         = "​        ​"
 	#format         = ""
 	summary        = "unmuted"

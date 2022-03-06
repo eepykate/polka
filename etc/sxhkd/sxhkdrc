@@ -6,7 +6,7 @@ ctrl + alt + 3
 	kb
 
 super + {alt + space, Return, e}
-	date +%s > ~/tmp/cache/sttimes;	st
+	date +%s >> ~/tmp/cache/sttimes & st
 	#term -pixmap '/home/d/src/walls/uk.png;style=scale'
 
 #super + g
@@ -22,11 +22,11 @@ super + space
 super + y
 	keepassxc
 
-{XF86Launch7,super BackSpace}
-	mic toggle
+XF86Launch8
+	xdotool keyup XF86Launch8; xdotool key ctrl+w
 
-XF86Tools
-	kb
+{XF86Launch7, shift XF86Launch7,super BackSpace}
+	mic toggle
 
 super ctrl BackSpace
 	mic query
@@ -59,7 +59,7 @@ super + {u,i}
 	{copy,emoji}
 
 super + f
-	GTK_THEME=Materia-light-compact lo /usr/lib/firefox/firefox -P main
+	GTK_THEME=Materia-light-compact /usr/lib/firefox/firefox -P main
 	#taskset -c 8,9,10,11 firefox -P main
 	#firefox -P main
 
@@ -90,7 +90,7 @@ ctrl + alt + s
 
 # mousebind
 {XF86Launch6,super + k}
-	shade picker
+	xdotool keyup XF86Launch6; shade picker
 
 #super + shift + 2
 #	pgrep mumble && hw 2
@@ -179,7 +179,7 @@ super {_,control} minus
 
 
 {super l,ctrl Pause}
-	lock
+	nob;lock
 
 ctrl shift Pause
 	lock butdontblank
@@ -194,3 +194,6 @@ ctrl shift grave
 
 ctrl alt z
 	surphace
+
+super alt Return
+	{for win in $(xdotool search 'Minecraft*'); do xdotool click --delay 550 --repeat 9999999999 --window $win 1 & done, pkill -x xdotool}

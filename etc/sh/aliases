@@ -2,8 +2,82 @@
 
 command -v shlib >/dev/null && . shlib
 
+# file shortcuts
+
+# pre-genned
+#v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
+#[ -e "$v" ] && . "$v"
+
+# generate on startup: ~1.2ms slower than sourcing a pre-genned file
+# (3.37ms vs 2.15ms when using zsh -c '. /path/to/thisfile',
+# including file access time & other script overhead [https://git.io/timetest])
+while read -r name lo; do
+	[[ "$name" =~ [a-z].* ]] || continue
+	[[ "$lo" =~ ~.* ]] && lo=${lo/\~/$HOME}
+	[[ -d "$lo" ]] && eval "alias '$name=cd $lo'" \
+		|| eval "alias '$name=v $lo'"
+	eval "export '$name=$lo'"
+done << SHORTCUTS
+#  dirs
+h       ~
+gi      ~/src
+dl      ~/tmp
+dots    ~/opt/dots
+bks     ~/opt/bks
+db      ~/opt/bks
+
+wp      ~/src/walls
+fet     ~/src/fetsh
+gg      ~/src/gkay
+
+scrs    ~/opt/scr
+pics    ~/opt/scr
+recs    ~/opt/scr
+gf      ~/tmp/cache/gkif
+tu      ~/opt/turtles
+em      /hd/discord/emotes
+
+oth     /hd/linuxdistros
+ot      /hd2/linuxdistros
+dw      /hd/media/DoctorWho
+tw      /hd/media/Torchwood
+sp      ~/etc/startpage
+fchr    ~/etc/firefox/main/chrome
+
+#  files
+# shells
+sc      ~/etc/sh/sc
+z       ~/etc/sh/.zshrc
+zh      ~/etc/sh/zsh-history
+a       ~/etc/sh/aliases
+pro     ~/etc/sh/profile
+
+# wm
+com     ~/etc/picom.conf
+bs      ~/etc/bspwm/bspwmrc
+drc     ~/etc/dunst/dunstrc
+sx      ~/etc/sxhkd/sxhkdrc
+sb      ~/etc/sxhkd/bspwm
+so      ~/etc/sxhkd/other
+
+# X
+xin     ~/etc/xorg/rc
+xres    ~/etc/xorg/res
+uc      ~/etc/firefox/main/chrome/userChrome.css
+ucc     ~/etc/firefox/main/chrome/userContent.css
+
+vimrc   ~/etc/nvim/init.vim
+SHORTCUTS
+
+
+
+for i in 0 1 2 3 4 5 6 7 8 9; do
+	alias "${i}=exit"
+done
+
 grd() {
-	HOME=$HOME/opt/apps ./gradlew "-Duser.home=$HOME/opt/apps" "$@"
+	export JAVA_HOME=/usr/lib/jvm/java-17-openjdk/
+	time HOME=$HOME/opt/apps ./gradlew "-Duser.home=$HOME/opt/apps" "$@"
 }
 
 alias sy="systemctl --user"
@@ -83,7 +157,7 @@ et() {
 	for i; do
 		# pid then fallback to name
 		[ "$i" -ge 1 ] 2>/dev/null && pids="$pids $i" ||
-			pids="$pids $(pgrep "$i")"
+			pids="$pids $(pgrep -i -- "$i")"
 
 		pids=${pids# }
 	done
@@ -113,6 +187,7 @@ afi() {  # affinity
 
 af() {  # after
 	echo "$s" | grep -qx '[msh0-9.]\+' || s=1
+	test -e "/proc/$1/status" && set -- test -e "/proc/$1/status"
 	while "$@" >/dev/null; do sleep "$s"; done
 }
 
@@ -127,10 +202,6 @@ np() {
 #
 #  files/dirs
 #
-
-# file shortcuts
-v=${XDG_CONFIG_HOME:=~/.config}/sh/sc.sh
-[ -e "$v" ] && . "$v"
 
 alias qmv="EDITOR='nvim -c \"set tabstop=8 softtabstop=8 shiftwidth=8 noexpandtab\"' qmv"
 

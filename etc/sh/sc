@@ -13,11 +13,14 @@ gg      ~/src/gkay
 scrs    ~/opt/scr
 pics    ~/opt/scr
 recs    ~/opt/scr
+gf      ~/tmp/cache/gkif
 tu      ~/opt/turtles
 em      /hd/discord/emotes
 
 oth     /hd/linuxdistros
+ot      /hd2/linuxdistros
 dw      /hd/media/DoctorWho
+tw      /hd/media/Torchwood
 sp      ~/etc/startpage
 fchr    ~/etc/firefox/main/chrome
 
@@ -25,6 +28,7 @@ fchr    ~/etc/firefox/main/chrome
 # shells
 sc      ~/etc/sh/sc
 z       ~/etc/sh/.zshrc
+zh      ~/etc/sh/zsh-history
 a       ~/etc/sh/aliases
 pro     ~/etc/sh/profile
 

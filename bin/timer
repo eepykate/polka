@@ -2,7 +2,7 @@
 #  simple timer
 sound=/usr/share/sounds/freedesktop/stereo/complete.oga
 
-t=${1:-1h}; [ "$1" ] || set -- 1h 'command thing' ;shift
+t=${1:-1h}; [ "$1" ] || set -- 1h; shift
 calc() {
 	seconds=$(echo "$1*$2" | bc)
 }
@@ -12,15 +12,16 @@ case $t in
 	*h) calc "${t%?}" 3600;;
 	*m) calc "${t%?}"   60;;
 	*s) seconds="${t%?}"  ;;
-	*)  calc "$t"       60;;
+	#*)  calc "$t"       60;;
+	*)  seconds=$t;;
 esac
 
 b="Timer set for $t ($seconds) ${1:+- $*}"
-notify-send "$b"
+notify-send "$b" -t 800
 {
 	sleep "$seconds"
 
-	notify-send -u critical "Timer finished" "$*" &
+	notify-send -u critical "$t Timer finished" "$*" &
 	paplay "$sound"
-	n tmr "timer done: $*"
+	[ "$silenzio" = yes ] || n tmr "timer done: $*"
 } &

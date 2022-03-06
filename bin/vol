@@ -3,7 +3,7 @@
 # amixer/playerctl wrapper script for volume/media
 #
 # source:
-#   https://github.com/GaugeK
+#   https://github.com/6gk
 #
 # shellcheck disable=SC2015
 # shellcheck disable=SC2086

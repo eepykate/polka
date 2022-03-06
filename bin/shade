@@ -67,29 +67,8 @@ dar() {
 
 # picker
 pic() {
-	# if the selection is a hex/rgb value, use that,
-	# otherwise select a pixel
-	pkill -x colorpicker
-	hex=$(xclip -o | sed 's/rgb//' | tr "#:;,.='()\"" ' ')
-	set -- $hex
-
-	v='[a-fA-F0-9]'
-
-	case $1$2$3 in
-		# for hexes
-		$v$v$v$v$v$v) hex=$1$2$3;;
-		# for rgb
-		*)
-			if [ "$1" -lt 256 ] 2>/dev/null && [ "$2" -lt 256 ] && [ "$3" -lt 256 ]; then  # 255, 200, 255
-				hex=$(printf "%02X%02X%02X\n" "$@")
-			elif [ $# = 6 ]; then   # 1.0, 0.855, 1.0
-				calc() { echo "scale=5; $1/3.92156*1000" | bc || echo 8888; }
-				hex=$(printf "%02X%02X%02X\n" "$(calc $1.$2)" "$(calc $3.$4)" "$(calc $5.$6)")
-			else
-				# select a pixel
-				hex=$(colorpicker -doq)
-			fi
-	esac
+	# select a pixel
+	hex=$(colorpicker -doq)
 
 	hex=$(printf %s "$hex" | tr '[:upper:]' '[:lower:]' | tr -d '#\n')
 
