@@ -1,0 +1,3 @@
+#!/bin/sh
+[ "$1" ] || set -- "$(cat)"
+echo "scale=5; $*" | bc

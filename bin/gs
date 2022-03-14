@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -Lso /dev/null -w '%{url_effective}' "${1:-$(xclip -sel clip -o)}" | co

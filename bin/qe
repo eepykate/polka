@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#  don't QuEstion the name.
+
+f=${1##*/}
+set -- "$(realpath "$1")"
+case $(file -b --mime-type "$1") in
+	text/x-shellscript) ext=sh;;
+	text/html) ext=html;;
+	text/*) ext=txt;;
+esac
+
+cp "$1" "/tmp/${f%.$ext}.$ext"
+dragon --and-exit "$_"
