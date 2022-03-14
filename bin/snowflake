@@ -1,0 +1,19 @@
+#!/bin/sh
+# https://discord.com/developers/docs/reference#snowflakes
+#  get human-readable time of discord snowflake
+#  usage: snowflake [ids]
+
+for i; do
+	# remove url stuff
+	i=${i##*[/-]}
+
+	# check if number
+	[ "$i" -gt 1 ] 2>/dev/null || continue
+	# convert to binary, trim useless stuff, and go back to decimal
+	j=$(echo "obase=2; $i" | bc | head -c-23)
+	j=$(echo "ibase=2; $j" | bc)
+	s=${j%???} ms=${j#$s}
+
+	# ID + "discord epoch" (2015) -> human readable
+	TZ=UTC date -d @$((s+1420070400)) +"$i  %Y-%m-%d %H:%M:%S.${ms}Z  %s"
+done

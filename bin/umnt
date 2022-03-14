@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 #  unmount disk
 set -e
+. ~/etc/colours/current
 
 lsblk -Po NAME,SIZE,MOUNTPOINT,FSTYPE,LABEL | while read -r a; do
 	eval "$a"
 
 	[ "$MOUNTPOINT" ] && ! grep -iq "\s$MOUNTPOINT\s" /etc/fstab &&
-		printf "%-4s - %s %s %s  [%s]\n" \
+		printf "%-4s:%s:%s:<- %s\n" \
 			"$NAME" \
 			"$SIZE" \
-			"$FSTYPE," \
 			"${LABEL:-unnamed}" \
 			"${MOUNTPOINT//$HOME/\~}"
 
-done | menu -p unmount | {
-	read -r disk _
-	eval "$(lsblk -Po LABEL,MOUNTPOINT "/dev/$disk")"
+done | column -ts':' -o'  ' | menu -p unmount | {
+	read -r NAME _
+	eval "$(lsblk -Po LABEL,MOUNTPOINT "/dev/$NAME")"
+	notify-send summary "<span color='#$red'>$NAME: $LABEL</span>\n${MOUNTPOINT/$HOME/\~}"
 	sudo umount "$MOUNTPOINT"
-	notify-send "unmounted $disk ($LABEL)"  "[$MOUNTPOINT]"
-	sudo rmdir "$HOME/dev/$disk" ||:
+	sudo rmdir "$HOME/dev/$NAME" ||:
 }

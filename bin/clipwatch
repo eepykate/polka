@@ -1,0 +1,21 @@
+#!/bin/sh
+# needs github.com/cdown/clipnotify, gnu timeout
+exec >/dev/null 2>&1
+while clipnotify; do
+	val=$(xclip -o -sel clip)
+	echo "$val" >> /tmp/logk
+	{    # hex colours
+		[ "$(cat /tmp/sde)" != "$(date +%s)" ] && timeout 4 shade npreview "$val" && continue
+	}; { # epoch timestamps
+		[ "$val" -ge 100000000 ] &&
+			[ "$val" -le 9999999999 ] && {
+				notify-send "$(date "-d@$val" +"%Y-%m-%d %H:%M:%S")" "($(rel "$val"))"
+				continue
+			}
+	}; { # twitter IDs
+		timeout 1 sf "${val##*/}" && continue
+	}; { # discord IDs
+		timeout 6 dcid "$val" no && continue
+	}
+	wait
+done

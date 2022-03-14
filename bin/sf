@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# get human-readable time of twitter snowflake
+#  usage: sf [ids]
+
+[[ "$1" -gt 1100000000000000000 ]] || exit 1
+
+for i; do
+	# remove url stuff
+	i=${i##*[/-]}
+
+	# check if number
+	#[ "$i" -gt 1 ] 2>/dev/null || continue
+	# convert to binary, trim useless stuff, and go back to decimal
+	j=$(echo "obase=2; $i" | bc | head -c-23)
+	j=$(echo "ibase=2; $j" | bc)
+	j=$(echo "$j+1288834974657" | bc)
+	s=${j%???} ms=${j#$s}
+
+	# ID + "discord epoch" (2015) -> human readable
+	TZ=UTC date -d@$s +"$i  %Y-%m-%d %H:%M:%S.${ms}Z  %s"
+	notify-send "[twitter id]" "$(date -d@$s +"%Y-%m-%d %H:%M:%S.${ms}")
+($(rel "$s"))"
+done

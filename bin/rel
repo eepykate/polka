@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+d=$(($(date +%s)-$1))
+[ "$d" -lt 0 ] && thing='in the future' d=${d#-} || thing=ago
+if   [ "$d" -lt 120 ]; then
+	word=seconds
+	calc=
+elif [ "$d" -lt $((60*60)) ]; then
+	word=minutes
+	calc=/60
+	scal=0
+elif [ "$d" -lt $((60*60*24)) ]; then
+	word=hours
+	calc=/60/60
+elif [ "$d" -lt $((60*60*24*30)) ]; then
+	word=days
+	calc=/60/60/24
+elif [ "$d" -lt $((60*60*24*365)) ]; then
+	word=months
+	calc=/60/60/24/30
+else
+	word=years
+	calc=/60/60/24/365
+fi
+echo "$(echo "scale=${scal:-1}; $d$calc" | bc) $word $thing"

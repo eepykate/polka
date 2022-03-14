@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#  https://discord.com/developers/docs/reference#snowflakes
+#  get information related to discord ID
+#set -x
+#exec >/home/d/log 2>&1
+
+unset bot
+
+[[ "${1##*[-/]}" = "$1" ]] || set -- "${1##*[-/]}" "$2" "nonzero"
+[[ "$1" -gt 11111111111 ]] && [[ "$1" -lt 1100000000000000001 ]] || exit 1
+shopt -s lastpipe  # allow variables from pipes
+
+#    age    #
+# convert to binary, trim useless stuff, and go back to decimal
+j=$(echo "obase=2; $1" | bc | head -c-23)
+j=$(echo "ibase=2; $j" | bc)
+s=${j%???} ms=${j#$s}
+
+# ID + "discord epoch" (2015) -> human readable
+date="$(date -d @$((s+1420070400)) +"%Y-%m-%d %H:%M:%S").$ms
+($(rel "$((s+1420070400))"))"
+#notify-send "$date"
+#printf "$(date -d @$((s+1420070400)) +"%s")" | xclip -sel clip
+#exit
+
+#  name/pfp/printing  #
+[ "$3" ] ||
+curl -Ss \
+	-H "Authorization: $DCTOKEN" \
+	-X GET \
+https://discord.com/api/v9/users/"$1" | jq | tr -d '":,' | while read -r fe va; do
+	[[ "$fe" =~ username ]] && user=$va
+	[[ "$fe" =~ bot && "$va" == true ]] && bot=' [BOT]'
+	[[ "$fe" =~ discrimi ]] && numb=\#$va
+	[[ "$fe" =~  avatar  ]] && {
+		[[ "$va" = null ]] && continue
+		[[ "$va" =~ ^a_ ]] && ext=.gif || ext=.png
+		pfp=https://cdn.discordapp.com/avatars/$1/$va$ext\?size=1024
+	}
+done
+printf '%s\n%s\n%s\n%s\n' "$user$numb" "${bot# }" "$1 / $date" "$pfp"
+
+read -r a < /proc/$PPID/comm
+[[ "$a" = systemd ]] || [[ "$2" = no ]] && {
+	rm /tmp/img
+	[[ "$pfp" =~ http ]] && curl -Ls "${pfp%1024}128" -o \
+		/tmp/img && im='-I /tmp/img' || im=
+	a="$user$numb$bot"  b="$1"$'\n'"$date"
+	[ "$user" ] || a=$b b=
+	dunstify $im -- "$a" "$b"
+}; true

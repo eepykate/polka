@@ -72,7 +72,7 @@ star kiwmi  # (https://github.com/buffet/kiwmi)
 star rmd
 star sudo kbdrate -d 200 -r 60
 #star archi
-star shortcuts
+#star shortcuts
 star sudo cpupower frequency-set --governor performance
 
 sudo rm /etc/systemd/system/getty@tty1.service.d/autologin.conf 2>/dev/null
