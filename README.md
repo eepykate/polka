@@ -5,7 +5,6 @@
 <h2 align="center"> Screenshots </h2>
 
 <h3 align="center"> [bspwm] Current </h3>
-<div align="center"> Not really anything new here, but might as well post </div>
 
 ![](https://i.imgur.com/MQSUbo9.png)
 
